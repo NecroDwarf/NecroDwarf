@@ -1,6 +1,7 @@
+import type { ProjectMeta } from "../../shared/content/types";
 import { ManiacArt } from "./assets/ManiacArt";
 import theme from "./theme/theme.module.css";
-export const meta = {
+export const meta: ProjectMeta = {
   id: "maniac",
   name: "Maniac",
   category: "Игра / Minecraft",

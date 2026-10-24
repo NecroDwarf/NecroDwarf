@@ -10,7 +10,11 @@ export function ChangelogPage() {
         Последние опубликованные обновления наших проектов. Сейчас в хрониках —
         три главы Maniac.
       </p>
-      <ReleaseList releases={publishedReleases} projectNames={projectNames} />
+      <ReleaseList
+        releases={publishedReleases}
+        projectNames={projectNames}
+        headingLevel={2}
+      />
       <p className={s.note}>
         Точные даты этих выпусков не указаны. Обновления Maniac расположены в
         порядке версий; подробности доступны в исходных хрониках.

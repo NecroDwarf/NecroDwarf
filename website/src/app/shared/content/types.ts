@@ -21,9 +21,26 @@ export interface Project {
   description: string;
   tagline: string;
   theme: string;
-  Art: ComponentType;
+  status?: "idea" | "development" | "beta" | "released" | "paused";
+  longDescription?: readonly string[];
+  features?: readonly string[];
+  cover?: ProjectImage;
+  gallery?: readonly ProjectImage[];
+  links?: Partial<
+    Record<"github" | "website" | "documentation" | "download", string>
+  >;
+  platforms?: readonly string[];
+  Art?: ComponentType;
   Page: ComponentType;
   releases: readonly Release[];
+}
+export type ProjectMeta = Omit<Project, "Page" | "releases">;
+export interface ProjectImage {
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+  caption?: string;
 }
 export interface PageMeta {
   title: string;

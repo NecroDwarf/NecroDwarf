@@ -3,11 +3,14 @@ import s from "./Content.module.css";
 export function ReleaseList({
   releases,
   projectNames,
+  headingLevel = 3,
 }: {
   releases: readonly Release[];
   projectNames: Readonly<Record<string, string>>;
+  headingLevel?: 2 | 3;
 }) {
-  if (!releases.length) return <p>Опубликованных обновлений пока нет.</p>;
+  const Heading = `h${headingLevel}` as const;
+  if (!releases.length) return null;
   return (
     <div className={s.releases}>
       {releases.map((release) => (
@@ -29,7 +32,7 @@ export function ReleaseList({
             <p className={s.category}>
               {projectNames[release.projectId]} / Обновление
             </p>
-            <h3>{release.title}</h3>
+            <Heading>{release.title}</Heading>
             <p>{release.summary}</p>
             {release.publishedAt && (
               <time dateTime={release.publishedAt}>

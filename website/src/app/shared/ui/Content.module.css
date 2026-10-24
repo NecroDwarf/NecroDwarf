@@ -14,9 +14,7 @@
   display: flex;
   align-items: center;
   gap: 14px;
-  font:
-    13px/1.6 Consolas,
-    monospace;
+  font: 13px/1.6 var(--font-body);
   letter-spacing: 1.5px;
   text-transform: uppercase;
   color: var(--ash);
@@ -33,7 +31,7 @@
 .heading h2 {
   font-size: clamp(32px, 4vw, 56px);
   letter-spacing: -0.045em;
-  font-weight: 550;
+  font-weight: 600;
   line-height: 1.08;
   margin: 0;
 }
@@ -80,9 +78,7 @@
   position: absolute;
   top: 18px;
   left: 20px;
-  font:
-    12px Consolas,
-    monospace;
+  font: 12px var(--font-body);
   letter-spacing: 1.5px;
   color: var(--bone);
 }
@@ -93,14 +89,13 @@
   flex: 1;
 }
 .category {
-  font:
-    13px/1.6 Consolas,
-    monospace;
+  font: 13px/1.6 var(--font-body);
   letter-spacing: 1px;
   color: var(--ash);
   text-transform: uppercase;
   margin-bottom: 12px;
 }
+.project h2,
 .project h3 {
   font-size: clamp(25px, 2.5vw, 38px);
   letter-spacing: -1px;
@@ -184,12 +179,11 @@
   );
 }
 .version {
-  font:
-    42px/1 Consolas,
-    monospace;
+  font: 42px/1 var(--font-body);
   color: var(--release-accent, var(--jade-glow));
-  letter-spacing: -3px;
+  letter-spacing: -1px;
 }
+.release h2,
 .release h3 {
   font-size: 26px;
   margin-bottom: 12px;
@@ -246,13 +240,12 @@
 }
 .memberNumber {
   display: block;
-  font:
-    15px Consolas,
-    monospace;
+  font: 15px var(--font-body);
   color: var(--forge);
   margin-bottom: 48px;
 }
 .team h3 {
+  font-family: var(--font-body);
   font-size: clamp(24px, 3vw, 36px);
   letter-spacing: -1px;
   margin-bottom: 8px;
@@ -291,9 +284,7 @@
 .contacts small {
   color: var(--ash);
   overflow-wrap: anywhere;
-  font:
-    14px/1.7 Consolas,
-    monospace;
+  font: 14px/1.7 var(--font-body);
 }
 .intro {
   color: var(--ash);
@@ -306,7 +297,7 @@
 }
 .pageTitle h1 {
   font-size: clamp(44px, 7vw, 92px);
-  font-weight: 550;
+  font-weight: 600;
   letter-spacing: -0.055em;
   line-height: 1.05;
   margin-bottom: 28px;
@@ -397,10 +388,27 @@
     width: 100%;
     opacity: 0.4;
   }
+  .release h2,
   .release h3 {
     font-size: 23px;
   }
   .intro {
     font-size: 18px;
+  }
+}
+
+.projectArt > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.projectArt:has(> img) > span {
+  background: #090e0ce6;
+  padding: 4px 8px;
+}
+@media (min-width: 651px) and (max-width: 1000px) {
+  .projects {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }

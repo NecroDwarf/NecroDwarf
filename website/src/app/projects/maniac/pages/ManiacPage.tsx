@@ -6,26 +6,31 @@ import { meta } from "../meta";
 import { releases } from "../changelogs/registry";
 import s from "../../../shared/ui/Content.module.css";
 export function ManiacPage() {
+  const latestReleases = releases
+    .filter((r) => r.status === "published")
+    .slice(0, 1);
   return (
     <>
       <ProjectIntro project={meta}>
-        <Link className={s.primary} to="/changelog">
-          Хроники проекта ↗
-        </Link>
+        {latestReleases.length > 0 && (
+          <Link className={s.primary} to="/changelog">
+            Хроники проекта ↗
+          </Link>
+        )}
       </ProjectIntro>
-      <section className={s.section}>
-        <SectionHeading
-          index="01"
-          label="История проекта"
-          title="Последняя глава"
-        />
-        <ReleaseList
-          releases={releases
-            .filter((r) => r.status === "published")
-            .slice(0, 1)}
-          projectNames={{ maniac: "Maniac" }}
-        />
-      </section>
+      {latestReleases.length > 0 && (
+        <section className={s.section}>
+          <SectionHeading
+            index="01"
+            label="История проекта"
+            title="Последняя глава"
+          />
+          <ReleaseList
+            releases={latestReleases}
+            projectNames={{ maniac: "Maniac" }}
+          />
+        </section>
+      )}
     </>
   );
 }

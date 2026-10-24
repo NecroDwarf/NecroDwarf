@@ -1,6 +1,7 @@
+import type { ProjectMeta } from "../../shared/content/types";
 import { NovellMakerArt } from "./assets/NovellMakerArt";
 import theme from "./theme/theme.module.css";
-export const meta = {
+export const meta: ProjectMeta = {
   id: "novellmaker",
   name: "NovellMaker",
   category: "Инструмент / Творчество",

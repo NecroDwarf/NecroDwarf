@@ -86,9 +86,7 @@
   padding: 22px 0;
   border-top: 1px solid var(--iron);
   color: var(--ash);
-  font:
-    13px/1.6 Consolas,
-    monospace;
+  font: 13px/1.6 var(--font-body);
   letter-spacing: 1px;
 }
 @media (max-width: 800px) {

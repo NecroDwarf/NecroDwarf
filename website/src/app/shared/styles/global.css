@@ -1,5 +1,9 @@
+@import "./fonts.css";
+
 :root {
-  font-family: "Segoe UI", Arial, sans-serif;
+  --font-display: "Geologica", sans-serif;
+  --font-body: "Rubik", sans-serif;
+  font-family: var(--font-body);
   color: #e7e2d4;
   background: #090e0c;
   font-synthesis: none;
@@ -58,7 +62,10 @@ p {
 h1,
 h2,
 h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
   text-wrap: balance;
+  overflow-wrap: anywhere;
 }
 img,
 svg {
@@ -76,4 +83,11 @@ svg {
     transition: none !important;
     scroll-behavior: auto !important;
   }
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
 }

@@ -14,7 +14,7 @@ export function ProjectsPage() {
         Игры, сервисы и инструменты. Три проекта нашей команды — каждый со своей
         атмосферой.
       </p>
-      <ProjectGrid projects={projects} />
+      <ProjectGrid projects={projects} headingLevel={2} />
     </section>
   );
 }
