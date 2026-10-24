@@ -1,0 +1,17 @@
+# Фоновые иллюстрации обновлений
+
+Созданы по просьбе пользователя встроенным imagegen. Это декоративные образы, не скриншоты и не утверждения о геймплее. Финальные изображения сохранены рядом с этим файлом: `flower-cleaning.jpg` (167 KB), `nightmare.jpg` (84 KB), `reforge.jpg` (83 KB). JPEG 1400 px, quality 85. В `Release.background` заданы ресурс и размеры; общий компонент применяет lazy loading, тёмную подложку и пересечение двух градиентных масок для растушёвки четырёх краёв. На мобильных opacity снижен до 0.4.
+
+## Промпты imagegen
+
+### flower-cleaning.jpg
+
+Wide horizontal atmospheric editorial background illustration for Flower Cleaning update on a dark indie game developer website. Landscape 1536x1024 composition intended to be cropped to a shallow wide banner. Delicate cream and blush-pink wildflowers, pale jade leaves, tiny petals floating in dark deep forest green air, tactile botanical illustration with cinematic soft light, sophisticated quiet dark fantasy botanical painting. Main flower cluster concentrated at the right-center, left half almost empty very dark #090E0C forest gradient. Fine organic detail, warm pale flower centers, understated jade glow, a few stems gracefully flowing across the lower right. No text, numbers, logos, icons, UI, frames, people, screenshot or game graphics. All edges fade into near-black darkness; no hard rectangular panels. Beautiful substantial visible flowers on the right, restrained saturation. This is decorative mood art, not a representation of game features.
+
+### nightmare.jpg
+
+Wide landscape cinematic painterly background illustration for an update titled Nightmare, on a sophisticated dark indie developer website. Main composition on RIGHT half: an uncanny narrow doorway of dim lilac light among dark fractured stone arches and shadowy vertical shapes, wisps of violet mist drifting low, subtle floating dark crystal fragments. Abstract dreamlike horror atmosphere without people, monsters, blood or game screenshots. Tactile charcoal stone, muted lavender and cold purple light with tiny bronze details. Left half is empty nearly black #090E0C negative space, all edges dissolve into darkness. Restrained mysterious light, rich detail in the right-center, atmospheric concept painting. No text, typography, numbers, logos, border, UI or frame. Intended as a decorative shallow website banner: important doorway and mist centered vertically so a horizontal crop preserves the mood. Unique artwork, not an assertion of any real game mechanics.
+
+### reforge.jpg
+
+Wide horizontal cinematic editorial background for Maniac Reforge update on a dark modern developer website. An abstract metaphor of reforging: on the right-center a heavy dark steel slab split by narrow molten bronze seams, a few luminous copper sparks arc gently above its surface, subtle jade reflection on brushed black metal, smoke dissolving into deep charcoal green darkness. Contemporary industrial craft, not medieval fantasy UI, no weapons or characters. Tactile painterly realistic steel with beautiful understated lighting, warm bronze glow, restrained jade accents. Left half almost completely empty near-black #090E0C. Main objects centered vertically for a shallow banner crop, all outer edges melt softly into black. No text, typography, numbers, logos, watermark, borders or screenshot. Decorative mood painting, not a portrayal of real gameplay.

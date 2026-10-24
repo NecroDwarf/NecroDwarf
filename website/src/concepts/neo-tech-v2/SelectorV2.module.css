@@ -1,0 +1,92 @@
+.feature {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 30px;
+  border: 1px solid #507359;
+  border-radius: 4px;
+  margin: 0 0 30px;
+  padding: 30px 40px 30px 20px;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 20% 50%, #176b502b, transparent 60%), #101b14;
+}
+.feature:hover {
+  border-color: #00a86b;
+  background-color: #14241b;
+}
+.art {
+  height: 310px;
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+.art svg {
+  width: 440px;
+  max-width: 130%;
+}
+.copy {
+  position: relative;
+  z-index: 1;
+}
+.copy small {
+  color: #53cfa1;
+  font:
+    10px Consolas,
+    monospace;
+  letter-spacing: 2px;
+}
+.copy h2 {
+  font-size: 40px;
+  letter-spacing: -1.5px;
+  margin: 17px 0 10px;
+}
+.copy h2 span {
+  font-size: 12px;
+  border: 1px solid #527150;
+  padding: 6px 9px;
+  vertical-align: middle;
+  color: #a2c692;
+  letter-spacing: 0;
+  margin-left: 10px;
+}
+.copy h3 {
+  font-size: 20px;
+  font-weight: 400;
+  color: #b5c4a6;
+  margin-bottom: 20px;
+}
+.copy p {
+  color: #9caea2;
+  font-size: 14px;
+  max-width: 400px;
+}
+.link {
+  display: inline-block;
+  margin-top: 15px;
+  color: #53cfa1;
+  font-size: 13px;
+}
+@media (max-width: 700px) {
+  .feature {
+    grid-template-columns: 1fr;
+    padding: 5px 24px 28px;
+    gap: 5px;
+  }
+  .art {
+    height: 230px;
+  }
+  .art svg {
+    width: 340px;
+    max-width: 140%;
+  }
+  .copy h2 {
+    font-size: 29px;
+  }
+  .copy h3 {
+    font-size: 18px;
+  }
+  .copy p {
+    font-size: 13px;
+  }
+}

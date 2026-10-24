@@ -1,0 +1,135 @@
+.header {
+  max-width: 1800px;
+  margin: auto;
+  padding: 23px var(--space);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  border-bottom: 1px solid var(--iron);
+  position: relative;
+  z-index: 5;
+}
+.nav {
+  display: flex;
+  gap: 32px;
+  font-size: 16px;
+  color: var(--ash);
+}
+.nav a {
+  padding: 12px 0;
+  border-bottom: 1px solid transparent;
+}
+.nav a[aria-current],
+.nav a:hover {
+  color: var(--bone);
+  border-color: var(--jade);
+}
+.headerContact {
+  border: 1px solid var(--iron);
+  padding: 12px 18px;
+  font-size: 16px;
+}
+.headerContact span {
+  margin-left: 24px;
+  color: var(--jade-glow);
+}
+.menuButton {
+  display: none;
+  color: var(--bone);
+  background: var(--stone);
+  border: 1px solid var(--iron);
+  padding: 12px;
+  cursor: pointer;
+  font: inherit;
+}
+.skip {
+  position: fixed;
+  left: 12px;
+  top: 10px;
+  transform: translateY(-180%);
+  padding: 14px;
+  background: var(--bone);
+  color: var(--void);
+  z-index: 100;
+}
+.skip:focus {
+  transform: none;
+}
+.footer {
+  margin: 80px auto 0;
+  max-width: 1800px;
+  padding: 0 var(--space);
+}
+.footerTop {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid var(--iron);
+  padding: 35px 0;
+}
+.footerTop p {
+  margin: 0;
+  font-size: 16px;
+  color: var(--ash);
+}
+.footerTop > div {
+  display: flex;
+  gap: 22px;
+  font-size: 15px;
+}
+.footerBottom {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 22px 0;
+  border-top: 1px solid var(--iron);
+  color: var(--ash);
+  font:
+    13px/1.6 Consolas,
+    monospace;
+  letter-spacing: 1px;
+}
+@media (max-width: 800px) {
+  .headerContact {
+    display: none;
+  }
+  .nav {
+    gap: 20px;
+  }
+  .footerTop {
+    flex-wrap: wrap;
+  }
+}
+@media (max-width: 600px) {
+  .header {
+    flex-wrap: wrap;
+    gap: 0;
+    padding-block: 16px;
+  }
+  .menuButton {
+    display: block;
+  }
+  .nav {
+    display: none;
+    width: 100%;
+    padding-top: 20px;
+    flex-direction: column;
+    gap: 0;
+  }
+  .nav[data-open="true"] {
+    display: flex;
+  }
+  .footerTop {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .footerTop > div {
+    flex-wrap: wrap;
+  }
+  .footerBottom {
+    flex-direction: column;
+  }
+}

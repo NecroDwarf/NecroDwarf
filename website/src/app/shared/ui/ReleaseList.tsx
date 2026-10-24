@@ -1,0 +1,54 @@
+import type { Release } from "../content/types";
+import s from "./Content.module.css";
+export function ReleaseList({
+  releases,
+  projectNames,
+}: {
+  releases: readonly Release[];
+  projectNames: Readonly<Record<string, string>>;
+}) {
+  if (!releases.length) return <p>Опубликованных обновлений пока нет.</p>;
+  return (
+    <div className={s.releases}>
+      {releases.map((release) => (
+        <article key={release.id} className={`${s.release} ${release.theme}`}>
+          {release.background && (
+            <div className={s.releaseArt} aria-hidden="true">
+              <img
+                src={release.background.src}
+                width={release.background.width}
+                height={release.background.height}
+                alt=""
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+          )}
+          <span className={s.version}>{release.version}</span>
+          <div>
+            <p className={s.category}>
+              {projectNames[release.projectId]} / Обновление
+            </p>
+            <h3>{release.title}</h3>
+            <p>{release.summary}</p>
+            {release.publishedAt && (
+              <time dateTime={release.publishedAt}>
+                {new Intl.DateTimeFormat("ru-RU", {
+                  dateStyle: "long",
+                  timeZone: "UTC",
+                }).format(new Date(release.publishedAt))}
+              </time>
+            )}
+          </div>
+          <a
+            href={release.source}
+            className={s.source}
+            aria-label={`Читать хроники ${projectNames[release.projectId]} ${release.version} — ${release.title}`}
+          >
+            Исходные хроники <span aria-hidden="true">↗</span>
+          </a>
+        </article>
+      ))}
+    </div>
+  );
+}

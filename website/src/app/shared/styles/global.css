@@ -1,0 +1,79 @@
+:root {
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: #e7e2d4;
+  background: #090e0c;
+  font-synthesis: none;
+  --void: #090e0c;
+  --stone: #17211c;
+  --iron: #293830;
+  --jade: #00a86b;
+  --jade-deep: #176b50;
+  --jade-glow: #53cfa1;
+  --forge: #b69a62;
+  --bone: #e7e2d4;
+  --ash: #9caea2;
+  --space: clamp(20px, 5vw, 90px);
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-size: 18px;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+a,
+button {
+  transition:
+    color 0.2s,
+    background 0.2s,
+    border-color 0.2s;
+}
+a:hover {
+  color: var(--jade-glow);
+}
+:focus-visible {
+  outline: 2px solid var(--jade-glow);
+  outline-offset: 5px;
+}
+main:focus {
+  outline: none;
+}
+p {
+  line-height: 1.7;
+}
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+img,
+svg {
+  max-width: 100%;
+}
+::selection {
+  color: white;
+  background: var(--jade-deep);
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}

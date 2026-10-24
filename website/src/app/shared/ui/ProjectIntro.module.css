@@ -1,0 +1,70 @@
+.intro {
+  max-width: 1800px;
+  margin: auto;
+  padding: 45px var(--space) 0;
+}
+.back {
+  color: var(--ash);
+  font-size: 16px;
+}
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  padding-top: 65px;
+}
+.label {
+  color: var(--project-accent, var(--jade-glow));
+  font:
+    14px Consolas,
+    monospace;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.layout h1 {
+  font-size: clamp(40px, 6vw, 88px);
+  line-height: 1.05;
+  font-weight: 550;
+  letter-spacing: -0.055em;
+  margin-bottom: 22px;
+  overflow-wrap: anywhere;
+}
+.tagline {
+  font-size: 22px;
+  margin-bottom: 18px;
+}
+.description {
+  font-size: 19px;
+  color: var(--ash);
+  max-width: 570px;
+}
+.art {
+  background: var(--art-background, var(--stone));
+  border: 1px solid var(--iron);
+}
+.art svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1.5;
+}
+.art span {
+  display: block;
+  padding: 14px 20px;
+  border-top: 1px solid var(--iron);
+  color: var(--ash);
+  font:
+    14px Consolas,
+    monospace;
+}
+@media (max-width: 800px) {
+  .layout {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding-top: 40px;
+  }
+  .layout h1 {
+    font-size: clamp(38px, 8vw, 64px);
+  }
+}

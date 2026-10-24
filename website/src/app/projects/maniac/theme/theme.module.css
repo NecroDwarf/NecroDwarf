@@ -1,0 +1,13 @@
+.project {
+  --project-accent: #d5a0a0;
+  --art-background: #21171b;
+}
+.flower {
+  --release-accent: #c2d59b;
+}
+.nightmare {
+  --release-accent: #b9abc9;
+}
+.reforge {
+  --release-accent: #cbb48a;
+}

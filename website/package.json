@@ -1,0 +1,30 @@
+{
+  "name": "necrodwarf-website",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "typecheck": "tsc --noEmit",
+    "build": "npm run typecheck && node scripts/build.mjs",
+    "check": "node scripts/check-build.mjs",
+    "preview": "node scripts/serve.mjs",
+    "dev:prototypes": "node scripts/prototypes.mjs",
+    "format:check": "prettier --check src/app src/main.tsx src/entry-server.tsx scripts/*.mjs index.html prototypes.html package.json"
+  },
+  "dependencies": {
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "react-router": "7.18.4"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "prettier": "3.6.2",
+    "typescript": "~5.9.3",
+    "vite": "^7.1.12"
+  }
+}

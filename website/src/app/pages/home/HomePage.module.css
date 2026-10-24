@@ -1,0 +1,181 @@
+.hero {
+  max-width: 1920px;
+  margin: auto;
+  padding: 50px var(--space) 0;
+  position: relative;
+  isolation: isolate;
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: radial-gradient(ellipse at 50% 65%, #176b5027, transparent 60%);
+}
+.eyebrow {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  font:
+    13px/1.6 Consolas,
+    monospace;
+  text-transform: uppercase;
+  letter-spacing: 1.6px;
+  color: var(--ash);
+  margin-bottom: 24px;
+}
+.eyebrow > span {
+  width: 5px;
+  height: 5px;
+  background: var(--jade);
+  border-radius: 50%;
+}
+.hero h1 {
+  text-align: center;
+  font-size: clamp(55px, 7.3vw, 126px);
+  font-weight: 600;
+  letter-spacing: -0.065em;
+  line-height: 0.98;
+  margin: 0;
+}
+.hero h1 > span {
+  color: var(--jade);
+}
+.stage {
+  display: grid;
+  grid-template-columns: 0.85fr 1.65fr 0.85fr;
+  align-items: center;
+  gap: 32px;
+  max-width: 1580px;
+  margin: 20px auto 0;
+}
+.aside p {
+  font-size: 20px;
+  margin: 22px 0;
+  color: #c3cdbd;
+}
+.technical {
+  color: var(--forge);
+  font:
+    13px/1.6 Consolas,
+    monospace;
+  letter-spacing: 1.5px;
+}
+.aside > i {
+  display: block;
+  width: 42px;
+  height: 1px;
+  background: var(--forge);
+  margin: 24px 0;
+}
+.aside small {
+  font:
+    14px/1.8 Consolas,
+    monospace;
+  color: var(--ash);
+}
+.core {
+  max-width: 560px;
+  justify-self: center;
+  width: 100%;
+  padding: 8px 0;
+}
+.intro p {
+  font-size: 20px;
+  color: #c4cebf;
+}
+.intro > a:first-of-type {
+  display: flex;
+  padding-inline: 18px;
+  gap: 18px;
+}
+.telegram {
+  display: block;
+  margin-top: 18px;
+  font-size: 16px;
+  color: var(--ash);
+}
+.foot {
+  border-block: 1px solid var(--iron);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 24px 0;
+  margin-top: 24px;
+  color: var(--ash);
+  font:
+    13px/1.7 Consolas,
+    monospace;
+  letter-spacing: 1px;
+}
+.foot > span {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  color: var(--forge);
+}
+.foot i {
+  width: 40px;
+  height: 1px;
+  background: var(--iron);
+}
+@media (max-width: 1000px) {
+  .stage {
+    grid-template-columns: 1.4fr 1fr;
+    max-width: 850px;
+  }
+  .aside {
+    display: none;
+  }
+  .intro {
+    max-width: 300px;
+  }
+}
+@media (max-width: 600px) {
+  .hero {
+    padding-top: 40px;
+  }
+  .eyebrow {
+    font-size: 12px;
+    letter-spacing: 0.7px;
+    gap: 8px;
+  }
+  .hero h1 {
+    font-size: clamp(43px, 10.2vw, 63px);
+  }
+  .stage {
+    grid-template-columns: 1fr;
+    gap: 22px;
+    margin-top: 28px;
+  }
+  .core {
+    width: min(100%, 340px);
+  }
+  .intro {
+    max-width: 420px;
+    justify-self: center;
+    text-align: center;
+  }
+  .intro p {
+    font-size: 20px;
+  }
+  .intro > a:first-of-type {
+    max-width: 300px;
+    margin: auto;
+  }
+  .foot {
+    margin-top: 32px;
+    font-size: 13px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .foot > span {
+    gap: 10px;
+  }
+  .foot i {
+    display: none;
+  }
+}
