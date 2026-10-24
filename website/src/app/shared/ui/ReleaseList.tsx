@@ -1,13 +1,18 @@
+import { ContentLink } from "./ContentLink";
 import type { Release } from "../content/types";
 import s from "./Content.module.css";
 export function ReleaseList({
   releases,
   projectNames,
   headingLevel = 3,
+  sourceHref,
+  sourceLabel = "Исходные хроники",
 }: {
   releases: readonly Release[];
   projectNames: Readonly<Record<string, string>>;
   headingLevel?: 2 | 3;
+  sourceHref?: string;
+  sourceLabel?: string;
 }) {
   const Heading = `h${headingLevel}` as const;
   if (!releases.length) return null;
@@ -43,13 +48,13 @@ export function ReleaseList({
               </time>
             )}
           </div>
-          <a
-            href={release.source}
+          <ContentLink
+            href={sourceHref ?? release.source}
             className={s.source}
             aria-label={`Читать хроники ${projectNames[release.projectId]} ${release.version} — ${release.title}`}
           >
-            Исходные хроники <span aria-hidden="true">↗</span>
-          </a>
+            {sourceLabel} <span aria-hidden="true">↗</span>
+          </ContentLink>
         </article>
       ))}
     </div>

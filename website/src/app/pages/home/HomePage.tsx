@@ -1,3 +1,4 @@
+import { ContentLink } from "../../shared/ui/ContentLink";
 import { Link } from "react-router";
 import { BrandLogo } from "../../shared/ui/BrandLogo";
 import { SectionHeading } from "../../shared/ui/SectionHeading";
@@ -51,16 +52,16 @@ export function HomePage() {
             <Link to="/projects" className={c.primary}>
               Наши проекты <span aria-hidden="true">↗</span>
             </Link>
-            <a className={s.telegram} href={contacts[0].url}>
+            <ContentLink className={s.telegram} href={contacts[0].url}>
               Telegram команды ↗
-            </a>
+            </ContentLink>
           </div>
         </div>
         <div className={s.foot}>
           <span>
             JADE ENGINEERING <i /> NECRODWARF
           </span>
-          <a href="#projects">Исследовать проекты ↓</a>
+          <ContentLink href="#projects">Исследовать проекты ↓</ContentLink>
         </div>
       </section>
       <section id="projects" className={c.section}>

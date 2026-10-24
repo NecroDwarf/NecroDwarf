@@ -2,6 +2,14 @@
   --project-accent: #d5a0a0;
   --art-background: #21171b;
 }
+.page {
+  --void: #0d0e13;
+  --stone: #191b23;
+  --iron: #353842;
+  --ash: #b0b0bd;
+  --forge: #b78d92;
+  --project-accent: #d5a0aa;
+}
 .flower {
   --release-accent: #c2d59b;
 }

@@ -4,10 +4,10 @@ import theme from "./theme/theme.module.css";
 export const meta: ProjectMeta = {
   id: "maniac",
   name: "Maniac",
-  category: "Игра / Minecraft",
+  category: "Асимметричный хоррор / Minecraft",
   description:
     "Асимметричный хоррор для Minecraft. Противостояние маньяка и выживших.",
-  tagline: "По другую сторону страха.",
+  tagline: "Охота начинается.",
   theme: theme.project,
   Art: ManiacArt,
 };

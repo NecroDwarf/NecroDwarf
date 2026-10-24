@@ -1,3 +1,4 @@
+import { ContentLink } from "../ui/ContentLink";
 import { useRef, useState } from "react";
 import { Link, NavLink } from "react-router";
 import type { ReactNode } from "react";
@@ -15,9 +16,9 @@ export function SiteLayout({ children }: { children: ReactNode }) {
   const menuButton = useRef<HTMLButtonElement>(null);
   return (
     <>
-      <a href="#main" className={s.skip}>
+      <ContentLink href="#main" className={s.skip}>
         К содержанию
-      </a>
+      </ContentLink>
       <header
         className={s.header}
         onKeyDown={(event) => {
@@ -61,9 +62,9 @@ export function SiteLayout({ children }: { children: ReactNode }) {
             </NavLink>
           ))}
         </nav>
-        <a className={s.headerContact} href={contacts[0].url}>
+        <ContentLink className={s.headerContact} href={contacts[0].url}>
           На связи <span aria-hidden="true">↗</span>
-        </a>
+        </ContentLink>
       </header>
       <main id="main" tabIndex={-1}>
         {children}
@@ -76,9 +77,9 @@ export function SiteLayout({ children }: { children: ReactNode }) {
           <p>Кованы в любви к коду.</p>
           <div>
             {contacts.map((contact) => (
-              <a key={contact.url} href={contact.url}>
+              <ContentLink key={contact.url} href={contact.url}>
                 {contact.name} ↗
-              </a>
+              </ContentLink>
             ))}
           </div>
         </div>

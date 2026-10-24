@@ -86,8 +86,41 @@ try {
     render(ProjectIntro, { project: { ...projects[0], Art: undefined } }),
     /Художественная иллюстрация|<img|<svg/,
   );
+  const { ManiacPage } = await server.ssrLoadModule(
+    "/src/app/projects/maniac/pages/ManiacPage.tsx",
+  );
+  const maniac = render(ManiacPage, {});
+  for (const section of [
+    "gameplay",
+    "features",
+    "characters",
+    "updates",
+    "download",
+  ])
+    assert.ok(maniac.includes(`id="${section}"`), `Maniac: ${section}`);
+  for (const release of projects.find((p) => p.id === "maniac").releases)
+    assert.ok(maniac.includes(release.title), `Maniac: ${release.title}`);
+  assert.equal((maniac.match(/<h1[ >]/g) || []).length, 1);
+  assert.doesNotMatch(
+    maniac,
+    /id="gallery"|href="#gallery"|drive\.google|disk\.yandex|\/wiki|changelog_maniac/,
+  );
+  assert.match(
+    maniac,
+    /href="https:\/\/minecraft-inside.ru\/maps\/188353-maniac-dbd.html"/,
+  );
+  assert.match(maniac, /Версия доступного архива пока не подтверждена/);
+  assert.match(maniac, /href="\/changelog"/);
+  const history = render(ReleaseList, {
+    releases: projects[0].releases,
+    projectNames: { maniac: "Maniac" },
+    sourceHref: "/changelog",
+    sourceLabel: "История обновлений",
+  });
+  assert.doesNotMatch(history, /changelog_maniac/);
+  assert.match(history, /История обновлений/);
   console.log(
-    "PASS: existing project content, absent optional fields, cover, links, descriptions, features, platforms, gallery and empty releases.",
+    "PASS: optional project content, covers, gallery, empty releases and Maniac presentation/download/history safeguards.",
   );
 } finally {
   await server.close();

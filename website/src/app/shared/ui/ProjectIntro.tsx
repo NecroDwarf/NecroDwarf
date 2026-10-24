@@ -1,3 +1,4 @@
+import { ContentLink } from "./ContentLink";
 import type { ReactNode } from "react";
 import { Link } from "react-router";
 import type { ProjectMeta, Project } from "../content/types";
@@ -47,10 +48,10 @@ export function ProjectIntro({
               {Object.entries(project.links).map(
                 ([kind, href]) =>
                   href && (
-                    <a key={kind} href={href}>
+                    <ContentLink key={kind} href={href}>
                       {linkLabels[kind as keyof typeof linkLabels]}{" "}
                       <span aria-hidden="true">↗</span>
-                    </a>
+                    </ContentLink>
                   ),
               )}
             </div>
