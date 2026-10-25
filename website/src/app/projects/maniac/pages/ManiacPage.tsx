@@ -7,6 +7,7 @@ import { SectionHeading } from "../../../shared/ui/SectionHeading";
 import { contacts } from "../../../shared/content/team";
 import { meta } from "../meta";
 import { releases } from "../changelogs/registry";
+import { GoogleDriveIcon, YandexDiskIcon } from "../assets/DownloadIcons";
 import {
   characters,
   download,
@@ -28,8 +29,23 @@ export function ManiacPage() {
       <div className={s.hero}>
         <ProjectIntro project={intro}>
           <div className={s.actions}>
-            <ContentLink className={s.primary} href={download.url}>
-              Скачать сборку <span aria-hidden="true">↗</span>
+            <ContentLink
+              className={s.primary}
+              href={download.url}
+              aria-label={`Скачать Maniac ${download.version} с Google Drive`}
+            >
+              <span className={s.downloadLabel}>
+                <GoogleDriveIcon />
+                <span>Скачать Maniac {download.version}</span>
+              </span>
+              <span aria-hidden="true">↗</span>
+            </ContentLink>
+            <ContentLink className={s.secondary} href={download.mirrorUrl}>
+              <span className={s.downloadLabel}>
+                <YandexDiskIcon />
+                <span>Скачать с Яндекс Диска</span>
+              </span>{" "}
+              <span aria-hidden="true">↗</span>
             </ContentLink>
             {published.length > 0 && (
               <ContentLink className={s.secondary} href="#updates">
@@ -38,8 +54,8 @@ export function ManiacPage() {
             )}
           </div>
           <p className={s.heroNote}>
-            Minecraft {download.minecraft} · {download.loader} · Скачивание на
-            Minecraft Inside
+            Minecraft {download.minecraft} · {download.loader} ·{" "}
+            {download.releaseName} · Google Drive
           </p>
         </ProjectIntro>
       </div>
@@ -219,12 +235,30 @@ export function ManiacPage() {
             </p>
             <h3>Сборка, моды и карта</h3>
             <p>
-              Архив и ссылки на загрузку находятся на странице проекта на
-              Minecraft Inside.
+              Maniac {download.version} — {download.releaseName}. ZIP-архив с
+              модами и картой доступен в Google Drive и на резервном зеркале
+              Яндекс Диска.
             </p>
-            <ContentLink className={s.primary} href={download.url}>
-              Скачать сборку <span aria-hidden="true">↗</span>
-            </ContentLink>
+            <div className={s.actions}>
+              <ContentLink
+                className={s.primary}
+                href={download.url}
+                aria-label={`Скачать Maniac ${download.version} с Google Drive`}
+              >
+                <span className={s.downloadLabel}>
+                  <GoogleDriveIcon />
+                  <span>Скачать Maniac {download.version}</span>
+                </span>
+                <span aria-hidden="true">↗</span>
+              </ContentLink>
+              <ContentLink className={s.secondary} href={download.mirrorUrl}>
+                <span className={s.downloadLabel}>
+                  <YandexDiskIcon />
+                  <span>Скачать с Яндекс Диска</span>
+                </span>{" "}
+                <span aria-hidden="true">↗</span>
+              </ContentLink>
+            </div>
             <p className={s.downloadNote}>{download.note}</p>
           </div>
           <div className={s.installation}>

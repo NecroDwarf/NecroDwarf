@@ -1,10 +1,14 @@
+import { characterSummaries } from "./wiki/data/registry";
 // Editorial summaries of the public 1.0–1.2 chronicles and Minecraft Inside.
-// Source mapping and unresolved archive version: CONTENT_SOURCES.md.
+// Sources and verified archive/mirror checksum: CONTENT_SOURCES.md.
 export const download = {
-  url: "https://minecraft-inside.ru/maps/188353-maniac-dbd.html",
+  version: "1.2",
+  releaseName: "Flower Cleaning",
+  url: "https://drive.usercontent.google.com/download?id=1Pe_mgHtMvoVIn5-FwG5Nj_sG0xuDvY6D&export=download&confirm=t",
+  mirrorUrl: "https://disk.yandex.ru/d/z7mqmWDD3k9OTg",
   minecraft: "1.20.1",
   loader: "Forge",
-  note: "На странице Minecraft Inside указана версия 1.1. Версия доступного архива пока не подтверждена — проверьте её перед скачиванием.",
+  note: "Если Google Drive попросит подтвердить скачивание, подтвердите его на странице сервиса. При недоступности загрузки используйте зеркало Яндекс Диска.",
 };
 
 export const gameplay = {
@@ -66,33 +70,15 @@ export const features = [
   },
 ];
 
-export const characters = [
-  {
-    name: "Хранитель кошмаров",
-    role: "Маньяк",
-    style: "Психологическое давление",
-    description:
-      "Воздействует на рассудок выживших и отправляет их в кошмарные испытания. Заставляет следить не только за маршрутом, но и за самим охотником.",
-  },
-  {
-    name: "Призрак",
-    role: "Маньяк",
-    style: "Скрытность и одержимость",
-    description:
-      "Исчезает из виду и вселяется в выживших. Играет на неожиданности: не каждая встреча с союзником оказывается безопасной.",
-  },
-  {
-    name: "Никита Додепович",
-    role: "Выживший",
-    style: "Риск и удача",
-    description:
-      "Использует особые монетки и казино-автомат. Удачный розыгрыш помогает пережить опасный момент, неудачный оборачивается новой проблемой.",
-  },
-];
+export const characters = characterSummaries([
+  "character:keeper-of-nightmares",
+  "character:ghost",
+  "character:dodepovich",
+]);
 
 export const installation = [
   "Установите Minecraft 1.20.1 и совместимый Minecraft Forge.",
-  "Откройте страницу Minecraft Inside, проверьте указанную версию и скачайте архив сборки.",
-  "Распакуйте моды из архива в папку mods вашего игрового профиля.",
-  "Распакуйте карту в папку saves того же профиля и запустите игру с Forge.",
+  "Скачайте архив Maniac 1.2 и распакуйте его. Внутри находятся mods.zip и world.zip.",
+  "Распакуйте содержимое mods.zip в папку mods вашего игрового профиля.",
+  "Создайте папку Maniac внутри saves того же профиля и распакуйте в неё содержимое world.zip: файл level.dat должен оказаться в saves/Maniac. Запустите игру с Forge.",
 ];

@@ -1,0 +1,2067 @@
+{
+  "commit": "8692f66dc76582144be85d553d43a41f189b64e7",
+  "categories": {
+    "animations": 4,
+    "blockstates": 5,
+    "geo": 4,
+    "lang": 2,
+    "loot_tables": 2,
+    "models": 76,
+    "necromancer_soul.json": 1,
+    "sounds.json": 1,
+    "sounds": 11,
+    "textures": 304
+  },
+  "files": [
+    {
+      "path": "animations/bone_arms.animation.json",
+      "bytes": 38762,
+      "blob": "7c661d74f5419bb40852973a27cce17831005a77"
+    },
+    {
+      "path": "animations/nightmare_cocoon.animation.json",
+      "bytes": 1990,
+      "blob": "249563412e44142a151ca089c2f3f94c248d93c0"
+    },
+    {
+      "path": "animations/nightmare_lighter.animation.json",
+      "bytes": 13621,
+      "blob": "000b1a24bb95b53a79352f210d751cface3b11da"
+    },
+    {
+      "path": "animations/windigo.animation.json",
+      "bytes": 13585,
+      "blob": "b07864188510b19da31d8f79782f8b25017bf8a1"
+    },
+    {
+      "path": "blockstates/computer.json",
+      "bytes": 296,
+      "blob": "fecd45ea5d1f0c08e919bc0909d9e97a01ff2d94"
+    },
+    {
+      "path": "blockstates/generator.json",
+      "bytes": 82,
+      "blob": "43f5ba95fecf820237370f3299de407d4deaebe8"
+    },
+    {
+      "path": "blockstates/nightmare_cocoon.json",
+      "bytes": 90,
+      "blob": "fce3b618dbcb3d20026133c6755ddd0e558a2699"
+    },
+    {
+      "path": "blockstates/salt_block.json",
+      "bytes": 83,
+      "blob": "cfb10fa2fa7a8e8475d419bc0af6923e1a37c9fb"
+    },
+    {
+      "path": "blockstates/slot_machine.json",
+      "bytes": 825,
+      "blob": "81a11053eb79d47bcfc7f43b8a2316d8f465bcf5"
+    },
+    {
+      "path": "geo/bone_arms.geo.json",
+      "bytes": 11254,
+      "blob": "34bbc4420f47d7ce1f33a1ce27b1d427036ec08e"
+    },
+    {
+      "path": "geo/nightmare_cocoon.geo.json",
+      "bytes": 2643,
+      "blob": "163095d37f99b21b4b9fef5776c78906725daf55"
+    },
+    {
+      "path": "geo/nightmare_lighter.geo.json",
+      "bytes": 28608,
+      "blob": "fd02c9735cf886fb01635e1faaf13b147ae39542"
+    },
+    {
+      "path": "geo/windigo.geo.json",
+      "bytes": 18393,
+      "blob": "4cd4b4904436b078aaeed3fe76c42785908ceb26"
+    },
+    {
+      "path": "lang/en_us.json",
+      "bytes": 82713,
+      "blob": "bb89dc529f882d661fe4cf09f5c516b88c8b0f4b"
+    },
+    {
+      "path": "lang/ru_ru.json",
+      "bytes": 112315,
+      "blob": "6fe179c5080d79484d5b7a0f3c0bad97b6e88df8"
+    },
+    {
+      "path": "loot_tables/blocks/computer.json",
+      "bytes": 141,
+      "blob": "49c33f492338c01796e9bf6d9106515716bbca3d"
+    },
+    {
+      "path": "loot_tables/blocks/nightmare_cocoon.json",
+      "bytes": 47,
+      "blob": "7b59ea194227fb37729052bfa8364eef7d925913"
+    },
+    {
+      "path": "models/block/clarity_3d.json",
+      "bytes": 12618,
+      "blob": "2a1601dd1b5a9e09ebe86ab297526291466936e0"
+    },
+    {
+      "path": "models/block/computer.json",
+      "bytes": 25,
+      "blob": "cd50a6d627d349c129170e582f77a4c331887592"
+    },
+    {
+      "path": "models/block/generator.json",
+      "bytes": 179191,
+      "blob": "1ac88965cb04b4c67e9c239abfaec6bd67c72b61"
+    },
+    {
+      "path": "models/block/nightmare_cocoon.json",
+      "bytes": 110,
+      "blob": "bb6e2832655d320642077f4a19650632d2bcddd4"
+    },
+    {
+      "path": "models/block/salt_block.json",
+      "bytes": 524,
+      "blob": "a47f7fbdc948d6bb139b0e74a77428ee490daf6e"
+    },
+    {
+      "path": "models/block/slot_machine.json",
+      "bytes": 22037,
+      "blob": "434a36eef0430aaf0e449e3e317eed1807068315"
+    },
+    {
+      "path": "models/block/slot_machine_upper.json",
+      "bytes": 97,
+      "blob": "0f185fd518fa194d37edd58b1a1ee5a973b229fc"
+    },
+    {
+      "path": "models/item/Clarity.json",
+      "bytes": 603,
+      "blob": "101a6c86bfab9234e4aec16ba54a3ad799a144ed"
+    },
+    {
+      "path": "models/item/agent47_tablet.json",
+      "bytes": 1017,
+      "blob": "a5946cec9d516f559cefd25c207ec5c7ad5819d7"
+    },
+    {
+      "path": "models/item/agent47_tablet_base.json",
+      "bytes": 2943,
+      "blob": "9176e45dc7274c4f7af96638b85013ce53f26cb6"
+    },
+    {
+      "path": "models/item/ancestor_soul.json",
+      "bytes": 12138,
+      "blob": "3867f7c51fd8407bd63dfbaa03554d0e0bf4cde7"
+    },
+    {
+      "path": "models/item/awakening_needle.json",
+      "bytes": 8014,
+      "blob": "e4cc51b2eb4b0f3a1569baf539cff634229503d3"
+    },
+    {
+      "path": "models/item/bandage.json",
+      "bytes": 1779,
+      "blob": "113c54c723251cb85e7b0ee29fb477f65d4f5f66"
+    },
+    {
+      "path": "models/item/beast_claw.json",
+      "bytes": 7509,
+      "blob": "b7b25bbc1deb35778fe33f8efb0b61d6e8aca7c8"
+    },
+    {
+      "path": "models/item/beehive_food.json",
+      "bytes": 7857,
+      "blob": "e288a6aec9c5f808fbcf7feb83d90c3e021f1938"
+    },
+    {
+      "path": "models/item/blue_color_card.json",
+      "bytes": 111,
+      "blob": "fd45482a538543fe903ed745caa9b9067a53af4d"
+    },
+    {
+      "path": "models/item/bong.json",
+      "bytes": 23218,
+      "blob": "ae3a3ec0a43f5301ffc09810923a98402cfdc967"
+    },
+    {
+      "path": "models/item/coin_debt.json",
+      "bytes": 105,
+      "blob": "130c75e4fa026908ca6d343b870bdb5a144f0e22"
+    },
+    {
+      "path": "models/item/coin_eagle.json",
+      "bytes": 106,
+      "blob": "0df7aab33b9c45c00a9b8d475d096d43eec13fd0"
+    },
+    {
+      "path": "models/item/coin_elusiveness.json",
+      "bytes": 112,
+      "blob": "ea50638cd393bd6051a524a32ec2c0ac4c537ec7"
+    },
+    {
+      "path": "models/item/coin_fate.json",
+      "bytes": 105,
+      "blob": "abf9f036326d3c8f97c29932540772b657e6652e"
+    },
+    {
+      "path": "models/item/coin_health.json",
+      "bytes": 107,
+      "blob": "0608ce44738d72fcce1ac8e557b5816f53519647"
+    },
+    {
+      "path": "models/item/coin_insight.json",
+      "bytes": 108,
+      "blob": "a2d8d47300e970b2387dc030c7c0916eafe3fefb"
+    },
+    {
+      "path": "models/item/coin_reroll.json",
+      "bytes": 107,
+      "blob": "d0276d0550e98c70cb636891dd1788b86ae154d2"
+    },
+    {
+      "path": "models/item/coin_shackles.json",
+      "bytes": 109,
+      "blob": "3c084069519711f772857de805d8d8a52f3bad81"
+    },
+    {
+      "path": "models/item/computer.json",
+      "bytes": 7229,
+      "blob": "c5bee83a52da956d392a1a94fc0034d077f4022d"
+    },
+    {
+      "path": "models/item/death_scythe.json",
+      "bytes": 3881,
+      "blob": "b938bc8c94efacae69e3cfc895a4b84950608cc9"
+    },
+    {
+      "path": "models/item/forget_me_not.json",
+      "bytes": 109,
+      "blob": "d19d60d495ae0c2b43fc39e936b67409ba88b885"
+    },
+    {
+      "path": "models/item/generator.json",
+      "bytes": 43,
+      "blob": "6770a58f9da58dfdc4336e892ffdd2e10e9231a4"
+    },
+    {
+      "path": "models/item/ghost_hand.json",
+      "bytes": 106,
+      "blob": "f1916a28a7e618cc793477e1a772e3d93ebc01d6"
+    },
+    {
+      "path": "models/item/green_color_card.json",
+      "bytes": 112,
+      "blob": "859e9963bb0fad30483f6f7a0c464cc29e7495f9"
+    },
+    {
+      "path": "models/item/guardian_head.json",
+      "bytes": 100,
+      "blob": "309e29ea4f2e6b25197f12852915e76f9c46b001"
+    },
+    {
+      "path": "models/item/hook.json",
+      "bytes": 2795,
+      "blob": "805d251844a1464887c312f775a45bb25dfd511a"
+    },
+    {
+      "path": "models/item/maniac_blindness_fragment.json",
+      "bytes": 120,
+      "blob": "aa11e3c9b0334af12c83fb9ea11c27f3fd6baf9f"
+    },
+    {
+      "path": "models/item/maniac_glowing_fragment.json",
+      "bytes": 118,
+      "blob": "70843eecb2888b3843b74e84fac70c91584bb052"
+    },
+    {
+      "path": "models/item/maniac_healing_fragment.json",
+      "bytes": 118,
+      "blob": "2e19e0ccec16ed91a5ec466f632ba1e0ae9c7f3e"
+    },
+    {
+      "path": "models/item/maniac_regen_fragment.json",
+      "bytes": 116,
+      "blob": "3dea7562b1ab89f8a46578c2d18736c134de9b6e"
+    },
+    {
+      "path": "models/item/maniac_selection.json",
+      "bytes": 101,
+      "blob": "c67428754cdb40efe423497fe5294bb9f3038d68"
+    },
+    {
+      "path": "models/item/maniac_slow_falling_fragment.json",
+      "bytes": 123,
+      "blob": "5da39f4eda34937fb603d3eac410040720b90e3e"
+    },
+    {
+      "path": "models/item/maniac_slowness_fragment.json",
+      "bytes": 119,
+      "blob": "66819cca83a5e8b2e73c45146bd6afcca3a97828"
+    },
+    {
+      "path": "models/item/maniac_speed_fragment.json",
+      "bytes": 116,
+      "blob": "37c0338e9caee8fcf4e938b92c0403434b168cc3"
+    },
+    {
+      "path": "models/item/maniac_strength_fragment.json",
+      "bytes": 119,
+      "blob": "c1e6ecfa77e76803555930ee9b7ee2acd6f99d87"
+    },
+    {
+      "path": "models/item/maniac_weakness_fragment.json",
+      "bytes": 119,
+      "blob": "6dd9d82e951d99148bf6dc21c17817d8fb252790"
+    },
+    {
+      "path": "models/item/medic_tablet.json",
+      "bytes": 3234,
+      "blob": "0959a9ee0edb4975c1dba07a7b8825bd6d33b5d3"
+    },
+    {
+      "path": "models/item/medical_mask.json",
+      "bytes": 97,
+      "blob": "7eb785492dd6a46807302166564d0d1bac636f71"
+    },
+    {
+      "path": "models/item/microphone.json",
+      "bytes": 3703,
+      "blob": "2433d0be6e84d38127283a0d9969df3dea0b34da"
+    },
+    {
+      "path": "models/item/necromancer_boots.json",
+      "bytes": 112,
+      "blob": "f8540c47ea162f25b87181566fe67c28d981fc9d"
+    },
+    {
+      "path": "models/item/necromancer_chestplate.json",
+      "bytes": 117,
+      "blob": "20cdb93a84406e3b725f9018cae43b09c71b5d69"
+    },
+    {
+      "path": "models/item/necromancer_helmet.json",
+      "bytes": 113,
+      "blob": "78180383ded12b4a746e08771ce3c42696d6ffec"
+    },
+    {
+      "path": "models/item/necromancer_leggings.json",
+      "bytes": 115,
+      "blob": "d40d0354117b09ceda9cbc9d02dfacf79ff599c9"
+    },
+    {
+      "path": "models/item/necromancer_staff.json",
+      "bytes": 45061,
+      "blob": "79b9b13b054eb60457f8a049be08248b902a529f"
+    },
+    {
+      "path": "models/item/nether_swap.json",
+      "bytes": 220467,
+      "blob": "95188bedbe982d0b4748433694aae05f09a937cb"
+    },
+    {
+      "path": "models/item/nightmare_cocoon.json",
+      "bytes": 51,
+      "blob": "58c47413f939ff9057b84926dccd53ce2876124f"
+    },
+    {
+      "path": "models/item/nightmare_lighter.json",
+      "bytes": 922,
+      "blob": "977b4a1f0d09528f0b56c4f89cb55311d6ca4c31"
+    },
+    {
+      "path": "models/item/paint_can.json",
+      "bytes": 105,
+      "blob": "8cd6b48b222f979a7dd49e95f590aacdd0d03e07"
+    },
+    {
+      "path": "models/item/perk_token.json",
+      "bytes": 105,
+      "blob": "94fc68f3f123adf66a6cdaf0691bc8b2ec4b6e31"
+    },
+    {
+      "path": "models/item/pink_orchid.json",
+      "bytes": 97,
+      "blob": "9399c24e9132ba0658c4b1393f83da590c6cf2d9"
+    },
+    {
+      "path": "models/item/plague_lantern.json",
+      "bytes": 4773,
+      "blob": "4ac74745a98f7424b46e5c2d973e6cfdede03a3e"
+    },
+    {
+      "path": "models/item/pre_game_ready_item.json",
+      "bytes": 104,
+      "blob": "e05cfb5e2f318137f983fe324ffacbc8ea7b3bbb"
+    },
+    {
+      "path": "models/item/pre_game_ready_item_active.json",
+      "bytes": 111,
+      "blob": "5c33a81556b9de688fdbe1e14ec707b8ade30ecf"
+    },
+    {
+      "path": "models/item/ready_item.json",
+      "bytes": 95,
+      "blob": "43e9e7065db03f453fcadff303b1661701a54db2"
+    },
+    {
+      "path": "models/item/ready_item_active.json",
+      "bytes": 102,
+      "blob": "0df7ed2cd8eb2028ea0a3bd1e8a8b7075b448472"
+    },
+    {
+      "path": "models/item/recipe_book.json",
+      "bytes": 106,
+      "blob": "f15bdae45ccdb1b8c00356da68ed9eec5042ad67"
+    },
+    {
+      "path": "models/item/red_color_card.json",
+      "bytes": 110,
+      "blob": "ea6708f7797605b4048cc30226fc2d90b284bcd7"
+    },
+    {
+      "path": "models/item/rose_colored_glasses.json",
+      "bytes": 57,
+      "blob": "a0be47265e999c66d657793f03633ec611ab50bf"
+    },
+    {
+      "path": "models/item/rose_colored_glasses_inventory.json",
+      "bytes": 116,
+      "blob": "6b8687d7bf7624bdc805bfa01c87cc1e44e07d55"
+    },
+    {
+      "path": "models/item/salt.json",
+      "bytes": 99,
+      "blob": "e5ea5f724d50a00bfc0d16f863bfb0cdb952d8f7"
+    },
+    {
+      "path": "models/item/sber_sprout.json",
+      "bytes": 97,
+      "blob": "b663b0bb2382e9bf43ea172475faa14771c7cce9"
+    },
+    {
+      "path": "models/item/settings_item.json",
+      "bytes": 109,
+      "blob": "fbf5cb9d126518a73ceb4fb8741f3bd55df1cc33"
+    },
+    {
+      "path": "models/item/shop_token.json",
+      "bytes": 105,
+      "blob": "b5a85c24f3aa4243f7dc0faee7445d75cef6073a"
+    },
+    {
+      "path": "models/item/slot_machine.json",
+      "bytes": 47,
+      "blob": "278e82ac034a8ddb794b2cb6bc131fcf4ee6a04e"
+    },
+    {
+      "path": "models/item/survivor_selection.json",
+      "bytes": 103,
+      "blob": "93b5ea778a0bea196547eddd59b7ea5cf7baa1c8"
+    },
+    {
+      "path": "models/item/syringe.json",
+      "bytes": 2773,
+      "blob": "a41f1657b363d9c3dc9db9812fae790f671a8e97"
+    },
+    {
+      "path": "models/item/totem_spawn_item.json",
+      "bytes": 4462,
+      "blob": "c32063ac9d6bf71b7f2893933e808aa65a3e5ba7"
+    },
+    {
+      "path": "models/item/toy_knife.json",
+      "bytes": 689,
+      "blob": "4a1798a88e1a5ac39d181681ffe626f21e172d1f"
+    },
+    {
+      "path": "models/item/voting_ticket.json",
+      "bytes": 98,
+      "blob": "8ee72df093768306b960b0b35c15b49197f9dc14"
+    },
+    {
+      "path": "necromancer_soul.json",
+      "bytes": 157,
+      "blob": "beaf04bb7ddbb4f3f9fa8c0237a683a30ade6514"
+    },
+    {
+      "path": "sounds.json",
+      "bytes": 1242,
+      "blob": "7e3a3077acc5e564cf565709b96271c88498360d"
+    },
+    {
+      "path": "sounds/coin_flip.ogg",
+      "bytes": 11839,
+      "blob": "747e819b08a12de0169b52ca0f7e4dfa9827c888"
+    },
+    {
+      "path": "sounds/heartbeat.ogg",
+      "bytes": 36267,
+      "blob": "c8ce0725c350ca31a7347ede6490fd3b55f5c634"
+    },
+    {
+      "path": "sounds/qte_crit.ogg",
+      "bytes": 17399,
+      "blob": "9a8f18280f0fbda6ca6aa96e910dcc2733e56454"
+    },
+    {
+      "path": "sounds/qte_fail.ogg",
+      "bytes": 5612,
+      "blob": "00e83da8968f9bb2ff49743fc25638af992fa5ba"
+    },
+    {
+      "path": "sounds/qte_success.ogg",
+      "bytes": 12364,
+      "blob": "d829fb7a382abe06c3deefab9e2fdc47f4f11efc"
+    },
+    {
+      "path": "sounds/scream_audio.ogg",
+      "bytes": 25858,
+      "blob": "4593b8821f8863977dca92069b5c6471fc5616c8"
+    },
+    {
+      "path": "sounds/slot_death.ogg",
+      "bytes": 34887,
+      "blob": "d5c864666d672ab4a3826fe06f79a741ab17bb4a"
+    },
+    {
+      "path": "sounds/slot_insert.ogg",
+      "bytes": 7930,
+      "blob": "f0e6b07a44f2074bf0c45e7de4e26f8aac8c04b5"
+    },
+    {
+      "path": "sounds/slot_jackpot.ogg",
+      "bytes": 1161962,
+      "blob": "e8893310ef5e69171aade33c0676875d8043c058"
+    },
+    {
+      "path": "sounds/slot_spin.ogg",
+      "bytes": 92688,
+      "blob": "27125cca65084bdd874c77906ec0fadfc173512f"
+    },
+    {
+      "path": "sounds/slot_win.ogg",
+      "bytes": 16694,
+      "blob": "12dc927cdc797f441767baca408da10e710810cc"
+    },
+    {
+      "path": "textures/block/baltika.png",
+      "bytes": 452509,
+      "blob": "d1cc722918f5ddb4e893a04e508c42aee4402e0a"
+    },
+    {
+      "path": "textures/block/baltika_7.png",
+      "bytes": 686822,
+      "blob": "4e5f90f676f300be1a362705f2672fcafef594a4"
+    },
+    {
+      "path": "textures/block/bong_text.png",
+      "bytes": 224,
+      "blob": "100aadd231c8c2f8169d30590864302a65239760"
+    },
+    {
+      "path": "textures/block/bong_text2.png",
+      "bytes": 422,
+      "blob": "3a468e6b18638cf34e902827dcfbc78aa321102b"
+    },
+    {
+      "path": "textures/block/box.png",
+      "bytes": 174,
+      "blob": "628c2b417f7868fec6195fe7e10ee0a3804fbb63"
+    },
+    {
+      "path": "textures/block/button.png",
+      "bytes": 171,
+      "blob": "f97fdf2bae0212b00567fd46a17cf968b25e3409"
+    },
+    {
+      "path": "textures/block/frame.png",
+      "bytes": 132,
+      "blob": "0eaa588ad8e5e4b909740aed76adc630aa768d3e"
+    },
+    {
+      "path": "textures/block/freddy.png",
+      "bytes": 13204,
+      "blob": "f0916653d8e17ed31bcbcc4ca52b9691728be729"
+    },
+    {
+      "path": "textures/block/generator_role.png",
+      "bytes": 464,
+      "blob": "8fe642bae1d583b56f52bb8342999418f23af6ef"
+    },
+    {
+      "path": "textures/block/handle.png",
+      "bytes": 133,
+      "blob": "a45ab3ee86c6ce1286d7168943d9ba4f6938bad3"
+    },
+    {
+      "path": "textures/block/nightmare_cocoon.png",
+      "bytes": 2853,
+      "blob": "591d7ceb54ee602eafdeac41d0b7d559c6fe56e1"
+    },
+    {
+      "path": "textures/block/redstone_dust_line0.png",
+      "bytes": 207,
+      "blob": "27da5765fead2b414c6045e0776f75927667adad"
+    },
+    {
+      "path": "textures/block/salt.png",
+      "bytes": 189,
+      "blob": "43bd08fe4471301a42ef8ec81d0e9c2b66180851"
+    },
+    {
+      "path": "textures/block/slot_machine/bitbam.png",
+      "bytes": 1625263,
+      "blob": "c0c59d56c153930aa3cfe506e5ac7d85a02d6834"
+    },
+    {
+      "path": "textures/block/slot_machine/lever.png",
+      "bytes": 658,
+      "blob": "d15180a399fc1e416a47042a8805e93ad14db8e5"
+    },
+    {
+      "path": "textures/block/slot_machine/machine.png",
+      "bytes": 31766,
+      "blob": "450aa9dda134b2d77c853240516a1a5cdffa380e"
+    },
+    {
+      "path": "textures/block/slot_machine/slot.png",
+      "bytes": 4566,
+      "blob": "5a6e4bffa3baa7034eccb8124c737609a039be0a"
+    },
+    {
+      "path": "textures/block/slot_machine/svinline.png",
+      "bytes": 504570,
+      "blob": "1c29af084d556db8fd6880b75a4fd79fe79fb586"
+    },
+    {
+      "path": "textures/block/slot_machine/transparent.png",
+      "bytes": 126,
+      "blob": "dde5384b499bad0372cf4cf78c81299bd2771364"
+    },
+    {
+      "path": "textures/block/small_roles.png",
+      "bytes": 599,
+      "blob": "19868752c73a80ba354921b433a099fa32c57045"
+    },
+    {
+      "path": "textures/block/tablet.png",
+      "bytes": 147,
+      "blob": "c29160fa2c9143e2b2fb22c3c79325cf6a7ab239"
+    },
+    {
+      "path": "textures/block/texture.png",
+      "bytes": 139,
+      "blob": "80a91fc31722a24bf2f934a9319eeac3a000834a"
+    },
+    {
+      "path": "textures/block/texture_computer.png",
+      "bytes": 1187,
+      "blob": "5f64f9384a1f4022e174ee076eb7c60abe6664a3"
+    },
+    {
+      "path": "textures/bud_dispatcher/bud.png",
+      "bytes": 4333,
+      "blob": "299a1c3d96ce4f1fa9699b6b9dfa545cd426c4b7"
+    },
+    {
+      "path": "textures/bud_dispatcher/flowers.png",
+      "bytes": 575506,
+      "blob": "2927a5d81a68734901c0e78b8c37ef1fd929de8c"
+    },
+    {
+      "path": "textures/bud_dispatcher/flowers_cards.png",
+      "bytes": 16163,
+      "blob": "3c704a8f93c891e1c70ff03ffd2034fde47d16e8"
+    },
+    {
+      "path": "textures/bud_dispatcher/vine.png",
+      "bytes": 146,
+      "blob": "f8b5122d70925ddc2b5c5454f93ad40d764fb33e"
+    },
+    {
+      "path": "textures/cosmetic/halo.png",
+      "bytes": 239,
+      "blob": "ce84accf689d0165d03b64a625f034d9357dd57a"
+    },
+    {
+      "path": "textures/cosmetics/bleeding_axe.png",
+      "bytes": 5193,
+      "blob": "9b3454c37f7312b5c9e93790f02337219c80547d"
+    },
+    {
+      "path": "textures/cosmetics/frost_sword.png",
+      "bytes": 4458,
+      "blob": "e7a04fd035c958c654fc8e57f999ecbe5127c0cf"
+    },
+    {
+      "path": "textures/cosmetics/halo.png",
+      "bytes": 48482,
+      "blob": "6acd98012293056818f8e9549002cceece848de1"
+    },
+    {
+      "path": "textures/cosmetics/particles_enchant.png",
+      "bytes": 45377,
+      "blob": "a52109d67eb730b18e8765caea265ee3b459a2ce"
+    },
+    {
+      "path": "textures/cosmetics/particles_flame.png",
+      "bytes": 29607,
+      "blob": "aa8594bfb8a3b88149a12d388224084e6c842b02"
+    },
+    {
+      "path": "textures/cosmetics/particles_hearts.png",
+      "bytes": 32415,
+      "blob": "97aff5c4493270fea7ee0fab7c2a2d839eeb7ca8"
+    },
+    {
+      "path": "textures/cosmetics/particles_smoke.png",
+      "bytes": 2620,
+      "blob": "679661d5c538a6aba16eaa8958e482589b61f139"
+    },
+    {
+      "path": "textures/cosmetics/shadow_blade.png",
+      "bytes": 38039,
+      "blob": "f5b06951bd67f6105b38ec2d9ff58678a5fd20e8"
+    },
+    {
+      "path": "textures/cosmetics/trail_fire.png",
+      "bytes": 44872,
+      "blob": "5bc3942df3cce6b893efab96fec30b7519c4b308"
+    },
+    {
+      "path": "textures/entity/bone_arms.png",
+      "bytes": 205,
+      "blob": "2a19a736c3c0e726f574492934e2ac843c2d814c"
+    },
+    {
+      "path": "textures/entity/hook.png",
+      "bytes": 1139,
+      "blob": "7d40ee6e3b293462e34dd1b318f326c7b855db27"
+    },
+    {
+      "path": "textures/entity/plague_orb.png",
+      "bytes": 2216,
+      "blob": "82a516af83cbdf257457e03a27d20e9e22de42f2"
+    },
+    {
+      "path": "textures/entity/rose_colored_glasses.png",
+      "bytes": 1392,
+      "blob": "271ee2b71f9bc417215bbb74f38275b61a861275"
+    },
+    {
+      "path": "textures/entity/shaman_totem.png",
+      "bytes": 1391,
+      "blob": "875d89347362a99e795bf1a48da80c2442dbc527"
+    },
+    {
+      "path": "textures/entity/windigo.png",
+      "bytes": 26441,
+      "blob": "2ddf5ff193172cf2bb4de272ffe70718259203e4"
+    },
+    {
+      "path": "textures/entity/windigo_light.png",
+      "bytes": 213,
+      "blob": "143df2a04be72266addbc2030554d160789c0499"
+    },
+    {
+      "path": "textures/gui/abilities/beast_claw.png",
+      "bytes": 7144,
+      "blob": "99cd1763795113822cc0361f3eda4998933e412d"
+    },
+    {
+      "path": "textures/gui/abilities/bong.png",
+      "bytes": 519602,
+      "blob": "ac45314b325b1483d0ec76f8098f26d2b93d7b89"
+    },
+    {
+      "path": "textures/gui/abilities/concentrated_nightmare.png",
+      "bytes": 2371273,
+      "blob": "eb1dcf6d7318e4100f0d15d43fd7fa8bc394b1f9"
+    },
+    {
+      "path": "textures/gui/abilities/death_scythe.png",
+      "bytes": 178235,
+      "blob": "9d43b9e6931b599a15841bcd6a5895b029008fec"
+    },
+    {
+      "path": "textures/gui/abilities/ghost_full_invisibility.png",
+      "bytes": 28235,
+      "blob": "67177b3f062460df62bb5c7273374106a6c911f1"
+    },
+    {
+      "path": "textures/gui/abilities/hook.png",
+      "bytes": 163799,
+      "blob": "4d64ab184e81d88a2d557b8c0316c5af1e7efcbc"
+    },
+    {
+      "path": "textures/gui/abilities/medical_mask.png",
+      "bytes": 3218,
+      "blob": "961fc14efab72cbd496a1521256d8a2a5242d02b"
+    },
+    {
+      "path": "textures/gui/abilities/microphone.png",
+      "bytes": 609391,
+      "blob": "81265a98315422b774ed9b7e1f242275f1a76f06"
+    },
+    {
+      "path": "textures/gui/abilities/necromancer_armor.png",
+      "bytes": 411321,
+      "blob": "497ed4d7a6fe2fa0e841fe079809a8c1d983dbbe"
+    },
+    {
+      "path": "textures/gui/abilities/nether_swap.png",
+      "bytes": 530291,
+      "blob": "f7ff7236b81fe9d3ed8cac5bc41e706dc723c398"
+    },
+    {
+      "path": "textures/gui/abilities/plague_lantern.png",
+      "bytes": 104935,
+      "blob": "c74907c414fa6711f28e0cd0c8502d3555cb474d"
+    },
+    {
+      "path": "textures/gui/abilities/screamer.jpg",
+      "bytes": 106563,
+      "blob": "8d6328839c6c5eb3eba93c228248508050c8ce4c"
+    },
+    {
+      "path": "textures/gui/flesh_heap.png",
+      "bytes": 30228,
+      "blob": "966eac80e7be2a036f9c68e3ec989494dc75b450"
+    },
+    {
+      "path": "textures/gui/frescos/agent.png",
+      "bytes": 1052709,
+      "blob": "8bef262cc42ae6f7f517f785d423759bbaa8812c"
+    },
+    {
+      "path": "textures/gui/frescos/alchemist.png",
+      "bytes": 617640,
+      "blob": "f3c7a94f9e908390c48ebbd2cd2a5102e092c354"
+    },
+    {
+      "path": "textures/gui/frescos/death.png",
+      "bytes": 1093197,
+      "blob": "dad8a10a022a19fa5890c33706e650d6c0d9c678"
+    },
+    {
+      "path": "textures/gui/frescos/doctor.png",
+      "bytes": 1197661,
+      "blob": "673f3a79ff6efb4fc1f58d253686a0f63b237663"
+    },
+    {
+      "path": "textures/gui/frescos/dodepovich.png",
+      "bytes": 3024846,
+      "blob": "835e7c883b36173c2fb3e91964cc9a4a5f3740a6"
+    },
+    {
+      "path": "textures/gui/frescos/freddy_bear.png",
+      "bytes": 1046065,
+      "blob": "aa7495dac1c87769671f5c0444c3e9e67e6f553e"
+    },
+    {
+      "path": "textures/gui/frescos/ghost.png",
+      "bytes": 802206,
+      "blob": "6d054f4304486396d7a09f499526e363fe7fe2a5"
+    },
+    {
+      "path": "textures/gui/frescos/keeper_of_nightmares.png",
+      "bytes": 3187081,
+      "blob": "6dd72cb08354d2b27b3c458ef07feeeaa8b22eaf"
+    },
+    {
+      "path": "textures/gui/frescos/mefedronshchik.png",
+      "bytes": 1188174,
+      "blob": "f6cd254f0c3133967bcf6aec7d5ec5f208eebad0"
+    },
+    {
+      "path": "textures/gui/frescos/necromancer.png",
+      "bytes": 1072595,
+      "blob": "2918cc081ffcf35896e09183098ecd2def8f565f"
+    },
+    {
+      "path": "textures/gui/frescos/plague_doctor.png",
+      "bytes": 557973,
+      "blob": "9e63a0ef9bc9430b90473ab30db7d7f9b6cf6a92"
+    },
+    {
+      "path": "textures/gui/frescos/pudge.png",
+      "bytes": 1064928,
+      "blob": "a455490f9f3db3d7b0c06c57f1f75b9829c894ad"
+    },
+    {
+      "path": "textures/gui/frescos/scientist.png",
+      "bytes": 1085417,
+      "blob": "0d08cf8d18463bb6fee4f59a5158d698bdbd8ef7"
+    },
+    {
+      "path": "textures/gui/frescos/shaman.png",
+      "bytes": 1145572,
+      "blob": "7727020acb84150e55034aaa63e13bc55b83c199"
+    },
+    {
+      "path": "textures/gui/frescos/ursa.png",
+      "bytes": 1062703,
+      "blob": "b568e259aab2a16d7ae41e7d47ac8e7a7f0f2967"
+    },
+    {
+      "path": "textures/gui/fury_swipes.png",
+      "bytes": 31894,
+      "blob": "8704e3db5de3a8edd361c7805b462feae5de3177"
+    },
+    {
+      "path": "textures/gui/guide/before_start_game/custom_hud.png",
+      "bytes": 13543,
+      "blob": "6536444650643b42e930d07f3b85808b3a44e3cb"
+    },
+    {
+      "path": "textures/gui/guide/before_start_game/full_custom_hud.png",
+      "bytes": 10553,
+      "blob": "819edfc1ccdee4b902cbfff97239c61743a1e581"
+    },
+    {
+      "path": "textures/gui/guide/before_start_game/items_for_game.png",
+      "bytes": 2905,
+      "blob": "ca102c7b467d092bcf58adb53ca193d00c0deebf"
+    },
+    {
+      "path": "textures/gui/guide/before_start_game/perks.png",
+      "bytes": 20021,
+      "blob": "1a7ce4768a1f101a40535d1e584bb9cc6db19409"
+    },
+    {
+      "path": "textures/gui/guide/before_start_game/pick_hero.png",
+      "bytes": 235532,
+      "blob": "66a43e2858f47a860137643bf53745ab90c9e2d1"
+    },
+    {
+      "path": "textures/gui/guide/before_start_game/pick_map.png",
+      "bytes": 95355,
+      "blob": "bb4afdece2baa3b006a7e62370628e8bcf6d27eb"
+    },
+    {
+      "path": "textures/gui/guide/before_start_game/start_game.png",
+      "bytes": 5174,
+      "blob": "31300bf13de43758db44914664e84461e3a49657"
+    },
+    {
+      "path": "textures/gui/guide/icon/upd_guide.png",
+      "bytes": 239290,
+      "blob": "9647a2aa058c86e026c52c789b1890110a8a8adf"
+    },
+    {
+      "path": "textures/gui/guide/in_game/count_computers.png",
+      "bytes": 19833,
+      "blob": "f84e6eaaa029dc8bcf498879d1ae015cc0935b37"
+    },
+    {
+      "path": "textures/gui/guide/maps/active_computer.png",
+      "bytes": 1660330,
+      "blob": "8caecc2d1462e2cafd951ff95afb85c7a15c5f3d"
+    },
+    {
+      "path": "textures/gui/guide/maps/computers.png",
+      "bytes": 200103,
+      "blob": "fa3a4f6501f62f2b18641167a03db9018dc848f2"
+    },
+    {
+      "path": "textures/gui/guide/maps/computers_watch.png",
+      "bytes": 224535,
+      "blob": "64e7776f726c8ae11c5840bfcec17dd8571e91f2"
+    },
+    {
+      "path": "textures/gui/guide/maps/safe_with_weapon.png",
+      "bytes": 701249,
+      "blob": "49080142fe790fe90cdbe941c45bfa117e5c3ba5"
+    },
+    {
+      "path": "textures/gui/guide/mechanics/alch.png",
+      "bytes": 21025,
+      "blob": "98819aba818d16cc748b919ddd8b18c3213d48be"
+    },
+    {
+      "path": "textures/gui/guide/mechanics/characters/addiction.png",
+      "bytes": 5423,
+      "blob": "e777aa0b07254ef368756b5c652d2f0d7d85a220"
+    },
+    {
+      "path": "textures/gui/guide/mechanics/characters/agent47_tablet.png",
+      "bytes": 194995,
+      "blob": "e6229ffbc55cdbb7c71be05ac0b4d9061edc6c87"
+    },
+    {
+      "path": "textures/gui/guide/mechanics/characters/agent_effect.png",
+      "bytes": 7211,
+      "blob": "ad6cb36a207e08e433d0000969fd76c5f6045d8b"
+    },
+    {
+      "path": "textures/gui/guide/mechanics/characters/agent_hunt.png",
+      "bytes": 4748,
+      "blob": "291e90294ac4488f68337081fad1c9a52749a2c3"
+    },
+    {
+      "path": "textures/gui/guide/mechanics/characters/agent_shop.png",
+      "bytes": 3793,
+      "blob": "f9edfced9b5ce83eb5afa070a1c7ec5a5000ee21"
+    },
+    {
+      "path": "textures/gui/guide/mechanics/characters/alch.png",
+      "bytes": 9970,
+      "blob": "0ea2c6be1747fbb051ae75c922c1eabc7b668eea"
+    },
+    {
+      "path": "textures/gui/guide/mechanics/characters/cocoon.png",
+      "bytes": 79739,
+      "blob": "0bbef1652bc8dbe91f6c92b87b479c63a65564e6"
+    },
+    {
+      "path": "textures/gui/guide/mechanics/characters/death_race.png",
+      "bytes": 669,
+      "blob": "d015c9a544419f1af09fa706a614351d267d1f62"
+    },
+    {
+      "path": "textures/gui/guide/mechanics/characters/flesh_heap.png",
+      "bytes": 3052,
+      "blob": "247e81eb925df42b237c6ff7c659d260738cc760"
+    },
+    {
+      "path": "textures/gui/guide/mechanics/characters/generator.png",
+      "bytes": 138045,
+      "blob": "a0ac42ea53f3f79f493ac772feca45b3dc4df5fd"
+    },
+    {
+      "path": "textures/gui/guide/mechanics/characters/generator_fnaf.png",
+      "bytes": 4406,
+      "blob": "5d610ab7691b6b22d1d785ea34039a1b88c4a7dd"
+    },
+    {
+      "path": "textures/gui/guide/mechanics/characters/medic_interface.png",
+      "bytes": 6368,
+      "blob": "d30a4d10ced4bb0191fdc7d2cae5d93e8fdd52c8"
+    },
+    {
+      "path": "textures/gui/guide/mechanics/characters/medic_tablet.png",
+      "bytes": 80764,
+      "blob": "1f5b236603a3b5ec2d7d76224159c6151681e11c"
+    },
+    {
+      "path": "textures/gui/guide/mechanics/characters/needle_minigame.png",
+      "bytes": 13587,
+      "blob": "9ae78f653c1b9f79ddc998977daa671a6c2dba1b"
+    },
+    {
+      "path": "textures/gui/guide/mechanics/characters/nightmare/area.png",
+      "bytes": 121589,
+      "blob": "2e94b904df1a43b9aab813d2924ba11663b9edf7"
+    },
+    {
+      "path": "textures/gui/guide/mechanics/characters/nightmare/chudic.png",
+      "bytes": 377486,
+      "blob": "e7c8ee221914407d99834c00fdfa6dbc14302b97"
+    },
+    {
+      "path": "textures/gui/guide/mechanics/characters/nightmare/maze.png",
+      "bytes": 129179,
+      "blob": "e584835f5e86deb5aec4bdcd2e191b561e831fba"
+    },
+    {
+      "path": "textures/gui/guide/mechanics/characters/nightmare/race.png",
+      "bytes": 308021,
+      "blob": "ee994c6ccc04f0b1adf8676ca263a9931eba4d22"
+    },
+    {
+      "path": "textures/gui/guide/mechanics/characters/plague.png",
+      "bytes": 635,
+      "blob": "f2b420898eef911d906ffa1b9e5c27e623fcffa2"
+    },
+    {
+      "path": "textures/gui/guide/mechanics/characters/stack_ursa.png",
+      "bytes": 1053,
+      "blob": "6d4fe25ef1d035191849ccf27ab594689594fd5a"
+    },
+    {
+      "path": "textures/gui/guide/mechanics/close_door.png",
+      "bytes": 377418,
+      "blob": "0a8416fbff9833ec7aee0d2414e1969f8cec5707"
+    },
+    {
+      "path": "textures/gui/guide/mechanics/close_hatch.png",
+      "bytes": 399189,
+      "blob": "89a53d3136c3b0e46b802327a838e54747b44775"
+    },
+    {
+      "path": "textures/gui/guide/mechanics/downed.png",
+      "bytes": 1293190,
+      "blob": "1ebc52d695018774382e6c21a3cf6032d36a3392"
+    },
+    {
+      "path": "textures/gui/guide/mechanics/open_door.png",
+      "bytes": 602289,
+      "blob": "c3611f1f1207e3136e164d58fa66d464ab2e3319"
+    },
+    {
+      "path": "textures/gui/guide/mechanics/open_hatch.png",
+      "bytes": 622929,
+      "blob": "7f9c769f2be170d0b36511cbc4de207f25e416f7"
+    },
+    {
+      "path": "textures/gui/guide/mechanics/qte.png",
+      "bytes": 11955,
+      "blob": "d3073d44a622711837ac0df587fe57969a9f04e6"
+    },
+    {
+      "path": "textures/gui/guide/mechanics/ventilation.png",
+      "bytes": 959421,
+      "blob": "6a74556a981967ddc4f0719363342d1480300596"
+    },
+    {
+      "path": "textures/gui/guide/start_game/start_maniac_freddy.png",
+      "bytes": 43180,
+      "blob": "6b425debf11e56d36e6305af1ba45c256846668b"
+    },
+    {
+      "path": "textures/gui/guide/start_game/start_maniac_mansion.png",
+      "bytes": 58027,
+      "blob": "189f4c2b77cb88bbf1a9c3dbaef8c7c150b2330f"
+    },
+    {
+      "path": "textures/gui/guide/start_game/start_survivors_freddy.png",
+      "bytes": 145707,
+      "blob": "9617a534a4f1005b81f8934889ab3adb69e2a42d"
+    },
+    {
+      "path": "textures/gui/guide/start_game/start_survivors_mansion.png",
+      "bytes": 330294,
+      "blob": "db2738667811359738e6b6e396968f09ed0a9f7d"
+    },
+    {
+      "path": "textures/gui/maps/fort.png",
+      "bytes": 2680877,
+      "blob": "23b6a4d145f7242b9e1d2a5746a6c1075e3225b2"
+    },
+    {
+      "path": "textures/gui/maps/mansion.png",
+      "bytes": 1802958,
+      "blob": "e6252643c5a6e09d30f6d28b446e4cdd63911b67"
+    },
+    {
+      "path": "textures/gui/maps/pizzeria.png",
+      "bytes": 922656,
+      "blob": "90b63c591b94114c02f39af2992f36a905265220"
+    },
+    {
+      "path": "textures/gui/pink_orchid_base.png",
+      "bytes": 196,
+      "blob": "c73a90a18604da5fcbd7c0b73e2034e264f772ea"
+    },
+    {
+      "path": "textures/gui/pink_orchid_petal.png",
+      "bytes": 115,
+      "blob": "dc5a497db68b1a234f1238d94baf6d5d5b3701ae"
+    },
+    {
+      "path": "textures/gui/pregame_ready/bedrock_cancel.png",
+      "bytes": 378,
+      "blob": "ea6c4d6bf0e6353771c993d5fb5038039a7200b1"
+    },
+    {
+      "path": "textures/gui/pregame_ready/bedrock_check.png",
+      "bytes": 611,
+      "blob": "0a3e76ca6cc4fb65d6de57b2d820cb03a108caa9"
+    },
+    {
+      "path": "textures/gui/recipe_book_background.png",
+      "bytes": 22402,
+      "blob": "2041c674f43d1cfe248687d2438dda529d4cb1ab"
+    },
+    {
+      "path": "textures/gui/tab/lobby.png",
+      "bytes": 8161,
+      "blob": "6be52ceef1ea853389bdc7816f9fa6cafc766e95"
+    },
+    {
+      "path": "textures/gui/tab/maniacs.png",
+      "bytes": 10410,
+      "blob": "fbb97376169f7135c12e211458c5ab66ab5721a3"
+    },
+    {
+      "path": "textures/gui/tab/survivors.png",
+      "bytes": 13739,
+      "blob": "aa3bd48e1c720989ce843292af97e0c2210e674c"
+    },
+    {
+      "path": "textures/item/awakening_needle.png",
+      "bytes": 98770,
+      "blob": "5228bd4693f3ad037efcbb9252a0e5457d917747"
+    },
+    {
+      "path": "textures/item/bandage_texture.png",
+      "bytes": 100,
+      "blob": "3fc2fd93000a30819562f11fbc28309a76359e37"
+    },
+    {
+      "path": "textures/item/black.png",
+      "bytes": 89,
+      "blob": "cc43cb3986639f7d5e44adfe58f1a6744ac38df1"
+    },
+    {
+      "path": "textures/item/blue_color_card.png",
+      "bytes": 1796,
+      "blob": "078f56d8dafd4db7775f7704fa9d7ae3295ffe40"
+    },
+    {
+      "path": "textures/item/blue_star.png",
+      "bytes": 666,
+      "blob": "8ebd1d8891743df875d93fe8a4dc36728d09dd94"
+    },
+    {
+      "path": "textures/item/body.png",
+      "bytes": 140,
+      "blob": "6b80a7bf2cd99a306cb9d0c236f208035244336f"
+    },
+    {
+      "path": "textures/item/bone.png",
+      "bytes": 136,
+      "blob": "dbe80cf3c88dc240c017e9e0da0a739d6d86dc48"
+    },
+    {
+      "path": "textures/item/bottle.png",
+      "bytes": 205,
+      "blob": "4ae257b6498c523f66e8037781bce0aa723d7eae"
+    },
+    {
+      "path": "textures/item/clarity.png",
+      "bytes": 1355,
+      "blob": "568ea2fc0115cbd943eb96d5e6c39a8180973fcb"
+    },
+    {
+      "path": "textures/item/coin_debt.png",
+      "bytes": 513370,
+      "blob": "c881d8784ef9be5ba3b6808fe21e20df2855f1d7"
+    },
+    {
+      "path": "textures/item/coin_debt_back.png",
+      "bytes": 506374,
+      "blob": "7df9177d53c4827d8348cbf288589651a694ebc0"
+    },
+    {
+      "path": "textures/item/coin_eagle.png",
+      "bytes": 532478,
+      "blob": "1cb5554085e8a7dd9811ac48989a1ca099e9306b"
+    },
+    {
+      "path": "textures/item/coin_eagle_back.png",
+      "bytes": 513437,
+      "blob": "216e2b9f787f79892667d89087dcf4ea34747a02"
+    },
+    {
+      "path": "textures/item/coin_elusiveness.png",
+      "bytes": 464946,
+      "blob": "4a9f55f598e08439b17197afd8bc117fc2d639e5"
+    },
+    {
+      "path": "textures/item/coin_elusiveness_back.png",
+      "bytes": 508103,
+      "blob": "aa92c7bf095d3dc93943c4fdf4b7a74c3917d88e"
+    },
+    {
+      "path": "textures/item/coin_fate.png",
+      "bytes": 540782,
+      "blob": "241e6eb1cc6fd7827a54f5f704b90eadd68aa513"
+    },
+    {
+      "path": "textures/item/coin_fate_back.png",
+      "bytes": 525174,
+      "blob": "98da07f563485403216fa380189241325ed37802"
+    },
+    {
+      "path": "textures/item/coin_health.png",
+      "bytes": 510345,
+      "blob": "13125e665e49aba62de5f534207e219ab49baf30"
+    },
+    {
+      "path": "textures/item/coin_health_back.png",
+      "bytes": 497265,
+      "blob": "38dc50197d295179c12d4e9762e5d7e0732f16db"
+    },
+    {
+      "path": "textures/item/coin_insight.png",
+      "bytes": 517168,
+      "blob": "75396ae1edd5b442b71c8f6120799da7896624a7"
+    },
+    {
+      "path": "textures/item/coin_insight_back.png",
+      "bytes": 525199,
+      "blob": "6b1af15dce25aa4b6bbda626c1dec6d65f79e8e7"
+    },
+    {
+      "path": "textures/item/coin_reroll.png",
+      "bytes": 514048,
+      "blob": "84ca172768fe55342db06aa4096b8a6b3193560a"
+    },
+    {
+      "path": "textures/item/coin_reroll_back.png",
+      "bytes": 512800,
+      "blob": "427369d094747824a2d78d5f69ea762b19b8e2e9"
+    },
+    {
+      "path": "textures/item/coin_shackles.png",
+      "bytes": 514733,
+      "blob": "9091a6889d55cababd8d907ce0c27f886b1f34d4"
+    },
+    {
+      "path": "textures/item/coin_shackles_back.png",
+      "bytes": 510986,
+      "blob": "857a82c388278f97dd7f0ce5b42ec799eaabe173"
+    },
+    {
+      "path": "textures/item/forget_me_not.png",
+      "bytes": 1301,
+      "blob": "df526d54b5af0f39e3fd809c85a5aaf6e5d7165b"
+    },
+    {
+      "path": "textures/item/ghost_hand.png",
+      "bytes": 157853,
+      "blob": "5848d745377dcae302bed3a3d322c3dd4f89aeb5"
+    },
+    {
+      "path": "textures/item/gltf_embedded_1.png",
+      "bytes": 184,
+      "blob": "20447fdd1e922a43808148e72afc39cb88fb5d99"
+    },
+    {
+      "path": "textures/item/gltf_embedded_2.png",
+      "bytes": 225,
+      "blob": "44da39149d6c612085dfdf9476650b5fdaa4aea7"
+    },
+    {
+      "path": "textures/item/gltf_embedded_3.png",
+      "bytes": 168,
+      "blob": "95fa1e0cb42dfafa9482f21c85c97a23757f721e"
+    },
+    {
+      "path": "textures/item/gltf_embedded_4.png",
+      "bytes": 172,
+      "blob": "bc37b6b2f80eca559bc3d6f1d24e6a730830624e"
+    },
+    {
+      "path": "textures/item/green_color_card.png",
+      "bytes": 1755,
+      "blob": "8ba8dddcc843efa164ac647c1361cefb94414f3e"
+    },
+    {
+      "path": "textures/item/hand.png",
+      "bytes": 117,
+      "blob": "881c108925307815421a87ac354454a8bddab18d"
+    },
+    {
+      "path": "textures/item/handle.png",
+      "bytes": 146,
+      "blob": "b9efa9e91407854f9bc0d020200f4b973d4de7a8"
+    },
+    {
+      "path": "textures/item/head.png",
+      "bytes": 120,
+      "blob": "7fca8af2670a211292aa386c25fee91725b258bb"
+    },
+    {
+      "path": "textures/item/hook.png",
+      "bytes": 428,
+      "blob": "87196e9df5a084a7ac7abaab0a34fa1aab67cdb6"
+    },
+    {
+      "path": "textures/item/main_text.png",
+      "bytes": 134,
+      "blob": "3f5ee923e9852e3799db5b5039d3fb112dce14d4"
+    },
+    {
+      "path": "textures/item/maniac_blindness_fragment.png",
+      "bytes": 8818,
+      "blob": "67da8502601f54fb97d885b8907ab5abd0f08ef4"
+    },
+    {
+      "path": "textures/item/maniac_glowing_fragment.png",
+      "bytes": 14475,
+      "blob": "457a35e08dfc2e3ea85766c050aa16b793d27c37"
+    },
+    {
+      "path": "textures/item/maniac_healing_fragment.png",
+      "bytes": 11856,
+      "blob": "b78d1ffbcac470a0111550d1a34f08089b772c66"
+    },
+    {
+      "path": "textures/item/maniac_regen_fragment.png",
+      "bytes": 10661,
+      "blob": "36abb8d42f49d802bebe07b585af226f037b91f9"
+    },
+    {
+      "path": "textures/item/maniac_selection.png",
+      "bytes": 38005,
+      "blob": "43a4ef7c6218557d44be8ef360fdfbb26bcd8676"
+    },
+    {
+      "path": "textures/item/maniac_slow_falling_fragment.png",
+      "bytes": 13433,
+      "blob": "08845f1a1afaa19d5594d670b44bdefe2877bf8f"
+    },
+    {
+      "path": "textures/item/maniac_slowness_fragment.png",
+      "bytes": 12859,
+      "blob": "bdcea3830d43b0d4d958090b1304ed1077e3a3b7"
+    },
+    {
+      "path": "textures/item/maniac_speed_fragment.png",
+      "bytes": 10113,
+      "blob": "1011f77bac20621ca9dfdaec5d29241078064231"
+    },
+    {
+      "path": "textures/item/maniac_strength_fragment.png",
+      "bytes": 8217,
+      "blob": "097f3be0dad7ee9f2a581743673396766d4acb33"
+    },
+    {
+      "path": "textures/item/maniac_weakness_fragment.png",
+      "bytes": 8614,
+      "blob": "53906da5686e3af967b230e3fedd315249df00ee"
+    },
+    {
+      "path": "textures/item/medical_mask.png",
+      "bytes": 112,
+      "blob": "f5727f270482b062b0d10b883dcf63c6d6b770b2"
+    },
+    {
+      "path": "textures/item/nails_text.png",
+      "bytes": 95,
+      "blob": "341eb3abf56c48c8266af0182606729ee6252e6a"
+    },
+    {
+      "path": "textures/item/necromancer_boots.png",
+      "bytes": 123,
+      "blob": "0139dbabc2c4c051b2be0bdbfe9e63901a20b556"
+    },
+    {
+      "path": "textures/item/necromancer_chestplate.png",
+      "bytes": 141,
+      "blob": "3c810a0f7b1f979ed43df4f7dbdd03f60105fea1"
+    },
+    {
+      "path": "textures/item/necromancer_helmet.png",
+      "bytes": 122,
+      "blob": "bffe9cefbbc77355541451fde233a26c7791d2d5"
+    },
+    {
+      "path": "textures/item/necromancer_leggings.png",
+      "bytes": 118,
+      "blob": "eff8f78a6533b6c2767cbc5b3cfebb09b97ab540"
+    },
+    {
+      "path": "textures/item/nightmare_lighter.png",
+      "bytes": 1495,
+      "blob": "117de06ce0e4183316a8ae41a6e07eb536ec4e5b"
+    },
+    {
+      "path": "textures/item/paint_can.png",
+      "bytes": 1546,
+      "blob": "61034a0b0239480feba0e73468df0f1491abed52"
+    },
+    {
+      "path": "textures/item/perk_token.png",
+      "bytes": 176959,
+      "blob": "69275f9578abb9c4a2a8907ba1094e182c9eb5ba"
+    },
+    {
+      "path": "textures/item/pink_orchid.png",
+      "bytes": 810,
+      "blob": "b40807f43270abf2e82c3e813efacf186ede94ee"
+    },
+    {
+      "path": "textures/item/plague_lantern.png",
+      "bytes": 237,
+      "blob": "22fd6ccf4fd26c014d619a3472ac47124d264831"
+    },
+    {
+      "path": "textures/item/pre_game_ready_item.png",
+      "bytes": 12098,
+      "blob": "d9c1047b6be336145927b63fd5d6e9b7a5f8c00b"
+    },
+    {
+      "path": "textures/item/pre_game_ready_item_active.png",
+      "bytes": 15883,
+      "blob": "dc77550ef2c59c4b12614302403ab97785df6cc0"
+    },
+    {
+      "path": "textures/item/ready_item.png",
+      "bytes": 12098,
+      "blob": "d9c1047b6be336145927b63fd5d6e9b7a5f8c00b"
+    },
+    {
+      "path": "textures/item/ready_item_active.png",
+      "bytes": 15883,
+      "blob": "dc77550ef2c59c4b12614302403ab97785df6cc0"
+    },
+    {
+      "path": "textures/item/recipe_book.png",
+      "bytes": 5974,
+      "blob": "3f2a7bbc17adfee95c76a844dc0ce97e3e9f7462"
+    },
+    {
+      "path": "textures/item/red_color_card.png",
+      "bytes": 1416,
+      "blob": "e82e75025a37b02a9addf4a1a0aafba2cd226a31"
+    },
+    {
+      "path": "textures/item/red_star.png",
+      "bytes": 335,
+      "blob": "14db6d4d146085c2bb441066132beb2a5acbd1a2"
+    },
+    {
+      "path": "textures/item/rose_colored_glasses.png",
+      "bytes": 1273,
+      "blob": "c3a6872c54ac91dda04ce817577ed34f504a8b7b"
+    },
+    {
+      "path": "textures/item/salt.png",
+      "bytes": 18324,
+      "blob": "46c3bb7ed6d2ace06c26d4f6f88068d79c4dc3c9"
+    },
+    {
+      "path": "textures/item/sber_sprout.png",
+      "bytes": 1630,
+      "blob": "83114da5574fae0324af4affc79ece7b67d67864"
+    },
+    {
+      "path": "textures/item/scythe_texture.png",
+      "bytes": 243,
+      "blob": "9f959f097a85979b10697e3a59282eccc165551f"
+    },
+    {
+      "path": "textures/item/settings_item.png",
+      "bytes": 15194,
+      "blob": "36a4403d507cd4f691e67f270a39abff05975082"
+    },
+    {
+      "path": "textures/item/shop_token.png",
+      "bytes": 204663,
+      "blob": "70cc2eb53a59f247e6936a125cc0101b888a73f9"
+    },
+    {
+      "path": "textures/item/small_tube.png",
+      "bytes": 195,
+      "blob": "39af65e4df0eba5d75d540d4e1a05f24c07b8413"
+    },
+    {
+      "path": "textures/item/soul_texture.png",
+      "bytes": 155,
+      "blob": "35e135cb4d32704428dd88158e80c99774520415"
+    },
+    {
+      "path": "textures/item/survivor_selection.png",
+      "bytes": 35025,
+      "blob": "da599644bdb236f0e5a0575b1ec60d5656a67d2c"
+    },
+    {
+      "path": "textures/item/table_texture.png",
+      "bytes": 161,
+      "blob": "e4b6b9d8d18586d1f4b609587323699879253f34"
+    },
+    {
+      "path": "textures/item/teath.png",
+      "bytes": 102,
+      "blob": "7c7c0f7dae0578f61bfc2bc35f1e4d6546cc623e"
+    },
+    {
+      "path": "textures/item/texture.png",
+      "bytes": 252,
+      "blob": "636938e975bebfa71c3b1e57aaa94b1a2753b796"
+    },
+    {
+      "path": "textures/item/texture2.png",
+      "bytes": 976,
+      "blob": "4878217bed77276154c060f69402775f75798368"
+    },
+    {
+      "path": "textures/item/texture_computer.png",
+      "bytes": 466,
+      "blob": "6a59630ff92a7ad0df6bd3bae5722d62958d3d03"
+    },
+    {
+      "path": "textures/item/texture_edging.png",
+      "bytes": 203,
+      "blob": "e4f146eea00d95dbcfdbfd30570a1f635055db98"
+    },
+    {
+      "path": "textures/item/texture_syringe.png",
+      "bytes": 145,
+      "blob": "e8681aee23f1d8cc95c21b537d7be54972e110f2"
+    },
+    {
+      "path": "textures/item/texture_totem.png",
+      "bytes": 516,
+      "blob": "7d195ac7817e4f0f246937c1def772e79756bde0"
+    },
+    {
+      "path": "textures/item/top.png",
+      "bytes": 550,
+      "blob": "d60e1b43fafed1e0d25e97ebeb4aed24d7ea1520"
+    },
+    {
+      "path": "textures/item/toy_knife.png",
+      "bytes": 5967,
+      "blob": "d2d56fd484c183e4062a7d220265775387536e36"
+    },
+    {
+      "path": "textures/item/tube.png",
+      "bytes": 247,
+      "blob": "eeb2f0168390b047c32f9d39a80868bd4b7306d5"
+    },
+    {
+      "path": "textures/item/voting_ticket.png",
+      "bytes": 144251,
+      "blob": "80dacd86e0d709235fd7fa98cc92acef35fb25dc"
+    },
+    {
+      "path": "textures/item/wood.png",
+      "bytes": 136,
+      "blob": "d507b4fee2e480e727e2995d5b11350f52be9f96"
+    },
+    {
+      "path": "textures/mob_effect/acceleration.png",
+      "bytes": 265,
+      "blob": "64da0e65fd227e1204d949c2159d243164c020c6"
+    },
+    {
+      "path": "textures/mob_effect/altruist_boost.png",
+      "bytes": 126709,
+      "blob": "b0c4ec025de87057fea6c3dfb027ed1a6537ab8c"
+    },
+    {
+      "path": "textures/mob_effect/bouquet.png",
+      "bytes": 571,
+      "blob": "b0ab46db3a475aa1844adffe30ecca9867363b8e"
+    },
+    {
+      "path": "textures/mob_effect/death_race.png",
+      "bytes": 104955,
+      "blob": "298f559cc383b43b3aa9f81599506d8d243dd064"
+    },
+    {
+      "path": "textures/mob_effect/dodepovich_credit.png",
+      "bytes": 878816,
+      "blob": "e9466f0f77043edbc9a04be85ecf1c686da15658"
+    },
+    {
+      "path": "textures/mob_effect/dodepovich_damage_block.png",
+      "bytes": 571336,
+      "blob": "5b8a134db74a00a4c06adbfb64dd9bb8682e4f86"
+    },
+    {
+      "path": "textures/mob_effect/dodepovich_double_damage.png",
+      "bytes": 872273,
+      "blob": "1514ec1298ef30ebf17229c7f0dcbb8e7e223be8"
+    },
+    {
+      "path": "textures/mob_effect/dodepovich_insurance.png",
+      "bytes": 552665,
+      "blob": "1ec835005c08b17f386d12998b3b82029e9d1b58"
+    },
+    {
+      "path": "textures/mob_effect/dodepovich_slot_cooldown.png",
+      "bytes": 507438,
+      "blob": "12acf8c3bc749ea58afe791ba3dcaad3e42b7ea7"
+    },
+    {
+      "path": "textures/mob_effect/fear.png",
+      "bytes": 59364,
+      "blob": "64bb98d874384910eba72c1941cda55b6f489cba"
+    },
+    {
+      "path": "textures/mob_effect/forget_me_not_call.png",
+      "bytes": 471,
+      "blob": "775e19df913aa66feb2cde72a671d29d74fffb3a"
+    },
+    {
+      "path": "textures/mob_effect/frozen.png",
+      "bytes": 452509,
+      "blob": "d1cc722918f5ddb4e893a04e508c42aee4402e0a"
+    },
+    {
+      "path": "textures/mob_effect/full_invisibility.png",
+      "bytes": 250,
+      "blob": "c30472d0264e883a1064ff1dd6415d748aef4c3b"
+    },
+    {
+      "path": "textures/mob_effect/green_charge.png",
+      "bytes": 714,
+      "blob": "bd9da5bbccfb2ca74466594ec6d095955fdde29e"
+    },
+    {
+      "path": "textures/mob_effect/jackpot.png",
+      "bytes": 3035,
+      "blob": "5402bbad6464fbb1f5fe38df5340d8cb3823a338"
+    },
+    {
+      "path": "textures/mob_effect/mana_flow.png",
+      "bytes": 99272,
+      "blob": "2a5c3d9bf913e5397cc85d0872e43c725a0b5970"
+    },
+    {
+      "path": "textures/mob_effect/open_wound.png",
+      "bytes": 65223,
+      "blob": "3d2f0dac05f138ef60ae428562830cb7e5eb25ad"
+    },
+    {
+      "path": "textures/mob_effect/orchid_recording.png",
+      "bytes": 485,
+      "blob": "90598f4aac10b8edd582b78cf822904528efc58e"
+    },
+    {
+      "path": "textures/mob_effect/paint_protection.png",
+      "bytes": 642,
+      "blob": "eb808a13eed3e6fab3e80d484106a44cc5b5a895"
+    },
+    {
+      "path": "textures/mob_effect/plague.png",
+      "bytes": 61502,
+      "blob": "3ea3590d99d3c8a5907d465183c37f4458898018"
+    },
+    {
+      "path": "textures/mob_effect/possession_timer.png",
+      "bytes": 71272,
+      "blob": "cdb7860ebf2793a9cf898a5ba92a36cddfb58b62"
+    },
+    {
+      "path": "textures/mob_effect/red_guidance.png",
+      "bytes": 688,
+      "blob": "2ed838125eb5c96fa933201f9b39ecade393a704"
+    },
+    {
+      "path": "textures/mob_effect/rose_colored_glasses.png",
+      "bytes": 440,
+      "blob": "df88a47489af92eafe2358c856b74d27c88aca78"
+    },
+    {
+      "path": "textures/mob_effect/sber_sprout_session.png",
+      "bytes": 532,
+      "blob": "e39d62cc293c45275bd45a5b4ce52e9ff3e330bb"
+    },
+    {
+      "path": "textures/mob_effect/scream.png",
+      "bytes": 480,
+      "blob": "e930e149b488e8f30f9ec6a4be8dc58f3c9fcf40"
+    },
+    {
+      "path": "textures/mob_effect/shaken_memory.png",
+      "bytes": 522,
+      "blob": "ccde4480dddfd58e595154a9640e3b055489d392"
+    },
+    {
+      "path": "textures/mob_effect/silence.png",
+      "bytes": 179996,
+      "blob": "6a959d4841fa4bbd29a4be26d9475fba5236890c"
+    },
+    {
+      "path": "textures/mob_effect/slow_regeneration.png",
+      "bytes": 336,
+      "blob": "a678554c30ccb8de9a80aa950a25d4075ca62cae"
+    },
+    {
+      "path": "textures/mob_effect/slowdown.png",
+      "bytes": 209,
+      "blob": "b95d5c21713fcd3cdf43cacd7ae336d6f4e268a2"
+    },
+    {
+      "path": "textures/mob_effect/stun.png",
+      "bytes": 461597,
+      "blob": "24a998e89ad2c3f5539736cc108ddc300f8acc5d"
+    },
+    {
+      "path": "textures/mob_effect/target.png",
+      "bytes": 71272,
+      "blob": "cdb7860ebf2793a9cf898a5ba92a36cddfb58b62"
+    },
+    {
+      "path": "textures/mob_effect/thorn.png",
+      "bytes": 118403,
+      "blob": "29704d0bf5204fcbe5ba182cc2f4fd72a9edb7a5"
+    },
+    {
+      "path": "textures/mob_effect/weak_weakness.png",
+      "bytes": 465,
+      "blob": "6c622943af333cbe48eb87cd7838ddab583cfca3"
+    },
+    {
+      "path": "textures/models/armor/medical_mask_layer_1.png",
+      "bytes": 1272,
+      "blob": "e368c76aee5caeb2e072bc0f165f1196994da421"
+    },
+    {
+      "path": "textures/models/armor/necromancer_layer_1.png",
+      "bytes": 863,
+      "blob": "dae499b55adf56508ec86c5717b6e336a2c216c1"
+    },
+    {
+      "path": "textures/models/armor/necromancer_layer_2.png",
+      "bytes": 452,
+      "blob": "01e16b4dbadee7de13afa7d8ce7f1347a13fa911"
+    },
+    {
+      "path": "textures/paint/paint_screen_drops.png",
+      "bytes": 19670,
+      "blob": "7543f8eb4ec4e6d91adcdb5099562dc1326afe1b"
+    },
+    {
+      "path": "textures/paint/paint_screen_smear.png",
+      "bytes": 17582,
+      "blob": "08bf6639cc15f03597da5425ec8d91a4440dc871"
+    },
+    {
+      "path": "textures/paint/paint_screen_splat.png",
+      "bytes": 24956,
+      "blob": "21e80da0ff5f2025c2dd6daee396e3444e3e69f7"
+    },
+    {
+      "path": "textures/paint/paint_splat.png",
+      "bytes": 209,
+      "blob": "439266c2a1be76659ed27fd1c52272209aae1251"
+    },
+    {
+      "path": "textures/particle/img.png",
+      "bytes": 3034,
+      "blob": "ae3818982c7cee0defd781dc11a3824b5ba9262f"
+    },
+    {
+      "path": "textures/particle/necromancer_soul_0.png",
+      "bytes": 2796,
+      "blob": "52d33b24e05d2a2b2944d70c3b465ed240885d09"
+    },
+    {
+      "path": "textures/particle/necromancer_soul_1.png",
+      "bytes": 2796,
+      "blob": "52d33b24e05d2a2b2944d70c3b465ed240885d09"
+    },
+    {
+      "path": "textures/particle/necromancer_soul_2.png",
+      "bytes": 2796,
+      "blob": "52d33b24e05d2a2b2944d70c3b465ed240885d09"
+    },
+    {
+      "path": "textures/perks/altruist_exe.png",
+      "bytes": 27437,
+      "blob": "56d6c2097d8363c12e1438badfe4dfd9f6192783"
+    },
+    {
+      "path": "textures/perks/bigmoney.png",
+      "bytes": 24710,
+      "blob": "782547f883160730eeb2abf7cbf9c7ee7c0b5365"
+    },
+    {
+      "path": "textures/perks/blindness.png",
+      "bytes": 81888,
+      "blob": "c7a7eef353e4faad9dc602104f818606c5c0d947"
+    },
+    {
+      "path": "textures/perks/bloodflow.png",
+      "bytes": 114407,
+      "blob": "88b03520b0282a1f7366241976987a873912656a"
+    },
+    {
+      "path": "textures/perks/bouquet_to_the_other_side.png",
+      "bytes": 472647,
+      "blob": "da1f489b17fb5f249471e55697bdf7949cf8d835"
+    },
+    {
+      "path": "textures/perks/bud_dispatcher.png",
+      "bytes": 391002,
+      "blob": "eb227f288529de79508bcc2246722c5b7e75eff9"
+    },
+    {
+      "path": "textures/perks/catch_mistakes.png",
+      "bytes": 77425,
+      "blob": "ee2cb90f6705041bd9ddb1bd749d11a508bc30e1"
+    },
+    {
+      "path": "textures/perks/color_roulette.png",
+      "bytes": 318249,
+      "blob": "ccd97a4ef6431a07aea4860f1aad80c5188b7ea8"
+    },
+    {
+      "path": "textures/perks/computer_breaker.png",
+      "bytes": 90856,
+      "blob": "32d430b369621e63030fc887d19059795eab4a52"
+    },
+    {
+      "path": "textures/perks/dutch_helm.png",
+      "bytes": 53068,
+      "blob": "75c2c1380158fbe75a00274c6dc34ade961d8c77"
+    },
+    {
+      "path": "textures/perks/ejection.png",
+      "bytes": 85955,
+      "blob": "c976c479b6b30d8d777c9fe086b6ff56374f5613"
+    },
+    {
+      "path": "textures/perks/emergency_overclock.png",
+      "bytes": 396647,
+      "blob": "218da8876abef34e886c490eb3eeca06ebda6ec5"
+    },
+    {
+      "path": "textures/perks/family_discord.png",
+      "bytes": 37687,
+      "blob": "003368f366813415ad020c9191de8f45e9a2cd65"
+    },
+    {
+      "path": "textures/perks/fear_wave.png",
+      "bytes": 34492,
+      "blob": "ce1a4e80f12ea020b6644f7d42093cecbadad5f7"
+    },
+    {
+      "path": "textures/perks/fixed_it_im_out.png",
+      "bytes": 381548,
+      "blob": "26a11bcaca12fd101e8e0a8238ab4acc6e4df665"
+    },
+    {
+      "path": "textures/perks/flowers_lead_the_investigation.png",
+      "bytes": 361555,
+      "blob": "4f812c79a4b63e71310db807cae4f4d87888b609"
+    },
+    {
+      "path": "textures/perks/football_fan.png",
+      "bytes": 452509,
+      "blob": "d1cc722918f5ddb4e893a04e508c42aee4402e0a"
+    },
+    {
+      "path": "textures/perks/forget_me_not.png",
+      "bytes": 384332,
+      "blob": "47fc0c309ecad6afb31029a3935f0c16537db3f6"
+    },
+    {
+      "path": "textures/perks/go_next.png",
+      "bytes": 246915,
+      "blob": "2263ea3b097d8e8042207d1b79b41536a9a9a0dd"
+    },
+    {
+      "path": "textures/perks/griefer.png",
+      "bytes": 44082,
+      "blob": "50b34c34acdb967f6105dea427bf4e9447fa9580"
+    },
+    {
+      "path": "textures/perks/gto_medal.png",
+      "bytes": 14811,
+      "blob": "20ed0a7afde37f3d185f8201401d4c4e8a587770"
+    },
+    {
+      "path": "textures/perks/guiding_light.png",
+      "bytes": 53202,
+      "blob": "f6d7c5534bf27f3081c6898ab94d6752cf847bab"
+    },
+    {
+      "path": "textures/perks/hedgehog_skin.png",
+      "bytes": 23417,
+      "blob": "83711e1ffd7062ff41a325a673c7d50d071a9e09"
+    },
+    {
+      "path": "textures/perks/high_voltage.png",
+      "bytes": 406579,
+      "blob": "7813026eb9fdbe93554f40c522eaa65a5c8118dc"
+    },
+    {
+      "path": "textures/perks/highlight.png",
+      "bytes": 96349,
+      "blob": "d494898e0ca0c5a90dbace6a332927216df3ce34"
+    },
+    {
+      "path": "textures/perks/i_am_speed.png",
+      "bytes": 66870,
+      "blob": "445c540799c80821ad5177969caab7919aef901f"
+    },
+    {
+      "path": "textures/perks/idealych.png",
+      "bytes": 61487,
+      "blob": "5c41e783f3fdadd0be3328fd86392fb4a7781a37"
+    },
+    {
+      "path": "textures/perks/independence.png",
+      "bytes": 50966,
+      "blob": "b1371b5980d29728fda79e6400ca2be0fbc508a9"
+    },
+    {
+      "path": "textures/perks/last_breath.png",
+      "bytes": 38733,
+      "blob": "04b07095ebc34709a066956d0d53d8268f1c5f38"
+    },
+    {
+      "path": "textures/perks/magic_kick.png",
+      "bytes": 406299,
+      "blob": "fb1cfdd739d0ec9d714b61c4a58c3d4013d42288"
+    },
+    {
+      "path": "textures/perks/magic_lover.png",
+      "bytes": 52751,
+      "blob": "920eaf2b1fa6341cabc03ada7595de4bf38989e1"
+    },
+    {
+      "path": "textures/perks/mana_break.png",
+      "bytes": 129605,
+      "blob": "0eed30154cb5f62e84e12843a4c07826d82290ab"
+    },
+    {
+      "path": "textures/perks/megamind.png",
+      "bytes": 30495,
+      "blob": "8a194178858d2389a64b1126d1c048437405c8a8"
+    },
+    {
+      "path": "textures/perks/mental_bond.png",
+      "bytes": 96193,
+      "blob": "f7be17226842c4d0617ea472ea721441774c5b8d"
+    },
+    {
+      "path": "textures/perks/mimic.png",
+      "bytes": 54668,
+      "blob": "07c6b058bc7d4c3120d31abed4428a07329497d7"
+    },
+    {
+      "path": "textures/perks/pink_orchid.png",
+      "bytes": 532131,
+      "blob": "f93036d6b9087134f0adb512e638654e3f677667"
+    },
+    {
+      "path": "textures/perks/quick_reflexes.png",
+      "bytes": 119145,
+      "blob": "07ef770f6ffd7f58f627b066e82f3f4155a2cf32"
+    },
+    {
+      "path": "textures/perks/reality_anchor.png",
+      "bytes": 697904,
+      "blob": "11d3e56b1d229b318eb66e272f1afc61efe56d50"
+    },
+    {
+      "path": "textures/perks/rose_colored_glasses.png",
+      "bytes": 386979,
+      "blob": "25e430097cd7d3119fe4958d685a3c01c9a61a2a"
+    },
+    {
+      "path": "textures/perks/sber_sprout.png",
+      "bytes": 410815,
+      "blob": "551104ed92189b88c05ccf9bafbfc32b8fb416c2"
+    },
+    {
+      "path": "textures/perks/silence.png",
+      "bytes": 33171,
+      "blob": "c424e2625fac021c5ee2a2980941f44b4757849f"
+    },
+    {
+      "path": "textures/perks/str_perk.png",
+      "bytes": 17400,
+      "blob": "b313c47926092dc04f408a90ec9c65f66c21ad54"
+    },
+    {
+      "path": "textures/perks/the_paint_thickens.png",
+      "bytes": 370404,
+      "blob": "345cbfaed5577a0287058f6f24f913cbcfd4aa72"
+    },
+    {
+      "path": "textures/perks/wallhack.png",
+      "bytes": 73977,
+      "blob": "5a122467066d3db02819508991aaa6e00b98e83b"
+    }
+  ]
+}

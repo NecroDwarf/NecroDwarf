@@ -22,6 +22,15 @@
   gap: 12px;
   margin-top: 28px;
 }
+.downloadLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+.downloadLabel svg {
+  flex: 0 0 22px;
+}
 .primary,
 .secondary,
 .flowerLink {

@@ -1,0 +1,11 @@
+{
+  "converter": "bedrock-cubes-v1",
+  "sourceCommit": "8692f66dc76582144be85d553d43a41f189b64e7",
+  "sourceSha256": "baeeb7959eb785dc22fac95cf1e58343d213bc7bb28e8d8c2680a3ad3fcbe67f",
+  "bones": 22,
+  "cubes": 84,
+  "planes": 18,
+  "triangles": 848,
+  "units": "16 source units = 1 block",
+  "animations": "static bind pose only"
+}

@@ -1,0 +1,88 @@
+.card {
+  border: 1px solid var(--iron);
+  background: var(--stone);
+  padding: 24px;
+  min-width: 0;
+}
+.header {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}
+.header img {
+  width: 72px;
+  height: 72px;
+  object-fit: contain;
+  flex: 0 0 72px;
+}
+.pixel {
+  image-rendering: pixelated;
+}
+.label {
+  color: var(--ash);
+  font-size: 12px;
+  line-height: 1.5;
+  margin-bottom: 12px;
+  overflow-wrap: anywhere;
+}
+.card h3 {
+  font-size: 24px;
+  margin: 0;
+}
+.card > p {
+  color: var(--ash);
+  font-size: 16px;
+  margin: 20px 0;
+}
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 160px), 1fr));
+  gap: 16px;
+  margin: 24px 0;
+}
+.stats div {
+  border-top: 1px solid var(--iron);
+  padding-top: 12px;
+}
+.stats dt {
+  color: var(--ash);
+  font-size: 13px;
+}
+.stats dd {
+  margin: 6px 0 0;
+  font-weight: 500;
+}
+.relations {
+  padding-left: 20px;
+  font-size: 15px;
+  line-height: 1.8;
+}
+.card details {
+  color: var(--ash);
+  font-size: 14px;
+  overflow-wrap: anywhere;
+}
+.card summary {
+  cursor: pointer;
+  padding: 12px 0;
+}
+.card[data-variant="compact"] {
+  padding: 18px;
+}
+.card[data-variant="compact"] .header img {
+  width: 48px;
+  height: 48px;
+  flex-basis: 48px;
+}
+.change {
+  border-left: 2px solid #b5c891;
+  padding-left: 24px;
+}
+.change > p {
+  max-width: 760px;
+}
+.comparison {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+  gap: 20px;
+}

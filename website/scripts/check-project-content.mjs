@@ -103,13 +103,41 @@ try {
   assert.equal((maniac.match(/<h1[ >]/g) || []).length, 1);
   assert.doesNotMatch(
     maniac,
-    /id="gallery"|href="#gallery"|drive\.google|disk\.yandex|\/wiki|changelog_maniac/,
+    /id="gallery"|href="#gallery"|minecraft-inside\.ru|\/wiki|changelog_maniac|Версия доступного архива пока не подтверждена/,
   );
-  assert.match(
-    maniac,
-    /href="https:\/\/minecraft-inside.ru\/maps\/188353-maniac-dbd.html"/,
+  const { download } = await server.ssrLoadModule(
+    "/src/app/projects/maniac/content.ts",
   );
-  assert.match(maniac, /Версия доступного архива пока не подтверждена/);
+  const primary = new URL(download.url);
+  assert.equal(primary.origin, "https://drive.usercontent.google.com");
+  assert.equal(primary.pathname, "/download");
+  assert.equal(
+    primary.searchParams.get("id"),
+    "1Pe_mgHtMvoVIn5-FwG5Nj_sG0xuDvY6D",
+  );
+  assert.equal(primary.searchParams.get("export"), "download");
+  assert.equal(primary.searchParams.get("confirm"), "t");
+  assert.equal(download.mirrorUrl, "https://disk.yandex.ru/d/z7mqmWDD3k9OTg");
+  assert.equal(download.version, "1.2");
+  assert.equal(download.releaseName, "Flower Cleaning");
+  const links = [...maniac.matchAll(/<a\b([^>]*)>([\s\S]*?)<\/a>/g)];
+  for (const [url, label] of [
+    [download.url, "Скачать Maniac 1.2"],
+    [download.mirrorUrl, "Скачать с Яндекс Диска"],
+  ]) {
+    const matching = links.filter(([, attrs]) =>
+      attrs.includes(`href="${url.replaceAll("&", "&amp;")}"`),
+    );
+    assert.equal(matching.length, 2, `${label}: hero and download section`);
+    for (const [, attrs, content] of matching) {
+      assert.match(attrs, /target="_blank"/);
+      assert.match(attrs, /rel="noopener noreferrer"/);
+      assert.ok(content.includes(label));
+      assert.doesNotMatch(attrs, /\sdownload(?:=|\s|$)/);
+    }
+  }
+  for (const text of ["mods.zip", "world.zip", "saves/Maniac", "level.dat"])
+    assert.ok(maniac.includes(text), `Installation: ${text}`);
   assert.match(maniac, /href="\/changelog"/);
   const history = render(ReleaseList, {
     releases: projects[0].releases,

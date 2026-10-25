@@ -1,0 +1,2 @@
+# Exact upstream resources: retain bytes and recorded SHA-256.
+src/app/projects/maniac/assets/models/*/source/**

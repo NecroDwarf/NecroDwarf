@@ -10,19 +10,27 @@
     "dev": "vite --host 127.0.0.1",
     "typecheck": "tsc --noEmit",
     "build": "npm run typecheck && node scripts/build.mjs",
-    "check": "node scripts/check-build.mjs && node scripts/check-project-content.mjs",
+    "check": "node scripts/check-build.mjs && node scripts/check-project-content.mjs && node scripts/check-maniac-wiki.mjs",
     "preview": "node scripts/serve.mjs",
+    "dev:maniac": "node scripts/maniac-preview.mjs",
+    "build:maniac-preview": "node scripts/maniac-preview.mjs build",
+    "preview:maniac": "node scripts/maniac-preview.mjs serve",
+    "assets:maniac": "node scripts/convert-maniac-model.mjs",
     "dev:prototypes": "node scripts/prototypes.mjs",
     "format:check": "prettier --check src/app src/main.tsx src/entry-server.tsx scripts/*.mjs index.html prototypes.html package.json"
   },
   "dependencies": {
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
-    "react-router": "7.18.4"
+    "react-router": "7.18.4",
+    "three": "0.186.1"
   },
   "devDependencies": {
+    "@gltf-transform/core": "4.5.1",
+    "@gltf-transform/functions": "4.5.1",
     "@types/react": "^19.2.0",
     "@types/react-dom": "^19.2.0",
+    "@types/three": "0.186.0",
     "prettier": "3.6.2",
     "typescript": "~5.9.3",
     "vite": "^7.1.12"

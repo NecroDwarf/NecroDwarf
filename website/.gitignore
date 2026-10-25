@@ -4,3 +4,4 @@ dist/
 .ssg/
 .npm-cache/
 build/
+.preview/

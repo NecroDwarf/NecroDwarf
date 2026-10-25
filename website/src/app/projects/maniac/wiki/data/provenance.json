@@ -1,0 +1,60 @@
+{
+  "commit": "8692f66dc76582144be85d553d43a41f189b64e7",
+  "files": [
+    {
+      "path": "src/main/java/org/example/maniacrevolution/client/model/KeeperNightmareModel.java",
+      "bytes": 863,
+      "sha256": "6ced3ecefa951ef9c9b163b07fd2553686e9813ed87e2f629d373805a4c9a1ea"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/character/CharacterRegistry.java",
+      "bytes": 2998,
+      "sha256": "08750201bfb859d1191adda5e489557fdd868b7bc0189595ada6f1f9cf91fbf6"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/character/maniac/KeeperOfNightmaresClass.java",
+      "bytes": 1788,
+      "sha256": "0498bb3e94694841fa46d03ed5cb44489548de55bd97bc8a4b7ab620e627136b"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/character/maniac/GhostClass.java",
+      "bytes": 1708,
+      "sha256": "26fccd7b981846346e3c780d2f5ecd01f44914c79fefd845a974e3399c3aa72e"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/character/survivor/DodepovichClass.java",
+      "bytes": 1720,
+      "sha256": "2482f7924c7370fc1477c63b50e594667aef2c6b1478dfa66fad62277fb8a622"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/nightmare/NightmareConfig.java",
+      "bytes": 7551,
+      "sha256": "fd07218f5c5c4a9294a116537b1289c33175e397d1c23d72b827801e0a0cbd1f"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/perks/survivor/ForgetMeNotPerk.java",
+      "bytes": 2814,
+      "sha256": "96f7053fcc05acb629ee91a6f2dc362aecb2c42f7ce0f8b21f7d684267edd3d0"
+    },
+    {
+      "path": "docs/changelogs/maniac/changelog_maniac.html",
+      "bytes": 39887,
+      "sha256": "e88b2243a857a3dde88fcef43dcd67b6c23cc3463fa731ba19010247b52224d2"
+    },
+    {
+      "path": "docs/changelogs/maniac/changelog_maniac_1_1.html",
+      "bytes": 24628,
+      "sha256": "a9dbe258de4d2cb1733f93cefd986d2e9a3c6e2b8a8a7c428077f51f0716221a"
+    },
+    {
+      "path": "docs/changelogs/maniac/changelog_maniac_1_2.html",
+      "bytes": 29341,
+      "sha256": "4ea14cc643b15207670e3c8f022944da9039ee4fdd8569e19988f2f071ba241d"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/PerkRegistry.java",
+      "bytes": 4077,
+      "sha256": "c3db42d1c1b9eede2ac2a0c7605fb377f472bfe0a40828f4bf1dd2c09388a465"
+    }
+  ]
+}

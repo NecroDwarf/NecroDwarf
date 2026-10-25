@@ -124,11 +124,29 @@ GitHub Actions `.github/workflows/ci.yml` запускается для push в 
 
 ## Следующие этапы — только по отдельной команде
 
-Этап 2A: презентационная страница Maniac реализована. Источники и спорная версия
-скачиваемого архива описаны в [`CONTENT_SOURCES.md`](src/app/projects/maniac/CONTENT_SOURCES.md),
-проверки — в [`MANIAC_2A_VERIFICATION.md`](MANIAC_2A_VERIFICATION.md).
+Фундамент Wiki/хроник 2B-0 и изолированный 3D-прототип Хранителя:
 
-2B. Полные тематические хроники; подтвердить архив Flower Cleaning 1.2 и прямые ссылки скачивания (4.0 не приравнивать к 1.2).
+```powershell
+npm run dev:maniac
+# http://127.0.0.1:5175/__maniac-lab
+# либо готовая отдельная статика:
+npm run build:maniac-preview
+npm run preview:maniac
+# http://127.0.0.1:4175/maniac-lab.html
+```
+
+Описание данных, снимков и viewer — [архитектура Wiki](docs/MANIAC_WIKI_FOUNDATION.md),
+ресурсы — [MANIAC_ASSETS](docs/MANIAC_ASSETS.md),
+проверки — [MANIAC_2B0_VERIFICATION](docs/MANIAC_2B0_VERIFICATION.md).
+Прототип не входит в build/client, публичные маршруты и sitemap.
+
+Этап 2A: презентационная страница Maniac реализована. Источники и проверка
+архива Flower Cleaning 1.2 описаны в [`CONTENT_SOURCES.md`](src/app/projects/maniac/CONTENT_SOURCES.md),
+проверки — в [`MANIAC_2A_VERIFICATION.md`](MANIAC_2A_VERIFICATION.md).
+Прямая загрузка Google Drive и зеркало Яндекс Диска проверены отдельно:
+[`MANIAC_DOWNLOAD_VERIFICATION.md`](MANIAC_DOWNLOAD_VERIFICATION.md).
+
+2B. Полные тематические хроники (историческую пометку 4.0 не приравнивать к 1.2).
 3. Полная открытая Wiki, типизированный баланс, MDX и статический поиск.
 4. Детали FriendSheep и NovellMaker после получения материалов.
 5. Домен, preview на Cloudflare, production-публикация и отдельный план перехода со старых URL.

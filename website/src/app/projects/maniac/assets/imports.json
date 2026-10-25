@@ -1,0 +1,68 @@
+{
+  "repository": "doflare123/Maniac-mod-evolution",
+  "commit": "8692f66dc76582144be85d553d43a41f189b64e7",
+  "files": [
+    {
+      "source": "src/main/resources/assets/maniacrev/geo/windigo.geo.json",
+      "local": "models/keeper/source/windigo.geo.json",
+      "bytes": 18393,
+      "sha256": "baeeb7959eb785dc22fac95cf1e58343d213bc7bb28e8d8c2680a3ad3fcbe67f",
+      "entityId": "character:keeper-of-nightmares"
+    },
+    {
+      "source": "src/main/resources/assets/maniacrev/textures/entity/windigo.png",
+      "local": "models/keeper/source/windigo.png",
+      "bytes": 26441,
+      "sha256": "76c2d7d8dde0ba17818cce6a3305115ed15a44b1ced74c81a21572f3cb290593",
+      "size": [128, 128],
+      "entityId": "character:keeper-of-nightmares"
+    },
+    {
+      "source": "src/main/resources/assets/maniacrev/animations/windigo.animation.json",
+      "local": "models/keeper/source/windigo.animation.json",
+      "bytes": 13585,
+      "sha256": "7dc47d855398b44cade3439bbaa0aa494665eae08bcae619b4d1222eb8d6f1cb",
+      "entityId": "character:keeper-of-nightmares"
+    },
+    {
+      "source": "src/main/resources/assets/maniacrev/textures/gui/abilities/concentrated_nightmare.png",
+      "local": "wiki/concentrated-nightmare.webp",
+      "sourceBytes": 2371273,
+      "sourceSha256": "3cad7888df6547b9f2fbcdcf3c377b678feb6806160e593a4fb4814be77c8040",
+      "sourceSize": [1536, 1024],
+      "bytes": 31712,
+      "sha256": "031d8b5f27d527a39fb4d0e7353b9f6764cd2b61288709577ad714035a1032be",
+      "size": [256, 171],
+      "optimization": "Pillow 256px illustration thumbnail, lossless WebP; original small pixel textures unchanged",
+      "entityId": "ability:concentrated-nightmare"
+    },
+    {
+      "source": "src/main/resources/assets/maniacrev/textures/item/nightmare_lighter.png",
+      "local": "wiki/nightmare-lighter.png",
+      "bytes": 1495,
+      "sha256": "b34d3ef847849abb3b6130661701ee31f296f2a9a69b8d9773caafa028f03373",
+      "size": [64, 32],
+      "entityId": "item:nightmare-lighter"
+    },
+    {
+      "source": "src/main/resources/assets/maniacrev/textures/perks/forget_me_not.png",
+      "local": "wiki/forget-me-not-perk.webp",
+      "sourceBytes": 384332,
+      "sourceSha256": "e983e453f5e85f69dc04017b68c5a5e1b3903f5c45b985c17fa198d83038d583",
+      "sourceSize": [512, 512],
+      "bytes": 58758,
+      "sha256": "e9583d303034859e0d233dc60d9337111ed525e45dd5a76531daf320db1d9d38",
+      "size": [256, 256],
+      "optimization": "Pillow 256px illustration thumbnail, lossless WebP; original small pixel textures unchanged",
+      "entityId": "perk:forget-me-not"
+    },
+    {
+      "source": "src/main/resources/assets/maniacrev/textures/item/forget_me_not.png",
+      "local": "wiki/forget-me-not-item.png",
+      "bytes": 1301,
+      "sha256": "cf3ac9e37041c87f3ea20a57b89f5a8c570c1f4e81ec36eff4578d212932d728",
+      "size": [32, 32],
+      "entityId": "item:forget-me-not"
+    }
+  ]
+}
