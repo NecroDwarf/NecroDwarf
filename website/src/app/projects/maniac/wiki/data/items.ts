@@ -7,6 +7,20 @@ export const items: readonly Entity<"item">[] = [
     slug: "nightmare-lighter",
     name: "Кошмарная зажигалка",
     revisions: {
+      "release:1.1": {
+        data: {
+          description:
+            "Предмет для кошмарных испытаний, который дает слабый переносной свет.",
+          icon: "nightmare-lighter",
+          usage:
+            "Зажигалку можно включать и выключать, но топливо не бесконечное.",
+          abilityIds: [],
+          mechanicIds: [],
+        },
+        evidence: [
+          { path: "docs/changelogs/maniac/changelog_maniac_1_1.html" },
+        ],
+      },
       [verifiedSource]: {
         data: {
           description:

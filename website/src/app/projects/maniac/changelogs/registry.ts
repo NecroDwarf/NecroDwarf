@@ -13,6 +13,7 @@ export const releases: readonly Release[] = [
     projectId: "maniac",
     version: "1.2",
     slug: "1.2",
+    href: "/projects/maniac/changelog/1.2",
     title: "Flower Cleaning",
     background: { src: flowerBackground, width: 1400, height: 933 },
     summary:
@@ -28,6 +29,7 @@ export const releases: readonly Release[] = [
     projectId: "maniac",
     version: "1.1",
     slug: "1.1",
+    href: "/projects/maniac/changelog/1.1",
     title: "Кошмарный додеп",
     background: { src: nightmareBackground, width: 1400, height: 583 },
     summary: "Новая глава хроник Maniac — «Кошмарный додеп».",
@@ -41,6 +43,7 @@ export const releases: readonly Release[] = [
     projectId: "maniac",
     version: "1.0",
     slug: "1.0",
+    href: "/projects/maniac/changelog/1.0",
     title: "Maniac Reforge",
     background: { src: reforgeBackground, width: 1400, height: 518 },
     summary: "Большая переработка игровых систем Maniac.",

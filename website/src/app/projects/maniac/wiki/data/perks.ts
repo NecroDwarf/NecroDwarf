@@ -1,5 +1,6 @@
 import type { Entity, EntityData } from "./types";
 import { verifiedSource } from "./snapshots";
+import { flowerPerks } from "./flower-perks";
 // Prose is checked in both sources; numeric snapshots are explicitly separate.
 const common: Omit<EntityData["perk"], "stats"> = {
   description:
@@ -9,6 +10,7 @@ const common: Omit<EntityData["perk"], "stats"> = {
   mechanicIds: ["mechanic:flower-return"],
 };
 export const perks: readonly Entity<"perk">[] = [
+  ...flowerPerks,
   {
     id: "perk:forget-me-not",
     kind: "perk",

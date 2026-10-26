@@ -60,6 +60,14 @@ export function ManiacLab() {
         </div>
       </section>
       <section>
+        <h2>Компактные карточки и пиксельные предметы</h2>
+        <div className={s.grid}>
+          <AbilityCard id="ability:concentrated-nightmare" variant="compact" />
+          <ItemCard id="item:nightmare-lighter" variant="compact" />
+          <ItemCard id="item:forget-me-not" variant="compact" />
+        </div>
+      </section>
+      <section>
         <h2>История и справочник — разные снимки</h2>
         <p className={s.note}>
           Слева — проверенный commit исходников, справа — только сведения

@@ -13,6 +13,7 @@ export interface Release {
   theme: string;
   tags?: readonly string[];
   source: string;
+  href?: string;
 }
 export interface Project {
   id: string;

@@ -1,0 +1,18 @@
+{
+  "sourceCommit": "8692f66dc76582144be85d553d43a41f189b64e7",
+  "modelSha256": "f36baa4ddb8f7b5c790e59b3dc5e5eacd720447502db7629673bbd91e927d8d0",
+  "output": "src/app/projects/maniac/assets/wiki/nightmare-lighter-render.png",
+  "sha256": "c7725e7435e7823632573ae0506ac72575ca76f4c72a9c89463c127092262079",
+  "size": [512, 512],
+  "pose": "original opening animation at 1.5833s (open lid, original flame geometry)",
+  "cameraDirection": [1, 0.65, -1],
+  "projection": "orthographic",
+  "visibleOccupancy": 0.86,
+  "renderer": "Three.js; nearest original texture; studio lighting, no Minecraft shaders",
+  "three": "0.186.1",
+  "browser": "156.0.4314.42",
+  "projectedBounds": [
+    -0.5674399438960336, -0.8033099698419051, -5.824064923453286,
+    0.5666725208530987, 0.6530835458363214, -4.2684569845870115
+  ]
+}

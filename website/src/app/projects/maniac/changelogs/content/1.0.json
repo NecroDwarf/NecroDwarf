@@ -1,0 +1,3365 @@
+{
+  "version": "1.0",
+  "intro": "— Переход к новому этапу модинга —",
+  "note": "все потому, что мы переходим на нормальную нумерацию версий, теперь не каждая версия мажорная, но каждая версия будет иметь своё кодовое название",
+  "stats": [
+    {
+      "value": "50+",
+      "label": "новых файлов"
+    },
+    {
+      "value": "30+",
+      "label": "изменённых файлов"
+    },
+    {
+      "value": "10 000+",
+      "label": "строк кода"
+    }
+  ],
+  "sections": [
+    {
+      "id": "section-01",
+      "title": "Отказ от мода maniacweaponsRevolution",
+      "nodes": [
+        " ",
+        {
+          "tag": "div",
+          "children": [
+            " Мы перешли на новый этап модинга — от визуального программирования к полноценному. Все сущности, блоки и предметы из старого мода объединены в один, что даёт значительно больше гибкости и контроля над механиками. "
+          ],
+          "role": "cl-callout"
+        },
+        " ",
+        {
+          "tag": "div",
+          "children": [
+            " ",
+            {
+              "tag": "article",
+              "children": [
+                " ",
+                {
+                  "tag": "h3",
+                  "children": [
+                    {
+                      "tag": "span",
+                      "children": ["ПЕРЕНЕСЕНО"],
+                      "role": "badge"
+                    },
+                    " Сущности и предметы"
+                  ],
+                  "role": "card-head"
+                },
+                " ",
+                {
+                  "tag": "p",
+                  "children": [
+                    "Все сущности и предметы из maniacweaponsRevolution перенесены и переработаны в рамках единого мода. Визуальный редактор больше не используется."
+                  ]
+                },
+                " "
+              ],
+              "role": "card"
+            },
+            " "
+          ],
+          "role": "cards"
+        },
+        " "
+      ]
+    },
+    {
+      "id": "section-02",
+      "title": "Новые системы и механики",
+      "nodes": [
+        " ",
+        {
+          "tag": "div",
+          "children": [
+            " ",
+            {
+              "tag": "article",
+              "children": [
+                " ",
+                {
+                  "tag": "h3",
+                  "children": [
+                    {
+                      "tag": "span",
+                      "children": ["НОВОЕ"],
+                      "role": "badge"
+                    },
+                    " Система лежания"
+                  ],
+                  "role": "card-head"
+                },
+                " ",
+                {
+                  "tag": "p",
+                  "children": ["Полноценная механика нокдауна для выживших:"]
+                },
+                " ",
+                {
+                  "tag": "ul",
+                  "children": [
+                    " ",
+                    {
+                      "tag": "li",
+                      "children": ["Второй шанс при смерти — один раз за игру"]
+                    },
+                    " ",
+                    {
+                      "tag": "li",
+                      "children": [
+                        "Союзники поднимают правой кнопкой (6 сек обычный, 3 сек медик)"
+                      ]
+                    },
+                    " ",
+                    {
+                      "tag": "li",
+                      "children": ["60 секунд до автосмерти"]
+                    },
+                    " ",
+                    {
+                      "tag": "li",
+                      "children": ["После подъёма — штраф −50% HP"]
+                    },
+                    " ",
+                    {
+                      "tag": "li",
+                      "children": ["HUD-индикаторы для всех игроков"]
+                    },
+                    " "
+                  ]
+                },
+                " "
+              ],
+              "role": "card"
+            },
+            " ",
+            {
+              "tag": "article",
+              "children": [
+                " ",
+                {
+                  "tag": "h3",
+                  "children": [
+                    {
+                      "tag": "span",
+                      "children": ["НОВОЕ"],
+                      "role": "badge"
+                    },
+                    " Система зависимости ",
+                    {
+                      "tag": "span",
+                      "children": ["Мефедронщик"],
+                      "role": "badge"
+                    }
+                  ],
+                  "role": "card-head"
+                },
+                " ",
+                {
+                  "tag": "p",
+                  "children": [
+                    "Механика зависимости, добавленная специально для класса «Мефедронщик»:"
+                  ]
+                },
+                " ",
+                {
+                  "tag": "ul",
+                  "children": [
+                    " ",
+                    {
+                      "tag": "li",
+                      "children": ["Шкала с 4 стадиями ломки и дебафами"]
+                    },
+                    " ",
+                    {
+                      "tag": "li",
+                      "children": [
+                        "Шприцы адреналина дают ускорение и частично сбрасывают шкалу"
+                      ]
+                    },
+                    " ",
+                    {
+                      "tag": "li",
+                      "children": [
+                        "Бонг приостанавливает нарастание зависимости"
+                      ]
+                    },
+                    " ",
+                    {
+                      "tag": "li",
+                      "children": ["На 3-й стадии есть шанс смерти"]
+                    },
+                    " "
+                  ]
+                },
+                " "
+              ],
+              "role": "card"
+            },
+            " ",
+            {
+              "tag": "article",
+              "children": [
+                " ",
+                {
+                  "tag": "h3",
+                  "children": [
+                    {
+                      "tag": "span",
+                      "children": ["ПЕРЕРАБОТАНО"],
+                      "role": "badge"
+                    },
+                    " Система чумы"
+                  ],
+                  "role": "card-head"
+                },
+                " ",
+                {
+                  "tag": "p",
+                  "children": [
+                    "Ключевое изменение: добавлена HUD-индикация прогресса чумы. Теперь не нужно гадать «сколько мне осталось»."
+                  ]
+                },
+                " ",
+                {
+                  "tag": "ul",
+                  "children": [
+                    " ",
+                    {
+                      "tag": "li",
+                      "children": ["Визуальная шкала прогресса на экране"]
+                    },
+                    " ",
+                    {
+                      "tag": "li",
+                      "children": [
+                        "Чумная лампа, радиус 5 блоков, урон каждые 8 сек"
+                      ]
+                    },
+                    " "
+                  ]
+                },
+                " "
+              ],
+              "role": "card"
+            },
+            " ",
+            {
+              "tag": "article",
+              "children": [
+                " ",
+                {
+                  "tag": "h3",
+                  "children": [
+                    {
+                      "tag": "span",
+                      "children": ["ПЕРЕРАБОТАНО"],
+                      "role": "badge"
+                    },
+                    " Тотем шамана"
+                  ],
+                  "role": "card-head"
+                },
+                " ",
+                {
+                  "tag": "p",
+                  "children": ["Переработана механика тотема:"]
+                },
+                " ",
+                {
+                  "tag": "ul",
+                  "children": [
+                    " ",
+                    {
+                      "tag": "li",
+                      "children": [
+                        "Подсвечивает маньяков, пробегающих рядом, ",
+                        {
+                          "tag": "strong",
+                          "children": ["только для поставившего тотем"]
+                        },
+                        " игрока"
+                      ]
+                    },
+                    " ",
+                    {
+                      "tag": "li",
+                      "children": [
+                        "Умирает от количества ударов, а не имеет HP — 3 удара до смерти независимо от урона"
+                      ]
+                    },
+                    " ",
+                    {
+                      "tag": "li",
+                      "children": ["Радиус действия: 5 блоков"]
+                    },
+                    " "
+                  ]
+                },
+                " "
+              ],
+              "role": "card"
+            },
+            " ",
+            {
+              "tag": "article",
+              "children": [
+                " ",
+                {
+                  "tag": "h3",
+                  "children": [
+                    {
+                      "tag": "span",
+                      "children": ["ПЕРЕРАБОТАНО"],
+                      "role": "badge"
+                    },
+                    " Улей"
+                  ],
+                  "role": "card-head"
+                },
+                " ",
+                {
+                  "tag": "p",
+                  "children": [
+                    "Предмет «Улей» стал значительно полезнее. Теперь кроме ярости (которая даёт 80% резист) выпускает разъярённых пчёл, атакующих выживших. Наконец-то не бесполезный предмет."
+                  ]
+                },
+                " "
+              ],
+              "role": "card"
+            },
+            " ",
+            {
+              "tag": "article",
+              "children": [
+                " ",
+                {
+                  "tag": "h3",
+                  "children": [
+                    {
+                      "tag": "span",
+                      "children": ["ПЕРЕРАБОТАНО"],
+                      "role": "badge"
+                    },
+                    " Звериные когти"
+                  ],
+                  "role": "card-head"
+                },
+                " ",
+                {
+                  "tag": "p",
+                  "children": [
+                    "В «Звериные когти» перенесён прыжок урсы — теперь немного переработан: не прыгает так далеко, но при приземлении наносит урон в области."
+                  ]
+                },
+                " "
+              ],
+              "role": "card"
+            },
+            " "
+          ],
+          "role": "cards"
+        },
+        " "
+      ]
+    },
+    {
+      "id": "section-03",
+      "title": "Начало и настройка игры",
+      "nodes": [
+        " ",
+        {
+          "tag": "div",
+          "children": [
+            " Вся система подготовки и настройки игры полностью перенесена в мод. Теперь всё работает более гибко и стабильно — старая схема на датапаке осталась в прошлом. "
+          ],
+          "role": "cl-callout"
+        },
+        " ",
+        {
+          "tag": "div",
+          "children": [
+            " ",
+            {
+              "tag": "article",
+              "children": [
+                " ",
+                {
+                  "tag": "h3",
+                  "children": [
+                    {
+                      "tag": "span",
+                      "children": ["НОВОЕ"],
+                      "role": "badge"
+                    },
+                    " Прелобби и готовность"
+                  ],
+                  "role": "card-head"
+                },
+                " ",
+                {
+                  "tag": "ul",
+                  "children": [
+                    " ",
+                    {
+                      "tag": "li",
+                      "children": ["Система подтверждения готовности до старта"]
+                    },
+                    " ",
+                    {
+                      "tag": "li",
+                      "children": ["Автоматическая выдача стартовых предметов"]
+                    },
+                    " ",
+                    {
+                      "tag": "li",
+                      "children": ["Гибкое управление через команды"]
+                    },
+                    " "
+                  ]
+                },
+                " "
+              ],
+              "role": "card"
+            },
+            " ",
+            {
+              "tag": "article",
+              "children": [
+                " ",
+                {
+                  "tag": "h3",
+                  "children": [
+                    {
+                      "tag": "span",
+                      "children": ["НОВОЕ"],
+                      "role": "badge"
+                    },
+                    " Переработанный гайд"
+                  ],
+                  "role": "card-head"
+                },
+                " ",
+                {
+                  "tag": "ul",
+                  "children": [
+                    " ",
+                    {
+                      "tag": "li",
+                      "children": [
+                        "8 отдельных тем вместо одного длинного списка"
+                      ]
+                    },
+                    " ",
+                    {
+                      "tag": "li",
+                      "children": [
+                        "Описание механик отдельно для каждого класса"
+                      ]
+                    },
+                    " ",
+                    {
+                      "tag": "li",
+                      "children": [
+                        "Разделы: HUD и мана, нокдаун, взлом компьютеров, перки"
+                      ]
+                    },
+                    " "
+                  ]
+                },
+                " "
+              ],
+              "role": "card"
+            },
+            " ",
+            {
+              "tag": "article",
+              "children": [
+                " ",
+                {
+                  "tag": "h3",
+                  "children": [
+                    {
+                      "tag": "span",
+                      "children": ["ПЕРЕНЕСЕНО"],
+                      "role": "badge"
+                    },
+                    " Предметы из старого мода"
+                  ],
+                  "role": "card-head"
+                },
+                " ",
+                {
+                  "tag": "ul",
+                  "children": [
+                    " ",
+                    {
+                      "tag": "li",
+                      "children": ["Микрофон"]
+                    },
+                    " ",
+                    {
+                      "tag": "li",
+                      "children": ["Звериные когти"]
+                    },
+                    " ",
+                    {
+                      "tag": "li",
+                      "children": [
+                        "Чумная лампа ",
+                        {
+                          "tag": "em",
+                          "children": ["— реворк модели: коса → лампа"]
+                        }
+                      ]
+                    },
+                    " ",
+                    {
+                      "tag": "li",
+                      "children": ["Бонг & Шприц адреналина"]
+                    },
+                    " ",
+                    {
+                      "tag": "li",
+                      "children": ["Душа предка"]
+                    },
+                    " ",
+                    {
+                      "tag": "li",
+                      "children": ["Обмен измерений"]
+                    },
+                    " ",
+                    {
+                      "tag": "li",
+                      "children": ["Спавнер тотема"]
+                    },
+                    " ",
+                    {
+                      "tag": "li",
+                      "children": ["Предмет настроек"]
+                    },
+                    " "
+                  ]
+                },
+                " "
+              ],
+              "role": "card"
+            },
+            " ",
+            {
+              "tag": "article",
+              "children": [
+                " ",
+                {
+                  "tag": "h3",
+                  "children": [
+                    {
+                      "tag": "span",
+                      "children": ["НОВОЕ"],
+                      "role": "badge"
+                    },
+                    " Новые эффекты"
+                  ],
+                  "role": "card-head"
+                },
+                " ",
+                {
+                  "tag": "ul",
+                  "children": [
+                    " ",
+                    {
+                      "tag": "li",
+                      "children": [
+                        {
+                          "tag": "strong",
+                          "children": ["Чума"]
+                        },
+                        " — накопительный урон"
+                      ]
+                    },
+                    " ",
+                    {
+                      "tag": "li",
+                      "children": [
+                        {
+                          "tag": "strong",
+                          "children": ["Шипы"]
+                        },
+                        " — отражение 50% урона"
+                      ]
+                    },
+                    " ",
+                    {
+                      "tag": "li",
+                      "children": [
+                        {
+                          "tag": "strong",
+                          "children": ["Заморозка"]
+                        },
+                        " — полная остановка"
+                      ]
+                    },
+                    " ",
+                    {
+                      "tag": "li",
+                      "children": [
+                        {
+                          "tag": "strong",
+                          "children": ["Альтруист-буст"]
+                        },
+                        " — +5% к взлому для медика"
+                      ]
+                    },
+                    " "
+                  ]
+                },
+                " "
+              ],
+              "role": "card"
+            },
+            " "
+          ],
+          "role": "cards"
+        },
+        " "
+      ]
+    },
+    {
+      "id": "section-04",
+      "title": "Система сбора статистики",
+      "nodes": [
+        " ",
+        {
+          "tag": "div",
+          "children": [
+            " Статистика собирается исключительно для понимания бесполезности или имбовости некоторых перков и классов — чтобы режим становился лучше. "
+          ],
+          "role": "cl-callout"
+        },
+        " ",
+        {
+          "tag": "div",
+          "children": [
+            " Но это всегда можно отключить, если вы «токсик» и не хотите улучшить режим. "
+          ],
+          "role": "cl-callout"
+        },
+        " ",
+        {
+          "tag": "div",
+          "children": [
+            " ",
+            {
+              "tag": "p",
+              "children": [
+                "Отказаться от сбора: команда ",
+                {
+                  "tag": "strong",
+                  "children": ["/maniacrev offsendstats"]
+                }
+              ]
+            },
+            " "
+          ],
+          "role": "text-body"
+        },
+        " "
+      ]
+    },
+    {
+      "id": "section-05",
+      "title": "Новые перки",
+      "nodes": [
+        " ",
+        {
+          "tag": "div",
+          "children": ["⚔ Маньяк"]
+        },
+        " ",
+        {
+          "tag": "div",
+          "children": [
+            " ",
+            {
+              "tag": "div",
+              "children": [
+                " ",
+                {
+                  "tag": "h3",
+                  "children": [
+                    "Выброс ",
+                    {
+                      "tag": "span",
+                      "children": ["Пассивный с КД"]
+                    }
+                  ],
+                  "role": "perk-name"
+                },
+                " ",
+                {
+                  "tag": "div",
+                  "children": [
+                    "Когда маньяк кладёт выжившего в нокдаун или убивает — ближайший компьютер откатывается назад. Требует прогресс на компьютере больше нуля."
+                  ],
+                  "role": "perk-desc"
+                },
+                " ",
+                {
+                  "tag": "div",
+                  "children": [
+                    " ",
+                    {
+                      "tag": "div",
+                      "children": [
+                        {
+                          "tag": "span",
+                          "children": ["Откат"],
+                          "role": "ps-key"
+                        },
+                        {
+                          "tag": "span",
+                          "children": ["5%"],
+                          "role": "ps-val"
+                        }
+                      ],
+                      "role": "ps-row"
+                    },
+                    " "
+                  ],
+                  "role": "perk-stats"
+                },
+                " "
+              ],
+              "role": "perk-card"
+            },
+            " ",
+            {
+              "tag": "div",
+              "children": [
+                " ",
+                {
+                  "tag": "h3",
+                  "children": [
+                    "Семейный Раздор ",
+                    {
+                      "tag": "span",
+                      "children": ["Пассивный с КД"]
+                    }
+                  ],
+                  "role": "perk-name"
+                },
+                " ",
+                {
+                  "tag": "div",
+                  "children": [
+                    "Когда 2 или больше выживших взламывают один компьютер — подсвечивает их для владельца перка."
+                  ],
+                  "role": "perk-desc"
+                },
+                " ",
+                {
+                  "tag": "div",
+                  "children": [
+                    " ",
+                    {
+                      "tag": "div",
+                      "children": [
+                        {
+                          "tag": "span",
+                          "children": ["Кулдаун"],
+                          "role": "ps-key"
+                        },
+                        {
+                          "tag": "span",
+                          "children": ["60с"],
+                          "role": "ps-val"
+                        }
+                      ],
+                      "role": "ps-row"
+                    },
+                    " "
+                  ],
+                  "role": "perk-stats"
+                },
+                " "
+              ],
+              "role": "perk-card"
+            },
+            " ",
+            {
+              "tag": "div",
+              "children": [
+                " ",
+                {
+                  "tag": "h3",
+                  "children": [
+                    "Грифер ",
+                    {
+                      "tag": "span",
+                      "children": ["Пассивный с КД"]
+                    }
+                  ],
+                  "role": "perk-name"
+                },
+                " ",
+                {
+                  "tag": "div",
+                  "children": [
+                    "После того как выжившие завершают взлом компьютера — самый заряженный незаблокированный комп блокируется на некоторое время."
+                  ],
+                  "role": "perk-desc"
+                },
+                " ",
+                {
+                  "tag": "div",
+                  "children": [
+                    " ",
+                    {
+                      "tag": "div",
+                      "children": [
+                        {
+                          "tag": "span",
+                          "children": ["Блокировка"],
+                          "role": "ps-key"
+                        },
+                        {
+                          "tag": "span",
+                          "children": ["30с"],
+                          "role": "ps-val"
+                        }
+                      ],
+                      "role": "ps-row"
+                    },
+                    " "
+                  ],
+                  "role": "perk-stats"
+                },
+                " "
+              ],
+              "role": "perk-card"
+            },
+            " ",
+            {
+              "tag": "div",
+              "children": [
+                " ",
+                {
+                  "tag": "h3",
+                  "children": [
+                    "Тишина... ",
+                    {
+                      "tag": "span",
+                      "children": ["Активный"]
+                    }
+                  ],
+                  "role": "perk-name"
+                },
+                " ",
+                {
+                  "tag": "div",
+                  "children": [
+                    "Накладывает эффект Silence на всех в радиусе. Пока эффект активен — никто не может использовать активные перки."
+                  ],
+                  "role": "perk-desc"
+                },
+                " ",
+                {
+                  "tag": "div",
+                  "children": [
+                    " ",
+                    {
+                      "tag": "div",
+                      "children": [
+                        {
+                          "tag": "span",
+                          "children": ["Радиус"],
+                          "role": "ps-key"
+                        },
+                        {
+                          "tag": "span",
+                          "children": ["10бл"],
+                          "role": "ps-val"
+                        }
+                      ],
+                      "role": "ps-row"
+                    },
+                    " "
+                  ],
+                  "role": "perk-stats"
+                },
+                " "
+              ],
+              "role": "perk-card"
+            },
+            " "
+          ],
+          "role": "perk-grid"
+        },
+        " ",
+        {
+          "tag": "div",
+          "children": ["🛡 Выжившие"]
+        },
+        " ",
+        {
+          "tag": "div",
+          "children": [
+            " ",
+            {
+              "tag": "div",
+              "children": [
+                " ",
+                {
+                  "tag": "h3",
+                  "children": [
+                    "Независимость ",
+                    {
+                      "tag": "span",
+                      "children": ["Активный · одноразовый"]
+                    }
+                  ],
+                  "role": "perk-name"
+                },
+                " ",
+                {
+                  "tag": "div",
+                  "children": [
+                    "Когда до конца нокдауна остаётся совсем мало времени — можно активировать перк и самостоятельно встать."
+                  ],
+                  "role": "perk-desc"
+                },
+                " ",
+                {
+                  "tag": "div",
+                  "children": [
+                    " ",
+                    {
+                      "tag": "div",
+                      "children": [
+                        {
+                          "tag": "span",
+                          "children": ["Триггер"],
+                          "role": "ps-key"
+                        },
+                        {
+                          "tag": "span",
+                          "children": ["≤ 10с до смерти"],
+                          "role": "ps-val"
+                        }
+                      ],
+                      "role": "ps-row"
+                    },
+                    " ",
+                    {
+                      "tag": "div",
+                      "children": [
+                        {
+                          "tag": "span",
+                          "children": ["HP при подъёме"],
+                          "role": "ps-key"
+                        },
+                        {
+                          "tag": "span",
+                          "children": ["5"],
+                          "role": "ps-val"
+                        }
+                      ],
+                      "role": "ps-row"
+                    },
+                    " "
+                  ],
+                  "role": "perk-stats"
+                },
+                " "
+              ],
+              "role": "perk-card"
+            },
+            " ",
+            {
+              "tag": "div",
+              "children": [
+                " ",
+                {
+                  "tag": "h3",
+                  "children": [
+                    "Альтруист.exe ",
+                    {
+                      "tag": "span",
+                      "children": ["Пассивный"]
+                    }
+                  ],
+                  "role": "perk-name"
+                },
+                " ",
+                {
+                  "tag": "div",
+                  "children": [
+                    "После подъёма союзника — временно ускоряется взлом компьютеров."
+                  ],
+                  "role": "perk-desc"
+                },
+                " ",
+                {
+                  "tag": "div",
+                  "children": [
+                    " ",
+                    {
+                      "tag": "div",
+                      "children": [
+                        {
+                          "tag": "span",
+                          "children": ["Бонус к взлому"],
+                          "role": "ps-key"
+                        },
+                        {
+                          "tag": "span",
+                          "children": ["5%"],
+                          "role": "ps-val"
+                        }
+                      ],
+                      "role": "ps-row"
+                    },
+                    " ",
+                    {
+                      "tag": "div",
+                      "children": [
+                        {
+                          "tag": "span",
+                          "children": ["Длительность"],
+                          "role": "ps-key"
+                        },
+                        {
+                          "tag": "span",
+                          "children": ["45с"],
+                          "role": "ps-val"
+                        }
+                      ],
+                      "role": "ps-row"
+                    },
+                    " "
+                  ],
+                  "role": "perk-stats"
+                },
+                " "
+              ],
+              "role": "perk-card"
+            },
+            " ",
+            {
+              "tag": "div",
+              "children": [
+                " ",
+                {
+                  "tag": "h3",
+                  "children": [
+                    "Любовник Магии ",
+                    {
+                      "tag": "span",
+                      "children": ["Пассивный"]
+                    }
+                  ],
+                  "role": "perk-name"
+                },
+                " ",
+                {
+                  "tag": "div",
+                  "children": [
+                    "После подъёма союзника — получает ману. Чем чаще помогаешь команде, тем больше ресурсов."
+                  ],
+                  "role": "perk-desc"
+                },
+                " ",
+                {
+                  "tag": "div",
+                  "children": [
+                    " ",
+                    {
+                      "tag": "div",
+                      "children": [
+                        {
+                          "tag": "span",
+                          "children": ["Мана за подъём"],
+                          "role": "ps-key"
+                        },
+                        {
+                          "tag": "span",
+                          "children": ["10"],
+                          "role": "ps-val"
+                        }
+                      ],
+                      "role": "ps-row"
+                    },
+                    " ",
+                    {
+                      "tag": "div",
+                      "children": [
+                        {
+                          "tag": "span",
+                          "children": ["Кулдаун"],
+                          "role": "ps-key"
+                        },
+                        {
+                          "tag": "span",
+                          "children": ["90с"],
+                          "role": "ps-val"
+                        }
+                      ],
+                      "role": "ps-row"
+                    },
+                    " "
+                  ],
+                  "role": "perk-stats"
+                },
+                " "
+              ],
+              "role": "perk-card"
+            },
+            " ",
+            {
+              "tag": "div",
+              "children": [
+                " ",
+                {
+                  "tag": "h3",
+                  "children": [
+                    "Голландцы ",
+                    {
+                      "tag": "span",
+                      "children": ["Пассивный"]
+                    }
+                  ],
+                  "role": "perk-name"
+                },
+                " ",
+                {
+                  "tag": "div",
+                  "children": [
+                    "За каждого союзника, заряжающего тот же компьютер — бонус к скорости взлома. Не считает самого владельца перка."
+                  ],
+                  "role": "perk-desc"
+                },
+                " ",
+                {
+                  "tag": "div",
+                  "children": [
+                    " ",
+                    {
+                      "tag": "div",
+                      "children": [
+                        {
+                          "tag": "span",
+                          "children": ["Бонус за игрока"],
+                          "role": "ps-key"
+                        },
+                        {
+                          "tag": "span",
+                          "children": ["4%"],
+                          "role": "ps-val"
+                        }
+                      ],
+                      "role": "ps-row"
+                    },
+                    " "
+                  ],
+                  "role": "perk-stats"
+                },
+                " "
+              ],
+              "role": "perk-card"
+            },
+            " ",
+            {
+              "tag": "div",
+              "children": [
+                " ",
+                {
+                  "tag": "h3",
+                  "children": [
+                    "Идеалыч ",
+                    {
+                      "tag": "span",
+                      "children": ["Пассивный"]
+                    }
+                  ],
+                  "role": "perk-name"
+                },
+                " ",
+                {
+                  "tag": "div",
+                  "children": [
+                    "Перк завязан на качество QTE при взломе. Идеальное попадание ускоряет взлом, промах — замедляет. Обычное попадание сбрасывает штраф."
+                  ],
+                  "role": "perk-desc"
+                },
+                " ",
+                {
+                  "tag": "div",
+                  "children": [
+                    " ",
+                    {
+                      "tag": "div",
+                      "children": [
+                        {
+                          "tag": "span",
+                          "children": ["Крит → бонус"],
+                          "role": "ps-key"
+                        },
+                        {
+                          "tag": "span",
+                          "children": ["+1% (макс +5%)"],
+                          "role": "ps-val"
+                        }
+                      ],
+                      "role": "ps-row"
+                    },
+                    " ",
+                    {
+                      "tag": "div",
+                      "children": [
+                        {
+                          "tag": "span",
+                          "children": ["Промах → штраф"],
+                          "role": "ps-key"
+                        },
+                        {
+                          "tag": "span",
+                          "children": ["−1% (макс −10%)"],
+                          "role": "ps-val"
+                        }
+                      ],
+                      "role": "ps-row"
+                    },
+                    " "
+                  ],
+                  "role": "perk-stats"
+                },
+                " "
+              ],
+              "role": "perk-card"
+            },
+            " ",
+            {
+              "tag": "div",
+              "children": [
+                " ",
+                {
+                  "tag": "h3",
+                  "children": [
+                    "Ментальная Связь ",
+                    {
+                      "tag": "span",
+                      "children": ["Пассивный"]
+                    }
+                  ],
+                  "role": "perk-name"
+                },
+                " ",
+                {
+                  "tag": "div",
+                  "children": [
+                    "Подсвечивает всех выживших поблизости. Видит только владелец перка."
+                  ],
+                  "role": "perk-desc"
+                },
+                " ",
+                {
+                  "tag": "div",
+                  "children": [
+                    " ",
+                    {
+                      "tag": "div",
+                      "children": [
+                        {
+                          "tag": "span",
+                          "children": ["Радиус"],
+                          "role": "ps-key"
+                        },
+                        {
+                          "tag": "span",
+                          "children": ["30 бл"],
+                          "role": "ps-val"
+                        }
+                      ],
+                      "role": "ps-row"
+                    },
+                    " "
+                  ],
+                  "role": "perk-stats"
+                },
+                " "
+              ],
+              "role": "perk-card"
+            },
+            " "
+          ],
+          "role": "perk-grid"
+        },
+        " ",
+        {
+          "tag": "div",
+          "children": ["⚔🛡 Все классы"]
+        },
+        " ",
+        {
+          "tag": "div",
+          "children": [
+            " ",
+            {
+              "tag": "div",
+              "children": [
+                " ",
+                {
+                  "tag": "h3",
+                  "children": [
+                    "Футбольный фанат ",
+                    {
+                      "tag": "span",
+                      "children": ["Активный · одноразовый"]
+                    }
+                  ],
+                  "role": "perk-name"
+                },
+                " ",
+                {
+                  "tag": "div",
+                  "children": [
+                    "Замораживает владельца перка на некоторое время, после чего выдаёт Clarity."
+                  ],
+                  "role": "perk-desc"
+                },
+                " ",
+                {
+                  "tag": "div",
+                  "children": [
+                    " ",
+                    {
+                      "tag": "div",
+                      "children": [
+                        {
+                          "tag": "span",
+                          "children": ["Заморозка (выжившие)"],
+                          "role": "ps-key"
+                        },
+                        {
+                          "tag": "span",
+                          "children": ["60с"],
+                          "role": "ps-val"
+                        }
+                      ],
+                      "role": "ps-row"
+                    },
+                    " ",
+                    {
+                      "tag": "div",
+                      "children": [
+                        {
+                          "tag": "span",
+                          "children": ["Заморозка (маньяк)"],
+                          "role": "ps-key"
+                        },
+                        {
+                          "tag": "span",
+                          "children": ["30с"],
+                          "role": "ps-val"
+                        }
+                      ],
+                      "role": "ps-row"
+                    },
+                    " "
+                  ],
+                  "role": "perk-stats"
+                },
+                " "
+              ],
+              "role": "perk-card"
+            },
+            " ",
+            {
+              "tag": "div",
+              "children": [
+                " ",
+                {
+                  "tag": "h3",
+                  "children": [
+                    "Шкура Ёжика ",
+                    {
+                      "tag": "span",
+                      "children": ["Активный"]
+                    }
+                  ],
+                  "role": "perk-name"
+                },
+                " ",
+                {
+                  "tag": "div",
+                  "children": [
+                    "Временно активирует эффект шипов — отражает часть получаемого урона обратно атакующему."
+                  ],
+                  "role": "perk-desc"
+                },
+                " ",
+                {
+                  "tag": "div",
+                  "children": [
+                    " ",
+                    {
+                      "tag": "div",
+                      "children": [
+                        {
+                          "tag": "span",
+                          "children": ["Отражение урона"],
+                          "role": "ps-key"
+                        },
+                        {
+                          "tag": "span",
+                          "children": ["50%"],
+                          "role": "ps-val"
+                        }
+                      ],
+                      "role": "ps-row"
+                    },
+                    " ",
+                    {
+                      "tag": "div",
+                      "children": [
+                        {
+                          "tag": "span",
+                          "children": ["Длительность"],
+                          "role": "ps-key"
+                        },
+                        {
+                          "tag": "span",
+                          "children": ["5с"],
+                          "role": "ps-val"
+                        }
+                      ],
+                      "role": "ps-row"
+                    },
+                    " "
+                  ],
+                  "role": "perk-stats"
+                },
+                " "
+              ],
+              "role": "perk-card"
+            },
+            " ",
+            {
+              "tag": "div",
+              "children": [
+                " ",
+                {
+                  "tag": "h3",
+                  "children": [
+                    "Mana Break ",
+                    {
+                      "tag": "span",
+                      "children": ["Активный"]
+                    }
+                  ],
+                  "role": "perk-name"
+                },
+                " ",
+                {
+                  "tag": "div",
+                  "children": [
+                    "При активации — следующий удар снимает ману с цели."
+                  ],
+                  "role": "perk-desc"
+                },
+                " ",
+                {
+                  "tag": "div",
+                  "children": [
+                    " ",
+                    {
+                      "tag": "div",
+                      "children": [
+                        {
+                          "tag": "span",
+                          "children": ["Снятие маны"],
+                          "role": "ps-key"
+                        },
+                        {
+                          "tag": "span",
+                          "children": ["10"],
+                          "role": "ps-val"
+                        }
+                      ],
+                      "role": "ps-row"
+                    },
+                    " "
+                  ],
+                  "role": "perk-stats"
+                },
+                " "
+              ],
+              "role": "perk-card"
+            },
+            " "
+          ],
+          "role": "perk-grid"
+        },
+        " "
+      ]
+    },
+    {
+      "id": "section-06",
+      "title": "Ребаланс перков",
+      "nodes": [
+        " ",
+        {
+          "tag": "div",
+          "children": [
+            " ",
+            {
+              "tag": "div",
+              "children": [
+                " ",
+                {
+                  "tag": "h3",
+                  "children": ["Большие деньги - большие яйца"],
+                  "role": "rb-perk-name"
+                },
+                " ",
+                {
+                  "tag": "div",
+                  "children": [
+                    " ",
+                    {
+                      "tag": "div",
+                      "children": [
+                        {
+                          "tag": "span",
+                          "children": ["Бонус денег"],
+                          "role": "rb-param"
+                        },
+                        {
+                          "tag": "span",
+                          "children": ["20%"],
+                          "role": "rb-old"
+                        },
+                        {
+                          "tag": "span",
+                          "children": ["→"],
+                          "role": "rb-arrow"
+                        },
+                        {
+                          "tag": "span",
+                          "children": ["50%"],
+                          "role": "rb-new-buff"
+                        }
+                      ],
+                      "role": "rb-row"
+                    },
+                    " "
+                  ],
+                  "role": "rb-changes"
+                },
+                " "
+              ],
+              "role": "rebalance-card"
+            },
+            " ",
+            {
+              "tag": "div",
+              "children": [
+                " ",
+                {
+                  "tag": "h3",
+                  "children": ["Волна ужаса"],
+                  "role": "rb-perk-name"
+                },
+                " ",
+                {
+                  "tag": "div",
+                  "children": [
+                    " ",
+                    {
+                      "tag": "div",
+                      "children": [
+                        {
+                          "tag": "span",
+                          "children": ["Длительность эффекта"],
+                          "role": "rb-param"
+                        },
+                        {
+                          "tag": "span",
+                          "children": ["3с"],
+                          "role": "rb-old"
+                        },
+                        {
+                          "tag": "span",
+                          "children": ["→"],
+                          "role": "rb-arrow"
+                        },
+                        {
+                          "tag": "span",
+                          "children": ["5с"],
+                          "role": "rb-new-buff"
+                        }
+                      ],
+                      "role": "rb-row"
+                    },
+                    " ",
+                    {
+                      "tag": "div",
+                      "children": [
+                        {
+                          "tag": "span",
+                          "children": ["Потребление маны"],
+                          "role": "rb-param"
+                        },
+                        {
+                          "tag": "span",
+                          "children": ["0"],
+                          "role": "rb-old"
+                        },
+                        {
+                          "tag": "span",
+                          "children": ["→"],
+                          "role": "rb-arrow"
+                        },
+                        {
+                          "tag": "span",
+                          "children": ["10"],
+                          "role": "rb-new-nerf"
+                        }
+                      ],
+                      "role": "rb-row"
+                    },
+                    " "
+                  ],
+                  "role": "rb-changes"
+                },
+                " "
+              ],
+              "role": "rebalance-card"
+            },
+            " ",
+            {
+              "tag": "div",
+              "children": [
+                " ",
+                {
+                  "tag": "h3",
+                  "children": ["Мегамозг"],
+                  "role": "rb-perk-name"
+                },
+                " ",
+                {
+                  "tag": "div",
+                  "children": [
+                    " ",
+                    {
+                      "tag": "div",
+                      "children": [
+                        {
+                          "tag": "span",
+                          "children": ["Бонус опыта"],
+                          "role": "rb-param"
+                        },
+                        {
+                          "tag": "span",
+                          "children": ["20%"],
+                          "role": "rb-old"
+                        },
+                        {
+                          "tag": "span",
+                          "children": ["→"],
+                          "role": "rb-arrow"
+                        },
+                        {
+                          "tag": "span",
+                          "children": ["50%"],
+                          "role": "rb-new-buff"
+                        }
+                      ],
+                      "role": "rb-row"
+                    },
+                    " "
+                  ],
+                  "role": "rb-changes"
+                },
+                " "
+              ],
+              "role": "rebalance-card"
+            },
+            " ",
+            {
+              "tag": "div",
+              "children": [
+                " ",
+                {
+                  "tag": "h3",
+                  "children": ["Золотая медаль ГТО"],
+                  "role": "rb-perk-name"
+                },
+                " ",
+                {
+                  "tag": "div",
+                  "children": [
+                    " ",
+                    {
+                      "tag": "div",
+                      "children": [
+                        {
+                          "tag": "span",
+                          "children": ["Потребление маны"],
+                          "role": "rb-param"
+                        },
+                        {
+                          "tag": "span",
+                          "children": ["0"],
+                          "role": "rb-old"
+                        },
+                        {
+                          "tag": "span",
+                          "children": ["→"],
+                          "role": "rb-arrow"
+                        },
+                        {
+                          "tag": "span",
+                          "children": ["5"],
+                          "role": "rb-new-nerf"
+                        }
+                      ],
+                      "role": "rb-row"
+                    },
+                    " "
+                  ],
+                  "role": "rb-changes"
+                },
+                " "
+              ],
+              "role": "rebalance-card"
+            },
+            " ",
+            {
+              "tag": "div",
+              "children": [
+                " ",
+                {
+                  "tag": "h3",
+                  "children": ["Прогрел новичка"],
+                  "role": "rb-perk-name"
+                },
+                " ",
+                {
+                  "tag": "div",
+                  "children": [
+                    " ",
+                    {
+                      "tag": "div",
+                      "children": [
+                        {
+                          "tag": "span",
+                          "children": ["Длительность подсветки"],
+                          "role": "rb-param"
+                        },
+                        {
+                          "tag": "span",
+                          "children": ["4с"],
+                          "role": "rb-old"
+                        },
+                        {
+                          "tag": "span",
+                          "children": ["→"],
+                          "role": "rb-arrow"
+                        },
+                        {
+                          "tag": "span",
+                          "children": ["5с"],
+                          "role": "rb-new-buff"
+                        }
+                      ],
+                      "role": "rb-row"
+                    },
+                    " ",
+                    {
+                      "tag": "div",
+                      "children": [
+                        {
+                          "tag": "span",
+                          "children": ["Кулдаун"],
+                          "role": "rb-param"
+                        },
+                        {
+                          "tag": "span",
+                          "children": ["27с"],
+                          "role": "rb-old"
+                        },
+                        {
+                          "tag": "span",
+                          "children": ["→"],
+                          "role": "rb-arrow"
+                        },
+                        {
+                          "tag": "span",
+                          "children": ["30с"],
+                          "role": "rb-new-nerf"
+                        }
+                      ],
+                      "role": "rb-row"
+                    },
+                    " "
+                  ],
+                  "role": "rb-changes"
+                },
+                " "
+              ],
+              "role": "rebalance-card"
+            },
+            " ",
+            {
+              "tag": "div",
+              "children": [
+                " ",
+                {
+                  "tag": "h3",
+                  "children": ["Компьютер раскрафтер"],
+                  "role": "rb-perk-name"
+                },
+                " ",
+                {
+                  "tag": "div",
+                  "children": [
+                    " ",
+                    {
+                      "tag": "div",
+                      "children": [
+                        {
+                          "tag": "span",
+                          "children": ["Откат"],
+                          "role": "rb-param"
+                        },
+                        {
+                          "tag": "span",
+                          "children": ["фикс. значение"],
+                          "role": "rb-old"
+                        },
+                        {
+                          "tag": "span",
+                          "children": ["→"],
+                          "role": "rb-arrow"
+                        },
+                        {
+                          "tag": "span",
+                          "children": ["50% от заряда"],
+                          "role": "rb-new-buff"
+                        }
+                      ],
+                      "role": "rb-row"
+                    },
+                    " ",
+                    {
+                      "tag": "div",
+                      "children": [
+                        {
+                          "tag": "span",
+                          "children": ["Потребление маны"],
+                          "role": "rb-param"
+                        },
+                        {
+                          "tag": "span",
+                          "children": ["0"],
+                          "role": "rb-old"
+                        },
+                        {
+                          "tag": "span",
+                          "children": ["→"],
+                          "role": "rb-arrow"
+                        },
+                        {
+                          "tag": "span",
+                          "children": ["10"],
+                          "role": "rb-new-nerf"
+                        }
+                      ],
+                      "role": "rb-row"
+                    },
+                    " "
+                  ],
+                  "role": "rb-changes"
+                },
+                " "
+              ],
+              "role": "rebalance-card"
+            },
+            " ",
+            {
+              "tag": "div",
+              "children": [
+                " ",
+                {
+                  "tag": "h3",
+                  "children": ["Слепота"],
+                  "role": "rb-perk-name"
+                },
+                " ",
+                {
+                  "tag": "div",
+                  "children": [
+                    " ",
+                    {
+                      "tag": "div",
+                      "children": [
+                        {
+                          "tag": "span",
+                          "children": ["Потребление маны"],
+                          "role": "rb-param"
+                        },
+                        {
+                          "tag": "span",
+                          "children": ["0"],
+                          "role": "rb-old"
+                        },
+                        {
+                          "tag": "span",
+                          "children": ["→"],
+                          "role": "rb-arrow"
+                        },
+                        {
+                          "tag": "span",
+                          "children": ["10"],
+                          "role": "rb-new-nerf"
+                        }
+                      ],
+                      "role": "rb-row"
+                    },
+                    " "
+                  ],
+                  "role": "rb-changes"
+                },
+                " "
+              ],
+              "role": "rebalance-card"
+            },
+            " ",
+            {
+              "tag": "div",
+              "children": [
+                " ",
+                {
+                  "tag": "h3",
+                  "children": ["Я - скорость"],
+                  "role": "rb-perk-name"
+                },
+                " ",
+                {
+                  "tag": "div",
+                  "children": [
+                    " ",
+                    {
+                      "tag": "div",
+                      "children": [
+                        {
+                          "tag": "span",
+                          "children": ["Длительность"],
+                          "role": "rb-param"
+                        },
+                        {
+                          "tag": "span",
+                          "children": ["10с"],
+                          "role": "rb-old"
+                        },
+                        {
+                          "tag": "span",
+                          "children": ["→"],
+                          "role": "rb-arrow"
+                        },
+                        {
+                          "tag": "span",
+                          "children": ["15с"],
+                          "role": "rb-new-buff"
+                        }
+                      ],
+                      "role": "rb-row"
+                    },
+                    " "
+                  ],
+                  "role": "rb-changes"
+                },
+                " "
+              ],
+              "role": "rebalance-card"
+            },
+            " ",
+            {
+              "tag": "div",
+              "children": [
+                " ",
+                {
+                  "tag": "h3",
+                  "children": ["\"Последнее дыхание"],
+                  "role": "rb-perk-name"
+                },
+                " ",
+                {
+                  "tag": "div",
+                  "children": [
+                    " ",
+                    {
+                      "tag": "div",
+                      "children": [
+                        {
+                          "tag": "span",
+                          "children": ["Длительность"],
+                          "role": "rb-param"
+                        },
+                        {
+                          "tag": "span",
+                          "children": ["7с"],
+                          "role": "rb-old"
+                        },
+                        {
+                          "tag": "span",
+                          "children": ["→"],
+                          "role": "rb-arrow"
+                        },
+                        {
+                          "tag": "span",
+                          "children": ["10с"],
+                          "role": "rb-new-buff"
+                        }
+                      ],
+                      "role": "rb-row"
+                    },
+                    " ",
+                    {
+                      "tag": "div",
+                      "children": [
+                        {
+                          "tag": "span",
+                          "children": ["Триггер при падении"],
+                          "role": "rb-param"
+                        },
+                        {
+                          "tag": "span",
+                          "children": ["✗"],
+                          "role": "rb-old"
+                        },
+                        {
+                          "tag": "span",
+                          "children": ["→"],
+                          "role": "rb-arrow"
+                        },
+                        {
+                          "tag": "span",
+                          "children": ["✓"],
+                          "role": "rb-new-buff"
+                        }
+                      ],
+                      "role": "rb-row"
+                    },
+                    " "
+                  ],
+                  "role": "rb-changes"
+                },
+                " "
+              ],
+              "role": "rebalance-card"
+            },
+            " ",
+            {
+              "tag": "div",
+              "children": [
+                " ",
+                {
+                  "tag": "h3",
+                  "children": ["Мимик"],
+                  "role": "rb-perk-name"
+                },
+                " ",
+                {
+                  "tag": "div",
+                  "children": [
+                    " ",
+                    {
+                      "tag": "div",
+                      "children": [
+                        {
+                          "tag": "span",
+                          "children": ["Потребление маны"],
+                          "role": "rb-param"
+                        },
+                        {
+                          "tag": "span",
+                          "children": ["0"],
+                          "role": "rb-old"
+                        },
+                        {
+                          "tag": "span",
+                          "children": ["→"],
+                          "role": "rb-arrow"
+                        },
+                        {
+                          "tag": "span",
+                          "children": ["15"],
+                          "role": "rb-new-nerf"
+                        }
+                      ],
+                      "role": "rb-row"
+                    },
+                    " "
+                  ],
+                  "role": "rb-changes"
+                },
+                " "
+              ],
+              "role": "rebalance-card"
+            },
+            " ",
+            {
+              "tag": "div",
+              "children": [
+                " ",
+                {
+                  "tag": "h3",
+                  "children": ["Быстрая реакция"],
+                  "role": "rb-perk-name"
+                },
+                " ",
+                {
+                  "tag": "div",
+                  "children": [
+                    " ",
+                    {
+                      "tag": "div",
+                      "children": [
+                        {
+                          "tag": "span",
+                          "children": ["Зона успеха (QTE)"],
+                          "role": "rb-param"
+                        },
+                        {
+                          "tag": "span",
+                          "children": ["30%"],
+                          "role": "rb-old"
+                        },
+                        {
+                          "tag": "span",
+                          "children": ["→"],
+                          "role": "rb-arrow"
+                        },
+                        {
+                          "tag": "span",
+                          "children": ["20%"],
+                          "role": "rb-new-nerf"
+                        }
+                      ],
+                      "role": "rb-row"
+                    },
+                    " ",
+                    {
+                      "tag": "div",
+                      "children": [
+                        {
+                          "tag": "span",
+                          "children": ["Зона крита"],
+                          "role": "rb-param"
+                        },
+                        {
+                          "tag": "span",
+                          "children": ["—"],
+                          "role": "rb-old"
+                        },
+                        {
+                          "tag": "span",
+                          "children": ["→"],
+                          "role": "rb-arrow"
+                        },
+                        {
+                          "tag": "span",
+                          "children": ["+10%"],
+                          "role": "rb-new-buff"
+                        }
+                      ],
+                      "role": "rb-row"
+                    },
+                    " ",
+                    {
+                      "tag": "div",
+                      "children": [
+                        {
+                          "tag": "span",
+                          "children": ["Длительность"],
+                          "role": "rb-param"
+                        },
+                        {
+                          "tag": "span",
+                          "children": ["300 мс"],
+                          "role": "rb-old"
+                        },
+                        {
+                          "tag": "span",
+                          "children": ["→"],
+                          "role": "rb-arrow"
+                        },
+                        {
+                          "tag": "span",
+                          "children": ["450 мс"],
+                          "role": "rb-new-buff"
+                        }
+                      ],
+                      "role": "rb-row"
+                    },
+                    " "
+                  ],
+                  "role": "rb-changes"
+                },
+                " "
+              ],
+              "role": "rebalance-card"
+            },
+            " ",
+            {
+              "tag": "div",
+              "children": [
+                " ",
+                {
+                  "tag": "h3",
+                  "children": ["Просвет сквозь стену"],
+                  "role": "rb-perk-name"
+                },
+                " ",
+                {
+                  "tag": "div",
+                  "children": [
+                    " ",
+                    {
+                      "tag": "div",
+                      "children": [
+                        {
+                          "tag": "span",
+                          "children": ["Длительность"],
+                          "role": "rb-param"
+                        },
+                        {
+                          "tag": "span",
+                          "children": ["4с"],
+                          "role": "rb-old"
+                        },
+                        {
+                          "tag": "span",
+                          "children": ["→"],
+                          "role": "rb-arrow"
+                        },
+                        {
+                          "tag": "span",
+                          "children": ["6с"],
+                          "role": "rb-new-buff"
+                        }
+                      ],
+                      "role": "rb-row"
+                    },
+                    " ",
+                    {
+                      "tag": "div",
+                      "children": [
+                        {
+                          "tag": "span",
+                          "children": ["Угол обзора"],
+                          "role": "rb-param"
+                        },
+                        {
+                          "tag": "span",
+                          "children": ["45°"],
+                          "role": "rb-old"
+                        },
+                        {
+                          "tag": "span",
+                          "children": ["→"],
+                          "role": "rb-arrow"
+                        },
+                        {
+                          "tag": "span",
+                          "children": ["60°"],
+                          "role": "rb-new-buff"
+                        }
+                      ],
+                      "role": "rb-row"
+                    },
+                    " "
+                  ],
+                  "role": "rb-changes"
+                },
+                " "
+              ],
+              "role": "rebalance-card"
+            },
+            " "
+          ],
+          "role": "rb-grid"
+        },
+        " ",
+        " "
+      ]
+    },
+    {
+      "id": "section-07",
+      "title": "Ребаланс предметов",
+      "nodes": [
+        " ",
+        {
+          "tag": "div",
+          "children": [
+            " ",
+            {
+              "tag": "h3",
+              "children": ["Хук"],
+              "role": "rb-perk-name"
+            },
+            " ",
+            {
+              "tag": "div",
+              "children": [
+                " ",
+                {
+                  "tag": "div",
+                  "children": [
+                    {
+                      "tag": "span",
+                      "children": ["Дальность"],
+                      "role": "rb-param"
+                    },
+                    {
+                      "tag": "span",
+                      "children": ["12 блоков"],
+                      "role": "rb-old"
+                    },
+                    {
+                      "tag": "span",
+                      "children": ["→"],
+                      "role": "rb-arrow"
+                    },
+                    {
+                      "tag": "span",
+                      "children": ["24 блока"],
+                      "role": "rb-new-buff"
+                    }
+                  ],
+                  "role": "rb-row"
+                },
+                " ",
+                {
+                  "tag": "div",
+                  "children": [
+                    {
+                      "tag": "span",
+                      "children": ["Скорость полета"],
+                      "role": "rb-param"
+                    },
+                    {
+                      "tag": "span",
+                      "children": ["3,5"],
+                      "role": "rb-old"
+                    },
+                    {
+                      "tag": "span",
+                      "children": ["→"],
+                      "role": "rb-arrow"
+                    },
+                    {
+                      "tag": "span",
+                      "children": ["4,5"],
+                      "role": "rb-new-buff"
+                    }
+                  ],
+                  "role": "rb-row"
+                },
+                " ",
+                {
+                  "tag": "div",
+                  "children": [
+                    {
+                      "tag": "span",
+                      "children": ["Скорость притягивания"],
+                      "role": "rb-param"
+                    },
+                    {
+                      "tag": "span",
+                      "children": ["0.8"],
+                      "role": "rb-old"
+                    },
+                    {
+                      "tag": "span",
+                      "children": ["→"],
+                      "role": "rb-arrow"
+                    },
+                    {
+                      "tag": "span",
+                      "children": ["1.0"],
+                      "role": "rb-new-buff"
+                    }
+                  ],
+                  "role": "rb-row"
+                },
+                " ",
+                {
+                  "tag": "div",
+                  "children": [
+                    {
+                      "tag": "span",
+                      "children": ["Мана"],
+                      "role": "rb-param"
+                    },
+                    {
+                      "tag": "span",
+                      "children": ["0"],
+                      "role": "rb-old"
+                    },
+                    {
+                      "tag": "span",
+                      "children": ["→"],
+                      "role": "rb-arrow"
+                    },
+                    {
+                      "tag": "span",
+                      "children": ["5"],
+                      "role": "rb-new-buff"
+                    }
+                  ],
+                  "role": "rb-row"
+                },
+                " "
+              ],
+              "role": "rb-changes"
+            },
+            " "
+          ],
+          "role": "rebalance-card"
+        },
+        " ",
+        {
+          "tag": "div",
+          "children": [
+            " ",
+            {
+              "tag": "h3",
+              "children": ["Пчелиный улей"],
+              "role": "rb-perk-name"
+            },
+            " ",
+            {
+              "tag": "div",
+              "children": [
+                " ",
+                {
+                  "tag": "div",
+                  "children": [
+                    {
+                      "tag": "span",
+                      "children": ["Сопротивление"],
+                      "role": "rb-param"
+                    },
+                    {
+                      "tag": "span",
+                      "children": ["60%"],
+                      "role": "rb-old"
+                    },
+                    {
+                      "tag": "span",
+                      "children": ["→"],
+                      "role": "rb-arrow"
+                    },
+                    {
+                      "tag": "span",
+                      "children": ["100%"],
+                      "role": "rb-new-buff"
+                    }
+                  ],
+                  "role": "rb-row"
+                },
+                " ",
+                {
+                  "tag": "div",
+                  "children": [
+                    {
+                      "tag": "span",
+                      "children": ["Длительность"],
+                      "role": "rb-param"
+                    },
+                    {
+                      "tag": "span",
+                      "children": ["5с"],
+                      "role": "rb-old"
+                    },
+                    {
+                      "tag": "span",
+                      "children": ["→"],
+                      "role": "rb-arrow"
+                    },
+                    {
+                      "tag": "span",
+                      "children": ["10с"],
+                      "role": "rb-new-buff"
+                    }
+                  ],
+                  "role": "rb-row"
+                },
+                " "
+              ],
+              "role": "rb-changes"
+            },
+            " ",
+            {
+              "tag": "div",
+              "children": [
+                " ",
+                {
+                  "tag": "div",
+                  "children": ["Дополнение механики"],
+                  "role": "rb-mechanic-title"
+                },
+                " ",
+                {
+                  "tag": "ul",
+                  "children": [
+                    " ",
+                    {
+                      "tag": "li",
+                      "children": [
+                        "Разъяренные пчелы, они будут следовать за игроком и жалить приближающихся к нему выживших"
+                      ]
+                    },
+                    " "
+                  ]
+                },
+                " ",
+                " ",
+                " "
+              ],
+              "role": "rb-mechanic"
+            },
+            " "
+          ],
+          "role": "rebalance-card"
+        },
+        " ",
+        {
+          "tag": "div",
+          "children": [
+            " ",
+            {
+              "tag": "h3",
+              "children": ["Тотем"],
+              "role": "rb-perk-name"
+            },
+            " ",
+            {
+              "tag": "div",
+              "children": [
+                " ",
+                {
+                  "tag": "div",
+                  "children": [
+                    {
+                      "tag": "span",
+                      "children": ["Время жизни"],
+                      "role": "rb-param"
+                    },
+                    {
+                      "tag": "span",
+                      "children": ["90с"],
+                      "role": "rb-old"
+                    },
+                    {
+                      "tag": "span",
+                      "children": ["→"],
+                      "role": "rb-arrow"
+                    },
+                    {
+                      "tag": "span",
+                      "children": ["до убийства"],
+                      "role": "rb-new-buff"
+                    }
+                  ],
+                  "role": "rb-row"
+                },
+                " ",
+                {
+                  "tag": "div",
+                  "children": [
+                    {
+                      "tag": "span",
+                      "children": ["Здоровье"],
+                      "role": "rb-param"
+                    },
+                    {
+                      "tag": "span",
+                      "children": ["20 сердец"],
+                      "role": "rb-old"
+                    },
+                    {
+                      "tag": "span",
+                      "children": ["→"],
+                      "role": "rb-arrow"
+                    },
+                    {
+                      "tag": "span",
+                      "children": ["3 удара"],
+                      "role": "rb-new-buff"
+                    }
+                  ],
+                  "role": "rb-row"
+                },
+                " "
+              ],
+              "role": "rb-changes"
+            },
+            " "
+          ],
+          "role": "rebalance-card"
+        },
+        " ",
+        {
+          "tag": "div",
+          "children": [
+            " ",
+            {
+              "tag": "h3",
+              "children": ["Микрофон"],
+              "role": "rb-perk-name"
+            },
+            " ",
+            {
+              "tag": "div",
+              "children": [
+                " ",
+                {
+                  "tag": "div",
+                  "children": [
+                    {
+                      "tag": "span",
+                      "children": ["Мана"],
+                      "role": "rb-param"
+                    },
+                    {
+                      "tag": "span",
+                      "children": ["0"],
+                      "role": "rb-old"
+                    },
+                    {
+                      "tag": "span",
+                      "children": ["→"],
+                      "role": "rb-arrow"
+                    },
+                    {
+                      "tag": "span",
+                      "children": ["5"],
+                      "role": "rb-new-buff"
+                    }
+                  ],
+                  "role": "rb-row"
+                },
+                " ",
+                {
+                  "tag": "div",
+                  "children": [
+                    {
+                      "tag": "span",
+                      "children": ["Радиус"],
+                      "role": "rb-param"
+                    },
+                    {
+                      "tag": "span",
+                      "children": ["7 блоков"],
+                      "role": "rb-old"
+                    },
+                    {
+                      "tag": "span",
+                      "children": ["→"],
+                      "role": "rb-arrow"
+                    },
+                    {
+                      "tag": "span",
+                      "children": ["5 блоков"],
+                      "role": "rb-new-buff"
+                    }
+                  ],
+                  "role": "rb-row"
+                },
+                " ",
+                {
+                  "tag": "div",
+                  "children": [
+                    {
+                      "tag": "span",
+                      "children": ["Откат"],
+                      "role": "rb-param"
+                    },
+                    {
+                      "tag": "span",
+                      "children": ["30с"],
+                      "role": "rb-old"
+                    },
+                    {
+                      "tag": "span",
+                      "children": ["→"],
+                      "role": "rb-arrow"
+                    },
+                    {
+                      "tag": "span",
+                      "children": ["15с"],
+                      "role": "rb-new-buff"
+                    }
+                  ],
+                  "role": "rb-row"
+                },
+                " "
+              ],
+              "role": "rb-changes"
+            },
+            " "
+          ],
+          "role": "rebalance-card"
+        },
+        " ",
+        {
+          "tag": "div",
+          "children": [
+            " ",
+            {
+              "tag": "h3",
+              "children": ["Устройство квантовой суперпозиции"],
+              "role": "rb-perk-name"
+            },
+            " ",
+            {
+              "tag": "div",
+              "children": [
+                " ",
+                {
+                  "tag": "div",
+                  "children": [
+                    {
+                      "tag": "span",
+                      "children": ["Шанс попадания"],
+                      "role": "rb-param"
+                    },
+                    {
+                      "tag": "span",
+                      "children": ["% прямоты рук"],
+                      "role": "rb-old"
+                    },
+                    {
+                      "tag": "span",
+                      "children": ["→"],
+                      "role": "rb-arrow"
+                    },
+                    {
+                      "tag": "span",
+                      "children": ["100%"],
+                      "role": "rb-new-buff"
+                    }
+                  ],
+                  "role": "rb-row"
+                },
+                " ",
+                {
+                  "tag": "div",
+                  "children": [
+                    {
+                      "tag": "span",
+                      "children": ["Откат"],
+                      "role": "rb-param"
+                    },
+                    {
+                      "tag": "span",
+                      "children": ["180с"],
+                      "role": "rb-old"
+                    },
+                    {
+                      "tag": "span",
+                      "children": ["→"],
+                      "role": "rb-arrow"
+                    },
+                    {
+                      "tag": "span",
+                      "children": ["30с"],
+                      "role": "rb-new-buff"
+                    }
+                  ],
+                  "role": "rb-row"
+                },
+                " "
+              ],
+              "role": "rb-changes"
+            },
+            " "
+          ],
+          "role": "rebalance-card"
+        },
+        " ",
+        {
+          "tag": "div",
+          "children": [
+            " ",
+            {
+              "tag": "h3",
+              "children": ["Чумная коса"],
+              "role": "rb-perk-name"
+            },
+            " ",
+            {
+              "tag": "div",
+              "children": [
+                " ",
+                {
+                  "tag": "div",
+                  "children": [
+                    {
+                      "tag": "span",
+                      "children": ["Модель"],
+                      "role": "rb-param"
+                    },
+                    {
+                      "tag": "span",
+                      "children": ["коса"],
+                      "role": "rb-old"
+                    },
+                    {
+                      "tag": "span",
+                      "children": ["→"],
+                      "role": "rb-arrow"
+                    },
+                    {
+                      "tag": "span",
+                      "children": ["лампа"],
+                      "role": "rb-new-buff"
+                    }
+                  ],
+                  "role": "rb-row"
+                },
+                " ",
+                {
+                  "tag": "div",
+                  "children": [
+                    {
+                      "tag": "span",
+                      "children": ["Урон"],
+                      "role": "rb-param"
+                    },
+                    {
+                      "tag": "span",
+                      "children": ["5хп"],
+                      "role": "rb-old"
+                    },
+                    {
+                      "tag": "span",
+                      "children": ["→"],
+                      "role": "rb-arrow"
+                    },
+                    {
+                      "tag": "span",
+                      "children": ["3хп"],
+                      "role": "rb-new-buff"
+                    }
+                  ],
+                  "role": "rb-row"
+                },
+                " "
+              ],
+              "role": "rb-changes"
+            },
+            " ",
+            {
+              "tag": "div",
+              "children": [
+                " ",
+                {
+                  "tag": "div",
+                  "children": ["Дополнение механики"],
+                  "role": "rb-mechanic-title"
+                },
+                " ",
+                {
+                  "tag": "ul",
+                  "children": [
+                    " ",
+                    {
+                      "tag": "li",
+                      "children": [
+                        "Индикация заражения чумой: при заполнении полоски хп - получаете урон"
+                      ]
+                    },
+                    " ",
+                    {
+                      "tag": "li",
+                      "children": [
+                        "Способность сгусток чумы:",
+                        {
+                          "tag": "ul",
+                          "children": [
+                            " ",
+                            {
+                              "tag": "li",
+                              "children": [
+                                "Заполнение заражения: ",
+                                {
+                                  "tag": "span",
+                                  "children": ["100%"],
+                                  "role": "rb-new-buff"
+                                }
+                              ]
+                            },
+                            " ",
+                            {
+                              "tag": "li",
+                              "children": [
+                                "Мана: ",
+                                {
+                                  "tag": "span",
+                                  "children": ["5"],
+                                  "role": "rb-new-buff"
+                                }
+                              ]
+                            },
+                            " "
+                          ]
+                        }
+                      ]
+                    },
+                    " "
+                  ]
+                },
+                " ",
+                " ",
+                " "
+              ],
+              "role": "rb-mechanic"
+            },
+            " "
+          ],
+          "role": "rebalance-card"
+        },
+        " ",
+        {
+          "tag": "div",
+          "children": [
+            " ",
+            {
+              "tag": "h3",
+              "children": ["Посох некроманта"],
+              "role": "rb-perk-name"
+            },
+            " ",
+            {
+              "tag": "div",
+              "children": [
+                " ",
+                {
+                  "tag": "div",
+                  "children": ["Переработка предмета"],
+                  "role": "rb-mechanic-title"
+                },
+                " ",
+                {
+                  "tag": "ul",
+                  "children": [
+                    " ",
+                    {
+                      "tag": "li",
+                      "children": [
+                        "Возрождение союзников ",
+                        {
+                          "tag": "ul",
+                          "children": [
+                            " ",
+                            {
+                              "tag": "li",
+                              "children": ["Если есть мертвые союзники"]
+                            },
+                            " ",
+                            {
+                              "tag": "li",
+                              "children": [
+                                "Длительность использования: ",
+                                {
+                                  "tag": "span",
+                                  "children": ["5с"],
+                                  "role": "rb-new-nerf"
+                                }
+                              ]
+                            },
+                            " ",
+                            {
+                              "tag": "li",
+                              "children": [
+                                "Поломка предмета: ",
+                                {
+                                  "tag": "span",
+                                  "children": ["100"],
+                                  "role": "rb-new-nerf"
+                                }
+                              ]
+                            },
+                            " ",
+                            {
+                              "tag": "li",
+                              "children": [
+                                "Мана: ",
+                                {
+                                  "tag": "span",
+                                  "children": ["60"],
+                                  "role": "rb-new-buff"
+                                }
+                              ]
+                            },
+                            " "
+                          ]
+                        }
+                      ]
+                    },
+                    " "
+                  ]
+                },
+                " ",
+                " ",
+                " "
+              ],
+              "role": "rb-mechanic"
+            },
+            " ",
+            {
+              "tag": "div",
+              "children": [
+                " ",
+                {
+                  "tag": "div",
+                  "children": ["✕ Удалённая механика"]
+                },
+                " ",
+                {
+                  "tag": "ul",
+                  "children": [
+                    " ",
+                    {
+                      "tag": "li",
+                      "children": ["Ослепление"]
+                    },
+                    " ",
+                    {
+                      "tag": "li",
+                      "children": ["Использование соли"]
+                    },
+                    " "
+                  ]
+                },
+                " ",
+                " ",
+                " "
+              ]
+            },
+            " "
+          ],
+          "role": "rebalance-card"
+        },
+        " ",
+        {
+          "tag": "div",
+          "children": [
+            " ",
+            {
+              "tag": "h3",
+              "children": ["Соль"],
+              "role": "rb-perk-name"
+            },
+            " ",
+            {
+              "tag": "div",
+              "children": [
+                " ",
+                {
+                  "tag": "div",
+                  "children": ["Переработка предмета"],
+                  "role": "rb-mechanic-title"
+                },
+                " ",
+                {
+                  "tag": "ul",
+                  "children": [
+                    " ",
+                    {
+                      "tag": "li",
+                      "children": ["Ставится на пол"]
+                    },
+                    " ",
+                    {
+                      "tag": "li",
+                      "children": [
+                        "Эффект при косании игрока",
+                        {
+                          "tag": "ul",
+                          "children": [
+                            " ",
+                            {
+                              "tag": "li",
+                              "children": [
+                                "Стан: ",
+                                {
+                                  "tag": "span",
+                                  "children": ["2с"],
+                                  "role": "rb-new-buff"
+                                }
+                              ]
+                            },
+                            " ",
+                            {
+                              "tag": "li",
+                              "children": [
+                                "Слепота: ",
+                                {
+                                  "tag": "span",
+                                  "children": ["2с"],
+                                  "role": "rb-old"
+                                },
+                                {
+                                  "tag": "span",
+                                  "children": ["→"],
+                                  "role": "rb-arrow"
+                                },
+                                {
+                                  "tag": "span",
+                                  "children": ["6с"],
+                                  "role": "rb-new-buff"
+                                }
+                              ]
+                            },
+                            " "
+                          ]
+                        }
+                      ]
+                    },
+                    " "
+                  ]
+                },
+                " ",
+                " ",
+                " "
+              ],
+              "role": "rb-mechanic"
+            },
+            " "
+          ],
+          "role": "rebalance-card"
+        },
+        " ",
+        {
+          "tag": "div",
+          "children": [
+            " ",
+            {
+              "tag": "h3",
+              "children": ["Шприц адреналина"],
+              "role": "rb-perk-name"
+            },
+            " ",
+            {
+              "tag": "div",
+              "children": [
+                " ",
+                {
+                  "tag": "div",
+                  "children": ["Полная переработка предмета"],
+                  "role": "rb-mechanic-title"
+                },
+                " ",
+                {
+                  "tag": "p",
+                  "children": ["Раньше: скорость II на 6с + подсветка на 2с"]
+                },
+                " ",
+                {
+                  "tag": "ul",
+                  "children": [
+                    " ",
+                    {
+                      "tag": "li",
+                      "children": [
+                        "Скорость заполнения растёт с каждым шприцом: ",
+                        {
+                          "tag": "span",
+                          "children": ["+3%"],
+                          "role": "rb-new-buff"
+                        },
+                        " за каждый"
+                      ]
+                    },
+                    " ",
+                    {
+                      "tag": "li",
+                      "children": [
+                        "Шприц снижает шкалу зависимости на ",
+                        {
+                          "tag": "span",
+                          "children": ["70%"],
+                          "role": "rb-new-buff"
+                        }
+                      ]
+                    },
+                    " "
+                  ]
+                },
+                " ",
+                {
+                  "tag": "ul",
+                  "children": [
+                    " ",
+                    {
+                      "tag": "li",
+                      "children": [
+                        {
+                          "tag": "strong",
+                          "children": ["Скорость от шприца:"]
+                        }
+                      ]
+                    },
+                    " ",
+                    {
+                      "tag": "li",
+                      "children": [
+                        {
+                          "tag": "ul",
+                          "children": [
+                            " ",
+                            {
+                              "tag": "li",
+                              "children": [
+                                "Базовая длительность: ",
+                                {
+                                  "tag": "span",
+                                  "children": ["8с"],
+                                  "role": "rb-new-buff"
+                                },
+                                " (каждый следующий −1с, мин 1с)"
+                              ]
+                            },
+                            " ",
+                            {
+                              "tag": "li",
+                              "children": [
+                                "Базовый уровень скорости: ",
+                                {
+                                  "tag": "span",
+                                  "children": ["3"],
+                                  "role": "rb-new-buff"
+                                },
+                                " (каждые 3 шприца −1, мин 1)"
+                              ]
+                            },
+                            " ",
+                            {
+                              "tag": "li",
+                              "children": [
+                                "Эффекты ",
+                                {
+                                  "tag": "strong",
+                                  "children": ["складываются"]
+                                },
+                                " (каждый новый шприц добавляется к уже активному)"
+                              ]
+                            },
+                            " "
+                          ]
+                        }
+                      ]
+                    },
+                    " "
+                  ]
+                },
+                " ",
+                {
+                  "tag": "ul",
+                  "children": [
+                    " ",
+                    {
+                      "tag": "li",
+                      "children": [
+                        {
+                          "tag": "strong",
+                          "children": ["Смерть от передозировки:"]
+                        }
+                      ]
+                    },
+                    " ",
+                    {
+                      "tag": "li",
+                      "children": [
+                        {
+                          "tag": "ul",
+                          "children": [
+                            " ",
+                            {
+                              "tag": "li",
+                              "children": [
+                                "3 шприца подряд без 20-сек перерыва → мгновенная смерть"
+                              ]
+                            },
+                            " ",
+                            {
+                              "tag": "li",
+                              "children": [
+                                "На стадии 3 (≥75%): ",
+                                {
+                                  "tag": "span",
+                                  "children": ["10%/сек"],
+                                  "role": "rb-new-nerf"
+                                },
+                                " шанс смерти если totalSyringes ≥ 3"
+                              ]
+                            },
+                            " "
+                          ]
+                        }
+                      ]
+                    },
+                    " "
+                  ]
+                },
+                " ",
+                " ",
+                " "
+              ],
+              "role": "rb-mechanic"
+            },
+            " "
+          ],
+          "role": "rebalance-card"
+        },
+        " "
+      ]
+    },
+    {
+      "id": "section-08",
+      "title": "Следующее обновление",
+      "nodes": [
+        " ",
+        {
+          "tag": "div",
+          "children": [
+            " ",
+            {
+              "tag": "p",
+              "children": [
+                {
+                  "tag": "a",
+                  "children": ["Кошмарный додеп · Версия 1.1 →"],
+                  "href": "/projects/maniac/changelog/1.1"
+                }
+              ]
+            },
+            " "
+          ],
+          "role": "text-body"
+        },
+        " "
+      ]
+    }
+  ]
+}

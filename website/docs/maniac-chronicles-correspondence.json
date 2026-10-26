@@ -1,0 +1,216 @@
+{
+  "commit": "8692f66dc76582144be85d553d43a41f189b64e7",
+  "releases": [
+    {
+      "version": "1.0",
+      "source": "docs/changelogs/maniac/changelog_maniac.html",
+      "sourceSha256": "e88b2243a857a3dde88fcef43dcd67b6c23cc3463fa731ba19010247b52224d2",
+      "sections": [
+        {
+          "id": "section-01",
+          "title": "Отказ от мода maniacweaponsRevolution",
+          "originalTextSha256": "2760abd3de3bc81cff32c0367be3d2f25b8c04e0ef56e02eb91b3f9aff786df0",
+          "originalCompactSha256": "54a61876daa163ad2a6fcae304e336a08129d38da91d5123284f545ff2dec1a8",
+          "originalCharacters": 387
+        },
+        {
+          "id": "section-02",
+          "title": "Новые системы и механики",
+          "originalTextSha256": "df1b0d9f64cb2f566055ec39405b0dc531bb2de34ba5925423b6ea02d3e43185",
+          "originalCompactSha256": "9eb9d2778f0c0b1aa29ee41a8adff9cca0ad94b1cc5be0a26add1783b620b538",
+          "originalCharacters": 1356
+        },
+        {
+          "id": "section-03",
+          "title": "Начало и настройка игры",
+          "originalTextSha256": "4b1434b6ec6c0dd35ba37f0e5f45497a0f58baacad717c77624ee8b671fd2cfe",
+          "originalCompactSha256": "578cb268d1b6bfdf1e4aaa4e3fce833f997aa88e034e533dac7feb2a21ea12d3",
+          "originalCharacters": 805
+        },
+        {
+          "id": "section-04",
+          "title": "Система сбора статистики",
+          "originalTextSha256": "59821254e3f7553a2cbc4cc5f960fc9a98842cefb675fcb23336dd2ca7903595",
+          "originalCompactSha256": "1e9992ef5937d997bbe8edb309eb9bb9d5aa679f945b771d9478450a047dfbb3",
+          "originalCharacters": 265
+        },
+        {
+          "id": "section-05",
+          "title": "Новые перки",
+          "originalTextSha256": "8a7bbd73bbcf098553855173dcc07e094a562220510847e0cd54b40723638d9a",
+          "originalCompactSha256": "1aa698dde4d3f1a4d90e1622d7ad2dc615873db4eb694a33376862cdee8b599a",
+          "originalCharacters": 1938
+        },
+        {
+          "id": "section-06",
+          "title": "Ребаланс перков",
+          "originalTextSha256": "d862b5b73f76c3b91b06325409e58e293d0a9d244063fe4ef904da1a050d1ba4",
+          "originalCompactSha256": "10fe27225e8c812e72888532b5d02eb6c564f671319e0b6bb7cb36893b83d9ad",
+          "originalCharacters": 601
+        },
+        {
+          "id": "section-07",
+          "title": "Ребаланс предметов",
+          "originalTextSha256": "e6a252123333f2328f7c79ccbe9b1fe5cd7697f4dec3219c7c78446395ea39b6",
+          "originalCompactSha256": "9c3c1b2d5c7e51f0a2b13d174490412c1dfb8786d948225ff12656675f478c8b",
+          "originalCharacters": 1467
+        },
+        {
+          "id": "section-08",
+          "title": "Следующее обновление",
+          "originalTextSha256": "154d850b9ddd402020cff9d72eebbfb868955a94c62a7461e2ffbe1d9fa21e1a",
+          "originalCompactSha256": "7460d2b052a1b0d3b1c89b65eb83a6c7740742f88036fbf934f8be5b560cb7a6",
+          "originalCharacters": 30
+        }
+      ]
+    },
+    {
+      "version": "1.1",
+      "source": "docs/changelogs/maniac/changelog_maniac_1_1.html",
+      "sourceSha256": "a9dbe258de4d2cb1733f93cefd986d2e9a3c6e2b8a8a7c428077f51f0716221a",
+      "sections": [
+        {
+          "id": "section-01",
+          "title": "Главное обновления",
+          "originalTextSha256": "d595b5cc8d059f8a40a2f87cbac24bfe895ec9f6ecfee2d083cbdf9155cc31fe",
+          "originalCompactSha256": "c5f4fb5ff8bf2468391eee0714a5b318ad6cee424c5a6b201d8338046c606e6d",
+          "originalCharacters": 1333
+        },
+        {
+          "id": "keeper-nightmares",
+          "title": "Хранитель кошмаров",
+          "originalTextSha256": "c80c132109ed3c48841d29eb1b62f1503e40da48fada6b077dc9d58b213d0935",
+          "originalCompactSha256": "3220e66f2edad5800c5c03a291e832fd3018d931fad1e1916a0513e0b177c9a2",
+          "originalCharacters": 1736
+        },
+        {
+          "id": "dodepovich",
+          "title": "Никита Додепович",
+          "originalTextSha256": "613c4e355feceed87528227c918ee29ee3a427e9268986b3a3220c307ab83d3e",
+          "originalCompactSha256": "15635f69e9069077bcbbe609201d789cc9a3828b319c494fdf13e8c67f831456",
+          "originalCharacters": 1861
+        },
+        {
+          "id": "ghost",
+          "title": "Призрак",
+          "originalTextSha256": "8f03fd6c5a42fbfd6d12bdbcd77464507b8cb4a7b385ed1e62e080a9d17ba620",
+          "originalCompactSha256": "418a65f7a90a403bbdea2c5542ddc8ba3a6d048c4048809e728bce62c8fe0264",
+          "originalCharacters": 949
+        },
+        {
+          "id": "fort-map",
+          "title": "Новая карта",
+          "originalTextSha256": "decd9a87b97441e068db13372b20970306d407675c6374a02d801a9cdb601578",
+          "originalCompactSha256": "616305ff3f5be6c1a5bf64bc213a07d9395a2da7d080584f4bca6721c6dbcebe",
+          "originalCharacters": 257
+        },
+        {
+          "id": "section-06",
+          "title": "Баланс и важное поведение",
+          "originalTextSha256": "ca1b073b0fdd02dbf136d8ad6fdcacd93410aeb0b66464335d554bd490d606fc",
+          "originalCompactSha256": "6fd982a4a54b8a836a0c8fbae0f7ed801108f7a146ef94632b2d060dc1b479d1",
+          "originalCharacters": 349
+        },
+        {
+          "id": "section-07",
+          "title": "Прошлое обновление",
+          "originalTextSha256": "4f6dbc8645badc772898113850a5931fa4ed185c9e6168bf23a922003ae49240",
+          "originalCompactSha256": "bd987e293a75857d7babfe026d1b88ad495da49ebd07e708a1e5569f2e5727fb",
+          "originalCharacters": 29
+        }
+      ]
+    },
+    {
+      "version": "1.2",
+      "source": "docs/changelogs/maniac/changelog_maniac_1_2.html",
+      "sourceSha256": "4ea14cc643b15207670e3c8f022944da9039ee4fdd8569e19988f2f071ba241d",
+      "sections": [
+        {
+          "id": "highlights",
+          "title": "Главное обновления",
+          "originalTextSha256": "b21982314c1a9c53e04c7b6326284029bf8f58d71fe96c369f2d3894d7e49929",
+          "originalCompactSha256": "4876e91e68c8089c691adf45ade611b6b08e2c5c553876e4f8bd68b182d73d83",
+          "originalCharacters": 911
+        },
+        {
+          "id": "survivor-perks",
+          "title": "Новые перки выживших",
+          "originalTextSha256": "5a4b7e3a78b2fcb9004bae2ef72621c37a4845690c69f3a4d9e529f245e64b39",
+          "originalCompactSha256": "aecdea8879e5e4df4c09a823b7558fe59f0b58787f0616d372cae65a86968027",
+          "originalCharacters": 2093
+        },
+        {
+          "id": "maniac-perks",
+          "title": "Новые перки маньяков",
+          "originalTextSha256": "9be5ad3935a0741e812054b9b0d537e61bcfa17c5179f36f4ce54d78ba1ab144",
+          "originalCompactSha256": "e1e9a50beefd34953f05089e6a4be4fee44d83a1372b15a6051b017fac13ea8c",
+          "originalCharacters": 1477
+        },
+        {
+          "id": "common-perks",
+          "title": "Новые общие перки",
+          "originalTextSha256": "3ac21e20764679b7cbedd25efc10e6d8c2fd79a656aa6a3b0f9e1b69b6cbc8a4",
+          "originalCompactSha256": "d9b299b07487566ef30067d5948759fa1a57362cdfb76abdfdd83e67b510822f",
+          "originalCharacters": 951
+        },
+        {
+          "id": "death",
+          "title": "Смерть · Объятия перед встречей",
+          "originalTextSha256": "7ab7650bf3fea52d880d7019556b869c6d3649cfa706c5abe7ce8ab8ba84d28a",
+          "originalCompactSha256": "7c4371e64f193b8952de9fa45ec8042ea2a5bda11c4991bc837325a7aca0e731",
+          "originalCharacters": 362
+        },
+        {
+          "id": "interface",
+          "title": "Новый интерфейс и подготовка к матчу",
+          "originalTextSha256": "60a280f9c4dcd2082644a5b0141c91732d6a549e58fc4fd726791800400d043c",
+          "originalCompactSha256": "6af6b56c2e3ab60214b992db81e470bac4bc4a147105ec9c16eef667aa9dc1fb",
+          "originalCharacters": 1206
+        },
+        {
+          "id": "experiments",
+          "title": "Третий перк · Эксперимент",
+          "originalTextSha256": "55332b22bd359c91e3b6bb6a4e51130868f3d1664eca41f79d260ba2aa61cc9c",
+          "originalCompactSha256": "48d082d223ed3feb6b1a9126179f56a6a13f115b1eb623630ffaac988d8451bf",
+          "originalCharacters": 343
+        },
+        {
+          "id": "fixes",
+          "title": "Исправления · Большая уборка",
+          "originalTextSha256": "fb18b7945ecbdace54c93b63939e6e6bc03eb3fb3b5893e2e59bdd3667ac728a",
+          "originalCompactSha256": "25316d9880edb4bca8b329e0be22fa30f5e8a3b95a10b6bd2a69580297a75981",
+          "originalCharacters": 1573
+        },
+        {
+          "id": "previous",
+          "title": "Прошлое обновление",
+          "originalTextSha256": "9c34a9ea6d82bc4017d214779c2100f2f42322d50780e792730e9950a57c7b0b",
+          "originalCompactSha256": "173751e7ab684639f17557ead145a5f08362f5385d3a1ab9e4ade1ef935e4486",
+          "originalCharacters": 51
+        }
+      ]
+    }
+  ],
+  "visualSources": [
+    {
+      "path": "docs/css/changelog.css",
+      "bytes": 14716,
+      "sha256": "f91049290026274a73dc8e5cc262780d841168bd6213e672c8b89026a9ca07c3"
+    },
+    {
+      "path": "docs/css/flower-cleaning.css",
+      "bytes": 8131,
+      "sha256": "562c6fe40717b72dfd5384500c13a6dfc5e7daab9099e5bcf0f869d00196bf48"
+    },
+    {
+      "path": "docs/css/style.css",
+      "bytes": 15420,
+      "sha256": "cd8660ef855784719c9e4d7c194461570d2db46ac12144e42d2afd3c525bc9b5"
+    },
+    {
+      "path": "docs/images/flower-sprig.svg",
+      "bytes": 2337,
+      "sha256": "d441ba2e8ca4db1d5ab60fbafd2664b2f9b67dcefe30aeb823294483a23351cd"
+    }
+  ]
+}

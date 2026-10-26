@@ -8,6 +8,19 @@ export const characters: readonly Entity<"character">[] = [
     slug: "keeper-of-nightmares",
     name: "Хранитель кошмаров",
     revisions: {
+      "release:1.1": {
+        data: {
+          role: "maniac",
+          style: "Давление рассудком",
+          description:
+            "Маньяк, который ломает выживших не уроном, а рассудком.",
+          abilityIds: ["ability:concentrated-nightmare"],
+          itemIds: ["item:nightmare-lighter"],
+        },
+        evidence: [
+          { path: "docs/changelogs/maniac/changelog_maniac_1_1.html" },
+        ],
+      },
       [verifiedSource]: {
         data: {
           role: "maniac",
@@ -31,6 +44,19 @@ export const characters: readonly Entity<"character">[] = [
     slug: "ghost",
     name: "Призрак",
     revisions: {
+      "release:1.1": {
+        data: {
+          role: "maniac",
+          style: "Скрытность и вселение",
+          description:
+            "Скрытный маньяк, который может исчезать полностью и захватывать тело выжившего.",
+          abilityIds: [],
+          itemIds: [],
+        },
+        evidence: [
+          { path: "docs/changelogs/maniac/changelog_maniac_1_1.html" },
+        ],
+      },
       [verifiedSource]: {
         data: {
           role: "maniac",
@@ -50,6 +76,19 @@ export const characters: readonly Entity<"character">[] = [
     slug: "dodepovich",
     name: "Никита Додепович",
     revisions: {
+      "release:1.1": {
+        data: {
+          role: "survivor",
+          style: "Монетки и казино",
+          description:
+            "Азартный выживший, который играет через монетки и казино-автомат.",
+          abilityIds: [],
+          itemIds: [],
+        },
+        evidence: [
+          { path: "docs/changelogs/maniac/changelog_maniac_1_1.html" },
+        ],
+      },
       [verifiedSource]: {
         data: {
           role: "survivor",

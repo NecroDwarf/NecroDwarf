@@ -3,20 +3,15 @@
   background: var(--stone);
   padding: 24px;
   min-width: 0;
+  container-type: inline-size;
 }
 .header {
   display: flex;
   gap: 18px;
   align-items: center;
 }
-.header img {
-  width: 72px;
-  height: 72px;
-  object-fit: contain;
-  flex: 0 0 72px;
-}
-.pixel {
-  image-rendering: pixelated;
+.header > div {
+  min-width: 0;
 }
 .label {
   color: var(--ash);
@@ -28,6 +23,26 @@
 .card h3 {
   font-size: 24px;
   margin: 0;
+  overflow-wrap: anywhere;
+}
+@container (max-width: 380px) {
+  .header:has([data-kind]) {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    row-gap: 14px;
+  }
+  .header:has([data-kind]) > div {
+    display: contents;
+  }
+  .header:has([data-kind]) .label {
+    grid-column: 2;
+    grid-row: 1;
+    margin: 0;
+  }
+  .header:has([data-kind]) h3 {
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
 }
 .card > p {
   color: var(--ash);
@@ -68,11 +83,6 @@
 }
 .card[data-variant="compact"] {
   padding: 18px;
-}
-.card[data-variant="compact"] .header img {
-  width: 48px;
-  height: 48px;
-  flex-basis: 48px;
 }
 .change {
   border-left: 2px solid #b5c891;

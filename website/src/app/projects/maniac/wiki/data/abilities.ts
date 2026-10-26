@@ -27,6 +27,31 @@ export const abilities: readonly Entity<"ability">[] = [
     slug: "concentrated-nightmare",
     name: "Концентрированный кошмар",
     revisions: {
+      "release:1.1": {
+        data: {
+          description: "Сразу снимает часть рассудка с цели.",
+          icon: "concentrated-nightmare",
+          mechanicIds: [],
+          stats: [
+            {
+              key: "sanity",
+              label: "Доля рассудка",
+              value: 10,
+              unit: "percent",
+            },
+            { key: "range", label: "Поиск цели", value: 40, unit: "blocks" },
+            {
+              key: "cooldown",
+              label: "Перезарядка",
+              value: 45,
+              unit: "seconds",
+            },
+          ],
+        },
+        evidence: [
+          { path: "docs/changelogs/maniac/changelog_maniac_1_1.html" },
+        ],
+      },
       [verifiedSource]: {
         data: {
           description: "Снимает часть максимального рассудка у выбранной цели.",

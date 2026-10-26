@@ -41,7 +41,7 @@ npm run dev:prototypes
 
 ### Статическая генерация
 
-Выбрана равноценная разрешённая ТЗ архитектура: React Router Declarative Mode + Vite build-time rendering (`renderToString`/`StaticRouter`). `scripts/build.mjs` собирает клиент, затем временный `.ssg/entry-server.js`, и генерирует отдельный полностью наполненный HTML для каждого URL из `src/app/routes.ts`. Браузер гидратирует готовую разметку. Серверный модуль используется **только при сборке** и не публикуется. Подключение Framework Mode и серверного адаптера для семи страниц не требуется.
+Выбрана равноценная разрешённая ТЗ архитектура: React Router Declarative Mode + Vite build-time rendering (`renderToString`/`StaticRouter`). `scripts/build.mjs` собирает клиент, затем временный `.ssg/entry-server.js`, и генерирует отдельный полностью наполненный HTML для каждого URL из `src/app/routes.ts`. Браузер гидратирует готовую разметку. Серверный модуль используется **только при сборке** и не публикуется. Подключение Framework Mode и серверного адаптера для этих статических страниц не требуется.
 
 Результат — **`build/client`**, а не старый `dist`. На Cloudflare Pages публикуется только этот каталог. `404.html` отключает неявный SPA fallback Pages. Пути без завершающего `/`; `_redirects` создаётся из реестра маршрутов. Никаких wildcard-редиректов на SPA-оболочку.
 
@@ -116,13 +116,13 @@ MDX и схемы Wiki будут подключены вместе с реал�
 | Production branch | `main` — включать только после разрешения на публикацию |
 | Environment | `SITE_URL` — настоящий origin собственного домена без пути |
 
-Без `SITE_URL` сборка предназначена для локального/предварительного просмотра: `noindex`, запрет индексации в `robots.txt`, без фиктивного canonical и sitemap. При установленном настоящем `SITE_URL` создаются абсолютные canonical, Open Graph URL/изображение и `sitemap.xml` только из семи опубликованных маршрутов. Build передаёт тот же origin клиенту. Для preview-веток не задавайте production `SITE_URL`. Домен пока не предоставлен.
+Без `SITE_URL` сборка предназначена для локального/предварительного просмотра: `noindex`, запрет индексации в `robots.txt`, без фиктивного canonical и sitemap. При установленном настоящем `SITE_URL` создаются абсолютные canonical, Open Graph URL/изображение и `sitemap.xml` только из 11 опубликованных маршрутов. Build передаёт тот же origin клиенту. Для preview-веток не задавайте production `SITE_URL`. Домен пока не предоставлен.
 
 Для локальной проверки production-ветки SEO можно временно задать зарезервированный `https://example.invalid` как `SITE_URL`; это тест, не адрес публикации. После проверки пересоберите без переменной.
 
 GitHub Actions `.github/workflows/ci.yml` запускается для push в `main` и `test`, а также pull request; выполняет `npm ci`, проверку форматирования, build, проверку статических маршрутов и условного контента компонентов. Деплоя в workflow нет. Cloudflare Pages и старый GitHub Pages не изменялись. Старые URL на другом домене не перенаправляются файлом нового сайта.
 
-## Следующие этапы — только по отдельной команде
+## Хроники Maniac и Wiki Preview
 
 Фундамент Wiki/хроник 2B-0 и изолированный 3D-прототип Хранителя:
 
@@ -138,6 +138,9 @@ npm run preview:maniac
 Описание данных, снимков и viewer — [архитектура Wiki](docs/MANIAC_WIKI_FOUNDATION.md),
 ресурсы — [MANIAC_ASSETS](docs/MANIAC_ASSETS.md),
 проверки — [MANIAC_2B0_VERIFICATION](docs/MANIAC_2B0_VERIFICATION.md).
+
+Общий EntityIcon, статичный рендер оригинальной зажигалки, подготовка миниатюр
+и проверки 2B-0.1 — [MANIAC_ICONS_2B01](docs/MANIAC_ICONS_2B01.md).
 Прототип не входит в build/client, публичные маршруты и sitemap.
 
 Этап 2A: презентационная страница Maniac реализована. Источники и проверка
@@ -146,7 +149,11 @@ npm run preview:maniac
 Прямая загрузка Google Drive и зеркало Яндекс Диска проверены отдельно:
 [`MANIAC_DOWNLOAD_VERIFICATION.md`](MANIAC_DOWNLOAD_VERIFICATION.md).
 
-2B. Полные тематические хроники (историческую пометку 4.0 не приравнивать к 1.2).
+Этап 2B реализован: `/projects/maniac/changelog` и выпуски `/1.0`, `/1.1`, `/1.2`.
+Полные тексты, темы и CSS-анимации — [отчёт 2B](docs/MANIAC_2B_VERIFICATION.md),
+[соответствие разделов](docs/MANIAC_CHRONICLES_SECTIONS.md).
+
+Следующие этапы — только по отдельной команде:
 3. Полная открытая Wiki, типизированный баланс, MDX и статический поиск.
 4. Детали FriendSheep и NovellMaker после получения материалов.
 5. Домен, preview на Cloudflare, production-публикация и отдельный план перехода со старых URL.

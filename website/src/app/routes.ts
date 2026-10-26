@@ -3,6 +3,7 @@ import { ProjectsPage } from "./pages/projects/ProjectsPage";
 import { AboutPage } from "./pages/about/AboutPage";
 import { ChangelogPage } from "./pages/changelog/ChangelogPage";
 import { projects } from "./projects/registry";
+import { maniacChangelogRoutes } from "./projects/maniac/changelogs/routes";
 export const routes = [
   {
     path: "/",
@@ -38,6 +39,7 @@ export const routes = [
     description: project.description,
     Page: project.Page,
   })),
+  ...maniacChangelogRoutes,
 ];
 export const notFoundMeta = {
   title: "Страница не найдена — NecroDwarf",

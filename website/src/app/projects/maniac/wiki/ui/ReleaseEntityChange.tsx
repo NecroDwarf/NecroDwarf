@@ -1,7 +1,23 @@
 import type { EntityChange } from "../data/types";
 import { EntityCard } from "./EntityCards";
 import s from "./EntityCards.module.css";
-export function ReleaseEntityChange({ change }: { change: EntityChange }) {
+import type { ReactNode } from "react";
+export function ReleaseEntityChange({
+  change,
+  entry,
+}: {
+  change: EntityChange;
+  entry?: { title: ReactNode; editorial: ReactNode };
+}) {
+  if (entry && change.after)
+    return (
+      <EntityCard
+        {...change.after}
+        {...entry}
+        variant="compact"
+        showStats={false}
+      />
+    );
   return (
     <article className={s.change}>
       <p>{change.editorial}</p>

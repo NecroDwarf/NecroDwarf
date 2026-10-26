@@ -4,6 +4,8 @@ import { snapshots, sourceUrl, verifiedSource } from "../data/snapshots";
 import type { EntityId, EntityKind, SnapshotId, Stat } from "../data/types";
 import { ContentLink } from "../../../../shared/ui/ContentLink";
 import { EntityLink } from "./EntityLink";
+import { EntityIcon } from "./EntityIcon";
+import type { ReactNode } from "react";
 import s from "./EntityCards.module.css";
 const units: Record<Stat["unit"], string> = {
   seconds: "с",
@@ -16,11 +18,17 @@ export interface CardProps {
   id: EntityId;
   snapshot?: SnapshotId;
   variant?: "compact" | "detail";
+  editorial?: ReactNode;
+  title?: ReactNode;
+  showStats?: boolean;
 }
 export function EntityCard({
   id,
   snapshot = verifiedSource,
   variant = "detail",
+  editorial,
+  title,
+  showStats = true,
 }: CardProps) {
   const entity = getEntity(id),
     revision = getRevision(id, snapshot);
@@ -35,26 +43,19 @@ export function EntityCard({
     ...("mechanicIds" in data ? data.mechanicIds : []),
   ];
   return (
-    <article className={s.card} data-variant={variant}>
+    <article
+      className={s.card}
+      data-variant={variant}
+      data-entity-card={id}
+      data-snapshot={snapshot}
+    >
       <div className={s.header}>
-        {asset && (
-          <img
-            src={asset.src}
-            width={asset.width}
-            height={asset.height}
-            alt=""
-            loading="lazy"
-            decoding="async"
-            className={asset.pixelated ? s.pixel : undefined}
-          />
-        )}
+        {asset && <EntityIcon asset={asset} variant={variant} />}
         <div>
           <p className={s.label}>
             {snapshots[snapshot as keyof typeof snapshots]?.label ?? snapshot}
           </p>
-          <h3>
-            <EntityLink id={id} />
-          </h3>
+          <h3>{title ?? <EntityLink id={id} />}</h3>
         </div>
       </div>
       {"role" in data && (
@@ -62,9 +63,13 @@ export function EntityCard({
           {data.role === "maniac" ? "Маньяк" : "Выживший"} · {data.style}
         </p>
       )}
-      <p>{data.description}</p>
-      {"usage" in data && <p>{data.usage}</p>}
-      {data.stats?.length ? (
+      {editorial ?? (
+        <>
+          <p>{data.description}</p>
+          {"usage" in data && <p>{data.usage}</p>}
+        </>
+      )}
+      {showStats && data.stats?.length ? (
         <dl className={s.stats}>
           {data.stats.map((stat) => (
             <div key={stat.key}>

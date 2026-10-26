@@ -1,46 +1,40 @@
 import concentrated from "../../assets/wiki/concentrated-nightmare.webp";
-import lighter from "../../assets/wiki/nightmare-lighter.png";
+import lighter from "../../assets/wiki/nightmare-lighter-render.png";
 import forgetPerk from "../../assets/wiki/forget-me-not-perk.webp";
 import forgetItem from "../../assets/wiki/forget-me-not-item.png";
 
-export const entityAssets: Readonly<
-  Record<
-    string,
-    {
-      src: string;
-      width: number;
-      height: number;
-      pixelated: boolean;
-      entityId: string;
-    }
-  >
-> = {
+import type { EntityAsset } from "./types";
+import { flowerAssets } from "./flower-assets";
+
+export const entityAssets: Readonly<Record<string, EntityAsset>> = {
+  ...flowerAssets,
   "concentrated-nightmare": {
     src: concentrated,
     width: 256,
-    height: 171,
-    pixelated: false,
+    height: 256,
+    kind: "illustration",
     entityId: "ability:concentrated-nightmare",
   },
   "nightmare-lighter": {
     src: lighter,
-    width: 64,
-    height: 32,
-    pixelated: true,
+    width: 512,
+    height: 512,
+    kind: "item-render",
     entityId: "item:nightmare-lighter",
   },
   "forget-me-not-perk": {
     src: forgetPerk,
     width: 256,
     height: 256,
-    pixelated: false,
+    kind: "illustration",
+    presentation: { blend: "screen" },
     entityId: "perk:forget-me-not",
   },
   "forget-me-not-item": {
     src: forgetItem,
     width: 32,
     height: 32,
-    pixelated: true,
+    kind: "pixel-texture",
     entityId: "item:forget-me-not",
   },
 };

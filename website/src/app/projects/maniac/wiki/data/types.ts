@@ -1,6 +1,18 @@
 export type EntityKind = "character" | "ability" | "perk" | "item" | "mechanic";
 export type EntityId<K extends EntityKind = EntityKind> = `${K}:${string}`;
 export type SnapshotId = `release:${string}` | `source:${string}`;
+export interface EntityAsset {
+  src: string;
+  width: number;
+  height: number;
+  entityId: EntityId;
+  kind: "illustration" | "pixel-texture" | "item-render";
+  presentation?: {
+    scale?: number;
+    position?: readonly [number, number];
+    blend?: "normal" | "screen";
+  };
+}
 export interface Evidence {
   path: string;
   note?: string;

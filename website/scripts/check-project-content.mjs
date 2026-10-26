@@ -138,7 +138,9 @@ try {
   }
   for (const text of ["mods.zip", "world.zip", "saves/Maniac", "level.dat"])
     assert.ok(maniac.includes(text), `Installation: ${text}`);
-  assert.match(maniac, /href="\/changelog"/);
+  assert.match(maniac, /href="\/projects\/maniac\/changelog"/);
+  for (const version of ["1.0", "1.1", "1.2"])
+    assert.ok(maniac.includes(`href="/projects/maniac/changelog/${version}"`));
   const history = render(ReleaseList, {
     releases: projects[0].releases,
     projectNames: { maniac: "Maniac" },

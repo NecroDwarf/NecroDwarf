@@ -75,7 +75,7 @@ try {
   ]);
   for (const version of gameVersions)
     assert.ok(releases.some((r) => r.id === version.releaseId));
-  assert.equal(routes.length, 7);
+  assert.equal(routes.length, 11);
   assert.ok(routes.every((r) => !/wiki|lab/.test(r.path)));
   assert.deepEqual(publishedEntityRoutes, {});
   for (const [id, path] of Object.entries(publishedEntityRoutes)) {
@@ -153,6 +153,73 @@ try {
       }
       if (data.model) assert.ok(characterModels[data.model]);
     }
+  for (const asset of Object.values(entityAssets)) {
+    assert.ok(
+      ["illustration", "pixel-texture", "item-render"].includes(asset.kind),
+    );
+    const file = manifest.files.find((file) => asset.src.endsWith(file.local));
+    assert.ok(file, `No provenance for ${asset.src}`);
+    assert.deepEqual([asset.width, asset.height], file.size);
+    assert.equal(asset.entityId, file.entityId);
+    const presentation = asset.presentation ?? {};
+    assert.ok(Number.isFinite(presentation.scale ?? 1));
+    assert.ok((presentation.scale ?? 1) > 0);
+    assert.ok((presentation.position ?? [50, 50]).every(Number.isFinite));
+    assert.ok(["normal", "screen"].includes(presentation.blend ?? "normal"));
+  }
+  assert.equal(entityAssets["concentrated-nightmare"].width, 256);
+  assert.equal(entityAssets["concentrated-nightmare"].height, 256);
+  assert.equal(entityAssets["nightmare-lighter"].kind, "item-render");
+  assert.doesNotMatch(entityAssets["nightmare-lighter"].src, /source|\.glb/);
+
+  const itemFolder = assetFolder + "models/nightmare-lighter/";
+  const lighter = await new NodeIO().read(itemFolder + "nightmare_lighter.glb");
+  const itemRoot = lighter.getRoot();
+  assert.equal(itemRoot.listNodes().length, 40);
+  assert.equal(itemRoot.getExtras().cubes, 49);
+  assert.equal(itemRoot.getExtras().planes, 5);
+  assert.equal(itemRoot.listAnimations().length, 0);
+  for (const name of ["fire", "fire_side"])
+    assert.deepEqual(
+      itemRoot
+        .listNodes()
+        .find((n) => n.getName() === name)
+        .getScale(),
+      [1, 1, 1],
+    );
+  const lid = itemRoot.listNodes().find((n) => n.getName() === "group");
+  const expectedLidPosition = [-3 / 16, 14.6 / 16, -11 / 16];
+  lid
+    .getTranslation()
+    .forEach((value, index) =>
+      assert.ok(Math.abs(value - expectedLidPosition[index]) < 1e-6),
+    );
+  assert.ok(
+    Math.abs(lid.getRotation()[0] + Math.sin((40 * Math.PI) / 180)) < 1e-6,
+  );
+  assert.deepEqual(
+    Buffer.from(itemRoot.listTextures()[0].getImage()),
+    await readFile(itemFolder + "source/nightmare-lighter.png"),
+  );
+  assert.equal(
+    itemRoot.listMaterials()[0].getBaseColorTextureInfo().getMagFilter(),
+    9728,
+  );
+  const renderReport = JSON.parse(
+    await readFile(itemFolder + "render.json", "utf8"),
+  );
+  assert.equal(
+    renderReport.modelSha256,
+    createHash("sha256")
+      .update(await readFile(itemFolder + "nightmare_lighter.glb"))
+      .digest("hex"),
+  );
+  assert.equal(
+    renderReport.sha256,
+    createHash("sha256")
+      .update(await readFile(renderReport.output))
+      .digest("hex"),
+  );
 
   const folder = assetFolder + "models/keeper/";
   const geoBytes = await readFile(folder + "source/windigo.geo.json");
@@ -219,6 +286,7 @@ try {
   const { MemoryRouter } = await server.ssrLoadModule("react-router");
   const cards = await server.ssrLoadModule(root + "ui/EntityCards.tsx");
   const { EntityLink } = await server.ssrLoadModule(root + "ui/EntityLink.tsx");
+  const { EntityIcon } = await server.ssrLoadModule(root + "ui/EntityIcon.tsx");
   const { ReleaseEntityChange } = await server.ssrLoadModule(
     root + "ui/ReleaseEntityChange.tsx",
   );
@@ -229,6 +297,26 @@ try {
     renderToStaticMarkup(
       createElement(MemoryRouter, null, createElement(Component, props)),
     );
+  for (const variant of ["compact", "detail"]) {
+    const iconHTML = render(EntityIcon, {
+      asset: entityAssets["nightmare-lighter"],
+      variant,
+    });
+    assert.match(iconHTML, new RegExp(`data-variant="${variant}"`));
+    assert.match(iconHTML, /data-kind="item-render"/);
+    assert.match(iconHTML, /aria-hidden="true"/);
+    assert.match(iconHTML, /alt=""/);
+    assert.doesNotMatch(iconHTML, /<canvas/);
+  }
+  const customIcon = render(EntityIcon, {
+    asset: {
+      ...entityAssets["forget-me-not-item"],
+      presentation: { scale: 1.1, position: [45, 55] },
+    },
+  });
+  assert.match(customIcon, /--icon-scale:1.1/);
+  assert.match(customIcon, /--icon-x:45%/);
+  assert.match(customIcon, /--icon-y:55%/);
   assert.doesNotMatch(render(EntityLink, { id: "perk:forget-me-not" }), /<a/);
   assert.doesNotMatch(
     render(cards.PerkCard, {

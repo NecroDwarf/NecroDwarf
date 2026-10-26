@@ -48,8 +48,11 @@ export function ManiacPage() {
               <span aria-hidden="true">↗</span>
             </ContentLink>
             {published.length > 0 && (
-              <ContentLink className={s.secondary} href="#updates">
-                История обновлений <span aria-hidden="true">↓</span>
+              <ContentLink
+                className={s.secondary}
+                href="/projects/maniac/changelog"
+              >
+                История обновлений <span aria-hidden="true">↗</span>
               </ContentLink>
             )}
           </div>
@@ -177,7 +180,9 @@ export function ManiacPage() {
             index={gallery?.length ? "05" : "04"}
             label="История обновлений"
             title="Охота меняется."
-            action={<Link to="/changelog">Все обновления ↗</Link>}
+            action={
+              <Link to="/projects/maniac/changelog">Все обновления ↗</Link>
+            }
           />
           <article className={`${s.latest} ${latest.theme}`}>
             {latest.background && (
@@ -200,7 +205,7 @@ export function ManiacPage() {
               <p>{latest.summary}</p>
               <Link
                 className={s.flowerLink}
-                to="/changelog"
+                to={latest.href!}
                 aria-label={`История обновлений Maniac ${latest.version} — ${latest.title}`}
               >
                 История обновлений <span aria-hidden="true">↗</span>
@@ -210,7 +215,6 @@ export function ManiacPage() {
           <ReleaseList
             releases={previous}
             projectNames={{ [meta.id]: meta.name }}
-            sourceHref="/changelog"
             sourceLabel="История обновлений"
           />
         </section>

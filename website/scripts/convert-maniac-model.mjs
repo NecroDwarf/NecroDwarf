@@ -142,9 +142,14 @@ export function cubeGeometry(cube, bone, textureWidth, textureHeight) {
   return result;
 }
 
-export async function convertKeeper() {
-  const folder = "src/app/projects/maniac/assets/models/keeper";
-  const jsonBytes = await readFile(`${folder}/source/windigo.geo.json`);
+export async function convertBedrock({
+  folder,
+  basename,
+  textureFile,
+  label,
+  pose,
+}) {
+  const jsonBytes = await readFile(`${folder}/source/${basename}.geo.json`);
   const input = JSON.parse(jsonBytes);
   if (
     input.format_version !== "1.12.0" ||
@@ -154,13 +159,13 @@ export async function convertKeeper() {
   const geometry = input["minecraft:geometry"][0],
     bones = geometry.bones;
   const doc = new Document(),
-    buffer = doc.createBuffer("keeper");
+    buffer = doc.createBuffer(basename === "windigo" ? "keeper" : basename);
   const texture = doc
-    .createTexture("windigo-original")
-    .setImage(await readFile(`${folder}/source/windigo.png`))
+    .createTexture(`${basename}-original`)
+    .setImage(await readFile(`${folder}/source/${textureFile}`))
     .setMimeType("image/png");
   const material = doc
-    .createMaterial("windigo")
+    .createMaterial(basename)
     .setBaseColorTexture(texture)
     .setRoughnessFactor(1)
     .setMetallicFactor(0)
@@ -168,7 +173,7 @@ export async function convertKeeper() {
     .setAlphaMode("MASK")
     .setAlphaCutoff(0.5);
   material.getBaseColorTextureInfo().setMagFilter(9728).setMinFilter(9728);
-  const scene = doc.createScene("Хранитель кошмаров");
+  const scene = doc.createScene(label);
   const nodes = new Map(
     bones.map((bone) => [bone.name, doc.createNode(bone.name)]),
   );
@@ -185,6 +190,32 @@ export async function convertKeeper() {
         point(bone.pivot).sub(point(parent?.pivot)).divideScalar(16).toArray(),
       )
       .setRotation(rotation(bone.rotation).toArray());
+    // Optional, explicitly numeric static snapshot; never evaluate Molang here.
+    const transform = pose?.bones[bone.name];
+    if (transform) {
+      for (const channel of Object.values(transform))
+        if (
+          !Array.isArray(channel.vector) ||
+          channel.vector.length !== 3 ||
+          !channel.vector.every(Number.isFinite)
+        )
+          throw new Error(`Non-static pose channel: ${bone.name}`);
+      if (transform.position)
+        node.setTranslation(
+          point(bone.pivot)
+            .sub(point(parent?.pivot))
+            .add(point(transform.position.vector))
+            .divideScalar(16)
+            .toArray(),
+        );
+      if (transform.rotation)
+        node.setRotation(
+          rotation(bone.rotation)
+            .multiply(rotation(transform.rotation.vector))
+            .toArray(),
+        );
+      if (transform.scale) node.setScale(transform.scale.vector);
+    }
     if (parent) nodes.get(parent.name).addChild(node);
     else scene.addChild(node);
     const all = { positions: [], normals: [], uvs: [], indices: [] };
@@ -244,17 +275,30 @@ export async function convertKeeper() {
     planes,
     triangles,
     units: "16 source units = 1 block",
-    animations: "static bind pose only",
+    animations: pose
+      ? `static ${pose.label ?? "numeric pose"} snapshot; no playback`
+      : "static bind pose only",
   };
   doc.getRoot().setExtras(report);
-  await new NodeIO().write(`${folder}/keeper.glb`, doc);
+  await new NodeIO().write(
+    `${folder}/${basename === "windigo" ? "keeper" : basename}.glb`,
+    doc,
+  );
   await writeFile(
     `${folder}/conversion.json`,
     JSON.stringify(report, null, 2) + "\n",
   );
   console.log(
-    `Converted ${cubes} cubes (${planes} flat) / ${bones.length} bones → keeper.glb`,
+    `Converted ${cubes} cubes (${planes} flat) / ${bones.length} bones → ${basename}`,
   );
+}
+export async function convertKeeper() {
+  return convertBedrock({
+    folder: "src/app/projects/maniac/assets/models/keeper",
+    basename: "windigo",
+    textureFile: "windigo.png",
+    label: "Хранитель кошмаров",
+  });
 }
 if (
   process.argv[1] &&

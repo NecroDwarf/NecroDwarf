@@ -55,6 +55,91 @@
       "path": "src/main/java/org/example/maniacrevolution/perk/PerkRegistry.java",
       "bytes": 4077,
       "sha256": "c3db42d1c1b9eede2ac2a0c7605fb377f472bfe0a40828f4bf1dd2c09388a465"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/client/model/NightmareLighterModel.java",
+      "bytes": 856,
+      "sha256": "d488e9ca9a246a0a3677ad7b036e3531e2fcbb9d9738c70f321e3f9e3faa279f"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/client/renderer/NightmareLighterRenderer.java",
+      "bytes": 427,
+      "sha256": "000fa8347526682d0b05e5523375b166fe75636e8e2b6cd8cfa26fc17d6d55e9"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/item/NightmareLighterItem.java",
+      "bytes": 7734,
+      "sha256": "4ed869577e1a428a1c6f912c5429b4472a6a9e3fcb914b1e7ce01d6c5a40cd08"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/perks/common/ColorRoulettePerk.java",
+      "bytes": 2543,
+      "sha256": "92fb97fab079b85ab04995774a1e2159ed19124070356c9cc229b9c1166ee538"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/perks/maniac/BouquetToTheOtherSidePerk.java",
+      "bytes": 12247,
+      "sha256": "02a04b902c425ee207d9ff020862e647248145e2389e0fea4f69ba3d34015aa0"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/perks/maniac/BudDispatcherPerk.java",
+      "bytes": 2593,
+      "sha256": "b2c3b3a23072c31db089ee8280aada32c5f8a614646e44f70f4a34ee5191fbe3"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/perks/maniac/FlowersLeadInvestigationPerk.java",
+      "bytes": 2137,
+      "sha256": "546a128e83663b5aaa1b68eaba886a3220f9d520d8ab647cd29687af75237c9b"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/perks/maniac/GoNextPerk.java",
+      "bytes": 4719,
+      "sha256": "f7ba98bb0677e7985d57c0cbbd5eea1b419ca28322641d99144fc6daa3bdd8d8"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/perks/maniac/HighVoltagePerk.java",
+      "bytes": 6198,
+      "sha256": "a5539f19db378adac51d57337ed3b99acbfb241567110c7167373a1b5a717711"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/perks/maniac/ThePaintThickensPerk.java",
+      "bytes": 3597,
+      "sha256": "d875bc810ccc001d4e5546ae8166286d7e33046a942253ca215411fbd61d7852"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/perks/survivor/EmergencyOverclockPerk.java",
+      "bytes": 5981,
+      "sha256": "e605a0ceeedc688bbc73e7303637f84accf9e31a01f5b8abc278532256fb4ed2"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/perks/survivor/FixedItImOutPerk.java",
+      "bytes": 6157,
+      "sha256": "84180643d53efb3f3f9203a4db21c8249ec653e2644421a53e4a4ea59007690f"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/perks/survivor/MagicKickPerk.java",
+      "bytes": 5567,
+      "sha256": "914f3c6282d9e21dcb9b44bc750a9037f70d4b3b712c0b30b7b8e553913f6bfc"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/perks/survivor/PinkOrchidPerk.java",
+      "bytes": 2777,
+      "sha256": "6c5d0f3ea1016afb8ff534ed493da43058c8cbd110b2b54e625a2e4c2863b369"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/perks/survivor/RealityAnchorPerk.java",
+      "bytes": 7411,
+      "sha256": "05662bb651aede43db6099158181044f36154b1e8ec43d9a72eda6fb6d8f6ae4"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/perks/survivor/RoseColoredGlassesPerk.java",
+      "bytes": 2152,
+      "sha256": "81dba5155b1d2eedebe5258f61ac1907ca82e603e83d646d2029afeae8941fdf"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/perks/survivor/SberSproutPerk.java",
+      "bytes": 2762,
+      "sha256": "af65ac8d12f12a4936bce9c84b29b4a3da41b8245c0544a3c388c90e19aff7a7"
     }
   ]
 }

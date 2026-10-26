@@ -6,7 +6,7 @@ export function ReleaseList({
   projectNames,
   headingLevel = 3,
   sourceHref,
-  sourceLabel = "Исходные хроники",
+  sourceLabel,
 }: {
   releases: readonly Release[];
   projectNames: Readonly<Record<string, string>>;
@@ -49,11 +49,13 @@ export function ReleaseList({
             )}
           </div>
           <ContentLink
-            href={sourceHref ?? release.source}
+            href={sourceHref ?? release.href ?? release.source}
             className={s.source}
             aria-label={`Читать хроники ${projectNames[release.projectId]} ${release.version} — ${release.title}`}
           >
-            {sourceLabel} <span aria-hidden="true">↗</span>
+            {sourceLabel ??
+              (release.href ? "Читать хронику" : "Исходные хроники")}{" "}
+            <span aria-hidden="true">↗</span>
           </ContentLink>
         </article>
       ))}

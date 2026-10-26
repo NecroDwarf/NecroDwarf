@@ -48,7 +48,7 @@ try {
   for (const path of [
     "/does-not-exist",
     "/projects/maniac/wiki",
-    "/projects/maniac/changelog/1.2",
+    "/projects/maniac/changelog/1.3",
     "/neo-tech-v2",
   ]) {
     const response = await fetch(origin + path);

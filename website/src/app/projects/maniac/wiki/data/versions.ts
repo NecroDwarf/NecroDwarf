@@ -1,4 +1,5 @@
 import type { GameVersion } from "./types";
+import { flowerPerks } from "./flower-perks";
 // Partial curated change index, never a replacement for original release prose.
 export const gameVersions: readonly GameVersion[] = [
   {
@@ -31,6 +32,15 @@ export const gameVersions: readonly GameVersion[] = [
           { path: "docs/changelogs/maniac/changelog_maniac_1_2.html" },
         ],
       },
+      ...flowerPerks.map((perk) => ({
+        id: perk.id,
+        operation: "added" as const,
+        after: { id: perk.id, snapshot: "release:1.2" as const },
+        editorial: `Добавлен перк «${perk.name}».`,
+        evidence: [
+          { path: "docs/changelogs/maniac/changelog_maniac_1_2.html" },
+        ],
+      })),
     ],
   },
 ];

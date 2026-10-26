@@ -128,6 +128,18 @@ export default function ModelCanvas({ model }: { model: CharacterModel }) {
           return;
         }
         scene.add(gltf.scene);
+        gltf.scene.updateWorldMatrix(true, true);
+        const vertices: THREE.Vector3[] = [];
+        gltf.scene.traverse((node) => {
+          if (!(node instanceof THREE.Mesh)) return;
+          const position = node.geometry.getAttribute("position");
+          for (let i = 0; i < position.count; i++)
+            vertices.push(
+              new THREE.Vector3()
+                .fromBufferAttribute(position, i)
+                .applyMatrix4(node.matrixWorld),
+            );
+        });
         const bounds = new THREE.Box3().setFromObject(gltf.scene),
           center = bounds.getCenter(new THREE.Vector3());
         const radius = bounds.getBoundingSphere(new THREE.Sphere()).radius;
@@ -137,26 +149,27 @@ export default function ModelCanvas({ model }: { model: CharacterModel }) {
         controls.minDistance = radius * 1.1;
         controls.maxDistance = radius * 8;
         const reset = () => {
-          // Fit the real box in camera space, including portrait viewports.
+          // Fit actual vertices, not the empty corners of the world AABB.
+          // The latter leaves excessive space around antlers and bent limbs.
           const direction = new THREE.Vector3(
             ...model.cameraDirection,
           ).normalize();
           const right = new THREE.Vector3(0, 1, 0).cross(direction).normalize();
           const up = direction.clone().cross(right).normalize();
-          const size = bounds.getSize(new THREE.Vector3());
-          const extent = (axis: THREE.Vector3) =>
-            (Math.abs(axis.x) * size.x +
-              Math.abs(axis.y) * size.y +
-              Math.abs(axis.z) * size.z) /
-            2;
           const tangent = Math.tan(THREE.MathUtils.degToRad(camera.fov / 2));
           const distance =
-            (Math.max(
-              extent(up) / tangent,
-              extent(right) / (tangent * camera.aspect),
-            ) +
-              extent(direction)) *
-            1.05;
+            Math.max(
+              ...vertices.map((vertex) => {
+                const relative = vertex.clone().sub(center);
+                return (
+                  relative.dot(direction) +
+                  Math.max(
+                    Math.abs(relative.dot(up)) / tangent,
+                    Math.abs(relative.dot(right)) / (tangent * camera.aspect),
+                  )
+                );
+              }),
+            ) * 1.1;
           camera.position.copy(center).add(direction.multiplyScalar(distance));
           controls?.target.copy(center);
           controls?.update();
