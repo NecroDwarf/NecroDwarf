@@ -1,11 +1,9 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Route, Routes, useLocation } from "react-router";
 import { SiteLayout } from "./shared/layouts/SiteLayout";
-import { routes, notFoundMeta, normalizePath } from "./routes";
-import { NotFoundPage } from "./pages/NotFoundPage";
+import { routes, notFoundMeta, normalizePath, pageForPath } from "./routes";
 import { renderHead, siteOrigin } from "./shared/lib/seo";
-function PageEffects() {
-  const { pathname } = useLocation();
+function PageEffects({ pathname }: { pathname: string }) {
   const firstRender = useRef(true);
   useEffect(() => {
     const path = normalizePath(pathname);
@@ -32,14 +30,42 @@ function PageEffects() {
   return null;
 }
 export function App() {
+  const location = useLocation();
+  const [ready, setReady] = useState(() => ({
+    location,
+    Page: pageForPath(location.pathname).read(),
+  }));
+  const [failed, setFailed] = useState(false);
+  useEffect(() => {
+    let current = true;
+    setFailed(false);
+    pageForPath(location.pathname)
+      .preload()
+      .then((Page) => {
+        if (current) setReady({ location, Page });
+      })
+      .catch(() => {
+        if (current) setFailed(true);
+      });
+    return () => {
+      current = false;
+    };
+  }, [location]);
+  const { Page } = ready;
   return (
     <SiteLayout>
-      <PageEffects />
-      <Routes>
-        {routes.map(({ path, Page }) => (
-          <Route key={path} path={path} element={<Page />} />
-        ))}
-        <Route path="*" element={<NotFoundPage />} />
+      <PageEffects pathname={ready.location.pathname} />
+      {failed && (
+        <p role="alert">
+          Не удалось загрузить страницу.{" "}
+          <a href={location.pathname + location.search + location.hash}>
+            Повторить загрузку
+          </a>
+        </p>
+      )}
+      {/* Retain the previous route until its replacement is fully loaded. */}
+      <Routes location={ready.location}>
+        <Route path="*" element={<Page key={ready.location.pathname} />} />
       </Routes>
     </SiteLayout>
   );

@@ -45,6 +45,10 @@ npm run dev:prototypes
 
 Результат — **`build/client`**, а не старый `dist`. На Cloudflare Pages публикуется только этот каталог. `404.html` отключает неявный SPA fallback Pages. Пути без завершающего `/`; `_redirects` создаётся из реестра маршрутов. Никаких wildcard-редиректов на SPA-оболочку.
 
+Страницы подключаются через `routePage(() => import(...))`. `render()` теперь асинхронный: перед `renderToString` он ожидает модуль текущего маршрута; браузер ожидает тот же модуль перед `hydrateRoot`. При переходах React Router сохраняет предыдущую страницу до готовности следующей. Общий CSS включён в статический HTML и работает без JS. Полные тексты хроник импортируются только собственными `*.page.tsx`, а реестры проектов/релизов содержат метаданные. `React.lazy`/Suspense для SSG не используются.
+
+Замеры до/после, граф зависимостей, инструкции проверки production preview и паттерн будущих Wiki-статей: [ROUTE_LOADING.md](docs/ROUTE_LOADING.md). `npm run check` включает проверку изоляции чанков; повторный браузерный замер — `npm run measure:loading -- after` (требуется локальный Playwright и Edge, подробности в отчёте).
+
 Документация сверена: [Vite build-time prerender](https://vite.dev/guide/ssr.html#pre-rendering-ssg), [React Router rendering](https://reactrouter.com/how-to/pre-rendering), [Cloudflare static serving](https://developers.cloudflare.com/pages/configuration/serving-pages/). Существующий диапазон Vite сохранён (lockfile: 7.3.7); React Router зафиксирован на 7.18.4. Vite выводит известное предупреждение об игнорировании `use client` в React Router при клиентской сборке; результат успешно собирается и гидратируется.
 
 ## Архитектура

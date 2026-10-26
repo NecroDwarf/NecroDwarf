@@ -23,8 +23,21 @@ const server = await createServer({
   appType: "custom",
 });
 try {
-  const { chronicleContent, nodeText, cardTitle } = await server.ssrLoadModule(
+  const { nodeText, cardTitle } = await server.ssrLoadModule(
     root + "changelogs/content/index.ts",
+  );
+  const chronicleContent = Object.fromEntries(
+    await Promise.all(
+      ["1.0", "1.1", "1.2"].map(async (version) => [
+        version,
+        JSON.parse(
+          await readFile(
+            `src/app/projects/maniac/changelogs/content/${version}.json`,
+            "utf8",
+          ),
+        ),
+      ]),
+    ),
   );
   const { flowerPerkIds } = await server.ssrLoadModule(
     root + "changelogs/entity-map.ts",
@@ -155,7 +168,7 @@ try {
     "/projects/maniac/changelog",
     ...releases.map((r) => r.href),
   ]) {
-    const page = renderPage(path, "https://example.invalid");
+    const page = await renderPage(path, "https://example.invalid");
     assert.ok(
       page.head.includes(
         `rel="canonical" href="https://example.invalid${path}"`,

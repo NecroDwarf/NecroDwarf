@@ -1,0 +1,1232 @@
+{
+  "phase": "after",
+  "measurement": "Cold browser context per URL; static production preview without HTTP compression; bytes = response bodies, gzip = local gzip estimate (no headers/cache).",
+  "results": [
+    {
+      "path": "/",
+      "count": 7,
+      "bytes": 283694,
+      "gzipBytes": 92731,
+      "jsonVersions": [],
+      "resources": [
+        {
+          "file": "assets/index-Dn-3uMJO.js",
+          "bytes": 276499,
+          "gzipBytes": 89234,
+          "modules": [
+            "\u0000vite/modulepreload-polyfill.js",
+            "\u0000node_modules/react/jsx-runtime.js?commonjs-module",
+            "\u0000node_modules/react/cjs/react-jsx-runtime.production.js?commonjs-exports",
+            "node_modules/react/cjs/react-jsx-runtime.production.js",
+            "node_modules/react/jsx-runtime.js",
+            "\u0000node_modules/react/jsx-runtime.js?commonjs-es-import",
+            "\u0000node_modules/react-dom/client.js?commonjs-module",
+            "\u0000node_modules/react-dom/cjs/react-dom-client.production.js?commonjs-exports",
+            "\u0000node_modules/scheduler/index.js?commonjs-module",
+            "\u0000node_modules/scheduler/cjs/scheduler.production.js?commonjs-exports",
+            "node_modules/scheduler/cjs/scheduler.production.js",
+            "node_modules/scheduler/index.js",
+            "\u0000node_modules/react/index.js?commonjs-module",
+            "\u0000node_modules/react/cjs/react.production.js?commonjs-exports",
+            "node_modules/react/cjs/react.production.js",
+            "node_modules/react/index.js",
+            "\u0000node_modules/react-dom/index.js?commonjs-module",
+            "\u0000node_modules/react-dom/cjs/react-dom.production.js?commonjs-exports",
+            "node_modules/react-dom/cjs/react-dom.production.js",
+            "node_modules/react-dom/index.js",
+            "node_modules/react-dom/cjs/react-dom-client.production.js",
+            "node_modules/react-dom/client.js",
+            "\u0000node_modules/react-dom/client.js?commonjs-es-import",
+            "\u0000node_modules/react/index.js?commonjs-es-import",
+            "node_modules/react-router/dist/development/chunk-OB3PAWPO.mjs",
+            "src/app/shared/ui/ContentLink.tsx",
+            "src/app/shared/ui/BrandLogo.module.css",
+            "src/app/shared/ui/BrandLogo.tsx",
+            "src/app/shared/content/team.ts",
+            "src/app/shared/layouts/SiteLayout.module.css",
+            "src/app/shared/layouts/SiteLayout.tsx",
+            "\u0000vite/preload-helper.js",
+            "src/app/shared/lib/route-page.ts",
+            "src/app/projects/maniac/assets/ManiacArt.tsx",
+            "src/app/projects/maniac/theme/theme.module.css",
+            "src/app/projects/maniac/meta.ts",
+            "src/app/projects/friendsheep/assets/FriendSheepArt.tsx",
+            "src/app/projects/friendsheep/theme/theme.module.css",
+            "src/app/projects/friendsheep/meta.ts",
+            "src/app/projects/novellmaker/assets/NovellMakerArt.tsx",
+            "src/app/projects/novellmaker/theme/theme.module.css",
+            "src/app/projects/novellmaker/meta.ts",
+            "src/app/projects/maniac/assets/releases/flower-cleaning.jpg",
+            "src/app/projects/maniac/assets/releases/nightmare.jpg",
+            "src/app/projects/maniac/assets/releases/reforge.jpg",
+            "src/app/projects/maniac/changelogs/registry.ts",
+            "src/app/projects/registry.ts",
+            "src/app/projects/maniac/changelogs/routes.tsx",
+            "src/app/routes.ts",
+            "src/app/shared/lib/seo.ts",
+            "src/app/App.tsx",
+            "src/app/shared/styles/global.css",
+            "src/main.tsx",
+            "index.html"
+          ]
+        },
+        {
+          "file": "assets/HomePage-BhK6AIul.js",
+          "bytes": 3212,
+          "gzipBytes": 1353,
+          "modules": [
+            "src/app/pages/home/HomePage.module.css",
+            "src/app/pages/home/HomePage.tsx"
+          ]
+        },
+        {
+          "file": "assets/SectionHeading-ChG4hjCd.js",
+          "bytes": 346,
+          "gzipBytes": 227,
+          "modules": [
+            "src/app/shared/ui/SectionHeading.tsx"
+          ]
+        },
+        {
+          "file": "assets/Content.module-_AHIhrYo.js",
+          "bytes": 786,
+          "gzipBytes": 382,
+          "modules": [
+            "src/app/shared/ui/Content.module.css"
+          ]
+        },
+        {
+          "file": "assets/ProjectGrid-Cxp4rYAd.js",
+          "bytes": 972,
+          "gzipBytes": 513,
+          "modules": [
+            "src/app/shared/ui/ProjectGrid.tsx"
+          ]
+        },
+        {
+          "file": "assets/ReleaseList-LMsaGus4.js",
+          "bytes": 1248,
+          "gzipBytes": 681,
+          "modules": [
+            "src/app/shared/ui/ReleaseList.tsx"
+          ]
+        },
+        {
+          "file": "assets/Contacts-CaYn4ipN.js",
+          "bytes": 631,
+          "gzipBytes": 341,
+          "modules": [
+            "src/app/shared/ui/TeamGrid.tsx",
+            "src/app/shared/ui/Contacts.tsx"
+          ]
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/projects/maniac",
+      "count": 7,
+      "bytes": 318232,
+      "gzipBytes": 102176,
+      "jsonVersions": [],
+      "resources": [
+        {
+          "file": "assets/index-Dn-3uMJO.js",
+          "bytes": 276499,
+          "gzipBytes": 89234,
+          "modules": [
+            "\u0000vite/modulepreload-polyfill.js",
+            "\u0000node_modules/react/jsx-runtime.js?commonjs-module",
+            "\u0000node_modules/react/cjs/react-jsx-runtime.production.js?commonjs-exports",
+            "node_modules/react/cjs/react-jsx-runtime.production.js",
+            "node_modules/react/jsx-runtime.js",
+            "\u0000node_modules/react/jsx-runtime.js?commonjs-es-import",
+            "\u0000node_modules/react-dom/client.js?commonjs-module",
+            "\u0000node_modules/react-dom/cjs/react-dom-client.production.js?commonjs-exports",
+            "\u0000node_modules/scheduler/index.js?commonjs-module",
+            "\u0000node_modules/scheduler/cjs/scheduler.production.js?commonjs-exports",
+            "node_modules/scheduler/cjs/scheduler.production.js",
+            "node_modules/scheduler/index.js",
+            "\u0000node_modules/react/index.js?commonjs-module",
+            "\u0000node_modules/react/cjs/react.production.js?commonjs-exports",
+            "node_modules/react/cjs/react.production.js",
+            "node_modules/react/index.js",
+            "\u0000node_modules/react-dom/index.js?commonjs-module",
+            "\u0000node_modules/react-dom/cjs/react-dom.production.js?commonjs-exports",
+            "node_modules/react-dom/cjs/react-dom.production.js",
+            "node_modules/react-dom/index.js",
+            "node_modules/react-dom/cjs/react-dom-client.production.js",
+            "node_modules/react-dom/client.js",
+            "\u0000node_modules/react-dom/client.js?commonjs-es-import",
+            "\u0000node_modules/react/index.js?commonjs-es-import",
+            "node_modules/react-router/dist/development/chunk-OB3PAWPO.mjs",
+            "src/app/shared/ui/ContentLink.tsx",
+            "src/app/shared/ui/BrandLogo.module.css",
+            "src/app/shared/ui/BrandLogo.tsx",
+            "src/app/shared/content/team.ts",
+            "src/app/shared/layouts/SiteLayout.module.css",
+            "src/app/shared/layouts/SiteLayout.tsx",
+            "\u0000vite/preload-helper.js",
+            "src/app/shared/lib/route-page.ts",
+            "src/app/projects/maniac/assets/ManiacArt.tsx",
+            "src/app/projects/maniac/theme/theme.module.css",
+            "src/app/projects/maniac/meta.ts",
+            "src/app/projects/friendsheep/assets/FriendSheepArt.tsx",
+            "src/app/projects/friendsheep/theme/theme.module.css",
+            "src/app/projects/friendsheep/meta.ts",
+            "src/app/projects/novellmaker/assets/NovellMakerArt.tsx",
+            "src/app/projects/novellmaker/theme/theme.module.css",
+            "src/app/projects/novellmaker/meta.ts",
+            "src/app/projects/maniac/assets/releases/flower-cleaning.jpg",
+            "src/app/projects/maniac/assets/releases/nightmare.jpg",
+            "src/app/projects/maniac/assets/releases/reforge.jpg",
+            "src/app/projects/maniac/changelogs/registry.ts",
+            "src/app/projects/registry.ts",
+            "src/app/projects/maniac/changelogs/routes.tsx",
+            "src/app/routes.ts",
+            "src/app/shared/lib/seo.ts",
+            "src/app/App.tsx",
+            "src/app/shared/styles/global.css",
+            "src/main.tsx",
+            "index.html"
+          ]
+        },
+        {
+          "file": "assets/ManiacPage-jtUKGVzx.js",
+          "bytes": 14215,
+          "gzipBytes": 4997,
+          "modules": [
+            "src/app/projects/maniac/assets/DownloadIcons.tsx",
+            "src/app/projects/maniac/content.ts",
+            "src/app/projects/maniac/pages/ManiacPage.module.css",
+            "src/app/projects/maniac/pages/ManiacPage.tsx"
+          ]
+        },
+        {
+          "file": "assets/ProjectIntro-CgvJq42c.js",
+          "bytes": 2702,
+          "gzipBytes": 1218,
+          "modules": [
+            "src/app/shared/ui/ProjectIntro.module.css",
+            "src/app/shared/ui/ProjectGallery.tsx",
+            "src/app/shared/ui/ProjectIntro.tsx"
+          ]
+        },
+        {
+          "file": "assets/ReleaseList-LMsaGus4.js",
+          "bytes": 1248,
+          "gzipBytes": 681,
+          "modules": [
+            "src/app/shared/ui/ReleaseList.tsx"
+          ]
+        },
+        {
+          "file": "assets/SectionHeading-ChG4hjCd.js",
+          "bytes": 346,
+          "gzipBytes": 227,
+          "modules": [
+            "src/app/shared/ui/SectionHeading.tsx"
+          ]
+        },
+        {
+          "file": "assets/Content.module-_AHIhrYo.js",
+          "bytes": 786,
+          "gzipBytes": 382,
+          "modules": [
+            "src/app/shared/ui/Content.module.css"
+          ]
+        },
+        {
+          "file": "assets/registry-CZkHKsGu.js",
+          "bytes": 22436,
+          "gzipBytes": 5437,
+          "modules": [
+            "src/app/projects/maniac/wiki/data/snapshots.ts",
+            "src/app/projects/maniac/wiki/data/characters.ts",
+            "src/app/projects/maniac/wiki/data/abilities.ts",
+            "src/app/projects/maniac/wiki/data/flower-perks.ts",
+            "src/app/projects/maniac/wiki/data/perks.ts",
+            "src/app/projects/maniac/wiki/data/items.ts",
+            "src/app/projects/maniac/wiki/data/mechanics.ts",
+            "src/app/projects/maniac/wiki/data/registry.ts"
+          ]
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/projects/maniac/changelog/1.0",
+      "count": 5,
+      "bytes": 355714,
+      "gzipBytes": 108587,
+      "jsonVersions": [
+        "src/app/projects/maniac/changelogs/content/1.0.json"
+      ],
+      "resources": [
+        {
+          "file": "assets/index-Dn-3uMJO.js",
+          "bytes": 276499,
+          "gzipBytes": 89234,
+          "modules": [
+            "\u0000vite/modulepreload-polyfill.js",
+            "\u0000node_modules/react/jsx-runtime.js?commonjs-module",
+            "\u0000node_modules/react/cjs/react-jsx-runtime.production.js?commonjs-exports",
+            "node_modules/react/cjs/react-jsx-runtime.production.js",
+            "node_modules/react/jsx-runtime.js",
+            "\u0000node_modules/react/jsx-runtime.js?commonjs-es-import",
+            "\u0000node_modules/react-dom/client.js?commonjs-module",
+            "\u0000node_modules/react-dom/cjs/react-dom-client.production.js?commonjs-exports",
+            "\u0000node_modules/scheduler/index.js?commonjs-module",
+            "\u0000node_modules/scheduler/cjs/scheduler.production.js?commonjs-exports",
+            "node_modules/scheduler/cjs/scheduler.production.js",
+            "node_modules/scheduler/index.js",
+            "\u0000node_modules/react/index.js?commonjs-module",
+            "\u0000node_modules/react/cjs/react.production.js?commonjs-exports",
+            "node_modules/react/cjs/react.production.js",
+            "node_modules/react/index.js",
+            "\u0000node_modules/react-dom/index.js?commonjs-module",
+            "\u0000node_modules/react-dom/cjs/react-dom.production.js?commonjs-exports",
+            "node_modules/react-dom/cjs/react-dom.production.js",
+            "node_modules/react-dom/index.js",
+            "node_modules/react-dom/cjs/react-dom-client.production.js",
+            "node_modules/react-dom/client.js",
+            "\u0000node_modules/react-dom/client.js?commonjs-es-import",
+            "\u0000node_modules/react/index.js?commonjs-es-import",
+            "node_modules/react-router/dist/development/chunk-OB3PAWPO.mjs",
+            "src/app/shared/ui/ContentLink.tsx",
+            "src/app/shared/ui/BrandLogo.module.css",
+            "src/app/shared/ui/BrandLogo.tsx",
+            "src/app/shared/content/team.ts",
+            "src/app/shared/layouts/SiteLayout.module.css",
+            "src/app/shared/layouts/SiteLayout.tsx",
+            "\u0000vite/preload-helper.js",
+            "src/app/shared/lib/route-page.ts",
+            "src/app/projects/maniac/assets/ManiacArt.tsx",
+            "src/app/projects/maniac/theme/theme.module.css",
+            "src/app/projects/maniac/meta.ts",
+            "src/app/projects/friendsheep/assets/FriendSheepArt.tsx",
+            "src/app/projects/friendsheep/theme/theme.module.css",
+            "src/app/projects/friendsheep/meta.ts",
+            "src/app/projects/novellmaker/assets/NovellMakerArt.tsx",
+            "src/app/projects/novellmaker/theme/theme.module.css",
+            "src/app/projects/novellmaker/meta.ts",
+            "src/app/projects/maniac/assets/releases/flower-cleaning.jpg",
+            "src/app/projects/maniac/assets/releases/nightmare.jpg",
+            "src/app/projects/maniac/assets/releases/reforge.jpg",
+            "src/app/projects/maniac/changelogs/registry.ts",
+            "src/app/projects/registry.ts",
+            "src/app/projects/maniac/changelogs/routes.tsx",
+            "src/app/routes.ts",
+            "src/app/shared/lib/seo.ts",
+            "src/app/App.tsx",
+            "src/app/shared/styles/global.css",
+            "src/main.tsx",
+            "index.html"
+          ]
+        },
+        {
+          "file": "assets/1.0.page-CJDT4keM.js",
+          "bytes": 38528,
+          "gzipBytes": 6094,
+          "modules": [
+            "src/app/projects/maniac/changelogs/content/1.0.json",
+            "src/app/projects/maniac/changelogs/content/1.0.page.tsx"
+          ]
+        },
+        {
+          "file": "assets/Chronicles.module-CslHA8xO.js",
+          "bytes": 1352,
+          "gzipBytes": 653,
+          "modules": [
+            "src/app/projects/maniac/changelogs/Chronicles.module.css"
+          ]
+        },
+        {
+          "file": "assets/ChroniclePage-Crx-oKhu.js",
+          "bytes": 16899,
+          "gzipBytes": 7169,
+          "modules": [
+            "src/app/projects/maniac/assets/wiki/concentrated-nightmare.webp",
+            "src/app/projects/maniac/assets/wiki/nightmare-lighter-render.png",
+            "src/app/projects/maniac/assets/wiki/forget-me-not-perk.webp",
+            "src/app/projects/maniac/assets/wiki/forget-me-not-item.png",
+            "src/app/projects/maniac/assets/wiki/flower/color_roulette.webp",
+            "src/app/projects/maniac/assets/wiki/flower/bouquet_to_the_other_side.webp",
+            "src/app/projects/maniac/assets/wiki/flower/bud_dispatcher.webp",
+            "src/app/projects/maniac/assets/wiki/flower/flowers_lead_the_investigation.webp",
+            "src/app/projects/maniac/assets/wiki/flower/go_next.webp",
+            "src/app/projects/maniac/assets/wiki/flower/high_voltage.webp",
+            "src/app/projects/maniac/assets/wiki/flower/the_paint_thickens.webp",
+            "src/app/projects/maniac/assets/wiki/flower/emergency_overclock.webp",
+            "src/app/projects/maniac/assets/wiki/flower/fixed_it_im_out.webp",
+            "src/app/projects/maniac/assets/wiki/flower/magic_kick.webp",
+            "src/app/projects/maniac/assets/wiki/flower/pink_orchid.webp",
+            "src/app/projects/maniac/assets/wiki/flower/reality_anchor.webp",
+            "src/app/projects/maniac/assets/wiki/flower/rose_colored_glasses.webp",
+            "src/app/projects/maniac/assets/wiki/flower/sber_sprout.webp",
+            "src/app/projects/maniac/wiki/data/flower-assets.ts",
+            "src/app/projects/maniac/wiki/data/assets.ts",
+            "src/app/projects/maniac/wiki/data/publication.ts",
+            "src/app/projects/maniac/wiki/ui/EntityLink.tsx",
+            "src/app/projects/maniac/wiki/ui/EntityIcon.module.css",
+            "src/app/projects/maniac/wiki/ui/EntityIcon.tsx",
+            "src/app/projects/maniac/wiki/ui/EntityCards.module.css",
+            "src/app/projects/maniac/wiki/ui/EntityCards.tsx",
+            "src/app/projects/maniac/wiki/ui/ReleaseEntityChange.tsx",
+            "src/app/projects/maniac/wiki/data/versions.ts",
+            "src/app/projects/maniac/changelogs/content/index.ts",
+            "src/app/projects/maniac/changelogs/entity-map.ts",
+            "src/app/projects/maniac/changelogs/ChronicleText.tsx",
+            "src/app/projects/maniac/changelogs/NightmareEyes.tsx",
+            "src/app/projects/maniac/changelogs/ReleaseDecor.tsx",
+            "src/app/projects/maniac/changelogs/ChroniclePage.tsx"
+          ]
+        },
+        {
+          "file": "assets/registry-CZkHKsGu.js",
+          "bytes": 22436,
+          "gzipBytes": 5437,
+          "modules": [
+            "src/app/projects/maniac/wiki/data/snapshots.ts",
+            "src/app/projects/maniac/wiki/data/characters.ts",
+            "src/app/projects/maniac/wiki/data/abilities.ts",
+            "src/app/projects/maniac/wiki/data/flower-perks.ts",
+            "src/app/projects/maniac/wiki/data/perks.ts",
+            "src/app/projects/maniac/wiki/data/items.ts",
+            "src/app/projects/maniac/wiki/data/mechanics.ts",
+            "src/app/projects/maniac/wiki/data/registry.ts"
+          ]
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/projects/maniac/changelog/1.1",
+      "count": 5,
+      "bytes": 340837,
+      "gzipBytes": 107581,
+      "jsonVersions": [
+        "src/app/projects/maniac/changelogs/content/1.1.json"
+      ],
+      "resources": [
+        {
+          "file": "assets/index-Dn-3uMJO.js",
+          "bytes": 276499,
+          "gzipBytes": 89234,
+          "modules": [
+            "\u0000vite/modulepreload-polyfill.js",
+            "\u0000node_modules/react/jsx-runtime.js?commonjs-module",
+            "\u0000node_modules/react/cjs/react-jsx-runtime.production.js?commonjs-exports",
+            "node_modules/react/cjs/react-jsx-runtime.production.js",
+            "node_modules/react/jsx-runtime.js",
+            "\u0000node_modules/react/jsx-runtime.js?commonjs-es-import",
+            "\u0000node_modules/react-dom/client.js?commonjs-module",
+            "\u0000node_modules/react-dom/cjs/react-dom-client.production.js?commonjs-exports",
+            "\u0000node_modules/scheduler/index.js?commonjs-module",
+            "\u0000node_modules/scheduler/cjs/scheduler.production.js?commonjs-exports",
+            "node_modules/scheduler/cjs/scheduler.production.js",
+            "node_modules/scheduler/index.js",
+            "\u0000node_modules/react/index.js?commonjs-module",
+            "\u0000node_modules/react/cjs/react.production.js?commonjs-exports",
+            "node_modules/react/cjs/react.production.js",
+            "node_modules/react/index.js",
+            "\u0000node_modules/react-dom/index.js?commonjs-module",
+            "\u0000node_modules/react-dom/cjs/react-dom.production.js?commonjs-exports",
+            "node_modules/react-dom/cjs/react-dom.production.js",
+            "node_modules/react-dom/index.js",
+            "node_modules/react-dom/cjs/react-dom-client.production.js",
+            "node_modules/react-dom/client.js",
+            "\u0000node_modules/react-dom/client.js?commonjs-es-import",
+            "\u0000node_modules/react/index.js?commonjs-es-import",
+            "node_modules/react-router/dist/development/chunk-OB3PAWPO.mjs",
+            "src/app/shared/ui/ContentLink.tsx",
+            "src/app/shared/ui/BrandLogo.module.css",
+            "src/app/shared/ui/BrandLogo.tsx",
+            "src/app/shared/content/team.ts",
+            "src/app/shared/layouts/SiteLayout.module.css",
+            "src/app/shared/layouts/SiteLayout.tsx",
+            "\u0000vite/preload-helper.js",
+            "src/app/shared/lib/route-page.ts",
+            "src/app/projects/maniac/assets/ManiacArt.tsx",
+            "src/app/projects/maniac/theme/theme.module.css",
+            "src/app/projects/maniac/meta.ts",
+            "src/app/projects/friendsheep/assets/FriendSheepArt.tsx",
+            "src/app/projects/friendsheep/theme/theme.module.css",
+            "src/app/projects/friendsheep/meta.ts",
+            "src/app/projects/novellmaker/assets/NovellMakerArt.tsx",
+            "src/app/projects/novellmaker/theme/theme.module.css",
+            "src/app/projects/novellmaker/meta.ts",
+            "src/app/projects/maniac/assets/releases/flower-cleaning.jpg",
+            "src/app/projects/maniac/assets/releases/nightmare.jpg",
+            "src/app/projects/maniac/assets/releases/reforge.jpg",
+            "src/app/projects/maniac/changelogs/registry.ts",
+            "src/app/projects/registry.ts",
+            "src/app/projects/maniac/changelogs/routes.tsx",
+            "src/app/routes.ts",
+            "src/app/shared/lib/seo.ts",
+            "src/app/App.tsx",
+            "src/app/shared/styles/global.css",
+            "src/main.tsx",
+            "index.html"
+          ]
+        },
+        {
+          "file": "assets/1.1.page-CO1HFoWq.js",
+          "bytes": 23651,
+          "gzipBytes": 5088,
+          "modules": [
+            "src/app/projects/maniac/changelogs/content/1.1.json",
+            "src/app/projects/maniac/changelogs/content/1.1.page.tsx"
+          ]
+        },
+        {
+          "file": "assets/Chronicles.module-CslHA8xO.js",
+          "bytes": 1352,
+          "gzipBytes": 653,
+          "modules": [
+            "src/app/projects/maniac/changelogs/Chronicles.module.css"
+          ]
+        },
+        {
+          "file": "assets/ChroniclePage-Crx-oKhu.js",
+          "bytes": 16899,
+          "gzipBytes": 7169,
+          "modules": [
+            "src/app/projects/maniac/assets/wiki/concentrated-nightmare.webp",
+            "src/app/projects/maniac/assets/wiki/nightmare-lighter-render.png",
+            "src/app/projects/maniac/assets/wiki/forget-me-not-perk.webp",
+            "src/app/projects/maniac/assets/wiki/forget-me-not-item.png",
+            "src/app/projects/maniac/assets/wiki/flower/color_roulette.webp",
+            "src/app/projects/maniac/assets/wiki/flower/bouquet_to_the_other_side.webp",
+            "src/app/projects/maniac/assets/wiki/flower/bud_dispatcher.webp",
+            "src/app/projects/maniac/assets/wiki/flower/flowers_lead_the_investigation.webp",
+            "src/app/projects/maniac/assets/wiki/flower/go_next.webp",
+            "src/app/projects/maniac/assets/wiki/flower/high_voltage.webp",
+            "src/app/projects/maniac/assets/wiki/flower/the_paint_thickens.webp",
+            "src/app/projects/maniac/assets/wiki/flower/emergency_overclock.webp",
+            "src/app/projects/maniac/assets/wiki/flower/fixed_it_im_out.webp",
+            "src/app/projects/maniac/assets/wiki/flower/magic_kick.webp",
+            "src/app/projects/maniac/assets/wiki/flower/pink_orchid.webp",
+            "src/app/projects/maniac/assets/wiki/flower/reality_anchor.webp",
+            "src/app/projects/maniac/assets/wiki/flower/rose_colored_glasses.webp",
+            "src/app/projects/maniac/assets/wiki/flower/sber_sprout.webp",
+            "src/app/projects/maniac/wiki/data/flower-assets.ts",
+            "src/app/projects/maniac/wiki/data/assets.ts",
+            "src/app/projects/maniac/wiki/data/publication.ts",
+            "src/app/projects/maniac/wiki/ui/EntityLink.tsx",
+            "src/app/projects/maniac/wiki/ui/EntityIcon.module.css",
+            "src/app/projects/maniac/wiki/ui/EntityIcon.tsx",
+            "src/app/projects/maniac/wiki/ui/EntityCards.module.css",
+            "src/app/projects/maniac/wiki/ui/EntityCards.tsx",
+            "src/app/projects/maniac/wiki/ui/ReleaseEntityChange.tsx",
+            "src/app/projects/maniac/wiki/data/versions.ts",
+            "src/app/projects/maniac/changelogs/content/index.ts",
+            "src/app/projects/maniac/changelogs/entity-map.ts",
+            "src/app/projects/maniac/changelogs/ChronicleText.tsx",
+            "src/app/projects/maniac/changelogs/NightmareEyes.tsx",
+            "src/app/projects/maniac/changelogs/ReleaseDecor.tsx",
+            "src/app/projects/maniac/changelogs/ChroniclePage.tsx"
+          ]
+        },
+        {
+          "file": "assets/registry-CZkHKsGu.js",
+          "bytes": 22436,
+          "gzipBytes": 5437,
+          "modules": [
+            "src/app/projects/maniac/wiki/data/snapshots.ts",
+            "src/app/projects/maniac/wiki/data/characters.ts",
+            "src/app/projects/maniac/wiki/data/abilities.ts",
+            "src/app/projects/maniac/wiki/data/flower-perks.ts",
+            "src/app/projects/maniac/wiki/data/perks.ts",
+            "src/app/projects/maniac/wiki/data/items.ts",
+            "src/app/projects/maniac/wiki/data/mechanics.ts",
+            "src/app/projects/maniac/wiki/data/registry.ts"
+          ]
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/projects/maniac/changelog/1.2",
+      "count": 5,
+      "bytes": 343253,
+      "gzipBytes": 108891,
+      "jsonVersions": [
+        "src/app/projects/maniac/changelogs/content/1.2.json"
+      ],
+      "resources": [
+        {
+          "file": "assets/index-Dn-3uMJO.js",
+          "bytes": 276499,
+          "gzipBytes": 89234,
+          "modules": [
+            "\u0000vite/modulepreload-polyfill.js",
+            "\u0000node_modules/react/jsx-runtime.js?commonjs-module",
+            "\u0000node_modules/react/cjs/react-jsx-runtime.production.js?commonjs-exports",
+            "node_modules/react/cjs/react-jsx-runtime.production.js",
+            "node_modules/react/jsx-runtime.js",
+            "\u0000node_modules/react/jsx-runtime.js?commonjs-es-import",
+            "\u0000node_modules/react-dom/client.js?commonjs-module",
+            "\u0000node_modules/react-dom/cjs/react-dom-client.production.js?commonjs-exports",
+            "\u0000node_modules/scheduler/index.js?commonjs-module",
+            "\u0000node_modules/scheduler/cjs/scheduler.production.js?commonjs-exports",
+            "node_modules/scheduler/cjs/scheduler.production.js",
+            "node_modules/scheduler/index.js",
+            "\u0000node_modules/react/index.js?commonjs-module",
+            "\u0000node_modules/react/cjs/react.production.js?commonjs-exports",
+            "node_modules/react/cjs/react.production.js",
+            "node_modules/react/index.js",
+            "\u0000node_modules/react-dom/index.js?commonjs-module",
+            "\u0000node_modules/react-dom/cjs/react-dom.production.js?commonjs-exports",
+            "node_modules/react-dom/cjs/react-dom.production.js",
+            "node_modules/react-dom/index.js",
+            "node_modules/react-dom/cjs/react-dom-client.production.js",
+            "node_modules/react-dom/client.js",
+            "\u0000node_modules/react-dom/client.js?commonjs-es-import",
+            "\u0000node_modules/react/index.js?commonjs-es-import",
+            "node_modules/react-router/dist/development/chunk-OB3PAWPO.mjs",
+            "src/app/shared/ui/ContentLink.tsx",
+            "src/app/shared/ui/BrandLogo.module.css",
+            "src/app/shared/ui/BrandLogo.tsx",
+            "src/app/shared/content/team.ts",
+            "src/app/shared/layouts/SiteLayout.module.css",
+            "src/app/shared/layouts/SiteLayout.tsx",
+            "\u0000vite/preload-helper.js",
+            "src/app/shared/lib/route-page.ts",
+            "src/app/projects/maniac/assets/ManiacArt.tsx",
+            "src/app/projects/maniac/theme/theme.module.css",
+            "src/app/projects/maniac/meta.ts",
+            "src/app/projects/friendsheep/assets/FriendSheepArt.tsx",
+            "src/app/projects/friendsheep/theme/theme.module.css",
+            "src/app/projects/friendsheep/meta.ts",
+            "src/app/projects/novellmaker/assets/NovellMakerArt.tsx",
+            "src/app/projects/novellmaker/theme/theme.module.css",
+            "src/app/projects/novellmaker/meta.ts",
+            "src/app/projects/maniac/assets/releases/flower-cleaning.jpg",
+            "src/app/projects/maniac/assets/releases/nightmare.jpg",
+            "src/app/projects/maniac/assets/releases/reforge.jpg",
+            "src/app/projects/maniac/changelogs/registry.ts",
+            "src/app/projects/registry.ts",
+            "src/app/projects/maniac/changelogs/routes.tsx",
+            "src/app/routes.ts",
+            "src/app/shared/lib/seo.ts",
+            "src/app/App.tsx",
+            "src/app/shared/styles/global.css",
+            "src/main.tsx",
+            "index.html"
+          ]
+        },
+        {
+          "file": "assets/1.2.page-Cv4sWz8e.js",
+          "bytes": 26067,
+          "gzipBytes": 6398,
+          "modules": [
+            "src/app/projects/maniac/changelogs/content/1.2.json",
+            "src/app/projects/maniac/changelogs/content/1.2.page.tsx"
+          ]
+        },
+        {
+          "file": "assets/Chronicles.module-CslHA8xO.js",
+          "bytes": 1352,
+          "gzipBytes": 653,
+          "modules": [
+            "src/app/projects/maniac/changelogs/Chronicles.module.css"
+          ]
+        },
+        {
+          "file": "assets/ChroniclePage-Crx-oKhu.js",
+          "bytes": 16899,
+          "gzipBytes": 7169,
+          "modules": [
+            "src/app/projects/maniac/assets/wiki/concentrated-nightmare.webp",
+            "src/app/projects/maniac/assets/wiki/nightmare-lighter-render.png",
+            "src/app/projects/maniac/assets/wiki/forget-me-not-perk.webp",
+            "src/app/projects/maniac/assets/wiki/forget-me-not-item.png",
+            "src/app/projects/maniac/assets/wiki/flower/color_roulette.webp",
+            "src/app/projects/maniac/assets/wiki/flower/bouquet_to_the_other_side.webp",
+            "src/app/projects/maniac/assets/wiki/flower/bud_dispatcher.webp",
+            "src/app/projects/maniac/assets/wiki/flower/flowers_lead_the_investigation.webp",
+            "src/app/projects/maniac/assets/wiki/flower/go_next.webp",
+            "src/app/projects/maniac/assets/wiki/flower/high_voltage.webp",
+            "src/app/projects/maniac/assets/wiki/flower/the_paint_thickens.webp",
+            "src/app/projects/maniac/assets/wiki/flower/emergency_overclock.webp",
+            "src/app/projects/maniac/assets/wiki/flower/fixed_it_im_out.webp",
+            "src/app/projects/maniac/assets/wiki/flower/magic_kick.webp",
+            "src/app/projects/maniac/assets/wiki/flower/pink_orchid.webp",
+            "src/app/projects/maniac/assets/wiki/flower/reality_anchor.webp",
+            "src/app/projects/maniac/assets/wiki/flower/rose_colored_glasses.webp",
+            "src/app/projects/maniac/assets/wiki/flower/sber_sprout.webp",
+            "src/app/projects/maniac/wiki/data/flower-assets.ts",
+            "src/app/projects/maniac/wiki/data/assets.ts",
+            "src/app/projects/maniac/wiki/data/publication.ts",
+            "src/app/projects/maniac/wiki/ui/EntityLink.tsx",
+            "src/app/projects/maniac/wiki/ui/EntityIcon.module.css",
+            "src/app/projects/maniac/wiki/ui/EntityIcon.tsx",
+            "src/app/projects/maniac/wiki/ui/EntityCards.module.css",
+            "src/app/projects/maniac/wiki/ui/EntityCards.tsx",
+            "src/app/projects/maniac/wiki/ui/ReleaseEntityChange.tsx",
+            "src/app/projects/maniac/wiki/data/versions.ts",
+            "src/app/projects/maniac/changelogs/content/index.ts",
+            "src/app/projects/maniac/changelogs/entity-map.ts",
+            "src/app/projects/maniac/changelogs/ChronicleText.tsx",
+            "src/app/projects/maniac/changelogs/NightmareEyes.tsx",
+            "src/app/projects/maniac/changelogs/ReleaseDecor.tsx",
+            "src/app/projects/maniac/changelogs/ChroniclePage.tsx"
+          ]
+        },
+        {
+          "file": "assets/registry-CZkHKsGu.js",
+          "bytes": 22436,
+          "gzipBytes": 5437,
+          "modules": [
+            "src/app/projects/maniac/wiki/data/snapshots.ts",
+            "src/app/projects/maniac/wiki/data/characters.ts",
+            "src/app/projects/maniac/wiki/data/abilities.ts",
+            "src/app/projects/maniac/wiki/data/flower-perks.ts",
+            "src/app/projects/maniac/wiki/data/perks.ts",
+            "src/app/projects/maniac/wiki/data/items.ts",
+            "src/app/projects/maniac/wiki/data/mechanics.ts",
+            "src/app/projects/maniac/wiki/data/registry.ts"
+          ]
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/changelog",
+      "count": 4,
+      "bytes": 279460,
+      "gzipBytes": 90878,
+      "jsonVersions": [],
+      "resources": [
+        {
+          "file": "assets/index-Dn-3uMJO.js",
+          "bytes": 276499,
+          "gzipBytes": 89234,
+          "modules": [
+            "\u0000vite/modulepreload-polyfill.js",
+            "\u0000node_modules/react/jsx-runtime.js?commonjs-module",
+            "\u0000node_modules/react/cjs/react-jsx-runtime.production.js?commonjs-exports",
+            "node_modules/react/cjs/react-jsx-runtime.production.js",
+            "node_modules/react/jsx-runtime.js",
+            "\u0000node_modules/react/jsx-runtime.js?commonjs-es-import",
+            "\u0000node_modules/react-dom/client.js?commonjs-module",
+            "\u0000node_modules/react-dom/cjs/react-dom-client.production.js?commonjs-exports",
+            "\u0000node_modules/scheduler/index.js?commonjs-module",
+            "\u0000node_modules/scheduler/cjs/scheduler.production.js?commonjs-exports",
+            "node_modules/scheduler/cjs/scheduler.production.js",
+            "node_modules/scheduler/index.js",
+            "\u0000node_modules/react/index.js?commonjs-module",
+            "\u0000node_modules/react/cjs/react.production.js?commonjs-exports",
+            "node_modules/react/cjs/react.production.js",
+            "node_modules/react/index.js",
+            "\u0000node_modules/react-dom/index.js?commonjs-module",
+            "\u0000node_modules/react-dom/cjs/react-dom.production.js?commonjs-exports",
+            "node_modules/react-dom/cjs/react-dom.production.js",
+            "node_modules/react-dom/index.js",
+            "node_modules/react-dom/cjs/react-dom-client.production.js",
+            "node_modules/react-dom/client.js",
+            "\u0000node_modules/react-dom/client.js?commonjs-es-import",
+            "\u0000node_modules/react/index.js?commonjs-es-import",
+            "node_modules/react-router/dist/development/chunk-OB3PAWPO.mjs",
+            "src/app/shared/ui/ContentLink.tsx",
+            "src/app/shared/ui/BrandLogo.module.css",
+            "src/app/shared/ui/BrandLogo.tsx",
+            "src/app/shared/content/team.ts",
+            "src/app/shared/layouts/SiteLayout.module.css",
+            "src/app/shared/layouts/SiteLayout.tsx",
+            "\u0000vite/preload-helper.js",
+            "src/app/shared/lib/route-page.ts",
+            "src/app/projects/maniac/assets/ManiacArt.tsx",
+            "src/app/projects/maniac/theme/theme.module.css",
+            "src/app/projects/maniac/meta.ts",
+            "src/app/projects/friendsheep/assets/FriendSheepArt.tsx",
+            "src/app/projects/friendsheep/theme/theme.module.css",
+            "src/app/projects/friendsheep/meta.ts",
+            "src/app/projects/novellmaker/assets/NovellMakerArt.tsx",
+            "src/app/projects/novellmaker/theme/theme.module.css",
+            "src/app/projects/novellmaker/meta.ts",
+            "src/app/projects/maniac/assets/releases/flower-cleaning.jpg",
+            "src/app/projects/maniac/assets/releases/nightmare.jpg",
+            "src/app/projects/maniac/assets/releases/reforge.jpg",
+            "src/app/projects/maniac/changelogs/registry.ts",
+            "src/app/projects/registry.ts",
+            "src/app/projects/maniac/changelogs/routes.tsx",
+            "src/app/routes.ts",
+            "src/app/shared/lib/seo.ts",
+            "src/app/App.tsx",
+            "src/app/shared/styles/global.css",
+            "src/main.tsx",
+            "index.html"
+          ]
+        },
+        {
+          "file": "assets/ChangelogPage-DU6bGfZi.js",
+          "bytes": 927,
+          "gzipBytes": 581,
+          "modules": [
+            "src/app/pages/changelog/ChangelogPage.tsx"
+          ]
+        },
+        {
+          "file": "assets/ReleaseList-LMsaGus4.js",
+          "bytes": 1248,
+          "gzipBytes": 681,
+          "modules": [
+            "src/app/shared/ui/ReleaseList.tsx"
+          ]
+        },
+        {
+          "file": "assets/Content.module-_AHIhrYo.js",
+          "bytes": 786,
+          "gzipBytes": 382,
+          "modules": [
+            "src/app/shared/ui/Content.module.css"
+          ]
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/projects/maniac/changelog",
+      "count": 3,
+      "bytes": 279530,
+      "gzipBytes": 90743,
+      "jsonVersions": [],
+      "resources": [
+        {
+          "file": "assets/index-Dn-3uMJO.js",
+          "bytes": 276499,
+          "gzipBytes": 89234,
+          "modules": [
+            "\u0000vite/modulepreload-polyfill.js",
+            "\u0000node_modules/react/jsx-runtime.js?commonjs-module",
+            "\u0000node_modules/react/cjs/react-jsx-runtime.production.js?commonjs-exports",
+            "node_modules/react/cjs/react-jsx-runtime.production.js",
+            "node_modules/react/jsx-runtime.js",
+            "\u0000node_modules/react/jsx-runtime.js?commonjs-es-import",
+            "\u0000node_modules/react-dom/client.js?commonjs-module",
+            "\u0000node_modules/react-dom/cjs/react-dom-client.production.js?commonjs-exports",
+            "\u0000node_modules/scheduler/index.js?commonjs-module",
+            "\u0000node_modules/scheduler/cjs/scheduler.production.js?commonjs-exports",
+            "node_modules/scheduler/cjs/scheduler.production.js",
+            "node_modules/scheduler/index.js",
+            "\u0000node_modules/react/index.js?commonjs-module",
+            "\u0000node_modules/react/cjs/react.production.js?commonjs-exports",
+            "node_modules/react/cjs/react.production.js",
+            "node_modules/react/index.js",
+            "\u0000node_modules/react-dom/index.js?commonjs-module",
+            "\u0000node_modules/react-dom/cjs/react-dom.production.js?commonjs-exports",
+            "node_modules/react-dom/cjs/react-dom.production.js",
+            "node_modules/react-dom/index.js",
+            "node_modules/react-dom/cjs/react-dom-client.production.js",
+            "node_modules/react-dom/client.js",
+            "\u0000node_modules/react-dom/client.js?commonjs-es-import",
+            "\u0000node_modules/react/index.js?commonjs-es-import",
+            "node_modules/react-router/dist/development/chunk-OB3PAWPO.mjs",
+            "src/app/shared/ui/ContentLink.tsx",
+            "src/app/shared/ui/BrandLogo.module.css",
+            "src/app/shared/ui/BrandLogo.tsx",
+            "src/app/shared/content/team.ts",
+            "src/app/shared/layouts/SiteLayout.module.css",
+            "src/app/shared/layouts/SiteLayout.tsx",
+            "\u0000vite/preload-helper.js",
+            "src/app/shared/lib/route-page.ts",
+            "src/app/projects/maniac/assets/ManiacArt.tsx",
+            "src/app/projects/maniac/theme/theme.module.css",
+            "src/app/projects/maniac/meta.ts",
+            "src/app/projects/friendsheep/assets/FriendSheepArt.tsx",
+            "src/app/projects/friendsheep/theme/theme.module.css",
+            "src/app/projects/friendsheep/meta.ts",
+            "src/app/projects/novellmaker/assets/NovellMakerArt.tsx",
+            "src/app/projects/novellmaker/theme/theme.module.css",
+            "src/app/projects/novellmaker/meta.ts",
+            "src/app/projects/maniac/assets/releases/flower-cleaning.jpg",
+            "src/app/projects/maniac/assets/releases/nightmare.jpg",
+            "src/app/projects/maniac/assets/releases/reforge.jpg",
+            "src/app/projects/maniac/changelogs/registry.ts",
+            "src/app/projects/registry.ts",
+            "src/app/projects/maniac/changelogs/routes.tsx",
+            "src/app/routes.ts",
+            "src/app/shared/lib/seo.ts",
+            "src/app/App.tsx",
+            "src/app/shared/styles/global.css",
+            "src/main.tsx",
+            "index.html"
+          ]
+        },
+        {
+          "file": "assets/ManiacChangelogPage-D5ip3IBV.js",
+          "bytes": 1679,
+          "gzipBytes": 856,
+          "modules": [
+            "src/app/projects/maniac/changelogs/ManiacChangelogPage.tsx"
+          ]
+        },
+        {
+          "file": "assets/Chronicles.module-CslHA8xO.js",
+          "bytes": 1352,
+          "gzipBytes": 653,
+          "modules": [
+            "src/app/projects/maniac/changelogs/Chronicles.module.css"
+          ]
+        }
+      ],
+      "errors": []
+    }
+  ],
+  "navigation": "1.2 → 1.1 → 1.0 → Back, same document",
+  "checks": [
+    "SSG heading node retained",
+    "No blank hydration frames",
+    "Full original text and CSS without JS",
+    "Delayed SPA navigation and race cancellation",
+    "Chunk failure retains content",
+    "Mobile overflow/animations/reduced motion",
+    "Google Drive and Yandex links preserved"
+  ],
+  "bundles": {
+    "assets/index-Dn-3uMJO.js": {
+      "imports": [],
+      "dynamicImports": [
+        "assets/1.0.page-CJDT4keM.js",
+        "assets/1.1.page-CO1HFoWq.js",
+        "assets/1.2.page-Cv4sWz8e.js",
+        "assets/ManiacChangelogPage-D5ip3IBV.js",
+        "assets/ManiacPage-jtUKGVzx.js",
+        "assets/FriendSheepPage-UQ47kqU2.js",
+        "assets/NovellMakerPage-CWRAEYgT.js",
+        "assets/HomePage-BhK6AIul.js",
+        "assets/ProjectsPage-8UeAHqJ0.js",
+        "assets/AboutPage-BOxSyuN8.js",
+        "assets/ChangelogPage-DU6bGfZi.js",
+        "assets/NotFoundPage-C2yaWLI_.js"
+      ],
+      "modules": [
+        "\u0000vite/modulepreload-polyfill.js",
+        "\u0000node_modules/react/jsx-runtime.js?commonjs-module",
+        "\u0000node_modules/react/cjs/react-jsx-runtime.production.js?commonjs-exports",
+        "node_modules/react/cjs/react-jsx-runtime.production.js",
+        "node_modules/react/jsx-runtime.js",
+        "\u0000node_modules/react/jsx-runtime.js?commonjs-es-import",
+        "\u0000node_modules/react-dom/client.js?commonjs-module",
+        "\u0000node_modules/react-dom/cjs/react-dom-client.production.js?commonjs-exports",
+        "\u0000node_modules/scheduler/index.js?commonjs-module",
+        "\u0000node_modules/scheduler/cjs/scheduler.production.js?commonjs-exports",
+        "node_modules/scheduler/cjs/scheduler.production.js",
+        "node_modules/scheduler/index.js",
+        "\u0000node_modules/react/index.js?commonjs-module",
+        "\u0000node_modules/react/cjs/react.production.js?commonjs-exports",
+        "node_modules/react/cjs/react.production.js",
+        "node_modules/react/index.js",
+        "\u0000node_modules/react-dom/index.js?commonjs-module",
+        "\u0000node_modules/react-dom/cjs/react-dom.production.js?commonjs-exports",
+        "node_modules/react-dom/cjs/react-dom.production.js",
+        "node_modules/react-dom/index.js",
+        "node_modules/react-dom/cjs/react-dom-client.production.js",
+        "node_modules/react-dom/client.js",
+        "\u0000node_modules/react-dom/client.js?commonjs-es-import",
+        "\u0000node_modules/react/index.js?commonjs-es-import",
+        "node_modules/react-router/dist/development/chunk-OB3PAWPO.mjs",
+        "src/app/shared/ui/ContentLink.tsx",
+        "src/app/shared/ui/BrandLogo.module.css",
+        "src/app/shared/ui/BrandLogo.tsx",
+        "src/app/shared/content/team.ts",
+        "src/app/shared/layouts/SiteLayout.module.css",
+        "src/app/shared/layouts/SiteLayout.tsx",
+        "\u0000vite/preload-helper.js",
+        "src/app/shared/lib/route-page.ts",
+        "src/app/projects/maniac/assets/ManiacArt.tsx",
+        "src/app/projects/maniac/theme/theme.module.css",
+        "src/app/projects/maniac/meta.ts",
+        "src/app/projects/friendsheep/assets/FriendSheepArt.tsx",
+        "src/app/projects/friendsheep/theme/theme.module.css",
+        "src/app/projects/friendsheep/meta.ts",
+        "src/app/projects/novellmaker/assets/NovellMakerArt.tsx",
+        "src/app/projects/novellmaker/theme/theme.module.css",
+        "src/app/projects/novellmaker/meta.ts",
+        "src/app/projects/maniac/assets/releases/flower-cleaning.jpg",
+        "src/app/projects/maniac/assets/releases/nightmare.jpg",
+        "src/app/projects/maniac/assets/releases/reforge.jpg",
+        "src/app/projects/maniac/changelogs/registry.ts",
+        "src/app/projects/registry.ts",
+        "src/app/projects/maniac/changelogs/routes.tsx",
+        "src/app/routes.ts",
+        "src/app/shared/lib/seo.ts",
+        "src/app/App.tsx",
+        "src/app/shared/styles/global.css",
+        "src/main.tsx",
+        "index.html"
+      ]
+    },
+    "assets/ManiacPage-jtUKGVzx.js": {
+      "imports": [
+        "assets/index-Dn-3uMJO.js",
+        "assets/ProjectIntro-CgvJq42c.js",
+        "assets/ReleaseList-LMsaGus4.js",
+        "assets/SectionHeading-ChG4hjCd.js",
+        "assets/registry-CZkHKsGu.js",
+        "assets/Content.module-_AHIhrYo.js"
+      ],
+      "dynamicImports": [],
+      "modules": [
+        "src/app/projects/maniac/assets/DownloadIcons.tsx",
+        "src/app/projects/maniac/content.ts",
+        "src/app/projects/maniac/pages/ManiacPage.module.css",
+        "src/app/projects/maniac/pages/ManiacPage.tsx"
+      ]
+    },
+    "assets/FriendSheepPage-UQ47kqU2.js": {
+      "imports": [
+        "assets/index-Dn-3uMJO.js",
+        "assets/ProjectIntro-CgvJq42c.js"
+      ],
+      "dynamicImports": [],
+      "modules": [
+        "src/app/projects/friendsheep/pages/FriendSheepPage.tsx"
+      ]
+    },
+    "assets/NovellMakerPage-CWRAEYgT.js": {
+      "imports": [
+        "assets/index-Dn-3uMJO.js",
+        "assets/ProjectIntro-CgvJq42c.js"
+      ],
+      "dynamicImports": [],
+      "modules": [
+        "src/app/projects/novellmaker/pages/NovellMakerPage.tsx"
+      ]
+    },
+    "assets/ProjectIntro-CgvJq42c.js": {
+      "imports": [
+        "assets/index-Dn-3uMJO.js"
+      ],
+      "dynamicImports": [],
+      "modules": [
+        "src/app/shared/ui/ProjectIntro.module.css",
+        "src/app/shared/ui/ProjectGallery.tsx",
+        "src/app/shared/ui/ProjectIntro.tsx"
+      ]
+    },
+    "assets/HomePage-BhK6AIul.js": {
+      "imports": [
+        "assets/index-Dn-3uMJO.js",
+        "assets/SectionHeading-ChG4hjCd.js",
+        "assets/ProjectGrid-Cxp4rYAd.js",
+        "assets/ReleaseList-LMsaGus4.js",
+        "assets/Contacts-CaYn4ipN.js",
+        "assets/Content.module-_AHIhrYo.js"
+      ],
+      "dynamicImports": [],
+      "modules": [
+        "src/app/pages/home/HomePage.module.css",
+        "src/app/pages/home/HomePage.tsx"
+      ]
+    },
+    "assets/ProjectsPage-8UeAHqJ0.js": {
+      "imports": [
+        "assets/index-Dn-3uMJO.js",
+        "assets/ProjectGrid-Cxp4rYAd.js",
+        "assets/Content.module-_AHIhrYo.js"
+      ],
+      "dynamicImports": [],
+      "modules": [
+        "src/app/pages/projects/ProjectsPage.tsx"
+      ]
+    },
+    "assets/ProjectGrid-Cxp4rYAd.js": {
+      "imports": [
+        "assets/index-Dn-3uMJO.js",
+        "assets/Content.module-_AHIhrYo.js"
+      ],
+      "dynamicImports": [],
+      "modules": [
+        "src/app/shared/ui/ProjectGrid.tsx"
+      ]
+    },
+    "assets/AboutPage-BOxSyuN8.js": {
+      "imports": [
+        "assets/index-Dn-3uMJO.js",
+        "assets/Contacts-CaYn4ipN.js",
+        "assets/SectionHeading-ChG4hjCd.js",
+        "assets/Content.module-_AHIhrYo.js"
+      ],
+      "dynamicImports": [],
+      "modules": [
+        "src/app/pages/about/AboutPage.tsx"
+      ]
+    },
+    "assets/Contacts-CaYn4ipN.js": {
+      "imports": [
+        "assets/index-Dn-3uMJO.js",
+        "assets/Content.module-_AHIhrYo.js"
+      ],
+      "dynamicImports": [],
+      "modules": [
+        "src/app/shared/ui/TeamGrid.tsx",
+        "src/app/shared/ui/Contacts.tsx"
+      ]
+    },
+    "assets/SectionHeading-ChG4hjCd.js": {
+      "imports": [
+        "assets/index-Dn-3uMJO.js",
+        "assets/Content.module-_AHIhrYo.js"
+      ],
+      "dynamicImports": [],
+      "modules": [
+        "src/app/shared/ui/SectionHeading.tsx"
+      ]
+    },
+    "assets/ChangelogPage-DU6bGfZi.js": {
+      "imports": [
+        "assets/index-Dn-3uMJO.js",
+        "assets/ReleaseList-LMsaGus4.js",
+        "assets/Content.module-_AHIhrYo.js"
+      ],
+      "dynamicImports": [],
+      "modules": [
+        "src/app/pages/changelog/ChangelogPage.tsx"
+      ]
+    },
+    "assets/ReleaseList-LMsaGus4.js": {
+      "imports": [
+        "assets/index-Dn-3uMJO.js",
+        "assets/Content.module-_AHIhrYo.js"
+      ],
+      "dynamicImports": [],
+      "modules": [
+        "src/app/shared/ui/ReleaseList.tsx"
+      ]
+    },
+    "assets/NotFoundPage-C2yaWLI_.js": {
+      "imports": [
+        "assets/index-Dn-3uMJO.js",
+        "assets/Content.module-_AHIhrYo.js"
+      ],
+      "dynamicImports": [],
+      "modules": [
+        "src/app/pages/NotFoundPage.tsx"
+      ]
+    },
+    "assets/Content.module-_AHIhrYo.js": {
+      "imports": [],
+      "dynamicImports": [],
+      "modules": [
+        "src/app/shared/ui/Content.module.css"
+      ]
+    },
+    "assets/1.0.page-CJDT4keM.js": {
+      "imports": [
+        "assets/index-Dn-3uMJO.js",
+        "assets/ChroniclePage-Crx-oKhu.js",
+        "assets/registry-CZkHKsGu.js",
+        "assets/Chronicles.module-CslHA8xO.js"
+      ],
+      "dynamicImports": [],
+      "modules": [
+        "src/app/projects/maniac/changelogs/content/1.0.json",
+        "src/app/projects/maniac/changelogs/content/1.0.page.tsx"
+      ]
+    },
+    "assets/1.1.page-CO1HFoWq.js": {
+      "imports": [
+        "assets/index-Dn-3uMJO.js",
+        "assets/ChroniclePage-Crx-oKhu.js",
+        "assets/registry-CZkHKsGu.js",
+        "assets/Chronicles.module-CslHA8xO.js"
+      ],
+      "dynamicImports": [],
+      "modules": [
+        "src/app/projects/maniac/changelogs/content/1.1.json",
+        "src/app/projects/maniac/changelogs/content/1.1.page.tsx"
+      ]
+    },
+    "assets/1.2.page-Cv4sWz8e.js": {
+      "imports": [
+        "assets/index-Dn-3uMJO.js",
+        "assets/ChroniclePage-Crx-oKhu.js",
+        "assets/registry-CZkHKsGu.js",
+        "assets/Chronicles.module-CslHA8xO.js"
+      ],
+      "dynamicImports": [],
+      "modules": [
+        "src/app/projects/maniac/changelogs/content/1.2.json",
+        "src/app/projects/maniac/changelogs/content/1.2.page.tsx"
+      ]
+    },
+    "assets/ChroniclePage-Crx-oKhu.js": {
+      "imports": [
+        "assets/index-Dn-3uMJO.js",
+        "assets/registry-CZkHKsGu.js",
+        "assets/Chronicles.module-CslHA8xO.js"
+      ],
+      "dynamicImports": [],
+      "modules": [
+        "src/app/projects/maniac/assets/wiki/concentrated-nightmare.webp",
+        "src/app/projects/maniac/assets/wiki/nightmare-lighter-render.png",
+        "src/app/projects/maniac/assets/wiki/forget-me-not-perk.webp",
+        "src/app/projects/maniac/assets/wiki/forget-me-not-item.png",
+        "src/app/projects/maniac/assets/wiki/flower/color_roulette.webp",
+        "src/app/projects/maniac/assets/wiki/flower/bouquet_to_the_other_side.webp",
+        "src/app/projects/maniac/assets/wiki/flower/bud_dispatcher.webp",
+        "src/app/projects/maniac/assets/wiki/flower/flowers_lead_the_investigation.webp",
+        "src/app/projects/maniac/assets/wiki/flower/go_next.webp",
+        "src/app/projects/maniac/assets/wiki/flower/high_voltage.webp",
+        "src/app/projects/maniac/assets/wiki/flower/the_paint_thickens.webp",
+        "src/app/projects/maniac/assets/wiki/flower/emergency_overclock.webp",
+        "src/app/projects/maniac/assets/wiki/flower/fixed_it_im_out.webp",
+        "src/app/projects/maniac/assets/wiki/flower/magic_kick.webp",
+        "src/app/projects/maniac/assets/wiki/flower/pink_orchid.webp",
+        "src/app/projects/maniac/assets/wiki/flower/reality_anchor.webp",
+        "src/app/projects/maniac/assets/wiki/flower/rose_colored_glasses.webp",
+        "src/app/projects/maniac/assets/wiki/flower/sber_sprout.webp",
+        "src/app/projects/maniac/wiki/data/flower-assets.ts",
+        "src/app/projects/maniac/wiki/data/assets.ts",
+        "src/app/projects/maniac/wiki/data/publication.ts",
+        "src/app/projects/maniac/wiki/ui/EntityLink.tsx",
+        "src/app/projects/maniac/wiki/ui/EntityIcon.module.css",
+        "src/app/projects/maniac/wiki/ui/EntityIcon.tsx",
+        "src/app/projects/maniac/wiki/ui/EntityCards.module.css",
+        "src/app/projects/maniac/wiki/ui/EntityCards.tsx",
+        "src/app/projects/maniac/wiki/ui/ReleaseEntityChange.tsx",
+        "src/app/projects/maniac/wiki/data/versions.ts",
+        "src/app/projects/maniac/changelogs/content/index.ts",
+        "src/app/projects/maniac/changelogs/entity-map.ts",
+        "src/app/projects/maniac/changelogs/ChronicleText.tsx",
+        "src/app/projects/maniac/changelogs/NightmareEyes.tsx",
+        "src/app/projects/maniac/changelogs/ReleaseDecor.tsx",
+        "src/app/projects/maniac/changelogs/ChroniclePage.tsx"
+      ]
+    },
+    "assets/registry-CZkHKsGu.js": {
+      "imports": [],
+      "dynamicImports": [],
+      "modules": [
+        "src/app/projects/maniac/wiki/data/snapshots.ts",
+        "src/app/projects/maniac/wiki/data/characters.ts",
+        "src/app/projects/maniac/wiki/data/abilities.ts",
+        "src/app/projects/maniac/wiki/data/flower-perks.ts",
+        "src/app/projects/maniac/wiki/data/perks.ts",
+        "src/app/projects/maniac/wiki/data/items.ts",
+        "src/app/projects/maniac/wiki/data/mechanics.ts",
+        "src/app/projects/maniac/wiki/data/registry.ts"
+      ]
+    },
+    "assets/ManiacChangelogPage-D5ip3IBV.js": {
+      "imports": [
+        "assets/index-Dn-3uMJO.js",
+        "assets/Chronicles.module-CslHA8xO.js"
+      ],
+      "dynamicImports": [],
+      "modules": [
+        "src/app/projects/maniac/changelogs/ManiacChangelogPage.tsx"
+      ]
+    },
+    "assets/Chronicles.module-CslHA8xO.js": {
+      "imports": [],
+      "dynamicImports": [],
+      "modules": [
+        "src/app/projects/maniac/changelogs/Chronicles.module.css"
+      ]
+    }
+  }
+}

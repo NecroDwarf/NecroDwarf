@@ -4,12 +4,44 @@ import { dirname, resolve } from "node:path";
 const originValue = process.env.SITE_URL;
 // Same public origin for generated HTML and client navigation.
 process.env.VITE_SITE_URL = originValue || "";
-await build({ build: { outDir: "build/client" } });
+let clientModules;
+await build({
+  // One stylesheet keeps every prerendered page styled before JS, including
+  // when JS is disabled. Route modules and content still split independently.
+  build: { outDir: "build/client", manifest: true, cssCodeSplit: false },
+  plugins: [
+    {
+      name: "record-client-modules",
+      generateBundle(_, bundle) {
+        clientModules = Object.fromEntries(
+          Object.values(bundle)
+            .filter((item) => item.type === "chunk")
+            .map((chunk) => [
+              chunk.fileName,
+              {
+                imports: chunk.imports,
+                dynamicImports: chunk.dynamicImports,
+                modules: Object.keys(chunk.modules).map((id) =>
+                  id
+                    .replaceAll("\\", "/")
+                    .replace(process.cwd().replaceAll("\\", "/") + "/", ""),
+                ),
+              },
+            ]),
+        );
+      },
+    },
+  ],
+});
 await build({
   build: { ssr: "src/entry-server.tsx", outDir: ".ssg", emptyOutDir: true },
 });
 const { paths, render, projects, siteOrigin } = await import(
   "../.ssg/entry-server.js"
+);
+await writeFile(
+  ".ssg/client-modules.json",
+  JSON.stringify(clientModules, null, 2),
 );
 const origin = siteOrigin(originValue);
 const ids = new Set(),
@@ -40,7 +72,7 @@ for (const project of projects) {
 if (new Set(paths).size !== paths.length) throw new Error("Duplicate route");
 const template = await readFile("build/client/index.html", "utf8");
 for (const path of [...paths, "/404"]) {
-  const page = render(path, origin);
+  const page = await render(path, origin);
   const target = resolve(
     "build/client",
     path === "/" ? "index.html" : `${path.slice(1)}.html`,

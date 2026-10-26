@@ -2,14 +2,19 @@ import { Link } from "react-router";
 import { Fragment } from "react";
 import { ContentLink } from "../../../shared/ui/ContentLink";
 import { releases } from "./registry";
-import { chronicleContent } from "./content";
+import type { ChronicleContent } from "./content/types";
 import { ChronicleText } from "./ChronicleText";
 import { ReleaseDecor } from "./ReleaseDecor";
 import s from "./Chronicles.module.css";
 
-export function ChroniclePage({ version }: { version: string }) {
+export function ChroniclePage({
+  version,
+  content,
+}: {
+  version: string;
+  content: ChronicleContent;
+}) {
   const release = releases.find((r) => r.version === version)!;
-  const content = chronicleContent[version];
   const older = releases.find(
     (r) => r.releaseOrder === release.releaseOrder - 1,
   );

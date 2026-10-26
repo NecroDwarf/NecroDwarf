@@ -32,10 +32,9 @@ export interface Project {
   >;
   platforms?: readonly string[];
   Art?: ComponentType;
-  Page: ComponentType;
   releases: readonly Release[];
 }
-export type ProjectMeta = Omit<Project, "Page" | "releases">;
+export type ProjectMeta = Omit<Project, "releases">;
 export interface ProjectImage {
   src: string;
   alt: string;
