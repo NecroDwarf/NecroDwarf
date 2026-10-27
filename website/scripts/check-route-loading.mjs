@@ -64,6 +64,55 @@ for (const version of ["1.0", "1.1", "1.2"]) {
     `src/app/projects/maniac/changelogs/content/${version}.json`,
   ]);
 }
+const characters = JSON.parse(
+  await readFile(
+    "src/app/projects/maniac/wiki/data/character-catalog.json",
+    "utf8",
+  ),
+);
+const articleJson = (m) => /wiki\/data\/character-articles\/.*\.json$/.test(m);
+const modelRuntime = (m) =>
+  /node_modules\/three\/|wiki\/model\/ModelCanvas/.test(m);
+assert.ok(!initial.some(articleJson), "Wiki articles in initial JS");
+assert.ok(!initial.some(modelRuntime), "3D runtime in initial JS");
+for (const page of ["WikiHomePage", "CharactersPage"]) {
+  const loaded = staticModules(
+    main,
+    chunkFor(`src/app/projects/maniac/wiki/pages/${page}.tsx`),
+  );
+  assert.ok(!loaded.some(articleJson), `${page} loads full articles`);
+  assert.ok(!loaded.some(modelRuntime), `${page} loads Three.js`);
+  assert.ok(!loaded.some((m) => m.includes(".glb")), `${page} references GLB`);
+  assert.ok(
+    !loaded.some((m) => /changelogs\/content\/.*\.json$/.test(m)),
+    `${page} loads chronicle text`,
+  );
+}
+for (const c of characters) {
+  const loaded = staticModules(
+    main,
+    chunkFor(`src/app/projects/maniac/wiki/pages/characters/${c.slug}.tsx`),
+  );
+  assert.deepEqual(loaded.filter(articleJson), [
+    `src/app/projects/maniac/wiki/data/character-articles/${c.slug}.json`,
+  ]);
+  assert.ok(
+    !loaded.some(modelRuntime),
+    `${c.slug}: 3D must require an explicit user action`,
+  );
+  const largeArt = loaded.filter((m) =>
+    /assets\/characters\/.*-large\.webp$/.test(m),
+  );
+  assert.deepEqual(largeArt, [
+    `src/app/projects/maniac/assets/characters/${c.gameId}-large.webp`,
+  ]);
+  assert.ok(
+    !loaded.some((m) => /changelogs\/content\/.*\.json$/.test(m)),
+    `${c.slug} loads chronicle text`,
+  );
+  if (c.slug !== "keeper-of-nightmares")
+    assert.ok(!loaded.some((m) => m.includes(".glb")));
+}
 console.log(
-  "PASS: route chunks isolated; initial JS has no chronicle text/Wiki database; lists use metadata; each chronicle loads exactly its own JSON.",
+  "PASS: route chunks isolated; initial JS has no chronicle text/Wiki database; each chronicle/article loads only its own JSON/art; Wiki/catalog/characters have no eager 3D.",
 );

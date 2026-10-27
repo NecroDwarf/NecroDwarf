@@ -5,9 +5,11 @@ import forgetItem from "../../assets/wiki/forget-me-not-item.png";
 
 import type { EntityAsset } from "./types";
 import { flowerAssets } from "./flower-assets";
+import { characterAbilityAssets } from "./character-ability-assets";
 
 export const entityAssets: Readonly<Record<string, EntityAsset>> = {
   ...flowerAssets,
+  ...characterAbilityAssets,
   "concentrated-nightmare": {
     src: concentrated,
     width: 256,

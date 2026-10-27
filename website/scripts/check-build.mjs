@@ -47,7 +47,10 @@ try {
     );
   for (const path of [
     "/does-not-exist",
-    "/projects/maniac/wiki",
+    "/projects/maniac/wiki/perks",
+    "/projects/maniac/wiki/items",
+    "/projects/maniac/wiki/maps",
+    "/projects/maniac/wiki/characters/unknown",
     "/projects/maniac/changelog/1.3",
     "/neo-tech-v2",
   ]) {

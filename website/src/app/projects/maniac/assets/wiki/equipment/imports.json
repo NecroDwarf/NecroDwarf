@@ -1,0 +1,143 @@
+{
+  "minecraftVersion": "1.20.1",
+  "clientUrl": "https://piston-data.mojang.com/v1/objects/0c3ec587af28e5a785c0b4a7b8a30f9a8f78f838/client.jar",
+  "clientSha1": "0c3ec587af28e5a785c0b4a7b8a30f9a8f78f838",
+  "modCommit": "8692f66dc76582144be85d553d43a41f189b64e7",
+  "previewSource": "src/main/java/org/example/maniacrevolution/client/screen/CharacterLoadoutPreview.java",
+  "previewSha256": "3adae0991c39e435ddea00525390e4d8a3560396c78597bc3b03473e8c26b4fe",
+  "files": [
+    {
+      "local": "agent-armor.png",
+      "entityId": "item:agent-armor",
+      "size": [16, 16],
+      "bytes": 246,
+      "sha256": "f136e623f72e19f0b8698d98435bf98e7801be932bfdf1e60c9769009aa7115a",
+      "source": "assets/minecraft/textures/item/leather_chestplate.png",
+      "sourceSha256": "f4388ae2703b5eb9139d965c242289da09d6b26c8025d67a148dfd03597271bb",
+      "dye": "#202020",
+      "overlaySource": "assets/minecraft/textures/item/leather_chestplate_overlay.png",
+      "overlaySha256": "eec51b2266af48812f347de3b41d10c16205fe602ef0b02efb52af190365edea",
+      "evidence": "CharacterLoadoutPreview.java, pinned 8692f66dc76582144be85d553d43a41f189b64e7"
+    },
+    {
+      "local": "pudge-armor.png",
+      "entityId": "item:pudge-armor",
+      "size": [16, 16],
+      "bytes": 273,
+      "sha256": "e12b688e023e4dfa77bcc7e5781ebd8ed0b068f3a0b23fe19151aa51a94ff43e",
+      "source": "assets/minecraft/textures/item/leather_chestplate.png",
+      "sourceSha256": "f4388ae2703b5eb9139d965c242289da09d6b26c8025d67a148dfd03597271bb",
+      "dye": "#5a2f22",
+      "overlaySource": "assets/minecraft/textures/item/leather_chestplate_overlay.png",
+      "overlaySha256": "eec51b2266af48812f347de3b41d10c16205fe602ef0b02efb52af190365edea",
+      "evidence": "CharacterLoadoutPreview.java, pinned 8692f66dc76582144be85d553d43a41f189b64e7"
+    },
+    {
+      "local": "death-armor.png",
+      "entityId": "item:death-armor",
+      "size": [16, 16],
+      "bytes": 243,
+      "sha256": "38c4f5dc46aea5e874a5f0639d6b0c71dcb32839beae38b98e9f073ab104c091",
+      "source": "assets/minecraft/textures/item/leather_chestplate.png",
+      "sourceSha256": "f4388ae2703b5eb9139d965c242289da09d6b26c8025d67a148dfd03597271bb",
+      "dye": "#111111",
+      "overlaySource": "assets/minecraft/textures/item/leather_chestplate_overlay.png",
+      "overlaySha256": "eec51b2266af48812f347de3b41d10c16205fe602ef0b02efb52af190365edea",
+      "evidence": "CharacterLoadoutPreview.java, pinned 8692f66dc76582144be85d553d43a41f189b64e7"
+    },
+    {
+      "local": "ursa-armor.png",
+      "entityId": "item:ursa-armor",
+      "size": [16, 16],
+      "bytes": 275,
+      "sha256": "1621500d8bfbe2cdc2943312bb10df56e6b259040f07599d2acd5e57b3a3071e",
+      "source": "assets/minecraft/textures/item/leather_chestplate.png",
+      "sourceSha256": "f4388ae2703b5eb9139d965c242289da09d6b26c8025d67a148dfd03597271bb",
+      "dye": "#6b3f22",
+      "overlaySource": "assets/minecraft/textures/item/leather_chestplate_overlay.png",
+      "overlaySha256": "eec51b2266af48812f347de3b41d10c16205fe602ef0b02efb52af190365edea",
+      "evidence": "CharacterLoadoutPreview.java, pinned 8692f66dc76582144be85d553d43a41f189b64e7"
+    },
+    {
+      "local": "plague-armor.png",
+      "entityId": "item:plague-armor",
+      "size": [16, 16],
+      "bytes": 260,
+      "sha256": "0d15d042a04807c6958c201e4f3d2eb9d83a532d166cd13af6ef02eb1937f131",
+      "source": "assets/minecraft/textures/item/leather_chestplate.png",
+      "sourceSha256": "f4388ae2703b5eb9139d965c242289da09d6b26c8025d67a148dfd03597271bb",
+      "dye": "#273023",
+      "overlaySource": "assets/minecraft/textures/item/leather_chestplate_overlay.png",
+      "overlaySha256": "eec51b2266af48812f347de3b41d10c16205fe602ef0b02efb52af190365edea",
+      "evidence": "CharacterLoadoutPreview.java, pinned 8692f66dc76582144be85d553d43a41f189b64e7"
+    },
+    {
+      "local": "ghost-armor.png",
+      "entityId": "item:ghost-armor",
+      "size": [16, 16],
+      "bytes": 260,
+      "sha256": "e620470e1390f89cd633a5dc2776c85ef50877fa009f56b4b2bb31d94953e3b0",
+      "source": "assets/minecraft/textures/item/leather_chestplate.png",
+      "sourceSha256": "f4388ae2703b5eb9139d965c242289da09d6b26c8025d67a148dfd03597271bb",
+      "dye": "#f2f2f2",
+      "overlaySource": "assets/minecraft/textures/item/leather_chestplate_overlay.png",
+      "overlaySha256": "eec51b2266af48812f347de3b41d10c16205fe602ef0b02efb52af190365edea",
+      "evidence": "CharacterLoadoutPreview.java, pinned 8692f66dc76582144be85d553d43a41f189b64e7"
+    },
+    {
+      "local": "freddy-armor.png",
+      "entityId": "item:freddy-armor",
+      "size": [16, 16],
+      "bytes": 278,
+      "sha256": "83560320da5d647a59a990f4b186f0d86c2a869bb5ec545beb45f6566ec29f78",
+      "source": "assets/minecraft/textures/item/leather_chestplate.png",
+      "sourceSha256": "f4388ae2703b5eb9139d965c242289da09d6b26c8025d67a148dfd03597271bb",
+      "dye": "#704326",
+      "overlaySource": "assets/minecraft/textures/item/leather_chestplate_overlay.png",
+      "overlaySha256": "eec51b2266af48812f347de3b41d10c16205fe602ef0b02efb52af190365edea",
+      "evidence": "CharacterLoadoutPreview.java, pinned 8692f66dc76582144be85d553d43a41f189b64e7"
+    },
+    {
+      "local": "agent-knife.png",
+      "entityId": "item:agent-knife",
+      "size": [16, 16],
+      "bytes": 275,
+      "sha256": "2416af0806e024ee40c3067845ea11d75667af077edf0cc1f9eca2ed9e63cf40",
+      "source": "assets/minecraft/textures/item/iron_sword.png",
+      "sourceSha256": "ed1fa2f83955583e70a19791455d13989e8bd93b1d7240e775a57141022bed6b"
+    },
+    {
+      "local": "brewing-stand.png",
+      "entityId": "item:brewing-stand",
+      "size": [16, 16],
+      "bytes": 251,
+      "sha256": "71c1296909bf5e569844176ecc03a6c3fbfe02b398b35f18a0617b61e8c9f544",
+      "source": "assets/minecraft/textures/item/brewing_stand.png",
+      "sourceSha256": "010377bb318a30f8ae2f2e5af8bea65b3cc096535d84fde9631bf472e7a7c7c5"
+    },
+    {
+      "local": "ghost-hand.png",
+      "entityId": "item:ghost-hand",
+      "size": [128, 128],
+      "bytes": 28042,
+      "sha256": "75c55a46995b6e62a05185c38340823adcc39d591efe231be64df07fbb34bbd2",
+      "source": "src/main/resources/assets/maniacrev/textures/item/ghost_hand.png",
+      "sourceSha256": "52b63a511894305736fe6d7b01edf1d2d6ccd4bff1737b8f7f94039289cfd253",
+      "modCommit": "8692f66dc76582144be85d553d43a41f189b64e7",
+      "modelSource": "src/main/resources/assets/maniacrev/models/item/ghost_hand.json",
+      "modelSha256": "171671f9b87b4054bac3fe3f0fd84a97fc0a7f4237d9a15e37f75a5478a3944a"
+    },
+    {
+      "local": "toy-knife.png",
+      "entityId": "item:toy-knife",
+      "size": [113, 128],
+      "bytes": 3985,
+      "sha256": "c4ebf4fb94496cf2143b40876b0339eccf622ec5eea6eac4d51352103d988e26",
+      "source": "src/main/resources/assets/maniacrev/textures/item/toy_knife.png",
+      "sourceSha256": "86318241e9e31d146282fe3b541c79299a660bc0db0618bc96e2b6d42b34ed76",
+      "modCommit": "8692f66dc76582144be85d553d43a41f189b64e7",
+      "modelSource": "src/main/resources/assets/maniacrev/models/item/toy_knife.json",
+      "modelSha256": "81c33f6f5ef528b6b952f9cff8cf183ce1ef224a1f06ef54719e3e6a6b31ef03"
+    }
+  ]
+}

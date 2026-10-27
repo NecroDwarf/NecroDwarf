@@ -75,9 +75,14 @@ try {
   ]);
   for (const version of gameVersions)
     assert.ok(releases.some((r) => r.id === version.releaseId));
-  assert.equal(routes.length, 11);
-  assert.ok(routes.every((r) => !/wiki|lab/.test(r.path)));
-  assert.deepEqual(publishedEntityRoutes, {});
+  assert.equal(routes.length, 28);
+  assert.ok(routes.every((r) => !/lab/.test(r.path)));
+  assert.equal(Object.keys(publishedEntityRoutes).length, 15);
+  assert.ok(
+    Object.keys(publishedEntityRoutes).every((id) =>
+      id.startsWith("character:"),
+    ),
+  );
   for (const [id, path] of Object.entries(publishedEntityRoutes)) {
     assert.ok(entities.some((entity) => entity.id === id));
     assert.ok(
@@ -339,14 +344,11 @@ try {
     /Загрузить 3D-модель/,
   );
   const publicFiles = await readdir("build/client/assets");
-  assert.ok(
-    publicFiles.every((path) => !/ModelCanvas|keeper|\.glb$/.test(path)),
+  assert.equal(publicFiles.filter((path) => /\.glb$/.test(path)).length, 1);
+  assert.equal(
+    publicFiles.filter((path) => /ModelCanvas.*\.js$/.test(path)).length,
+    1,
   );
-  for (const path of publicFiles.filter((p) => p.endsWith(".js")))
-    assert.doesNotMatch(
-      await readFile("build/client/assets/" + path, "utf8"),
-      /WebGLRenderer|GLTFLoader/,
-    );
   assert.equal(
     (await readFile("maniac-lab.html", "utf8")).includes(
       'content="noindex, nofollow"',
@@ -354,7 +356,7 @@ try {
     true,
   );
   console.log(
-    `PASS: ${entities.length} entity IDs, links/snapshots, historical isolation, ${manifest.files.length} local assets, GLB hierarchy/UV/texture and no 3D in public bundles.`,
+    `PASS: ${entities.length} entity IDs, 15 published characters, historical isolation, ${manifest.files.length} local assets, GLB hierarchy/UV/texture and isolated 3D chunk.`,
   );
 } finally {
   await server.close();

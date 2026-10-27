@@ -56,6 +56,12 @@ export function ManiacPage() {
               </ContentLink>
             )}
           </div>
+          <p>
+            <Link className={s.secondary} to="/projects/maniac/wiki">
+              Maniac Wiki — персонажи и снаряжение{" "}
+              <span aria-hidden="true">↗</span>
+            </Link>
+          </p>
           <p className={s.heroNote}>
             Minecraft {download.minecraft} · {download.loader} ·{" "}
             {download.releaseName} · Google Drive

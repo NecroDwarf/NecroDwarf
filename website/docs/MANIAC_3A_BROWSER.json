@@ -1,0 +1,771 @@
+{
+  "routes": [
+    {
+      "path": "/projects/maniac/wiki",
+      "status": 200,
+      "scripts": [
+        {
+          "file": "assets/index-rX7LYOzW.js",
+          "bytes": 281251
+        },
+        {
+          "file": "assets/WikiHomePage-CmefW7ze.js",
+          "bytes": 4800
+        },
+        {
+          "file": "assets/catalog-BHINlZKi.js",
+          "bytes": 1653
+        },
+        {
+          "file": "assets/WikiLayout-D3aJfeZT.js",
+          "bytes": 3144
+        },
+        {
+          "file": "assets/characters-BcM00ktN.js",
+          "bytes": 14458
+        }
+      ],
+      "jsBytes": 305306,
+      "articleModules": [],
+      "images": [
+        "/assets/ghost-card-fC3NjMfp.webp",
+        "/assets/keeper_of_nightmares-card-E92OWx7n.webp",
+        "/assets/shaman-card-ChTgPmEQ.webp"
+      ],
+      "noJS": true,
+      "hydrationErrors": []
+    },
+    {
+      "path": "/projects/maniac/wiki/characters",
+      "status": 200,
+      "scripts": [
+        {
+          "file": "assets/index-rX7LYOzW.js",
+          "bytes": 281251
+        },
+        {
+          "file": "assets/CharactersPage-B1oCvsut.js",
+          "bytes": 3569
+        },
+        {
+          "file": "assets/catalog-BHINlZKi.js",
+          "bytes": 1653
+        },
+        {
+          "file": "assets/characters-BcM00ktN.js",
+          "bytes": 14458
+        },
+        {
+          "file": "assets/WikiLayout-D3aJfeZT.js",
+          "bytes": 3144
+        }
+      ],
+      "jsBytes": 304075,
+      "articleModules": [],
+      "images": [
+        "/assets/agent-card-MmCUT58c.webp",
+        "/assets/pudge-card-IBzAQ2gt.webp",
+        "/assets/death-card-BvIylbhL.webp",
+        "/assets/ursa-card-CuHhh8Dl.webp",
+        "/assets/ghost-card-fC3NjMfp.webp",
+        "/assets/plague_doctor-card-CeP_9Nhc.webp",
+        "/assets/freddy_bear-card-2frTQE29.webp",
+        "/assets/keeper_of_nightmares-card-E92OWx7n.webp"
+      ],
+      "noJS": true,
+      "hydrationErrors": []
+    },
+    {
+      "path": "/projects/maniac/wiki/characters/alchemist",
+      "status": 200,
+      "scripts": [
+        {
+          "file": "assets/index-rX7LYOzW.js",
+          "bytes": 281251
+        },
+        {
+          "file": "assets/alchemist-myGhdqq0.js",
+          "bytes": 762
+        },
+        {
+          "file": "assets/CharacterPage-CWg3rFqp.js",
+          "bytes": 7320
+        },
+        {
+          "file": "assets/EntityCards-CwVIw2Rb.js",
+          "bytes": 13085
+        },
+        {
+          "file": "assets/WikiLayout-D3aJfeZT.js",
+          "bytes": 3144
+        },
+        {
+          "file": "assets/characters-BcM00ktN.js",
+          "bytes": 14458
+        },
+        {
+          "file": "assets/registry-BsRE50uM.js",
+          "bytes": 37575
+        }
+      ],
+      "jsBytes": 357595,
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/character-articles/alchemist.json"
+      ],
+      "images": [
+        "/assets/alchemist-large-tPnNOc66.webp"
+      ],
+      "noJS": true,
+      "hydrationErrors": []
+    },
+    {
+      "path": "/projects/maniac/wiki/characters/shaman",
+      "status": 200,
+      "scripts": [
+        {
+          "file": "assets/index-rX7LYOzW.js",
+          "bytes": 281251
+        },
+        {
+          "file": "assets/shaman-CMwwemeG.js",
+          "bytes": 687
+        },
+        {
+          "file": "assets/CharacterPage-CWg3rFqp.js",
+          "bytes": 7320
+        },
+        {
+          "file": "assets/EntityCards-CwVIw2Rb.js",
+          "bytes": 13085
+        },
+        {
+          "file": "assets/characters-BcM00ktN.js",
+          "bytes": 14458
+        },
+        {
+          "file": "assets/WikiLayout-D3aJfeZT.js",
+          "bytes": 3144
+        },
+        {
+          "file": "assets/registry-BsRE50uM.js",
+          "bytes": 37575
+        }
+      ],
+      "jsBytes": 357520,
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/character-articles/shaman.json"
+      ],
+      "images": [
+        "/assets/shaman-large-DOejnxYY.webp"
+      ],
+      "noJS": true,
+      "hydrationErrors": []
+    },
+    {
+      "path": "/projects/maniac/wiki/characters/mefedronshchik",
+      "status": 200,
+      "scripts": [
+        {
+          "file": "assets/index-rX7LYOzW.js",
+          "bytes": 281251
+        },
+        {
+          "file": "assets/mefedronshchik-tjGYwigu.js",
+          "bytes": 1708
+        },
+        {
+          "file": "assets/CharacterPage-CWg3rFqp.js",
+          "bytes": 7320
+        },
+        {
+          "file": "assets/characters-BcM00ktN.js",
+          "bytes": 14458
+        },
+        {
+          "file": "assets/WikiLayout-D3aJfeZT.js",
+          "bytes": 3144
+        },
+        {
+          "file": "assets/EntityCards-CwVIw2Rb.js",
+          "bytes": 13085
+        },
+        {
+          "file": "assets/registry-BsRE50uM.js",
+          "bytes": 37575
+        }
+      ],
+      "jsBytes": 358541,
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/character-articles/mefedronshchik.json"
+      ],
+      "images": [
+        "/assets/mefedronshchik-large-BGjegX8g.webp",
+        "/assets/smoke-cloud-DTbFvxfx.webp"
+      ],
+      "noJS": true,
+      "hydrationErrors": []
+    },
+    {
+      "path": "/projects/maniac/wiki/characters/scientist",
+      "status": 200,
+      "scripts": [
+        {
+          "file": "assets/index-rX7LYOzW.js",
+          "bytes": 281251
+        },
+        {
+          "file": "assets/scientist-CiqM3i39.js",
+          "bytes": 770
+        },
+        {
+          "file": "assets/CharacterPage-CWg3rFqp.js",
+          "bytes": 7320
+        },
+        {
+          "file": "assets/EntityCards-CwVIw2Rb.js",
+          "bytes": 13085
+        },
+        {
+          "file": "assets/registry-BsRE50uM.js",
+          "bytes": 37575
+        },
+        {
+          "file": "assets/characters-BcM00ktN.js",
+          "bytes": 14458
+        },
+        {
+          "file": "assets/WikiLayout-D3aJfeZT.js",
+          "bytes": 3144
+        }
+      ],
+      "jsBytes": 357603,
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/character-articles/scientist.json"
+      ],
+      "images": [
+        "/assets/scientist-large-JTLfnHIH.webp",
+        "/assets/quantum-swap-Kzm1OIxB.webp"
+      ],
+      "noJS": true,
+      "hydrationErrors": []
+    },
+    {
+      "path": "/projects/maniac/wiki/characters/dodepovich",
+      "status": 200,
+      "scripts": [
+        {
+          "file": "assets/index-rX7LYOzW.js",
+          "bytes": 281251
+        },
+        {
+          "file": "assets/dodepovich-BNZaaFLI.js",
+          "bytes": 929
+        },
+        {
+          "file": "assets/CharacterPage-CWg3rFqp.js",
+          "bytes": 7320
+        },
+        {
+          "file": "assets/EntityCards-CwVIw2Rb.js",
+          "bytes": 13085
+        },
+        {
+          "file": "assets/WikiLayout-D3aJfeZT.js",
+          "bytes": 3144
+        },
+        {
+          "file": "assets/characters-BcM00ktN.js",
+          "bytes": 14458
+        },
+        {
+          "file": "assets/registry-BsRE50uM.js",
+          "bytes": 37575
+        }
+      ],
+      "jsBytes": 357762,
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/character-articles/dodepovich.json"
+      ],
+      "images": [
+        "/assets/dodepovich-large-DVqFPzJ_.webp"
+      ],
+      "noJS": true,
+      "hydrationErrors": []
+    },
+    {
+      "path": "/projects/maniac/wiki/characters/agent",
+      "status": 200,
+      "scripts": [
+        {
+          "file": "assets/index-rX7LYOzW.js",
+          "bytes": 281251
+        },
+        {
+          "file": "assets/agent-Ch7aD6AP.js",
+          "bytes": 737
+        },
+        {
+          "file": "assets/CharacterPage-CWg3rFqp.js",
+          "bytes": 7320
+        },
+        {
+          "file": "assets/characters-BcM00ktN.js",
+          "bytes": 14458
+        },
+        {
+          "file": "assets/WikiLayout-D3aJfeZT.js",
+          "bytes": 3144
+        },
+        {
+          "file": "assets/EntityCards-CwVIw2Rb.js",
+          "bytes": 13085
+        },
+        {
+          "file": "assets/registry-BsRE50uM.js",
+          "bytes": 37575
+        }
+      ],
+      "jsBytes": 357570,
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/character-articles/agent.json"
+      ],
+      "images": [
+        "/assets/agent-large-CQAImGrU.webp"
+      ],
+      "noJS": true,
+      "hydrationErrors": []
+    },
+    {
+      "path": "/projects/maniac/wiki/characters/pudge",
+      "status": 200,
+      "scripts": [
+        {
+          "file": "assets/index-rX7LYOzW.js",
+          "bytes": 281251
+        },
+        {
+          "file": "assets/pudge-CZt8y7wW.js",
+          "bytes": 696
+        },
+        {
+          "file": "assets/CharacterPage-CWg3rFqp.js",
+          "bytes": 7320
+        },
+        {
+          "file": "assets/characters-BcM00ktN.js",
+          "bytes": 14458
+        },
+        {
+          "file": "assets/WikiLayout-D3aJfeZT.js",
+          "bytes": 3144
+        },
+        {
+          "file": "assets/EntityCards-CwVIw2Rb.js",
+          "bytes": 13085
+        },
+        {
+          "file": "assets/registry-BsRE50uM.js",
+          "bytes": 37575
+        }
+      ],
+      "jsBytes": 357529,
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/character-articles/pudge.json"
+      ],
+      "images": [
+        "/assets/pudge-large-BE8SivF-.webp"
+      ],
+      "noJS": true,
+      "hydrationErrors": []
+    },
+    {
+      "path": "/projects/maniac/wiki/characters/death",
+      "status": 200,
+      "scripts": [
+        {
+          "file": "assets/index-rX7LYOzW.js",
+          "bytes": 281251
+        },
+        {
+          "file": "assets/death-B1gDNtsE.js",
+          "bytes": 830
+        },
+        {
+          "file": "assets/CharacterPage-CWg3rFqp.js",
+          "bytes": 7320
+        },
+        {
+          "file": "assets/characters-BcM00ktN.js",
+          "bytes": 14458
+        },
+        {
+          "file": "assets/WikiLayout-D3aJfeZT.js",
+          "bytes": 3144
+        },
+        {
+          "file": "assets/EntityCards-CwVIw2Rb.js",
+          "bytes": 13085
+        },
+        {
+          "file": "assets/registry-BsRE50uM.js",
+          "bytes": 37575
+        }
+      ],
+      "jsBytes": 357663,
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/character-articles/death.json"
+      ],
+      "images": [
+        "/assets/death-large-DcTbTBP8.webp",
+        "/assets/death-teleport-COFNxRb6.webp"
+      ],
+      "noJS": true,
+      "hydrationErrors": []
+    },
+    {
+      "path": "/projects/maniac/wiki/characters/ursa",
+      "status": 200,
+      "scripts": [
+        {
+          "file": "assets/index-rX7LYOzW.js",
+          "bytes": 281251
+        },
+        {
+          "file": "assets/ursa-Q5MMKMlQ.js",
+          "bytes": 896
+        },
+        {
+          "file": "assets/CharacterPage-CWg3rFqp.js",
+          "bytes": 7320
+        },
+        {
+          "file": "assets/characters-BcM00ktN.js",
+          "bytes": 14458
+        },
+        {
+          "file": "assets/EntityCards-CwVIw2Rb.js",
+          "bytes": 13085
+        },
+        {
+          "file": "assets/WikiLayout-D3aJfeZT.js",
+          "bytes": 3144
+        },
+        {
+          "file": "assets/registry-BsRE50uM.js",
+          "bytes": 37575
+        }
+      ],
+      "jsBytes": 357729,
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/character-articles/ursa.json"
+      ],
+      "images": [
+        "/assets/ursa-large-Dxm09_CT.webp",
+        "/assets/beast-leap-DUpI-QoJ.webp"
+      ],
+      "noJS": true,
+      "hydrationErrors": []
+    },
+    {
+      "path": "/projects/maniac/wiki/characters/plague-doctor",
+      "status": 200,
+      "scripts": [
+        {
+          "file": "assets/index-rX7LYOzW.js",
+          "bytes": 281251
+        },
+        {
+          "file": "assets/plague-doctor-B4iaEVR2.js",
+          "bytes": 826
+        },
+        {
+          "file": "assets/CharacterPage-CWg3rFqp.js",
+          "bytes": 7320
+        },
+        {
+          "file": "assets/characters-BcM00ktN.js",
+          "bytes": 14458
+        },
+        {
+          "file": "assets/EntityCards-CwVIw2Rb.js",
+          "bytes": 13085
+        },
+        {
+          "file": "assets/WikiLayout-D3aJfeZT.js",
+          "bytes": 3144
+        },
+        {
+          "file": "assets/registry-BsRE50uM.js",
+          "bytes": 37575
+        }
+      ],
+      "jsBytes": 357659,
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/character-articles/plague-doctor.json"
+      ],
+      "images": [
+        "/assets/plague_doctor-large-RsOQhlac.webp",
+        "/assets/plague-orb-h3rgGoWX.webp"
+      ],
+      "noJS": true,
+      "hydrationErrors": []
+    },
+    {
+      "path": "/projects/maniac/wiki/characters/ghost",
+      "status": 200,
+      "scripts": [
+        {
+          "file": "assets/index-rX7LYOzW.js",
+          "bytes": 281251
+        },
+        {
+          "file": "assets/ghost-C63PEgmc.js",
+          "bytes": 1155
+        },
+        {
+          "file": "assets/CharacterPage-CWg3rFqp.js",
+          "bytes": 7320
+        },
+        {
+          "file": "assets/characters-BcM00ktN.js",
+          "bytes": 14458
+        },
+        {
+          "file": "assets/WikiLayout-D3aJfeZT.js",
+          "bytes": 3144
+        },
+        {
+          "file": "assets/EntityCards-CwVIw2Rb.js",
+          "bytes": 13085
+        },
+        {
+          "file": "assets/registry-BsRE50uM.js",
+          "bytes": 37575
+        }
+      ],
+      "jsBytes": 357988,
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/character-articles/ghost.json"
+      ],
+      "images": [
+        "/assets/ghost-large-DHgT_DgA.webp",
+        "/assets/phantom-veil-C7cmHsu6.webp"
+      ],
+      "noJS": true,
+      "hydrationErrors": []
+    },
+    {
+      "path": "/projects/maniac/wiki/characters/necromancer",
+      "status": 200,
+      "scripts": [
+        {
+          "file": "assets/index-rX7LYOzW.js",
+          "bytes": 281251
+        },
+        {
+          "file": "assets/necromancer-DvzAjfAW.js",
+          "bytes": 563
+        },
+        {
+          "file": "assets/CharacterPage-CWg3rFqp.js",
+          "bytes": 7320
+        },
+        {
+          "file": "assets/characters-BcM00ktN.js",
+          "bytes": 14458
+        },
+        {
+          "file": "assets/EntityCards-CwVIw2Rb.js",
+          "bytes": 13085
+        },
+        {
+          "file": "assets/WikiLayout-D3aJfeZT.js",
+          "bytes": 3144
+        },
+        {
+          "file": "assets/registry-BsRE50uM.js",
+          "bytes": 37575
+        }
+      ],
+      "jsBytes": 357396,
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/character-articles/necromancer.json"
+      ],
+      "images": [
+        "/assets/necromancer-large-DnPElcoZ.webp"
+      ],
+      "noJS": true,
+      "hydrationErrors": []
+    },
+    {
+      "path": "/projects/maniac/wiki/characters/doctor",
+      "status": 200,
+      "scripts": [
+        {
+          "file": "assets/index-rX7LYOzW.js",
+          "bytes": 281251
+        },
+        {
+          "file": "assets/doctor-uM-Imc5Q.js",
+          "bytes": 810
+        },
+        {
+          "file": "assets/CharacterPage-CWg3rFqp.js",
+          "bytes": 7320
+        },
+        {
+          "file": "assets/WikiLayout-D3aJfeZT.js",
+          "bytes": 3144
+        },
+        {
+          "file": "assets/characters-BcM00ktN.js",
+          "bytes": 14458
+        },
+        {
+          "file": "assets/EntityCards-CwVIw2Rb.js",
+          "bytes": 13085
+        },
+        {
+          "file": "assets/registry-BsRE50uM.js",
+          "bytes": 37575
+        }
+      ],
+      "jsBytes": 357643,
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/character-articles/doctor.json"
+      ],
+      "images": [
+        "/assets/doctor-large-8yW9PCro.webp"
+      ],
+      "noJS": true,
+      "hydrationErrors": []
+    },
+    {
+      "path": "/projects/maniac/wiki/characters/freddy-bear",
+      "status": 200,
+      "scripts": [
+        {
+          "file": "assets/index-rX7LYOzW.js",
+          "bytes": 281251
+        },
+        {
+          "file": "assets/freddy-bear-nxjA4XIn.js",
+          "bytes": 764
+        },
+        {
+          "file": "assets/CharacterPage-CWg3rFqp.js",
+          "bytes": 7320
+        },
+        {
+          "file": "assets/characters-BcM00ktN.js",
+          "bytes": 14458
+        },
+        {
+          "file": "assets/WikiLayout-D3aJfeZT.js",
+          "bytes": 3144
+        },
+        {
+          "file": "assets/EntityCards-CwVIw2Rb.js",
+          "bytes": 13085
+        },
+        {
+          "file": "assets/registry-BsRE50uM.js",
+          "bytes": 37575
+        }
+      ],
+      "jsBytes": 357597,
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/character-articles/freddy-bear.json"
+      ],
+      "images": [
+        "/assets/freddy_bear-large-BuO2nO7x.webp",
+        "/assets/musical-wave-DhWwo4MU.webp"
+      ],
+      "noJS": true,
+      "hydrationErrors": []
+    },
+    {
+      "path": "/projects/maniac/wiki/characters/keeper-of-nightmares",
+      "status": 200,
+      "scripts": [
+        {
+          "file": "assets/index-rX7LYOzW.js",
+          "bytes": 281251
+        },
+        {
+          "file": "assets/keeper-of-nightmares-DIRZvCTW.js",
+          "bytes": 3016
+        },
+        {
+          "file": "assets/CharacterPage-CWg3rFqp.js",
+          "bytes": 7320
+        },
+        {
+          "file": "assets/EntityCards-CwVIw2Rb.js",
+          "bytes": 13085
+        },
+        {
+          "file": "assets/characters-BcM00ktN.js",
+          "bytes": 14458
+        },
+        {
+          "file": "assets/WikiLayout-D3aJfeZT.js",
+          "bytes": 3144
+        },
+        {
+          "file": "assets/registry-BsRE50uM.js",
+          "bytes": 37575
+        }
+      ],
+      "jsBytes": 359849,
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/character-articles/keeper-of-nightmares.json"
+      ],
+      "images": [
+        "/assets/keeper_of_nightmares-large-CZm-EnWi.webp",
+        "/assets/concentrated-nightmare-CFqeCOEf.webp"
+      ],
+      "noJS": true,
+      "hydrationErrors": []
+    }
+  ],
+  "widths": [
+    {
+      "width": 320,
+      "routes": 17,
+      "overflow": false
+    },
+    {
+      "width": 390,
+      "routes": 17,
+      "overflow": false
+    },
+    {
+      "width": 768,
+      "routes": 17,
+      "overflow": false
+    },
+    {
+      "width": 1440,
+      "routes": 17,
+      "overflow": false
+    }
+  ],
+  "screenshots": [
+    "C:\\Users\\hardt\\.codex\\visualizations\\2026\\10\\24\\01a16f85-8f35-77a0-8f3d-5d8797288cef\\maniac-wiki-3a\\home-1440.png",
+    "C:\\Users\\hardt\\.codex\\visualizations\\2026\\10\\24\\01a16f85-8f35-77a0-8f3d-5d8797288cef\\maniac-wiki-3a\\catalog-1440.png",
+    "C:\\Users\\hardt\\.codex\\visualizations\\2026\\10\\24\\01a16f85-8f35-77a0-8f3d-5d8797288cef\\maniac-wiki-3a\\keeper-1440.png",
+    "C:\\Users\\hardt\\.codex\\visualizations\\2026\\10\\24\\01a16f85-8f35-77a0-8f3d-5d8797288cef\\maniac-wiki-3a\\ghost-1440.png",
+    "C:\\Users\\hardt\\.codex\\visualizations\\2026\\10\\24\\01a16f85-8f35-77a0-8f3d-5d8797288cef\\maniac-wiki-3a\\doctor-1440.png",
+    "C:\\Users\\hardt\\.codex\\visualizations\\2026\\10\\24\\01a16f85-8f35-77a0-8f3d-5d8797288cef\\maniac-wiki-3a\\home-390.png",
+    "C:\\Users\\hardt\\.codex\\visualizations\\2026\\10\\24\\01a16f85-8f35-77a0-8f3d-5d8797288cef\\maniac-wiki-3a\\catalog-390.png",
+    "C:\\Users\\hardt\\.codex\\visualizations\\2026\\10\\24\\01a16f85-8f35-77a0-8f3d-5d8797288cef\\maniac-wiki-3a\\keeper-390.png",
+    "C:\\Users\\hardt\\.codex\\visualizations\\2026\\10\\24\\01a16f85-8f35-77a0-8f3d-5d8797288cef\\maniac-wiki-3a\\ghost-390.png",
+    "C:\\Users\\hardt\\.codex\\visualizations\\2026\\10\\24\\01a16f85-8f35-77a0-8f3d-5d8797288cef\\maniac-wiki-3a\\doctor-390.png"
+  ],
+  "checks": [
+    "Name search with ё/е, role/intersection filters, empty state/reset, keyboard SPA navigation",
+    "Keeper model requested only after button, renders, camera drag/zoom/rotation/reset work",
+    "WebGL fallback keeps article readable; reduced motion removes card transforms"
+  ]
+}

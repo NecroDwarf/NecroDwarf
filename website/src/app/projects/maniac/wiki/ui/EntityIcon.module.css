@@ -34,6 +34,9 @@
 .frame[data-kind="pixel-texture"] img {
   image-rendering: pixelated;
 }
+.frame[data-entity$="-armor"] img {
+  filter: drop-shadow(0 0 1px #d3d0c0aa) drop-shadow(0 0 5px #b4a99840);
+}
 .frame[data-variant="compact"] {
   --icon-size: 64px;
 }

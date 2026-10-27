@@ -1,0 +1,321 @@
+{
+  "commit": "8692f66dc76582144be85d553d43a41f189b64e7",
+  "transformation": "Full uncropped composition with original alpha; RGBA WebP quality 88, max side 480/1100.",
+  "files": [
+    {
+      "gameId": "alchemist",
+      "source": "src/main/resources/assets/maniacrev/textures/gui/frescos/alchemist.png",
+      "originalSize": [390, 913],
+      "sourceSha256": "0a7af3cffe8fcdb15dd2c023d2af90893d013d818c4f1c35d6c13296eab7bc8b",
+      "gitBlob": "f3c7a94f9e908390c48ebbd2cd2a5102e092c354",
+      "variants": {
+        "card": {
+          "local": "alchemist-card.webp",
+          "size": [205, 480],
+          "bytes": 38232,
+          "sha256": "49c9ae4fea8c43e0b53b261fb87cd69b0acc7c72365507a31c79ddd94625f625"
+        },
+        "large": {
+          "local": "alchemist-large.webp",
+          "size": [390, 913],
+          "bytes": 77398,
+          "sha256": "1d78a8ab47fdec551799d039c6591c4624bcbfca08a3b9d4f215cf270d3acbb0"
+        }
+      }
+    },
+    {
+      "gameId": "shaman",
+      "source": "src/main/resources/assets/maniacrev/textures/gui/frescos/shaman.png",
+      "originalSize": [481, 1126],
+      "sourceSha256": "1ff5204a7922da9c27a62060b9e1c21a728e4cd4ad85885d80925ea09562366b",
+      "gitBlob": "7727020acb84150e55034aaa63e13bc55b83c199",
+      "variants": {
+        "card": {
+          "local": "shaman-card.webp",
+          "size": [205, 480],
+          "bytes": 55174,
+          "sha256": "598055ecef69861e5771dab968f6913dfdcdb064b7800e250acf06df400f82e2"
+        },
+        "large": {
+          "local": "shaman-large.webp",
+          "size": [470, 1100],
+          "bytes": 213866,
+          "sha256": "ef2c2a55b0d5da28b19430f530d70fe4341b44380ec6ecd53e38259c4a148f07"
+        }
+      }
+    },
+    {
+      "gameId": "mefedronshchik",
+      "source": "src/main/resources/assets/maniacrev/textures/gui/frescos/mefedronshchik.png",
+      "originalSize": [442, 972],
+      "sourceSha256": "2ff5b9a2f9e0d18fb5ee281c925055228d5dbfb5c4ccb88244d010b114d27955",
+      "gitBlob": "f6cd254f0c3133967bcf6aec7d5ec5f208eebad0",
+      "variants": {
+        "card": {
+          "local": "mefedronshchik-card.webp",
+          "size": [218, 480],
+          "bytes": 68382,
+          "sha256": "2838f4c413e36c2f87a71184cee948b7cf5467fb5c6ff0296b9237beacf56184"
+        },
+        "large": {
+          "local": "mefedronshchik-large.webp",
+          "size": [442, 972],
+          "bytes": 275996,
+          "sha256": "e8a048e69cc6a913240cefa2e79c8bdf4323cf94917b7dbe94955c7898b568b4"
+        }
+      }
+    },
+    {
+      "gameId": "scientist",
+      "source": "src/main/resources/assets/maniacrev/textures/gui/frescos/scientist.png",
+      "originalSize": [445, 906],
+      "sourceSha256": "5bfa2446d621659bee96481216253c81defe4d01e7ced2c226ea9e4253774550",
+      "gitBlob": "0d08cf8d18463bb6fee4f59a5158d698bdbd8ef7",
+      "variants": {
+        "card": {
+          "local": "scientist-card.webp",
+          "size": [236, 480],
+          "bytes": 71506,
+          "sha256": "f0938a61a77d0f3bf6f9cf76450e789cce5bb464f6dc6dcec5fdde4c104d47c8"
+        },
+        "large": {
+          "local": "scientist-large.webp",
+          "size": [445, 906],
+          "bytes": 239110,
+          "sha256": "dc51b910eaa90d8a7b0eb187acc6b889f99ab375bf8525dd711602aa7a3abc72"
+        }
+      }
+    },
+    {
+      "gameId": "dodepovich",
+      "source": "src/main/resources/assets/maniacrev/textures/gui/frescos/dodepovich.png",
+      "originalSize": [887, 1774],
+      "sourceSha256": "b34b015facd3fe04556092f60130b9d3bd05811eaff2ded74359382c33288f52",
+      "gitBlob": "835e7c883b36173c2fb3e91964cc9a4a5f3740a6",
+      "variants": {
+        "card": {
+          "local": "dodepovich-card.webp",
+          "size": [240, 480],
+          "bytes": 63860,
+          "sha256": "86f61818d6e3858b0bb1bde601bd8ab2a49e027c58ccb5d2dfc978a8c5a16139"
+        },
+        "large": {
+          "local": "dodepovich-large.webp",
+          "size": [550, 1100],
+          "bytes": 217342,
+          "sha256": "3ea17155ca269c67bd854998031aef1b80a60c8145e7e4965ab8cee107dfae4c"
+        }
+      }
+    },
+    {
+      "gameId": "agent",
+      "source": "src/main/resources/assets/maniacrev/textures/gui/frescos/agent.png",
+      "originalSize": [442, 969],
+      "sourceSha256": "054e8050d58fcc2c94aa8c5101f06173969ccc1161c51dde9731ac9a618ff922",
+      "gitBlob": "8bef262cc42ae6f7f517f785d423759bbaa8812c",
+      "variants": {
+        "card": {
+          "local": "agent-card.webp",
+          "size": [219, 480],
+          "bytes": 55368,
+          "sha256": "f875e254e22403c19c33386c853c6d13b7669467519a4254e97fd9a37c63623c"
+        },
+        "large": {
+          "local": "agent-large.webp",
+          "size": [442, 969],
+          "bytes": 221248,
+          "sha256": "af84b52784781c51ea41e03bba2306151b0a42c042b531d9c547880c82c3cfb5"
+        }
+      }
+    },
+    {
+      "gameId": "pudge",
+      "source": "src/main/resources/assets/maniacrev/textures/gui/frescos/pudge.png",
+      "originalSize": [433, 910],
+      "sourceSha256": "fad8f6ef29b5e5314ea15d98664ef4a9a073329981cb52c8f25b801025ad1bf3",
+      "gitBlob": "a455490f9f3db3d7b0c06c57f1f75b9829c894ad",
+      "variants": {
+        "card": {
+          "local": "pudge-card.webp",
+          "size": [228, 480],
+          "bytes": 69804,
+          "sha256": "9c7941452f3f06edddf320a3a6c1072c18df1f093824b82e0669cb435c0f4bdc"
+        },
+        "large": {
+          "local": "pudge-large.webp",
+          "size": [433, 910],
+          "bytes": 248908,
+          "sha256": "f8d67e228c9eace8ab14393fa78db505f82744467e9891f36f79fe66f8f1e2ee"
+        }
+      }
+    },
+    {
+      "gameId": "death",
+      "source": "src/main/resources/assets/maniacrev/textures/gui/frescos/death.png",
+      "originalSize": [441, 968],
+      "sourceSha256": "f87f924ac65550b07f825e78d07472e1010b145a6b6cbfc0e98221222eb55254",
+      "gitBlob": "dad8a10a022a19fa5890c33706e650d6c0d9c678",
+      "variants": {
+        "card": {
+          "local": "death-card.webp",
+          "size": [219, 480],
+          "bytes": 62806,
+          "sha256": "059865a4110946d00de07354f3ec398fc87b6a7ade07f7b37ba5c292fd4c279c"
+        },
+        "large": {
+          "local": "death-large.webp",
+          "size": [441, 968],
+          "bytes": 247458,
+          "sha256": "31ff3fd83cf2c8a2114eff3c47e67283d4356eb5cb12934784a41587c85c3071"
+        }
+      }
+    },
+    {
+      "gameId": "ursa",
+      "source": "src/main/resources/assets/maniacrev/textures/gui/frescos/ursa.png",
+      "originalSize": [463, 1126],
+      "sourceSha256": "71281002a521d94b381a19e72be0a3b2e9203b35fc6f0991955ae84b155f7d68",
+      "gitBlob": "b568e259aab2a16d7ae41e7d47ac8e7a7f0f2967",
+      "variants": {
+        "card": {
+          "local": "ursa-card.webp",
+          "size": [197, 480],
+          "bytes": 51502,
+          "sha256": "f076f895ebc609d9fa41348137dee8232c785d4a7383559fbc52aa995e16d839"
+        },
+        "large": {
+          "local": "ursa-large.webp",
+          "size": [452, 1100],
+          "bytes": 206020,
+          "sha256": "d124229a877a21c874e6c0a8439bb2f044d66624e3dcb0d6a1129e6dbbfa9ffa"
+        }
+      }
+    },
+    {
+      "gameId": "plague_doctor",
+      "source": "src/main/resources/assets/maniacrev/textures/gui/frescos/plague_doctor.png",
+      "originalSize": [396, 915],
+      "sourceSha256": "7ad4a0bb2c52ac83fa8a94e530f8ddf9bdebb6e1bd6f4837de75ac1a97345f28",
+      "gitBlob": "9e63a0ef9bc9430b90473ab30db7d7f9b6cf6a92",
+      "variants": {
+        "card": {
+          "local": "plague_doctor-card.webp",
+          "size": [208, 480],
+          "bytes": 37758,
+          "sha256": "c9586da5e8c21f3949b8d7cfaad127fd88fc844a8dd75674120eb79822d2a1e4"
+        },
+        "large": {
+          "local": "plague_doctor-large.webp",
+          "size": [396, 915],
+          "bytes": 76310,
+          "sha256": "772bc8288312d67e9a57adb706b8a9df8b338745b2872ca911dc02062d94f138"
+        }
+      }
+    },
+    {
+      "gameId": "ghost",
+      "source": "src/main/resources/assets/maniacrev/textures/gui/frescos/ghost.png",
+      "originalSize": [377, 950],
+      "sourceSha256": "b54c79afa210862177fd2ed4498d6f5591a310975e04405abd234e1d6c05eea8",
+      "gitBlob": "6d054f4304486396d7a09f499526e363fe7fe2a5",
+      "variants": {
+        "card": {
+          "local": "ghost-card.webp",
+          "size": [190, 480],
+          "bytes": 44364,
+          "sha256": "423ab5a18edb1bc5a7ab6a60508361181f88cd48c9c573d09c79e649edee413c"
+        },
+        "large": {
+          "local": "ghost-large.webp",
+          "size": [377, 950],
+          "bytes": 145472,
+          "sha256": "9e5503a534803cf928f678bff58d8092932ae905692dc1e37c57592d8752ce5c"
+        }
+      }
+    },
+    {
+      "gameId": "necromancer",
+      "source": "src/main/resources/assets/maniacrev/textures/gui/frescos/necromancer.png",
+      "originalSize": [436, 910],
+      "sourceSha256": "5489291449051a6d42562d878404354f20fd033406bf8cd6a84ec9332c0688dc",
+      "gitBlob": "2918cc081ffcf35896e09183098ecd2def8f565f",
+      "variants": {
+        "card": {
+          "local": "necromancer-card.webp",
+          "size": [230, 480],
+          "bytes": 68816,
+          "sha256": "2c4cbeccb148ce79934689d5a0e06c3fd951f9f4317b4b0d7ab82708b80f6ddc"
+        },
+        "large": {
+          "local": "necromancer-large.webp",
+          "size": [436, 910],
+          "bytes": 243160,
+          "sha256": "ee4d274200306de045ca25ec140bb1eb3ca20dd78ec20273853456a3cd53408e"
+        }
+      }
+    },
+    {
+      "gameId": "doctor",
+      "source": "src/main/resources/assets/maniacrev/textures/gui/frescos/doctor.png",
+      "originalSize": [440, 968],
+      "sourceSha256": "4a35f9208a09f272bbded024b32b82671ba2c4cf74ed553abbe598d6d24d47d8",
+      "gitBlob": "673f3a79ff6efb4fc1f58d253686a0f63b237663",
+      "variants": {
+        "card": {
+          "local": "doctor-card.webp",
+          "size": [218, 480],
+          "bytes": 68406,
+          "sha256": "cdfaaab77eacc3947c7662991d0680219f8b1837c300b83ea22ba60f4b5eee4d"
+        },
+        "large": {
+          "local": "doctor-large.webp",
+          "size": [440, 968],
+          "bytes": 270102,
+          "sha256": "b54d1702110383e41b07582171bd476447638d5e6ae9b51124f56d2256dc1309"
+        }
+      }
+    },
+    {
+      "gameId": "freddy_bear",
+      "source": "src/main/resources/assets/maniacrev/textures/gui/frescos/freddy_bear.png",
+      "originalSize": [452, 904],
+      "sourceSha256": "6a3fbf5245230fc34746ac08c54fd6eacf654f8a8e0d96c5a02e087ec36b51c3",
+      "gitBlob": "aa7495dac1c87769671f5c0444c3e9e67e6f553e",
+      "variants": {
+        "card": {
+          "local": "freddy_bear-card.webp",
+          "size": [240, 480],
+          "bytes": 71546,
+          "sha256": "be7cc6941d27b8d2a1c4120c63552c5707743da33241f1e833b7b6ca34685994"
+        },
+        "large": {
+          "local": "freddy_bear-large.webp",
+          "size": [452, 904],
+          "bytes": 240002,
+          "sha256": "f575a5e4b68fd6af179fd12f088e6b033d16e0e75a2cecf335efd5be098b4afb"
+        }
+      }
+    },
+    {
+      "gameId": "keeper_of_nightmares",
+      "source": "src/main/resources/assets/maniacrev/textures/gui/frescos/keeper_of_nightmares.png",
+      "originalSize": [941, 1672],
+      "sourceSha256": "a0a940efb01b969cc3eff57faf824c72765ff365eaf4983f258936cf98ab136c",
+      "gitBlob": "6dd72cb08354d2b27b3c458ef07feeeaa8b22eaf",
+      "variants": {
+        "card": {
+          "local": "keeper_of_nightmares-card.webp",
+          "size": [270, 480],
+          "bytes": 55566,
+          "sha256": "2cd5d45b78bac444c29c4154f81d03a2fca8c9e77ccd11ca19ee969694305275"
+        },
+        "large": {
+          "local": "keeper_of_nightmares-large.webp",
+          "size": [619, 1100],
+          "bytes": 242698,
+          "sha256": "b68100f49c386795a0fc31efd352ef724578a31cc3862b45060fd051a1a8094b"
+        }
+      }
+    }
+  ]
+}

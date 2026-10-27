@@ -1,7 +1,9 @@
-import type { Entity } from "./types";
+import type { Entity, EntityId } from "./types";
 import { verifiedSource } from "./snapshots";
+import catalog from "./character-catalog.json";
+import relations from "./character-relations.json";
 const base = "src/main/java/org/example/maniacrevolution/character/";
-export const characters: readonly Entity<"character">[] = [
+const foundationalCharacters: readonly Entity<"character">[] = [
   {
     id: "character:keeper-of-nightmares",
     kind: "character",
@@ -103,3 +105,43 @@ export const characters: readonly Entity<"character">[] = [
     },
   },
 ];
+// One authoritative character registry. Full article fragments load separately;
+// historical revisions above remain exactly as published in the chronicles.
+export const characters: readonly Entity<"character">[] = catalog.map(
+  (entry) => {
+    const previous = foundationalCharacters.find((c) => c.id === entry.id);
+    const related = relations[entry.gameId as keyof typeof relations];
+    return {
+      id: entry.id as Entity<"character">["id"],
+      kind: "character",
+      slug: entry.slug,
+      name: entry.name,
+      revisions: {
+        ...previous?.revisions,
+        [verifiedSource]: {
+          data: {
+            ...previous?.revisions[verifiedSource]?.data,
+            gameId: entry.gameId,
+            role: entry.role as "maniac" | "survivor",
+            style:
+              previous?.revisions[verifiedSource]?.data.style ??
+              entry.tags.slice(0, 2).join(" · "),
+            description:
+              previous?.revisions[verifiedSource]?.data.description ??
+              entry.summary,
+            sourceDescription: entry.description,
+            difficulty: entry.difficulty,
+            tags: entry.tags,
+            abilityIds: related.abilityIds as readonly EntityId<"ability">[],
+            itemIds: related.itemIds as readonly EntityId<"item">[],
+          },
+          evidence: [
+            { path: entry.classPath },
+            { path: `${base}CharacterRegistry.java` },
+            { path: "src/main/resources/assets/maniacrev/lang/ru_ru.json" },
+          ],
+        },
+      },
+    };
+  },
+);

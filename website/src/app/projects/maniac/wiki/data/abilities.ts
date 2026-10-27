@@ -1,6 +1,8 @@
 import type { Entity } from "./types";
 import { verifiedSource } from "./snapshots";
+import characterAbilities from "./character-abilities.json";
 export const abilities: readonly Entity<"ability">[] = [
+  ...(characterAbilities as readonly Entity<"ability">[]),
   {
     id: "ability:abyss-gaze",
     kind: "ability",

@@ -1,6 +1,8 @@
 import type { Entity } from "./types";
 import { verifiedSource } from "./snapshots";
+import characterItems from "./character-items.json";
 export const items: readonly Entity<"item">[] = [
+  ...(characterItems as readonly Entity<"item">[]),
   {
     id: "item:nightmare-lighter",
     kind: "item",

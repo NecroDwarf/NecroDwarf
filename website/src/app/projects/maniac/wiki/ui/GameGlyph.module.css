@@ -1,0 +1,25 @@
+.glyph {
+  width: 20px;
+  height: 20px;
+  flex: 0 0 20px;
+  vertical-align: middle;
+}
+.health {
+  color: #e08b99;
+}
+.damage {
+  color: #d5b398;
+}
+.armor,
+.range {
+  color: #a3bacf;
+}
+.mana {
+  color: #91cbd1;
+}
+.sanity {
+  color: #baa2d8;
+}
+.cooldown {
+  color: #c8bb9d;
+}

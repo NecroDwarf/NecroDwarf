@@ -1,0 +1,261 @@
+[
+  {
+    "id": "ability:smoke-cloud",
+    "kind": "ability",
+    "slug": "smoke-cloud",
+    "name": "Облако дыма",
+    "revisions": {
+      "source:8692f66": {
+        "data": {
+          "description": "Создаёт дым и приостанавливает рост зависимости.",
+          "mechanicIds": [],
+          "icon": "smoke-cloud"
+        },
+        "evidence": [
+          {
+            "path": "src/main/java/org/example/maniacrevolution/character/survivor/MefedronshchikClass.java"
+          },
+          {
+            "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+          },
+          {
+            "path": "src/main/java/org/example/maniacrevolution/item/BongItem.java"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "ability:quantum-swap",
+    "kind": "ability",
+    "slug": "quantum-swap",
+    "name": "Квантовая телепортация",
+    "revisions": {
+      "source:8692f66": {
+        "data": {
+          "description": "Меняет местами с другим игроком и ненадолго даёт невидимость.",
+          "mechanicIds": [],
+          "icon": "quantum-swap"
+        },
+        "evidence": [
+          {
+            "path": "src/main/java/org/example/maniacrevolution/character/survivor/ScientistClass.java"
+          },
+          {
+            "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+          },
+          {
+            "path": "src/main/java/org/example/maniacrevolution/item/NetherSwapItem.java"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "ability:death-teleport",
+    "kind": "ability",
+    "slug": "death-teleport",
+    "name": "Телепортация к жертве",
+    "revisions": {
+      "source:8692f66": {
+        "data": {
+          "description": "При активации телепортируется к случайному выжившему.",
+          "mechanicIds": [],
+          "icon": "death-teleport"
+        },
+        "evidence": [
+          {
+            "path": "src/main/java/org/example/maniacrevolution/character/maniac/DeathClass.java"
+          },
+          {
+            "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+          },
+          {
+            "path": "src/main/java/org/example/maniacrevolution/item/DeathScytheItem.java"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "ability:beast-leap",
+    "kind": "ability",
+    "slug": "beast-leap",
+    "name": "Прыжок зверя",
+    "revisions": {
+      "source:8692f66": {
+        "data": {
+          "description": "Прыгает вперёд и наносит урон при приземлении.",
+          "mechanicIds": [],
+          "stats": [
+            {
+              "key": "landing-damage",
+              "label": "Урон при приземлении",
+              "value": 2.5,
+              "unit": "damage"
+            },
+            {
+              "key": "landing-radius",
+              "label": "Радиус приземления",
+              "value": 1.8,
+              "unit": "blocks"
+            },
+            {
+              "key": "cooldown",
+              "label": "Перезарядка",
+              "value": 10,
+              "unit": "seconds"
+            },
+            {
+              "key": "mana-cost",
+              "label": "Стоимость",
+              "value": 5,
+              "unit": "mana"
+            }
+          ],
+          "icon": "beast-leap"
+        },
+        "evidence": [
+          {
+            "path": "src/main/java/org/example/maniacrevolution/character/maniac/UrsaClass.java"
+          },
+          {
+            "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+          },
+          {
+            "path": "src/main/java/org/example/maniacrevolution/item/BeastClawItem.java"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "ability:plague-orb",
+    "kind": "ability",
+    "slug": "plague-orb",
+    "name": "Чумной сгусток",
+    "revisions": {
+      "source:8692f66": {
+        "data": {
+          "description": "Бросает снаряд, ускоряющий заражение.",
+          "mechanicIds": [],
+          "icon": "plague-orb"
+        },
+        "evidence": [
+          {
+            "path": "src/main/java/org/example/maniacrevolution/character/maniac/PlagueDoctorClass.java"
+          },
+          {
+            "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+          },
+          {
+            "path": "src/main/java/org/example/maniacrevolution/item/PlagueLanternItem.java"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "ability:ghost-possession",
+    "kind": "ability",
+    "slug": "ghost-possession",
+    "name": "Одержимость",
+    "revisions": {
+      "source:8692f66": {
+        "data": {
+          "description": "Вселяет в выжившего через Shift + ПКМ. Точная длительность и перезарядка указаны на предмете.",
+          "mechanicIds": []
+        },
+        "evidence": [
+          {
+            "path": "src/main/java/org/example/maniacrevolution/character/maniac/GhostClass.java"
+          },
+          {
+            "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+          },
+          {
+            "path": "src/main/java/org/example/maniacrevolution/item/GhostHandItem.java"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "ability:phantom-veil",
+    "kind": "ability",
+    "slug": "phantom-veil",
+    "name": "Фантомная завеса",
+    "revisions": {
+      "source:8692f66": {
+        "data": {
+          "description": "Игрушечный нож включает или выключает полную невидимость.",
+          "mechanicIds": [],
+          "icon": "phantom-veil"
+        },
+        "evidence": [
+          {
+            "path": "src/main/java/org/example/maniacrevolution/character/maniac/GhostClass.java"
+          },
+          {
+            "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+          },
+          {
+            "path": "src/main/java/org/example/maniacrevolution/item/ToyKnifeItem.java"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "ability:damage-transfer",
+    "kind": "ability",
+    "slug": "damage-transfer",
+    "name": "Спасибо, доктор",
+    "revisions": {
+      "source:8692f66": {
+        "data": {
+          "description": "Может перенаправить следующую входящую атаку на ближайшего союзника во время действия способности.",
+          "mechanicIds": [],
+          "icon": "damage-transfer"
+        },
+        "evidence": [
+          {
+            "path": "src/main/java/org/example/maniacrevolution/character/survivor/DoctorClass.java"
+          },
+          {
+            "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+          },
+          {
+            "path": "src/main/java/org/example/maniacrevolution/event/MedicActiveAbility.java"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "ability:musical-wave",
+    "kind": "ability",
+    "slug": "musical-wave",
+    "name": "Музыкальная волна",
+    "revisions": {
+      "source:8692f66": {
+        "data": {
+          "description": "При активации оглушает ближайших выживших.",
+          "mechanicIds": [],
+          "icon": "musical-wave"
+        },
+        "evidence": [
+          {
+            "path": "src/main/java/org/example/maniacrevolution/character/maniac/FreddyBearClass.java"
+          },
+          {
+            "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+          },
+          {
+            "path": "src/main/java/org/example/maniacrevolution/item/MicrophoneItem.java"
+          }
+        ]
+      }
+    }
+  }
+]

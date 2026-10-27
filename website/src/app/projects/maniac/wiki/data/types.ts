@@ -21,7 +21,15 @@ export interface Stat {
   key: string;
   label: string;
   value: number;
-  unit: "seconds" | "mana" | "blocks" | "percent" | "count";
+  unit:
+    | "seconds"
+    | "mana"
+    | "blocks"
+    | "percent"
+    | "count"
+    | "health"
+    | "damage"
+    | "armor";
 }
 interface BaseData {
   description: string;
@@ -35,6 +43,10 @@ export interface EntityData {
     abilityIds: readonly EntityId<"ability">[];
     itemIds: readonly EntityId<"item">[];
     model?: string;
+    gameId?: string;
+    sourceDescription?: string;
+    difficulty?: number;
+    tags?: readonly string[];
   };
   ability: BaseData & { mechanicIds: readonly EntityId<"mechanic">[] };
   perk: BaseData & {

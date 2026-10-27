@@ -103,8 +103,9 @@ try {
   assert.equal((maniac.match(/<h1[ >]/g) || []).length, 1);
   assert.doesNotMatch(
     maniac,
-    /id="gallery"|href="#gallery"|minecraft-inside\.ru|\/wiki|changelog_maniac|Версия доступного архива пока не подтверждена/,
+    /id="gallery"|href="#gallery"|minecraft-inside\.ru|changelog_maniac|Версия доступного архива пока не подтверждена/,
   );
+  assert.match(maniac, /href="\/projects\/maniac\/wiki"/);
   const { download } = await server.ssrLoadModule(
     "/src/app/projects/maniac/content.ts",
   );

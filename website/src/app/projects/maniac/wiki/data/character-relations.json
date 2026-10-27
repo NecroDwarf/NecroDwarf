@@ -1,0 +1,62 @@
+{
+  "alchemist": {
+    "itemIds": ["item:alchemy-kit", "item:brewing-stand"],
+    "abilityIds": []
+  },
+  "shaman": {
+    "itemIds": ["item:ancestral-totem", "item:ancestor-soul"],
+    "abilityIds": []
+  },
+  "mefedronshchik": {
+    "itemIds": ["item:adrenaline-syringe", "item:bong"],
+    "abilityIds": ["ability:smoke-cloud"]
+  },
+  "scientist": {
+    "itemIds": ["item:quantum-teleport"],
+    "abilityIds": ["ability:quantum-swap"]
+  },
+  "dodepovich": {
+    "itemIds": ["item:dodepovich-coins", "item:slot-machine"],
+    "abilityIds": []
+  },
+  "agent": {
+    "itemIds": ["item:agent-pistol", "item:agent-knife", "item:agent-armor"],
+    "abilityIds": []
+  },
+  "pudge": {
+    "itemIds": ["item:hook", "item:pudge-armor"],
+    "abilityIds": []
+  },
+  "death": {
+    "itemIds": ["item:death-scythe", "item:death-armor"],
+    "abilityIds": ["ability:death-teleport"]
+  },
+  "ursa": {
+    "itemIds": ["item:ursa-armor", "item:beast-claw"],
+    "abilityIds": ["ability:beast-leap"]
+  },
+  "plague_doctor": {
+    "itemIds": ["item:plague-lantern", "item:plague-armor"],
+    "abilityIds": ["ability:plague-orb"]
+  },
+  "ghost": {
+    "itemIds": ["item:toy-knife", "item:ghost-hand", "item:ghost-armor"],
+    "abilityIds": ["ability:ghost-possession", "ability:phantom-veil"]
+  },
+  "necromancer": {
+    "itemIds": ["item:salt", "item:dead-staff"],
+    "abilityIds": []
+  },
+  "doctor": {
+    "itemIds": ["item:bandages", "item:medical-tablet"],
+    "abilityIds": ["ability:damage-transfer"]
+  },
+  "freddy_bear": {
+    "itemIds": ["item:microphone", "item:freddy-armor"],
+    "abilityIds": ["ability:musical-wave"]
+  },
+  "keeper_of_nightmares": {
+    "itemIds": ["item:nightmare-lighter", "item:awakening-needle"],
+    "abilityIds": ["ability:abyss-gaze", "ability:concentrated-nightmare"]
+  }
+}

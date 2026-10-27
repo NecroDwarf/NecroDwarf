@@ -265,6 +265,102 @@
       "size": [256, 256],
       "optimization": "Pillow LANCZOS thumbnail 256px; lossless WebP; original palette and alpha",
       "entityId": "perk:sber-sprout"
+    },
+    {
+      "source": "src/main/resources/assets/maniacrev/textures/gui/abilities/bong.png",
+      "local": "wiki/abilities/smoke-cloud.webp",
+      "sourceBytes": 519602,
+      "sourceSha256": "a43a0a6ccefd5925ac959162b445d81d689cfc337a057307410b110bce70cf50",
+      "sourceSize": [1024, 1024],
+      "bytes": 98738,
+      "sha256": "dfe7f2448ae0788d1e5f2338f54b511a999d31adb99d38376a8a1f565aa6f32a",
+      "size": [256, 256],
+      "optimization": "Full composition, max side 256, lossless WebP.",
+      "entityId": "ability:smoke-cloud"
+    },
+    {
+      "source": "src/main/resources/assets/maniacrev/textures/gui/abilities/nether_swap.png",
+      "local": "wiki/abilities/quantum-swap.webp",
+      "sourceBytes": 530291,
+      "sourceSha256": "1f474eb83eed4fd5e265052606705c5957ae7e1768a6b1f3790e1f77202e4330",
+      "sourceSize": [1024, 1024],
+      "bytes": 116980,
+      "sha256": "854a439c07f9c11eeddf320c9c2078847657b3382593a287a6196be165508160",
+      "size": [256, 256],
+      "optimization": "Full composition, max side 256, lossless WebP.",
+      "entityId": "ability:quantum-swap"
+    },
+    {
+      "source": "src/main/resources/assets/maniacrev/textures/gui/abilities/death_scythe.png",
+      "local": "wiki/abilities/death-teleport.webp",
+      "sourceBytes": 178235,
+      "sourceSha256": "b6f11ebed72a716903c30e26ee33cec4aadfc3fe627ef6dd94d7005921bd667f",
+      "sourceSize": [1024, 1536],
+      "bytes": 25454,
+      "sha256": "3da0a8a991aef379943388b46ddfb6c15b97b729baec5956648064406da93445",
+      "size": [171, 256],
+      "optimization": "Full composition, max side 256, lossless WebP.",
+      "entityId": "ability:death-teleport"
+    },
+    {
+      "source": "src/main/resources/assets/maniacrev/textures/gui/abilities/beast_claw.png",
+      "local": "wiki/abilities/beast-leap.webp",
+      "sourceBytes": 7144,
+      "sourceSha256": "e9a00d6abca530f2c4376739886ac3c12cadae81639ac2caab78bff6e8b961c1",
+      "sourceSize": [128, 128],
+      "bytes": 7270,
+      "sha256": "157ffd9809d1558e196137df7f6a1fb5dce58408149a5595d54349813fdb6a26",
+      "size": [128, 128],
+      "optimization": "Full composition, max side 256, lossless WebP.",
+      "entityId": "ability:beast-leap"
+    },
+    {
+      "source": "src/main/resources/assets/maniacrev/textures/gui/abilities/plague_lantern.png",
+      "local": "wiki/abilities/plague-orb.webp",
+      "sourceBytes": 104935,
+      "sourceSha256": "6919ff83adf53e97850ee09314013a90867cd3763734c1698d1c7acb5ede34f9",
+      "sourceSize": [504, 502],
+      "bytes": 90254,
+      "sha256": "e04dd3f298f067bf1ebff6cf45ee438b223e2d0c58e7b748700b09ac12cf269b",
+      "size": [256, 255],
+      "optimization": "Full composition, max side 256, lossless WebP.",
+      "entityId": "ability:plague-orb"
+    },
+    {
+      "source": "src/main/resources/assets/maniacrev/textures/gui/abilities/ghost_full_invisibility.png",
+      "local": "wiki/abilities/phantom-veil.webp",
+      "sourceBytes": 28235,
+      "sourceSha256": "379eefcb2c52d22a5f3c56488e1b6412856a14869b012587cff870e1d6f63133",
+      "sourceSize": [128, 128],
+      "bytes": 15490,
+      "sha256": "fe794d4e064ea9a0aba004bb1c8a4bbf5557c6bae1ae615d32bf83029c046b8b",
+      "size": [128, 128],
+      "optimization": "Full composition, max side 256, lossless WebP.",
+      "entityId": "ability:phantom-veil"
+    },
+    {
+      "source": "src/main/resources/assets/maniacrev/textures/gui/abilities/medical_mask.png",
+      "local": "wiki/abilities/damage-transfer.webp",
+      "sourceBytes": 3218,
+      "sourceSha256": "8deb64639a99dc5acef38e985ef30e42879f29b3066d2e59494a28dcdf111a04",
+      "sourceSize": [48, 48],
+      "bytes": 2948,
+      "sha256": "58379f99fe72e288d27e465838d54af8a6984a6f4787cc9f5c8d4a92ab9d0c05",
+      "size": [48, 48],
+      "optimization": "Full composition, max side 256, lossless WebP.",
+      "entityId": "ability:damage-transfer"
+    },
+    {
+      "source": "src/main/resources/assets/maniacrev/textures/gui/abilities/microphone.png",
+      "local": "wiki/abilities/musical-wave.webp",
+      "sourceBytes": 609391,
+      "sourceSha256": "2d9f03f7aee77deac74910f0f0421d65292138b1f7ab76cc74d9cf9b731657c3",
+      "sourceSize": [1024, 1024],
+      "bytes": 103012,
+      "sha256": "f8552795fb9f9e3f66b3915ecc30ce3c2aa5f472786299588ec67697ddf2ded8",
+      "size": [256, 256],
+      "optimization": "Full composition, max side 256, lossless WebP.",
+      "entityId": "ability:musical-wave"
     }
   ]
 }

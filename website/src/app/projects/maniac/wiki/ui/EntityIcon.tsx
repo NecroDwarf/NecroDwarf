@@ -25,6 +25,7 @@ export function EntityIcon({
       className={s.frame}
       data-variant={variant}
       data-kind={asset.kind}
+      data-entity={asset.entityId}
       style={style}
       aria-hidden="true"
     >

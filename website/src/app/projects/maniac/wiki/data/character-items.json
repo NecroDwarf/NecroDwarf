@@ -1,0 +1,750 @@
+[
+  {
+    "id": "item:alchemy-kit",
+    "kind": "item",
+    "slug": "alchemy-kit",
+    "name": "Набор алхимика",
+    "revisions": {
+      "source:8692f66": {
+        "data": {
+          "description": "Содержит принадлежности для варки и случайные ингредиенты.",
+          "usage": "",
+          "abilityIds": [],
+          "mechanicIds": []
+        },
+        "evidence": [
+          {
+            "path": "src/main/java/org/example/maniacrevolution/character/survivor/AlchemistClass.java"
+          },
+          {
+            "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "item:brewing-stand",
+    "kind": "item",
+    "slug": "brewing-stand",
+    "name": "Зельеварка",
+    "revisions": {
+      "source:8692f66": {
+        "data": {
+          "description": "Используется для приготовления зелий и подсвечена Алхимику.",
+          "usage": "",
+          "abilityIds": [],
+          "mechanicIds": []
+        },
+        "evidence": [
+          {
+            "path": "src/main/java/org/example/maniacrevolution/character/survivor/AlchemistClass.java"
+          },
+          {
+            "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "item:ancestral-totem",
+    "kind": "item",
+    "slug": "ancestral-totem",
+    "name": "Тотем",
+    "revisions": {
+      "source:8692f66": {
+        "data": {
+          "description": "Устанавливаемый объект, подсвечивающий ближайших маньяков.",
+          "usage": "",
+          "abilityIds": [],
+          "mechanicIds": []
+        },
+        "evidence": [
+          {
+            "path": "src/main/java/org/example/maniacrevolution/character/survivor/ShamanClass.java"
+          },
+          {
+            "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "item:ancestor-soul",
+    "kind": "item",
+    "slug": "ancestor-soul",
+    "name": "Душа предков",
+    "revisions": {
+      "source:8692f66": {
+        "data": {
+          "description": "Восстанавливает здоровье; точное лечение указано на предмете.",
+          "usage": "К базовому лечению добавляется бонус за каждого другого выжившего в режиме наблюдателя.",
+          "abilityIds": [],
+          "mechanicIds": [],
+          "stats": [
+            {
+              "key": "base-heal",
+              "label": "Базовое лечение",
+              "value": 2,
+              "unit": "health"
+            },
+            {
+              "key": "spectator-heal",
+              "label": "За выжившего-наблюдателя",
+              "value": 2,
+              "unit": "health"
+            }
+          ]
+        },
+        "evidence": [
+          {
+            "path": "src/main/java/org/example/maniacrevolution/character/survivor/ShamanClass.java"
+          },
+          {
+            "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+          },
+          {
+            "path": "src/main/java/org/example/maniacrevolution/item/AncestorSoulItem.java"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "item:adrenaline-syringe",
+    "kind": "item",
+    "slug": "adrenaline-syringe",
+    "name": "Шприц адреналина",
+    "revisions": {
+      "source:8692f66": {
+        "data": {
+          "description": "Снижает текущую зависимость и даёт складывающуюся Скорость.",
+          "usage": "",
+          "abilityIds": [],
+          "mechanicIds": []
+        },
+        "evidence": [
+          {
+            "path": "src/main/java/org/example/maniacrevolution/character/survivor/MefedronshchikClass.java"
+          },
+          {
+            "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "item:bong",
+    "kind": "item",
+    "slug": "bong",
+    "name": "Бонг",
+    "revisions": {
+      "source:8692f66": {
+        "data": {
+          "description": "Создаёт дым и приостанавливает рост зависимости.",
+          "usage": "",
+          "abilityIds": [],
+          "mechanicIds": []
+        },
+        "evidence": [
+          {
+            "path": "src/main/java/org/example/maniacrevolution/character/survivor/MefedronshchikClass.java"
+          },
+          {
+            "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "item:quantum-teleport",
+    "kind": "item",
+    "slug": "quantum-teleport",
+    "name": "Квантовый телепорт",
+    "revisions": {
+      "source:8692f66": {
+        "data": {
+          "description": "Меняет местами с другим игроком и ненадолго даёт невидимость.",
+          "usage": "",
+          "abilityIds": [],
+          "mechanicIds": []
+        },
+        "evidence": [
+          {
+            "path": "src/main/java/org/example/maniacrevolution/character/survivor/ScientistClass.java"
+          },
+          {
+            "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "item:dodepovich-coins",
+    "kind": "item",
+    "slug": "dodepovich-coins",
+    "name": "Монетки",
+    "revisions": {
+      "source:8692f66": {
+        "data": {
+          "description": "Расходуемые предметы с разными положительными и отрицательными исходами.",
+          "usage": "",
+          "abilityIds": [],
+          "mechanicIds": []
+        },
+        "evidence": [
+          {
+            "path": "src/main/java/org/example/maniacrevolution/character/survivor/DodepovichClass.java"
+          },
+          {
+            "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "item:slot-machine",
+    "kind": "item",
+    "slug": "slot-machine",
+    "name": "Казино-автомат",
+    "revisions": {
+      "source:8692f66": {
+        "data": {
+          "description": "Блок для рискованного розыгрыша монеток.",
+          "usage": "",
+          "abilityIds": [],
+          "mechanicIds": []
+        },
+        "evidence": [
+          {
+            "path": "src/main/java/org/example/maniacrevolution/character/survivor/DodepovichClass.java"
+          },
+          {
+            "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "item:agent-pistol",
+    "kind": "item",
+    "slug": "agent-pistol",
+    "name": "Пистолет",
+    "revisions": {
+      "source:8692f66": {
+        "data": {
+          "description": "Дальнобойное оружие с ограниченным боезапасом.",
+          "usage": "",
+          "abilityIds": [],
+          "mechanicIds": []
+        },
+        "evidence": [
+          {
+            "path": "src/main/java/org/example/maniacrevolution/character/maniac/AgentClass.java"
+          },
+          {
+            "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "item:agent-knife",
+    "kind": "item",
+    "slug": "agent-knife",
+    "name": "Нож",
+    "revisions": {
+      "source:8692f66": {
+        "data": {
+          "description": "Лёгкое оружие ближнего боя.",
+          "usage": "",
+          "abilityIds": [],
+          "mechanicIds": []
+        },
+        "evidence": [
+          {
+            "path": "src/main/java/org/example/maniacrevolution/character/maniac/AgentClass.java"
+          },
+          {
+            "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "item:agent-armor",
+    "kind": "item",
+    "slug": "agent-armor",
+    "name": "Кожаная броня",
+    "revisions": {
+      "source:8692f66": {
+        "data": {
+          "description": "Базовая защита.",
+          "usage": "",
+          "abilityIds": [],
+          "mechanicIds": []
+        },
+        "evidence": [
+          {
+            "path": "src/main/java/org/example/maniacrevolution/character/maniac/AgentClass.java"
+          },
+          {
+            "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "item:hook",
+    "kind": "item",
+    "slug": "hook",
+    "name": "Хук",
+    "revisions": {
+      "source:8692f66": {
+        "data": {
+          "description": "Оружие ближнего боя с активным притягиванием.",
+          "usage": "",
+          "abilityIds": [],
+          "mechanicIds": []
+        },
+        "evidence": [
+          {
+            "path": "src/main/java/org/example/maniacrevolution/character/maniac/PudgeClass.java"
+          },
+          {
+            "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "item:pudge-armor",
+    "kind": "item",
+    "slug": "pudge-armor",
+    "name": "Кожаная броня",
+    "revisions": {
+      "source:8692f66": {
+        "data": {
+          "description": "Базовая защита.",
+          "usage": "",
+          "abilityIds": [],
+          "mechanicIds": []
+        },
+        "evidence": [
+          {
+            "path": "src/main/java/org/example/maniacrevolution/character/maniac/PudgeClass.java"
+          },
+          {
+            "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "item:death-scythe",
+    "kind": "item",
+    "slug": "death-scythe",
+    "name": "Коса смерти",
+    "revisions": {
+      "source:8692f66": {
+        "data": {
+          "description": "Фирменное оружие Смерти.",
+          "usage": "",
+          "abilityIds": [],
+          "mechanicIds": []
+        },
+        "evidence": [
+          {
+            "path": "src/main/java/org/example/maniacrevolution/character/maniac/DeathClass.java"
+          },
+          {
+            "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "item:death-armor",
+    "kind": "item",
+    "slug": "death-armor",
+    "name": "Броня смерти",
+    "revisions": {
+      "source:8692f66": {
+        "data": {
+          "description": "Защитная броня, связанная со способностью телепортации.",
+          "usage": "",
+          "abilityIds": [],
+          "mechanicIds": []
+        },
+        "evidence": [
+          {
+            "path": "src/main/java/org/example/maniacrevolution/character/maniac/DeathClass.java"
+          },
+          {
+            "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "item:ursa-armor",
+    "kind": "item",
+    "slug": "ursa-armor",
+    "name": "Кожаная броня",
+    "revisions": {
+      "source:8692f66": {
+        "data": {
+          "description": "Базовая защита.",
+          "usage": "",
+          "abilityIds": [],
+          "mechanicIds": []
+        },
+        "evidence": [
+          {
+            "path": "src/main/java/org/example/maniacrevolution/character/maniac/UrsaClass.java"
+          },
+          {
+            "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "item:beast-claw",
+    "kind": "item",
+    "slug": "beast-claw",
+    "name": "Коготь зверя",
+    "revisions": {
+      "source:8692f66": {
+        "data": {
+          "description": "Оружие Урсы и активатор прыжка.",
+          "usage": "Заряды на цели усиливают последующие атаки; здесь указан базовый урон без зарядов.",
+          "abilityIds": [],
+          "mechanicIds": [],
+          "stats": [
+            {
+              "key": "base-damage",
+              "label": "Базовый урон",
+              "value": 1,
+              "unit": "damage"
+            }
+          ]
+        },
+        "evidence": [
+          {
+            "path": "src/main/java/org/example/maniacrevolution/character/maniac/UrsaClass.java"
+          },
+          {
+            "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+          },
+          {
+            "path": "src/main/java/org/example/maniacrevolution/item/BeastClawItem.java"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "item:plague-lantern",
+    "kind": "item",
+    "slug": "plague-lantern",
+    "name": "Чумная лампа",
+    "revisions": {
+      "source:8692f66": {
+        "data": {
+          "description": "Оружие ближнего боя с чумной аурой.",
+          "usage": "",
+          "abilityIds": [],
+          "mechanicIds": []
+        },
+        "evidence": [
+          {
+            "path": "src/main/java/org/example/maniacrevolution/character/maniac/PlagueDoctorClass.java"
+          },
+          {
+            "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "item:plague-armor",
+    "kind": "item",
+    "slug": "plague-armor",
+    "name": "Кожаная броня",
+    "revisions": {
+      "source:8692f66": {
+        "data": {
+          "description": "Базовая защита.",
+          "usage": "",
+          "abilityIds": [],
+          "mechanicIds": []
+        },
+        "evidence": [
+          {
+            "path": "src/main/java/org/example/maniacrevolution/character/maniac/PlagueDoctorClass.java"
+          },
+          {
+            "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "item:toy-knife",
+    "kind": "item",
+    "slug": "toy-knife",
+    "name": "Игрушечный нож",
+    "revisions": {
+      "source:8692f66": {
+        "data": {
+          "description": "Оружие ближнего боя, включающее полную невидимость.",
+          "usage": "",
+          "abilityIds": [],
+          "mechanicIds": []
+        },
+        "evidence": [
+          {
+            "path": "src/main/java/org/example/maniacrevolution/character/maniac/GhostClass.java"
+          },
+          {
+            "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "item:ghost-hand",
+    "kind": "item",
+    "slug": "ghost-hand",
+    "name": "Призрачная рука",
+    "revisions": {
+      "source:8692f66": {
+        "data": {
+          "description": "Вселяет в выжившего или досрочно завершает одержимость.",
+          "usage": "",
+          "abilityIds": [],
+          "mechanicIds": []
+        },
+        "evidence": [
+          {
+            "path": "src/main/java/org/example/maniacrevolution/character/maniac/GhostClass.java"
+          },
+          {
+            "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "item:ghost-armor",
+    "kind": "item",
+    "slug": "ghost-armor",
+    "name": "Белая кожаная броня",
+    "revisions": {
+      "source:8692f66": {
+        "data": {
+          "description": "Исчезает во время полной невидимости и одержимости.",
+          "usage": "",
+          "abilityIds": [],
+          "mechanicIds": []
+        },
+        "evidence": [
+          {
+            "path": "src/main/java/org/example/maniacrevolution/character/maniac/GhostClass.java"
+          },
+          {
+            "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "item:salt",
+    "kind": "item",
+    "slug": "salt",
+    "name": "Соль",
+    "revisions": {
+      "source:8692f66": {
+        "data": {
+          "description": "Устанавливаемая ловушка, останавливающая и ослепляющая наступившего.",
+          "usage": "",
+          "abilityIds": [],
+          "mechanicIds": []
+        },
+        "evidence": [
+          {
+            "path": "src/main/java/org/example/maniacrevolution/character/survivor/NecromancerClass.java"
+          },
+          {
+            "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "item:dead-staff",
+    "kind": "item",
+    "slug": "dead-staff",
+    "name": "Посох Мёртвых",
+    "revisions": {
+      "source:8692f66": {
+        "data": {
+          "description": "Возрождает погибшего союзника в ослабленном виде.",
+          "usage": "",
+          "abilityIds": [],
+          "mechanicIds": []
+        },
+        "evidence": [
+          {
+            "path": "src/main/java/org/example/maniacrevolution/character/survivor/NecromancerClass.java"
+          },
+          {
+            "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "item:bandages",
+    "kind": "item",
+    "slug": "bandages",
+    "name": "Бинты",
+    "revisions": {
+      "source:8692f66": {
+        "data": {
+          "description": "Расходуемые средства лечения.",
+          "usage": "",
+          "abilityIds": [],
+          "mechanicIds": []
+        },
+        "evidence": [
+          {
+            "path": "src/main/java/org/example/maniacrevolution/character/survivor/DoctorClass.java"
+          },
+          {
+            "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "item:medical-tablet",
+    "kind": "item",
+    "slug": "medical-tablet",
+    "name": "Медицинский планшет",
+    "revisions": {
+      "source:8692f66": {
+        "data": {
+          "description": "Показывает здоровье выживших и позволяет отслеживать тяжело раненого союзника.",
+          "usage": "",
+          "abilityIds": [],
+          "mechanicIds": []
+        },
+        "evidence": [
+          {
+            "path": "src/main/java/org/example/maniacrevolution/character/survivor/DoctorClass.java"
+          },
+          {
+            "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "item:microphone",
+    "kind": "item",
+    "slug": "microphone",
+    "name": "Микрофон",
+    "revisions": {
+      "source:8692f66": {
+        "data": {
+          "description": "Оружие ближнего боя, активирующее песню Фредди.",
+          "usage": "",
+          "abilityIds": [],
+          "mechanicIds": []
+        },
+        "evidence": [
+          {
+            "path": "src/main/java/org/example/maniacrevolution/character/maniac/FreddyBearClass.java"
+          },
+          {
+            "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "item:freddy-armor",
+    "kind": "item",
+    "slug": "freddy-armor",
+    "name": "Кожаная броня",
+    "revisions": {
+      "source:8692f66": {
+        "data": {
+          "description": "Базовая защита.",
+          "usage": "",
+          "abilityIds": [],
+          "mechanicIds": []
+        },
+        "evidence": [
+          {
+            "path": "src/main/java/org/example/maniacrevolution/character/maniac/FreddyBearClass.java"
+          },
+          {
+            "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "item:awakening-needle",
+    "kind": "item",
+    "slug": "awakening-needle",
+    "name": "Игла пробуждения",
+    "revisions": {
+      "source:8692f66": {
+        "data": {
+          "description": "Запускает проверку навыка для разрушения кошмарного кокона.",
+          "usage": "Используется выжившими для разрушения кошмарного кокона.",
+          "abilityIds": [],
+          "mechanicIds": []
+        },
+        "evidence": [
+          {
+            "path": "src/main/java/org/example/maniacrevolution/character/maniac/KeeperOfNightmaresClass.java"
+          },
+          {
+            "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+          }
+        ]
+      }
+    }
+  }
+]
