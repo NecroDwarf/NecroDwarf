@@ -1,0 +1,21 @@
+{
+  "id": "perk:bud-dispatcher",
+  "description": "В начале матча 9 логических компьютеров получают уникальные яркие цветы. Каждые 20% прогресса цветок переходит на следующую визуальную стадию увядания. Цветочный декор видят только владельцы перка. Открытие сводки бутонов стоит 3 маны; в ней нет номеров, координат, расстояний и точных процентов.",
+  "conditions": [],
+  "availability": {
+    "cooldown": "Не задана в базовом классе этого перка",
+    "mana": "3 маны"
+  },
+  "notes": [],
+  "evidence": [
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/perks/maniac/BudDispatcherPerk.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/Perk.java"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+    }
+  ]
+}

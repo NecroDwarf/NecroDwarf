@@ -1,0 +1,520 @@
+[
+  {
+    "id": "ability:death-teleport",
+    "slug": "death-teleport",
+    "name": "Телепортация к жертве",
+    "description": "ПКМ: телепортация к случайному выжившему.",
+    "abilityKind": "item-action",
+    "characterIds": ["character:death"],
+    "itemIds": ["item:death-scythe"],
+    "stats": [
+      {
+        "key": "mana",
+        "label": "Стоимость",
+        "value": 7.0,
+        "unit": "mana"
+      },
+      {
+        "key": "cooldown",
+        "label": "Перезарядка",
+        "value": 60.0,
+        "unit": "seconds"
+      },
+      {
+        "key": "windup",
+        "label": "Подготовка",
+        "value": 5.65,
+        "unit": "seconds"
+      }
+    ],
+    "evidence": [
+      {
+        "path": "src/main/java/org/example/maniacrevolution/item/DeathScytheItem.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/character/maniac/DeathClass.java"
+      },
+      {
+        "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+      }
+    ],
+    "icon": "death-teleport"
+  },
+  {
+    "id": "ability:beast-leap",
+    "slug": "beast-leap",
+    "name": "Прыжок зверя",
+    "description": "Прыгает вперёд; при приземлении наносит 2.5 урона в радиусе 1.8 блоков.",
+    "abilityKind": "item-action",
+    "characterIds": ["character:ursa"],
+    "itemIds": ["item:beast-claw"],
+    "stats": [
+      {
+        "key": "landing-damage",
+        "label": "Урон при приземлении",
+        "value": 2.5,
+        "unit": "damage"
+      },
+      {
+        "key": "landing-radius",
+        "label": "Радиус приземления",
+        "value": 1.8,
+        "unit": "blocks"
+      },
+      {
+        "key": "cooldown",
+        "label": "Перезарядка",
+        "value": 10,
+        "unit": "seconds"
+      },
+      {
+        "key": "mana",
+        "label": "Стоимость",
+        "value": 5.0,
+        "unit": "mana"
+      }
+    ],
+    "evidence": [
+      {
+        "path": "src/main/java/org/example/maniacrevolution/item/BeastClawItem.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/character/maniac/UrsaClass.java"
+      },
+      {
+        "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+      }
+    ],
+    "icon": "beast-leap"
+  },
+  {
+    "id": "ability:plague-orb",
+    "slug": "plague-orb",
+    "name": "Чумной сгусток",
+    "description": "Бросает сгусток, ускоряющий заражение чумой.",
+    "abilityKind": "item-action",
+    "characterIds": ["character:plague-doctor"],
+    "itemIds": ["item:plague-lantern"],
+    "stats": [
+      {
+        "key": "mana",
+        "label": "Стоимость",
+        "value": 5.0,
+        "unit": "mana"
+      },
+      {
+        "key": "cooldown",
+        "label": "Перезарядка",
+        "value": 20,
+        "unit": "seconds"
+      }
+    ],
+    "evidence": [
+      {
+        "path": "src/main/java/org/example/maniacrevolution/item/PlagueLanternItem.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/character/maniac/PlagueDoctorClass.java"
+      },
+      {
+        "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+      }
+    ],
+    "icon": "plague-orb"
+  },
+  {
+    "id": "ability:ghost-possession",
+    "slug": "ghost-possession",
+    "name": "Одержимость",
+    "description": "Вселяетесь в выжившего и управляете его движением.",
+    "abilityKind": "item-action",
+    "characterIds": ["character:ghost"],
+    "itemIds": ["item:ghost-hand"],
+    "stats": [
+      {
+        "key": "mana",
+        "label": "Стоимость",
+        "value": 10.0,
+        "unit": "mana"
+      },
+      {
+        "key": "cooldown",
+        "label": "Перезарядка",
+        "value": 60,
+        "unit": "seconds"
+      },
+      {
+        "key": "duration",
+        "label": "Длительность одержимости",
+        "value": 30,
+        "unit": "seconds"
+      }
+    ],
+    "evidence": [
+      {
+        "path": "src/main/java/org/example/maniacrevolution/item/GhostHandItem.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/character/maniac/GhostClass.java"
+      },
+      {
+        "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/ghost/GhostPossessionManager.java"
+      }
+    ],
+    "icon": "ghost-possession"
+  },
+  {
+    "id": "ability:phantom-veil",
+    "slug": "phantom-veil",
+    "name": "Фантомная завеса",
+    "description": "Включает или выключает полную невидимость; после выхода нельзя атаковать 2 сек.",
+    "abilityKind": "item-action",
+    "characterIds": ["character:ghost"],
+    "itemIds": ["item:toy-knife"],
+    "stats": [
+      {
+        "key": "mana",
+        "label": "Стоимость",
+        "value": 3.0,
+        "unit": "mana"
+      },
+      {
+        "key": "cooldown",
+        "label": "Перезарядка",
+        "value": 0,
+        "unit": "seconds"
+      },
+      {
+        "key": "recovery",
+        "label": "Запрет атаки после выхода",
+        "value": 2,
+        "unit": "seconds"
+      }
+    ],
+    "evidence": [
+      {
+        "path": "src/main/java/org/example/maniacrevolution/item/ToyKnifeItem.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/character/maniac/GhostClass.java"
+      },
+      {
+        "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/ghost/GhostStealthManager.java"
+      }
+    ],
+    "icon": "phantom-veil"
+  },
+  {
+    "id": "ability:musical-wave",
+    "slug": "musical-wave",
+    "name": "Музыкальная волна",
+    "description": "Оглушает выживших на 3 сек. в радиусе 5 блоков.",
+    "abilityKind": "item-action",
+    "characterIds": ["character:freddy-bear"],
+    "itemIds": ["item:microphone"],
+    "stats": [
+      {
+        "key": "mana",
+        "label": "Стоимость",
+        "value": 5.0,
+        "unit": "mana"
+      },
+      {
+        "key": "cooldown",
+        "label": "Перезарядка",
+        "value": 15,
+        "unit": "seconds"
+      }
+    ],
+    "evidence": [
+      {
+        "path": "src/main/java/org/example/maniacrevolution/item/MicrophoneItem.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/character/maniac/FreddyBearClass.java"
+      },
+      {
+        "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+      }
+    ],
+    "icon": "musical-wave"
+  },
+  {
+    "id": "ability:damage-transfer",
+    "slug": "damage-transfer",
+    "name": "Спасибо, доктор",
+    "description": "Перенаправляет 50% входящего урона ближайшему союзнику в радиусе 4 блоков.",
+    "abilityKind": "armor-action",
+    "characterIds": ["character:doctor"],
+    "itemIds": ["item:medical-mask"],
+    "stats": [
+      {
+        "key": "mana",
+        "label": "Стоимость",
+        "value": 30.0,
+        "unit": "mana"
+      },
+      {
+        "key": "cooldown",
+        "label": "Перезарядка",
+        "value": 60,
+        "unit": "seconds"
+      },
+      {
+        "key": "duration",
+        "label": "Время действия",
+        "value": 15,
+        "unit": "seconds"
+      },
+      {
+        "key": "range",
+        "label": "Радиус поиска союзника",
+        "value": 4.0,
+        "unit": "blocks"
+      },
+      {
+        "key": "share",
+        "label": "Доля разделяемого урона",
+        "value": 50.0,
+        "unit": "percent"
+      }
+    ],
+    "evidence": [
+      {
+        "path": "src/main/java/org/example/maniacrevolution/item/armor/MedicalMaskItem.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/character/survivor/DoctorClass.java"
+      },
+      {
+        "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/event/MedicActiveAbility.java"
+      }
+    ],
+    "icon": "damage-transfer"
+  },
+  {
+    "id": "ability:quantum-swap",
+    "slug": "quantum-swap",
+    "name": "Квантовая телепортация",
+    "description": "Ищет цель на расстоянии до 64 блоков и меняет вас с ней местами.",
+    "abilityKind": "item-action",
+    "characterIds": ["character:scientist"],
+    "itemIds": ["item:quantum-teleport"],
+    "stats": [
+      {
+        "key": "mana",
+        "label": "Стоимость",
+        "value": 10.0,
+        "unit": "mana"
+      },
+      {
+        "key": "cooldown",
+        "label": "Перезарядка",
+        "value": 30,
+        "unit": "seconds"
+      },
+      {
+        "key": "range",
+        "label": "Дальность сканирования",
+        "value": 64,
+        "unit": "blocks"
+      }
+    ],
+    "evidence": [
+      {
+        "path": "src/main/java/org/example/maniacrevolution/item/NetherSwapItem.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/character/survivor/ScientistClass.java"
+      },
+      {
+        "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+      }
+    ],
+    "icon": "quantum-swap"
+  },
+  {
+    "id": "ability:smoke-cloud",
+    "slug": "smoke-cloud",
+    "name": "Облако дыма",
+    "description": "Создаёт облако дыма на 5 сек.; игроки в радиусе 5 блоков получают Плавное падение.",
+    "abilityKind": "item-action",
+    "characterIds": ["character:mefedronshchik"],
+    "itemIds": ["item:bong"],
+    "stats": [
+      {
+        "key": "mana",
+        "label": "Стоимость",
+        "value": 5.0,
+        "unit": "mana"
+      },
+      {
+        "key": "cooldown",
+        "label": "Перезарядка",
+        "value": 15,
+        "unit": "seconds"
+      },
+      {
+        "key": "duration",
+        "label": "Жизнь облака",
+        "value": 5,
+        "unit": "seconds"
+      },
+      {
+        "key": "range",
+        "label": "Радиус облака",
+        "value": 5.0,
+        "unit": "blocks"
+      }
+    ],
+    "evidence": [
+      {
+        "path": "src/main/java/org/example/maniacrevolution/item/BongItem.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/character/survivor/MefedronshchikClass.java"
+      },
+      {
+        "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/entity/BongCloudEntity.java"
+      }
+    ],
+    "icon": "smoke-cloud"
+  },
+  {
+    "id": "ability:hook-throw",
+    "slug": "hook-throw",
+    "name": "И куда собрался?",
+    "description": "Бросает хук на расстояние до 24 блоков и притягивает задетое существо.",
+    "abilityKind": "item-action",
+    "characterIds": ["character:pudge"],
+    "itemIds": ["item:hook"],
+    "stats": [
+      {
+        "key": "mana",
+        "label": "Стоимость",
+        "value": 5.0,
+        "unit": "mana"
+      },
+      {
+        "key": "cooldown",
+        "label": "Перезарядка",
+        "value": 20,
+        "unit": "seconds"
+      },
+      {
+        "key": "range",
+        "label": "Дальность хука",
+        "value": 24.0,
+        "unit": "blocks"
+      }
+    ],
+    "evidence": [
+      {
+        "path": "src/main/java/org/example/maniacrevolution/item/HookItem.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/character/maniac/PudgeClass.java"
+      },
+      {
+        "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/entity/HookEntity.java"
+      }
+    ],
+    "icon": "hook-throw"
+  },
+  {
+    "id": "ability:concentrated-nightmare",
+    "slug": "concentrated-nightmare",
+    "name": "Концентрированный кошмар",
+    "description": "Отнимает 10% рассудка у цели.",
+    "abilityKind": "armor-action",
+    "characterIds": ["character:keeper-of-nightmares"],
+    "itemIds": ["item:guardian-head"],
+    "stats": [
+      {
+        "key": "mana",
+        "label": "Стоимость",
+        "value": 0.0,
+        "unit": "mana"
+      },
+      {
+        "key": "cooldown",
+        "label": "Перезарядка",
+        "value": 45,
+        "unit": "seconds"
+      },
+      {
+        "key": "range",
+        "label": "Поиск цели",
+        "value": 40.0,
+        "unit": "blocks"
+      },
+      {
+        "key": "sanity",
+        "label": "Доля рассудка",
+        "value": 10.0,
+        "unit": "percent"
+      }
+    ],
+    "evidence": [
+      {
+        "path": "src/main/java/org/example/maniacrevolution/item/GuardianHeadItem.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/character/maniac/KeeperOfNightmaresClass.java"
+      },
+      {
+        "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/nightmare/NightmareConfig.java"
+      }
+    ],
+    "icon": "concentrated-nightmare"
+  },
+  {
+    "id": "ability:abyss-gaze",
+    "slug": "abyss-gaze",
+    "name": "Взгляд бездны",
+    "description": "Долгий взгляд снижает рассудок выжившего. При срыве рассудка начинается кошмарное испытание.",
+    "abilityKind": "passive-character",
+    "characterIds": ["character:keeper-of-nightmares"],
+    "itemIds": [],
+    "stats": [
+      {
+        "key": "range",
+        "label": "Дальность взгляда",
+        "value": 40.0,
+        "unit": "blocks"
+      }
+    ],
+    "evidence": [
+      {
+        "path": "src/main/java/org/example/maniacrevolution/character/maniac/KeeperOfNightmaresClass.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/character/maniac/KeeperOfNightmaresClass.java"
+      },
+      {
+        "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/nightmare/NightmareConfig.java"
+      }
+    ]
+  }
+]

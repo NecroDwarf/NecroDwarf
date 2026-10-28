@@ -36,6 +36,7 @@ export function validateGameData(
         return ids;
       };
       const groups: readonly (readonly [string, readonly string[]])[] = [
+        ["character", relationIds("characterIds")],
         ["ability", relationIds("abilityIds")],
         ["item", relationIds("itemIds")],
         ["mechanic", relationIds("mechanicIds")],

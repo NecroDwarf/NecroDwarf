@@ -1,0 +1,21 @@
+{
+  "id": "perk:pink-orchid",
+  "description": "ПКМ личной орхидеей записывает ваш маршрут длительностью до 6 сек.; повторное нажатие завершает запись раньше. Активируйте перк за 10 маны, чтобы запустить копию по записанному пути. Перезарядка: 45 сек. Игрок и копия появляются через лепестки за 500 мс. Работает в фазах 1–2.",
+  "conditions": ["§dСначала запишите маршрут Розовой Орхидеей."],
+  "availability": {
+    "cooldown": "45 с",
+    "mana": "10 маны"
+  },
+  "notes": [],
+  "evidence": [
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/perks/survivor/PinkOrchidPerk.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/Perk.java"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+    }
+  ]
+}

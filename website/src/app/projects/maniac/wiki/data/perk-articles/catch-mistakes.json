@@ -1,0 +1,21 @@
+{
+  "id": "perk:catch-mistakes",
+  "description": "При промахе выжившего в QTE подсвечивает его на 5 сек. только для тебя. КД: 30 сек.",
+  "conditions": [],
+  "availability": {
+    "cooldown": "30 с",
+    "mana": "Не задана в базовом классе этого перка"
+  },
+  "notes": [],
+  "evidence": [
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/perks/maniac/CatchMistakesPerk.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/Perk.java"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+    }
+  ]
+}

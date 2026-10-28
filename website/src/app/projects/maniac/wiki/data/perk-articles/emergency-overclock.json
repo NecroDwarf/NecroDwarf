@@ -1,0 +1,21 @@
+{
+  "id": "perk:emergency-overclock",
+  "description": "Только во время взлома: на 8 сек. отключает обычный вклад. Успех QTE получает +20%, крит +50%, а провал отнимает 0.8 очка и накладывает Тишину на 5 сек.",
+  "conditions": [],
+  "availability": {
+    "cooldown": "75 с",
+    "mana": "15 маны"
+  },
+  "notes": [],
+  "evidence": [
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/perks/survivor/EmergencyOverclockPerk.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/Perk.java"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+    }
+  ]
+}

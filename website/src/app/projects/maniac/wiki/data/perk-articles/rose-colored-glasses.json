@@ -1,0 +1,21 @@
+{
+  "id": "perk:rose-colored-glasses",
+  "description": "В начале матча вы получаете привязанные Розовые очки с прочностью 15. Во второй руке они сразу уменьшают любой урон на 25%, округляя итог вниз, но оставляя минимум 1 урона. Работают только в фазах 1–2; пустота и /kill исключены. Прочность расходуется только при защите — по единице за каждую предотвращённую единицу урона, с округлением вниз и минимальной стоимостью 1.",
+  "conditions": [],
+  "availability": {
+    "cooldown": "Не задана в базовом классе этого перка",
+    "mana": "Не задана в базовом классе этого перка"
+  },
+  "notes": [],
+  "evidence": [
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/perks/survivor/RoseColoredGlassesPerk.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/Perk.java"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+    }
+  ]
+}

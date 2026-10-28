@@ -1,0 +1,26 @@
+{
+  "id": "ability:concentrated-nightmare",
+  "description": "Отнимает 10% рассудка у цели.",
+  "conditions": [
+    "Нужен Хранитель кошмаров и активация способности соответствующего предмета брони. Применяется проверка цели и готовности способности."
+  ],
+  "availability": {
+    "mana": "0 маны",
+    "cooldown": "45 с"
+  },
+  "notes": [],
+  "evidence": [
+    {
+      "path": "src/main/java/org/example/maniacrevolution/item/GuardianHeadItem.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/character/maniac/KeeperOfNightmaresClass.java"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/nightmare/NightmareConfig.java"
+    }
+  ]
+}

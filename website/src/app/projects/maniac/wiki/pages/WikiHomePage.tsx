@@ -83,13 +83,23 @@ export function WikiHomePage() {
           </div>
           <div className={s.futureCategories}>
             {["Перки", "Способности", "Предметы", "Механики", "Карты"].map(
-              (name, i) => (
-                <div key={name}>
-                  <span className={s.eyebrow}>0{i + 3}</span>
-                  <h3>{name}</h3>
-                  <span>Следующий раздел</span>
-                </div>
-              ),
+              (name, i) =>
+                i < 2 ? (
+                  <Link
+                    key={name}
+                    to={`/projects/maniac/wiki/${i === 0 ? "perks" : "abilities"}`}
+                  >
+                    <span className={s.eyebrow}>0{i + 3}</span>
+                    <h3>{name}</h3>
+                    <span>{i === 0 ? "44 перка" : "12 способностей"} ↗</span>
+                  </Link>
+                ) : (
+                  <div key={name}>
+                    <span className={s.eyebrow}>0{i + 3}</span>
+                    <h3>{name}</h3>
+                    <span>Следующий раздел</span>
+                  </div>
+                ),
             )}
           </div>
         </section>

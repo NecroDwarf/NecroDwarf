@@ -1,0 +1,21 @@
+{
+  "id": "perk:bouquet-to-the-other-side",
+  "description": "Первый удар по каждому уникальному выжившему добавляет назначенный ему цветок в Букет, максимум 3 цветка. Следующий нокдаун автоматически расходует Букет. Каждый цветок сокращает длительность этого нокдауна и увеличивает стоимость самостоятельного подъёма на 20%. Удары по лежащим выжившим тоже дают цветы. После расходования Букета выжившие снова могут давать цветы.",
+  "conditions": [],
+  "availability": {
+    "cooldown": "Не задана в базовом классе этого перка",
+    "mana": "Не задана в базовом классе этого перка"
+  },
+  "notes": [],
+  "evidence": [
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/perks/maniac/BouquetToTheOtherSidePerk.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/Perk.java"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+    }
+  ]
+}

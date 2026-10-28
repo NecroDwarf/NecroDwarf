@@ -1,0 +1,23 @@
+{
+  "id": "perk:guiding-light",
+  "description": "При активации показывает след к ближайшему активному выжившему в том же мире на 2 сек.",
+  "conditions": [],
+  "availability": {
+    "cooldown": "35 с",
+    "mana": "2 маны"
+  },
+  "notes": [
+    "Локализация говорит о случайной цели после взлома, но onActivate выбирает ближайшего активного выжившего. Статья следует обработчику активации."
+  ],
+  "evidence": [
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/perks/maniac/GuidingLightPerk.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/Perk.java"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+    }
+  ]
+}

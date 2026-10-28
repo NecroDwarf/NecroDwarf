@@ -1,0 +1,21 @@
+{
+  "id": "perk:idealych",
+  "description": "Успешное QTE даёт +1% вклада за заряд, максимум +5%. Промах даёт −1% за заряд, минимум −10%.",
+  "conditions": [],
+  "availability": {
+    "cooldown": "Не задана в базовом классе этого перка",
+    "mana": "Не задана в базовом классе этого перка"
+  },
+  "notes": [],
+  "evidence": [
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/perks/survivor/IdealychPerk.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/Perk.java"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+    }
+  ]
+}

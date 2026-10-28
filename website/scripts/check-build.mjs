@@ -47,7 +47,8 @@ try {
     );
   for (const path of [
     "/does-not-exist",
-    "/projects/maniac/wiki/perks",
+    "/projects/maniac/wiki/perks/not-registered",
+    "/projects/maniac/wiki/abilities/not-registered",
     "/projects/maniac/wiki/items",
     "/projects/maniac/wiki/maps",
     "/projects/maniac/wiki/characters/unknown",

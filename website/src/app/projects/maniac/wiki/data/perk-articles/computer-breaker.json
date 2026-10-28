@@ -1,0 +1,21 @@
+{
+  "id": "perk:computer-breaker",
+  "description": "Отнимает 50% прогресса у самого заряженного компьютера. КД: 180 сек. Стоимость: 10 маны.",
+  "conditions": [],
+  "availability": {
+    "cooldown": "180 с",
+    "mana": "10 маны"
+  },
+  "notes": [],
+  "evidence": [
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/perks/maniac/ComputerBreakerPerk.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/Perk.java"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+    }
+  ]
+}

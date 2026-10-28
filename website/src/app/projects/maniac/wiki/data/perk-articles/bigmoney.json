@@ -1,0 +1,21 @@
+{
+  "id": "perk:bigmoney",
+  "description": "Получайте на 50% больше монет в конце игры.",
+  "conditions": [],
+  "availability": {
+    "cooldown": "Не задана в базовом классе этого перка",
+    "mana": "Не задана в базовом классе этого перка"
+  },
+  "notes": [],
+  "evidence": [
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/perks/common/BigmoneyPerk.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/Perk.java"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+    }
+  ]
+}

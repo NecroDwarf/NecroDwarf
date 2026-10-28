@@ -1,0 +1,23 @@
+{
+  "id": "ability:beast-leap",
+  "description": "Прыгает вперёд; при приземлении наносит 2.5 урона в радиусе 1.8 блоков.",
+  "conditions": [
+    "ПКМ когтем зверя. Урон при приземлении относится к прыжку, а не к базовому удару когтя."
+  ],
+  "availability": {
+    "mana": "5 маны",
+    "cooldown": "10 с"
+  },
+  "notes": [],
+  "evidence": [
+    {
+      "path": "src/main/java/org/example/maniacrevolution/item/BeastClawItem.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/character/maniac/UrsaClass.java"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+    }
+  ]
+}

@@ -91,14 +91,19 @@ brand-source/                 оригиналы предоставленных 
 - `/projects/maniac/changelog` и `/projects/maniac/changelog/1.0`, `/1.1`, `/1.2`
 - `/projects/maniac/wiki` и `/projects/maniac/wiki/characters`
 - `/projects/maniac/wiki/characters/:slug` — 15 статей подтверждённых персонажей
+- `/projects/maniac/wiki/perks` и `/projects/maniac/wiki/perks/:slug` — каталог и 44 статьи
+- `/projects/maniac/wiki/abilities` и `/projects/maniac/wiki/abilities/:slug` — каталог и 12 статей
 
-Всего 28 опубликованных маршрутов. Остальные адреса возвращают 404. Разделы перков,
-предметов, способностей, механик и карт пока не опубликованы; DEV Preview остаётся
+Всего 86 опубликованных маршрутов. Остальные адреса возвращают 404. Разделы
+предметов, механик и карт пока не опубликованы; DEV Preview остаётся
 отдельным. Списки хроник ведут на готовые внутренние страницы.
 
 Этап 3A: [публичная Wiki, источники, ограничения и проверка](docs/MANIAC_3A_VERIFICATION.md).
 Для браузерного аудита — `npm run check:wiki:browser` с локальным Playwright/Edge;
 подробности и путь скриншотов — в отчёте.
+
+Этап 3B: [перки, способности, расхождения исходников и проверки](docs/MANIAC_3B_VERIFICATION.md).
+Повторный браузерный аудит — `npm run check:reference:browser` с локальным Playwright/Edge.
 
 ## Контент
 
@@ -120,14 +125,14 @@ MDX и схемы Wiki будут подключены вместе с реал�
 
 Будущая Git integration (настройки аккаунта сейчас не изменялись):
 
-| Поле | Значение |
-| --- | --- |
-| Root directory | `website` |
-| Build command | `npm run build` |
-| Build output directory | `build/client` |
-| Node | 22.12+ (рекомендуется 22 LTS) |
-| Production branch | `main` — включать только после разрешения на публикацию |
-| Environment | `SITE_URL` — настоящий origin собственного домена без пути |
+| Поле                   | Значение                                                   |
+| ---------------------- | ---------------------------------------------------------- |
+| Root directory         | `website`                                                  |
+| Build command          | `npm run build`                                            |
+| Build output directory | `build/client`                                             |
+| Node                   | 22.12+ (рекомендуется 22 LTS)                              |
+| Production branch      | `main` — включать только после разрешения на публикацию    |
+| Environment            | `SITE_URL` — настоящий origin собственного домена без пути |
 
 Без `SITE_URL` сборка предназначена для локального/предварительного просмотра: `noindex`, запрет индексации в `robots.txt`, без фиктивного canonical и sitemap. При установленном настоящем `SITE_URL` создаются абсолютные canonical, Open Graph URL/изображение и `sitemap.xml` только из 11 опубликованных маршрутов. Build передаёт тот же origin клиенту. Для preview-веток не задавайте production `SITE_URL`. Домен пока не предоставлен.
 
@@ -166,10 +171,6 @@ npm run preview:maniac
 Полные тексты, темы и CSS-анимации — [отчёт 2B](docs/MANIAC_2B_VERIFICATION.md),
 [соответствие разделов](docs/MANIAC_CHRONICLES_SECTIONS.md).
 
-Следующие этапы — только по отдельной команде:
-3. Полная открытая Wiki, типизированный баланс, MDX и статический поиск.
-4. Детали FriendSheep и NovellMaker после получения материалов.
-5. Домен, preview на Cloudflare, production-публикация и отдельный план перехода со старых URL.
+Следующие этапы — только по отдельной команде: 3. Полная открытая Wiki, типизированный баланс, MDX и статический поиск. 4. Детали FriendSheep и NovellMaker после получения материалов. 5. Домен, preview на Cloudflare, production-публикация и отдельный план перехода со старых URL.
 
 Результаты текущих проверок — `STAGE_1_VERIFICATION.md`. Исторический `VERIFICATION.md` относится к прототипам.
-

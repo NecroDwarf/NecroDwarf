@@ -1,0 +1,23 @@
+{
+  "id": "perk:gto-medal",
+  "description": "Рывок вперёд по горизонтальному направлению взгляда с подъёмом. После рывка даёт Скорость III на 0.5 секунды.",
+  "conditions": [],
+  "availability": {
+    "cooldown": "45 с",
+    "mana": "5 маны"
+  },
+  "notes": [
+    "Комментарий класса называет 80 с, но Builder задаёт 45 с. Дальность рывка не объявлена постоянной: код задаёт импульс, итог зависит от движения."
+  ],
+  "evidence": [
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/perks/common/GtoMedalPerk.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/Perk.java"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+    }
+  ]
+}

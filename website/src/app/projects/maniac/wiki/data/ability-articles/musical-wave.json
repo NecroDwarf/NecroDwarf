@@ -1,0 +1,21 @@
+{
+  "id": "ability:musical-wave",
+  "description": "Оглушает выживших на 3 сек. в радиусе 5 блоков.",
+  "conditions": ["ПКМ микрофоном. Волна оглушает выживших в радиусе действия."],
+  "availability": {
+    "mana": "5 маны",
+    "cooldown": "15 с"
+  },
+  "notes": [],
+  "evidence": [
+    {
+      "path": "src/main/java/org/example/maniacrevolution/item/MicrophoneItem.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/character/maniac/FreddyBearClass.java"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+    }
+  ]
+}

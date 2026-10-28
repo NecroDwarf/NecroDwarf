@@ -1,0 +1,21 @@
+{
+  "id": "perk:silence",
+  "description": "Накладывает Тишину на всех выживших в радиусе 10 блоков на 10 сек.",
+  "conditions": [],
+  "availability": {
+    "cooldown": "100 с",
+    "mana": "10 маны"
+  },
+  "notes": [],
+  "evidence": [
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/perks/maniac/SilencePerk.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/Perk.java"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+    }
+  ]
+}

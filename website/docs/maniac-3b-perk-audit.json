@@ -1,0 +1,1725 @@
+{
+  "commit": "8692f66dc76582144be85d553d43a41f189b64e7",
+  "perks": [
+    {
+      "class": "BigmoneyPerk",
+      "classPath": "src/main/java/org/example/maniacrevolution/perk/perks/common/BigmoneyPerk.java",
+      "gameId": "bigmoney",
+      "id": "perk:bigmoney",
+      "team": "ALL",
+      "type": "PASSIVE",
+      "phases": [
+        "ANY"
+      ],
+      "descriptionTemplate": "Получайте на %s%% больше монет в конце игры.",
+      "descriptionExpressions": [
+        "Math.round((BONUS_MULTIPLIER - 1.0f) * 100.0f)"
+      ],
+      "resolvedArguments": [
+        50
+      ],
+      "availability": {
+        "cooldown": "Не задана в базовом классе этого перка",
+        "mana": "Не задана в базовом классе этого перка"
+      },
+      "notes": []
+    },
+    {
+      "class": "MegamindPerk",
+      "classPath": "src/main/java/org/example/maniacrevolution/perk/perks/common/MegamindPerk.java",
+      "gameId": "megamind",
+      "id": "perk:megamind",
+      "team": "ALL",
+      "type": "PASSIVE",
+      "phases": [
+        "ANY"
+      ],
+      "descriptionTemplate": "Получайте на %s%% больше опыта в конце игры.",
+      "descriptionExpressions": [
+        "Math.round((BONUS_MULTIPLIER - 1.0f) * 100.0f)"
+      ],
+      "resolvedArguments": [
+        50
+      ],
+      "availability": {
+        "cooldown": "Не задана в базовом классе этого перка",
+        "mana": "Не задана в базовом классе этого перка"
+      },
+      "notes": []
+    },
+    {
+      "class": "GtoMedalPerk",
+      "classPath": "src/main/java/org/example/maniacrevolution/perk/perks/common/GtoMedalPerk.java",
+      "gameId": "gto_medal",
+      "id": "perk:gto-medal",
+      "team": "ALL",
+      "type": "ACTIVE",
+      "phases": [
+        "ANY"
+      ],
+      "descriptionTemplate": "Мощный рывок вперёд",
+      "descriptionExpressions": [],
+      "resolvedArguments": [],
+      "availability": {
+        "cooldown": "45 с",
+        "mana": "5 маны"
+      },
+      "notes": [
+        "Комментарий класса называет 80 с, но Builder задаёт 45 с. Дальность рывка не объявлена постоянной: код задаёт импульс, итог зависит от движения."
+      ]
+    },
+    {
+      "class": "FearWavePerk",
+      "classPath": "src/main/java/org/example/maniacrevolution/perk/perks/common/FearWavePerk.java",
+      "gameId": "fear_wave",
+      "id": "perk:fear-wave",
+      "team": "ALL",
+      "type": "ACTIVE",
+      "phases": [
+        "MIDGAME",
+        "REVERSAL"
+      ],
+      "descriptionTemplate": "Выпускает волну радиусом %s блоков, накладывающую Страх на всех, включая союзников, на %s сек.",
+      "descriptionExpressions": [
+        "(int) RADIUS",
+        "FEAR_DURATION / 20"
+      ],
+      "resolvedArguments": [
+        10,
+        5
+      ],
+      "availability": {
+        "cooldown": "70 с",
+        "mana": "10 маны"
+      },
+      "notes": []
+    },
+    {
+      "class": "StrPerk",
+      "classPath": "src/main/java/org/example/maniacrevolution/perk/perks/common/StrPerk.java",
+      "gameId": "str_perk",
+      "id": "perk:str-perk",
+      "team": "ALL",
+      "type": "PASSIVE",
+      "phases": [
+        "REVERSAL"
+      ],
+      "descriptionTemplate": "Внемли силе земли!",
+      "descriptionExpressions": [],
+      "resolvedArguments": [],
+      "availability": {
+        "cooldown": "Не задана в базовом классе этого перка",
+        "mana": "Не задана в базовом классе этого перка"
+      },
+      "notes": []
+    },
+    {
+      "class": "ManaBreakPerk",
+      "classPath": "src/main/java/org/example/maniacrevolution/perk/perks/common/ManaBreakPerk.java",
+      "gameId": "mana_break",
+      "id": "perk:mana-break",
+      "team": "ALL",
+      "type": "PASSIVE_COOLDOWN",
+      "phases": [
+        "ANY"
+      ],
+      "descriptionTemplate": "Удар по противнику снимает %d ед. маны. КД: %d сек.",
+      "descriptionExpressions": [
+        "(int) MANA_DRAIN",
+        "COOLDOWN_SEC"
+      ],
+      "resolvedArguments": [
+        10,
+        90
+      ],
+      "availability": {
+        "cooldown": "90 с",
+        "mana": "Не задана в базовом классе этого перка"
+      },
+      "notes": []
+    },
+    {
+      "class": "HedgehogSkinPerk",
+      "classPath": "src/main/java/org/example/maniacrevolution/perk/perks/common/HedgehogSkinPerk.java",
+      "gameId": "hedgehog_skin",
+      "id": "perk:hedgehog-skin",
+      "team": "ALL",
+      "type": "ACTIVE",
+      "phases": [
+        "ANY"
+      ],
+      "descriptionTemplate": "На %s сек. возвращает атакующему %s%% полученного урона.",
+      "descriptionExpressions": [
+        "DURATION_SECONDS",
+        "(int) (ThornEffect.REFLECT_PERCENT * 100)"
+      ],
+      "resolvedArguments": [
+        5,
+        50
+      ],
+      "availability": {
+        "cooldown": "100 с",
+        "mana": "10 маны"
+      },
+      "notes": []
+    },
+    {
+      "class": "FootballFanPerk",
+      "classPath": "src/main/java/org/example/maniacrevolution/perk/perks/common/FootballFanPerk.java",
+      "gameId": "football_fan",
+      "id": "perk:football-fan",
+      "team": "ALL",
+      "type": "ACTIVE",
+      "phases": [
+        "ANY"
+      ],
+      "descriptionTemplate": "Бросает пиво, обездвиживая выжившего на %s сек. или маньяка на %s сек.",
+      "descriptionExpressions": [
+        "DURATION_SURVIVOR",
+        "DURATION_MANIAC"
+      ],
+      "resolvedArguments": [
+        60,
+        30
+      ],
+      "availability": {
+        "cooldown": "Один раз за матч",
+        "mana": "Не задана в базовом классе этого перка"
+      },
+      "notes": []
+    },
+    {
+      "class": "ColorRoulettePerk",
+      "classPath": "src/main/java/org/example/maniacrevolution/perk/perks/common/ColorRoulettePerk.java",
+      "gameId": "color_roulette",
+      "id": "perk:color-roulette",
+      "team": "ALL",
+      "type": "ACTIVE",
+      "phases": [
+        "HUNT",
+        "MIDGAME",
+        "REVERSAL"
+      ],
+      "descriptionTemplate": "Запустите рулетку за %s маны: карты появляются за %s сек. и могут крутиться до %s сек. Повторно нажмите клавишу перка для остановки. Перезарядка: %s сек.; полученная карта живёт %s сек. Красная накладывает Отбрасывание %s или показывает %s компьютера, Синяя меняет прогресс незавершённого компьютера на %s%%, а Зелёная лечит выжившего на %s HP или даёт маньяку накапливаемый заряд. Красная наводка длится %s сек.; каждый Зелёный заряд добавляет %s урона следующему прямому удару. Работает в фазах %s–%s.",
+      "descriptionExpressions": [
+        "MANA_COST",
+        "INTRO_TICKS / 20.0F",
+        "SPIN_TICKS / 20",
+        "COOLDOWN_SECONDS",
+        "CARD_LIFETIME_SECONDS",
+        "RED_CARD_KNOCKBACK_LEVEL",
+        "TOP_COMPUTERS_REVEALED",
+        "COMPUTER_PERCENT",
+        "SURVIVOR_HEAL_HP",
+        "RED_GUIDANCE_SECONDS",
+        "GREEN_DAMAGE_PER_STACK",
+        "PerkPhase.HUNT.getScoreboardValue()",
+        "PerkPhase.REVERSAL.getScoreboardValue()"
+      ],
+      "resolvedArguments": [
+        10,
+        1.5,
+        6,
+        45,
+        45,
+        2,
+        3,
+        5,
+        4,
+        15,
+        1.5,
+        1,
+        3
+      ],
+      "availability": {
+        "cooldown": "45 с",
+        "mana": "10 маны"
+      },
+      "notes": []
+    },
+    {
+      "class": "ThePaintThickensPerk",
+      "classPath": "src/main/java/org/example/maniacrevolution/perk/perks/maniac/ThePaintThickensPerk.java",
+      "gameId": "the_paint_thickens",
+      "id": "perk:the-paint-thickens",
+      "team": "ALL",
+      "type": "PASSIVE",
+      "phases": [
+        "ANY"
+      ],
+      "descriptionTemplate": "В начале матча вы получаете привязанную Банку краски на %s использования. Каждое использование оставляет вечную лужу с радиусом срабатывания %s блока. Наступивший выживший или маньяк должен сделать %s нажатия за %s сек.; зоны занимают %s%% для промаха, %s%% для почти точного попадания и %s%% для точного. Сумма 0–%s оглушает на %s сек.; %s–%s замедляет на %s%% на %s сек.; %s–%s не даёт штрафа. Экран покрывается краской на %s сек., а любой итог даёт Защиту от краски на %s сек.",
+      "descriptionExpressions": [
+        "PAINT_CAN_USES",
+        "PUDDLE_TRIGGER_RADIUS_BLOCKS",
+        "QTE_ATTEMPTS",
+        "QTE_TOTAL_DURATION_MILLISECONDS / 1000.0D",
+        "MISS_ZONE_PERCENT",
+        "NEAR_ZONE_PERCENT",
+        "HIT_ZONE_PERCENT",
+        "MISS_MAX_SCORE",
+        "STUN_DURATION_SECONDS",
+        "NEAR_MIN_SCORE",
+        "NEAR_MAX_SCORE",
+        "SLOWDOWN_PERCENT",
+        "SLOWDOWN_DURATION_SECONDS",
+        "HIT_MIN_SCORE",
+        "MAX_QTE_SCORE",
+        "SCREEN_PAINT_DURATION_SECONDS",
+        "PROTECTION_DURATION_SECONDS"
+      ],
+      "resolvedArguments": [
+        3,
+        0.5,
+        3,
+        2.0,
+        30,
+        50,
+        20,
+        2,
+        2,
+        3,
+        4,
+        10,
+        1,
+        5,
+        6,
+        5,
+        30
+      ],
+      "availability": {
+        "cooldown": "Не задана в базовом классе этого перка",
+        "mana": "Не задана в базовом классе этого перка"
+      },
+      "notes": []
+    },
+    {
+      "class": "MimicPerk",
+      "classPath": "src/main/java/org/example/maniacrevolution/perk/perks/survivor/MimicPerk.java",
+      "gameId": "mimic",
+      "id": "perk:mimic",
+      "team": "SURVIVOR",
+      "type": "ACTIVE",
+      "phases": [
+        "ANY"
+      ],
+      "descriptionTemplate": "Маскирует под самый распространённый блок в радиусе %s блоков на %s сек.",
+      "descriptionExpressions": [
+        "DURATION_SECONDS",
+        "SCAN_RADIUS"
+      ],
+      "resolvedArguments": [
+        2,
+        5
+      ],
+      "availability": {
+        "cooldown": "90 с",
+        "mana": "15 маны"
+      },
+      "notes": [
+        "В getDescription перепутаны аргументы радиуса и длительности. В Wiki порядок исправлен по findMostCommonBlock и длительности эффектов: радиус 2 блока, действие 5 секунд."
+      ]
+    },
+    {
+      "class": "WallhackPerk",
+      "classPath": "src/main/java/org/example/maniacrevolution/perk/perks/survivor/WallhackPerk.java",
+      "gameId": "wallhack",
+      "id": "perk:wallhack",
+      "team": "SURVIVOR",
+      "type": "PASSIVE_COOLDOWN",
+      "phases": [
+        "ANY"
+      ],
+      "descriptionTemplate": "Подсвечивает маньяков через стены на %s сек. Дистанция: %s блоков.",
+      "descriptionExpressions": [
+        "HIGHLIGHT_DURATION / 20",
+        "(int) MAX_DISTANCE"
+      ],
+      "resolvedArguments": [
+        6,
+        15
+      ],
+      "availability": {
+        "cooldown": "45 с",
+        "mana": "Не задана в базовом классе этого перка"
+      },
+      "notes": []
+    },
+    {
+      "class": "LastBreathPerk",
+      "classPath": "src/main/java/org/example/maniacrevolution/perk/perks/survivor/LastBreathPerk.java",
+      "gameId": "last_breath",
+      "id": "perk:last-breath",
+      "team": "SURVIVOR",
+      "type": "PASSIVE",
+      "phases": [
+        "ANY"
+      ],
+      "descriptionTemplate": "При смерти подсвечивает вашего убийцу для всей команды на %s сек.",
+      "descriptionExpressions": [
+        "GLOW_DURATION / 20"
+      ],
+      "resolvedArguments": [
+        10
+      ],
+      "availability": {
+        "cooldown": "Не задана в базовом классе этого перка",
+        "mana": "Не задана в базовом классе этого перка"
+      },
+      "notes": []
+    },
+    {
+      "class": "QuickReflexesPerk",
+      "classPath": "src/main/java/org/example/maniacrevolution/perk/perks/survivor/QuickReflexesPerk.java",
+      "gameId": "quick_reflexes",
+      "id": "perk:quick-reflexes",
+      "team": "SURVIVOR",
+      "type": "PASSIVE",
+      "phases": [
+        "ANY"
+      ],
+      "descriptionTemplate": "QTE компьютера: +%s сек., +%s%% к размеру зелёной зоны, +%s%% к допуску успеха и +%s%% к размеру критической зоны.",
+      "descriptionExpressions": [
+        "BONUS_TIME_MS",
+        "Math.round((GREEN_ZONE_MULTIPLIER - 1.0f) * 100.0f)",
+        "Math.round((SUCCESS_TOLERANCE_MULTIPLIER - 1.0f) * 100.0f)",
+        "Math.round((CRIT_ZONE_MULTIPLIER - 1.0f) * 100.0f)"
+      ],
+      "resolvedArguments": [
+        0.45,
+        6,
+        5,
+        10
+      ],
+      "availability": {
+        "cooldown": "Не задана в базовом классе этого перка",
+        "mana": "Не задана в базовом классе этого перка"
+      },
+      "notes": [
+        "Локализация подписывает время в секундах, но getDescription передаёт миллисекунды. Wiki переводит BONUS_TIME_MS в секунды."
+      ]
+    },
+    {
+      "class": "BlindnessPerk",
+      "classPath": "src/main/java/org/example/maniacrevolution/perk/perks/survivor/BlindnessPerk.java",
+      "gameId": "blindness",
+      "id": "perk:blindness",
+      "team": "SURVIVOR",
+      "type": "HYBRID",
+      "phases": [
+        "HUNT",
+        "MIDGAME"
+      ],
+      "descriptionTemplate": "Пассивно: Слепота маньякам в радиусе %s блоков на %s сек. Активно: Слепота всем маньякам на %s сек.",
+      "descriptionExpressions": [
+        "PASSIVE_RADIUS",
+        "PASSIVE_DURATION_TICKS / 20",
+        "ACTIVE_DURATION_TICKS / 20"
+      ],
+      "resolvedArguments": [
+        1.5,
+        3,
+        10
+      ],
+      "availability": {
+        "cooldown": "120 с",
+        "mana": "10 маны"
+      },
+      "notes": []
+    },
+    {
+      "class": "MentalBondPerk",
+      "classPath": "src/main/java/org/example/maniacrevolution/perk/perks/survivor/MentalBondPerk.java",
+      "gameId": "mental_bond",
+      "id": "perk:mental-bond",
+      "team": "SURVIVOR",
+      "type": "PASSIVE",
+      "phases": [
+        "ANY"
+      ],
+      "descriptionTemplate": "Пока вы лежите, союзники в радиусе %s блоков видят вашу подсветку.",
+      "descriptionExpressions": [
+        "(int) RADIUS"
+      ],
+      "resolvedArguments": [
+        30
+      ],
+      "availability": {
+        "cooldown": "Не задана в базовом классе этого перка",
+        "mana": "Не задана в базовом классе этого перка"
+      },
+      "notes": []
+    },
+    {
+      "class": "DutchHelmPerk",
+      "classPath": "src/main/java/org/example/maniacrevolution/perk/perks/survivor/DutchHelmPerk.java",
+      "gameId": "dutch_helm",
+      "id": "perk:dutch-helm",
+      "team": "SURVIVOR",
+      "type": "PASSIVE",
+      "phases": [
+        "ANY"
+      ],
+      "descriptionTemplate": "Даёт %s%% скорости за каждого живого союзника с этим перком.",
+      "descriptionExpressions": [
+        "(int) (BONUS_PER_PLAYER * 100)"
+      ],
+      "resolvedArguments": [
+        4
+      ],
+      "availability": {
+        "cooldown": "Не задана в базовом классе этого перка",
+        "mana": "Не задана в базовом классе этого перка"
+      },
+      "notes": []
+    },
+    {
+      "class": "IndependencePerk",
+      "classPath": "src/main/java/org/example/maniacrevolution/perk/perks/survivor/IndependencePerk.java",
+      "gameId": "independence",
+      "id": "perk:independence",
+      "team": "SURVIVOR",
+      "type": "ACTIVE",
+      "phases": [
+        "ANY"
+      ],
+      "descriptionTemplate": "Если рядом нет союзников и вы лежите %s сек., один раз за игру поднимает вас с %s HP.",
+      "descriptionExpressions": [
+        "TRIGGER_SECONDS",
+        "(int) REVIVE_HP"
+      ],
+      "resolvedArguments": [
+        10,
+        5
+      ],
+      "availability": {
+        "cooldown": "Один раз за матч",
+        "mana": "10 маны"
+      },
+      "notes": []
+    },
+    {
+      "class": "AltruistExePerk",
+      "classPath": "src/main/java/org/example/maniacrevolution/perk/perks/survivor/AltruistExePerk.java",
+      "gameId": "altruist_exe",
+      "id": "perk:altruist-exe",
+      "team": "SURVIVOR",
+      "type": "PASSIVE_COOLDOWN",
+      "phases": [
+        "ANY"
+      ],
+      "descriptionTemplate": "После поднятия союзника оба получают усиление на %s сек., увеличивающее вклад во взлом на %s%%.",
+      "descriptionExpressions": [
+        "DURATION_SEC",
+        "(int) (HACK_BONUS * 100)"
+      ],
+      "resolvedArguments": [
+        45,
+        5
+      ],
+      "availability": {
+        "cooldown": "90 с",
+        "mana": "5 маны"
+      },
+      "notes": []
+    },
+    {
+      "class": "MagicLoverPerk",
+      "classPath": "src/main/java/org/example/maniacrevolution/perk/perks/survivor/MagicLoverPerk.java",
+      "gameId": "magic_lover",
+      "id": "perk:magic-lover",
+      "team": "SURVIVOR",
+      "type": "PASSIVE_COOLDOWN",
+      "phases": [
+        "ANY"
+      ],
+      "descriptionTemplate": "Получаете %s маны, когда союзник тратит ману.",
+      "descriptionExpressions": [
+        "(int) MANA_REWARD"
+      ],
+      "resolvedArguments": [
+        10
+      ],
+      "availability": {
+        "cooldown": "90 с",
+        "mana": "Не задана в базовом классе этого перка"
+      },
+      "notes": []
+    },
+    {
+      "class": "IdealychPerk",
+      "classPath": "src/main/java/org/example/maniacrevolution/perk/perks/survivor/IdealychPerk.java",
+      "gameId": "idealych",
+      "id": "perk:idealych",
+      "team": "SURVIVOR",
+      "type": "PASSIVE",
+      "phases": [
+        "ANY"
+      ],
+      "descriptionTemplate": "Успешное QTE даёт +%s%% вклада за заряд, максимум +%s%%. Промах даёт −%s%% за заряд, минимум −%s%%.",
+      "descriptionExpressions": [
+        "percentPerStack",
+        "percentPerStack * MAX_BONUS_STACKS",
+        "percentPerStack",
+        "percentPerStack * MAX_DEBUFF_STACKS"
+      ],
+      "resolvedArguments": [
+        1,
+        5,
+        1,
+        10
+      ],
+      "availability": {
+        "cooldown": "Не задана в базовом классе этого перка",
+        "mana": "Не задана в базовом классе этого перка"
+      },
+      "notes": []
+    },
+    {
+      "class": "RealityAnchorPerk",
+      "classPath": "src/main/java/org/example/maniacrevolution/perk/perks/survivor/RealityAnchorPerk.java",
+      "gameId": "reality_anchor",
+      "id": "perk:reality-anchor",
+      "team": "SURVIVOR",
+      "type": "CHARGED",
+      "phases": [
+        "ANY"
+      ],
+      "descriptionTemplate": "Критическое QTE создаёт заряд стабильности на %s сек. За игру можно получить до %s зарядов. Заряд автоматически сокращает одержимость Призрака на %s сек., один раз за игру откладывает кошмар при нулевом рассудке на %s сек. либо сокращает Страх, Тишину или Оглушение на %s%%.",
+      "descriptionExpressions": [
+        "CHARGE_DURATION_SECONDS",
+        "MAX_CHARGES_PER_GAME",
+        "POSSESSION_REDUCTION_TICKS / 20",
+        "NIGHTMARE_DELAY_TICKS / 20",
+        "Math.round((1.0F - CONTROL_DURATION_MULTIPLIER) * 100.0F)"
+      ],
+      "resolvedArguments": [
+        60,
+        2,
+        6,
+        20,
+        40
+      ],
+      "availability": {
+        "cooldown": "Не задана в базовом классе этого перка",
+        "mana": "Не задана в базовом классе этого перка"
+      },
+      "notes": []
+    },
+    {
+      "class": "EmergencyOverclockPerk",
+      "classPath": "src/main/java/org/example/maniacrevolution/perk/perks/survivor/EmergencyOverclockPerk.java",
+      "gameId": "emergency_overclock",
+      "id": "perk:emergency-overclock",
+      "team": "SURVIVOR",
+      "type": "ACTIVE",
+      "phases": [
+        "ANY"
+      ],
+      "descriptionTemplate": "Только во время взлома: на %s сек. отключает обычный вклад. Успех QTE получает +%s%%, крит +%s%%, а провал отнимает %s очка и накладывает Тишину на %s сек.",
+      "descriptionExpressions": [
+        "DURATION_SECONDS",
+        "Math.round(SUCCESS_BONUS_FRACTION * 100.0F)",
+        "Math.round(CRITICAL_BONUS_FRACTION * 100.0F)",
+        "FAILURE_PENALTY_POINTS",
+        "SILENCE_DURATION_SECONDS"
+      ],
+      "resolvedArguments": [
+        8,
+        20,
+        50,
+        0.8,
+        5
+      ],
+      "availability": {
+        "cooldown": "75 с",
+        "mana": "15 маны"
+      },
+      "notes": []
+    },
+    {
+      "class": "FixedItImOutPerk",
+      "classPath": "src/main/java/org/example/maniacrevolution/perk/perks/survivor/FixedItImOutPerk.java",
+      "gameId": "fixed_it_im_out",
+      "id": "perk:fixed-it-im-out",
+      "team": "SURVIVOR",
+      "type": "PASSIVE",
+      "phases": [
+        "REVERSAL"
+      ],
+      "descriptionTemplate": "При включении фазы 3 восстанавливает %s HP и увеличивает скорость передвижения на %s%% до конца матча. Не срабатывает, если в этот момент вы находитесь в нокдауне. Эффекты ускорения не складываются: действует наибольший уровень.",
+      "descriptionExpressions": [
+        "Math.round(HEAL_AMOUNT_HP)",
+        "SPEED_BONUS_PERCENT"
+      ],
+      "resolvedArguments": [
+        10,
+        20
+      ],
+      "availability": {
+        "cooldown": "Не задана в базовом классе этого перка",
+        "mana": "Не задана в базовом классе этого перка"
+      },
+      "notes": []
+    },
+    {
+      "class": "MagicKickPerk",
+      "classPath": "src/main/java/org/example/maniacrevolution/perk/perks/survivor/MagicKickPerk.java",
+      "gameId": "magic_kick",
+      "id": "perk:magic-kick",
+      "team": "SURVIVOR",
+      "type": "PASSIVE",
+      "phases": [
+        "HUNT",
+        "MIDGAME"
+      ],
+      "descriptionTemplate": "После первого фактически полученного урона от маньяка даёт +%s%% к скорости передвижения на %s сек. Работает один раз за матч, только в фазах 1–2.",
+      "descriptionExpressions": [
+        "SPEED_BONUS_PERCENT",
+        "EFFECT_DURATION_SECONDS"
+      ],
+      "resolvedArguments": [
+        30,
+        20
+      ],
+      "availability": {
+        "cooldown": "Не задана в базовом классе этого перка",
+        "mana": "Не задана в базовом классе этого перка"
+      },
+      "notes": []
+    },
+    {
+      "class": "ForgetMeNotPerk",
+      "classPath": "src/main/java/org/example/maniacrevolution/perk/perks/survivor/ForgetMeNotPerk.java",
+      "gameId": "forget_me_not",
+      "id": "perk:forget-me-not",
+      "team": "SURVIVOR",
+      "type": "HYBRID",
+      "phases": [
+        "HUNT",
+        "MIDGAME",
+        "REVERSAL"
+      ],
+      "descriptionTemplate": "В начале матча вы получаете личную Незабудку и можете установить её в безопасной точке. Телепортация стоит %s маны и готовится %s сек.; движение или урон прерывают подготовку. После удара маньяка телепортация недоступна %s сек. Успешная телепортация даёт кулдаун %s сек. и оставляет цветок на месте. Прерванная подготовка даёт кулдаун %s сек. и возвращает %s маны. Владелец может забрать цветок ударом, а маньяк уничтожает его навсегда.",
+      "descriptionExpressions": [
+        "(int) MANA_COST",
+        "CHANNEL_DURATION_SECONDS",
+        "RECENT_DAMAGE_LOCK_SECONDS",
+        "SUCCESS_COOLDOWN_SECONDS",
+        "INTERRUPTED_COOLDOWN_SECONDS",
+        "(int) INTERRUPTED_MANA_REFUND"
+      ],
+      "resolvedArguments": [
+        10,
+        3,
+        10,
+        60,
+        30,
+        5
+      ],
+      "availability": {
+        "cooldown": "60 с",
+        "mana": "10 маны"
+      },
+      "notes": []
+    },
+    {
+      "class": "RoseColoredGlassesPerk",
+      "classPath": "src/main/java/org/example/maniacrevolution/perk/perks/survivor/RoseColoredGlassesPerk.java",
+      "gameId": "rose_colored_glasses",
+      "id": "perk:rose-colored-glasses",
+      "team": "SURVIVOR",
+      "type": "PASSIVE",
+      "phases": [
+        "HUNT",
+        "MIDGAME"
+      ],
+      "descriptionTemplate": "В начале матча вы получаете привязанные Розовые очки с прочностью %s. Во второй руке они сразу уменьшают любой урон на %s%%, округляя итог вниз, но оставляя минимум %s урона. Работают только в фазах %s–%s; пустота и /kill исключены. Прочность расходуется только при защите — по единице за каждую предотвращённую единицу урона, с округлением вниз и минимальной стоимостью %s.",
+      "descriptionExpressions": [
+        "MAX_DURABILITY",
+        "DAMAGE_REDUCTION_PERCENT",
+        "MINIMUM_FINAL_DAMAGE",
+        "FIRST_ACTIVE_PHASE.getScoreboardValue()",
+        "LAST_ACTIVE_PHASE.getScoreboardValue()",
+        "MINIMUM_DURABILITY_COST"
+      ],
+      "resolvedArguments": [
+        15,
+        25,
+        1,
+        1,
+        2,
+        1
+      ],
+      "availability": {
+        "cooldown": "Не задана в базовом классе этого перка",
+        "mana": "Не задана в базовом классе этого перка"
+      },
+      "notes": []
+    },
+    {
+      "class": "PinkOrchidPerk",
+      "classPath": "src/main/java/org/example/maniacrevolution/perk/perks/survivor/PinkOrchidPerk.java",
+      "gameId": "pink_orchid",
+      "id": "perk:pink-orchid",
+      "team": "SURVIVOR",
+      "type": "HYBRID",
+      "phases": [
+        "HUNT",
+        "MIDGAME"
+      ],
+      "descriptionTemplate": "ПКМ личной орхидеей записывает ваш маршрут длительностью до %s сек.; повторное нажатие завершает запись раньше. Активируйте перк за %s маны, чтобы запустить копию по записанному пути. Перезарядка: %s сек. Игрок и копия появляются через лепестки за %s мс. Работает в фазах %s–%s.",
+      "descriptionExpressions": [
+        "RECORDING_SECONDS",
+        "MANA_COST",
+        "COOLDOWN_SECONDS",
+        "MATERIALIZE_TICKS * MILLISECONDS_PER_SECOND / TICKS_PER_SECOND",
+        "FIRST_ACTIVE_PHASE.getScoreboardValue()",
+        "LAST_ACTIVE_PHASE.getScoreboardValue()"
+      ],
+      "resolvedArguments": [
+        6,
+        10,
+        45,
+        500,
+        1,
+        2
+      ],
+      "availability": {
+        "cooldown": "45 с",
+        "mana": "10 маны"
+      },
+      "notes": []
+    },
+    {
+      "class": "SberSproutPerk",
+      "classPath": "src/main/java/org/example/maniacrevolution/perk/perks/survivor/SberSproutPerk.java",
+      "gameId": "sber_sprout",
+      "id": "perk:sber-sprout",
+      "team": "SURVIVOR",
+      "type": "HYBRID",
+      "phases": [
+        "HUNT",
+        "MIDGAME"
+      ],
+      "descriptionTemplate": "Во время непрерывного ремонта СберРосток запоминает лично внесённый вами прогресс. Активация за %s маны извлекает его из компьютера и сохраняет %s%%; посадка заполненного ростка за %s маны переносит сохранённый прогресс на другой компьютер. Для извлечения нужно накопить минимум %s%%. Значения округляются до %s знаков после запятой. Работает в фазах %s–%s.",
+      "descriptionExpressions": [
+        "EXTRACTION_MANA_COST",
+        "PRESERVED_PROGRESS_PERCENT",
+        "PLANTING_MANA_COST",
+        "MINIMUM_EXTRACTION_PERCENT",
+        "DISPLAY_DECIMAL_PLACES",
+        "FIRST_ACTIVE_PHASE.getScoreboardValue()",
+        "LAST_ACTIVE_PHASE.getScoreboardValue()"
+      ],
+      "resolvedArguments": [
+        5,
+        75,
+        5,
+        1,
+        2,
+        1,
+        2
+      ],
+      "availability": {
+        "cooldown": "Не задана в базовом классе этого перка",
+        "mana": "5 маны"
+      },
+      "notes": []
+    },
+    {
+      "class": "BloodflowPerk",
+      "classPath": "src/main/java/org/example/maniacrevolution/perk/perks/maniac/BloodflowPerk.java",
+      "gameId": "bloodflow",
+      "id": "perk:bloodflow",
+      "team": "MANIAC",
+      "type": "PASSIVE_COOLDOWN",
+      "phases": [
+        "ANY"
+      ],
+      "descriptionTemplate": "Следующий удар накладывает Открытую рану на %s сек.",
+      "descriptionExpressions": [
+        "EFFECT_DURATION_TICKS / 20"
+      ],
+      "resolvedArguments": [
+        10
+      ],
+      "availability": {
+        "cooldown": "25 с",
+        "mana": "Не задана в базовом классе этого перка"
+      },
+      "notes": []
+    },
+    {
+      "class": "IAmSpeedPerk",
+      "classPath": "src/main/java/org/example/maniacrevolution/perk/perks/maniac/IAmSpeedPerk.java",
+      "gameId": "i_am_speed",
+      "id": "perk:i-am-speed",
+      "team": "MANIAC",
+      "type": "PASSIVE",
+      "phases": [
+        "ANY"
+      ],
+      "descriptionTemplate": "После убийства выжившего даёт Скорость %s на %s сек.",
+      "descriptionExpressions": [
+        "SPEED_AMPLIFIER + 1",
+        "SPEED_DURATION_TICKS / 20"
+      ],
+      "resolvedArguments": [
+        3,
+        15
+      ],
+      "availability": {
+        "cooldown": "Не задана в базовом классе этого перка",
+        "mana": "Не задана в базовом классе этого перка"
+      },
+      "notes": []
+    },
+    {
+      "class": "HighVoltagePerk",
+      "classPath": "src/main/java/org/example/maniacrevolution/perk/perks/maniac/HighVoltagePerk.java",
+      "gameId": "high_voltage",
+      "id": "perk:high-voltage",
+      "team": "MANIAC",
+      "type": "PASSIVE",
+      "phases": [
+        "HUNT",
+        "MIDGAME"
+      ],
+      "descriptionTemplate": "Рядом с компьютером с прогрессом не ниже %s%% вы получаете +%s%% к скорости. Горизонтальный радиус: %s блоков, вертикальный: ±%s блока. Завершённые и временно заблокированные компьютеры также учитываются. Эффекты ускорения не складываются: действует наибольший уровень.",
+      "descriptionExpressions": [
+        "Math.round(MIN_PROGRESS_FRACTION * PERCENT_SCALE)",
+        "SPEED_BONUS_PERCENT",
+        "Math.round(HORIZONTAL_RADIUS_BLOCKS)",
+        "VERTICAL_RANGE_BLOCKS"
+      ],
+      "resolvedArguments": [
+        80,
+        20,
+        8,
+        2
+      ],
+      "availability": {
+        "cooldown": "Не задана в базовом классе этого перка",
+        "mana": "Не задана в базовом классе этого перка"
+      },
+      "notes": []
+    },
+    {
+      "class": "GoNextPerk",
+      "classPath": "src/main/java/org/example/maniacrevolution/perk/perks/maniac/GoNextPerk.java",
+      "gameId": "go_next",
+      "id": "perk:go-next",
+      "team": "MANIAC",
+      "type": "PASSIVE_COOLDOWN",
+      "phases": [
+        "HUNT",
+        "MIDGAME"
+      ],
+      "descriptionTemplate": "Когда вы отправляете выжившего в нокдаун, ближайший другой активный выживший в радиусе %s блоков по горизонтали и ±%s блоков по вертикали кричит. Его позиция отмечается для маньяков на %s сек. Перезарядка: %s сек.",
+      "descriptionExpressions": [
+        "HORIZONTAL_RADIUS_BLOCKS",
+        "VERTICAL_RANGE_BLOCKS",
+        "ScreamManager.MARKER_DURATION_SECONDS",
+        "COOLDOWN_SECONDS"
+      ],
+      "resolvedArguments": [
+        32,
+        12,
+        5,
+        45
+      ],
+      "availability": {
+        "cooldown": "45 с",
+        "mana": "Не задана в базовом классе этого перка"
+      },
+      "notes": []
+    },
+    {
+      "class": "FlowersLeadInvestigationPerk",
+      "classPath": "src/main/java/org/example/maniacrevolution/perk/perks/maniac/FlowersLeadInvestigationPerk.java",
+      "gameId": "flowers_lead_the_investigation",
+      "id": "perk:flowers-lead-the-investigation",
+      "team": "MANIAC",
+      "type": "PASSIVE",
+      "phases": [
+        "HUNT",
+        "MIDGAME"
+      ],
+      "descriptionTemplate": "Каждый активный выживший раз в %s сек. оставляет цветочный след, существующий %s сек. Вид и цвет цветка закрепляются за выжившим на весь матч. Следы видят только маньяки с этим перком.",
+      "descriptionExpressions": [
+        "SPAWN_INTERVAL_SECONDS",
+        "FLOWER_LIFETIME_SECONDS"
+      ],
+      "resolvedArguments": [
+        6,
+        12
+      ],
+      "availability": {
+        "cooldown": "Не задана в базовом классе этого перка",
+        "mana": "Не задана в базовом классе этого перка"
+      },
+      "notes": []
+    },
+    {
+      "class": "BouquetToTheOtherSidePerk",
+      "classPath": "src/main/java/org/example/maniacrevolution/perk/perks/maniac/BouquetToTheOtherSidePerk.java",
+      "gameId": "bouquet_to_the_other_side",
+      "id": "perk:bouquet-to-the-other-side",
+      "team": "MANIAC",
+      "type": "PASSIVE",
+      "phases": [
+        "HUNT",
+        "MIDGAME",
+        "REVERSAL"
+      ],
+      "descriptionTemplate": "Первый удар по каждому уникальному выжившему добавляет назначенный ему цветок в Букет, максимум %s цветка. Следующий нокдаун автоматически расходует Букет. Каждый цветок сокращает длительность этого нокдауна и увеличивает стоимость самостоятельного подъёма на %s%%. Удары по лежащим выжившим тоже дают цветы. После расходования Букета выжившие снова могут давать цветы.",
+      "descriptionExpressions": [
+        "MAX_FLOWERS",
+        "MODIFIER_PERCENT_PER_FLOWER"
+      ],
+      "resolvedArguments": [
+        3,
+        20
+      ],
+      "availability": {
+        "cooldown": "Не задана в базовом классе этого перка",
+        "mana": "Не задана в базовом классе этого перка"
+      },
+      "notes": []
+    },
+    {
+      "class": "BudDispatcherPerk",
+      "classPath": "src/main/java/org/example/maniacrevolution/perk/perks/maniac/BudDispatcherPerk.java",
+      "gameId": "bud_dispatcher",
+      "id": "perk:bud-dispatcher",
+      "team": "MANIAC",
+      "type": "HYBRID",
+      "phases": [
+        "HUNT",
+        "MIDGAME"
+      ],
+      "descriptionTemplate": "В начале матча %s логических компьютеров получают уникальные яркие цветы. Каждые %s%% прогресса цветок переходит на следующую визуальную стадию увядания. Цветочный декор видят только владельцы перка. Открытие сводки бутонов стоит %s маны; в ней нет номеров, координат, расстояний и точных процентов.",
+      "descriptionExpressions": [
+        "COMPUTER_COUNT",
+        "WILT_STAGE_PERCENT",
+        "(int) MENU_MANA_COST"
+      ],
+      "resolvedArguments": [
+        9,
+        20,
+        3
+      ],
+      "availability": {
+        "cooldown": "Не задана в базовом классе этого перка",
+        "mana": "3 маны"
+      },
+      "notes": []
+    },
+    {
+      "class": "CatchMistakesPerk",
+      "classPath": "src/main/java/org/example/maniacrevolution/perk/perks/maniac/CatchMistakesPerk.java",
+      "gameId": "catch_mistakes",
+      "id": "perk:catch-mistakes",
+      "team": "MANIAC",
+      "type": "PASSIVE_COOLDOWN",
+      "phases": [
+        "ANY"
+      ],
+      "descriptionTemplate": "При промахе выжившего в QTE подсвечивает его на %d сек. только для тебя. КД: %d сек.",
+      "descriptionExpressions": [
+        "GLOW_DURATION_TICKS / 20",
+        "COOLDOWN_SECONDS"
+      ],
+      "resolvedArguments": [
+        5,
+        30
+      ],
+      "availability": {
+        "cooldown": "30 с",
+        "mana": "Не задана в базовом классе этого перка"
+      },
+      "notes": []
+    },
+    {
+      "class": "ComputerBreakerPerk",
+      "classPath": "src/main/java/org/example/maniacrevolution/perk/perks/maniac/ComputerBreakerPerk.java",
+      "gameId": "computer_breaker",
+      "id": "perk:computer-breaker",
+      "team": "MANIAC",
+      "type": "ACTIVE",
+      "phases": [
+        "MIDGAME"
+      ],
+      "descriptionTemplate": "Отнимает %d%% прогресса у самого заряженного компьютера. КД: %d сек. Стоимость: %d маны.",
+      "descriptionExpressions": [
+        "(int)(ROLLBACK_PERCENT * 100)",
+        "COOLDOWN_SECONDS",
+        "(int) MANA_COST"
+      ],
+      "resolvedArguments": [
+        50,
+        180,
+        10
+      ],
+      "availability": {
+        "cooldown": "180 с",
+        "mana": "10 маны"
+      },
+      "notes": []
+    },
+    {
+      "class": "HighlightPerk",
+      "classPath": "src/main/java/org/example/maniacrevolution/perk/perks/maniac/HighlightPerk.java",
+      "gameId": "highlight",
+      "id": "perk:highlight",
+      "team": "MANIAC",
+      "type": "PASSIVE",
+      "phases": [
+        "ANY"
+      ],
+      "descriptionTemplate": "При взломе компьютера подсвечивает случайных выживших на %d сек. только для тебя. Количество = количество маньяков с перком.",
+      "descriptionExpressions": [
+        "GLOW_DURATION_TICKS / 20"
+      ],
+      "resolvedArguments": [
+        6
+      ],
+      "availability": {
+        "cooldown": "Не задана в базовом классе этого перка",
+        "mana": "Не задана в базовом классе этого перка"
+      },
+      "notes": []
+    },
+    {
+      "class": "SilencePerk",
+      "classPath": "src/main/java/org/example/maniacrevolution/perk/perks/maniac/SilencePerk.java",
+      "gameId": "silence",
+      "id": "perk:silence",
+      "team": "MANIAC",
+      "type": "ACTIVE",
+      "phases": [
+        "ANY"
+      ],
+      "descriptionTemplate": "Накладывает Тишину на всех выживших в радиусе %s блоков на %s сек.",
+      "descriptionExpressions": [
+        "(int) RADIUS",
+        "DURATION_SEC"
+      ],
+      "resolvedArguments": [
+        10,
+        10
+      ],
+      "availability": {
+        "cooldown": "100 с",
+        "mana": "10 маны"
+      },
+      "notes": []
+    },
+    {
+      "class": "EjectionPerk",
+      "classPath": "src/main/java/org/example/maniacrevolution/perk/perks/maniac/EjectionPerk.java",
+      "gameId": "ejection",
+      "id": "perk:ejection",
+      "team": "MANIAC",
+      "type": "PASSIVE_COOLDOWN",
+      "phases": [
+        "ANY"
+      ],
+      "descriptionTemplate": "Когда компьютер полностью заряжен, один раз откатывает его прогресс на %s%%.",
+      "descriptionExpressions": [
+        "(int) (ROLLBACK_PERCENT * 100)"
+      ],
+      "resolvedArguments": [
+        5
+      ],
+      "availability": {
+        "cooldown": "20 с",
+        "mana": "2 маны"
+      },
+      "notes": []
+    },
+    {
+      "class": "FamilyDiscordPerk",
+      "classPath": "src/main/java/org/example/maniacrevolution/perk/perks/maniac/FamilyDiscordPerk.java",
+      "gameId": "family_discord",
+      "id": "perk:family-discord",
+      "team": "MANIAC",
+      "type": "PASSIVE_COOLDOWN",
+      "phases": [
+        "ANY"
+      ],
+      "descriptionTemplate": "Если один компьютер взламывают не менее %s выживших, они не могут вносить вклад в него %s сек.",
+      "descriptionExpressions": [
+        "2",
+        "GLOW_DURATION / 20"
+      ],
+      "resolvedArguments": [
+        2,
+        5
+      ],
+      "availability": {
+        "cooldown": "60 с",
+        "mana": "Не задана в базовом классе этого перка"
+      },
+      "notes": []
+    },
+    {
+      "class": "GrieferPerk",
+      "classPath": "src/main/java/org/example/maniacrevolution/perk/perks/maniac/GrieferPerk.java",
+      "gameId": "griefer",
+      "id": "perk:griefer",
+      "team": "MANIAC",
+      "type": "PASSIVE_COOLDOWN",
+      "phases": [
+        "ANY"
+      ],
+      "descriptionTemplate": "После взлома компьютера блокирует ближайшие проходы на %s сек.",
+      "descriptionExpressions": [
+        "BLOCK_SEC"
+      ],
+      "resolvedArguments": [
+        30
+      ],
+      "availability": {
+        "cooldown": "150 с",
+        "mana": "Не задана в базовом классе этого перка"
+      },
+      "notes": []
+    },
+    {
+      "class": "GuidingLightPerk",
+      "classPath": "src/main/java/org/example/maniacrevolution/perk/perks/maniac/GuidingLightPerk.java",
+      "gameId": "guiding_light",
+      "id": "perk:guiding-light",
+      "team": "MANIAC",
+      "type": "ACTIVE",
+      "phases": [
+        "ANY"
+      ],
+      "descriptionTemplate": "После взлома компьютера создаёт след к случайному выжившему на %s сек.",
+      "descriptionExpressions": [
+        "TRAIL_DURATION_TICKS / 20"
+      ],
+      "resolvedArguments": [
+        2
+      ],
+      "availability": {
+        "cooldown": "35 с",
+        "mana": "2 маны"
+      },
+      "notes": [
+        "Локализация говорит о случайной цели после взлома, но onActivate выбирает ближайшего активного выжившего. Статья следует обработчику активации."
+      ]
+    }
+  ],
+  "issues": [
+    {
+      "id": "perk:gto-medal",
+      "note": "Комментарий класса называет 80 с, но Builder задаёт 45 с. Дальность рывка не объявлена постоянной: код задаёт импульс, итог зависит от движения."
+    },
+    {
+      "id": "perk:mimic",
+      "note": "В getDescription перепутаны аргументы радиуса и длительности. В Wiki порядок исправлен по findMostCommonBlock и длительности эффектов: радиус 2 блока, действие 5 секунд."
+    },
+    {
+      "id": "perk:quick-reflexes",
+      "note": "Локализация подписывает время в секундах, но getDescription передаёт миллисекунды. Wiki переводит BONUS_TIME_MS в секунды."
+    },
+    {
+      "id": "perk:guiding-light",
+      "note": "Локализация говорит о случайной цели после взлома, но onActivate выбирает ближайшего активного выжившего. Статья следует обработчику активации."
+    }
+  ],
+  "sources": [
+    {
+      "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json",
+      "sha256": "e1aaec8a2bf4d08f9bbba9cdf0af58d4d5ba1de9b3894fa9c27179d9476148ee",
+      "bytes": 112315
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/PerkRegistry.java",
+      "sha256": "c3db42d1c1b9eede2ac2a0c7605fb377f472bfe0a40828f4bf1dd2c09388a465",
+      "bytes": 4077
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/Perk.java",
+      "sha256": "9e466cb6fdc63ec5fec1007047511a9205fb1a04a79a6a2e0c2cb00c02aaf825",
+      "bytes": 8699
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/PerkType.java",
+      "sha256": "e4bb1a292d28148e479283db2e5765dde091f8caabfd1813c7616b3daab0cb08",
+      "bytes": 1247
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/PerkTeam.java",
+      "sha256": "e8e6db7728d3498ff67a8f91f09dafa507f0095fbbd09e793d257d2be39321c8",
+      "bytes": 1363
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/PerkPhase.java",
+      "sha256": "eb9bf8c4a2151cd0035fd35184631c110438af0598d9c78f17398e28a2fddd55",
+      "bytes": 1445
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/ChargedPerk.java",
+      "sha256": "48ed3ac79f370e5b2fccfe22ab6330efa92f04daacefe096fa3e689a94590f92",
+      "bytes": 2138
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/PerkInstance.java",
+      "sha256": "b86310be06db31f2ea1ea75520a276fcade07087b2137623c10825459f4e95c3",
+      "bytes": 12624
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/perks/common/BigmoneyPerk.java",
+      "sha256": "74db638168c5f429361a68b2f0f6d3a3d5cfa814206b700e409f98b2ee78e3d7",
+      "bytes": 1684
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/perks/bigmoney.png",
+      "sha256": "e6a8c7cbbc905a6c9e2d095cb53812cdf8320563cc2546d1ae5991aecb3a5986",
+      "bytes": 24710
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/perks/common/MegamindPerk.java",
+      "sha256": "dffefde6723e8e87459c48a773aaeb87d19bf3ae6d8b9b3085176a25cee2819d",
+      "bytes": 1678
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/perks/megamind.png",
+      "sha256": "4dc0869a1292d7a289c2a478704209d47f7c7fb93a3542ccf96c090fd1907d7c",
+      "bytes": 30495
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/perks/common/GtoMedalPerk.java",
+      "sha256": "de149c8fec93674ff76a1609e40967f764f4e0865d38e4da41a4ced345706ca9",
+      "bytes": 4809
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/perks/gto_medal.png",
+      "sha256": "bc160203ee6762b772702f553af20702577ebada021c71c036990a85d497e565",
+      "bytes": 14811
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/perks/common/FearWavePerk.java",
+      "sha256": "0fe6f6afb70b190355e957cfb73377af7136fc20422f30a6c97b3b652b679fbf",
+      "bytes": 3986
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/perks/fear_wave.png",
+      "sha256": "ac32b4ca1756d9c11a72af9b8acaa41aac72be6b056bf38b26c3a7cda51a8933",
+      "bytes": 34492
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/perks/common/StrPerk.java",
+      "sha256": "b0cb6eb3632bc826b5ae0e62523c34d971af368c41878000d7b6b6b008b8a9d7",
+      "bytes": 1034
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/perks/str_perk.png",
+      "sha256": "e27f3cd545aa37a94e0ac3aa5be4e5895a1e83f49459cd9d32fe1b983cb67387",
+      "bytes": 17400
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/perks/common/ManaBreakPerk.java",
+      "sha256": "0c6189eaefc2b8deb4235523c84cc7c7d23198467989bc69b454e082908e66cd",
+      "bytes": 4376
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/perks/mana_break.png",
+      "sha256": "9ee9aa4b588c717ca2466783940b09c4b03232e5c7e8f51b27746ec4468e8415",
+      "bytes": 129605
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/perks/common/HedgehogSkinPerk.java",
+      "sha256": "d502bf6f3c43fa6bd0f5c4f05fd04c9fb9417caa71ae6d93c718034df5f67711",
+      "bytes": 3085
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/effect/ThornEffect.java",
+      "sha256": "fcd811dce02b7d154b98eba0e65a5acfd930ee828d6b1ada4a0c2e9f80228d07",
+      "bytes": 3279
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/perks/hedgehog_skin.png",
+      "sha256": "911623d291e67521e29ff07034130a2e50754d5bfaf44d6204f3ac9c46622ac7",
+      "bytes": 23417
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/perks/common/FootballFanPerk.java",
+      "sha256": "d4d839b4b46fc61bd055214653eb94bbd034d3f4fed5ed7ec2408cdd1f7f0eef",
+      "bytes": 6067
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/perks/football_fan.png",
+      "sha256": "f29a0ba8e3b9ee8451e97a6e2f32cb96ea37ddd2cc0416e682e86d12f960b3f1",
+      "bytes": 452509
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/perks/common/ColorRoulettePerk.java",
+      "sha256": "74bdb0dfb6611fe841db6c4283bafdcec08f41d338684bc86db3e7bbbfb8a3e7",
+      "bytes": 2542
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/perks/color_roulette.png",
+      "sha256": "630bf45b4eccddd06d446311ba53f65119ab7ec9375b81aee4daf8b69d6f8693",
+      "bytes": 318249
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/perks/maniac/ThePaintThickensPerk.java",
+      "sha256": "982a4e8b21a4d1f158cecb4b7957e601bc018c79e7e74e6ed1c244c37487bd2e",
+      "bytes": 3596
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/perks/the_paint_thickens.png",
+      "sha256": "c796bf7ceb27aef60173144a518cb14b2dc84f9a48a1103fa188ecc015e33a17",
+      "bytes": 370404
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/perks/survivor/MimicPerk.java",
+      "sha256": "041ee40c05dd3933623d2915820ea3d16bf10943657dbffa2ab86bba05297bb5",
+      "bytes": 6425
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/perks/mimic.png",
+      "sha256": "a7fbab221c4d0963acdd168da89bf0cfaf8f13bc1da9498a26d78c8f8a4667d9",
+      "bytes": 54668
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/perks/survivor/WallhackPerk.java",
+      "sha256": "60b5c1a4b6da28cef5a57ccdbf838477d0139f9400e0f88809857bfe48009433",
+      "bytes": 4252
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/perks/wallhack.png",
+      "sha256": "35b55181837013bd8b23baacdfac27e57e55cc3ec111a6c9e72ce06e02e814cc",
+      "bytes": 73977
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/perks/survivor/LastBreathPerk.java",
+      "sha256": "e0d9488eec5305be126a97650ea159c6340955531474be8f65e8e116e8519d3b",
+      "bytes": 5835
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/perks/last_breath.png",
+      "sha256": "bd1dafb3953f3b97cc75e209a246a85793769ba1054b311afe12da4d69f289ab",
+      "bytes": 38733
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/perks/survivor/QuickReflexesPerk.java",
+      "sha256": "7106ef7e04bc7e2824067225f76f66b1455e2f536762e50983068e78c487c6d9",
+      "bytes": 1829
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/perks/quick_reflexes.png",
+      "sha256": "51aa004a75ad2d156bf3e37c382b079ea577d763afc8774d1f5577a937b9e041",
+      "bytes": 119145
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/perks/survivor/BlindnessPerk.java",
+      "sha256": "0c54a9fdf37f74ec0c9b2458127443d09b4570bf1fe44313e84465aacd62d38f",
+      "bytes": 4493
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/perks/blindness.png",
+      "sha256": "54134b43434ce87d1c88eada56af9ab5af06c578b7c5197b546c037fdf1be479",
+      "bytes": 81888
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/perks/survivor/MentalBondPerk.java",
+      "sha256": "adb437f3e3d58f35bef4f66ba37468457ac4be9d74d02b5440acfba512c07b59",
+      "bytes": 4343
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/perks/mental_bond.png",
+      "sha256": "a30ddf769eea81a5db599bf4ad117d999443b3ee7e3f03747af06d773ca9d902",
+      "bytes": 96193
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/perks/survivor/DutchHelmPerk.java",
+      "sha256": "7ef81a4f6b30f18d76d5a0ae88d5bb9ee874ba890137bc762cf1f0b3dcc227fb",
+      "bytes": 2530
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/perks/dutch_helm.png",
+      "sha256": "41eb199b693229d16b72ec6163bdb54f51772fe29e0f8088f02681b6cfd12349",
+      "bytes": 53068
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/perks/survivor/IndependencePerk.java",
+      "sha256": "54e7109ee3975fa10bb5a5559e8ab105956df8865cdbf20b01b0f749c0bead50",
+      "bytes": 6936
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/perks/independence.png",
+      "sha256": "4f136fff619a89dabdbb38ec54456c65295ddd45528bf28a23560918f4a5bd29",
+      "bytes": 50966
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/perks/survivor/AltruistExePerk.java",
+      "sha256": "2ac014b5e4a581fe5328eebeedf299baca8b82eb7d8b91e65e74fbbf7e645b7a",
+      "bytes": 4997
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/perks/altruist_exe.png",
+      "sha256": "a1648fd650b4e85dbcf5224c1ac5e833f3e5040f30fa3fbeac0eda6e411e1492",
+      "bytes": 27437
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/perks/survivor/MagicLoverPerk.java",
+      "sha256": "aca9b9939e71686f023fcf2d37c17a92604121fd03bab974fc2f1befaaee3900",
+      "bytes": 5279
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/perks/magic_lover.png",
+      "sha256": "fb9d80f75bb6aaff7c99fc0b79e5fd3ea44305d759ca8e2967b371737c28eef7",
+      "bytes": 52751
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/perks/survivor/IdealychPerk.java",
+      "sha256": "9d3b0f1f4335f106500db105b83086c236dc73c52ff79685a68cec16db626d9d",
+      "bytes": 7576
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/perks/idealych.png",
+      "sha256": "af8ee9bca7f3be5bbcf052dc0c7c8a51bc7bc2b727094f1d9d4f27e941789069",
+      "bytes": 61487
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/perks/survivor/RealityAnchorPerk.java",
+      "sha256": "ccb0e1d3d895283bc93bdb5a6d95de9ac1a1558a338fde6745d0a610bbaf6afe",
+      "bytes": 7410
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/perks/reality_anchor.png",
+      "sha256": "fe17f531eb08fb46d1a9e0b94ed1e7abc4a7637853a6de6798eaaf9066a44cdf",
+      "bytes": 697904
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/perks/survivor/EmergencyOverclockPerk.java",
+      "sha256": "f3742120fd17a0866d16e07da5c3401838eb58e25842692f6e1fe04765ead36c",
+      "bytes": 5980
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/perks/emergency_overclock.png",
+      "sha256": "148156160141c531ee6053ea6d0a3125ac4748c41f82d6ec10135f9f09222073",
+      "bytes": 396647
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/perks/survivor/FixedItImOutPerk.java",
+      "sha256": "56a9438ce1b048becc5994bc473832d15b1803de515ea244859e223d0afd86eb",
+      "bytes": 6156
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/perks/fixed_it_im_out.png",
+      "sha256": "96c9088857ce317e3ffd88547d943d1ae6e4245f457731ea63b90229c6a6e96b",
+      "bytes": 381548
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/perks/survivor/MagicKickPerk.java",
+      "sha256": "09e95a5b717ea149080cbeec64f504ee663eae6e39909ef2144875d23b1617c8",
+      "bytes": 5566
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/perks/magic_kick.png",
+      "sha256": "a5ed4d7e171aad0bb5669cd8a35624ebf013ea60d2bd5fe95c40d0d7009cddc2",
+      "bytes": 406299
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/perks/survivor/ForgetMeNotPerk.java",
+      "sha256": "96f7053fcc05acb629ee91a6f2dc362aecb2c42f7ce0f8b21f7d684267edd3d0",
+      "bytes": 2814
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/perks/forget_me_not.png",
+      "sha256": "e983e453f5e85f69dc04017b68c5a5e1b3903f5c45b985c17fa198d83038d583",
+      "bytes": 384332
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/perks/survivor/RoseColoredGlassesPerk.java",
+      "sha256": "d7f707908f6ef29ccb7d7a32eb470268b06fe469589a3b05ae237875eff443af",
+      "bytes": 2151
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/perks/rose_colored_glasses.png",
+      "sha256": "24ebaaf9020640730bd39ea3a3bebd32cb7dd2e14ae2adbdbb259304ab93d191",
+      "bytes": 386979
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/perks/survivor/PinkOrchidPerk.java",
+      "sha256": "929c1e547d9ecb09c86f307ad536897f97a022fb558e2b720b260a2a0d846653",
+      "bytes": 2776
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/perks/pink_orchid.png",
+      "sha256": "a2d3d624d7befefd08edf98c4555c6e081c8c0a9978dc7967ebb350c7a7f863e",
+      "bytes": 532131
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/perks/survivor/SberSproutPerk.java",
+      "sha256": "be1c03c8f315fa2d8a087764f0452308089a6afc1bb5d96422a5ab921a32f6ef",
+      "bytes": 2761
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/perks/sber_sprout.png",
+      "sha256": "05d07db6248842e2fd3b98ae6ad2f66cd3b1742c91f35cd96f8e6b7d3a47df90",
+      "bytes": 410815
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/perks/maniac/BloodflowPerk.java",
+      "sha256": "ae1f2d6c03e5345261a8f28d33b2d5a6720b5ab3c59244ef6974e6ee7eec93a3",
+      "bytes": 5654
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/perks/bloodflow.png",
+      "sha256": "4f035d4a796c7cb4c1d6fe644d7b2be27825db4f369c9b14941677a32ed0f105",
+      "bytes": 114407
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/perks/maniac/IAmSpeedPerk.java",
+      "sha256": "995ed609e9338e449d54b5ada9450b686248fcf0e63c24f994ef2fd5edae2e83",
+      "bytes": 3580
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/perks/i_am_speed.png",
+      "sha256": "7c5e2c3abb11b099b91357cdf7397119c19475bae1c74ea659e43fd3995e4f94",
+      "bytes": 66870
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/perks/maniac/HighVoltagePerk.java",
+      "sha256": "e4648e93a3d0e197c034efa7f5b5a10456601c9a907102cab464262bd78d3463",
+      "bytes": 6197
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/perks/high_voltage.png",
+      "sha256": "a7cb4d146622177a8761d12abb617beed4ed21ee6a83fbdf5eda489d4fb96972",
+      "bytes": 406579
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/perks/maniac/GoNextPerk.java",
+      "sha256": "502afca77ee7ccf8a7ee4ae741daf2d172f8d8008bc24758ec9e5e68fca43052",
+      "bytes": 4718
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/scream/ScreamManager.java",
+      "sha256": "1dcb7c9e8e73131bf542a796559a973d260a07a7901fbfa9def9009d45eb6507",
+      "bytes": 2868
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/perks/go_next.png",
+      "sha256": "a16c378e02b7e0a3fcd7f018b31aa8eab4faaf41fbac84d15390601be3b5e260",
+      "bytes": 246915
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/perks/maniac/FlowersLeadInvestigationPerk.java",
+      "sha256": "d1c332d299f34ab4221d47745f34d46cf0cac3108b95112704e1d1eb70fc103b",
+      "bytes": 2136
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/perks/flowers_lead_the_investigation.png",
+      "sha256": "a602bab33e4ed6209536ea7f61fc181e50c541d8f09508eb2a8c9cf9c613c217",
+      "bytes": 361555
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/perks/maniac/BouquetToTheOtherSidePerk.java",
+      "sha256": "f3456a05a213bf7bcf4956f7ba2dfae03d0e20d67ebdde2b2b131ce7cf7b8b8d",
+      "bytes": 12246
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/perks/bouquet_to_the_other_side.png",
+      "sha256": "8ec4d243b2993d423323ae167f09c7497a5895980260d14c407f5e359ffe1e16",
+      "bytes": 472647
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/perks/maniac/BudDispatcherPerk.java",
+      "sha256": "6b15a75df1a3e04960a2b616c1b69e8c526518aa58f2bcefcbcdedb727f3bf4a",
+      "bytes": 2592
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/perks/bud_dispatcher.png",
+      "sha256": "8abcfe6e186c81d81324303cb8d33f60c8b7c4c4add0de88b0456165da5825ff",
+      "bytes": 391002
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/perks/maniac/CatchMistakesPerk.java",
+      "sha256": "f516616ebc97998a398f798a75e6a35f732739a79b4737e856322d19d446ae06",
+      "bytes": 5047
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/perks/catch_mistakes.png",
+      "sha256": "51ab858fb8947d0df0adabc17ce934aa3e8a88c33f1b448cc8928fb63b8be906",
+      "bytes": 77425
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/perks/maniac/ComputerBreakerPerk.java",
+      "sha256": "ca207ee57c1af902ac827e2f5e2c07268d5d03738044cdeb0de498b2b21c6b59",
+      "bytes": 3669
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/perks/computer_breaker.png",
+      "sha256": "0dd578757c40c5007364e5c7b0573ab1f0d92a32f234e464e7a836384cfbb1f3",
+      "bytes": 90856
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/perks/maniac/HighlightPerk.java",
+      "sha256": "0b54cf1f537533712b0eae6f2eb6f7de097b8399ff2d6d43adaf710d8ef9354f",
+      "bytes": 4796
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/perks/highlight.png",
+      "sha256": "7fe4cfe43b50ccac3c94ff443e75eb022a1c30476abfab10a1fdf7c20b6322a9",
+      "bytes": 96349
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/perks/maniac/SilencePerk.java",
+      "sha256": "d23ec6e2fefefda76b3651d0eb8a38205ac2a41358165ca04ba802b93866481c",
+      "bytes": 3236
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/perks/silence.png",
+      "sha256": "d6b73ea1e973fe045257c54daef3c7caa4d750f05a6c69bfe9264f7ac4fe2cd9",
+      "bytes": 33171
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/perks/maniac/EjectionPerk.java",
+      "sha256": "735c659cdde32f97150fd22d61cce1727a58df9f6af0f62189f83c1442663fd4",
+      "bytes": 8164
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/perks/ejection.png",
+      "sha256": "048ba5e240d33975f400af9c699eeb641063e99163d59e5b4e270601fcab7cf4",
+      "bytes": 85955
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/perks/maniac/FamilyDiscordPerk.java",
+      "sha256": "b6145382f8937edcf794fdd3ce5640d96b14b85c7aa196fbfd158faa614e582b",
+      "bytes": 4208
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/perks/family_discord.png",
+      "sha256": "ff0aed1f4be2182264a6a9176406df21a716386b8d337b9d724f1e456fde0274",
+      "bytes": 37687
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/perks/maniac/GrieferPerk.java",
+      "sha256": "3d59d2545fe6adfe00c3b220001ba3e02fb4c385d9a962cf96ea16de848c91eb",
+      "bytes": 5158
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/perks/griefer.png",
+      "sha256": "155275d6954ac1cbdb7b21d6d0ba4daf574161fe09895dfc03b08f0b0971fb25",
+      "bytes": 44082
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/perks/maniac/GuidingLightPerk.java",
+      "sha256": "2abe6852a815a10a15c77d892c7d15f5666536747d7963dbb7cf7a113f67a1d2",
+      "bytes": 2593
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/perks/guiding_light.png",
+      "sha256": "a35b014b9f495a8068b477fd4b9e1f18c120e158968309ccdea172ae2508b770",
+      "bytes": 53202
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "id": "perk:blindness",
+  "description": "Пассивно: Слепота маньякам в радиусе 1.5 блоков на 3 сек. Активно: Слепота всем маньякам на 10 сек.",
+  "conditions": [],
+  "availability": {
+    "cooldown": "120 с",
+    "mana": "10 маны"
+  },
+  "notes": [],
+  "evidence": [
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/perks/survivor/BlindnessPerk.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/Perk.java"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+    }
+  ]
+}

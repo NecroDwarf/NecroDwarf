@@ -1,0 +1,24 @@
+{
+  "id": "ability:hook-throw",
+  "description": "Бросает хук на расстояние до 24 блоков и притягивает задетое существо.",
+  "conditions": ["ПКМ хуком. При попадании хук притягивает задетое существо."],
+  "availability": {
+    "mana": "5 маны",
+    "cooldown": "20 с"
+  },
+  "notes": [],
+  "evidence": [
+    {
+      "path": "src/main/java/org/example/maniacrevolution/item/HookItem.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/character/maniac/PudgeClass.java"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/entity/HookEntity.java"
+    }
+  ]
+}

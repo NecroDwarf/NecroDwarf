@@ -1,0 +1,21 @@
+{
+  "id": "perk:color-roulette",
+  "description": "Запустите рулетку за 10 маны: карты появляются за 1.5 сек. и могут крутиться до 6 сек. Повторно нажмите клавишу перка для остановки. Перезарядка: 45 сек.; полученная карта живёт 45 сек. Красная накладывает Отбрасывание 2 или показывает 3 компьютера, Синяя меняет прогресс незавершённого компьютера на 5%, а Зелёная лечит выжившего на 4 HP или даёт маньяку накапливаемый заряд. Красная наводка длится 15 сек.; каждый Зелёный заряд добавляет 1.5 урона следующему прямому удару. Работает в фазах 1–3.",
+  "conditions": [],
+  "availability": {
+    "cooldown": "45 с",
+    "mana": "10 маны"
+  },
+  "notes": [],
+  "evidence": [
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/perks/common/ColorRoulettePerk.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/Perk.java"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+    }
+  ]
+}

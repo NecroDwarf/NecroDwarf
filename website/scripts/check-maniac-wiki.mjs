@@ -75,12 +75,12 @@ try {
   ]);
   for (const version of gameVersions)
     assert.ok(releases.some((r) => r.id === version.releaseId));
-  assert.equal(routes.length, 28);
+  assert.equal(routes.length, 86);
   assert.ok(routes.every((r) => !/lab/.test(r.path)));
-  assert.equal(Object.keys(publishedEntityRoutes).length, 15);
+  assert.equal(Object.keys(publishedEntityRoutes).length, 71);
   assert.ok(
     Object.keys(publishedEntityRoutes).every((id) =>
-      id.startsWith("character:"),
+      /^(character|perk|ability):/.test(id),
     ),
   );
   for (const [id, path] of Object.entries(publishedEntityRoutes)) {
@@ -322,7 +322,10 @@ try {
   assert.match(customIcon, /--icon-scale:1.1/);
   assert.match(customIcon, /--icon-x:45%/);
   assert.match(customIcon, /--icon-y:55%/);
-  assert.doesNotMatch(render(EntityLink, { id: "perk:forget-me-not" }), /<a/);
+  assert.match(
+    render(EntityLink, { id: "perk:forget-me-not" }),
+    /href="\/projects\/maniac\/wiki\/perks\/forget-me-not"/,
+  );
   assert.doesNotMatch(
     render(cards.PerkCard, {
       id: "perk:forget-me-not",

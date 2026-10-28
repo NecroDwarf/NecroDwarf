@@ -20,7 +20,7 @@ try {
   const { ItemCard, AbilityCard } = await server.ssrLoadModule(
     root + "ui/EntityCards.tsx",
   );
-  const { MemoryRouter } = await server.ssrLoadModule("react-router");
+  const { MemoryRouter } = await import("react-router");
   const render = (Card, id) =>
     renderToStaticMarkup(
       createElement(MemoryRouter, null, createElement(Card, { id })),

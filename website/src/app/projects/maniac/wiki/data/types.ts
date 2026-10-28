@@ -1,6 +1,15 @@
 export type EntityKind = "character" | "ability" | "perk" | "item" | "mechanic";
 export type EntityId<K extends EntityKind = EntityKind> = `${K}:${string}`;
 export type SnapshotId = `release:${string}` | `source:${string}`;
+export type PerkType =
+  | "PASSIVE"
+  | "ACTIVE"
+  | "HYBRID"
+  | "PASSIVE_COOLDOWN"
+  | "CHARGED";
+export type PerkTeam = "SURVIVOR" | "MANIAC" | "ALL";
+export type PerkPhase = "ANY" | "START" | "HUNT" | "MIDGAME" | "REVERSAL";
+export type AbilityKind = "passive-character" | "item-action" | "armor-action";
 export interface EntityAsset {
   src: string;
   width: number;
@@ -48,8 +57,17 @@ export interface EntityData {
     difficulty?: number;
     tags?: readonly string[];
   };
-  ability: BaseData & { mechanicIds: readonly EntityId<"mechanic">[] };
+  ability: BaseData & {
+    mechanicIds: readonly EntityId<"mechanic">[];
+    abilityKind?: AbilityKind;
+    characterIds?: readonly EntityId<"character">[];
+    itemIds?: readonly EntityId<"item">[];
+  };
   perk: BaseData & {
+    gameId?: string;
+    team?: PerkTeam;
+    perkType?: PerkType;
+    phases?: readonly PerkPhase[];
     effects: readonly string[];
     mechanicIds: readonly EntityId<"mechanic">[];
   };

@@ -1,0 +1,21 @@
+{
+  "id": "perk:family-discord",
+  "description": "Если один компьютер взламывают не менее 2 выживших, они не могут вносить вклад в него 5 сек.",
+  "conditions": [],
+  "availability": {
+    "cooldown": "60 с",
+    "mana": "Не задана в базовом классе этого перка"
+  },
+  "notes": [],
+  "evidence": [
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/perks/maniac/FamilyDiscordPerk.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/Perk.java"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+    }
+  ]
+}

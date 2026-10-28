@@ -1,0 +1,21 @@
+{
+  "id": "perk:griefer",
+  "description": "После взлома компьютера блокирует ближайшие проходы на 30 сек.",
+  "conditions": [],
+  "availability": {
+    "cooldown": "150 с",
+    "mana": "Не задана в базовом классе этого перка"
+  },
+  "notes": [],
+  "evidence": [
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/perks/maniac/GrieferPerk.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/Perk.java"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+    }
+  ]
+}

@@ -1,7 +1,8 @@
 import type { Entity } from "./types";
 import { verifiedSource } from "./snapshots";
 import characterAbilities from "./character-abilities.json";
-export const abilities: readonly Entity<"ability">[] = [
+import { abilityCatalog } from "./reference-catalog";
+const foundationalAbilities: readonly Entity<"ability">[] = [
   ...(characterAbilities as readonly Entity<"ability">[]),
   {
     id: "ability:abyss-gaze",
@@ -85,3 +86,31 @@ export const abilities: readonly Entity<"ability">[] = [
     },
   },
 ];
+export const abilities: readonly Entity<"ability">[] = abilityCatalog.map(
+  (entry) => {
+    const previous = foundationalAbilities.find((a) => a.id === entry.id);
+    return {
+      id: entry.id,
+      kind: "ability",
+      slug: entry.slug,
+      name: entry.name,
+      revisions: {
+        ...previous?.revisions,
+        [verifiedSource]: {
+          data: {
+            ...previous?.revisions[verifiedSource]?.data,
+            description: entry.description,
+            icon: entry.icon,
+            stats: entry.stats,
+            abilityKind: entry.abilityKind,
+            characterIds: entry.characterIds,
+            itemIds: entry.itemIds,
+            mechanicIds:
+              previous?.revisions[verifiedSource]?.data.mechanicIds ?? [],
+          },
+          evidence: entry.evidence,
+        },
+      },
+    };
+  },
+);

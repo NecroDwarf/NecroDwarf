@@ -1,0 +1,28 @@
+{
+  "id": "ability:damage-transfer",
+  "description": "Перенаправляет 50% входящего урона ближайшему союзнику в радиусе 4 блоков.",
+  "conditions": [
+    "Нужна надетая медицинская маска и активация её способности. При получении урона нужен ближайший союзник-выживший в радиусе; без него урон не разделяется."
+  ],
+  "availability": {
+    "mana": "30 маны",
+    "cooldown": "60 с"
+  },
+  "notes": [
+    "Краткое описание CharacterClass говорит о следующей атаке. MedicalMaskItem и MedicActiveAbility реализуют разделение урона в течение 15 секунд; статья следует обработчику урона."
+  ],
+  "evidence": [
+    {
+      "path": "src/main/java/org/example/maniacrevolution/item/armor/MedicalMaskItem.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/character/survivor/DoctorClass.java"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/event/MedicActiveAbility.java"
+    }
+  ]
+}

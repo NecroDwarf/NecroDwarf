@@ -2,6 +2,40 @@ import type { Entity } from "./types";
 import { verifiedSource } from "./snapshots";
 import characterItems from "./character-items.json";
 export const items: readonly Entity<"item">[] = [
+  ...([
+    [
+      "guardian-head",
+      "Голова Хранителя",
+      "Предмет брони для применения Концентрированного кошмара.",
+      "ability:concentrated-nightmare",
+      "item/GuardianHeadItem.java",
+    ],
+    [
+      "medical-mask",
+      "Медицинская маска",
+      "Надетая маска позволяет активировать разделение урона.",
+      "ability:damage-transfer",
+      "item/armor/MedicalMaskItem.java",
+    ],
+  ].map(([slug, name, description, ability, path]) => ({
+    id: `item:${slug}`,
+    kind: "item",
+    slug,
+    name,
+    revisions: {
+      [verifiedSource]: {
+        data: {
+          description,
+          usage: "Действие описано в связанной способности.",
+          abilityIds: [ability],
+          mechanicIds: [],
+        },
+        evidence: [
+          { path: `src/main/java/org/example/maniacrevolution/${path}` },
+        ],
+      },
+    },
+  })) as Entity<"item">[]),
   ...(characterItems as readonly Entity<"item">[]),
   {
     id: "item:nightmare-lighter",

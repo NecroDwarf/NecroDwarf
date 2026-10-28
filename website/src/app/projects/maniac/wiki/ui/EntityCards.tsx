@@ -21,6 +21,25 @@ const units: Record<Stat["unit"], string> = {
   damage: "HP",
   armor: "",
 };
+export function EntityStats({ stats }: { stats: readonly Stat[] }) {
+  return (
+    <dl className={s.stats}>
+      {stats.map((stat) => (
+        <div key={stat.key}>
+          <dt>
+            <span>{stat.label}</span>
+          </dt>
+          <dd>
+            <GameGlyph name={statGlyph(stat.key, stat.unit)} />
+            <span>
+              {stat.value} {units[stat.unit]}
+            </span>
+          </dd>
+        </div>
+      ))}
+    </dl>
+  );
+}
 export interface CardProps {
   id: EntityId;
   snapshot?: SnapshotId;
@@ -52,7 +71,8 @@ export function EntityCard({
         : undefined;
   const relations: readonly EntityId[] = [
     ...("abilityIds" in data ? data.abilityIds : []),
-    ...("itemIds" in data ? data.itemIds : []),
+    ...("itemIds" in data ? (data.itemIds ?? []) : []),
+    ...("characterIds" in data ? (data.characterIds ?? []) : []),
     ...("mechanicIds" in data ? data.mechanicIds : []),
   ];
   return (
@@ -104,21 +124,7 @@ export function EntityCard({
         </>
       )}
       {showStats && data.stats?.length ? (
-        <dl className={s.stats}>
-          {data.stats.map((stat) => (
-            <div key={stat.key}>
-              <dt>
-                <span>{stat.label}</span>
-              </dt>
-              <dd>
-                <GameGlyph name={statGlyph(stat.key, stat.unit)} />
-                <span>
-                  {stat.value} {units[stat.unit]}
-                </span>
-              </dd>
-            </div>
-          ))}
-        </dl>
+        <EntityStats stats={data.stats} />
       ) : null}
       {variant === "detail" && (
         <>

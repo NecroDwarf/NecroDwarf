@@ -1,0 +1,23 @@
+{
+  "character:dodepovich@release:1.1": "2f7f5e5754003d43998287a53478fff8e8a974016655bc94c7c4f94cbc1551a1",
+  "character:ghost@release:1.1": "a7459b314a7c4d04184dd4b1cfe7c22756eaa4422dbf53a3e8157e3abd185901",
+  "character:keeper-of-nightmares@release:1.1": "893ff9a471a56dc42633481173371c5811cddfa39f44996b222ae5a0ca8651bb",
+  "ability:concentrated-nightmare@release:1.1": "36c4e65f745fa7e33015a9e2aa8d1194e70c37b32c913c9e1f4510105e938195",
+  "perk:pink-orchid@release:1.2": "efd41b1fe840121ed4e255fc0e215243215c0b0d608e328ab05e2e40514ab87c",
+  "perk:sber-sprout@release:1.2": "a259e0a0eaf6a75d74a05a182a87a1a0125f0170aa2a6c8cce66b67ecd636826",
+  "perk:rose-colored-glasses@release:1.2": "21646e02706a74b87ead66548001c090d0b8157128b63479d38d584970e82201",
+  "perk:reality-anchor@release:1.2": "be7d3019f9bf58e50bb4072e3dc7006cc147536d52cd16c59f51e6c0638d687f",
+  "perk:emergency-overclock@release:1.2": "a4f93bb1a948026ed0aa212a4cb018c44c28699b26cd77ce442667e31fcff70a",
+  "perk:fixed-it-im-out@release:1.2": "def79be030b8664b43bca69817c5c69002449f59d48c87e0bea8ea7d442f999c",
+  "perk:magic-kick@release:1.2": "4d02ab1b96ac051e6f64fcada7b93ff06edf280d9032aabf41c0b1573558132a",
+  "perk:flowers-lead-the-investigation@release:1.2": "e352273a46d5064c04dc427058409d4b2417486e71c9e462d5673f149be26581",
+  "perk:bouquet-to-the-other-side@release:1.2": "a89be740758249170c08918c5446acb39802f70a9ecc738aa1568a34faf9d944",
+  "perk:bud-dispatcher@release:1.2": "8856e30c236a9f222ff0ce144946a07b131b41758cc34e9c06f46d1f43adb427",
+  "perk:high-voltage@release:1.2": "174103e8d2682bb575354bcbeb602a5c2d8e2cc12a9cbe29ea7d8783189007e6",
+  "perk:go-next@release:1.2": "1106903d073163af32be4a596b9eb65fabbebb3d18d85c116b13a49136cf7b68",
+  "perk:color-roulette@release:1.2": "cf6a061abd5d7ba3b10875e166a11537846fbdcf61c9800746de06998d1d97f9",
+  "perk:the-paint-thickens@release:1.2": "fbe57c4036d774c2160a562372203aef2d85393860a573998e7a88ec98d613a6",
+  "perk:forget-me-not@release:1.2": "3edd26bea97a3a4b0f116c71391084225ffd30ed20e9e86cbb552706ccfd65f5",
+  "item:nightmare-lighter@release:1.1": "97c529430d95477cf6118d2a17dddcf58cb63417065e35f0e0a5bddc0dff767b",
+  "mechanic:flower-return@release:1.2": "2b267923a72026e750e8df048d436f9b667b2e4155176b613bee81c24f2f5212"
+}

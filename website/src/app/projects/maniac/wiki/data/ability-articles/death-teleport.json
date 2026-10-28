@@ -1,0 +1,25 @@
+{
+  "id": "ability:death-teleport",
+  "description": "ПКМ: телепортация к случайному выжившему.",
+  "conditions": [
+    "ПКМ с косой в основной руке. Нужна доступная цель; во время подготовки нельзя запустить вторую телепортацию."
+  ],
+  "availability": {
+    "mana": "7 маны",
+    "cooldown": "60 с"
+  },
+  "notes": [
+    "getMaxCooldownSeconds возвращает 30 с, но tryTeleport проверяет TELEPORT_COOLDOWN = 60000 мс. Здесь указано серверное ограничение 60 с."
+  ],
+  "evidence": [
+    {
+      "path": "src/main/java/org/example/maniacrevolution/item/DeathScytheItem.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/character/maniac/DeathClass.java"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+    }
+  ]
+}

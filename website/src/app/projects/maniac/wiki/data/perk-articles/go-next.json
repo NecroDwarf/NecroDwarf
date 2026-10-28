@@ -1,0 +1,24 @@
+{
+  "id": "perk:go-next",
+  "description": "Когда вы отправляете выжившего в нокдаун, ближайший другой активный выживший в радиусе 32 блоков по горизонтали и ±12 блоков по вертикали кричит. Его позиция отмечается для маньяков на 5 сек. Перезарядка: 45 сек.",
+  "conditions": [],
+  "availability": {
+    "cooldown": "45 с",
+    "mana": "Не задана в базовом классе этого перка"
+  },
+  "notes": [],
+  "evidence": [
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/perks/maniac/GoNextPerk.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/Perk.java"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/scream/ScreamManager.java"
+    }
+  ]
+}

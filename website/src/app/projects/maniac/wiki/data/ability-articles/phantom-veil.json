@@ -1,0 +1,26 @@
+{
+  "id": "ability:phantom-veil",
+  "description": "Включает или выключает полную невидимость; после выхода нельзя атаковать 2 сек.",
+  "conditions": [
+    "ПКМ игрушечным ножом включает или выключает полную невидимость. Выход из неё запускает период, когда нельзя атаковать."
+  ],
+  "availability": {
+    "mana": "3 маны",
+    "cooldown": "0 с"
+  },
+  "notes": [],
+  "evidence": [
+    {
+      "path": "src/main/java/org/example/maniacrevolution/item/ToyKnifeItem.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/character/maniac/GhostClass.java"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/ghost/GhostStealthManager.java"
+    }
+  ]
+}

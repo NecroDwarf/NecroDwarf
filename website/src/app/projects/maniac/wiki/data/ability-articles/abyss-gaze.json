@@ -1,0 +1,23 @@
+{
+  "id": "ability:abyss-gaze",
+  "description": "Долгий взгляд снижает рассудок выжившего. При срыве рассудка начинается кошмарное испытание.",
+  "conditions": [
+    "Пассивное воздействие взглядом Хранителя на выжившего. Не является активируемым перком или отдельным нажатием клавиши."
+  ],
+  "availability": {},
+  "notes": [],
+  "evidence": [
+    {
+      "path": "src/main/java/org/example/maniacrevolution/character/maniac/KeeperOfNightmaresClass.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/character/maniac/KeeperOfNightmaresClass.java"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/nightmare/NightmareConfig.java"
+    }
+  ]
+}

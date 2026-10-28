@@ -1,0 +1,102 @@
+{
+  "commit": "8692f66dc76582144be85d553d43a41f189b64e7",
+  "abilities": [
+    {
+      "id": "ability:death-teleport",
+      "class": "DeathScytheItem",
+      "descriptionArguments": [],
+      "notes": [
+        "getMaxCooldownSeconds возвращает 30 с, но tryTeleport проверяет TELEPORT_COOLDOWN = 60000 мс. Здесь указано серверное ограничение 60 с."
+      ]
+    },
+    {
+      "id": "ability:beast-leap",
+      "class": "BeastClawItem",
+      "descriptionArguments": [
+        2.5,
+        1.8
+      ],
+      "notes": []
+    },
+    {
+      "id": "ability:plague-orb",
+      "class": "PlagueLanternItem",
+      "descriptionArguments": [],
+      "notes": []
+    },
+    {
+      "id": "ability:ghost-possession",
+      "class": "GhostHandItem",
+      "descriptionArguments": [],
+      "notes": []
+    },
+    {
+      "id": "ability:phantom-veil",
+      "class": "ToyKnifeItem",
+      "descriptionArguments": [
+        2
+      ],
+      "notes": []
+    },
+    {
+      "id": "ability:musical-wave",
+      "class": "MicrophoneItem",
+      "descriptionArguments": [
+        3,
+        5
+      ],
+      "notes": []
+    },
+    {
+      "id": "ability:damage-transfer",
+      "class": "MedicalMaskItem",
+      "descriptionArguments": [
+        50,
+        4
+      ],
+      "notes": [
+        "Краткое описание CharacterClass говорит о следующей атаке. MedicalMaskItem и MedicActiveAbility реализуют разделение урона в течение 15 секунд; статья следует обработчику урона."
+      ]
+    },
+    {
+      "id": "ability:quantum-swap",
+      "class": "NetherSwapItem",
+      "descriptionArguments": [
+        64
+      ],
+      "notes": []
+    },
+    {
+      "id": "ability:smoke-cloud",
+      "class": "BongItem",
+      "descriptionArguments": [
+        5,
+        5
+      ],
+      "notes": []
+    },
+    {
+      "id": "ability:hook-throw",
+      "class": "HookItem",
+      "descriptionArguments": [
+        24
+      ],
+      "notes": []
+    },
+    {
+      "id": "ability:concentrated-nightmare",
+      "class": "GuardianHeadItem",
+      "descriptionArguments": [
+        10
+      ],
+      "notes": []
+    },
+    {
+      "id": "ability:abyss-gaze",
+      "class": "KeeperOfNightmaresClass",
+      "descriptionArguments": [],
+      "notes": []
+    }
+  ],
+  "classification": "Existing explicit abilities + confirmed HookItem implements IItemWithAbility. Passive features and perk effects are not enumerated as abilities."
+}

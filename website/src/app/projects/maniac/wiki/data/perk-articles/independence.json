@@ -1,0 +1,21 @@
+{
+  "id": "perk:independence",
+  "description": "Если рядом нет союзников и вы лежите 10 сек., один раз за игру поднимает вас с 5 HP.",
+  "conditions": [],
+  "availability": {
+    "cooldown": "Один раз за матч",
+    "mana": "10 маны"
+  },
+  "notes": [],
+  "evidence": [
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/perks/survivor/IndependencePerk.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/Perk.java"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+    }
+  ]
+}

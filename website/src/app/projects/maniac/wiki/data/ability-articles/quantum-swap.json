@@ -1,0 +1,23 @@
+{
+  "id": "ability:quantum-swap",
+  "description": "Ищет цель на расстоянии до 64 блоков и меняет вас с ней местами.",
+  "conditions": [
+    "Используйте устройство, выбрав подходящую цель в пределах дальности сканирования."
+  ],
+  "availability": {
+    "mana": "10 маны",
+    "cooldown": "30 с"
+  },
+  "notes": [],
+  "evidence": [
+    {
+      "path": "src/main/java/org/example/maniacrevolution/item/NetherSwapItem.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/character/survivor/ScientistClass.java"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+    }
+  ]
+}

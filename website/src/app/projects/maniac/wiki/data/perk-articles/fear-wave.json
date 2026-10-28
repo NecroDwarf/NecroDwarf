@@ -1,0 +1,21 @@
+{
+  "id": "perk:fear-wave",
+  "description": "Выпускает волну радиусом 10 блоков, накладывающую Страх на всех, включая союзников, на 5 сек.",
+  "conditions": [],
+  "availability": {
+    "cooldown": "70 с",
+    "mana": "10 маны"
+  },
+  "notes": [],
+  "evidence": [
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/perks/common/FearWavePerk.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/Perk.java"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+    }
+  ]
+}

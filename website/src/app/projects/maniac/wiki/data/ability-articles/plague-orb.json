@@ -1,0 +1,23 @@
+{
+  "id": "ability:plague-orb",
+  "description": "Бросает сгусток, ускоряющий заражение чумой.",
+  "conditions": [
+    "ПКМ чумной лампой. Попадание сгустком ускоряет заражение цели."
+  ],
+  "availability": {
+    "mana": "5 маны",
+    "cooldown": "20 с"
+  },
+  "notes": [],
+  "evidence": [
+    {
+      "path": "src/main/java/org/example/maniacrevolution/item/PlagueLanternItem.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/character/maniac/PlagueDoctorClass.java"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+    }
+  ]
+}

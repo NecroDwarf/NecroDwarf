@@ -1,0 +1,26 @@
+{
+  "id": "ability:smoke-cloud",
+  "description": "Создаёт облако дыма на 5 сек.; игроки в радиусе 5 блоков получают Плавное падение.",
+  "conditions": [
+    "Используйте бонг. Эффект облака относится к находящимся в его области игрокам; это действие предмета, а не перк."
+  ],
+  "availability": {
+    "mana": "5 маны",
+    "cooldown": "15 с"
+  },
+  "notes": [],
+  "evidence": [
+    {
+      "path": "src/main/java/org/example/maniacrevolution/item/BongItem.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/character/survivor/MefedronshchikClass.java"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/entity/BongCloudEntity.java"
+    }
+  ]
+}

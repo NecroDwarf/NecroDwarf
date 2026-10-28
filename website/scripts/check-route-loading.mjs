@@ -113,6 +113,47 @@ for (const c of characters) {
   if (c.slug !== "keeper-of-nightmares")
     assert.ok(!loaded.some((m) => m.includes(".glb")));
 }
+const referenceArticle = (m) =>
+  /wiki\/data\/(?:perk|ability)-articles\/.*\.json$/.test(m);
+assert.ok(!initial.some(referenceArticle));
+for (const page of ["PerksPage", "AbilitiesPage"]) {
+  const loaded = staticModules(
+    main,
+    chunkFor(`src/app/projects/maniac/wiki/pages/${page}.tsx`),
+  );
+  assert.ok(!loaded.some(referenceArticle));
+  assert.ok(!loaded.some(modelRuntime));
+  assert.ok(
+    !loaded.some(
+      (m) => m.includes(".glb") || /changelogs\/content\/.*\.json$/.test(m),
+    ),
+  );
+}
+for (const kind of ["perk", "ability"]) {
+  const entries = JSON.parse(
+    await readFile(
+      `src/app/projects/maniac/wiki/data/${kind}-catalog.json`,
+      "utf8",
+    ),
+  );
+  for (const entry of entries) {
+    const loaded = staticModules(
+      main,
+      chunkFor(
+        `src/app/projects/maniac/wiki/pages/${kind === "perk" ? "perks" : "abilities"}/${entry.slug}.tsx`,
+      ),
+    );
+    assert.deepEqual(loaded.filter(referenceArticle), [
+      `src/app/projects/maniac/wiki/data/${kind}-articles/${entry.slug}.json`,
+    ]);
+    assert.ok(!loaded.some(modelRuntime));
+    assert.ok(
+      !loaded.some(
+        (m) => m.includes(".glb") || /changelogs\/content\/.*\.json$/.test(m),
+      ),
+    );
+  }
+}
 console.log(
   "PASS: route chunks isolated; initial JS has no chronicle text/Wiki database; each chronicle/article loads only its own JSON/art; Wiki/catalog/characters have no eager 3D.",
 );

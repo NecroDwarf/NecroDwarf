@@ -1,0 +1,1298 @@
+[
+  {
+    "id": "perk:bigmoney",
+    "slug": "bigmoney",
+    "name": "большие деньги - большие яйца",
+    "gameId": "bigmoney",
+    "team": "ALL",
+    "perkType": "PASSIVE",
+    "phases": ["ANY"],
+    "description": "Получайте на 50% больше монет в конце игры.",
+    "icon": "registered-bigmoney",
+    "stats": [],
+    "evidence": [
+      {
+        "path": "src/main/java/org/example/maniacrevolution/perk/perks/common/BigmoneyPerk.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/perk/Perk.java"
+      },
+      {
+        "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+      }
+    ]
+  },
+  {
+    "id": "perk:megamind",
+    "slug": "megamind",
+    "name": "Мегамозг",
+    "gameId": "megamind",
+    "team": "ALL",
+    "perkType": "PASSIVE",
+    "phases": ["ANY"],
+    "description": "Получайте на 50% больше опыта в конце игры.",
+    "icon": "registered-megamind",
+    "stats": [],
+    "evidence": [
+      {
+        "path": "src/main/java/org/example/maniacrevolution/perk/perks/common/MegamindPerk.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/perk/Perk.java"
+      },
+      {
+        "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+      }
+    ]
+  },
+  {
+    "id": "perk:gto-medal",
+    "slug": "gto-medal",
+    "name": "Золотая медаль ГТО",
+    "gameId": "gto_medal",
+    "team": "ALL",
+    "perkType": "ACTIVE",
+    "phases": ["ANY"],
+    "description": "Рывок вперёд по горизонтальному направлению взгляда с подъёмом.",
+    "icon": "registered-gto-medal",
+    "stats": [
+      {
+        "key": "cooldown",
+        "label": "Перезарядка",
+        "value": 45,
+        "unit": "seconds"
+      },
+      {
+        "key": "mana",
+        "label": "Стоимость срабатывания",
+        "value": 5,
+        "unit": "mana"
+      }
+    ],
+    "evidence": [
+      {
+        "path": "src/main/java/org/example/maniacrevolution/perk/perks/common/GtoMedalPerk.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/perk/Perk.java"
+      },
+      {
+        "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+      }
+    ]
+  },
+  {
+    "id": "perk:fear-wave",
+    "slug": "fear-wave",
+    "name": "Волна ужаса",
+    "gameId": "fear_wave",
+    "team": "ALL",
+    "perkType": "ACTIVE",
+    "phases": ["MIDGAME", "REVERSAL"],
+    "description": "Выпускает волну радиусом 10 блоков, накладывающую Страх на всех, включая союзников, на 5 сек.",
+    "icon": "registered-fear-wave",
+    "stats": [
+      {
+        "key": "cooldown",
+        "label": "Перезарядка",
+        "value": 70,
+        "unit": "seconds"
+      },
+      {
+        "key": "mana",
+        "label": "Стоимость срабатывания",
+        "value": 10,
+        "unit": "mana"
+      }
+    ],
+    "evidence": [
+      {
+        "path": "src/main/java/org/example/maniacrevolution/perk/perks/common/FearWavePerk.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/perk/Perk.java"
+      },
+      {
+        "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+      }
+    ]
+  },
+  {
+    "id": "perk:str-perk",
+    "slug": "str-perk",
+    "name": "Сила Волги",
+    "gameId": "str_perk",
+    "team": "ALL",
+    "perkType": "PASSIVE",
+    "phases": ["REVERSAL"],
+    "description": "Внемли силе земли!",
+    "icon": "registered-str-perk",
+    "stats": [],
+    "evidence": [
+      {
+        "path": "src/main/java/org/example/maniacrevolution/perk/perks/common/StrPerk.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/perk/Perk.java"
+      },
+      {
+        "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+      }
+    ]
+  },
+  {
+    "id": "perk:mana-break",
+    "slug": "mana-break",
+    "name": "Разрушение маны",
+    "gameId": "mana_break",
+    "team": "ALL",
+    "perkType": "PASSIVE_COOLDOWN",
+    "phases": ["ANY"],
+    "description": "Удар по противнику снимает 10 ед.",
+    "icon": "registered-mana-break",
+    "stats": [
+      {
+        "key": "cooldown",
+        "label": "Перезарядка",
+        "value": 90,
+        "unit": "seconds"
+      }
+    ],
+    "evidence": [
+      {
+        "path": "src/main/java/org/example/maniacrevolution/perk/perks/common/ManaBreakPerk.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/perk/Perk.java"
+      },
+      {
+        "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+      }
+    ]
+  },
+  {
+    "id": "perk:hedgehog-skin",
+    "slug": "hedgehog-skin",
+    "name": "Шкура Ёжика",
+    "gameId": "hedgehog_skin",
+    "team": "ALL",
+    "perkType": "ACTIVE",
+    "phases": ["ANY"],
+    "description": "На 5 сек.",
+    "icon": "registered-hedgehog-skin",
+    "stats": [
+      {
+        "key": "cooldown",
+        "label": "Перезарядка",
+        "value": 100,
+        "unit": "seconds"
+      },
+      {
+        "key": "mana",
+        "label": "Стоимость срабатывания",
+        "value": 10.0,
+        "unit": "mana"
+      }
+    ],
+    "evidence": [
+      {
+        "path": "src/main/java/org/example/maniacrevolution/perk/perks/common/HedgehogSkinPerk.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/perk/Perk.java"
+      },
+      {
+        "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/effect/ThornEffect.java"
+      }
+    ]
+  },
+  {
+    "id": "perk:football-fan",
+    "slug": "football-fan",
+    "name": "Футбольный фанат",
+    "gameId": "football_fan",
+    "team": "ALL",
+    "perkType": "ACTIVE",
+    "phases": ["ANY"],
+    "description": "Бросает пиво, обездвиживая выжившего на 60 сек.",
+    "icon": "registered-football-fan",
+    "stats": [],
+    "evidence": [
+      {
+        "path": "src/main/java/org/example/maniacrevolution/perk/perks/common/FootballFanPerk.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/perk/Perk.java"
+      },
+      {
+        "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+      }
+    ]
+  },
+  {
+    "id": "perk:color-roulette",
+    "slug": "color-roulette",
+    "name": "Кручу-верчу, цвет получить хочу",
+    "gameId": "color_roulette",
+    "team": "ALL",
+    "perkType": "ACTIVE",
+    "phases": ["HUNT", "MIDGAME", "REVERSAL"],
+    "description": "Запустите рулетку за 10 маны: карты появляются за 1.5 сек.",
+    "icon": "registered-color-roulette",
+    "stats": [
+      {
+        "key": "cooldown",
+        "label": "Перезарядка",
+        "value": 45,
+        "unit": "seconds"
+      },
+      {
+        "key": "mana",
+        "label": "Стоимость срабатывания",
+        "value": 10,
+        "unit": "mana"
+      }
+    ],
+    "evidence": [
+      {
+        "path": "src/main/java/org/example/maniacrevolution/perk/perks/common/ColorRoulettePerk.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/perk/Perk.java"
+      },
+      {
+        "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+      }
+    ]
+  },
+  {
+    "id": "perk:the-paint-thickens",
+    "slug": "the-paint-thickens",
+    "name": "Краски сгущаются",
+    "gameId": "the_paint_thickens",
+    "team": "ALL",
+    "perkType": "PASSIVE",
+    "phases": ["ANY"],
+    "description": "В начале матча вы получаете привязанную Банку краски на 3 использования.",
+    "icon": "registered-the-paint-thickens",
+    "stats": [],
+    "evidence": [
+      {
+        "path": "src/main/java/org/example/maniacrevolution/perk/perks/maniac/ThePaintThickensPerk.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/perk/Perk.java"
+      },
+      {
+        "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+      }
+    ]
+  },
+  {
+    "id": "perk:mimic",
+    "slug": "mimic",
+    "name": "Мимик",
+    "gameId": "mimic",
+    "team": "SURVIVOR",
+    "perkType": "ACTIVE",
+    "phases": ["ANY"],
+    "description": "Маскирует под самый распространённый блок в радиусе 2 блоков на 5 сек.",
+    "icon": "registered-mimic",
+    "stats": [
+      {
+        "key": "cooldown",
+        "label": "Перезарядка",
+        "value": 90,
+        "unit": "seconds"
+      },
+      {
+        "key": "mana",
+        "label": "Стоимость срабатывания",
+        "value": 15,
+        "unit": "mana"
+      }
+    ],
+    "evidence": [
+      {
+        "path": "src/main/java/org/example/maniacrevolution/perk/perks/survivor/MimicPerk.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/perk/Perk.java"
+      },
+      {
+        "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+      }
+    ]
+  },
+  {
+    "id": "perk:wallhack",
+    "slug": "wallhack",
+    "name": "Просвет сквозь стену",
+    "gameId": "wallhack",
+    "team": "SURVIVOR",
+    "perkType": "PASSIVE_COOLDOWN",
+    "phases": ["ANY"],
+    "description": "Подсвечивает маньяков через стены на 6 сек.",
+    "icon": "registered-wallhack",
+    "stats": [
+      {
+        "key": "cooldown",
+        "label": "Перезарядка",
+        "value": 45,
+        "unit": "seconds"
+      }
+    ],
+    "evidence": [
+      {
+        "path": "src/main/java/org/example/maniacrevolution/perk/perks/survivor/WallhackPerk.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/perk/Perk.java"
+      },
+      {
+        "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+      }
+    ]
+  },
+  {
+    "id": "perk:last-breath",
+    "slug": "last-breath",
+    "name": "Последнее дыхание",
+    "gameId": "last_breath",
+    "team": "SURVIVOR",
+    "perkType": "PASSIVE",
+    "phases": ["ANY"],
+    "description": "При смерти подсвечивает вашего убийцу для всей команды на 10 сек.",
+    "icon": "registered-last-breath",
+    "stats": [],
+    "evidence": [
+      {
+        "path": "src/main/java/org/example/maniacrevolution/perk/perks/survivor/LastBreathPerk.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/perk/Perk.java"
+      },
+      {
+        "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+      }
+    ]
+  },
+  {
+    "id": "perk:quick-reflexes",
+    "slug": "quick-reflexes",
+    "name": "Быстрая реакция",
+    "gameId": "quick_reflexes",
+    "team": "SURVIVOR",
+    "perkType": "PASSIVE",
+    "phases": ["ANY"],
+    "description": "QTE компьютера: +0.45 сек., +6% к размеру зелёной зоны, +5% к допуску успеха и +10% к размеру критической зоны.",
+    "icon": "registered-quick-reflexes",
+    "stats": [],
+    "evidence": [
+      {
+        "path": "src/main/java/org/example/maniacrevolution/perk/perks/survivor/QuickReflexesPerk.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/perk/Perk.java"
+      },
+      {
+        "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+      }
+    ]
+  },
+  {
+    "id": "perk:blindness",
+    "slug": "blindness",
+    "name": "Слепота",
+    "gameId": "blindness",
+    "team": "SURVIVOR",
+    "perkType": "HYBRID",
+    "phases": ["HUNT", "MIDGAME"],
+    "description": "Пассивно: Слепота маньякам в радиусе 1.5 блоков на 3 сек.",
+    "icon": "registered-blindness",
+    "stats": [
+      {
+        "key": "cooldown",
+        "label": "Перезарядка",
+        "value": 120,
+        "unit": "seconds"
+      },
+      {
+        "key": "mana",
+        "label": "Стоимость срабатывания",
+        "value": 10,
+        "unit": "mana"
+      }
+    ],
+    "evidence": [
+      {
+        "path": "src/main/java/org/example/maniacrevolution/perk/perks/survivor/BlindnessPerk.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/perk/Perk.java"
+      },
+      {
+        "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+      }
+    ]
+  },
+  {
+    "id": "perk:mental-bond",
+    "slug": "mental-bond",
+    "name": "Ментальная связь",
+    "gameId": "mental_bond",
+    "team": "SURVIVOR",
+    "perkType": "PASSIVE",
+    "phases": ["ANY"],
+    "description": "Пока вы лежите, союзники в радиусе 30 блоков видят вашу подсветку.",
+    "icon": "registered-mental-bond",
+    "stats": [],
+    "evidence": [
+      {
+        "path": "src/main/java/org/example/maniacrevolution/perk/perks/survivor/MentalBondPerk.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/perk/Perk.java"
+      },
+      {
+        "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+      }
+    ]
+  },
+  {
+    "id": "perk:dutch-helm",
+    "slug": "dutch-helm",
+    "name": "Голландцы",
+    "gameId": "dutch_helm",
+    "team": "SURVIVOR",
+    "perkType": "PASSIVE",
+    "phases": ["ANY"],
+    "description": "Даёт 4% скорости за каждого живого союзника с этим перком.",
+    "icon": "registered-dutch-helm",
+    "stats": [],
+    "evidence": [
+      {
+        "path": "src/main/java/org/example/maniacrevolution/perk/perks/survivor/DutchHelmPerk.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/perk/Perk.java"
+      },
+      {
+        "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+      }
+    ]
+  },
+  {
+    "id": "perk:independence",
+    "slug": "independence",
+    "name": "Независимость",
+    "gameId": "independence",
+    "team": "SURVIVOR",
+    "perkType": "ACTIVE",
+    "phases": ["ANY"],
+    "description": "Если рядом нет союзников и вы лежите 10 сек., один раз за игру поднимает вас с 5 HP.",
+    "icon": "registered-independence",
+    "stats": [
+      {
+        "key": "mana",
+        "label": "Стоимость срабатывания",
+        "value": 10.0,
+        "unit": "mana"
+      }
+    ],
+    "evidence": [
+      {
+        "path": "src/main/java/org/example/maniacrevolution/perk/perks/survivor/IndependencePerk.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/perk/Perk.java"
+      },
+      {
+        "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+      }
+    ]
+  },
+  {
+    "id": "perk:altruist-exe",
+    "slug": "altruist-exe",
+    "name": "Альтруист.exe",
+    "gameId": "altruist_exe",
+    "team": "SURVIVOR",
+    "perkType": "PASSIVE_COOLDOWN",
+    "phases": ["ANY"],
+    "description": "После поднятия союзника оба получают усиление на 45 сек., увеличивающее вклад во взлом на 5%.",
+    "icon": "registered-altruist-exe",
+    "stats": [
+      {
+        "key": "cooldown",
+        "label": "Перезарядка",
+        "value": 90,
+        "unit": "seconds"
+      },
+      {
+        "key": "mana",
+        "label": "Стоимость срабатывания",
+        "value": 5.0,
+        "unit": "mana"
+      }
+    ],
+    "evidence": [
+      {
+        "path": "src/main/java/org/example/maniacrevolution/perk/perks/survivor/AltruistExePerk.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/perk/Perk.java"
+      },
+      {
+        "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+      }
+    ]
+  },
+  {
+    "id": "perk:magic-lover",
+    "slug": "magic-lover",
+    "name": "Любовник Магии",
+    "gameId": "magic_lover",
+    "team": "SURVIVOR",
+    "perkType": "PASSIVE_COOLDOWN",
+    "phases": ["ANY"],
+    "description": "Получаете 10 маны, когда союзник тратит ману.",
+    "icon": "registered-magic-lover",
+    "stats": [
+      {
+        "key": "cooldown",
+        "label": "Перезарядка",
+        "value": 90,
+        "unit": "seconds"
+      }
+    ],
+    "evidence": [
+      {
+        "path": "src/main/java/org/example/maniacrevolution/perk/perks/survivor/MagicLoverPerk.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/perk/Perk.java"
+      },
+      {
+        "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+      }
+    ]
+  },
+  {
+    "id": "perk:idealych",
+    "slug": "idealych",
+    "name": "Идеалыч",
+    "gameId": "idealych",
+    "team": "SURVIVOR",
+    "perkType": "PASSIVE",
+    "phases": ["ANY"],
+    "description": "Успешное QTE даёт +1% вклада за заряд, максимум +5%.",
+    "icon": "registered-idealych",
+    "stats": [],
+    "evidence": [
+      {
+        "path": "src/main/java/org/example/maniacrevolution/perk/perks/survivor/IdealychPerk.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/perk/Perk.java"
+      },
+      {
+        "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+      }
+    ]
+  },
+  {
+    "id": "perk:reality-anchor",
+    "slug": "reality-anchor",
+    "name": "Якорь реальности",
+    "gameId": "reality_anchor",
+    "team": "SURVIVOR",
+    "perkType": "CHARGED",
+    "phases": ["ANY"],
+    "description": "Критическое QTE создаёт заряд стабильности на 60 сек.",
+    "icon": "registered-reality-anchor",
+    "stats": [
+      {
+        "key": "charge-duration",
+        "label": "Жизнь заряда",
+        "value": 60,
+        "unit": "seconds"
+      },
+      {
+        "key": "stored-charges",
+        "label": "Одновременно зарядов",
+        "value": 2,
+        "unit": "count"
+      },
+      {
+        "key": "game-charges",
+        "label": "Зарядов за матч",
+        "value": 2,
+        "unit": "count"
+      }
+    ],
+    "evidence": [
+      {
+        "path": "src/main/java/org/example/maniacrevolution/perk/perks/survivor/RealityAnchorPerk.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/perk/Perk.java"
+      },
+      {
+        "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+      }
+    ]
+  },
+  {
+    "id": "perk:emergency-overclock",
+    "slug": "emergency-overclock",
+    "name": "Аварийный разгон",
+    "gameId": "emergency_overclock",
+    "team": "SURVIVOR",
+    "perkType": "ACTIVE",
+    "phases": ["ANY"],
+    "description": "Только во время взлома: на 8 сек.",
+    "icon": "registered-emergency-overclock",
+    "stats": [
+      {
+        "key": "cooldown",
+        "label": "Перезарядка",
+        "value": 75,
+        "unit": "seconds"
+      },
+      {
+        "key": "mana",
+        "label": "Стоимость срабатывания",
+        "value": 15.0,
+        "unit": "mana"
+      }
+    ],
+    "evidence": [
+      {
+        "path": "src/main/java/org/example/maniacrevolution/perk/perks/survivor/EmergencyOverclockPerk.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/perk/Perk.java"
+      },
+      {
+        "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+      }
+    ]
+  },
+  {
+    "id": "perk:fixed-it-im-out",
+    "slug": "fixed-it-im-out",
+    "name": "Я починил, я ухожу",
+    "gameId": "fixed_it_im_out",
+    "team": "SURVIVOR",
+    "perkType": "PASSIVE",
+    "phases": ["REVERSAL"],
+    "description": "При включении фазы 3 восстанавливает 10 HP и увеличивает скорость передвижения на 20% до конца матча.",
+    "icon": "registered-fixed-it-im-out",
+    "stats": [],
+    "evidence": [
+      {
+        "path": "src/main/java/org/example/maniacrevolution/perk/perks/survivor/FixedItImOutPerk.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/perk/Perk.java"
+      },
+      {
+        "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+      }
+    ]
+  },
+  {
+    "id": "perk:magic-kick",
+    "slug": "magic-kick",
+    "name": "Волшебный пендель",
+    "gameId": "magic_kick",
+    "team": "SURVIVOR",
+    "perkType": "PASSIVE",
+    "phases": ["HUNT", "MIDGAME"],
+    "description": "После первого фактически полученного урона от маньяка даёт +30% к скорости передвижения на 20 сек.",
+    "icon": "registered-magic-kick",
+    "stats": [],
+    "evidence": [
+      {
+        "path": "src/main/java/org/example/maniacrevolution/perk/perks/survivor/MagicKickPerk.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/perk/Perk.java"
+      },
+      {
+        "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+      }
+    ]
+  },
+  {
+    "id": "perk:forget-me-not",
+    "slug": "forget-me-not",
+    "name": "Незабудка",
+    "gameId": "forget_me_not",
+    "team": "SURVIVOR",
+    "perkType": "HYBRID",
+    "phases": ["HUNT", "MIDGAME", "REVERSAL"],
+    "description": "В начале матча вы получаете личную Незабудку и можете установить её в безопасной точке.",
+    "icon": "registered-forget-me-not",
+    "stats": [
+      {
+        "key": "cooldown",
+        "label": "Перезарядка",
+        "value": 60,
+        "unit": "seconds"
+      },
+      {
+        "key": "mana",
+        "label": "Стоимость срабатывания",
+        "value": 10.0,
+        "unit": "mana"
+      }
+    ],
+    "evidence": [
+      {
+        "path": "src/main/java/org/example/maniacrevolution/perk/perks/survivor/ForgetMeNotPerk.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/perk/Perk.java"
+      },
+      {
+        "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+      }
+    ]
+  },
+  {
+    "id": "perk:rose-colored-glasses",
+    "slug": "rose-colored-glasses",
+    "name": "Розовые очки",
+    "gameId": "rose_colored_glasses",
+    "team": "SURVIVOR",
+    "perkType": "PASSIVE",
+    "phases": ["HUNT", "MIDGAME"],
+    "description": "В начале матча вы получаете привязанные Розовые очки с прочностью 15.",
+    "icon": "registered-rose-colored-glasses",
+    "stats": [],
+    "evidence": [
+      {
+        "path": "src/main/java/org/example/maniacrevolution/perk/perks/survivor/RoseColoredGlassesPerk.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/perk/Perk.java"
+      },
+      {
+        "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+      }
+    ]
+  },
+  {
+    "id": "perk:pink-orchid",
+    "slug": "pink-orchid",
+    "name": "Розовая Орхидея",
+    "gameId": "pink_orchid",
+    "team": "SURVIVOR",
+    "perkType": "HYBRID",
+    "phases": ["HUNT", "MIDGAME"],
+    "description": "ПКМ личной орхидеей записывает ваш маршрут длительностью до 6 сек.; повторное нажатие завершает запись раньше.",
+    "icon": "registered-pink-orchid",
+    "stats": [
+      {
+        "key": "cooldown",
+        "label": "Перезарядка",
+        "value": 45,
+        "unit": "seconds"
+      },
+      {
+        "key": "mana",
+        "label": "Стоимость срабатывания",
+        "value": 10,
+        "unit": "mana"
+      }
+    ],
+    "evidence": [
+      {
+        "path": "src/main/java/org/example/maniacrevolution/perk/perks/survivor/PinkOrchidPerk.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/perk/Perk.java"
+      },
+      {
+        "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+      }
+    ]
+  },
+  {
+    "id": "perk:sber-sprout",
+    "slug": "sber-sprout",
+    "name": "СберРосток",
+    "gameId": "sber_sprout",
+    "team": "SURVIVOR",
+    "perkType": "HYBRID",
+    "phases": ["HUNT", "MIDGAME"],
+    "description": "Во время непрерывного ремонта СберРосток запоминает лично внесённый вами прогресс.",
+    "icon": "registered-sber-sprout",
+    "stats": [
+      {
+        "key": "mana",
+        "label": "Стоимость срабатывания",
+        "value": 5,
+        "unit": "mana"
+      }
+    ],
+    "evidence": [
+      {
+        "path": "src/main/java/org/example/maniacrevolution/perk/perks/survivor/SberSproutPerk.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/perk/Perk.java"
+      },
+      {
+        "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+      }
+    ]
+  },
+  {
+    "id": "perk:bloodflow",
+    "slug": "bloodflow",
+    "name": "Разрывающий удар",
+    "gameId": "bloodflow",
+    "team": "MANIAC",
+    "perkType": "PASSIVE_COOLDOWN",
+    "phases": ["ANY"],
+    "description": "Следующий удар накладывает Открытую рану на 10 сек.",
+    "icon": "registered-bloodflow",
+    "stats": [
+      {
+        "key": "cooldown",
+        "label": "Перезарядка",
+        "value": 25,
+        "unit": "seconds"
+      }
+    ],
+    "evidence": [
+      {
+        "path": "src/main/java/org/example/maniacrevolution/perk/perks/maniac/BloodflowPerk.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/perk/Perk.java"
+      },
+      {
+        "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+      }
+    ]
+  },
+  {
+    "id": "perk:i-am-speed",
+    "slug": "i-am-speed",
+    "name": "Я - скорость",
+    "gameId": "i_am_speed",
+    "team": "MANIAC",
+    "perkType": "PASSIVE",
+    "phases": ["ANY"],
+    "description": "После убийства выжившего даёт Скорость 3 на 15 сек.",
+    "icon": "registered-i-am-speed",
+    "stats": [],
+    "evidence": [
+      {
+        "path": "src/main/java/org/example/maniacrevolution/perk/perks/maniac/IAmSpeedPerk.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/perk/Perk.java"
+      },
+      {
+        "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+      }
+    ]
+  },
+  {
+    "id": "perk:high-voltage",
+    "slug": "high-voltage",
+    "name": "Высокое напряжение",
+    "gameId": "high_voltage",
+    "team": "MANIAC",
+    "perkType": "PASSIVE",
+    "phases": ["HUNT", "MIDGAME"],
+    "description": "Рядом с компьютером с прогрессом не ниже 80% вы получаете +20% к скорости.",
+    "icon": "registered-high-voltage",
+    "stats": [],
+    "evidence": [
+      {
+        "path": "src/main/java/org/example/maniacrevolution/perk/perks/maniac/HighVoltagePerk.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/perk/Perk.java"
+      },
+      {
+        "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+      }
+    ]
+  },
+  {
+    "id": "perk:go-next",
+    "slug": "go-next",
+    "name": "Го некст",
+    "gameId": "go_next",
+    "team": "MANIAC",
+    "perkType": "PASSIVE_COOLDOWN",
+    "phases": ["HUNT", "MIDGAME"],
+    "description": "Когда вы отправляете выжившего в нокдаун, ближайший другой активный выживший в радиусе 32 блоков по горизонтали и ±12 блоков по вертикали кричит.",
+    "icon": "registered-go-next",
+    "stats": [
+      {
+        "key": "cooldown",
+        "label": "Перезарядка",
+        "value": 45,
+        "unit": "seconds"
+      }
+    ],
+    "evidence": [
+      {
+        "path": "src/main/java/org/example/maniacrevolution/perk/perks/maniac/GoNextPerk.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/perk/Perk.java"
+      },
+      {
+        "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/scream/ScreamManager.java"
+      }
+    ]
+  },
+  {
+    "id": "perk:flowers-lead-the-investigation",
+    "slug": "flowers-lead-the-investigation",
+    "name": "Следствие ведут цветы",
+    "gameId": "flowers_lead_the_investigation",
+    "team": "MANIAC",
+    "perkType": "PASSIVE",
+    "phases": ["HUNT", "MIDGAME"],
+    "description": "Каждый активный выживший раз в 6 сек.",
+    "icon": "registered-flowers-lead-the-investigation",
+    "stats": [],
+    "evidence": [
+      {
+        "path": "src/main/java/org/example/maniacrevolution/perk/perks/maniac/FlowersLeadInvestigationPerk.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/perk/Perk.java"
+      },
+      {
+        "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+      }
+    ]
+  },
+  {
+    "id": "perk:bouquet-to-the-other-side",
+    "slug": "bouquet-to-the-other-side",
+    "name": "Букет на тот свет",
+    "gameId": "bouquet_to_the_other_side",
+    "team": "MANIAC",
+    "perkType": "PASSIVE",
+    "phases": ["HUNT", "MIDGAME", "REVERSAL"],
+    "description": "Первый удар по каждому уникальному выжившему добавляет назначенный ему цветок в Букет, максимум 3 цветка.",
+    "icon": "registered-bouquet-to-the-other-side",
+    "stats": [],
+    "evidence": [
+      {
+        "path": "src/main/java/org/example/maniacrevolution/perk/perks/maniac/BouquetToTheOtherSidePerk.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/perk/Perk.java"
+      },
+      {
+        "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+      }
+    ]
+  },
+  {
+    "id": "perk:bud-dispatcher",
+    "slug": "bud-dispatcher",
+    "name": "Диспетчер бутонов",
+    "gameId": "bud_dispatcher",
+    "team": "MANIAC",
+    "perkType": "HYBRID",
+    "phases": ["HUNT", "MIDGAME"],
+    "description": "В начале матча 9 логических компьютеров получают уникальные яркие цветы.",
+    "icon": "registered-bud-dispatcher",
+    "stats": [
+      {
+        "key": "mana",
+        "label": "Стоимость срабатывания",
+        "value": 3.0,
+        "unit": "mana"
+      }
+    ],
+    "evidence": [
+      {
+        "path": "src/main/java/org/example/maniacrevolution/perk/perks/maniac/BudDispatcherPerk.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/perk/Perk.java"
+      },
+      {
+        "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+      }
+    ]
+  },
+  {
+    "id": "perk:catch-mistakes",
+    "slug": "catch-mistakes",
+    "name": "Прогрел новичка",
+    "gameId": "catch_mistakes",
+    "team": "MANIAC",
+    "perkType": "PASSIVE_COOLDOWN",
+    "phases": ["ANY"],
+    "description": "При промахе выжившего в QTE подсвечивает его на 5 сек.",
+    "icon": "registered-catch-mistakes",
+    "stats": [
+      {
+        "key": "cooldown",
+        "label": "Перезарядка",
+        "value": 30,
+        "unit": "seconds"
+      }
+    ],
+    "evidence": [
+      {
+        "path": "src/main/java/org/example/maniacrevolution/perk/perks/maniac/CatchMistakesPerk.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/perk/Perk.java"
+      },
+      {
+        "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+      }
+    ]
+  },
+  {
+    "id": "perk:computer-breaker",
+    "slug": "computer-breaker",
+    "name": "Компьютер раскрафтер",
+    "gameId": "computer_breaker",
+    "team": "MANIAC",
+    "perkType": "ACTIVE",
+    "phases": ["MIDGAME"],
+    "description": "Отнимает 50% прогресса у самого заряженного компьютера.",
+    "icon": "registered-computer-breaker",
+    "stats": [
+      {
+        "key": "cooldown",
+        "label": "Перезарядка",
+        "value": 180,
+        "unit": "seconds"
+      },
+      {
+        "key": "mana",
+        "label": "Стоимость срабатывания",
+        "value": 10.0,
+        "unit": "mana"
+      }
+    ],
+    "evidence": [
+      {
+        "path": "src/main/java/org/example/maniacrevolution/perk/perks/maniac/ComputerBreakerPerk.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/perk/Perk.java"
+      },
+      {
+        "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+      }
+    ]
+  },
+  {
+    "id": "perk:highlight",
+    "slug": "highlight",
+    "name": "Не наебывай меня Тони",
+    "gameId": "highlight",
+    "team": "MANIAC",
+    "perkType": "PASSIVE",
+    "phases": ["ANY"],
+    "description": "При взломе компьютера подсвечивает случайных выживших на 6 сек.",
+    "icon": "registered-highlight",
+    "stats": [],
+    "evidence": [
+      {
+        "path": "src/main/java/org/example/maniacrevolution/perk/perks/maniac/HighlightPerk.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/perk/Perk.java"
+      },
+      {
+        "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+      }
+    ]
+  },
+  {
+    "id": "perk:silence",
+    "slug": "silence",
+    "name": "Тишина...",
+    "gameId": "silence",
+    "team": "MANIAC",
+    "perkType": "ACTIVE",
+    "phases": ["ANY"],
+    "description": "Накладывает Тишину на всех выживших в радиусе 10 блоков на 10 сек.",
+    "icon": "registered-silence",
+    "stats": [
+      {
+        "key": "cooldown",
+        "label": "Перезарядка",
+        "value": 100,
+        "unit": "seconds"
+      },
+      {
+        "key": "mana",
+        "label": "Стоимость срабатывания",
+        "value": 10.0,
+        "unit": "mana"
+      }
+    ],
+    "evidence": [
+      {
+        "path": "src/main/java/org/example/maniacrevolution/perk/perks/maniac/SilencePerk.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/perk/Perk.java"
+      },
+      {
+        "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+      }
+    ]
+  },
+  {
+    "id": "perk:ejection",
+    "slug": "ejection",
+    "name": "Выброс",
+    "gameId": "ejection",
+    "team": "MANIAC",
+    "perkType": "PASSIVE_COOLDOWN",
+    "phases": ["ANY"],
+    "description": "Когда компьютер полностью заряжен, один раз откатывает его прогресс на 5%.",
+    "icon": "registered-ejection",
+    "stats": [
+      {
+        "key": "cooldown",
+        "label": "Перезарядка",
+        "value": 20,
+        "unit": "seconds"
+      },
+      {
+        "key": "mana",
+        "label": "Стоимость срабатывания",
+        "value": 2.0,
+        "unit": "mana"
+      }
+    ],
+    "evidence": [
+      {
+        "path": "src/main/java/org/example/maniacrevolution/perk/perks/maniac/EjectionPerk.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/perk/Perk.java"
+      },
+      {
+        "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+      }
+    ]
+  },
+  {
+    "id": "perk:family-discord",
+    "slug": "family-discord",
+    "name": "Семейный Раздор",
+    "gameId": "family_discord",
+    "team": "MANIAC",
+    "perkType": "PASSIVE_COOLDOWN",
+    "phases": ["ANY"],
+    "description": "Если один компьютер взламывают не менее 2 выживших, они не могут вносить вклад в него 5 сек.",
+    "icon": "registered-family-discord",
+    "stats": [
+      {
+        "key": "cooldown",
+        "label": "Перезарядка",
+        "value": 60,
+        "unit": "seconds"
+      }
+    ],
+    "evidence": [
+      {
+        "path": "src/main/java/org/example/maniacrevolution/perk/perks/maniac/FamilyDiscordPerk.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/perk/Perk.java"
+      },
+      {
+        "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+      }
+    ]
+  },
+  {
+    "id": "perk:griefer",
+    "slug": "griefer",
+    "name": "Грифер",
+    "gameId": "griefer",
+    "team": "MANIAC",
+    "perkType": "PASSIVE_COOLDOWN",
+    "phases": ["ANY"],
+    "description": "После взлома компьютера блокирует ближайшие проходы на 30 сек.",
+    "icon": "registered-griefer",
+    "stats": [
+      {
+        "key": "cooldown",
+        "label": "Перезарядка",
+        "value": 150,
+        "unit": "seconds"
+      }
+    ],
+    "evidence": [
+      {
+        "path": "src/main/java/org/example/maniacrevolution/perk/perks/maniac/GrieferPerk.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/perk/Perk.java"
+      },
+      {
+        "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+      }
+    ]
+  },
+  {
+    "id": "perk:guiding-light",
+    "slug": "guiding-light",
+    "name": "Путеводная Света",
+    "gameId": "guiding_light",
+    "team": "MANIAC",
+    "perkType": "ACTIVE",
+    "phases": ["ANY"],
+    "description": "При активации показывает след к ближайшему активному выжившему в том же мире на 2 сек.",
+    "icon": "registered-guiding-light",
+    "stats": [
+      {
+        "key": "cooldown",
+        "label": "Перезарядка",
+        "value": 35,
+        "unit": "seconds"
+      },
+      {
+        "key": "mana",
+        "label": "Стоимость срабатывания",
+        "value": 2.0,
+        "unit": "mana"
+      }
+    ],
+    "evidence": [
+      {
+        "path": "src/main/java/org/example/maniacrevolution/perk/perks/maniac/GuidingLightPerk.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/perk/Perk.java"
+      },
+      {
+        "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+      }
+    ]
+  }
+]

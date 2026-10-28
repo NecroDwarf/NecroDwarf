@@ -1,0 +1,21 @@
+{
+  "id": "perk:altruist-exe",
+  "description": "После поднятия союзника оба получают усиление на 45 сек., увеличивающее вклад во взлом на 5%.",
+  "conditions": [],
+  "availability": {
+    "cooldown": "90 с",
+    "mana": "5 маны"
+  },
+  "notes": [],
+  "evidence": [
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/perks/survivor/AltruistExePerk.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/Perk.java"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+    }
+  ]
+}

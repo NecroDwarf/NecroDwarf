@@ -1,0 +1,21 @@
+{
+  "id": "perk:forget-me-not",
+  "description": "В начале матча вы получаете личную Незабудку и можете установить её в безопасной точке. Телепортация стоит 10 маны и готовится 3 сек.; движение или урон прерывают подготовку. После удара маньяка телепортация недоступна 10 сек. Успешная телепортация даёт кулдаун 60 сек. и оставляет цветок на месте. Прерванная подготовка даёт кулдаун 30 сек. и возвращает 5 маны. Владелец может забрать цветок ударом, а маньяк уничтожает его навсегда.",
+  "conditions": [],
+  "availability": {
+    "cooldown": "60 с",
+    "mana": "10 маны"
+  },
+  "notes": [],
+  "evidence": [
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/perks/survivor/ForgetMeNotPerk.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/Perk.java"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+    }
+  ]
+}

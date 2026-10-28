@@ -1,0 +1,21 @@
+{
+  "id": "perk:the-paint-thickens",
+  "description": "В начале матча вы получаете привязанную Банку краски на 3 использования. Каждое использование оставляет вечную лужу с радиусом срабатывания 0.5 блока. Наступивший выживший или маньяк должен сделать 3 нажатия за 2 сек.; зоны занимают 30% для промаха, 50% для почти точного попадания и 20% для точного. Сумма 0–2 оглушает на 2 сек.; 3–4 замедляет на 10% на 1 сек.; 5–6 не даёт штрафа. Экран покрывается краской на 5 сек., а любой итог даёт Защиту от краски на 30 сек.",
+  "conditions": [],
+  "availability": {
+    "cooldown": "Не задана в базовом классе этого перка",
+    "mana": "Не задана в базовом классе этого перка"
+  },
+  "notes": [],
+  "evidence": [
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/perks/maniac/ThePaintThickensPerk.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/Perk.java"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "id": "perk:quick-reflexes",
+  "description": "QTE компьютера: +0.45 сек., +6% к размеру зелёной зоны, +5% к допуску успеха и +10% к размеру критической зоны.",
+  "conditions": [],
+  "availability": {
+    "cooldown": "Не задана в базовом классе этого перка",
+    "mana": "Не задана в базовом классе этого перка"
+  },
+  "notes": [
+    "Локализация подписывает время в секундах, но getDescription передаёт миллисекунды. Wiki переводит BONUS_TIME_MS в секунды."
+  ],
+  "evidence": [
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/perks/survivor/QuickReflexesPerk.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/Perk.java"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+    }
+  ]
+}

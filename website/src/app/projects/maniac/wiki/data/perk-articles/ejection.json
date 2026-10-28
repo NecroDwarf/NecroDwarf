@@ -1,0 +1,21 @@
+{
+  "id": "perk:ejection",
+  "description": "Когда компьютер полностью заряжен, один раз откатывает его прогресс на 5%.",
+  "conditions": [],
+  "availability": {
+    "cooldown": "20 с",
+    "mana": "2 маны"
+  },
+  "notes": [],
+  "evidence": [
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/perks/maniac/EjectionPerk.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/Perk.java"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+    }
+  ]
+}

@@ -25,7 +25,7 @@
   },
   "pudge": {
     "itemIds": ["item:hook", "item:pudge-armor"],
-    "abilityIds": []
+    "abilityIds": ["ability:hook-throw"]
   },
   "death": {
     "itemIds": ["item:death-scythe", "item:death-armor"],

@@ -1,0 +1,24 @@
+{
+  "id": "perk:hedgehog-skin",
+  "description": "На 5 сек. возвращает атакующему 50% полученного урона.",
+  "conditions": [],
+  "availability": {
+    "cooldown": "100 с",
+    "mana": "10 маны"
+  },
+  "notes": [],
+  "evidence": [
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/perks/common/HedgehogSkinPerk.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/Perk.java"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/effect/ThornEffect.java"
+    }
+  ]
+}

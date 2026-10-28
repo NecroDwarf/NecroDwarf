@@ -1,0 +1,21 @@
+{
+  "id": "perk:high-voltage",
+  "description": "Рядом с компьютером с прогрессом не ниже 80% вы получаете +20% к скорости. Горизонтальный радиус: 8 блоков, вертикальный: ±2 блока. Завершённые и временно заблокированные компьютеры также учитываются. Эффекты ускорения не складываются: действует наибольший уровень.",
+  "conditions": [],
+  "availability": {
+    "cooldown": "Не задана в базовом классе этого перка",
+    "mana": "Не задана в базовом классе этого перка"
+  },
+  "notes": [],
+  "evidence": [
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/perks/maniac/HighVoltagePerk.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/Perk.java"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+    }
+  ]
+}

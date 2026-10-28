@@ -95,6 +95,7 @@ item_slugs={
 # Only individually reviewed item/active-action relations, never every feature.
 # game id: (stable ability slug, localization id, source feature/item, icon, implementation)
 ability_map={
+ 'pudge':[('hook-throw','hook','item',0,'hook','item/HookItem.java')],
  'death':[('death-teleport','death_scythe','feature',1,'death_scythe','item/DeathScytheItem.java')],
  'ursa':[('beast-leap','beast_claw','feature',1,'beast_claw','item/BeastClawItem.java')],
  'plague_doctor':[('plague-orb','plague_lantern','feature',2,'plague_lantern','item/PlagueLanternItem.java')],

@@ -1,0 +1,23 @@
+{
+  "id": "perk:mimic",
+  "description": "Маскирует под самый распространённый блок в радиусе 2 блоков на 5 сек.",
+  "conditions": [],
+  "availability": {
+    "cooldown": "90 с",
+    "mana": "15 маны"
+  },
+  "notes": [
+    "В getDescription перепутаны аргументы радиуса и длительности. В Wiki порядок исправлен по findMostCommonBlock и длительности эффектов: радиус 2 блока, действие 5 секунд."
+  ],
+  "evidence": [
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/perks/survivor/MimicPerk.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/Perk.java"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+    }
+  ]
+}

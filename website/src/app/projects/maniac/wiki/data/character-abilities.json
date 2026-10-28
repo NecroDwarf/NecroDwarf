@@ -52,6 +52,32 @@
     }
   },
   {
+    "id": "ability:hook-throw",
+    "kind": "ability",
+    "slug": "hook-throw",
+    "name": "И куда собрался?",
+    "revisions": {
+      "source:8692f66": {
+        "data": {
+          "description": "Оружие ближнего боя с активным притягиванием.",
+          "mechanicIds": [],
+          "icon": "hook-throw"
+        },
+        "evidence": [
+          {
+            "path": "src/main/java/org/example/maniacrevolution/character/maniac/PudgeClass.java"
+          },
+          {
+            "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+          },
+          {
+            "path": "src/main/java/org/example/maniacrevolution/item/HookItem.java"
+          }
+        ]
+      }
+    }
+  },
+  {
     "id": "ability:death-teleport",
     "kind": "ability",
     "slug": "death-teleport",

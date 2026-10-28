@@ -1,0 +1,3455 @@
+{
+  "routes": [
+    {
+      "path": "/projects/maniac/wiki/perks",
+      "jsCount": 8,
+      "jsBytes": 382513,
+      "scripts": [
+        {
+          "file": "assets/index-VSydnqNZ.js",
+          "bytes": 296829
+        },
+        {
+          "file": "assets/PerksPage-D3EwTP9s.js",
+          "bytes": 339
+        },
+        {
+          "file": "assets/ReferenceCatalogPage-Bnb3_qem.js",
+          "bytes": 4734
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/GameGlyph-CdzA5RoN.js",
+          "bytes": 20125
+        },
+        {
+          "file": "assets/WikiLayout-BGDYG4eZ.js",
+          "bytes": 3292
+        },
+        {
+          "file": "assets/Reference.module-b_J4_87Y.js",
+          "bytes": 2169
+        }
+      ],
+      "articleModules": [],
+      "images": [
+        "http://127.0.0.1:49542/assets/bigmoney-BSmgKhlq.webp",
+        "http://127.0.0.1:49542/assets/megamind-CNqyCOiN.webp",
+        "http://127.0.0.1:49542/assets/gto-medal-BFAqhmDo.webp",
+        "http://127.0.0.1:49542/assets/fear-wave-CFJFaxLt.webp",
+        "http://127.0.0.1:49542/assets/str-perk-eZ_po-_g.webp",
+        "http://127.0.0.1:49542/assets/mana-break-gPzmZ1my.webp",
+        "http://127.0.0.1:49542/assets/hedgehog-skin--Qsa0f-O.webp",
+        "http://127.0.0.1:49542/assets/football-fan-B9qkBFrN.webp",
+        "http://127.0.0.1:49542/assets/color_roulette-DmuoRCdQ.webp",
+        "http://127.0.0.1:49542/assets/the_paint_thickens-DcaX8qcR.webp",
+        "http://127.0.0.1:49542/assets/mimic-Q-diiqJW.webp",
+        "http://127.0.0.1:49542/assets/wallhack-D_6bk-o4.webp"
+      ],
+      "noJS": true,
+      "errors": []
+    },
+    {
+      "path": "/projects/maniac/wiki/abilities",
+      "jsCount": 8,
+      "jsBytes": 382520,
+      "scripts": [
+        {
+          "file": "assets/index-VSydnqNZ.js",
+          "bytes": 296829
+        },
+        {
+          "file": "assets/AbilitiesPage-G5O3UrTI.js",
+          "bytes": 346
+        },
+        {
+          "file": "assets/ReferenceCatalogPage-Bnb3_qem.js",
+          "bytes": 4734
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/GameGlyph-CdzA5RoN.js",
+          "bytes": 20125
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/Reference.module-b_J4_87Y.js",
+          "bytes": 2169
+        },
+        {
+          "file": "assets/WikiLayout-BGDYG4eZ.js",
+          "bytes": 3292
+        }
+      ],
+      "articleModules": [],
+      "images": [
+        "http://127.0.0.1:49542/assets/death-teleport-COFNxRb6.webp",
+        "http://127.0.0.1:49542/assets/beast-leap-DUpI-QoJ.webp",
+        "http://127.0.0.1:49542/assets/plague-orb-h3rgGoWX.webp",
+        "http://127.0.0.1:49542/assets/ghost-possession-B9IisNYk.webp",
+        "http://127.0.0.1:49542/assets/phantom-veil-C7cmHsu6.webp",
+        "http://127.0.0.1:49542/assets/musical-wave-DhWwo4MU.webp",
+        "http://127.0.0.1:49542/assets/smoke-cloud-DTbFvxfx.webp",
+        "http://127.0.0.1:49542/assets/quantum-swap-Kzm1OIxB.webp",
+        "http://127.0.0.1:49542/assets/hook-throw-Bh1K8bPc.webp",
+        "http://127.0.0.1:49542/assets/concentrated-nightmare-CFqeCOEf.webp"
+      ],
+      "noJS": true,
+      "errors": []
+    },
+    {
+      "path": "/projects/maniac/wiki/perks/bigmoney",
+      "jsCount": 11,
+      "jsBytes": 440456,
+      "scripts": [
+        {
+          "file": "assets/index-VSydnqNZ.js",
+          "bytes": 296829
+        },
+        {
+          "file": "assets/bigmoney-BlXJ9JCv.js",
+          "bytes": 1025
+        },
+        {
+          "file": "assets/ReferenceArticlePage-D7rhVueT.js",
+          "bytes": 7057
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/registry-DUfkxfed.js",
+          "bytes": 40774
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/EntityCards-CXE9F8Lh.js",
+          "bytes": 13612
+        },
+        {
+          "file": "assets/WikiLayout-BGDYG4eZ.js",
+          "bytes": 3292
+        },
+        {
+          "file": "assets/GameGlyph-CdzA5RoN.js",
+          "bytes": 20125
+        },
+        {
+          "file": "assets/DifficultyStars-AP4-78c7.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/Reference.module-b_J4_87Y.js",
+          "bytes": 2169
+        }
+      ],
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/perk-articles/bigmoney.json"
+      ],
+      "images": [
+        "http://127.0.0.1:49542/assets/bigmoney-BSmgKhlq.webp"
+      ],
+      "noJS": true,
+      "errors": []
+    },
+    {
+      "path": "/projects/maniac/wiki/perks/megamind",
+      "jsCount": 11,
+      "jsBytes": 440456,
+      "scripts": [
+        {
+          "file": "assets/index-VSydnqNZ.js",
+          "bytes": 296829
+        },
+        {
+          "file": "assets/megamind-D_MbwjTM.js",
+          "bytes": 1025
+        },
+        {
+          "file": "assets/ReferenceArticlePage-D7rhVueT.js",
+          "bytes": 7057
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/registry-DUfkxfed.js",
+          "bytes": 40774
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/Reference.module-b_J4_87Y.js",
+          "bytes": 2169
+        },
+        {
+          "file": "assets/GameGlyph-CdzA5RoN.js",
+          "bytes": 20125
+        },
+        {
+          "file": "assets/WikiLayout-BGDYG4eZ.js",
+          "bytes": 3292
+        },
+        {
+          "file": "assets/EntityCards-CXE9F8Lh.js",
+          "bytes": 13612
+        },
+        {
+          "file": "assets/DifficultyStars-AP4-78c7.js",
+          "bytes": 548
+        }
+      ],
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/perk-articles/megamind.json"
+      ],
+      "images": [
+        "http://127.0.0.1:49542/assets/megamind-CNqyCOiN.webp"
+      ],
+      "noJS": true,
+      "errors": []
+    },
+    {
+      "path": "/projects/maniac/wiki/perks/gto-medal",
+      "jsCount": 11,
+      "jsBytes": 440706,
+      "scripts": [
+        {
+          "file": "assets/index-VSydnqNZ.js",
+          "bytes": 296829
+        },
+        {
+          "file": "assets/gto-medal-D8izz2rI.js",
+          "bytes": 1275
+        },
+        {
+          "file": "assets/ReferenceArticlePage-D7rhVueT.js",
+          "bytes": 7057
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/EntityCards-CXE9F8Lh.js",
+          "bytes": 13612
+        },
+        {
+          "file": "assets/GameGlyph-CdzA5RoN.js",
+          "bytes": 20125
+        },
+        {
+          "file": "assets/Reference.module-b_J4_87Y.js",
+          "bytes": 2169
+        },
+        {
+          "file": "assets/DifficultyStars-AP4-78c7.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/registry-DUfkxfed.js",
+          "bytes": 40774
+        },
+        {
+          "file": "assets/WikiLayout-BGDYG4eZ.js",
+          "bytes": 3292
+        }
+      ],
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/perk-articles/gto-medal.json"
+      ],
+      "images": [
+        "http://127.0.0.1:49542/assets/gto-medal-BFAqhmDo.webp"
+      ],
+      "noJS": true,
+      "errors": []
+    },
+    {
+      "path": "/projects/maniac/wiki/perks/fear-wave",
+      "jsCount": 11,
+      "jsBytes": 440425,
+      "scripts": [
+        {
+          "file": "assets/index-VSydnqNZ.js",
+          "bytes": 296829
+        },
+        {
+          "file": "assets/fear-wave-C83ej--m.js",
+          "bytes": 994
+        },
+        {
+          "file": "assets/ReferenceArticlePage-D7rhVueT.js",
+          "bytes": 7057
+        },
+        {
+          "file": "assets/registry-DUfkxfed.js",
+          "bytes": 40774
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/DifficultyStars-AP4-78c7.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/GameGlyph-CdzA5RoN.js",
+          "bytes": 20125
+        },
+        {
+          "file": "assets/Reference.module-b_J4_87Y.js",
+          "bytes": 2169
+        },
+        {
+          "file": "assets/EntityCards-CXE9F8Lh.js",
+          "bytes": 13612
+        },
+        {
+          "file": "assets/WikiLayout-BGDYG4eZ.js",
+          "bytes": 3292
+        }
+      ],
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/perk-articles/fear-wave.json"
+      ],
+      "images": [
+        "http://127.0.0.1:49542/assets/fear-wave-CFJFaxLt.webp"
+      ],
+      "noJS": true,
+      "errors": []
+    },
+    {
+      "path": "/projects/maniac/wiki/perks/str-perk",
+      "jsCount": 11,
+      "jsBytes": 440544,
+      "scripts": [
+        {
+          "file": "assets/index-VSydnqNZ.js",
+          "bytes": 296829
+        },
+        {
+          "file": "assets/str-perk-Db6oR6Wc.js",
+          "bytes": 1113
+        },
+        {
+          "file": "assets/ReferenceArticlePage-D7rhVueT.js",
+          "bytes": 7057
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/DifficultyStars-AP4-78c7.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/Reference.module-b_J4_87Y.js",
+          "bytes": 2169
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/EntityCards-CXE9F8Lh.js",
+          "bytes": 13612
+        },
+        {
+          "file": "assets/GameGlyph-CdzA5RoN.js",
+          "bytes": 20125
+        },
+        {
+          "file": "assets/registry-DUfkxfed.js",
+          "bytes": 40774
+        },
+        {
+          "file": "assets/WikiLayout-BGDYG4eZ.js",
+          "bytes": 3292
+        }
+      ],
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/perk-articles/str-perk.json"
+      ],
+      "images": [
+        "http://127.0.0.1:49542/assets/str-perk-eZ_po-_g.webp"
+      ],
+      "noJS": true,
+      "errors": []
+    },
+    {
+      "path": "/projects/maniac/wiki/perks/mana-break",
+      "jsCount": 11,
+      "jsBytes": 440406,
+      "scripts": [
+        {
+          "file": "assets/index-VSydnqNZ.js",
+          "bytes": 296829
+        },
+        {
+          "file": "assets/mana-break-CJDrh6SJ.js",
+          "bytes": 975
+        },
+        {
+          "file": "assets/ReferenceArticlePage-D7rhVueT.js",
+          "bytes": 7057
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/Reference.module-b_J4_87Y.js",
+          "bytes": 2169
+        },
+        {
+          "file": "assets/DifficultyStars-AP4-78c7.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/registry-DUfkxfed.js",
+          "bytes": 40774
+        },
+        {
+          "file": "assets/EntityCards-CXE9F8Lh.js",
+          "bytes": 13612
+        },
+        {
+          "file": "assets/WikiLayout-BGDYG4eZ.js",
+          "bytes": 3292
+        },
+        {
+          "file": "assets/GameGlyph-CdzA5RoN.js",
+          "bytes": 20125
+        }
+      ],
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/perk-articles/mana-break.json"
+      ],
+      "images": [
+        "http://127.0.0.1:49542/assets/mana-break-gPzmZ1my.webp"
+      ],
+      "noJS": true,
+      "errors": []
+    },
+    {
+      "path": "/projects/maniac/wiki/perks/hedgehog-skin",
+      "jsCount": 11,
+      "jsBytes": 440443,
+      "scripts": [
+        {
+          "file": "assets/index-VSydnqNZ.js",
+          "bytes": 296829
+        },
+        {
+          "file": "assets/hedgehog-skin-D5PD6g3s.js",
+          "bytes": 1012
+        },
+        {
+          "file": "assets/ReferenceArticlePage-D7rhVueT.js",
+          "bytes": 7057
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/registry-DUfkxfed.js",
+          "bytes": 40774
+        },
+        {
+          "file": "assets/GameGlyph-CdzA5RoN.js",
+          "bytes": 20125
+        },
+        {
+          "file": "assets/EntityCards-CXE9F8Lh.js",
+          "bytes": 13612
+        },
+        {
+          "file": "assets/DifficultyStars-AP4-78c7.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/Reference.module-b_J4_87Y.js",
+          "bytes": 2169
+        },
+        {
+          "file": "assets/WikiLayout-BGDYG4eZ.js",
+          "bytes": 3292
+        }
+      ],
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/perk-articles/hedgehog-skin.json"
+      ],
+      "images": [
+        "http://127.0.0.1:49542/assets/hedgehog-skin--Qsa0f-O.webp"
+      ],
+      "noJS": true,
+      "errors": []
+    },
+    {
+      "path": "/projects/maniac/wiki/perks/football-fan",
+      "jsCount": 11,
+      "jsBytes": 440473,
+      "scripts": [
+        {
+          "file": "assets/index-VSydnqNZ.js",
+          "bytes": 296829
+        },
+        {
+          "file": "assets/football-fan-CXoLVbvo.js",
+          "bytes": 1042
+        },
+        {
+          "file": "assets/ReferenceArticlePage-D7rhVueT.js",
+          "bytes": 7057
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/registry-DUfkxfed.js",
+          "bytes": 40774
+        },
+        {
+          "file": "assets/GameGlyph-CdzA5RoN.js",
+          "bytes": 20125
+        },
+        {
+          "file": "assets/EntityCards-CXE9F8Lh.js",
+          "bytes": 13612
+        },
+        {
+          "file": "assets/DifficultyStars-AP4-78c7.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/Reference.module-b_J4_87Y.js",
+          "bytes": 2169
+        },
+        {
+          "file": "assets/WikiLayout-BGDYG4eZ.js",
+          "bytes": 3292
+        }
+      ],
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/perk-articles/football-fan.json"
+      ],
+      "images": [
+        "http://127.0.0.1:49542/assets/football-fan-B9qkBFrN.webp"
+      ],
+      "noJS": true,
+      "errors": []
+    },
+    {
+      "path": "/projects/maniac/wiki/perks/color-roulette",
+      "jsCount": 11,
+      "jsBytes": 441156,
+      "scripts": [
+        {
+          "file": "assets/index-VSydnqNZ.js",
+          "bytes": 296829
+        },
+        {
+          "file": "assets/color-roulette-HFY_pZAN.js",
+          "bytes": 1725
+        },
+        {
+          "file": "assets/ReferenceArticlePage-D7rhVueT.js",
+          "bytes": 7057
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/registry-DUfkxfed.js",
+          "bytes": 40774
+        },
+        {
+          "file": "assets/GameGlyph-CdzA5RoN.js",
+          "bytes": 20125
+        },
+        {
+          "file": "assets/EntityCards-CXE9F8Lh.js",
+          "bytes": 13612
+        },
+        {
+          "file": "assets/DifficultyStars-AP4-78c7.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/Reference.module-b_J4_87Y.js",
+          "bytes": 2169
+        },
+        {
+          "file": "assets/WikiLayout-BGDYG4eZ.js",
+          "bytes": 3292
+        }
+      ],
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/perk-articles/color-roulette.json"
+      ],
+      "images": [
+        "http://127.0.0.1:49542/assets/color_roulette-DmuoRCdQ.webp"
+      ],
+      "noJS": true,
+      "errors": []
+    },
+    {
+      "path": "/projects/maniac/wiki/perks/the-paint-thickens",
+      "jsCount": 11,
+      "jsBytes": 441221,
+      "scripts": [
+        {
+          "file": "assets/index-VSydnqNZ.js",
+          "bytes": 296829
+        },
+        {
+          "file": "assets/the-paint-thickens-DZeZ42Z6.js",
+          "bytes": 1790
+        },
+        {
+          "file": "assets/ReferenceArticlePage-D7rhVueT.js",
+          "bytes": 7057
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/EntityCards-CXE9F8Lh.js",
+          "bytes": 13612
+        },
+        {
+          "file": "assets/DifficultyStars-AP4-78c7.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/registry-DUfkxfed.js",
+          "bytes": 40774
+        },
+        {
+          "file": "assets/Reference.module-b_J4_87Y.js",
+          "bytes": 2169
+        },
+        {
+          "file": "assets/WikiLayout-BGDYG4eZ.js",
+          "bytes": 3292
+        },
+        {
+          "file": "assets/GameGlyph-CdzA5RoN.js",
+          "bytes": 20125
+        }
+      ],
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/perk-articles/the-paint-thickens.json"
+      ],
+      "images": [
+        "http://127.0.0.1:49542/assets/the_paint_thickens-DcaX8qcR.webp"
+      ],
+      "noJS": true,
+      "errors": []
+    },
+    {
+      "path": "/projects/maniac/wiki/perks/mimic",
+      "jsCount": 11,
+      "jsBytes": 440652,
+      "scripts": [
+        {
+          "file": "assets/index-VSydnqNZ.js",
+          "bytes": 296829
+        },
+        {
+          "file": "assets/mimic-DEmDdg05.js",
+          "bytes": 1221
+        },
+        {
+          "file": "assets/ReferenceArticlePage-D7rhVueT.js",
+          "bytes": 7057
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/EntityCards-CXE9F8Lh.js",
+          "bytes": 13612
+        },
+        {
+          "file": "assets/registry-DUfkxfed.js",
+          "bytes": 40774
+        },
+        {
+          "file": "assets/Reference.module-b_J4_87Y.js",
+          "bytes": 2169
+        },
+        {
+          "file": "assets/DifficultyStars-AP4-78c7.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/GameGlyph-CdzA5RoN.js",
+          "bytes": 20125
+        },
+        {
+          "file": "assets/WikiLayout-BGDYG4eZ.js",
+          "bytes": 3292
+        }
+      ],
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/perk-articles/mimic.json"
+      ],
+      "images": [
+        "http://127.0.0.1:49542/assets/mimic-Q-diiqJW.webp"
+      ],
+      "noJS": true,
+      "errors": []
+    },
+    {
+      "path": "/projects/maniac/wiki/perks/wallhack",
+      "jsCount": 11,
+      "jsBytes": 440433,
+      "scripts": [
+        {
+          "file": "assets/index-VSydnqNZ.js",
+          "bytes": 296829
+        },
+        {
+          "file": "assets/wallhack-BDpUMSu-.js",
+          "bytes": 1002
+        },
+        {
+          "file": "assets/ReferenceArticlePage-D7rhVueT.js",
+          "bytes": 7057
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/registry-DUfkxfed.js",
+          "bytes": 40774
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/DifficultyStars-AP4-78c7.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/GameGlyph-CdzA5RoN.js",
+          "bytes": 20125
+        },
+        {
+          "file": "assets/EntityCards-CXE9F8Lh.js",
+          "bytes": 13612
+        },
+        {
+          "file": "assets/Reference.module-b_J4_87Y.js",
+          "bytes": 2169
+        },
+        {
+          "file": "assets/WikiLayout-BGDYG4eZ.js",
+          "bytes": 3292
+        }
+      ],
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/perk-articles/wallhack.json"
+      ],
+      "images": [
+        "http://127.0.0.1:49542/assets/wallhack-D_6bk-o4.webp"
+      ],
+      "noJS": true,
+      "errors": []
+    },
+    {
+      "path": "/projects/maniac/wiki/perks/last-breath",
+      "jsCount": 11,
+      "jsBytes": 440508,
+      "scripts": [
+        {
+          "file": "assets/index-VSydnqNZ.js",
+          "bytes": 296829
+        },
+        {
+          "file": "assets/last-breath-C1ycRVpC.js",
+          "bytes": 1077
+        },
+        {
+          "file": "assets/ReferenceArticlePage-D7rhVueT.js",
+          "bytes": 7057
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/Reference.module-b_J4_87Y.js",
+          "bytes": 2169
+        },
+        {
+          "file": "assets/DifficultyStars-AP4-78c7.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/EntityCards-CXE9F8Lh.js",
+          "bytes": 13612
+        },
+        {
+          "file": "assets/WikiLayout-BGDYG4eZ.js",
+          "bytes": 3292
+        },
+        {
+          "file": "assets/registry-DUfkxfed.js",
+          "bytes": 40774
+        },
+        {
+          "file": "assets/GameGlyph-CdzA5RoN.js",
+          "bytes": 20125
+        }
+      ],
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/perk-articles/last-breath.json"
+      ],
+      "images": [
+        "http://127.0.0.1:49542/assets/last-breath-rqg0b6ov.webp"
+      ],
+      "noJS": true,
+      "errors": []
+    },
+    {
+      "path": "/projects/maniac/wiki/perks/quick-reflexes",
+      "jsCount": 11,
+      "jsBytes": 440780,
+      "scripts": [
+        {
+          "file": "assets/index-VSydnqNZ.js",
+          "bytes": 296829
+        },
+        {
+          "file": "assets/quick-reflexes-vTQnnSWY.js",
+          "bytes": 1349
+        },
+        {
+          "file": "assets/ReferenceArticlePage-D7rhVueT.js",
+          "bytes": 7057
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/EntityCards-CXE9F8Lh.js",
+          "bytes": 13612
+        },
+        {
+          "file": "assets/registry-DUfkxfed.js",
+          "bytes": 40774
+        },
+        {
+          "file": "assets/Reference.module-b_J4_87Y.js",
+          "bytes": 2169
+        },
+        {
+          "file": "assets/WikiLayout-BGDYG4eZ.js",
+          "bytes": 3292
+        },
+        {
+          "file": "assets/DifficultyStars-AP4-78c7.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/GameGlyph-CdzA5RoN.js",
+          "bytes": 20125
+        }
+      ],
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/perk-articles/quick-reflexes.json"
+      ],
+      "images": [
+        "http://127.0.0.1:49542/assets/quick-reflexes-kaZ2U6sh.webp"
+      ],
+      "noJS": true,
+      "errors": []
+    },
+    {
+      "path": "/projects/maniac/wiki/perks/blindness",
+      "jsCount": 11,
+      "jsBytes": 440435,
+      "scripts": [
+        {
+          "file": "assets/index-VSydnqNZ.js",
+          "bytes": 296829
+        },
+        {
+          "file": "assets/blindness-BbXAIslh.js",
+          "bytes": 1004
+        },
+        {
+          "file": "assets/ReferenceArticlePage-D7rhVueT.js",
+          "bytes": 7057
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/EntityCards-CXE9F8Lh.js",
+          "bytes": 13612
+        },
+        {
+          "file": "assets/registry-DUfkxfed.js",
+          "bytes": 40774
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/DifficultyStars-AP4-78c7.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/WikiLayout-BGDYG4eZ.js",
+          "bytes": 3292
+        },
+        {
+          "file": "assets/Reference.module-b_J4_87Y.js",
+          "bytes": 2169
+        },
+        {
+          "file": "assets/GameGlyph-CdzA5RoN.js",
+          "bytes": 20125
+        }
+      ],
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/perk-articles/blindness.json"
+      ],
+      "images": [
+        "http://127.0.0.1:49542/assets/blindness-C6uk6yQd.webp"
+      ],
+      "noJS": true,
+      "errors": []
+    },
+    {
+      "path": "/projects/maniac/wiki/perks/mental-bond",
+      "jsCount": 11,
+      "jsBytes": 440509,
+      "scripts": [
+        {
+          "file": "assets/index-VSydnqNZ.js",
+          "bytes": 296829
+        },
+        {
+          "file": "assets/mental-bond-DeR5LCrL.js",
+          "bytes": 1078
+        },
+        {
+          "file": "assets/ReferenceArticlePage-D7rhVueT.js",
+          "bytes": 7057
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/EntityCards-CXE9F8Lh.js",
+          "bytes": 13612
+        },
+        {
+          "file": "assets/registry-DUfkxfed.js",
+          "bytes": 40774
+        },
+        {
+          "file": "assets/GameGlyph-CdzA5RoN.js",
+          "bytes": 20125
+        },
+        {
+          "file": "assets/DifficultyStars-AP4-78c7.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/Reference.module-b_J4_87Y.js",
+          "bytes": 2169
+        },
+        {
+          "file": "assets/WikiLayout-BGDYG4eZ.js",
+          "bytes": 3292
+        }
+      ],
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/perk-articles/mental-bond.json"
+      ],
+      "images": [
+        "http://127.0.0.1:49542/assets/mental-bond-DNloALa0.webp"
+      ],
+      "noJS": true,
+      "errors": []
+    },
+    {
+      "path": "/projects/maniac/wiki/perks/dutch-helm",
+      "jsCount": 11,
+      "jsBytes": 440492,
+      "scripts": [
+        {
+          "file": "assets/index-VSydnqNZ.js",
+          "bytes": 296829
+        },
+        {
+          "file": "assets/dutch-helm-BbrvmYUQ.js",
+          "bytes": 1061
+        },
+        {
+          "file": "assets/ReferenceArticlePage-D7rhVueT.js",
+          "bytes": 7057
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/DifficultyStars-AP4-78c7.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/Reference.module-b_J4_87Y.js",
+          "bytes": 2169
+        },
+        {
+          "file": "assets/EntityCards-CXE9F8Lh.js",
+          "bytes": 13612
+        },
+        {
+          "file": "assets/GameGlyph-CdzA5RoN.js",
+          "bytes": 20125
+        },
+        {
+          "file": "assets/WikiLayout-BGDYG4eZ.js",
+          "bytes": 3292
+        },
+        {
+          "file": "assets/registry-DUfkxfed.js",
+          "bytes": 40774
+        }
+      ],
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/perk-articles/dutch-helm.json"
+      ],
+      "images": [
+        "http://127.0.0.1:49542/assets/dutch-helm-CTZ0lH8K.webp"
+      ],
+      "noJS": true,
+      "errors": []
+    },
+    {
+      "path": "/projects/maniac/wiki/perks/independence",
+      "jsCount": 11,
+      "jsBytes": 440438,
+      "scripts": [
+        {
+          "file": "assets/index-VSydnqNZ.js",
+          "bytes": 296829
+        },
+        {
+          "file": "assets/independence-Cejm5KN0.js",
+          "bytes": 1007
+        },
+        {
+          "file": "assets/ReferenceArticlePage-D7rhVueT.js",
+          "bytes": 7057
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/GameGlyph-CdzA5RoN.js",
+          "bytes": 20125
+        },
+        {
+          "file": "assets/DifficultyStars-AP4-78c7.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/registry-DUfkxfed.js",
+          "bytes": 40774
+        },
+        {
+          "file": "assets/EntityCards-CXE9F8Lh.js",
+          "bytes": 13612
+        },
+        {
+          "file": "assets/Reference.module-b_J4_87Y.js",
+          "bytes": 2169
+        },
+        {
+          "file": "assets/WikiLayout-BGDYG4eZ.js",
+          "bytes": 3292
+        }
+      ],
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/perk-articles/independence.json"
+      ],
+      "images": [
+        "http://127.0.0.1:49542/assets/independence-CM3aQZKO.webp"
+      ],
+      "noJS": true,
+      "errors": []
+    },
+    {
+      "path": "/projects/maniac/wiki/perks/altruist-exe",
+      "jsCount": 11,
+      "jsBytes": 440434,
+      "scripts": [
+        {
+          "file": "assets/index-VSydnqNZ.js",
+          "bytes": 296829
+        },
+        {
+          "file": "assets/altruist-exe-BWe8YIyu.js",
+          "bytes": 1003
+        },
+        {
+          "file": "assets/ReferenceArticlePage-D7rhVueT.js",
+          "bytes": 7057
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/DifficultyStars-AP4-78c7.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/registry-DUfkxfed.js",
+          "bytes": 40774
+        },
+        {
+          "file": "assets/EntityCards-CXE9F8Lh.js",
+          "bytes": 13612
+        },
+        {
+          "file": "assets/GameGlyph-CdzA5RoN.js",
+          "bytes": 20125
+        },
+        {
+          "file": "assets/WikiLayout-BGDYG4eZ.js",
+          "bytes": 3292
+        },
+        {
+          "file": "assets/Reference.module-b_J4_87Y.js",
+          "bytes": 2169
+        }
+      ],
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/perk-articles/altruist-exe.json"
+      ],
+      "images": [
+        "http://127.0.0.1:49542/assets/altruist-exe-C47mw1hY.webp"
+      ],
+      "noJS": true,
+      "errors": []
+    },
+    {
+      "path": "/projects/maniac/wiki/perks/magic-lover",
+      "jsCount": 11,
+      "jsBytes": 440406,
+      "scripts": [
+        {
+          "file": "assets/index-VSydnqNZ.js",
+          "bytes": 296829
+        },
+        {
+          "file": "assets/magic-lover-B6g8WyIs.js",
+          "bytes": 975
+        },
+        {
+          "file": "assets/ReferenceArticlePage-D7rhVueT.js",
+          "bytes": 7057
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/DifficultyStars-AP4-78c7.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/Reference.module-b_J4_87Y.js",
+          "bytes": 2169
+        },
+        {
+          "file": "assets/WikiLayout-BGDYG4eZ.js",
+          "bytes": 3292
+        },
+        {
+          "file": "assets/registry-DUfkxfed.js",
+          "bytes": 40774
+        },
+        {
+          "file": "assets/GameGlyph-CdzA5RoN.js",
+          "bytes": 20125
+        },
+        {
+          "file": "assets/EntityCards-CXE9F8Lh.js",
+          "bytes": 13612
+        }
+      ],
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/perk-articles/magic-lover.json"
+      ],
+      "images": [
+        "http://127.0.0.1:49542/assets/magic-lover-BnuB38q0.webp"
+      ],
+      "noJS": true,
+      "errors": []
+    },
+    {
+      "path": "/projects/maniac/wiki/perks/idealych",
+      "jsCount": 11,
+      "jsBytes": 440536,
+      "scripts": [
+        {
+          "file": "assets/index-VSydnqNZ.js",
+          "bytes": 296829
+        },
+        {
+          "file": "assets/idealych-BWBBkmUo.js",
+          "bytes": 1105
+        },
+        {
+          "file": "assets/ReferenceArticlePage-D7rhVueT.js",
+          "bytes": 7057
+        },
+        {
+          "file": "assets/registry-DUfkxfed.js",
+          "bytes": 40774
+        },
+        {
+          "file": "assets/DifficultyStars-AP4-78c7.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/Reference.module-b_J4_87Y.js",
+          "bytes": 2169
+        },
+        {
+          "file": "assets/WikiLayout-BGDYG4eZ.js",
+          "bytes": 3292
+        },
+        {
+          "file": "assets/EntityCards-CXE9F8Lh.js",
+          "bytes": 13612
+        },
+        {
+          "file": "assets/GameGlyph-CdzA5RoN.js",
+          "bytes": 20125
+        }
+      ],
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/perk-articles/idealych.json"
+      ],
+      "images": [
+        "http://127.0.0.1:49542/assets/idealych-DxdfhUDT.webp"
+      ],
+      "noJS": true,
+      "errors": []
+    },
+    {
+      "path": "/projects/maniac/wiki/perks/reality-anchor",
+      "jsCount": 11,
+      "jsBytes": 440881,
+      "scripts": [
+        {
+          "file": "assets/index-VSydnqNZ.js",
+          "bytes": 296829
+        },
+        {
+          "file": "assets/reality-anchor-CUbUsSZj.js",
+          "bytes": 1450
+        },
+        {
+          "file": "assets/ReferenceArticlePage-D7rhVueT.js",
+          "bytes": 7057
+        },
+        {
+          "file": "assets/registry-DUfkxfed.js",
+          "bytes": 40774
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/Reference.module-b_J4_87Y.js",
+          "bytes": 2169
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/GameGlyph-CdzA5RoN.js",
+          "bytes": 20125
+        },
+        {
+          "file": "assets/DifficultyStars-AP4-78c7.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/EntityCards-CXE9F8Lh.js",
+          "bytes": 13612
+        },
+        {
+          "file": "assets/WikiLayout-BGDYG4eZ.js",
+          "bytes": 3292
+        }
+      ],
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/perk-articles/reality-anchor.json"
+      ],
+      "images": [
+        "http://127.0.0.1:49542/assets/reality_anchor-CE2q1L-B.webp"
+      ],
+      "noJS": true,
+      "errors": []
+    },
+    {
+      "path": "/projects/maniac/wiki/perks/emergency-overclock",
+      "jsCount": 11,
+      "jsBytes": 440547,
+      "scripts": [
+        {
+          "file": "assets/index-VSydnqNZ.js",
+          "bytes": 296829
+        },
+        {
+          "file": "assets/emergency-overclock-BpZzC6V9.js",
+          "bytes": 1116
+        },
+        {
+          "file": "assets/ReferenceArticlePage-D7rhVueT.js",
+          "bytes": 7057
+        },
+        {
+          "file": "assets/registry-DUfkxfed.js",
+          "bytes": 40774
+        },
+        {
+          "file": "assets/DifficultyStars-AP4-78c7.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/Reference.module-b_J4_87Y.js",
+          "bytes": 2169
+        },
+        {
+          "file": "assets/EntityCards-CXE9F8Lh.js",
+          "bytes": 13612
+        },
+        {
+          "file": "assets/GameGlyph-CdzA5RoN.js",
+          "bytes": 20125
+        },
+        {
+          "file": "assets/WikiLayout-BGDYG4eZ.js",
+          "bytes": 3292
+        }
+      ],
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/perk-articles/emergency-overclock.json"
+      ],
+      "images": [
+        "http://127.0.0.1:49542/assets/emergency_overclock-B_jlCSlo.webp"
+      ],
+      "noJS": true,
+      "errors": []
+    },
+    {
+      "path": "/projects/maniac/wiki/perks/fixed-it-im-out",
+      "jsCount": 11,
+      "jsBytes": 440810,
+      "scripts": [
+        {
+          "file": "assets/index-VSydnqNZ.js",
+          "bytes": 296829
+        },
+        {
+          "file": "assets/fixed-it-im-out-fq72fcRs.js",
+          "bytes": 1379
+        },
+        {
+          "file": "assets/ReferenceArticlePage-D7rhVueT.js",
+          "bytes": 7057
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/registry-DUfkxfed.js",
+          "bytes": 40774
+        },
+        {
+          "file": "assets/EntityCards-CXE9F8Lh.js",
+          "bytes": 13612
+        },
+        {
+          "file": "assets/DifficultyStars-AP4-78c7.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/Reference.module-b_J4_87Y.js",
+          "bytes": 2169
+        },
+        {
+          "file": "assets/GameGlyph-CdzA5RoN.js",
+          "bytes": 20125
+        },
+        {
+          "file": "assets/WikiLayout-BGDYG4eZ.js",
+          "bytes": 3292
+        }
+      ],
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/perk-articles/fixed-it-im-out.json"
+      ],
+      "images": [
+        "http://127.0.0.1:49542/assets/fixed_it_im_out-DYxbOlPp.webp"
+      ],
+      "noJS": true,
+      "errors": []
+    },
+    {
+      "path": "/projects/maniac/wiki/perks/magic-kick",
+      "jsCount": 11,
+      "jsBytes": 440645,
+      "scripts": [
+        {
+          "file": "assets/index-VSydnqNZ.js",
+          "bytes": 296829
+        },
+        {
+          "file": "assets/magic-kick-ZjfSt-K4.js",
+          "bytes": 1214
+        },
+        {
+          "file": "assets/ReferenceArticlePage-D7rhVueT.js",
+          "bytes": 7057
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/GameGlyph-CdzA5RoN.js",
+          "bytes": 20125
+        },
+        {
+          "file": "assets/DifficultyStars-AP4-78c7.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/registry-DUfkxfed.js",
+          "bytes": 40774
+        },
+        {
+          "file": "assets/EntityCards-CXE9F8Lh.js",
+          "bytes": 13612
+        },
+        {
+          "file": "assets/Reference.module-b_J4_87Y.js",
+          "bytes": 2169
+        },
+        {
+          "file": "assets/WikiLayout-BGDYG4eZ.js",
+          "bytes": 3292
+        }
+      ],
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/perk-articles/magic-kick.json"
+      ],
+      "images": [
+        "http://127.0.0.1:49542/assets/magic_kick-GxFkK2sT.webp"
+      ],
+      "noJS": true,
+      "errors": []
+    },
+    {
+      "path": "/projects/maniac/wiki/perks/forget-me-not",
+      "jsCount": 11,
+      "jsBytes": 441055,
+      "scripts": [
+        {
+          "file": "assets/index-VSydnqNZ.js",
+          "bytes": 296829
+        },
+        {
+          "file": "assets/forget-me-not-CG20KwwZ.js",
+          "bytes": 1624
+        },
+        {
+          "file": "assets/ReferenceArticlePage-D7rhVueT.js",
+          "bytes": 7057
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/registry-DUfkxfed.js",
+          "bytes": 40774
+        },
+        {
+          "file": "assets/GameGlyph-CdzA5RoN.js",
+          "bytes": 20125
+        },
+        {
+          "file": "assets/Reference.module-b_J4_87Y.js",
+          "bytes": 2169
+        },
+        {
+          "file": "assets/EntityCards-CXE9F8Lh.js",
+          "bytes": 13612
+        },
+        {
+          "file": "assets/DifficultyStars-AP4-78c7.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/WikiLayout-BGDYG4eZ.js",
+          "bytes": 3292
+        }
+      ],
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/perk-articles/forget-me-not.json"
+      ],
+      "images": [
+        "http://127.0.0.1:49542/assets/forget-me-not-perk-DRyxwUIM.webp"
+      ],
+      "noJS": true,
+      "errors": []
+    },
+    {
+      "path": "/projects/maniac/wiki/perks/rose-colored-glasses",
+      "jsCount": 11,
+      "jsBytes": 441078,
+      "scripts": [
+        {
+          "file": "assets/index-VSydnqNZ.js",
+          "bytes": 296829
+        },
+        {
+          "file": "assets/rose-colored-glasses-BAKJ5YQD.js",
+          "bytes": 1647
+        },
+        {
+          "file": "assets/ReferenceArticlePage-D7rhVueT.js",
+          "bytes": 7057
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/DifficultyStars-AP4-78c7.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/registry-DUfkxfed.js",
+          "bytes": 40774
+        },
+        {
+          "file": "assets/EntityCards-CXE9F8Lh.js",
+          "bytes": 13612
+        },
+        {
+          "file": "assets/Reference.module-b_J4_87Y.js",
+          "bytes": 2169
+        },
+        {
+          "file": "assets/GameGlyph-CdzA5RoN.js",
+          "bytes": 20125
+        },
+        {
+          "file": "assets/WikiLayout-BGDYG4eZ.js",
+          "bytes": 3292
+        }
+      ],
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/perk-articles/rose-colored-glasses.json"
+      ],
+      "images": [
+        "http://127.0.0.1:49542/assets/rose_colored_glasses-B5XSgV4y.webp"
+      ],
+      "noJS": true,
+      "errors": []
+    },
+    {
+      "path": "/projects/maniac/wiki/perks/pink-orchid",
+      "jsCount": 11,
+      "jsBytes": 440844,
+      "scripts": [
+        {
+          "file": "assets/index-VSydnqNZ.js",
+          "bytes": 296829
+        },
+        {
+          "file": "assets/pink-orchid-CuIj0Bqe.js",
+          "bytes": 1413
+        },
+        {
+          "file": "assets/ReferenceArticlePage-D7rhVueT.js",
+          "bytes": 7057
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/GameGlyph-CdzA5RoN.js",
+          "bytes": 20125
+        },
+        {
+          "file": "assets/EntityCards-CXE9F8Lh.js",
+          "bytes": 13612
+        },
+        {
+          "file": "assets/registry-DUfkxfed.js",
+          "bytes": 40774
+        },
+        {
+          "file": "assets/DifficultyStars-AP4-78c7.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/Reference.module-b_J4_87Y.js",
+          "bytes": 2169
+        },
+        {
+          "file": "assets/WikiLayout-BGDYG4eZ.js",
+          "bytes": 3292
+        }
+      ],
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/perk-articles/pink-orchid.json"
+      ],
+      "images": [
+        "http://127.0.0.1:49542/assets/pink_orchid-DhXGe9oZ.webp"
+      ],
+      "noJS": true,
+      "errors": []
+    },
+    {
+      "path": "/projects/maniac/wiki/perks/sber-sprout",
+      "jsCount": 11,
+      "jsBytes": 440965,
+      "scripts": [
+        {
+          "file": "assets/index-VSydnqNZ.js",
+          "bytes": 296829
+        },
+        {
+          "file": "assets/sber-sprout-DW3nX0s8.js",
+          "bytes": 1534
+        },
+        {
+          "file": "assets/ReferenceArticlePage-D7rhVueT.js",
+          "bytes": 7057
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/registry-DUfkxfed.js",
+          "bytes": 40774
+        },
+        {
+          "file": "assets/DifficultyStars-AP4-78c7.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/Reference.module-b_J4_87Y.js",
+          "bytes": 2169
+        },
+        {
+          "file": "assets/GameGlyph-CdzA5RoN.js",
+          "bytes": 20125
+        },
+        {
+          "file": "assets/WikiLayout-BGDYG4eZ.js",
+          "bytes": 3292
+        },
+        {
+          "file": "assets/EntityCards-CXE9F8Lh.js",
+          "bytes": 13612
+        }
+      ],
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/perk-articles/sber-sprout.json"
+      ],
+      "images": [
+        "http://127.0.0.1:49542/assets/sber_sprout-Beu1Qhuo.webp"
+      ],
+      "noJS": true,
+      "errors": []
+    },
+    {
+      "path": "/projects/maniac/wiki/perks/bloodflow",
+      "jsCount": 11,
+      "jsBytes": 440411,
+      "scripts": [
+        {
+          "file": "assets/index-VSydnqNZ.js",
+          "bytes": 296829
+        },
+        {
+          "file": "assets/bloodflow-2aX6Xz36.js",
+          "bytes": 980
+        },
+        {
+          "file": "assets/ReferenceArticlePage-D7rhVueT.js",
+          "bytes": 7057
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/DifficultyStars-AP4-78c7.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/Reference.module-b_J4_87Y.js",
+          "bytes": 2169
+        },
+        {
+          "file": "assets/WikiLayout-BGDYG4eZ.js",
+          "bytes": 3292
+        },
+        {
+          "file": "assets/registry-DUfkxfed.js",
+          "bytes": 40774
+        },
+        {
+          "file": "assets/EntityCards-CXE9F8Lh.js",
+          "bytes": 13612
+        },
+        {
+          "file": "assets/GameGlyph-CdzA5RoN.js",
+          "bytes": 20125
+        }
+      ],
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/perk-articles/bloodflow.json"
+      ],
+      "images": [
+        "http://127.0.0.1:49542/assets/bloodflow-lCu5wv6r.webp"
+      ],
+      "noJS": true,
+      "errors": []
+    },
+    {
+      "path": "/projects/maniac/wiki/perks/i-am-speed",
+      "jsCount": 11,
+      "jsBytes": 440475,
+      "scripts": [
+        {
+          "file": "assets/index-VSydnqNZ.js",
+          "bytes": 296829
+        },
+        {
+          "file": "assets/i-am-speed-DsLr7Bva.js",
+          "bytes": 1044
+        },
+        {
+          "file": "assets/ReferenceArticlePage-D7rhVueT.js",
+          "bytes": 7057
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/DifficultyStars-AP4-78c7.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/registry-DUfkxfed.js",
+          "bytes": 40774
+        },
+        {
+          "file": "assets/EntityCards-CXE9F8Lh.js",
+          "bytes": 13612
+        },
+        {
+          "file": "assets/Reference.module-b_J4_87Y.js",
+          "bytes": 2169
+        },
+        {
+          "file": "assets/GameGlyph-CdzA5RoN.js",
+          "bytes": 20125
+        },
+        {
+          "file": "assets/WikiLayout-BGDYG4eZ.js",
+          "bytes": 3292
+        }
+      ],
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/perk-articles/i-am-speed.json"
+      ],
+      "images": [
+        "http://127.0.0.1:49542/assets/i-am-speed-t1G2IWyN.webp"
+      ],
+      "noJS": true,
+      "errors": []
+    },
+    {
+      "path": "/projects/maniac/wiki/perks/high-voltage",
+      "jsCount": 11,
+      "jsBytes": 440872,
+      "scripts": [
+        {
+          "file": "assets/index-VSydnqNZ.js",
+          "bytes": 296829
+        },
+        {
+          "file": "assets/high-voltage-B4DC6Cid.js",
+          "bytes": 1441
+        },
+        {
+          "file": "assets/ReferenceArticlePage-D7rhVueT.js",
+          "bytes": 7057
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/GameGlyph-CdzA5RoN.js",
+          "bytes": 20125
+        },
+        {
+          "file": "assets/DifficultyStars-AP4-78c7.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/EntityCards-CXE9F8Lh.js",
+          "bytes": 13612
+        },
+        {
+          "file": "assets/registry-DUfkxfed.js",
+          "bytes": 40774
+        },
+        {
+          "file": "assets/Reference.module-b_J4_87Y.js",
+          "bytes": 2169
+        },
+        {
+          "file": "assets/WikiLayout-BGDYG4eZ.js",
+          "bytes": 3292
+        }
+      ],
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/perk-articles/high-voltage.json"
+      ],
+      "images": [
+        "http://127.0.0.1:49542/assets/high_voltage-DaSO8P7h.webp"
+      ],
+      "noJS": true,
+      "errors": []
+    },
+    {
+      "path": "/projects/maniac/wiki/perks/go-next",
+      "jsCount": 11,
+      "jsBytes": 440770,
+      "scripts": [
+        {
+          "file": "assets/index-VSydnqNZ.js",
+          "bytes": 296829
+        },
+        {
+          "file": "assets/go-next-BOiggyO_.js",
+          "bytes": 1339
+        },
+        {
+          "file": "assets/ReferenceArticlePage-D7rhVueT.js",
+          "bytes": 7057
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/registry-DUfkxfed.js",
+          "bytes": 40774
+        },
+        {
+          "file": "assets/GameGlyph-CdzA5RoN.js",
+          "bytes": 20125
+        },
+        {
+          "file": "assets/DifficultyStars-AP4-78c7.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/EntityCards-CXE9F8Lh.js",
+          "bytes": 13612
+        },
+        {
+          "file": "assets/Reference.module-b_J4_87Y.js",
+          "bytes": 2169
+        },
+        {
+          "file": "assets/WikiLayout-BGDYG4eZ.js",
+          "bytes": 3292
+        }
+      ],
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/perk-articles/go-next.json"
+      ],
+      "images": [
+        "http://127.0.0.1:49542/assets/go_next-BZCG1GKC.webp"
+      ],
+      "noJS": true,
+      "errors": []
+    },
+    {
+      "path": "/projects/maniac/wiki/perks/flowers-lead-the-investigation",
+      "jsCount": 11,
+      "jsBytes": 440770,
+      "scripts": [
+        {
+          "file": "assets/index-VSydnqNZ.js",
+          "bytes": 296829
+        },
+        {
+          "file": "assets/flowers-lead-the-investigation-DRznF9KC.js",
+          "bytes": 1339
+        },
+        {
+          "file": "assets/ReferenceArticlePage-D7rhVueT.js",
+          "bytes": 7057
+        },
+        {
+          "file": "assets/DifficultyStars-AP4-78c7.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/registry-DUfkxfed.js",
+          "bytes": 40774
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/Reference.module-b_J4_87Y.js",
+          "bytes": 2169
+        },
+        {
+          "file": "assets/GameGlyph-CdzA5RoN.js",
+          "bytes": 20125
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/EntityCards-CXE9F8Lh.js",
+          "bytes": 13612
+        },
+        {
+          "file": "assets/WikiLayout-BGDYG4eZ.js",
+          "bytes": 3292
+        }
+      ],
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/perk-articles/flowers-lead-the-investigation.json"
+      ],
+      "images": [
+        "http://127.0.0.1:49542/assets/flowers_lead_the_investigation-4eHPO4Vy.webp"
+      ],
+      "noJS": true,
+      "errors": []
+    },
+    {
+      "path": "/projects/maniac/wiki/perks/bouquet-to-the-other-side",
+      "jsCount": 11,
+      "jsBytes": 441105,
+      "scripts": [
+        {
+          "file": "assets/index-VSydnqNZ.js",
+          "bytes": 296829
+        },
+        {
+          "file": "assets/bouquet-to-the-other-side-BfJLLR68.js",
+          "bytes": 1674
+        },
+        {
+          "file": "assets/ReferenceArticlePage-D7rhVueT.js",
+          "bytes": 7057
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/registry-DUfkxfed.js",
+          "bytes": 40774
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/Reference.module-b_J4_87Y.js",
+          "bytes": 2169
+        },
+        {
+          "file": "assets/GameGlyph-CdzA5RoN.js",
+          "bytes": 20125
+        },
+        {
+          "file": "assets/WikiLayout-BGDYG4eZ.js",
+          "bytes": 3292
+        },
+        {
+          "file": "assets/DifficultyStars-AP4-78c7.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/EntityCards-CXE9F8Lh.js",
+          "bytes": 13612
+        }
+      ],
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/perk-articles/bouquet-to-the-other-side.json"
+      ],
+      "images": [
+        "http://127.0.0.1:49542/assets/bouquet_to_the_other_side-CWCrlSU3.webp"
+      ],
+      "noJS": true,
+      "errors": []
+    },
+    {
+      "path": "/projects/maniac/wiki/perks/bud-dispatcher",
+      "jsCount": 11,
+      "jsBytes": 440878,
+      "scripts": [
+        {
+          "file": "assets/index-VSydnqNZ.js",
+          "bytes": 296829
+        },
+        {
+          "file": "assets/bud-dispatcher-BQQfdKMd.js",
+          "bytes": 1447
+        },
+        {
+          "file": "assets/ReferenceArticlePage-D7rhVueT.js",
+          "bytes": 7057
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/DifficultyStars-AP4-78c7.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/registry-DUfkxfed.js",
+          "bytes": 40774
+        },
+        {
+          "file": "assets/GameGlyph-CdzA5RoN.js",
+          "bytes": 20125
+        },
+        {
+          "file": "assets/EntityCards-CXE9F8Lh.js",
+          "bytes": 13612
+        },
+        {
+          "file": "assets/Reference.module-b_J4_87Y.js",
+          "bytes": 2169
+        },
+        {
+          "file": "assets/WikiLayout-BGDYG4eZ.js",
+          "bytes": 3292
+        }
+      ],
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/perk-articles/bud-dispatcher.json"
+      ],
+      "images": [
+        "http://127.0.0.1:49542/assets/bud_dispatcher-BCQGxu1h.webp"
+      ],
+      "noJS": true,
+      "errors": []
+    },
+    {
+      "path": "/projects/maniac/wiki/perks/catch-mistakes",
+      "jsCount": 11,
+      "jsBytes": 440474,
+      "scripts": [
+        {
+          "file": "assets/index-VSydnqNZ.js",
+          "bytes": 296829
+        },
+        {
+          "file": "assets/catch-mistakes-DnIaTnO_.js",
+          "bytes": 1043
+        },
+        {
+          "file": "assets/ReferenceArticlePage-D7rhVueT.js",
+          "bytes": 7057
+        },
+        {
+          "file": "assets/registry-DUfkxfed.js",
+          "bytes": 40774
+        },
+        {
+          "file": "assets/EntityCards-CXE9F8Lh.js",
+          "bytes": 13612
+        },
+        {
+          "file": "assets/GameGlyph-CdzA5RoN.js",
+          "bytes": 20125
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/DifficultyStars-AP4-78c7.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/WikiLayout-BGDYG4eZ.js",
+          "bytes": 3292
+        },
+        {
+          "file": "assets/Reference.module-b_J4_87Y.js",
+          "bytes": 2169
+        }
+      ],
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/perk-articles/catch-mistakes.json"
+      ],
+      "images": [
+        "http://127.0.0.1:49542/assets/catch-mistakes-SPaRRadG.webp"
+      ],
+      "noJS": true,
+      "errors": []
+    },
+    {
+      "path": "/projects/maniac/wiki/perks/computer-breaker",
+      "jsCount": 11,
+      "jsBytes": 440432,
+      "scripts": [
+        {
+          "file": "assets/index-VSydnqNZ.js",
+          "bytes": 296829
+        },
+        {
+          "file": "assets/computer-breaker-D3kgelw_.js",
+          "bytes": 1001
+        },
+        {
+          "file": "assets/ReferenceArticlePage-D7rhVueT.js",
+          "bytes": 7057
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/DifficultyStars-AP4-78c7.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/registry-DUfkxfed.js",
+          "bytes": 40774
+        },
+        {
+          "file": "assets/Reference.module-b_J4_87Y.js",
+          "bytes": 2169
+        },
+        {
+          "file": "assets/EntityCards-CXE9F8Lh.js",
+          "bytes": 13612
+        },
+        {
+          "file": "assets/GameGlyph-CdzA5RoN.js",
+          "bytes": 20125
+        },
+        {
+          "file": "assets/WikiLayout-BGDYG4eZ.js",
+          "bytes": 3292
+        }
+      ],
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/perk-articles/computer-breaker.json"
+      ],
+      "images": [
+        "http://127.0.0.1:49542/assets/computer-breaker-B9FKwwiX.webp"
+      ],
+      "noJS": true,
+      "errors": []
+    },
+    {
+      "path": "/projects/maniac/wiki/perks/highlight",
+      "jsCount": 11,
+      "jsBytes": 440608,
+      "scripts": [
+        {
+          "file": "assets/index-VSydnqNZ.js",
+          "bytes": 296829
+        },
+        {
+          "file": "assets/highlight-DFI9mH8d.js",
+          "bytes": 1177
+        },
+        {
+          "file": "assets/ReferenceArticlePage-D7rhVueT.js",
+          "bytes": 7057
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/DifficultyStars-AP4-78c7.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/Reference.module-b_J4_87Y.js",
+          "bytes": 2169
+        },
+        {
+          "file": "assets/EntityCards-CXE9F8Lh.js",
+          "bytes": 13612
+        },
+        {
+          "file": "assets/registry-DUfkxfed.js",
+          "bytes": 40774
+        },
+        {
+          "file": "assets/GameGlyph-CdzA5RoN.js",
+          "bytes": 20125
+        },
+        {
+          "file": "assets/WikiLayout-BGDYG4eZ.js",
+          "bytes": 3292
+        }
+      ],
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/perk-articles/highlight.json"
+      ],
+      "images": [
+        "http://127.0.0.1:49542/assets/highlight-DpFVPhHY.webp"
+      ],
+      "noJS": true,
+      "errors": []
+    },
+    {
+      "path": "/projects/maniac/wiki/perks/silence",
+      "jsCount": 11,
+      "jsBytes": 440371,
+      "scripts": [
+        {
+          "file": "assets/index-VSydnqNZ.js",
+          "bytes": 296829
+        },
+        {
+          "file": "assets/silence-CFsNWdns.js",
+          "bytes": 940
+        },
+        {
+          "file": "assets/ReferenceArticlePage-D7rhVueT.js",
+          "bytes": 7057
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/DifficultyStars-AP4-78c7.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/registry-DUfkxfed.js",
+          "bytes": 40774
+        },
+        {
+          "file": "assets/EntityCards-CXE9F8Lh.js",
+          "bytes": 13612
+        },
+        {
+          "file": "assets/Reference.module-b_J4_87Y.js",
+          "bytes": 2169
+        },
+        {
+          "file": "assets/WikiLayout-BGDYG4eZ.js",
+          "bytes": 3292
+        },
+        {
+          "file": "assets/GameGlyph-CdzA5RoN.js",
+          "bytes": 20125
+        }
+      ],
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/perk-articles/silence.json"
+      ],
+      "images": [
+        "http://127.0.0.1:49542/assets/silence-CBVHkEPv.webp"
+      ],
+      "noJS": true,
+      "errors": []
+    },
+    {
+      "path": "/projects/maniac/wiki/perks/ejection",
+      "jsCount": 11,
+      "jsBytes": 440390,
+      "scripts": [
+        {
+          "file": "assets/index-VSydnqNZ.js",
+          "bytes": 296829
+        },
+        {
+          "file": "assets/ejection-DsRyYmr6.js",
+          "bytes": 959
+        },
+        {
+          "file": "assets/ReferenceArticlePage-D7rhVueT.js",
+          "bytes": 7057
+        },
+        {
+          "file": "assets/registry-DUfkxfed.js",
+          "bytes": 40774
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/DifficultyStars-AP4-78c7.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/GameGlyph-CdzA5RoN.js",
+          "bytes": 20125
+        },
+        {
+          "file": "assets/EntityCards-CXE9F8Lh.js",
+          "bytes": 13612
+        },
+        {
+          "file": "assets/Reference.module-b_J4_87Y.js",
+          "bytes": 2169
+        },
+        {
+          "file": "assets/WikiLayout-BGDYG4eZ.js",
+          "bytes": 3292
+        }
+      ],
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/perk-articles/ejection.json"
+      ],
+      "images": [
+        "http://127.0.0.1:49542/assets/ejection-DM5U1Tdz.webp"
+      ],
+      "noJS": true,
+      "errors": []
+    },
+    {
+      "path": "/projects/maniac/wiki/perks/family-discord",
+      "jsCount": 11,
+      "jsBytes": 440497,
+      "scripts": [
+        {
+          "file": "assets/index-VSydnqNZ.js",
+          "bytes": 296829
+        },
+        {
+          "file": "assets/family-discord-CPjX8OJi.js",
+          "bytes": 1066
+        },
+        {
+          "file": "assets/ReferenceArticlePage-D7rhVueT.js",
+          "bytes": 7057
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/registry-DUfkxfed.js",
+          "bytes": 40774
+        },
+        {
+          "file": "assets/DifficultyStars-AP4-78c7.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/GameGlyph-CdzA5RoN.js",
+          "bytes": 20125
+        },
+        {
+          "file": "assets/EntityCards-CXE9F8Lh.js",
+          "bytes": 13612
+        },
+        {
+          "file": "assets/Reference.module-b_J4_87Y.js",
+          "bytes": 2169
+        },
+        {
+          "file": "assets/WikiLayout-BGDYG4eZ.js",
+          "bytes": 3292
+        }
+      ],
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/perk-articles/family-discord.json"
+      ],
+      "images": [
+        "http://127.0.0.1:49542/assets/family-discord-Ca9rPkLX.webp"
+      ],
+      "noJS": true,
+      "errors": []
+    },
+    {
+      "path": "/projects/maniac/wiki/perks/griefer",
+      "jsCount": 11,
+      "jsBytes": 440427,
+      "scripts": [
+        {
+          "file": "assets/index-VSydnqNZ.js",
+          "bytes": 296829
+        },
+        {
+          "file": "assets/griefer-_9XJCKPi.js",
+          "bytes": 996
+        },
+        {
+          "file": "assets/ReferenceArticlePage-D7rhVueT.js",
+          "bytes": 7057
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/DifficultyStars-AP4-78c7.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/registry-DUfkxfed.js",
+          "bytes": 40774
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/EntityCards-CXE9F8Lh.js",
+          "bytes": 13612
+        },
+        {
+          "file": "assets/Reference.module-b_J4_87Y.js",
+          "bytes": 2169
+        },
+        {
+          "file": "assets/WikiLayout-BGDYG4eZ.js",
+          "bytes": 3292
+        },
+        {
+          "file": "assets/GameGlyph-CdzA5RoN.js",
+          "bytes": 20125
+        }
+      ],
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/perk-articles/griefer.json"
+      ],
+      "images": [
+        "http://127.0.0.1:49542/assets/griefer-B6YSkQ3K.webp"
+      ],
+      "noJS": true,
+      "errors": []
+    },
+    {
+      "path": "/projects/maniac/wiki/perks/guiding-light",
+      "jsCount": 11,
+      "jsBytes": 440685,
+      "scripts": [
+        {
+          "file": "assets/index-VSydnqNZ.js",
+          "bytes": 296829
+        },
+        {
+          "file": "assets/guiding-light-D2fJmw6W.js",
+          "bytes": 1254
+        },
+        {
+          "file": "assets/ReferenceArticlePage-D7rhVueT.js",
+          "bytes": 7057
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/GameGlyph-CdzA5RoN.js",
+          "bytes": 20125
+        },
+        {
+          "file": "assets/registry-DUfkxfed.js",
+          "bytes": 40774
+        },
+        {
+          "file": "assets/DifficultyStars-AP4-78c7.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/WikiLayout-BGDYG4eZ.js",
+          "bytes": 3292
+        },
+        {
+          "file": "assets/Reference.module-b_J4_87Y.js",
+          "bytes": 2169
+        },
+        {
+          "file": "assets/EntityCards-CXE9F8Lh.js",
+          "bytes": 13612
+        }
+      ],
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/perk-articles/guiding-light.json"
+      ],
+      "images": [
+        "http://127.0.0.1:49542/assets/guiding-light-3P5kLXuI.webp"
+      ],
+      "noJS": true,
+      "errors": []
+    },
+    {
+      "path": "/projects/maniac/wiki/abilities/death-teleport",
+      "jsCount": 11,
+      "jsBytes": 440752,
+      "scripts": [
+        {
+          "file": "assets/index-VSydnqNZ.js",
+          "bytes": 296829
+        },
+        {
+          "file": "assets/death-teleport-C-76ITUN.js",
+          "bytes": 1321
+        },
+        {
+          "file": "assets/ReferenceArticlePage-D7rhVueT.js",
+          "bytes": 7057
+        },
+        {
+          "file": "assets/registry-DUfkxfed.js",
+          "bytes": 40774
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/DifficultyStars-AP4-78c7.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/Reference.module-b_J4_87Y.js",
+          "bytes": 2169
+        },
+        {
+          "file": "assets/GameGlyph-CdzA5RoN.js",
+          "bytes": 20125
+        },
+        {
+          "file": "assets/EntityCards-CXE9F8Lh.js",
+          "bytes": 13612
+        },
+        {
+          "file": "assets/WikiLayout-BGDYG4eZ.js",
+          "bytes": 3292
+        }
+      ],
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/ability-articles/death-teleport.json"
+      ],
+      "images": [
+        "http://127.0.0.1:49542/assets/death-teleport-COFNxRb6.webp"
+      ],
+      "noJS": true,
+      "errors": []
+    },
+    {
+      "path": "/projects/maniac/wiki/abilities/beast-leap",
+      "jsCount": 11,
+      "jsBytes": 440554,
+      "scripts": [
+        {
+          "file": "assets/index-VSydnqNZ.js",
+          "bytes": 296829
+        },
+        {
+          "file": "assets/beast-leap-C0hUG1i6.js",
+          "bytes": 1123
+        },
+        {
+          "file": "assets/ReferenceArticlePage-D7rhVueT.js",
+          "bytes": 7057
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/DifficultyStars-AP4-78c7.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/EntityCards-CXE9F8Lh.js",
+          "bytes": 13612
+        },
+        {
+          "file": "assets/registry-DUfkxfed.js",
+          "bytes": 40774
+        },
+        {
+          "file": "assets/Reference.module-b_J4_87Y.js",
+          "bytes": 2169
+        },
+        {
+          "file": "assets/WikiLayout-BGDYG4eZ.js",
+          "bytes": 3292
+        },
+        {
+          "file": "assets/GameGlyph-CdzA5RoN.js",
+          "bytes": 20125
+        }
+      ],
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/ability-articles/beast-leap.json"
+      ],
+      "images": [
+        "http://127.0.0.1:49542/assets/beast-leap-DUpI-QoJ.webp"
+      ],
+      "noJS": true,
+      "errors": []
+    },
+    {
+      "path": "/projects/maniac/wiki/abilities/plague-orb",
+      "jsCount": 11,
+      "jsBytes": 440482,
+      "scripts": [
+        {
+          "file": "assets/index-VSydnqNZ.js",
+          "bytes": 296829
+        },
+        {
+          "file": "assets/plague-orb-DRSA5CfI.js",
+          "bytes": 1051
+        },
+        {
+          "file": "assets/ReferenceArticlePage-D7rhVueT.js",
+          "bytes": 7057
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/registry-DUfkxfed.js",
+          "bytes": 40774
+        },
+        {
+          "file": "assets/GameGlyph-CdzA5RoN.js",
+          "bytes": 20125
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/EntityCards-CXE9F8Lh.js",
+          "bytes": 13612
+        },
+        {
+          "file": "assets/Reference.module-b_J4_87Y.js",
+          "bytes": 2169
+        },
+        {
+          "file": "assets/DifficultyStars-AP4-78c7.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/WikiLayout-BGDYG4eZ.js",
+          "bytes": 3292
+        }
+      ],
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/ability-articles/plague-orb.json"
+      ],
+      "images": [
+        "http://127.0.0.1:49542/assets/plague-orb-h3rgGoWX.webp"
+      ],
+      "noJS": true,
+      "errors": []
+    },
+    {
+      "path": "/projects/maniac/wiki/abilities/ghost-possession",
+      "jsCount": 11,
+      "jsBytes": 440674,
+      "scripts": [
+        {
+          "file": "assets/index-VSydnqNZ.js",
+          "bytes": 296829
+        },
+        {
+          "file": "assets/ghost-possession-CER8L5KH.js",
+          "bytes": 1243
+        },
+        {
+          "file": "assets/ReferenceArticlePage-D7rhVueT.js",
+          "bytes": 7057
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/DifficultyStars-AP4-78c7.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/registry-DUfkxfed.js",
+          "bytes": 40774
+        },
+        {
+          "file": "assets/Reference.module-b_J4_87Y.js",
+          "bytes": 2169
+        },
+        {
+          "file": "assets/WikiLayout-BGDYG4eZ.js",
+          "bytes": 3292
+        },
+        {
+          "file": "assets/EntityCards-CXE9F8Lh.js",
+          "bytes": 13612
+        },
+        {
+          "file": "assets/GameGlyph-CdzA5RoN.js",
+          "bytes": 20125
+        }
+      ],
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/ability-articles/ghost-possession.json"
+      ],
+      "images": [
+        "http://127.0.0.1:49542/assets/ghost-possession-B9IisNYk.webp"
+      ],
+      "noJS": true,
+      "errors": []
+    },
+    {
+      "path": "/projects/maniac/wiki/abilities/phantom-veil",
+      "jsCount": 11,
+      "jsBytes": 440722,
+      "scripts": [
+        {
+          "file": "assets/index-VSydnqNZ.js",
+          "bytes": 296829
+        },
+        {
+          "file": "assets/phantom-veil-BvMt7qf9.js",
+          "bytes": 1291
+        },
+        {
+          "file": "assets/ReferenceArticlePage-D7rhVueT.js",
+          "bytes": 7057
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/DifficultyStars-AP4-78c7.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/EntityCards-CXE9F8Lh.js",
+          "bytes": 13612
+        },
+        {
+          "file": "assets/GameGlyph-CdzA5RoN.js",
+          "bytes": 20125
+        },
+        {
+          "file": "assets/Reference.module-b_J4_87Y.js",
+          "bytes": 2169
+        },
+        {
+          "file": "assets/WikiLayout-BGDYG4eZ.js",
+          "bytes": 3292
+        },
+        {
+          "file": "assets/registry-DUfkxfed.js",
+          "bytes": 40774
+        }
+      ],
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/ability-articles/phantom-veil.json"
+      ],
+      "images": [
+        "http://127.0.0.1:49542/assets/phantom-veil-C7cmHsu6.webp"
+      ],
+      "noJS": true,
+      "errors": []
+    },
+    {
+      "path": "/projects/maniac/wiki/abilities/musical-wave",
+      "jsCount": 11,
+      "jsBytes": 440475,
+      "scripts": [
+        {
+          "file": "assets/index-VSydnqNZ.js",
+          "bytes": 296829
+        },
+        {
+          "file": "assets/musical-wave-CKL6O3mm.js",
+          "bytes": 1044
+        },
+        {
+          "file": "assets/ReferenceArticlePage-D7rhVueT.js",
+          "bytes": 7057
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/Reference.module-b_J4_87Y.js",
+          "bytes": 2169
+        },
+        {
+          "file": "assets/registry-DUfkxfed.js",
+          "bytes": 40774
+        },
+        {
+          "file": "assets/DifficultyStars-AP4-78c7.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/WikiLayout-BGDYG4eZ.js",
+          "bytes": 3292
+        },
+        {
+          "file": "assets/EntityCards-CXE9F8Lh.js",
+          "bytes": 13612
+        },
+        {
+          "file": "assets/GameGlyph-CdzA5RoN.js",
+          "bytes": 20125
+        }
+      ],
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/ability-articles/musical-wave.json"
+      ],
+      "images": [
+        "http://127.0.0.1:49542/assets/musical-wave-DhWwo4MU.webp"
+      ],
+      "noJS": true,
+      "errors": []
+    },
+    {
+      "path": "/projects/maniac/wiki/abilities/damage-transfer",
+      "jsCount": 11,
+      "jsBytes": 441078,
+      "scripts": [
+        {
+          "file": "assets/index-VSydnqNZ.js",
+          "bytes": 296829
+        },
+        {
+          "file": "assets/damage-transfer-84flAE1d.js",
+          "bytes": 1647
+        },
+        {
+          "file": "assets/ReferenceArticlePage-D7rhVueT.js",
+          "bytes": 7057
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/Reference.module-b_J4_87Y.js",
+          "bytes": 2169
+        },
+        {
+          "file": "assets/DifficultyStars-AP4-78c7.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/EntityCards-CXE9F8Lh.js",
+          "bytes": 13612
+        },
+        {
+          "file": "assets/registry-DUfkxfed.js",
+          "bytes": 40774
+        },
+        {
+          "file": "assets/WikiLayout-BGDYG4eZ.js",
+          "bytes": 3292
+        },
+        {
+          "file": "assets/GameGlyph-CdzA5RoN.js",
+          "bytes": 20125
+        }
+      ],
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/ability-articles/damage-transfer.json"
+      ],
+      "images": [],
+      "noJS": true,
+      "errors": []
+    },
+    {
+      "path": "/projects/maniac/wiki/abilities/quantum-swap",
+      "jsCount": 11,
+      "jsBytes": 440551,
+      "scripts": [
+        {
+          "file": "assets/index-VSydnqNZ.js",
+          "bytes": 296829
+        },
+        {
+          "file": "assets/quantum-swap-DbAnOakd.js",
+          "bytes": 1120
+        },
+        {
+          "file": "assets/ReferenceArticlePage-D7rhVueT.js",
+          "bytes": 7057
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/EntityCards-CXE9F8Lh.js",
+          "bytes": 13612
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/DifficultyStars-AP4-78c7.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/Reference.module-b_J4_87Y.js",
+          "bytes": 2169
+        },
+        {
+          "file": "assets/GameGlyph-CdzA5RoN.js",
+          "bytes": 20125
+        },
+        {
+          "file": "assets/WikiLayout-BGDYG4eZ.js",
+          "bytes": 3292
+        },
+        {
+          "file": "assets/registry-DUfkxfed.js",
+          "bytes": 40774
+        }
+      ],
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/ability-articles/quantum-swap.json"
+      ],
+      "images": [
+        "http://127.0.0.1:49542/assets/quantum-swap-Kzm1OIxB.webp"
+      ],
+      "noJS": true,
+      "errors": []
+    },
+    {
+      "path": "/projects/maniac/wiki/abilities/smoke-cloud",
+      "jsCount": 11,
+      "jsBytes": 440712,
+      "scripts": [
+        {
+          "file": "assets/index-VSydnqNZ.js",
+          "bytes": 296829
+        },
+        {
+          "file": "assets/smoke-cloud-jQov7m9q.js",
+          "bytes": 1281
+        },
+        {
+          "file": "assets/ReferenceArticlePage-D7rhVueT.js",
+          "bytes": 7057
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/DifficultyStars-AP4-78c7.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/registry-DUfkxfed.js",
+          "bytes": 40774
+        },
+        {
+          "file": "assets/Reference.module-b_J4_87Y.js",
+          "bytes": 2169
+        },
+        {
+          "file": "assets/EntityCards-CXE9F8Lh.js",
+          "bytes": 13612
+        },
+        {
+          "file": "assets/WikiLayout-BGDYG4eZ.js",
+          "bytes": 3292
+        },
+        {
+          "file": "assets/GameGlyph-CdzA5RoN.js",
+          "bytes": 20125
+        }
+      ],
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/ability-articles/smoke-cloud.json"
+      ],
+      "images": [
+        "http://127.0.0.1:49542/assets/smoke-cloud-DTbFvxfx.webp"
+      ],
+      "noJS": true,
+      "errors": []
+    },
+    {
+      "path": "/projects/maniac/wiki/abilities/hook-throw",
+      "jsCount": 11,
+      "jsBytes": 440578,
+      "scripts": [
+        {
+          "file": "assets/index-VSydnqNZ.js",
+          "bytes": 296829
+        },
+        {
+          "file": "assets/hook-throw-CFkXSR85.js",
+          "bytes": 1147
+        },
+        {
+          "file": "assets/ReferenceArticlePage-D7rhVueT.js",
+          "bytes": 7057
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/Reference.module-b_J4_87Y.js",
+          "bytes": 2169
+        },
+        {
+          "file": "assets/DifficultyStars-AP4-78c7.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/registry-DUfkxfed.js",
+          "bytes": 40774
+        },
+        {
+          "file": "assets/WikiLayout-BGDYG4eZ.js",
+          "bytes": 3292
+        },
+        {
+          "file": "assets/EntityCards-CXE9F8Lh.js",
+          "bytes": 13612
+        },
+        {
+          "file": "assets/GameGlyph-CdzA5RoN.js",
+          "bytes": 20125
+        }
+      ],
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/ability-articles/hook-throw.json"
+      ],
+      "images": [
+        "http://127.0.0.1:49542/assets/hook-throw-Bh1K8bPc.webp"
+      ],
+      "noJS": true,
+      "errors": []
+    },
+    {
+      "path": "/projects/maniac/wiki/abilities/concentrated-nightmare",
+      "jsCount": 11,
+      "jsBytes": 440697,
+      "scripts": [
+        {
+          "file": "assets/index-VSydnqNZ.js",
+          "bytes": 296829
+        },
+        {
+          "file": "assets/concentrated-nightmare-DbpBQuiP.js",
+          "bytes": 1266
+        },
+        {
+          "file": "assets/ReferenceArticlePage-D7rhVueT.js",
+          "bytes": 7057
+        },
+        {
+          "file": "assets/registry-DUfkxfed.js",
+          "bytes": 40774
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/WikiLayout-BGDYG4eZ.js",
+          "bytes": 3292
+        },
+        {
+          "file": "assets/DifficultyStars-AP4-78c7.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/Reference.module-b_J4_87Y.js",
+          "bytes": 2169
+        },
+        {
+          "file": "assets/GameGlyph-CdzA5RoN.js",
+          "bytes": 20125
+        },
+        {
+          "file": "assets/EntityCards-CXE9F8Lh.js",
+          "bytes": 13612
+        }
+      ],
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/ability-articles/concentrated-nightmare.json"
+      ],
+      "images": [
+        "http://127.0.0.1:49542/assets/concentrated-nightmare-CFqeCOEf.webp"
+      ],
+      "noJS": true,
+      "errors": []
+    },
+    {
+      "path": "/projects/maniac/wiki/abilities/abyss-gaze",
+      "jsCount": 11,
+      "jsBytes": 440751,
+      "scripts": [
+        {
+          "file": "assets/index-VSydnqNZ.js",
+          "bytes": 296829
+        },
+        {
+          "file": "assets/abyss-gaze-Dl1AQOKQ.js",
+          "bytes": 1320
+        },
+        {
+          "file": "assets/ReferenceArticlePage-D7rhVueT.js",
+          "bytes": 7057
+        },
+        {
+          "file": "assets/registry-DUfkxfed.js",
+          "bytes": 40774
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/EntityCards-CXE9F8Lh.js",
+          "bytes": 13612
+        },
+        {
+          "file": "assets/DifficultyStars-AP4-78c7.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/Reference.module-b_J4_87Y.js",
+          "bytes": 2169
+        },
+        {
+          "file": "assets/GameGlyph-CdzA5RoN.js",
+          "bytes": 20125
+        },
+        {
+          "file": "assets/WikiLayout-BGDYG4eZ.js",
+          "bytes": 3292
+        }
+      ],
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/ability-articles/abyss-gaze.json"
+      ],
+      "images": [],
+      "noJS": true,
+      "errors": []
+    }
+  ],
+  "widths": [
+    {
+      "width": 320,
+      "pages": 10,
+      "overflow": false
+    },
+    {
+      "width": 390,
+      "pages": 10,
+      "overflow": false
+    },
+    {
+      "width": 768,
+      "pages": 10,
+      "overflow": false
+    },
+    {
+      "width": 1440,
+      "pages": 10,
+      "overflow": false
+    }
+  ],
+  "screenshots": [
+    "C:\\Users\\hardt\\.codex\\visualizations\\2026\\10\\24\\01a16f85-8f35-77a0-8f3d-5d8797288cef\\maniac-wiki-3b\\perks-1440.png",
+    "C:\\Users\\hardt\\.codex\\visualizations\\2026\\10\\24\\01a16f85-8f35-77a0-8f3d-5d8797288cef\\maniac-wiki-3b\\abilities-1440.png",
+    "C:\\Users\\hardt\\.codex\\visualizations\\2026\\10\\24\\01a16f85-8f35-77a0-8f3d-5d8797288cef\\maniac-wiki-3b\\charged-1440.png",
+    "C:\\Users\\hardt\\.codex\\visualizations\\2026\\10\\24\\01a16f85-8f35-77a0-8f3d-5d8797288cef\\maniac-wiki-3b\\hybrid-1440.png",
+    "C:\\Users\\hardt\\.codex\\visualizations\\2026\\10\\24\\01a16f85-8f35-77a0-8f3d-5d8797288cef\\maniac-wiki-3b\\roulette-1440.png",
+    "C:\\Users\\hardt\\.codex\\visualizations\\2026\\10\\24\\01a16f85-8f35-77a0-8f3d-5d8797288cef\\maniac-wiki-3b\\hook-1440.png",
+    "C:\\Users\\hardt\\.codex\\visualizations\\2026\\10\\24\\01a16f85-8f35-77a0-8f3d-5d8797288cef\\maniac-wiki-3b\\death-1440.png",
+    "C:\\Users\\hardt\\.codex\\visualizations\\2026\\10\\24\\01a16f85-8f35-77a0-8f3d-5d8797288cef\\maniac-wiki-3b\\perks-390.png",
+    "C:\\Users\\hardt\\.codex\\visualizations\\2026\\10\\24\\01a16f85-8f35-77a0-8f3d-5d8797288cef\\maniac-wiki-3b\\abilities-390.png",
+    "C:\\Users\\hardt\\.codex\\visualizations\\2026\\10\\24\\01a16f85-8f35-77a0-8f3d-5d8797288cef\\maniac-wiki-3b\\charged-390.png",
+    "C:\\Users\\hardt\\.codex\\visualizations\\2026\\10\\24\\01a16f85-8f35-77a0-8f3d-5d8797288cef\\maniac-wiki-3b\\hybrid-390.png",
+    "C:\\Users\\hardt\\.codex\\visualizations\\2026\\10\\24\\01a16f85-8f35-77a0-8f3d-5d8797288cef\\maniac-wiki-3b\\roulette-390.png",
+    "C:\\Users\\hardt\\.codex\\visualizations\\2026\\10\\24\\01a16f85-8f35-77a0-8f3d-5d8797288cef\\maniac-wiki-3b\\hook-390.png",
+    "C:\\Users\\hardt\\.codex\\visualizations\\2026\\10\\24\\01a16f85-8f35-77a0-8f3d-5d8797288cef\\maniac-wiki-3b\\death-390.png"
+  ],
+  "checks": [
+    "All team/type counts, combined search/empty/reset, keyboard SPA navigation, ability owner filter and Pudge → Hook → Pudge"
+  ]
+}

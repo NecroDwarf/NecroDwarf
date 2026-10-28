@@ -284,19 +284,35 @@
   margin-top: 20px;
   border: 1px solid #2b2e37;
 }
-.futureCategories > div {
+.futureCategories > div,
+.futureCategories > a {
   padding: 22px;
   border-right: 1px solid #2b2e37;
   background: #14171e;
 }
-.futureCategories > div:last-child {
+.futureCategories > div:last-child,
+.futureCategories > a:last-child {
   border-right: 0;
 }
 .futureCategories h3 {
   font-size: 15px;
   margin: 12px 0 8px;
 }
-.futureCategories > div > span:last-child {
+.futureCategories > a:hover {
+  background: #221b25;
+}
+@media (max-width: 1000px) {
+  .futureCategories > a {
+    border-bottom: 1px solid #2b2e37;
+  }
+}
+@media (max-width: 700px) {
+  .futureCategories > a {
+    padding: 18px;
+  }
+}
+.futureCategories > div > span:last-child,
+.futureCategories > a > span:last-child {
   color: #9a9ba8;
   font-size: 11px;
 }

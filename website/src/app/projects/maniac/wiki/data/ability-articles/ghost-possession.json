@@ -1,0 +1,26 @@
+{
+  "id": "ability:ghost-possession",
+  "description": "Вселяетесь в выжившего и управляете его движением.",
+  "conditions": [
+    "Shift + ПКМ по выжившему. Повторный Shift + ПКМ завершает одержимость раньше; применяется система одержимости Призрака."
+  ],
+  "availability": {
+    "mana": "10 маны",
+    "cooldown": "60 с"
+  },
+  "notes": [],
+  "evidence": [
+    {
+      "path": "src/main/java/org/example/maniacrevolution/item/GhostHandItem.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/character/maniac/GhostClass.java"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/ghost/GhostPossessionManager.java"
+    }
+  ]
+}

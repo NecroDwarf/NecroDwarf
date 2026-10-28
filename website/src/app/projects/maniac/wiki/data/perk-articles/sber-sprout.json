@@ -1,0 +1,21 @@
+{
+  "id": "perk:sber-sprout",
+  "description": "Во время непрерывного ремонта СберРосток запоминает лично внесённый вами прогресс. Активация за 5 маны извлекает его из компьютера и сохраняет 75%; посадка заполненного ростка за 5 маны переносит сохранённый прогресс на другой компьютер. Для извлечения нужно накопить минимум 1%. Значения округляются до 2 знаков после запятой. Работает в фазах 1–2.",
+  "conditions": [],
+  "availability": {
+    "cooldown": "Не задана в базовом классе этого перка",
+    "mana": "5 маны"
+  },
+  "notes": [],
+  "evidence": [
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/perks/survivor/SberSproutPerk.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/Perk.java"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+    }
+  ]
+}

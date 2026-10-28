@@ -6,10 +6,14 @@ import forgetItem from "../../assets/wiki/forget-me-not-item.png";
 import type { EntityAsset } from "./types";
 import { flowerAssets } from "./flower-assets";
 import { characterAbilityAssets } from "./character-ability-assets";
+import { registeredPerkAssets } from "./registered-perk-assets";
+import { ghostAbilityAsset } from "./ghost-ability-asset";
 
 export const entityAssets: Readonly<Record<string, EntityAsset>> = {
   ...flowerAssets,
   ...characterAbilityAssets,
+  ...registeredPerkAssets,
+  "ghost-possession": ghostAbilityAsset,
   "concentrated-nightmare": {
     src: concentrated,
     width: 256,

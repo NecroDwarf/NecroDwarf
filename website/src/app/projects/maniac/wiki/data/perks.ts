@@ -1,6 +1,7 @@
 import type { Entity, EntityData } from "./types";
 import { verifiedSource } from "./snapshots";
 import { flowerPerks } from "./flower-perks";
+import { perkCatalog } from "./reference-catalog";
 // Prose is checked in both sources; numeric snapshots are explicitly separate.
 const common: Omit<EntityData["perk"], "stats"> = {
   description:
@@ -9,7 +10,7 @@ const common: Omit<EntityData["perk"], "stats"> = {
   effects: ["Возврат к установленному цветку"],
   mechanicIds: ["mechanic:flower-return"],
 };
-export const perks: readonly Entity<"perk">[] = [
+const historicalPerks: readonly Entity<"perk">[] = [
   ...flowerPerks,
   {
     id: "perk:forget-me-not",
@@ -73,3 +74,33 @@ export const perks: readonly Entity<"perk">[] = [
     },
   },
 ];
+export const perks: readonly Entity<"perk">[] = perkCatalog.map((entry) => {
+  const previous = historicalPerks.find((p) => p.id === entry.id);
+  const oldData = previous?.revisions[verifiedSource]?.data;
+  const stats = new Map((oldData?.stats ?? []).map((stat) => [stat.key, stat]));
+  entry.stats.forEach((stat) => stats.set(stat.key, stat));
+  return {
+    id: entry.id,
+    kind: "perk",
+    slug: entry.slug,
+    name: previous?.name ?? entry.name,
+    revisions: {
+      ...previous?.revisions,
+      [verifiedSource]: {
+        data: {
+          ...oldData,
+          gameId: entry.gameId,
+          team: entry.team,
+          perkType: entry.perkType,
+          phases: entry.phases,
+          description: entry.description,
+          icon: entry.icon,
+          effects: oldData?.effects ?? [],
+          mechanicIds: oldData?.mechanicIds ?? [],
+          stats: [...stats.values()],
+        },
+        evidence: entry.evidence,
+      },
+    },
+  };
+});
