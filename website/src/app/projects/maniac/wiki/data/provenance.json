@@ -1835,6 +1835,56 @@
       "path": "src/main/java/org/example/maniacrevolution/hack/ModHackRegistry.java",
       "sha256": "60731d73fdd73a37e704f0a88f2bf47b8b3af263fc6e68761b431bd520ce321b",
       "bytes": 2680
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/map/MapRegistry.java",
+      "sha256": "2a554d091f19095b0d3fe73600ebaef6dde47d7b7dd59ec4e28bce4a4405fa69",
+      "bytes": 2300
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/guide/MapGuideRegistry.java",
+      "sha256": "f5dc1bd60bc7fd39ce11ee49eedd47cb909d842d39b94e4dbf9e988611144b84",
+      "bytes": 1980
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/map/MapData.java",
+      "sha256": "04fb0a6c68f2b240dd68e895045a50b7964f358de16b294f61b209ac87033a6d",
+      "bytes": 949
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/gui/pages/MapsPage.java",
+      "sha256": "a42500d83abd8d8fd82230072b5c0485039f1bc8effe79ca9ebc232052ea18fc",
+      "bytes": 10159
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/map/MapVotingManager.java",
+      "sha256": "320d720cb486406e5604d8a222a27f03863eaf0cb822cb259ef64b2d169c8fda",
+      "bytes": 9023
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/command/VoteMapCommand.java",
+      "sha256": "53add89f2b3f38ac2940a405bb43b04b89e89d06950bcb01ab052b8c9053cccd",
+      "bytes": 3817
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/client/screen/MapVotingScreen.java",
+      "sha256": "6dec4261edbd23cd1cd4b7e00b5b498395105be831f906c80071af8f397fbe57",
+      "bytes": 33471
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/gui/maps/mansion.png",
+      "sha256": "39e889951518603d657e5d9e5aa8ce6375c3ce7c3c1c030c3dfa40d5afcdd888",
+      "bytes": 1802958
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/gui/maps/pizzeria.png",
+      "sha256": "5ad0bfb75316543cc33329027debd0016cfb30592d60c790b525ef941798504d",
+      "bytes": 922656
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/gui/maps/fort.png",
+      "sha256": "81057ac85461cf72923be6a1e61deb3db59b7b2e5621f16d6d2acb33b9f80b1d",
+      "bytes": 2680877
     }
   ]
 }

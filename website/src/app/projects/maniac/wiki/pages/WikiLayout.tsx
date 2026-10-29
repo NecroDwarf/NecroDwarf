@@ -18,6 +18,7 @@ export function WikiLayout({ children }: { children: ReactNode }) {
           <NavLink to="/projects/maniac/wiki/abilities">Способности</NavLink>
           <NavLink to="/projects/maniac/wiki/items">Предметы</NavLink>
           <NavLink to="/projects/maniac/wiki/mechanics">Механики</NavLink>
+          <NavLink to="/projects/maniac/wiki/maps">Карты</NavLink>
           <Link to="/projects/maniac/changelog">Хроники ↗</Link>
           <Link to="/projects/maniac">К игре ↗</Link>
         </div>

@@ -1,0 +1,32 @@
+{
+  "id": "map:mansion",
+  "details": [
+    "Тайные двери соединяют удалённые комнаты.",
+    "Скрытые люки создают запасные маршруты.",
+    "Несколько этажей усложняют погоню.",
+    "Изучите лестницы до начала погони.",
+    "Используйте двери, чтобы разрывать линию взгляда.",
+    "Компьютеры разбросаны по всему зданию.",
+    "Слушайте перемещения игроков между этажами.",
+    "Знание тайных маршрутов даёт преимущество."
+  ],
+  "notes": [],
+  "registryDescription": "Классическая карта. 3 Этажа, много секретных проходов",
+  "evidence": [
+    {
+      "path": "src/main/java/org/example/maniacrevolution/map/MapRegistry.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/map/MapData.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/guide/MapGuideRegistry.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/gui/pages/MapsPage.java"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+    }
+  ]
+}

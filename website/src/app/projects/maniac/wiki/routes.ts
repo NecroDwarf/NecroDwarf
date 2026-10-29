@@ -5,6 +5,10 @@ import { perkRouteMeta } from "./perk-route-metadata";
 import { abilityRouteMeta } from "./ability-route-metadata";
 import { itemRouteMeta } from "./item-route-metadata";
 import { mechanicRouteMeta } from "./mechanic-route-metadata";
+import { mapRouteMeta } from "./map-route-metadata";
+const mapArticles = import.meta.glob<{ default: ComponentType }>(
+  "./pages/maps/*.tsx",
+);
 const itemArticles = import.meta.glob<{ default: ComponentType }>(
   "./pages/items/*.tsx",
 );
@@ -21,6 +25,21 @@ const articles = import.meta.glob<{ default: ComponentType }>(
   "./pages/characters/*.tsx",
 );
 export const maniacWikiRoutes = [
+  {
+    path: "/projects/maniac/wiki/maps",
+    title: "Карты — Maniac Wiki · NecroDwarf",
+    description:
+      "Особняк, Пиццерия и Форт: игровые превью, размеры и сложности по руководству, особенности локаций и выбор карты.",
+    page: routePage(() => import("./pages/MapsPage").then((m) => m.MapsPage)),
+  },
+  ...mapRouteMeta.map((m) => ({
+    path: `/projects/maniac/wiki/maps/${m.slug}`,
+    title: `${m.name} — Карты Maniac Wiki · NecroDwarf`,
+    description: `${m.name}: оригинальное игровое превью, сложность и размер по справочнику Maniac, особенности локации и советы игрокам.`,
+    page: routePage(() =>
+      mapArticles[`./pages/maps/${m.slug}.tsx`]().then((m) => m.default),
+    ),
+  })),
   {
     path: "/projects/maniac/wiki/items",
     title: "Предметы — Maniac Wiki · NecroDwarf",

@@ -1,0 +1,56 @@
+[
+  {
+    "source": "src/main.tsx",
+    "jsCount": 1,
+    "bytes": 324580,
+    "gzip": 101542,
+    "files": [
+      "assets/index-DIlyDRF1.js"
+    ]
+  },
+  {
+    "source": "src/app/projects/maniac/pages/ManiacPage.tsx",
+    "jsCount": 10,
+    "bytes": 529457,
+    "gzip": 139952,
+    "files": [
+      "assets/ManiacPage-CEGIb1UY.js",
+      "assets/index-DIlyDRF1.js",
+      "assets/ProjectIntro-BlGLDWUV.js",
+      "assets/ReleaseList-DRXE8UeE.js",
+      "assets/Content.module-_AHIhrYo.js",
+      "assets/SectionHeading-BXeA7Bpw.js",
+      "assets/registry-CfmMQjQ4.js",
+      "assets/characters-B4rUB4No.js",
+      "assets/reference-catalog-BSG4tq-p.js",
+      "assets/systems-catalog-D7ryaJPj.js"
+    ]
+  },
+  {
+    "source": "src/app/projects/maniac/wiki/pages/WikiHomePage.tsx",
+    "jsCount": 5,
+    "bytes": 349296,
+    "gzip": 109953,
+    "files": [
+      "assets/WikiHomePage-CucpC1Ij.js",
+      "assets/index-DIlyDRF1.js",
+      "assets/catalog-DcdSBhUE.js",
+      "assets/characters-B4rUB4No.js",
+      "assets/WikiLayout-DQ5YoCC1.js"
+    ]
+  },
+  {
+    "source": "src/app/projects/maniac/wiki/pages/CharactersPage.tsx",
+    "jsCount": 6,
+    "bytes": 348336,
+    "gzip": 110255,
+    "files": [
+      "assets/CharactersPage-C41qS0kD.js",
+      "assets/index-DIlyDRF1.js",
+      "assets/catalog-DcdSBhUE.js",
+      "assets/characters-B4rUB4No.js",
+      "assets/WikiLayout-DQ5YoCC1.js",
+      "assets/DifficultyStars-BMed4nG4.js"
+    ]
+  }
+]

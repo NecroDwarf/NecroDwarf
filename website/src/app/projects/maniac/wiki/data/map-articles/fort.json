@@ -1,0 +1,29 @@
+{
+  "id": "map:fort",
+  "details": [
+    "Открытые участки не прощают неосторожных перемещений.",
+    "Стены и углы дают временное укрытие.",
+    "Длинные линии обзора полезны дальнобойным персонажам."
+  ],
+  "notes": [
+    "MapRegistry и хроника 1.1 называют Форт маленьким/компактным. Локализованное руководство указывает размер «Средняя». Историческая хроника не изменена."
+  ],
+  "registryDescription": "Страшный и маленький форт из никому неизвестной игры. Довольно маленькая карта",
+  "evidence": [
+    {
+      "path": "src/main/java/org/example/maniacrevolution/map/MapRegistry.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/map/MapData.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/guide/MapGuideRegistry.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/gui/pages/MapsPage.java"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+    }
+  ]
+}

@@ -114,13 +114,14 @@ for (const c of characters) {
     assert.ok(!loaded.some((m) => m.includes(".glb")));
 }
 const referenceArticle = (m) =>
-  /wiki\/data\/(?:perk|ability|item|mechanic)-articles\/.*\.json$/.test(m);
+  /wiki\/data\/(?:perk|ability|item|mechanic|map)-articles\/.*\.json$/.test(m);
 assert.ok(!initial.some(referenceArticle));
 for (const page of [
   "PerksPage",
   "AbilitiesPage",
   "ItemsPage",
   "MechanicsPage",
+  "MapsPage",
 ]) {
   const loaded = staticModules(
     main,
@@ -134,7 +135,7 @@ for (const page of [
     ),
   );
 }
-for (const kind of ["perk", "ability", "item", "mechanic"]) {
+for (const kind of ["perk", "ability", "item", "mechanic", "map"]) {
   const entries = JSON.parse(
     await readFile(
       `src/app/projects/maniac/wiki/data/${kind}-catalog.json`,
@@ -145,13 +146,19 @@ for (const kind of ["perk", "ability", "item", "mechanic"]) {
     const loaded = staticModules(
       main,
       chunkFor(
-        `src/app/projects/maniac/wiki/pages/${{ perk: "perks", ability: "abilities", item: "items", mechanic: "mechanics" }[kind]}/${entry.slug}.tsx`,
+        `src/app/projects/maniac/wiki/pages/${{ perk: "perks", ability: "abilities", item: "items", mechanic: "mechanics", map: "maps" }[kind]}/${entry.slug}.tsx`,
       ),
     );
     assert.deepEqual(loaded.filter(referenceArticle), [
       `src/app/projects/maniac/wiki/data/${kind}-articles/${entry.slug}.json`,
     ]);
     assert.ok(!loaded.some(modelRuntime));
+    if (kind === "map")
+      assert.ok(
+        loaded
+          .filter((m) => /assets\/maps\/.*\.webp$/.test(m))
+          .every((m) => m.includes(`/maps/${entry.slug}-`)),
+      );
     assert.ok(
       !loaded.some(
         (m) => m.includes(".glb") || /changelogs\/content\/.*\.json$/.test(m),

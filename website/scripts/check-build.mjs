@@ -51,7 +51,7 @@ try {
     "/projects/maniac/wiki/abilities/not-registered",
     "/projects/maniac/wiki/items/not-registered",
     "/projects/maniac/wiki/mechanics/not-registered",
-    "/projects/maniac/wiki/maps",
+    "/projects/maniac/wiki/maps/not-registered",
     "/projects/maniac/wiki/characters/unknown",
     "/projects/maniac/changelog/1.3",
     "/neo-tech-v2",

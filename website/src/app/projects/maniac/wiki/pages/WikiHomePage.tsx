@@ -5,6 +5,7 @@ import { WikiLayout, DataNote } from "./WikiLayout";
 import s from "./Wiki.module.css";
 import { itemRouteMeta } from "../item-route-metadata";
 import { mechanicRouteMeta } from "../mechanic-route-metadata";
+import { mapRouteMeta } from "../map-route-metadata";
 export function WikiHomePage() {
   const keeper = characterEntries.find(
     (c) => c.slug === "keeper-of-nightmares",
@@ -86,10 +87,10 @@ export function WikiHomePage() {
           <div className={s.futureCategories}>
             {["Перки", "Способности", "Предметы", "Механики", "Карты"].map(
               (name, i) =>
-                i < 4 ? (
+                i < 5 ? (
                   <Link
                     key={name}
-                    to={`/projects/maniac/wiki/${["perks", "abilities", "items", "mechanics"][i]}`}
+                    to={`/projects/maniac/wiki/${["perks", "abilities", "items", "mechanics", "maps"][i]}`}
                   >
                     <span className={s.eyebrow}>0{i + 3}</span>
                     <h3>{name}</h3>
@@ -100,6 +101,7 @@ export function WikiHomePage() {
                           "12 способностей",
                           `${itemRouteMeta.length} предметов`,
                           `${mechanicRouteMeta.length} механик`,
+                          `${mapRouteMeta.length} карты`,
                         ][i]
                       }{" "}
                       ↗

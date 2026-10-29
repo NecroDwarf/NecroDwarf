@@ -3,6 +3,7 @@ import { abilities } from "./abilities";
 import { perks } from "./perks";
 import { items } from "./items";
 import { mechanics } from "./mechanics";
+import { maps } from "./maps";
 import { verifiedSource } from "./snapshots";
 import type {
   Entity,
@@ -17,6 +18,7 @@ export const entities: readonly GameEntity[] = [
   ...perks,
   ...items,
   ...mechanics,
+  ...maps,
 ];
 export const entityById = new Map(
   entities.map((entity) => [entity.id, entity]),

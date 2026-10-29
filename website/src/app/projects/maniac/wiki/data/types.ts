@@ -1,4 +1,10 @@
-export type EntityKind = "character" | "ability" | "perk" | "item" | "mechanic";
+export type EntityKind =
+  | "character"
+  | "ability"
+  | "perk"
+  | "item"
+  | "mechanic"
+  | "map";
 export type EntityId<K extends EntityKind = EntityKind> = `${K}:${string}`;
 export type SnapshotId = `release:${string}` | `source:${string}`;
 export type PerkType =
@@ -81,6 +87,12 @@ export interface EntityData {
     mechanicIds: readonly EntityId<"mechanic">[];
   };
   mechanic: BaseData;
+  map: BaseData & {
+    numericId: number;
+    size: string;
+    difficulty: number;
+    features: readonly string[];
+  };
 }
 export interface Revision<T> {
   data: T;

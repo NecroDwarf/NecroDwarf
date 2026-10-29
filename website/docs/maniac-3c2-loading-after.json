@@ -1,0 +1,60 @@
+[
+  {
+    "source": "src/main.tsx",
+    "jsCount": 1,
+    "bytes": 328517,
+    "gzip": 102212,
+    "files": [
+      "assets/index-OmhNllMF.js"
+    ]
+  },
+  {
+    "source": "src/app/projects/maniac/pages/ManiacPage.tsx",
+    "jsCount": 12,
+    "bytes": 536776,
+    "gzip": 141893,
+    "files": [
+      "assets/ManiacPage-BXiIqHhQ.js",
+      "assets/index-OmhNllMF.js",
+      "assets/ProjectIntro-CcCaevkj.js",
+      "assets/ReleaseList-D1eby6oH.js",
+      "assets/Content.module-_AHIhrYo.js",
+      "assets/SectionHeading-4CNQCkDV.js",
+      "assets/registry-Dy41BYuc.js",
+      "assets/characters-DImKs2vR.js",
+      "assets/snapshots-Dz8FZ_D7.js",
+      "assets/reference-catalog-BSG4tq-p.js",
+      "assets/systems-catalog-D7ryaJPj.js",
+      "assets/maps-DwIpDSsl.js"
+    ]
+  },
+  {
+    "source": "src/app/projects/maniac/wiki/pages/WikiHomePage.tsx",
+    "jsCount": 6,
+    "bytes": 353464,
+    "gzip": 110818,
+    "files": [
+      "assets/WikiHomePage-DIEDtTVh.js",
+      "assets/index-OmhNllMF.js",
+      "assets/catalog-6s9Vv8Ca.js",
+      "assets/characters-DImKs2vR.js",
+      "assets/snapshots-Dz8FZ_D7.js",
+      "assets/WikiLayout-DxW0V6Ey.js"
+    ]
+  },
+  {
+    "source": "src/app/projects/maniac/wiki/pages/CharactersPage.tsx",
+    "jsCount": 7,
+    "bytes": 352460,
+    "gzip": 111100,
+    "files": [
+      "assets/CharactersPage-CLTta8on.js",
+      "assets/index-OmhNllMF.js",
+      "assets/catalog-6s9Vv8Ca.js",
+      "assets/characters-DImKs2vR.js",
+      "assets/snapshots-Dz8FZ_D7.js",
+      "assets/WikiLayout-DxW0V6Ey.js",
+      "assets/DifficultyStars-Ck6DAizc.js"
+    ]
+  }
+]

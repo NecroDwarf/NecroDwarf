@@ -5,6 +5,9 @@ import { releases } from "./registry";
 import type { ChronicleContent } from "./content/types";
 import { ChronicleText } from "./ChronicleText";
 import { ReleaseDecor } from "./ReleaseDecor";
+import { mapCatalog } from "../wiki/data/maps";
+import { EntityLink } from "../wiki/ui/EntityLink";
+import { useMapAnchor } from "../wiki/pages/useMapAnchor";
 import s from "./Chronicles.module.css";
 
 export function ChroniclePage({
@@ -15,6 +18,10 @@ export function ChroniclePage({
   content: ChronicleContent;
 }) {
   const release = releases.find((r) => r.version === version)!;
+  useMapAnchor(
+    mapCatalog.find((map) => map.chronicle?.version === version)?.chronicle
+      ?.sectionId,
+  );
   const older = releases.find(
     (r) => r.releaseOrder === release.releaseOrder - 1,
   );
@@ -113,6 +120,19 @@ export function ChroniclePage({
                 </div>
                 <div className={s.rich}>
                   <ChronicleText nodes={section.nodes} version={version} />
+                  {mapCatalog
+                    .filter(
+                      (map) =>
+                        map.chronicle?.version === version &&
+                        map.chronicle.sectionId === section.id,
+                    )
+                    .map((map) => (
+                      <p key={map.id} data-map-chronicle-link={map.id}>
+                        <EntityLink id={map.id}>
+                          Карта «{map.name}» в Wiki →
+                        </EntityLink>
+                      </p>
+                    ))}
                 </div>
               </section>
             ))}

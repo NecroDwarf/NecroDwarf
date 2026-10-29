@@ -76,12 +76,12 @@ try {
   ]);
   for (const version of gameVersions)
     assert.ok(releases.some((r) => r.id === version.releaseId));
-  assert.equal(routes.length, 185);
+  assert.equal(routes.length, 189);
   assert.ok(routes.every((r) => !/lab/.test(r.path)));
-  assert.equal(Object.keys(publishedEntityRoutes).length, 168);
+  assert.equal(Object.keys(publishedEntityRoutes).length, 171);
   assert.ok(
     Object.keys(publishedEntityRoutes).every((id) =>
-      /^(character|perk|ability|item|mechanic):/.test(id),
+      /^(character|perk|ability|item|mechanic|map):/.test(id),
     ),
   );
   for (const [id, path] of Object.entries(publishedEntityRoutes)) {

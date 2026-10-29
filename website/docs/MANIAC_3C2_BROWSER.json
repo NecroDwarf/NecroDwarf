@@ -1,0 +1,333 @@
+{
+  "routes": [
+    {
+      "path": "/projects/maniac/wiki/maps",
+      "jsCount": 12,
+      "jsBytes": 344598,
+      "resources": [
+        {
+          "file": "assets/index-OmhNllMF.js",
+          "bytes": 328517
+        },
+        {
+          "file": "assets/MapsPage-DuwHG5oI.js",
+          "bytes": 6362
+        },
+        {
+          "file": "assets/maps-DwIpDSsl.js",
+          "bytes": 3189
+        },
+        {
+          "file": "assets/snapshots-Dz8FZ_D7.js",
+          "bytes": 544
+        },
+        {
+          "file": "assets/publication-Cg7C84ca.js",
+          "bytes": 524
+        },
+        {
+          "file": "assets/MapFacts-IKy37Euf.js",
+          "bytes": 838
+        },
+        {
+          "file": "assets/WikiLayout-DxW0V6Ey.js",
+          "bytes": 3505
+        },
+        {
+          "file": "assets/DifficultyStars-Ck6DAizc.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/mansion-960-Cr-0HIIz.js",
+          "bytes": 105
+        },
+        {
+          "file": "assets/pizzeria-814-FSqYAsZN.js",
+          "bytes": 107
+        },
+        {
+          "file": "assets/fort-960-CtkuzoVb.js",
+          "bytes": 99
+        },
+        {
+          "file": "assets/useMapAnchor-B2SxdhPe.js",
+          "bytes": 260
+        }
+      ],
+      "articleModules": [],
+      "images": [
+        "/assets/mansion-640-fjO2QVfE.webp",
+        "/assets/pizzeria-640-BVzpSVLF.webp",
+        "/assets/fort-640-C79NE5JT.webp"
+      ]
+    },
+    {
+      "path": "/projects/maniac/wiki/maps/mansion",
+      "jsCount": 16,
+      "jsBytes": 530235,
+      "resources": [
+        {
+          "file": "assets/index-OmhNllMF.js",
+          "bytes": 328517
+        },
+        {
+          "file": "assets/mansion-DglMnpKG.js",
+          "bytes": 1927
+        },
+        {
+          "file": "assets/MapArticlePage-QNt3fTOi.js",
+          "bytes": 4651
+        },
+        {
+          "file": "assets/mansion-960-Cr-0HIIz.js",
+          "bytes": 105
+        },
+        {
+          "file": "assets/maps-DwIpDSsl.js",
+          "bytes": 3189
+        },
+        {
+          "file": "assets/snapshots-Dz8FZ_D7.js",
+          "bytes": 544
+        },
+        {
+          "file": "assets/RelatedLinks-CbP9TeQU.js",
+          "bytes": 722
+        },
+        {
+          "file": "assets/publication-Cg7C84ca.js",
+          "bytes": 524
+        },
+        {
+          "file": "assets/characters-DImKs2vR.js",
+          "bytes": 13987
+        },
+        {
+          "file": "assets/WikiLayout-DxW0V6Ey.js",
+          "bytes": 3505
+        },
+        {
+          "file": "assets/EntityLink-1cVwAeeZ.js",
+          "bytes": 317
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/registry-Dy41BYuc.js",
+          "bytes": 41611
+        },
+        {
+          "file": "assets/MapFacts-IKy37Euf.js",
+          "bytes": 838
+        },
+        {
+          "file": "assets/DifficultyStars-Ck6DAizc.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/systems-catalog-D7ryaJPj.js",
+          "bytes": 88703
+        }
+      ],
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/map-articles/mansion.json"
+      ],
+      "images": [
+        "/assets/mansion-1261-DAHQTOVZ.webp"
+      ]
+    },
+    {
+      "path": "/projects/maniac/wiki/maps/pizzeria",
+      "jsCount": 16,
+      "jsBytes": 530664,
+      "resources": [
+        {
+          "file": "assets/index-OmhNllMF.js",
+          "bytes": 328517
+        },
+        {
+          "file": "assets/pizzeria-Cu79vp7Y.js",
+          "bytes": 2354
+        },
+        {
+          "file": "assets/pizzeria-814-FSqYAsZN.js",
+          "bytes": 107
+        },
+        {
+          "file": "assets/MapArticlePage-QNt3fTOi.js",
+          "bytes": 4651
+        },
+        {
+          "file": "assets/maps-DwIpDSsl.js",
+          "bytes": 3189
+        },
+        {
+          "file": "assets/RelatedLinks-CbP9TeQU.js",
+          "bytes": 722
+        },
+        {
+          "file": "assets/snapshots-Dz8FZ_D7.js",
+          "bytes": 544
+        },
+        {
+          "file": "assets/publication-Cg7C84ca.js",
+          "bytes": 524
+        },
+        {
+          "file": "assets/characters-DImKs2vR.js",
+          "bytes": 13987
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/WikiLayout-DxW0V6Ey.js",
+          "bytes": 3505
+        },
+        {
+          "file": "assets/EntityLink-1cVwAeeZ.js",
+          "bytes": 317
+        },
+        {
+          "file": "assets/MapFacts-IKy37Euf.js",
+          "bytes": 838
+        },
+        {
+          "file": "assets/registry-Dy41BYuc.js",
+          "bytes": 41611
+        },
+        {
+          "file": "assets/DifficultyStars-Ck6DAizc.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/systems-catalog-D7ryaJPj.js",
+          "bytes": 88703
+        }
+      ],
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/map-articles/pizzeria.json"
+      ],
+      "images": [
+        "/assets/pizzeria-814-D3xQnLgW.webp"
+      ]
+    },
+    {
+      "path": "/projects/maniac/wiki/maps/fort",
+      "jsCount": 16,
+      "jsBytes": 530186,
+      "resources": [
+        {
+          "file": "assets/index-OmhNllMF.js",
+          "bytes": 328517
+        },
+        {
+          "file": "assets/fort-DXmhbqhY.js",
+          "bytes": 1884
+        },
+        {
+          "file": "assets/fort-960-CtkuzoVb.js",
+          "bytes": 99
+        },
+        {
+          "file": "assets/maps-DwIpDSsl.js",
+          "bytes": 3189
+        },
+        {
+          "file": "assets/MapArticlePage-QNt3fTOi.js",
+          "bytes": 4651
+        },
+        {
+          "file": "assets/snapshots-Dz8FZ_D7.js",
+          "bytes": 544
+        },
+        {
+          "file": "assets/RelatedLinks-CbP9TeQU.js",
+          "bytes": 722
+        },
+        {
+          "file": "assets/characters-DImKs2vR.js",
+          "bytes": 13987
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/publication-Cg7C84ca.js",
+          "bytes": 524
+        },
+        {
+          "file": "assets/registry-Dy41BYuc.js",
+          "bytes": 41611
+        },
+        {
+          "file": "assets/EntityLink-1cVwAeeZ.js",
+          "bytes": 317
+        },
+        {
+          "file": "assets/WikiLayout-DxW0V6Ey.js",
+          "bytes": 3505
+        },
+        {
+          "file": "assets/DifficultyStars-Ck6DAizc.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/MapFacts-IKy37Euf.js",
+          "bytes": 838
+        },
+        {
+          "file": "assets/systems-catalog-D7ryaJPj.js",
+          "bytes": 88703
+        }
+      ],
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/map-articles/fort.json"
+      ],
+      "images": [
+        "/assets/fort-1600-BjFdyMKx.webp"
+      ]
+    }
+  ],
+  "widths": [
+    {
+      "width": 320,
+      "routes": 4,
+      "overflow": false
+    },
+    {
+      "width": 390,
+      "routes": 4,
+      "overflow": false
+    },
+    {
+      "width": 768,
+      "routes": 4,
+      "overflow": false
+    },
+    {
+      "width": 1440,
+      "routes": 4,
+      "overflow": false
+    }
+  ],
+  "screenshots": [
+    "C:\\Users\\hardt\\.codex\\visualizations\\2026\\10\\24\\01a16f85-8f35-77a0-8f3d-5d8797288cef\\maniac-wiki-3c2\\catalog-1440.png",
+    "C:\\Users\\hardt\\.codex\\visualizations\\2026\\10\\24\\01a16f85-8f35-77a0-8f3d-5d8797288cef\\maniac-wiki-3c2\\mansion-1440.png",
+    "C:\\Users\\hardt\\.codex\\visualizations\\2026\\10\\24\\01a16f85-8f35-77a0-8f3d-5d8797288cef\\maniac-wiki-3c2\\pizzeria-1440.png",
+    "C:\\Users\\hardt\\.codex\\visualizations\\2026\\10\\24\\01a16f85-8f35-77a0-8f3d-5d8797288cef\\maniac-wiki-3c2\\fort-1440.png",
+    "C:\\Users\\hardt\\.codex\\visualizations\\2026\\10\\24\\01a16f85-8f35-77a0-8f3d-5d8797288cef\\maniac-wiki-3c2\\catalog-390.png",
+    "C:\\Users\\hardt\\.codex\\visualizations\\2026\\10\\24\\01a16f85-8f35-77a0-8f3d-5d8797288cef\\maniac-wiki-3c2\\mansion-390.png",
+    "C:\\Users\\hardt\\.codex\\visualizations\\2026\\10\\24\\01a16f85-8f35-77a0-8f3d-5d8797288cef\\maniac-wiki-3c2\\pizzeria-390.png",
+    "C:\\Users\\hardt\\.codex\\visualizations\\2026\\10\\24\\01a16f85-8f35-77a0-8f3d-5d8797288cef\\maniac-wiki-3c2\\fort-390.png"
+  ],
+  "checks": [
+    "Keyboard SPA catalog → Fort; Fort ↔ chronicle 1.1 without document reload and working anchors; voting anchor; reverse mechanics → maps links.",
+    "Reduced motion disables hover transition/zoom; native image proportions retained with contain.",
+    "All three chronicle animations and Maniac Drive/Yandex buttons preserved."
+  ]
+}

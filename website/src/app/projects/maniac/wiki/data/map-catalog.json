@@ -1,0 +1,116 @@
+[
+  {
+    "id": "map:mansion",
+    "slug": "mansion",
+    "name": "Особняк",
+    "numericId": 1,
+    "description": "Большой особняк с тайными проходами и несколькими этажами.",
+    "size": "Большая",
+    "difficulty": 3,
+    "features": [
+      "Тайные двери соединяют удалённые комнаты.",
+      "Скрытые люки создают запасные маршруты.",
+      "Несколько этажей усложняют погоню."
+    ],
+    "relatedIds": [
+      "mechanic:hacking",
+      "mechanic:qte",
+      "mechanic:objectives-and-escape",
+      "mechanic:map-interactions"
+    ],
+    "evidence": [
+      {
+        "path": "src/main/java/org/example/maniacrevolution/map/MapRegistry.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/map/MapData.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/guide/MapGuideRegistry.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/gui/pages/MapsPage.java"
+      },
+      {
+        "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+      }
+    ]
+  },
+  {
+    "id": "map:pizzeria",
+    "slug": "pizzeria",
+    "name": "Пиццерия",
+    "numericId": 4,
+    "description": "Компактная пиццерия с вентиляцией и тесными коридорами.",
+    "size": "Средняя",
+    "difficulty": 4,
+    "features": [
+      "Вентиляция даёт быстрые маршруты.",
+      "Узкие коридоры подходят для засад.",
+      "Вентиляция помогает выжившим уйти от погони."
+    ],
+    "relatedIds": [
+      "mechanic:hacking",
+      "mechanic:qte",
+      "mechanic:objectives-and-escape",
+      "mechanic:map-interactions"
+    ],
+    "evidence": [
+      {
+        "path": "src/main/java/org/example/maniacrevolution/map/MapRegistry.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/map/MapData.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/guide/MapGuideRegistry.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/gui/pages/MapsPage.java"
+      },
+      {
+        "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+      }
+    ]
+  },
+  {
+    "id": "map:fort",
+    "slug": "fort",
+    "name": "Форт",
+    "numericId": 5,
+    "description": "Открытый форт с длинными линиями обзора и защищёнными позициями.",
+    "size": "Средняя",
+    "difficulty": 4,
+    "features": [
+      "Открытые участки не прощают неосторожных перемещений.",
+      "Стены и углы дают временное укрытие.",
+      "Длинные линии обзора полезны дальнобойным персонажам."
+    ],
+    "relatedIds": [
+      "mechanic:hacking",
+      "mechanic:qte",
+      "mechanic:objectives-and-escape"
+    ],
+    "evidence": [
+      {
+        "path": "src/main/java/org/example/maniacrevolution/map/MapRegistry.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/map/MapData.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/guide/MapGuideRegistry.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/gui/pages/MapsPage.java"
+      },
+      {
+        "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+      }
+    ],
+    "chronicle": {
+      "version": "1.1",
+      "sectionId": "fort-map"
+    }
+  }
+]

@@ -1,0 +1,248 @@
+{
+  "commit": "8692f66dc76582144be85d553d43a41f189b64e7",
+  "maps": [
+    {
+      "id": "map:mansion",
+      "slug": "mansion",
+      "name": "Особняк",
+      "numericId": 1,
+      "description": "Большой особняк с тайными проходами и несколькими этажами.",
+      "size": "Большая",
+      "difficulty": 3,
+      "features": [
+        "Тайные двери соединяют удалённые комнаты.",
+        "Скрытые люки создают запасные маршруты.",
+        "Несколько этажей усложняют погоню."
+      ],
+      "relatedIds": [
+        "mechanic:hacking",
+        "mechanic:qte",
+        "mechanic:objectives-and-escape",
+        "mechanic:map-interactions"
+      ],
+      "evidence": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/map/MapRegistry.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/map/MapData.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/guide/MapGuideRegistry.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/gui/pages/MapsPage.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+        }
+      ],
+      "detailCount": 8,
+      "registryDescription": "Классическая карта. 3 Этажа, много секретных проходов",
+      "registryName": "Особняк",
+      "notes": [],
+      "sourceImage": "src/main/resources/assets/maniacrev/textures/gui/maps/mansion.png",
+      "sourceSize": [
+        1261,
+        816
+      ]
+    },
+    {
+      "id": "map:pizzeria",
+      "slug": "pizzeria",
+      "name": "Пиццерия",
+      "numericId": 4,
+      "description": "Компактная пиццерия с вентиляцией и тесными коридорами.",
+      "size": "Средняя",
+      "difficulty": 4,
+      "features": [
+        "Вентиляция даёт быстрые маршруты.",
+        "Узкие коридоры подходят для засад.",
+        "Вентиляция помогает выжившим уйти от погони."
+      ],
+      "relatedIds": [
+        "mechanic:hacking",
+        "mechanic:qte",
+        "mechanic:objectives-and-escape",
+        "mechanic:map-interactions"
+      ],
+      "evidence": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/map/MapRegistry.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/map/MapData.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/guide/MapGuideRegistry.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/gui/pages/MapsPage.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+        }
+      ],
+      "detailCount": 9,
+      "registryDescription": "Страшная и большая пиццерия. Уникальная особенность - наличие вентиляций! Всего 1 этаж, но карта длинная",
+      "registryName": "Пиццерия",
+      "notes": [
+        "MapRegistry описывает пиццерию как большую и длинную; локализованный справочник — как компактную, размер «Средняя». Публичные характеристики взяты из справочника."
+      ],
+      "sourceImage": "src/main/resources/assets/maniacrev/textures/gui/maps/pizzeria.png",
+      "sourceSize": [
+        814,
+        737
+      ]
+    },
+    {
+      "id": "map:fort",
+      "slug": "fort",
+      "name": "Форт",
+      "numericId": 5,
+      "description": "Открытый форт с длинными линиями обзора и защищёнными позициями.",
+      "size": "Средняя",
+      "difficulty": 4,
+      "features": [
+        "Открытые участки не прощают неосторожных перемещений.",
+        "Стены и углы дают временное укрытие.",
+        "Длинные линии обзора полезны дальнобойным персонажам."
+      ],
+      "relatedIds": [
+        "mechanic:hacking",
+        "mechanic:qte",
+        "mechanic:objectives-and-escape"
+      ],
+      "evidence": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/map/MapRegistry.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/map/MapData.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/guide/MapGuideRegistry.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/gui/pages/MapsPage.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+        }
+      ],
+      "chronicle": {
+        "version": "1.1",
+        "sectionId": "fort-map"
+      },
+      "detailCount": 3,
+      "registryDescription": "Страшный и маленький форт из никому неизвестной игры. Довольно маленькая карта",
+      "registryName": "Форт",
+      "notes": [
+        "MapRegistry и хроника 1.1 называют Форт маленьким/компактным. Локализованное руководство указывает размер «Средняя». Историческая хроника не изменена."
+      ],
+      "sourceImage": "src/main/resources/assets/maniacrev/textures/gui/maps/fort.png",
+      "sourceSize": [
+        1738,
+        951
+      ]
+    }
+  ],
+  "voting": {
+    "paragraphs": [
+      "Перед матчем организатор может запустить голосование. Игроки выбирают карту в специальном интерфейсе; билет голосования открывает это меню.",
+      "У каждого игрока хранится один текущий голос: новый выбор заменяет предыдущий. Побеждает карта с наибольшим числом голосов; при равенстве лидер выбирается случайно среди карт с максимальным результатом.",
+      "Если никто не проголосовал, случайная карта выбирается из зарегистрированных. Когда количество голосов равно текущему числу игроков на сервере, оставшееся время при значении больше пяти секунд сокращается до пяти.",
+      "После завершения показывается анимация результата. Сервер сохраняет выбранную карту после задержки 160 тиков (около 8 секунд). Это отдельный этап после отсчёта голосования.",
+      "Если в настройках заранее выбрана конкретная зарегистрированная карта, команда использует её напрямую и обходит обычное голосование. Некорректный выбранный ID приводит к сообщению об ошибке.",
+      "Команда /maniacrev votemap использует 60 секунд по умолчанию и принимает длительность от 10 до 300 секунд. Это параметры команды организатора, а не обязательное время выбора в каждом матче."
+    ],
+    "notes": [
+      "MapVotingScreen задаёт собственный RESULT_DISPLAY_DURATION=200 тиков, тогда как MapVotingManager фиксирует результат через 160 тиков. Не приравниваем клиентскую анимацию к задержке серверной фиксации.",
+      "Содержимое миров, точные координаты и полный внешний датапак в исходном снимке отсутствуют. Превью меню не является планом уровня."
+    ],
+    "evidence": [
+      {
+        "path": "src/main/java/org/example/maniacrevolution/map/MapVotingManager.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/command/VoteMapCommand.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/client/screen/MapVotingScreen.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/item/VotingTicketItem.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/settings/GameSettings.java"
+      }
+    ]
+  },
+  "sourceFiles": [
+    {
+      "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json",
+      "sha256": "e1aaec8a2bf4d08f9bbba9cdf0af58d4d5ba1de9b3894fa9c27179d9476148ee",
+      "bytes": 112315
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/map/MapRegistry.java",
+      "sha256": "2a554d091f19095b0d3fe73600ebaef6dde47d7b7dd59ec4e28bce4a4405fa69",
+      "bytes": 2300
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/guide/MapGuideRegistry.java",
+      "sha256": "f5dc1bd60bc7fd39ce11ee49eedd47cb909d842d39b94e4dbf9e988611144b84",
+      "bytes": 1980
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/map/MapData.java",
+      "sha256": "04fb0a6c68f2b240dd68e895045a50b7964f358de16b294f61b209ac87033a6d",
+      "bytes": 949
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/gui/pages/MapsPage.java",
+      "sha256": "a42500d83abd8d8fd82230072b5c0485039f1bc8effe79ca9ebc232052ea18fc",
+      "bytes": 10159
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/map/MapVotingManager.java",
+      "sha256": "320d720cb486406e5604d8a222a27f03863eaf0cb822cb259ef64b2d169c8fda",
+      "bytes": 9023
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/command/VoteMapCommand.java",
+      "sha256": "53add89f2b3f38ac2940a405bb43b04b89e89d06950bcb01ab052b8c9053cccd",
+      "bytes": 3817
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/client/screen/MapVotingScreen.java",
+      "sha256": "6dec4261edbd23cd1cd4b7e00b5b498395105be831f906c80071af8f397fbe57",
+      "bytes": 33471
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/item/VotingTicketItem.java",
+      "sha256": "09ece5baf6b43e62ceab3fef19b505028e2e5dada4370542cae622f2f26b23b4",
+      "bytes": 1698
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/settings/GameSettings.java",
+      "sha256": "43acf069f2059028659eb7e1fb373be72a0bcfb64b67b71009f1146b7b5a6f27",
+      "bytes": 12505
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/gui/maps/mansion.png",
+      "sha256": "39e889951518603d657e5d9e5aa8ce6375c3ce7c3c1c030c3dfa40d5afcdd888",
+      "bytes": 1802958
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/gui/maps/pizzeria.png",
+      "sha256": "5ad0bfb75316543cc33329027debd0016cfb30592d60c790b525ef941798504d",
+      "bytes": 922656
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/gui/maps/fort.png",
+      "sha256": "81057ac85461cf72923be6a1e61deb3db59b7b2e5621f16d6d2acb33b9f80b1d",
+      "bytes": 2680877
+    }
+  ]
+}

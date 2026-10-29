@@ -1,0 +1,93 @@
+{
+  "commit": "8692f66dc76582144be85d553d43a41f189b64e7",
+  "files": [
+    {
+      "source": "src/main/resources/assets/maniacrev/textures/gui/maps/mansion.png",
+      "sourceSha256": "39e889951518603d657e5d9e5aa8ce6375c3ce7c3c1c030c3dfa40d5afcdd888",
+      "sourceSize": [1261, 816],
+      "sourceBytes": 1802958,
+      "local": "mansion-640.webp",
+      "size": [640, 414],
+      "bytes": 48754,
+      "sha256": "b391f75b7be1b6898abd199cdeb7e7da53e8637dc2dce14eafa10e6ecf512ab8",
+      "transformation": "Full composition, no crop, proportional Lanczos resize, WebP quality 86"
+    },
+    {
+      "source": "src/main/resources/assets/maniacrev/textures/gui/maps/mansion.png",
+      "sourceSha256": "39e889951518603d657e5d9e5aa8ce6375c3ce7c3c1c030c3dfa40d5afcdd888",
+      "sourceSize": [1261, 816],
+      "sourceBytes": 1802958,
+      "local": "mansion-960.webp",
+      "size": [960, 621],
+      "bytes": 84848,
+      "sha256": "b875ed268de82541db7cc738409ad64c9e0f0accb5ac24ddc1f8332aec3da469",
+      "transformation": "Full composition, no crop, proportional Lanczos resize, WebP quality 86"
+    },
+    {
+      "source": "src/main/resources/assets/maniacrev/textures/gui/maps/mansion.png",
+      "sourceSha256": "39e889951518603d657e5d9e5aa8ce6375c3ce7c3c1c030c3dfa40d5afcdd888",
+      "sourceSize": [1261, 816],
+      "sourceBytes": 1802958,
+      "local": "mansion-1261.webp",
+      "size": [1261, 816],
+      "bytes": 125824,
+      "sha256": "8a619e1a2eba13b349878d6277a39a4c34ee3a87395dd0a847b3f3045c49e299",
+      "transformation": "Full composition, no crop, proportional Lanczos resize, WebP quality 86"
+    },
+    {
+      "source": "src/main/resources/assets/maniacrev/textures/gui/maps/pizzeria.png",
+      "sourceSha256": "5ad0bfb75316543cc33329027debd0016cfb30592d60c790b525ef941798504d",
+      "sourceSize": [814, 737],
+      "sourceBytes": 922656,
+      "local": "pizzeria-640.webp",
+      "size": [640, 579],
+      "bytes": 32630,
+      "sha256": "7402b9f4ce6464c8d335caee79b699d11ea79f6cd76b1f9e75ea33a650a176c7",
+      "transformation": "Full composition, no crop, proportional Lanczos resize, WebP quality 86"
+    },
+    {
+      "source": "src/main/resources/assets/maniacrev/textures/gui/maps/pizzeria.png",
+      "sourceSha256": "5ad0bfb75316543cc33329027debd0016cfb30592d60c790b525ef941798504d",
+      "sourceSize": [814, 737],
+      "sourceBytes": 922656,
+      "local": "pizzeria-814.webp",
+      "size": [814, 737],
+      "bytes": 44474,
+      "sha256": "c72e7d160d370f202593f09a23144625960588f8eec22a3701dadf009c40c4c1",
+      "transformation": "Full composition, no crop, proportional Lanczos resize, WebP quality 86"
+    },
+    {
+      "source": "src/main/resources/assets/maniacrev/textures/gui/maps/fort.png",
+      "sourceSha256": "81057ac85461cf72923be6a1e61deb3db59b7b2e5621f16d6d2acb33b9f80b1d",
+      "sourceSize": [1738, 951],
+      "sourceBytes": 2680877,
+      "local": "fort-640.webp",
+      "size": [640, 350],
+      "bytes": 43764,
+      "sha256": "c71cd077e4c066169eb63dc506ca0b63a7acb5655ff3081fe656642d66b66a7f",
+      "transformation": "Full composition, no crop, proportional Lanczos resize, WebP quality 86"
+    },
+    {
+      "source": "src/main/resources/assets/maniacrev/textures/gui/maps/fort.png",
+      "sourceSha256": "81057ac85461cf72923be6a1e61deb3db59b7b2e5621f16d6d2acb33b9f80b1d",
+      "sourceSize": [1738, 951],
+      "sourceBytes": 2680877,
+      "local": "fort-960.webp",
+      "size": [960, 525],
+      "bytes": 83108,
+      "sha256": "b8b58a1aec969bbf4b3271188fe3437cb7f41b79eba099a2515ce507fa99b703",
+      "transformation": "Full composition, no crop, proportional Lanczos resize, WebP quality 86"
+    },
+    {
+      "source": "src/main/resources/assets/maniacrev/textures/gui/maps/fort.png",
+      "sourceSha256": "81057ac85461cf72923be6a1e61deb3db59b7b2e5621f16d6d2acb33b9f80b1d",
+      "sourceSize": [1738, 951],
+      "sourceBytes": 2680877,
+      "local": "fort-1600.webp",
+      "size": [1600, 875],
+      "bytes": 177602,
+      "sha256": "0f957a302b16b22d7c1efbf2f4d7ad7d8b410e51d04980d3c8b5cf1202a6a4b2",
+      "transformation": "Full composition, no crop, proportional Lanczos resize, WebP quality 86"
+    }
+  ]
+}

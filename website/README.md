@@ -95,10 +95,10 @@ brand-source/                 оригиналы предоставленных 
 - `/projects/maniac/wiki/abilities` и `/projects/maniac/wiki/abilities/:slug` — каталог и 12 статей
 - `/projects/maniac/wiki/items` и `/projects/maniac/wiki/items/:slug` — каталог и 69 статей предметов и наборов
 - `/projects/maniac/wiki/mechanics` и `/projects/maniac/wiki/mechanics/:slug` — каталог и 28 статей механик
+- `/projects/maniac/wiki/maps` и `/projects/maniac/wiki/maps/:slug` — Особняк, Пиццерия и Форт
 
-Всего 185 опубликованных маршрутов. Остальные адреса возвращают 404. Раздел
-карт пока не опубликован; DEV Preview остаётся
-отдельным. Списки хроник ведут на готовые внутренние страницы.
+Всего 189 опубликованных маршрутов. Остальные адреса возвращают 404.
+DEV Preview остаётся отдельным. Списки хроник ведут на готовые внутренние страницы.
 
 Этап 3A: [публичная Wiki, источники, ограничения и проверка](docs/MANIAC_3A_VERIFICATION.md).
 Для браузерного аудита — `npm run check:wiki:browser` с локальным Playwright/Edge;
@@ -110,6 +110,9 @@ brand-source/                 оригиналы предоставленных 
 Этап 3C-1: [предметы, механики и ограничения источников](docs/MANIAC_3C_VERIFICATION.md),
 [полная таблица 66 регистраций ModItems](docs/MANIAC_3C_ITEM_REGISTRY.md).
 Браузерный аудит новых разделов — `npm run check:systems:browser`.
+
+Этап 3C-2: [карты, источники, расхождения и размеры JS до/после](docs/MANIAC_3C2_VERIFICATION.md).
+Production-аудит четырёх маршрутов — `npm run check:maps:browser`.
 
 ## Контент
 

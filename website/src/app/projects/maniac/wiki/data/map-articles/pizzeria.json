@@ -1,0 +1,35 @@
+{
+  "id": "map:pizzeria",
+  "details": [
+    "Вентиляция даёт быстрые маршруты.",
+    "Узкие коридоры подходят для засад.",
+    "Комнаты соединены короткими проходами.",
+    "Вентиляция помогает выжившим уйти от погони.",
+    "Маньяки могут предугадывать частые выходы.",
+    "Компьютеры стоят ближе друг к другу, чем в особняке.",
+    "Важно постоянно разрывать линию взгляда.",
+    "Следите за дверями и вентиляцией одновременно.",
+    "Центральная зона опасна во время погони."
+  ],
+  "notes": [
+    "MapRegistry описывает пиццерию как большую и длинную; локализованный справочник — как компактную, размер «Средняя». Публичные характеристики взяты из справочника."
+  ],
+  "registryDescription": "Страшная и большая пиццерия. Уникальная особенность - наличие вентиляций! Всего 1 этаж, но карта длинная",
+  "evidence": [
+    {
+      "path": "src/main/java/org/example/maniacrevolution/map/MapRegistry.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/map/MapData.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/guide/MapGuideRegistry.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/gui/pages/MapsPage.java"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+    }
+  ]
+}
