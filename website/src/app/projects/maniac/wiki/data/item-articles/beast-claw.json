@@ -1,0 +1,42 @@
+{
+  "id": "item:beast-claw",
+  "description": "Коготь Урсы с активным прыжком вперёд.",
+  "sections": [
+    {
+      "title": "Получение и доступность",
+      "paragraphs": [
+        "Связан с персонажем Урса. Настоящее наличие в инвентаре зависит от выдачи и правил конкретного матча; одно превью не является гарантией."
+      ]
+    },
+    {
+      "title": "Как использовать",
+      "paragraphs": [
+        "ПКМ запускает прыжок при готовой способности. Урон по области относится к приземлению и не является постоянным уроном каждого обычного удара."
+      ]
+    }
+  ],
+  "notes": ["Статичный рендер оригинальных cuboid elements с GUI transform."],
+  "evidence": [
+    {
+      "path": "src/main/java/org/example/maniacrevolution/ModItems.java"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/item/BeastClawItem.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/character/maniac/UrsaClass.java"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/models/item/beast_claw.json"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/item/main_text.png"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/item/nails_text.png"
+    }
+  ]
+}

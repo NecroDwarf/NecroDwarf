@@ -1,0 +1,39 @@
+{
+  "id": "item:sber-sprout",
+  "description": "Росток хранит долю прогресса взлома и переносит её на компьютер.",
+  "sections": [
+    {
+      "title": "Получение и доступность",
+      "paragraphs": [
+        "Создаётся или выдаётся логикой связанного перка; применяются его фазовые ограничения и условия."
+      ]
+    },
+    {
+      "title": "Как использовать",
+      "paragraphs": [
+        "Заполненный росток применяют ПКМ к подходящему компьютеру. Сохранённый прогресс и итоговый перенос зависят от реальной сессии взлома, а не являются постоянным процентом на каждой иконе."
+      ]
+    }
+  ],
+  "notes": ["Оригинальная плоская layer0-текстура модели."],
+  "evidence": [
+    {
+      "path": "src/main/java/org/example/maniacrevolution/ModItems.java"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/item/SberSproutItem.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/sbersprout/SberSproutManager.java"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/models/item/sber_sprout.json"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/item/sber_sprout.png"
+    }
+  ]
+}

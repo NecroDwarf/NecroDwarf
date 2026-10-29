@@ -1,0 +1,49 @@
+{
+  "id": "mechanic:downed",
+  "description": "Нокдаун даёт шанс на помощь вместо немедленного окончательного выбывания.",
+  "sections": [
+    {
+      "title": "Как это работает",
+      "paragraphs": [
+        "При подходящем смертельном уроне сервер проверяет условия перехода в нокдаун. Это не гарантированный исход каждого смертельного попадания.",
+        "Союзник подходит к лежащему игроку и удерживает помощь. Сервер проверяет помощника и дистанцию; выход за допустимые условия прерывает подъём."
+      ]
+    },
+    {
+      "title": "Результат и влияние на матч",
+      "paragraphs": [
+        "Базовый подъём союзником — 6 с, Доктором — 3 с. Нокдаун имеет предельное время 60 с. Самоподъём учитывается отдельной логикой и стоимостью."
+      ]
+    },
+    {
+      "title": "Условия и ограничения",
+      "paragraphs": [
+        "Режим игры, состояние последнего выжившего и специальные причины урона учитываются обработчиком.",
+        "Внутренний REVIVE_HOLD_TICKS=5 с не подменяет значения NORMAL_REVIVE_TICKS и MEDIC_REVIVE_TICKS."
+      ]
+    }
+  ],
+  "images": [
+    {
+      "file": "guide-downed-0.webp",
+      "width": 1030,
+      "height": 709,
+      "caption": "Нокдаун в руководстве игры."
+    }
+  ],
+  "notes": [],
+  "evidence": [
+    {
+      "path": "src/main/java/org/example/maniacrevolution/downed/DownedData.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/downed/DownedEventHandler.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/gui/pages/TutorialPage.java"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+    }
+  ]
+}

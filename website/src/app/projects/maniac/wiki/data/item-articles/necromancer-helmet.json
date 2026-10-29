@@ -1,0 +1,39 @@
+{
+  "id": "item:necromancer-helmet",
+  "description": "Элемент комплекта брони Некроманта.",
+  "sections": [
+    {
+      "title": "Получение и доступность",
+      "paragraphs": [
+        "Связан с персонажем Некромант. Настоящее наличие в инвентаре зависит от выдачи и правил конкретного матча; одно превью не является гарантией."
+      ]
+    },
+    {
+      "title": "Как использовать",
+      "paragraphs": [
+        "Материал NECROMANCER задаёт нулевые очки защиты и repairIngredient soul_essence. Не следует приписывать ему характеристики ванильной алмазной брони по одному внешнему виду."
+      ]
+    }
+  ],
+  "notes": ["Оригинальная плоская layer0-текстура модели."],
+  "evidence": [
+    {
+      "path": "src/main/java/org/example/maniacrevolution/ModItems.java"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/item/armor/NecromancerArmorItem.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/character/survivor/NecromancerClass.java"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/models/item/necromancer_helmet.json"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/item/necromancer_helmet.png"
+    }
+  ]
+}

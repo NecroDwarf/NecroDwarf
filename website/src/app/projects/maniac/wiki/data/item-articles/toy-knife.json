@@ -1,0 +1,38 @@
+{
+  "id": "item:toy-knife",
+  "description": "Игрушечный нож включает и выключает фантомную завесу.",
+  "sections": [
+    {
+      "title": "Получение и доступность",
+      "paragraphs": [
+        "Связан с персонажем Призрак. Настоящее наличие в инвентаре зависит от выдачи и правил конкретного матча; одно превью не является гарантией."
+      ]
+    },
+    {
+      "title": "Как использовать",
+      "paragraphs": [
+        "ПКМ переключает полную невидимость. После выхода действует запрет атаки; скрытие экипировки и возврат вещей выполняет GhostStealthManager."
+      ]
+    }
+  ],
+  "notes": [
+    "Сложный/custom renderer: корректный автоматический рендер не подтверждён. Показано текстовое представление, а не атлас."
+  ],
+  "evidence": [
+    {
+      "path": "src/main/java/org/example/maniacrevolution/ModItems.java"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/item/ToyKnifeItem.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/character/maniac/GhostClass.java"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/models/item/toy_knife.json"
+    }
+  ]
+}

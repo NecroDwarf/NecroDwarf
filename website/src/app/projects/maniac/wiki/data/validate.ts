@@ -50,6 +50,11 @@ export function validateGameData(
             fail(`Missing related snapshot: ${id} at ${snapshot}`);
         }
       }
+      for (const id of relationIds("relatedIds")) {
+        const target = byId.get(id);
+        if (!target?.revisions[snapshot as keyof typeof target.revisions])
+          fail(`Broken related entity: ${entity.id} -> ${id}`);
+      }
       const stats = new Set<string>();
       for (const stat of data.stats ?? []) {
         if (stats.has(stat.key) || !Number.isFinite(stat.value))

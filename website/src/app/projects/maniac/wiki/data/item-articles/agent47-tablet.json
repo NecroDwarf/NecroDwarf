@@ -1,0 +1,38 @@
+{
+  "id": "item:agent47-tablet",
+  "description": "Открывает магазин Агента 47.",
+  "sections": [
+    {
+      "title": "Получение и доступность",
+      "paragraphs": [
+        "Связан с персонажем Агент 47. Настоящее наличие в инвентаре зависит от выдачи и правил конкретного матча; одно превью не является гарантией."
+      ]
+    },
+    {
+      "title": "Как использовать",
+      "paragraphs": [
+        "ПКМ открывает персональный интерфейс. Наличие товара, цена и доступность покупки проверяются серверным магазином; это не универсальный список стартового оружия."
+      ]
+    }
+  ],
+  "notes": [
+    "Сложный/custom renderer: корректный автоматический рендер не подтверждён. Показано текстовое представление, а не атлас."
+  ],
+  "evidence": [
+    {
+      "path": "src/main/java/org/example/maniacrevolution/ModItems.java"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/item/Agent47TabletItem.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/character/maniac/AgentClass.java"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/models/item/agent47_tablet.json"
+    }
+  ]
+}

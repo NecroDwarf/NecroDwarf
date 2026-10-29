@@ -93,9 +93,11 @@ brand-source/                 оригиналы предоставленных 
 - `/projects/maniac/wiki/characters/:slug` — 15 статей подтверждённых персонажей
 - `/projects/maniac/wiki/perks` и `/projects/maniac/wiki/perks/:slug` — каталог и 44 статьи
 - `/projects/maniac/wiki/abilities` и `/projects/maniac/wiki/abilities/:slug` — каталог и 12 статей
+- `/projects/maniac/wiki/items` и `/projects/maniac/wiki/items/:slug` — каталог и 69 статей предметов и наборов
+- `/projects/maniac/wiki/mechanics` и `/projects/maniac/wiki/mechanics/:slug` — каталог и 28 статей механик
 
-Всего 86 опубликованных маршрутов. Остальные адреса возвращают 404. Разделы
-предметов, механик и карт пока не опубликованы; DEV Preview остаётся
+Всего 185 опубликованных маршрутов. Остальные адреса возвращают 404. Раздел
+карт пока не опубликован; DEV Preview остаётся
 отдельным. Списки хроник ведут на готовые внутренние страницы.
 
 Этап 3A: [публичная Wiki, источники, ограничения и проверка](docs/MANIAC_3A_VERIFICATION.md).
@@ -104,6 +106,10 @@ brand-source/                 оригиналы предоставленных 
 
 Этап 3B: [перки, способности, расхождения исходников и проверки](docs/MANIAC_3B_VERIFICATION.md).
 Повторный браузерный аудит — `npm run check:reference:browser` с локальным Playwright/Edge.
+
+Этап 3C-1: [предметы, механики и ограничения источников](docs/MANIAC_3C_VERIFICATION.md),
+[полная таблица 66 регистраций ModItems](docs/MANIAC_3C_ITEM_REGISTRY.md).
+Браузерный аудит новых разделов — `npm run check:systems:browser`.
 
 ## Контент
 

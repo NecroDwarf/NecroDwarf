@@ -1,0 +1,2212 @@
+{
+  "commit": "8692f66dc76582144be85d553d43a41f189b64e7",
+  "registrations": [
+    {
+      "field": "SHOP_TOKEN",
+      "gameId": "shop_token",
+      "class": "ShopOpenItem",
+      "statement": ",\n            () -> new ShopOpenItem(new Item.Properties().stacksTo(1)))",
+      "name": "shop_token",
+      "category": "interface",
+      "purpose": "Открывает интерфейс магазина, не самостоятельное игровое снаряжение.",
+      "publish": false,
+      "reason": "Открывает интерфейс магазина, не самостоятельное игровое снаряжение.",
+      "evidence": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/ModItems.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/item/ShopOpenItem.java"
+        }
+      ]
+    },
+    {
+      "field": "PERK_TOKEN",
+      "gameId": "perk_token",
+      "class": "PerkOpenItem",
+      "statement": ",\n            () -> new PerkOpenItem(new Item.Properties().stacksTo(1)))",
+      "name": "perk_token",
+      "category": "interface",
+      "purpose": "Открывает выбор перков; интерфейсный токен.",
+      "publish": false,
+      "reason": "Открывает выбор перков; интерфейсный токен.",
+      "evidence": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/ModItems.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/item/PerkOpenItem.java"
+        }
+      ]
+    },
+    {
+      "field": "SALT",
+      "gameId": "salt",
+      "class": "SaltItem",
+      "statement": ",\n            () -> new SaltItem(new Item.Properties()))",
+      "name": "Соль",
+      "category": "consumable",
+      "purpose": "Размещает соль-ловушку на подходящей поверхности.",
+      "publish": true,
+      "entityId": "item:salt",
+      "reason": "Подтверждённый игровой ресурс с действующим использованием или специализированной ролью.",
+      "visual": "Оригинальная плоская layer0-текстура модели.",
+      "evidence": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/ModItems.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/item/SaltItem.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/block/SaltBlock.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/character/survivor/NecromancerClass.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/models/item/salt.json"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/textures/item/salt.png"
+        }
+      ]
+    },
+    {
+      "field": "GENERATOR",
+      "gameId": "generator",
+      "class": "BlockItem",
+      "statement": ",\n            () -> new BlockItem(ModBlocks.FNAF_GENERATOR.get(), new Item.Properties()))",
+      "name": "Генератор Фредди",
+      "category": "block",
+      "purpose": "Устанавливаемый генератор, связанный с Фредди.",
+      "publish": true,
+      "entityId": "item:generator",
+      "reason": "Подтверждённый игровой ресурс с действующим использованием или специализированной ролью.",
+      "visual": "Статичный рендер оригинальных cuboid elements с GUI transform.",
+      "evidence": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/ModItems.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/block/FNAFGeneratorBlock.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/block/entity/FNAFGeneratorBlockEntity.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/character/maniac/FreddyBearClass.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/models/item/generator.json"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/textures/block/box.png"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/textures/block/frame.png"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/textures/block/tablet.png"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/textures/block/button.png"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/textures/block/handle.png"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/textures/block/freddy.png"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/textures/block/small_roles.png"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/textures/block/generator_role.png"
+        }
+      ]
+    },
+    {
+      "field": "CLARITY",
+      "gameId": "clarity",
+      "class": "ClarityItem",
+      "statement": ",\n            () -> new ClarityItem(new Item.Properties().stacksTo(16)))",
+      "name": "Балтика 9",
+      "category": "consumable",
+      "purpose": "Напиток, накладывающий усиление манопотока.",
+      "publish": true,
+      "entityId": "item:clarity",
+      "reason": "Подтверждённый игровой ресурс с действующим использованием или специализированной ролью.",
+      "visual": "Модель с точным registry ID отсутствует. Текстурный атлас не показан как иконка.",
+      "evidence": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/ModItems.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/item/ClarityItem.java"
+        }
+      ]
+    },
+    {
+      "field": "HOOK",
+      "gameId": "hook",
+      "class": "HookItem",
+      "statement": ",\n            () -> new HookItem(new Item.Properties()))",
+      "name": "Хук паджерса",
+      "category": "weapon",
+      "purpose": "Оружие Мясника с активным броском крюка.",
+      "publish": true,
+      "entityId": "item:hook",
+      "reason": "Подтверждённый игровой ресурс с действующим использованием или специализированной ролью.",
+      "visual": "Статичный рендер оригинальных cuboid elements с GUI transform.",
+      "evidence": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/ModItems.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/item/HookItem.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/character/maniac/PudgeClass.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/models/item/hook.json"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/textures/item/hook.png"
+        }
+      ]
+    },
+    {
+      "field": "Scyth",
+      "gameId": "death_scythe",
+      "class": "DeathScytheItem",
+      "statement": ",\n            () -> new DeathScytheItem(new Item.Properties()))",
+      "name": "Коса смерти",
+      "category": "weapon",
+      "purpose": "Коса Смерти позволяет готовить телепортацию к случайному выжившему.",
+      "publish": true,
+      "entityId": "item:death-scythe",
+      "reason": "Подтверждённый игровой ресурс с действующим использованием или специализированной ролью.",
+      "visual": "Сложный/custom renderer: корректный автоматический рендер не подтверждён. Показано текстовое представление, а не атлас.",
+      "evidence": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/ModItems.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/item/DeathScytheItem.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/character/maniac/DeathClass.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/models/item/death_scythe.json"
+        }
+      ]
+    },
+    {
+      "field": "NECROMANCER_STAFF",
+      "gameId": "necromancer_staff",
+      "class": "NecromancerStaffItem",
+      "statement": ",\n            () -> new NecromancerStaffItem(new Item.Properties()))",
+      "name": "Посох Некроманта",
+      "category": "tool",
+      "purpose": "Посох для выбора и воскрешения погибшего союзника.",
+      "publish": true,
+      "entityId": "item:dead-staff",
+      "reason": "Подтверждённый игровой ресурс с действующим использованием или специализированной ролью.",
+      "visual": "Статичный рендер оригинальных cuboid elements с GUI transform.",
+      "evidence": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/ModItems.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/item/NecromancerStaffItem.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/network/packets/ResurrectPlayerPacket.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/character/survivor/NecromancerClass.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/models/item/necromancer_staff.json"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/textures/item/black.png"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/textures/item/bone.png"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/textures/item/teath.png"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/textures/item/wood.png"
+        }
+      ]
+    },
+    {
+      "field": "NECROMANCER_HELMET",
+      "gameId": "necromancer_helmet",
+      "class": "NecromancerArmorItem",
+      "statement": ",\n            () -> new NecromancerArmorItem(ModArmorMaterials.NECROMANCER,\n                    ArmorItem.Type.HELMET, new Item.Properties()))",
+      "name": "Шлем некроча",
+      "category": "armor",
+      "purpose": "Элемент комплекта брони Некроманта.",
+      "publish": true,
+      "entityId": "item:necromancer-helmet",
+      "reason": "Подтверждённый игровой ресурс с действующим использованием или специализированной ролью.",
+      "visual": "Оригинальная плоская layer0-текстура модели.",
+      "evidence": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/ModItems.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/item/armor/NecromancerArmorItem.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/character/survivor/NecromancerClass.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/models/item/necromancer_helmet.json"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/textures/item/necromancer_helmet.png"
+        }
+      ]
+    },
+    {
+      "field": "NECROMANCER_CHESTPLATE",
+      "gameId": "necromancer_chestplate",
+      "class": "NecromancerArmorItem",
+      "statement": ",\n            () -> new NecromancerArmorItem(ModArmorMaterials.NECROMANCER,\n                    ArmorItem.Type.CHESTPLATE, new Item.Properties()))",
+      "name": "Нагрудник некроча",
+      "category": "armor",
+      "purpose": "Элемент комплекта брони Некроманта.",
+      "publish": true,
+      "entityId": "item:necromancer-chestplate",
+      "reason": "Подтверждённый игровой ресурс с действующим использованием или специализированной ролью.",
+      "visual": "Оригинальная плоская layer0-текстура модели.",
+      "evidence": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/ModItems.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/item/armor/NecromancerArmorItem.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/character/survivor/NecromancerClass.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/models/item/necromancer_chestplate.json"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/textures/item/necromancer_chestplate.png"
+        }
+      ]
+    },
+    {
+      "field": "NECROMANCER_LEGGINGS",
+      "gameId": "necromancer_leggings",
+      "class": "NecromancerArmorItem",
+      "statement": ",\n            () -> new NecromancerArmorItem(ModArmorMaterials.NECROMANCER,\n                    ArmorItem.Type.LEGGINGS, new Item.Properties()))",
+      "name": "Штаны некроча",
+      "category": "armor",
+      "purpose": "Элемент комплекта брони Некроманта.",
+      "publish": true,
+      "entityId": "item:necromancer-leggings",
+      "reason": "Подтверждённый игровой ресурс с действующим использованием или специализированной ролью.",
+      "visual": "Оригинальная плоская layer0-текстура модели.",
+      "evidence": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/ModItems.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/item/armor/NecromancerArmorItem.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/character/survivor/NecromancerClass.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/models/item/necromancer_leggings.json"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/textures/item/necromancer_leggings.png"
+        }
+      ]
+    },
+    {
+      "field": "NECROMANCER_BOOTS",
+      "gameId": "necromancer_boots",
+      "class": "NecromancerArmorItem",
+      "statement": ",\n            () -> new NecromancerArmorItem(ModArmorMaterials.NECROMANCER,\n                    ArmorItem.Type.BOOTS, new Item.Properties()))",
+      "name": "Ботинки некроча",
+      "category": "armor",
+      "purpose": "Элемент комплекта брони Некроманта.",
+      "publish": true,
+      "entityId": "item:necromancer-boots",
+      "reason": "Подтверждённый игровой ресурс с действующим использованием или специализированной ролью.",
+      "visual": "Оригинальная плоская layer0-текстура модели.",
+      "evidence": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/ModItems.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/item/armor/NecromancerArmorItem.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/character/survivor/NecromancerClass.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/models/item/necromancer_boots.json"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/textures/item/necromancer_boots.png"
+        }
+      ]
+    },
+    {
+      "field": "SOUL_ESSENCE",
+      "gameId": "soul_essence",
+      "class": "Item",
+      "statement": ",\n            () -> new Item(new Item.Properties()))",
+      "name": "Материал ремонта брони",
+      "category": "resource",
+      "purpose": "Ингредиент ремонта брони Некроманта.",
+      "publish": true,
+      "entityId": "item:soul-essence",
+      "reason": "Подтверждённый игровой ресурс с действующим использованием или специализированной ролью.",
+      "visual": "Модель с точным registry ID отсутствует. Текстурный атлас не показан как иконка.",
+      "evidence": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/ModItems.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/character/survivor/NecromancerClass.java"
+        }
+      ]
+    },
+    {
+      "field": "SETTINGS_ITEM",
+      "gameId": "settings_item",
+      "class": "SettingsItem",
+      "statement": ",\n            () -> new SettingsItem(new Item.Properties()\n                    .stacksTo(1)\n                    .rarity(Rarity.EPIC)))",
+      "name": "Настройки",
+      "category": "interface",
+      "purpose": "Открывает настройки организатора.",
+      "publish": false,
+      "reason": "Открывает настройки организатора.",
+      "evidence": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/ModItems.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/item/SettingsItem.java"
+        }
+      ]
+    },
+    {
+      "field": "PRE_GAME_READY_ITEM",
+      "gameId": "pre_game_ready_item",
+      "class": "PreGameReadyItem",
+      "statement": ",\n            () -> new PreGameReadyItem(new Item.Properties()))",
+      "name": "pre_game_ready_item",
+      "category": "interface",
+      "purpose": "Служебный переключатель готовности до матча.",
+      "publish": false,
+      "reason": "Служебный переключатель готовности до матча.",
+      "evidence": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/ModItems.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/item/PreGameReadyItem.java"
+        }
+      ]
+    },
+    {
+      "field": "PRE_GAME_READY_ITEM_ACTIVE",
+      "gameId": "pre_game_ready_item_active",
+      "class": "PreGameReadyItemActive",
+      "statement": ",\n            () -> new PreGameReadyItemActive(new Item.Properties()))",
+      "name": "pre_game_ready_item_active",
+      "category": "interface",
+      "purpose": "Активное состояние переключателя готовности до матча.",
+      "publish": false,
+      "reason": "Активное состояние переключателя готовности до матча.",
+      "evidence": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/ModItems.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/item/PreGameReadyItemActive.java"
+        }
+      ]
+    },
+    {
+      "field": "MANIAC_REGEN_FRAGMENT",
+      "gameId": "maniac_regen_fragment",
+      "class": "Item",
+      "statement": ",\n            () -> new Item(new Item.Properties()))",
+      "name": "Часть философского камня",
+      "category": "resource",
+      "purpose": "Ингредиент зелья медленной регенерации.",
+      "publish": true,
+      "entityId": "item:maniac-regen-fragment",
+      "reason": "Подтверждённый игровой ресурс с действующим использованием или специализированной ролью.",
+      "visual": "Оригинальная плоская layer0-текстура модели.",
+      "evidence": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/ModItems.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/brewing/ModBrewingRecipes.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/character/survivor/AlchemistClass.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/models/item/maniac_regen_fragment.json"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/textures/item/maniac_regen_fragment.png"
+        }
+      ]
+    },
+    {
+      "field": "MANIAC_STRENGTH_FRAGMENT",
+      "gameId": "maniac_strength_fragment",
+      "class": "Item",
+      "statement": ",\n            () -> new Item(new Item.Properties()))",
+      "name": "Грязь",
+      "category": "resource",
+      "purpose": "Ингредиент зелья силы.",
+      "publish": true,
+      "entityId": "item:maniac-strength-fragment",
+      "reason": "Подтверждённый игровой ресурс с действующим использованием или специализированной ролью.",
+      "visual": "Оригинальная плоская layer0-текстура модели.",
+      "evidence": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/ModItems.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/brewing/ModBrewingRecipes.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/character/survivor/AlchemistClass.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/models/item/maniac_strength_fragment.json"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/textures/item/maniac_strength_fragment.png"
+        }
+      ]
+    },
+    {
+      "field": "MANIAC_SPEED_FRAGMENT",
+      "gameId": "maniac_speed_fragment",
+      "class": "Item",
+      "statement": ",\n            () -> new Item(new Item.Properties()))",
+      "name": "Колесо маквина",
+      "category": "resource",
+      "purpose": "Ингредиент зелья скорости.",
+      "publish": true,
+      "entityId": "item:maniac-speed-fragment",
+      "reason": "Подтверждённый игровой ресурс с действующим использованием или специализированной ролью.",
+      "visual": "Оригинальная плоская layer0-текстура модели.",
+      "evidence": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/ModItems.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/brewing/ModBrewingRecipes.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/character/survivor/AlchemistClass.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/models/item/maniac_speed_fragment.json"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/textures/item/maniac_speed_fragment.png"
+        }
+      ]
+    },
+    {
+      "field": "MANIAC_SLOWNESS_FRAGMENT",
+      "gameId": "maniac_slowness_fragment",
+      "class": "Item",
+      "statement": ",\n            () -> new Item(new Item.Properties()))",
+      "name": "Сердце Лича",
+      "category": "resource",
+      "purpose": "Ингредиент зелья замедления.",
+      "publish": true,
+      "entityId": "item:maniac-slowness-fragment",
+      "reason": "Подтверждённый игровой ресурс с действующим использованием или специализированной ролью.",
+      "visual": "Оригинальная плоская layer0-текстура модели.",
+      "evidence": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/ModItems.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/brewing/ModBrewingRecipes.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/character/survivor/AlchemistClass.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/models/item/maniac_slowness_fragment.json"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/textures/item/maniac_slowness_fragment.png"
+        }
+      ]
+    },
+    {
+      "field": "MANIAC_SLOW_FALLING_FRAGMENT",
+      "gameId": "maniac_slow_falling_fragment",
+      "class": "Item",
+      "statement": ",\n            () -> new Item(new Item.Properties()))",
+      "name": "Перо петуха",
+      "category": "resource",
+      "purpose": "Ингредиент зелья плавного падения.",
+      "publish": true,
+      "entityId": "item:maniac-slow-falling-fragment",
+      "reason": "Подтверждённый игровой ресурс с действующим использованием или специализированной ролью.",
+      "visual": "Оригинальная плоская layer0-текстура модели.",
+      "evidence": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/ModItems.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/brewing/ModBrewingRecipes.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/character/survivor/AlchemistClass.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/models/item/maniac_slow_falling_fragment.json"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/textures/item/maniac_slow_falling_fragment.png"
+        }
+      ]
+    },
+    {
+      "field": "MANIAC_WEAKNESS_FRAGMENT",
+      "gameId": "maniac_weakness_fragment",
+      "class": "Item",
+      "statement": ",\n            () -> new Item(new Item.Properties()))",
+      "name": "Увядший цветок",
+      "category": "resource",
+      "purpose": "Ингредиент зелья слабости.",
+      "publish": true,
+      "entityId": "item:maniac-weakness-fragment",
+      "reason": "Подтверждённый игровой ресурс с действующим использованием или специализированной ролью.",
+      "visual": "Оригинальная плоская layer0-текстура модели.",
+      "evidence": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/ModItems.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/brewing/ModBrewingRecipes.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/character/survivor/AlchemistClass.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/models/item/maniac_weakness_fragment.json"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/textures/item/maniac_weakness_fragment.png"
+        }
+      ]
+    },
+    {
+      "field": "MANIAC_HEALING_FRAGMENT",
+      "gameId": "maniac_healing_fragment",
+      "class": "Item",
+      "statement": ",\n            () -> new Item(new Item.Properties()))",
+      "name": "Святая вода",
+      "category": "resource",
+      "purpose": "Ингредиент зелья лечения.",
+      "publish": true,
+      "entityId": "item:maniac-healing-fragment",
+      "reason": "Подтверждённый игровой ресурс с действующим использованием или специализированной ролью.",
+      "visual": "Оригинальная плоская layer0-текстура модели.",
+      "evidence": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/ModItems.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/brewing/ModBrewingRecipes.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/character/survivor/AlchemistClass.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/models/item/maniac_healing_fragment.json"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/textures/item/maniac_healing_fragment.png"
+        }
+      ]
+    },
+    {
+      "field": "MANIAC_BLINDNESS_FRAGMENT",
+      "gameId": "maniac_blindness_fragment",
+      "class": "Item",
+      "statement": ",\n            () -> new Item(new Item.Properties()))",
+      "name": "Пепел свечи",
+      "category": "resource",
+      "purpose": "Ингредиент зелья слепоты.",
+      "publish": true,
+      "entityId": "item:maniac-blindness-fragment",
+      "reason": "Подтверждённый игровой ресурс с действующим использованием или специализированной ролью.",
+      "visual": "Оригинальная плоская layer0-текстура модели.",
+      "evidence": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/ModItems.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/brewing/ModBrewingRecipes.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/character/survivor/AlchemistClass.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/models/item/maniac_blindness_fragment.json"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/textures/item/maniac_blindness_fragment.png"
+        }
+      ]
+    },
+    {
+      "field": "MANIAC_GLOWING_FRAGMENT",
+      "gameId": "maniac_glowing_fragment",
+      "class": "Item",
+      "statement": ",\n            () -> new Item(new Item.Properties()))",
+      "name": "Светлячок в банке",
+      "category": "resource",
+      "purpose": "Ингредиент зелья свечения.",
+      "publish": true,
+      "entityId": "item:maniac-glowing-fragment",
+      "reason": "Подтверждённый игровой ресурс с действующим использованием или специализированной ролью.",
+      "visual": "Оригинальная плоская layer0-текстура модели.",
+      "evidence": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/ModItems.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/brewing/ModBrewingRecipes.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/character/survivor/AlchemistClass.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/models/item/maniac_glowing_fragment.json"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/textures/item/maniac_glowing_fragment.png"
+        }
+      ]
+    },
+    {
+      "field": "RECIPE_BOOK",
+      "gameId": "recipe_book",
+      "class": "RecipeBookItem",
+      "statement": ",\n            () -> new RecipeBookItem(new Item.Properties().stacksTo(1)))",
+      "name": "Список рецептов",
+      "category": "reference",
+      "purpose": "Открывает внутриигровой список рецептов зелий.",
+      "publish": true,
+      "entityId": "item:recipe-book",
+      "reason": "Подтверждённый игровой ресурс с действующим использованием или специализированной ролью.",
+      "visual": "Оригинальная плоская layer0-текстура модели.",
+      "evidence": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/ModItems.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/item/RecipeBookItem.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/character/survivor/AlchemistClass.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/models/item/recipe_book.json"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/textures/item/recipe_book.png"
+        }
+      ]
+    },
+    {
+      "field": "SURVIVOR_SELECTION",
+      "gameId": "survivor_selection",
+      "class": "CharacterSelectionItem",
+      "statement": ",\n            () -> new CharacterSelectionItem(new Item.Properties(), CharacterType.SURVIVOR))",
+      "name": "survivor_selection",
+      "category": "interface",
+      "purpose": "Кнопка выбора класса выжившего.",
+      "publish": false,
+      "reason": "Кнопка выбора класса выжившего.",
+      "evidence": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/ModItems.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/item/CharacterSelectionItem.java"
+        }
+      ]
+    },
+    {
+      "field": "MANIAC_SELECTION",
+      "gameId": "maniac_selection",
+      "class": "CharacterSelectionItem",
+      "statement": ",\n            () -> new CharacterSelectionItem(new Item.Properties(), CharacterType.MANIAC))",
+      "name": "maniac_selection",
+      "category": "interface",
+      "purpose": "Кнопка выбора класса маньяка.",
+      "publish": false,
+      "reason": "Кнопка выбора класса маньяка.",
+      "evidence": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/ModItems.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/item/CharacterSelectionItem.java"
+        }
+      ]
+    },
+    {
+      "field": "READY_ITEM",
+      "gameId": "ready_item",
+      "class": "ReadyItem",
+      "statement": ",\n            () -> new ReadyItem(new Item.Properties()))",
+      "name": "ready_item",
+      "category": "interface",
+      "purpose": "Служебный переключатель готовности.",
+      "publish": false,
+      "reason": "Служебный переключатель готовности.",
+      "evidence": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/ModItems.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/item/ReadyItem.java"
+        }
+      ]
+    },
+    {
+      "field": "READY_ITEM_ACTIVE",
+      "gameId": "ready_item_active",
+      "class": "ReadyItemActive",
+      "statement": ",\n            () -> new ReadyItemActive(new Item.Properties()))",
+      "name": "ready_item_active",
+      "category": "interface",
+      "purpose": "Активное состояние переключателя готовности.",
+      "publish": false,
+      "reason": "Активное состояние переключателя готовности.",
+      "evidence": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/ModItems.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/item/ReadyItemActive.java"
+        }
+      ]
+    },
+    {
+      "field": "VOTING_TICKET",
+      "gameId": "voting_ticket",
+      "class": "VotingTicketItem",
+      "statement": ",\n            () -> new VotingTicketItem(new Item.Properties().stacksTo(1)))",
+      "name": "Билет для голосования",
+      "category": "interface",
+      "purpose": "Открывает голосование за карту; не расходник основного геймплея.",
+      "publish": false,
+      "reason": "Открывает голосование за карту; не расходник основного геймплея.",
+      "evidence": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/ModItems.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/item/VotingTicketItem.java"
+        }
+      ]
+    },
+    {
+      "field": "BANDAGE",
+      "gameId": "bandage",
+      "class": "BandageItem",
+      "statement": ",\n            () -> new BandageItem(new Item.Properties()\n                    .stacksTo(4)\n                    .rarity(Rarity.UNCOMMON)\n            ))",
+      "name": "Бинт",
+      "category": "consumable",
+      "purpose": "Лечит себя или другого подходящего игрока перед собой.",
+      "publish": true,
+      "entityId": "item:bandages",
+      "reason": "Подтверждённый игровой ресурс с действующим использованием или специализированной ролью.",
+      "visual": "Статичный рендер оригинальных cuboid elements с GUI transform.",
+      "evidence": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/ModItems.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/item/BandageItem.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/character/survivor/DoctorClass.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/models/item/bandage.json"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/textures/item/bandage_texture.png"
+        }
+      ]
+    },
+    {
+      "field": "MEDIC_TABLET",
+      "gameId": "medic_tablet",
+      "class": "MedicTabletItem",
+      "statement": ",\n            () -> new MedicTabletItem(new Item.Properties()\n                    .stacksTo(1)\n                    .rarity(Rarity.RARE)\n            ))",
+      "name": "Медицинский планшет",
+      "category": "tool",
+      "purpose": "Показывает здоровье союзника и открывает медицинский интерфейс.",
+      "publish": true,
+      "entityId": "item:medical-tablet",
+      "reason": "Подтверждённый игровой ресурс с действующим использованием или специализированной ролью.",
+      "visual": "Статичный рендер оригинальных cuboid elements с GUI transform.",
+      "evidence": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/ModItems.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/item/MedicTabletItem.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/character/survivor/DoctorClass.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/models/item/medic_tablet.json"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/textures/item/table_texture.png"
+        }
+      ]
+    },
+    {
+      "field": "MEDICAL_MASK",
+      "gameId": "medical_mask",
+      "class": "MedicalMaskItem",
+      "statement": ",\n            MedicalMaskItem::new)",
+      "name": "Медицинская маска",
+      "category": "armor",
+      "purpose": "Маска активирует разделение входящего урона с союзником.",
+      "publish": true,
+      "entityId": "item:medical-mask",
+      "reason": "Подтверждённый игровой ресурс с действующим использованием или специализированной ролью.",
+      "visual": "Оригинальная плоская layer0-текстура модели.",
+      "evidence": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/ModItems.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/item/armor/MedicalMaskItem.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/event/MedicActiveAbility.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/character/survivor/DoctorClass.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/models/item/medical_mask.json"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/textures/item/medical_mask.png"
+        }
+      ]
+    },
+    {
+      "field": "AGENT47_TABLET",
+      "gameId": "agent47_tablet",
+      "class": "Agent47TabletItem",
+      "statement": ",\n            () -> new Agent47TabletItem(new Item.Properties()\n                    .stacksTo(1)\n                    .rarity(Rarity.RARE)\n            ))",
+      "name": "Планшет агента",
+      "category": "tool",
+      "purpose": "Открывает магазин Агента 47.",
+      "publish": true,
+      "entityId": "item:agent47-tablet",
+      "reason": "Подтверждённый игровой ресурс с действующим использованием или специализированной ролью.",
+      "visual": "Сложный/custom renderer: корректный автоматический рендер не подтверждён. Показано текстовое представление, а не атлас.",
+      "evidence": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/ModItems.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/item/Agent47TabletItem.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/character/maniac/AgentClass.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/models/item/agent47_tablet.json"
+        }
+      ]
+    },
+    {
+      "field": "MICROPHONE",
+      "gameId": "microphone",
+      "class": "MicrophoneItem",
+      "statement": ", () -> new MicrophoneItem(new Item.Properties().stacksTo(1)))",
+      "name": "Микрофон",
+      "category": "weapon",
+      "purpose": "Предмет Фредди с активной музыкальной волной.",
+      "publish": true,
+      "entityId": "item:microphone",
+      "reason": "Подтверждённый игровой ресурс с действующим использованием или специализированной ролью.",
+      "visual": "Статичный рендер оригинальных cuboid elements с GUI transform.",
+      "evidence": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/ModItems.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/item/MicrophoneItem.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/character/maniac/FreddyBearClass.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/models/item/microphone.json"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/textures/item/head.png"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/textures/item/body.png"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/textures/item/hand.png"
+        }
+      ]
+    },
+    {
+      "field": "TOY_KNIFE",
+      "gameId": "toy_knife",
+      "class": "ToyKnifeItem",
+      "statement": ", () -> new ToyKnifeItem(new Item.Properties()))",
+      "name": "Игрушечный нож",
+      "category": "weapon",
+      "purpose": "Игрушечный нож включает и выключает фантомную завесу.",
+      "publish": true,
+      "entityId": "item:toy-knife",
+      "reason": "Подтверждённый игровой ресурс с действующим использованием или специализированной ролью.",
+      "visual": "Сложный/custom renderer: корректный автоматический рендер не подтверждён. Показано текстовое представление, а не атлас.",
+      "evidence": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/ModItems.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/item/ToyKnifeItem.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/character/maniac/GhostClass.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/models/item/toy_knife.json"
+        }
+      ]
+    },
+    {
+      "field": "GHOST_HAND",
+      "gameId": "ghost_hand",
+      "class": "GhostHandItem",
+      "statement": ", () -> new GhostHandItem(new Item.Properties()))",
+      "name": "Призрачная рука",
+      "category": "tool",
+      "purpose": "Рука для одержимости выжившим и управления его движением.",
+      "publish": true,
+      "entityId": "item:ghost-hand",
+      "reason": "Подтверждённый игровой ресурс с действующим использованием или специализированной ролью.",
+      "visual": "Оригинальная плоская layer0-текстура модели.",
+      "evidence": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/ModItems.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/item/GhostHandItem.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/character/maniac/GhostClass.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/models/item/ghost_hand.json"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/textures/item/ghost_hand.png"
+        }
+      ]
+    },
+    {
+      "field": "BEAST_CLAW",
+      "gameId": "beast_claw",
+      "class": "BeastClawItem",
+      "statement": ", () -> new BeastClawItem(new Item.Properties().stacksTo(1)))",
+      "name": "Коготь зверя",
+      "category": "weapon",
+      "purpose": "Коготь Урсы с активным прыжком вперёд.",
+      "publish": true,
+      "entityId": "item:beast-claw",
+      "reason": "Подтверждённый игровой ресурс с действующим использованием или специализированной ролью.",
+      "visual": "Статичный рендер оригинальных cuboid elements с GUI transform.",
+      "evidence": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/ModItems.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/item/BeastClawItem.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/character/maniac/UrsaClass.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/models/item/beast_claw.json"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/textures/item/main_text.png"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/textures/item/nails_text.png"
+        }
+      ]
+    },
+    {
+      "field": "BEEHIVE_FOOD",
+      "gameId": "beehive_food",
+      "class": "BeehiveItem",
+      "statement": ", () -> new BeehiveItem(\n       new Item.Properties().food(BeehiveItem.FOOD).stacksTo(16)))",
+      "name": "Улей",
+      "category": "consumable",
+      "purpose": "Съедаемый улей Урсы запускает ярость и выпускает пчёл.",
+      "publish": true,
+      "entityId": "item:beehive-food",
+      "reason": "Подтверждённый игровой ресурс с действующим использованием или специализированной ролью.",
+      "visual": "Статичный рендер оригинальных cuboid elements с GUI transform.",
+      "evidence": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/ModItems.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/item/BeehiveItem.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/character/maniac/UrsaClass.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/models/item/beehive_food.json"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/textures/item/gltf_embedded_1.png"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/textures/item/gltf_embedded_2.png"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/textures/item/gltf_embedded_3.png"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/textures/item/gltf_embedded_4.png"
+        }
+      ]
+    },
+    {
+      "field": "PLAGUE_LANTERN",
+      "gameId": "plague_lantern",
+      "class": "PlagueLanternItem",
+      "statement": ", () -> new PlagueLanternItem(new Item.Properties()))",
+      "name": "Чумная лампа",
+      "category": "weapon",
+      "purpose": "Лампа Чумного доктора связана с чумой и броском сгустка.",
+      "publish": true,
+      "entityId": "item:plague-lantern",
+      "reason": "Подтверждённый игровой ресурс с действующим использованием или специализированной ролью.",
+      "visual": "Сложный/custom renderer: корректный автоматический рендер не подтверждён. Показано текстовое представление, а не атлас.",
+      "evidence": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/ModItems.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/item/PlagueLanternItem.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/event/PlagueLanternEventHandler.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/character/maniac/PlagueDoctorClass.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/models/item/plague_lantern.json"
+        }
+      ]
+    },
+    {
+      "field": "BONG",
+      "gameId": "bong",
+      "class": "BongItem",
+      "statement": ", () -> new BongItem(new Item.Properties().stacksTo(1)))",
+      "name": "Бонг",
+      "category": "tool",
+      "purpose": "Создаёт дымовое облако, связанное с зависимостью Мефедронщика.",
+      "publish": true,
+      "entityId": "item:bong",
+      "reason": "Подтверждённый игровой ресурс с действующим использованием или специализированной ролью.",
+      "visual": "Статичный рендер оригинальных cuboid elements с GUI transform.",
+      "evidence": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/ModItems.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/item/BongItem.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/character/survivor/MefedronshchikClass.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/models/item/bong.json"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/textures/block/bong_text.png"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/textures/block/bong_text2.png"
+        }
+      ]
+    },
+    {
+      "field": "SYRINGE",
+      "gameId": "syringe",
+      "class": "SyringeItem",
+      "statement": ", () -> new SyringeItem(new Item.Properties().stacksTo(16)))",
+      "name": "Шприц адреналина",
+      "category": "consumable",
+      "purpose": "Снижает зависимость и добавляет ускорение с убывающей эффективностью.",
+      "publish": true,
+      "entityId": "item:adrenaline-syringe",
+      "reason": "Подтверждённый игровой ресурс с действующим использованием или специализированной ролью.",
+      "visual": "Статичный рендер оригинальных cuboid elements с GUI transform.",
+      "evidence": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/ModItems.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/item/SyringeItem.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/event/AddictionEventHandler.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/capability/AddictionCapability.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/character/survivor/MefedronshchikClass.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/models/item/syringe.json"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/textures/item/texture_syringe.png"
+        }
+      ]
+    },
+    {
+      "field": "ANCESTOR_SOUL",
+      "gameId": "ancestor_soul",
+      "class": "AncestorSoulItem",
+      "statement": ", () -> new AncestorSoulItem(\n       new Item.Properties().stacksTo(16)))",
+      "name": "Душа предков",
+      "category": "consumable",
+      "purpose": "Лечит пользователя с учётом погибших выживших.",
+      "publish": true,
+      "entityId": "item:ancestor-soul",
+      "reason": "Подтверждённый игровой ресурс с действующим использованием или специализированной ролью.",
+      "visual": "Статичный рендер оригинальных cuboid elements с GUI transform.",
+      "evidence": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/ModItems.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/item/AncestorSoulItem.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/character/survivor/ShamanClass.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/models/item/ancestor_soul.json"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/textures/item/soul_texture.png"
+        }
+      ]
+    },
+    {
+      "field": "TOTEM_SPAWN_ITEM",
+      "gameId": "totem_spawn_item",
+      "class": "TotemSpawnItem",
+      "statement": ", () -> new TotemSpawnItem(\n                    new Item.Properties().stacksTo(16)))",
+      "name": "Тотем шамана",
+      "category": "tool",
+      "purpose": "Устанавливает тотем Шамана для обнаружения маньяков.",
+      "publish": true,
+      "entityId": "item:ancestral-totem",
+      "reason": "Подтверждённый игровой ресурс с действующим использованием или специализированной ролью.",
+      "visual": "Статичный рендер оригинальных cuboid elements с GUI transform.",
+      "evidence": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/ModItems.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/item/TotemSpawnItem.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/character/survivor/ShamanClass.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/models/item/totem_spawn_item.json"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/textures/item/texture_totem.png"
+        }
+      ]
+    },
+    {
+      "field": "NETHER_SWAP",
+      "gameId": "nether_swap",
+      "class": "NetherSwapItem",
+      "statement": ",\n            () -> new NetherSwapItem(new Item.Properties().stacksTo(1)))",
+      "name": "Квантовый телепорт",
+      "category": "tool",
+      "purpose": "Устройство Учёного меняет местами с выбранным игроком.",
+      "publish": true,
+      "entityId": "item:quantum-teleport",
+      "reason": "Подтверждённый игровой ресурс с действующим использованием или специализированной ролью.",
+      "visual": "Статичный рендер оригинальных cuboid elements с GUI transform.",
+      "evidence": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/ModItems.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/item/NetherSwapItem.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/character/survivor/ScientistClass.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/models/item/nether_swap.json"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/textures/item/tube.png"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/textures/item/bottle.png"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/textures/item/top.png"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/textures/item/small_tube.png"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/textures/item/blue_star.png"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/textures/item/red_star.png"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/textures/item/handle.png"
+        }
+      ]
+    },
+    {
+      "field": "COIN_ELUSIVENESS",
+      "gameId": "coin_elusiveness",
+      "class": "DodepovichCoinItem",
+      "statement": ",\n            () -> new DodepovichCoinItem(new Item.Properties().rarity(Rarity.UNCOMMON), DodepovichCoin.ELUSIVENESS))",
+      "name": "Монетка Неуловимости",
+      "category": "coin",
+      "purpose": "Разыгрывает положительное или отрицательное состояние, связанное с неуловимостью.",
+      "publish": true,
+      "entityId": "item:coin-elusiveness",
+      "reason": "Подтверждённый игровой ресурс с действующим использованием или специализированной ролью.",
+      "visual": "Оригинальная плоская layer0-текстура модели.",
+      "evidence": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/ModItems.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/item/DodepovichCoinItem.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/dodepovich/DodepovichCasinoManager.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/character/survivor/DodepovichClass.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/models/item/coin_elusiveness.json"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/textures/item/coin_elusiveness.png"
+        }
+      ]
+    },
+    {
+      "field": "COIN_INSIGHT",
+      "gameId": "coin_insight",
+      "class": "DodepovichCoinItem",
+      "statement": ",\n            () -> new DodepovichCoinItem(new Item.Properties().rarity(Rarity.UNCOMMON), DodepovichCoin.INSIGHT))",
+      "name": "Монетка Прозрения",
+      "category": "coin",
+      "purpose": "Разыгрывает исход, связанный с обнаружением игроков.",
+      "publish": true,
+      "entityId": "item:coin-insight",
+      "reason": "Подтверждённый игровой ресурс с действующим использованием или специализированной ролью.",
+      "visual": "Оригинальная плоская layer0-текстура модели.",
+      "evidence": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/ModItems.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/item/DodepovichCoinItem.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/dodepovich/DodepovichCasinoManager.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/character/survivor/DodepovichClass.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/models/item/coin_insight.json"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/textures/item/coin_insight.png"
+        }
+      ]
+    },
+    {
+      "field": "COIN_SHACKLES",
+      "gameId": "coin_shackles",
+      "class": "DodepovichCoinItem",
+      "statement": ",\n            () -> new DodepovichCoinItem(new Item.Properties().rarity(Rarity.UNCOMMON), DodepovichCoin.SHACKLES))",
+      "name": "Монетка Оков",
+      "category": "coin",
+      "purpose": "Разыгрывает ограничение движения одной из сторон.",
+      "publish": true,
+      "entityId": "item:coin-shackles",
+      "reason": "Подтверждённый игровой ресурс с действующим использованием или специализированной ролью.",
+      "visual": "Оригинальная плоская layer0-текстура модели.",
+      "evidence": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/ModItems.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/item/DodepovichCoinItem.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/dodepovich/DodepovichCasinoManager.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/character/survivor/DodepovichClass.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/models/item/coin_shackles.json"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/textures/item/coin_shackles.png"
+        }
+      ]
+    },
+    {
+      "field": "COIN_HEALTH",
+      "gameId": "coin_health",
+      "class": "DodepovichCoinItem",
+      "statement": ",\n            () -> new DodepovichCoinItem(new Item.Properties().rarity(Rarity.UNCOMMON), DodepovichCoin.HEALTH))",
+      "name": "Монетка ЗОЖ",
+      "category": "coin",
+      "purpose": "Разыгрывает исход, связанный со здоровьем.",
+      "publish": true,
+      "entityId": "item:coin-health",
+      "reason": "Подтверждённый игровой ресурс с действующим использованием или специализированной ролью.",
+      "visual": "Оригинальная плоская layer0-текстура модели.",
+      "evidence": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/ModItems.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/item/DodepovichCoinItem.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/dodepovich/DodepovichCasinoManager.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/character/survivor/DodepovichClass.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/models/item/coin_health.json"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/textures/item/coin_health.png"
+        }
+      ]
+    },
+    {
+      "field": "COIN_EAGLE",
+      "gameId": "coin_eagle",
+      "class": "DodepovichCoinItem",
+      "statement": ",\n            () -> new DodepovichCoinItem(new Item.Properties().rarity(Rarity.UNCOMMON), DodepovichCoin.EAGLE))",
+      "name": "Монетка Орла",
+      "category": "coin",
+      "purpose": "Разыгрывает особый исход Монетки Орла.",
+      "publish": true,
+      "entityId": "item:coin-eagle",
+      "reason": "Подтверждённый игровой ресурс с действующим использованием или специализированной ролью.",
+      "visual": "Оригинальная плоская layer0-текстура модели.",
+      "evidence": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/ModItems.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/item/DodepovichCoinItem.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/dodepovich/DodepovichCasinoManager.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/character/survivor/DodepovichClass.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/models/item/coin_eagle.json"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/textures/item/coin_eagle.png"
+        }
+      ]
+    },
+    {
+      "field": "COIN_DEBT",
+      "gameId": "coin_debt",
+      "class": "DodepovichCoinItem",
+      "statement": ",\n            () -> new DodepovichCoinItem(new Item.Properties().rarity(Rarity.RARE), DodepovichCoin.DEBT))",
+      "name": "Монетка Долга",
+      "category": "coin",
+      "purpose": "Разыгрывает исход долга с последствиями для состояния игрока.",
+      "publish": true,
+      "entityId": "item:coin-debt",
+      "reason": "Подтверждённый игровой ресурс с действующим использованием или специализированной ролью.",
+      "visual": "Оригинальная плоская layer0-текстура модели.",
+      "evidence": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/ModItems.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/item/DodepovichCoinItem.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/dodepovich/DodepovichCasinoManager.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/character/survivor/DodepovichClass.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/models/item/coin_debt.json"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/textures/item/coin_debt.png"
+        }
+      ]
+    },
+    {
+      "field": "COIN_REROLL",
+      "gameId": "coin_reroll",
+      "class": "DodepovichCoinItem",
+      "statement": ",\n            () -> new DodepovichCoinItem(new Item.Properties().rarity(Rarity.RARE), DodepovichCoin.REROLL))",
+      "name": "Монетка Реролла",
+      "category": "coin",
+      "purpose": "Меняет розыгрыш по правилам менеджера казино.",
+      "publish": true,
+      "entityId": "item:coin-reroll",
+      "reason": "Подтверждённый игровой ресурс с действующим использованием или специализированной ролью.",
+      "visual": "Оригинальная плоская layer0-текстура модели.",
+      "evidence": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/ModItems.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/item/DodepovichCoinItem.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/dodepovich/DodepovichCasinoManager.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/character/survivor/DodepovichClass.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/models/item/coin_reroll.json"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/textures/item/coin_reroll.png"
+        }
+      ]
+    },
+    {
+      "field": "COIN_FATE",
+      "gameId": "coin_fate",
+      "class": "DodepovichCoinItem",
+      "statement": ",\n            () -> new DodepovichCoinItem(new Item.Properties().rarity(Rarity.EPIC), DodepovichCoin.FATE))",
+      "name": "Монеточка Судьбы",
+      "category": "coin",
+      "purpose": "Редкая монетка с особыми исходами судьбы.",
+      "publish": true,
+      "entityId": "item:coin-fate",
+      "reason": "Подтверждённый игровой ресурс с действующим использованием или специализированной ролью.",
+      "visual": "Оригинальная плоская layer0-текстура модели.",
+      "evidence": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/ModItems.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/item/DodepovichCoinItem.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/dodepovich/DodepovichCasinoManager.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/character/survivor/DodepovichClass.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/models/item/coin_fate.json"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/textures/item/coin_fate.png"
+        }
+      ]
+    },
+    {
+      "field": "SLOT_MACHINE",
+      "gameId": "slot_machine",
+      "class": "BlockItem",
+      "statement": ",\n            () -> new BlockItem(ModBlocks.SLOT_MACHINE.get(), new Item.Properties().rarity(Rarity.RARE)))",
+      "name": "Казино-автомат",
+      "category": "block",
+      "purpose": "Казино-автомат для особого розыгрыша монеток Додеповича.",
+      "publish": true,
+      "entityId": "item:slot-machine",
+      "reason": "Подтверждённый игровой ресурс с действующим использованием или специализированной ролью.",
+      "visual": "Статичный рендер оригинальных cuboid elements с GUI transform.",
+      "evidence": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/ModItems.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/dodepovich/DodepovichCasinoManager.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/block/SlotMachineBlock.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/character/survivor/DodepovichClass.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/models/item/slot_machine.json"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/textures/block/slot_machine/machine.png"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/textures/block/slot_machine/lever.png"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/textures/block/slot_machine/svinline.png"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/textures/block/slot_machine/bitbam.png"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/textures/block/slot_machine/slot.png"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/textures/block/slot_machine/transparent.png"
+        }
+      ]
+    },
+    {
+      "field": "NIGHTMARE_LIGHTER",
+      "gameId": "nightmare_lighter",
+      "class": "NightmareLighterItem",
+      "statement": ", NightmareLighterItem::new)",
+      "name": "Кошмарная зажигалка",
+      "category": "tool",
+      "purpose": "Переносной свет внутри кошмарных испытаний.",
+      "publish": true,
+      "entityId": "item:nightmare-lighter",
+      "reason": "Подтверждённый игровой ресурс с действующим использованием или специализированной ролью.",
+      "visual": "Переиспользован существующий рендер открытой оригинальной модели.",
+      "evidence": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/ModItems.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/item/NightmareLighterItem.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/nightmare/NightmareConfig.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/nightmare/NightmareManager.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/character/maniac/KeeperOfNightmaresClass.java"
+        }
+      ]
+    },
+    {
+      "field": "AWAKENING_NEEDLE",
+      "gameId": "awakening_needle",
+      "class": "Item",
+      "statement": ", () -> new Item(new Item.Properties().stacksTo(1)))",
+      "name": "Игла пробуждения",
+      "category": "tool",
+      "purpose": "Инструмент спасения союзника из кошмарного кокона.",
+      "publish": true,
+      "entityId": "item:awakening-needle",
+      "reason": "Подтверждённый игровой ресурс с действующим использованием или специализированной ролью.",
+      "visual": "Статичный рендер оригинальных cuboid elements с GUI transform.",
+      "evidence": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/ModItems.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/game/GameManager.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/nightmare/NightmareConfig.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/nightmare/NightmareManager.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/models/item/awakening_needle.json"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/textures/item/awakening_needle.png"
+        }
+      ]
+    },
+    {
+      "field": "PAINT_CAN",
+      "gameId": "paint_can",
+      "class": "PaintCanItem",
+      "statement": ", PaintCanItem::new)",
+      "name": "Банка краски",
+      "category": "perk-item",
+      "purpose": "Личная банка перка «Краски сгущаются» создаёт лужу краски.",
+      "publish": true,
+      "entityId": "item:paint-can",
+      "reason": "Подтверждённый игровой ресурс с действующим использованием или специализированной ролью.",
+      "visual": "Оригинальная плоская layer0-текстура модели.",
+      "evidence": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/ModItems.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/item/PaintCanItem.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/paint/PaintPuddleManager.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/perk/perks/maniac/ThePaintThickensPerk.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/models/item/paint_can.json"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/textures/item/paint_can.png"
+        }
+      ]
+    },
+    {
+      "field": "FORGET_ME_NOT",
+      "gameId": "forget_me_not",
+      "class": "ForgetMeNotItem",
+      "statement": ", ForgetMeNotItem::new)",
+      "name": "Незабудка",
+      "category": "perk-item",
+      "purpose": "Личный цветок перка «Незабудка» задаёт точку возврата.",
+      "publish": true,
+      "entityId": "item:forget-me-not",
+      "reason": "Подтверждённый игровой ресурс с действующим использованием или специализированной ролью.",
+      "visual": "Оригинальная плоская layer0-текстура модели.",
+      "evidence": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/ModItems.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/item/ForgetMeNotItem.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/forgetmenot/ForgetMeNotManager.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/perk/perks/survivor/ForgetMeNotPerk.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/models/item/forget_me_not.json"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/textures/item/forget_me_not.png"
+        }
+      ]
+    },
+    {
+      "field": "ROSE_COLORED_GLASSES",
+      "gameId": "rose_colored_glasses",
+      "class": "RoseColoredGlassesItem",
+      "statement": ", RoseColoredGlassesItem::new)",
+      "name": "Розовые очки",
+      "category": "perk-item",
+      "purpose": "Личные очки защищают от определённых отрицательных состояний.",
+      "publish": true,
+      "entityId": "item:rose-colored-glasses",
+      "reason": "Подтверждённый игровой ресурс с действующим использованием или специализированной ролью.",
+      "visual": "Сложный/custom renderer: корректный автоматический рендер не подтверждён. Показано текстовое представление, а не атлас.",
+      "evidence": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/ModItems.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/item/RoseColoredGlassesItem.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/roseglasses/RoseColoredGlassesManager.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/models/item/rose_colored_glasses.json"
+        }
+      ]
+    },
+    {
+      "field": "PINK_ORCHID",
+      "gameId": "pink_orchid",
+      "class": "PinkOrchidItem",
+      "statement": ", PinkOrchidItem::new)",
+      "name": "Розовая Орхидея",
+      "category": "perk-item",
+      "purpose": "Многоразовая орхидея записывает маршрут для иллюзии.",
+      "publish": true,
+      "entityId": "item:pink-orchid",
+      "reason": "Подтверждённый игровой ресурс с действующим использованием или специализированной ролью.",
+      "visual": "Оригинальная плоская layer0-текстура модели.",
+      "evidence": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/ModItems.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/item/PinkOrchidItem.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/pinkorchid/PinkOrchidManager.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/models/item/pink_orchid.json"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/textures/item/pink_orchid.png"
+        }
+      ]
+    },
+    {
+      "field": "SBER_SPROUT",
+      "gameId": "sber_sprout",
+      "class": "SberSproutItem",
+      "statement": ", SberSproutItem::new)",
+      "name": "Заполненный СберРосток",
+      "category": "perk-item",
+      "purpose": "Росток хранит долю прогресса взлома и переносит её на компьютер.",
+      "publish": true,
+      "entityId": "item:sber-sprout",
+      "reason": "Подтверждённый игровой ресурс с действующим использованием или специализированной ролью.",
+      "visual": "Оригинальная плоская layer0-текстура модели.",
+      "evidence": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/ModItems.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/item/SberSproutItem.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/sbersprout/SberSproutManager.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/models/item/sber_sprout.json"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/textures/item/sber_sprout.png"
+        }
+      ]
+    },
+    {
+      "field": "GUARDIAN_HEAD",
+      "gameId": "guardian_head",
+      "class": "GuardianHeadItem",
+      "statement": ", GuardianHeadItem::new)",
+      "name": "Голова Хранителя",
+      "category": "armor",
+      "purpose": "Элемент брони для Концентрированного кошмара.",
+      "publish": true,
+      "entityId": "item:guardian-head",
+      "reason": "Подтверждённый игровой ресурс с действующим использованием или специализированной ролью.",
+      "visual": "Оригинальная плоская layer0-текстура модели.",
+      "evidence": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/ModItems.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/item/GuardianHeadItem.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/character/maniac/KeeperOfNightmaresClass.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/models/item/guardian_head.json"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/textures/item/head.png"
+        }
+      ]
+    },
+    {
+      "field": "RED_COLOR_CARD",
+      "gameId": "red_color_card",
+      "class": "ColorCardItem",
+      "statement": ", () -> new ColorCardItem(ColorCard.RED))",
+      "name": "Красная карта",
+      "category": "perk-item",
+      "purpose": "Временная личная карта Цветной рулетки.",
+      "publish": true,
+      "entityId": "item:red-color-card",
+      "reason": "Подтверждённый игровой ресурс с действующим использованием или специализированной ролью.",
+      "visual": "Оригинальная плоская layer0-текстура модели.",
+      "evidence": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/ModItems.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/item/ColorCardItem.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/colorroulette/ColorRouletteManager.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/models/item/red_color_card.json"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/textures/item/red_color_card.png"
+        }
+      ]
+    },
+    {
+      "field": "BLUE_COLOR_CARD",
+      "gameId": "blue_color_card",
+      "class": "ColorCardItem",
+      "statement": ", () -> new ColorCardItem(ColorCard.BLUE))",
+      "name": "Синяя карта",
+      "category": "perk-item",
+      "purpose": "Временная личная карта Цветной рулетки.",
+      "publish": true,
+      "entityId": "item:blue-color-card",
+      "reason": "Подтверждённый игровой ресурс с действующим использованием или специализированной ролью.",
+      "visual": "Оригинальная плоская layer0-текстура модели.",
+      "evidence": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/ModItems.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/item/ColorCardItem.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/colorroulette/ColorRouletteManager.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/models/item/blue_color_card.json"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/textures/item/blue_color_card.png"
+        }
+      ]
+    },
+    {
+      "field": "GREEN_COLOR_CARD",
+      "gameId": "green_color_card",
+      "class": "ColorCardItem",
+      "statement": ", () -> new ColorCardItem(ColorCard.GREEN))",
+      "name": "Зелёная карта",
+      "category": "perk-item",
+      "purpose": "Временная личная карта Цветной рулетки.",
+      "publish": true,
+      "entityId": "item:green-color-card",
+      "reason": "Подтверждённый игровой ресурс с действующим использованием или специализированной ролью.",
+      "visual": "Оригинальная плоская layer0-текстура модели.",
+      "evidence": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/ModItems.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/item/ColorCardItem.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/colorroulette/ColorRouletteManager.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/models/item/green_color_card.json"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/textures/item/green_color_card.png"
+        }
+      ]
+    }
+  ],
+  "registrationCount": 66,
+  "publishedRegistrationCount": 56,
+  "publishedEntityCount": 69,
+  "additionalRegistrations": [
+    {
+      "gameId": "computer",
+      "entityId": "item:computer",
+      "registry": "ModHackRegistry",
+      "evidence": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/hack/ModHackRegistry.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/hack/ComputerBlock.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/hack/HackConfig.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/models/item/computer.json"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/textures/item/texture_computer.png"
+        }
+      ]
+    }
+  ],
+  "notes": [
+    "Preview is not proof of starting loadout.",
+    "Existing aggregate/vanilla entities retained under original IDs."
+  ]
+}

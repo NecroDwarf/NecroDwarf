@@ -1,0 +1,38 @@
+{
+  "id": "item:death-scythe",
+  "description": "Коса Смерти позволяет готовить телепортацию к случайному выжившему.",
+  "sections": [
+    {
+      "title": "Получение и доступность",
+      "paragraphs": [
+        "Связан с персонажем Смерть. Настоящее наличие в инвентаре зависит от выдачи и правил конкретного матча; одно превью не является гарантией."
+      ]
+    },
+    {
+      "title": "Как использовать",
+      "paragraphs": [
+        "ПКМ с косой в основной руке запускает подготовку. Сервер проверяет доступность цели, ману и собственный cooldown; он отличается от значения getter интерфейса."
+      ]
+    }
+  ],
+  "notes": [
+    "Сложный/custom renderer: корректный автоматический рендер не подтверждён. Показано текстовое представление, а не атлас."
+  ],
+  "evidence": [
+    {
+      "path": "src/main/java/org/example/maniacrevolution/ModItems.java"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/item/DeathScytheItem.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/character/maniac/DeathClass.java"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/models/item/death_scythe.json"
+    }
+  ]
+}

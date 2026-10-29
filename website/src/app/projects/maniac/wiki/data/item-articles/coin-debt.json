@@ -1,0 +1,42 @@
+{
+  "id": "item:coin-debt",
+  "description": "Разыгрывает исход долга с последствиями для состояния игрока.",
+  "sections": [
+    {
+      "title": "Получение и доступность",
+      "paragraphs": [
+        "Связан с персонажем Никита Додепович. Настоящее наличие в инвентаре зависит от выдачи и правил конкретного матча; одно превью не является гарантией."
+      ]
+    },
+    {
+      "title": "Как использовать",
+      "paragraphs": [
+        "Используйте монетку для броска или участвуйте в розыгрыше автомата. Точный исход выбирается сервером; успешный и неуспешный варианты приведены в статье механики казино."
+      ]
+    }
+  ],
+  "notes": ["Оригинальная плоская layer0-текстура модели."],
+  "evidence": [
+    {
+      "path": "src/main/java/org/example/maniacrevolution/ModItems.java"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/item/DodepovichCoinItem.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/dodepovich/DodepovichCasinoManager.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/character/survivor/DodepovichClass.java"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/models/item/coin_debt.json"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/item/coin_debt.png"
+    }
+  ]
+}

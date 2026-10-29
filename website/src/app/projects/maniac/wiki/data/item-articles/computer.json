@@ -1,0 +1,39 @@
+{
+  "id": "item:computer",
+  "description": "Предмет-блок основной задачи выживших: установленный компьютер можно взламывать.",
+  "sections": [
+    {
+      "title": "Получение и доступность",
+      "paragraphs": [
+        "Предмет зарегистрирован отдельно в ModHackRegistry как BlockItem. Компьютеры основной задачи размещаются на карте; это не доказательство выдачи блока в стартовый инвентарь выжившего."
+      ]
+    },
+    {
+      "title": "Как использовать",
+      "paragraphs": [
+        "Взаимодействуйте с подходящим незавершённым компьютером на карте и оставайтесь в зоне сессии. Помощники, QTE и специальные предметы меняют прогресс по серверным правилам. Само наличие предмета-блока не гарантирует, что произвольно установленный объект включён в цели карты."
+      ]
+    }
+  ],
+  "notes": [
+    "Статичный рендер оригинальных cuboid elements с GUI transform.",
+    "Регистрация находится вне ModItems, поэтому не добавлена как 67-я строка его аудита."
+  ],
+  "evidence": [
+    {
+      "path": "src/main/java/org/example/maniacrevolution/hack/ModHackRegistry.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/hack/ComputerBlock.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/hack/HackConfig.java"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/models/item/computer.json"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/item/texture_computer.png"
+    }
+  ]
+}

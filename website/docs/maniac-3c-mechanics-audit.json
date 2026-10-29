@@ -1,0 +1,551 @@
+{
+  "commit": "8692f66dc76582144be85d553d43a41f189b64e7",
+  "mechanics": [
+    {
+      "id": "mechanic:match-preparation",
+      "evidence": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/pregame/PreGameReadyManager.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/pregame/PreGameCountdownTask.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/game/GameManager.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/gui/pages/TutorialPage.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "mechanic:match-phases",
+      "evidence": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/game/GameManager.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/perk/PerkPhase.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/perk/Perk.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/hack/HackConfig.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "mechanic:match-timer",
+      "evidence": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/game/GameManager.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/settings/GameSettings.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "mechanic:objectives-and-escape",
+      "evidence": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/hack/HackConfig.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/hack/HackManager.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/game/GameManager.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/gui/pages/TutorialPage.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "mechanic:hacking",
+      "evidence": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/hack/ComputerBlock.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/hack/HackManager.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/hack/HackSession.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/hack/HackConfig.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/sbersprout/SberSproutManager.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "mechanic:qte",
+      "evidence": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/hack/HackSession.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/hack/HackManager.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/hack/HackConfig.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/gui/pages/TutorialPage.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "mechanic:downed",
+      "evidence": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/downed/DownedData.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/downed/DownedEventHandler.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/gui/pages/TutorialPage.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "mechanic:map-interactions",
+      "evidence": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/gui/pages/TutorialPage.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "mechanic:mana",
+      "evidence": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/mana/ManaData.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/event/ManaEvents.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/perk/Perk.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/effect/ManaFlowEffect.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "mechanic:sanity",
+      "evidence": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/nightmare/NightmareConfig.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/nightmare/NightmareManager.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/character/maniac/KeeperOfNightmaresClass.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "mechanic:nightmare-trials",
+      "evidence": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/nightmare/NightmareConfig.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/nightmare/NightmareManager.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/nightmare/NightmareTrialBuilder.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/character/maniac/KeeperOfNightmaresClass.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+        }
+      ],
+      "notes": [
+        "Расхождение числа начальных лабиринтов разрешено по NightmareManager и NightmareConfig; публичный ZIP не объявлен идентичным."
+      ]
+    },
+    {
+      "id": "mechanic:flower-return",
+      "evidence": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/perk/perks/survivor/ForgetMeNotPerk.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/forgetmenot/ForgetMeNotManager.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/item/ForgetMeNotItem.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "mechanic:addiction",
+      "evidence": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/capability/AddictionCapability.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/event/AddictionEventHandler.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/item/SyringeItem.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/entity/BongCloudEntity.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+        }
+      ],
+      "notes": [
+        "Хроника 1.0: три шприца и 10%/с; pinned code: отдельный порог 4 и STAGE3_DEATH_CHANCE=0.01 при соблюдении условий."
+      ]
+    },
+    {
+      "id": "mechanic:casino",
+      "evidence": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/dodepovich/DodepovichCasinoManager.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/dodepovich/DodepovichCoin.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/dodepovich/SlotMachineResult.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/item/DodepovichCoinItem.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/block/SlotMachineBlock.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "mechanic:alchemy",
+      "evidence": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/brewing/ModBrewingRecipes.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/potion/ModPotions.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/character/survivor/AlchemistClass.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/item/RecipeBookItem.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "mechanic:resurrection",
+      "evidence": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/item/NecromancerStaffItem.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/network/packets/ResurrectPlayerPacket.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "mechanic:plague",
+      "evidence": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/capability/PlagueCapability.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/event/PlagueLanternEventHandler.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/entity/PlagueOrbEntity.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/item/PlagueLanternItem.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "mechanic:ghost-states",
+      "evidence": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/ghost/GhostStealthManager.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/ghost/GhostPossessionManager.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/ghost/GhostLoadoutManager.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "mechanic:medical-care",
+      "evidence": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/item/BandageItem.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/item/MedicTabletItem.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/event/MedicActiveAbility.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/config/MedicSystemConfig.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "mechanic:shaman-spirits",
+      "evidence": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/item/TotemSpawnItem.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/item/AncestorSoulItem.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/character/survivor/ShamanClass.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "mechanic:paint",
+      "evidence": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/paint/PaintPuddleManager.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/item/PaintCanItem.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/perk/perks/maniac/ThePaintThickensPerk.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "mechanic:orchid-illusion",
+      "evidence": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/pinkorchid/PinkOrchidManager.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/pinkorchid/PinkOrchidRouteFrame.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/entity/PinkOrchidIllusionEntity.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/item/PinkOrchidItem.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "mechanic:color-roulette",
+      "evidence": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/colorroulette/ColorRouletteManager.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/colorroulette/ColorCard.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/item/ColorCardItem.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "mechanic:freddy-generator",
+      "evidence": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/block/FNAFGeneratorBlock.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/block/entity/FNAFGeneratorBlockEntity.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/character/maniac/FreddyBearClass.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "mechanic:traps",
+      "evidence": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/item/SaltItem.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/block/SaltBlock.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/util/SaltTracker.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "mechanic:status-effects",
+      "evidence": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/effect/ModEffects.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/perk/Perk.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/roseglasses/RoseColoredGlassesManager.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/config/GameRulesConfig.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "mechanic:agent-shop",
+      "evidence": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/item/Agent47TabletItem.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/character/maniac/AgentClass.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "mechanic:ursa-stacks",
+      "evidence": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/character/maniac/UrsaClass.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/item/BeastClawItem.java"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/item/BeehiveItem.java"
+        },
+        {
+          "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+        }
+      ],
+      "notes": []
+    }
+  ],
+  "boundaries": [
+    "GamePhase.java and GameTimer.java are empty.",
+    "External maniac:game datapack functions absent; victory and full loadout not invented.",
+    "Map guide illustrations document map-specific interactions, not a public map catalog."
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "id": "item:bandages",
+  "description": "Лечит себя или другого подходящего игрока перед собой.",
+  "sections": [
+    {
+      "title": "Получение и доступность",
+      "paragraphs": [
+        "Связан с персонажем Доктор. Настоящее наличие в инвентаре зависит от выдачи и правил конкретного матча; одно превью не является гарантией."
+      ]
+    },
+    {
+      "title": "Как использовать",
+      "paragraphs": [
+        "Удерживайте использование и направьте взгляд на цель в пределах 3 блоков либо в сторону для самолечения. По завершении другой игрок получает 4 HP, сам пользователь — 2 HP. Предмет расходуется. Getter возвращает 90 тиков; локальная переменная 60 тиков в onUseTick не меняет длительность завершения."
+      ]
+    }
+  ],
+  "notes": ["Статичный рендер оригинальных cuboid elements с GUI transform."],
+  "evidence": [
+    {
+      "path": "src/main/java/org/example/maniacrevolution/ModItems.java"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/item/BandageItem.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/character/survivor/DoctorClass.java"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/models/item/bandage.json"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/item/bandage_texture.png"
+    }
+  ]
+}

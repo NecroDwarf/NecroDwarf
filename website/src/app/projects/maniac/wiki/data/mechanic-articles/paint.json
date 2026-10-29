@@ -1,0 +1,41 @@
+{
+  "id": "mechanic:paint",
+  "description": "Банка связанного перка создаёт личные лужи с отдельными правилами действия.",
+  "sections": [
+    {
+      "title": "Как это работает",
+      "paragraphs": [
+        "Перк выдаёт личную банку. Примените её на допустимой поверхности; менеджер проверяет владельца и место размещения.",
+        "Пересечение лужи обрабатывается отдельно с учётом игровой стороны и состояния цели."
+      ]
+    },
+    {
+      "title": "Результат и влияние на матч",
+      "paragraphs": [
+        "Количество применений ограничено прочностью банки. Эффекты лужи принадлежат перку, а не любому предмету с похожей текстурой."
+      ]
+    },
+    {
+      "title": "Условия и ограничения",
+      "paragraphs": [
+        "Не передавайте личный предмет и не переносите характеристики исторической хроники в source-снимок без проверки."
+      ]
+    }
+  ],
+  "images": [],
+  "notes": [],
+  "evidence": [
+    {
+      "path": "src/main/java/org/example/maniacrevolution/paint/PaintPuddleManager.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/item/PaintCanItem.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/perks/maniac/ThePaintThickensPerk.java"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+    }
+  ]
+}

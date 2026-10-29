@@ -1,0 +1,16 @@
+.figure {
+  margin: 0 0 32px;
+}
+.figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  border: 1px solid #393a46;
+}
+.figure figcaption {
+  margin-top: 12px;
+  color: #a8a4b1;
+  font-size: 13px;
+  line-height: 1.7;
+}

@@ -3,6 +3,8 @@ import { releases } from "../../changelogs/registry";
 import { characterEntries } from "./catalog";
 import { WikiLayout, DataNote } from "./WikiLayout";
 import s from "./Wiki.module.css";
+import { itemRouteMeta } from "../item-route-metadata";
+import { mechanicRouteMeta } from "../mechanic-route-metadata";
 export function WikiHomePage() {
   const keeper = characterEntries.find(
     (c) => c.slug === "keeper-of-nightmares",
@@ -84,14 +86,24 @@ export function WikiHomePage() {
           <div className={s.futureCategories}>
             {["Перки", "Способности", "Предметы", "Механики", "Карты"].map(
               (name, i) =>
-                i < 2 ? (
+                i < 4 ? (
                   <Link
                     key={name}
-                    to={`/projects/maniac/wiki/${i === 0 ? "perks" : "abilities"}`}
+                    to={`/projects/maniac/wiki/${["perks", "abilities", "items", "mechanics"][i]}`}
                   >
                     <span className={s.eyebrow}>0{i + 3}</span>
                     <h3>{name}</h3>
-                    <span>{i === 0 ? "44 перка" : "12 способностей"} ↗</span>
+                    <span>
+                      {
+                        [
+                          "44 перка",
+                          "12 способностей",
+                          `${itemRouteMeta.length} предметов`,
+                          `${mechanicRouteMeta.length} механик`,
+                        ][i]
+                      }{" "}
+                      ↗
+                    </span>
                   </Link>
                 ) : (
                   <div key={name}>

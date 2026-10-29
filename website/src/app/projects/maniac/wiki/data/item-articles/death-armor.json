@@ -1,0 +1,22 @@
+{
+  "id": "item:death-armor",
+  "description": "Защитная броня, связанная со способностью телепортации.",
+  "sections": [
+    {
+      "title": "Назначение и доступность",
+      "paragraphs": [
+        "Сохранённая составная запись экипировки или ванильный предмет из справочника персонажа; не отдельная регистрация ModItems.",
+        "Связь с персонажем отражает его справочник. Стартовое количество и параметры, не подтверждённые выдачей, не заявляются."
+      ]
+    }
+  ],
+  "notes": [],
+  "evidence": [
+    {
+      "path": "src/main/java/org/example/maniacrevolution/character/maniac/DeathClass.java"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+    }
+  ]
+}

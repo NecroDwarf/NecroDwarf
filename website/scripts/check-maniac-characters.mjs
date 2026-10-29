@@ -31,6 +31,7 @@ assert.equal(catalog.filter((c) => c.role === "survivor").length, 7);
 assert.equal(new Set(manifest.files.map((f) => f.sourceSha256)).size, 15);
 const server = await createServer({
   server: { middlewareMode: true },
+  optimizeDeps: { noDiscovery: true, include: [] },
   appType: "custom",
 });
 const escape = (text) =>

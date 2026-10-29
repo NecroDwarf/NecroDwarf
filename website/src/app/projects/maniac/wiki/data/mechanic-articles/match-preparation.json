@@ -1,0 +1,45 @@
+{
+  "id": "mechanic:match-preparation",
+  "description": "Готовность игроков, применение настроек и запуск раунда — отдельные шаги.",
+  "sections": [
+    {
+      "title": "Как это работает",
+      "paragraphs": [
+        "Выберите сторону и персонажа, согласуйте карту и параметры матча. Переключатель готовности сообщает о готовности организатору.",
+        "PreGameCountdownTask вызывает функцию старта датапака. GameManager.startGame сбрасывает нокдаун, применяет настройки, выставляет фазу 1, запускает таймер и уведомляет систему перков."
+      ]
+    },
+    {
+      "title": "Результат и влияние на матч",
+      "paragraphs": [
+        "Новый раунд получает длительность из сохранённых GameSettings. Старт также запускает распределение игл при активном Хранителе."
+      ]
+    },
+    {
+      "title": "Условия и ограничения",
+      "paragraphs": [
+        "Выдача предметов из превью не является доказательством реального содержимого стартового инвентаря.",
+        "Функция maniac:game/start_game относится к внешнему датапаку: её полный текст отсутствует в закреплённом репозитории."
+      ]
+    }
+  ],
+  "images": [],
+  "notes": [],
+  "evidence": [
+    {
+      "path": "src/main/java/org/example/maniacrevolution/pregame/PreGameReadyManager.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/pregame/PreGameCountdownTask.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/game/GameManager.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/gui/pages/TutorialPage.java"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+    }
+  ]
+}

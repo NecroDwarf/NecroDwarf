@@ -1,0 +1,45 @@
+{
+  "id": "mechanic:objectives-and-escape",
+  "description": "Выжившие выполняют компьютеры, а окончательные условия завершения зависят и от карты.",
+  "sections": [
+    {
+      "title": "Как это работает",
+      "paragraphs": [
+        "Счётчик законченных компьютеров сравнивается с настраиваемым порогом HackConfig.COMPUTERS_NEEDED_FOR_WIN. После достижения порога выполняются WIN_COMMANDS, включая выдачу карты доступа SecurityCraft и перевод в фазу 3.",
+        "Следуйте целям и доступным маршрутам карты. Тайные проходы не являются универсальной точкой победы."
+      ]
+    },
+    {
+      "title": "Результат и влияние на матч",
+      "paragraphs": [
+        "Завершение взломов открывает следующий этап противостояния. Истечение таймера вызывает функцию внешнего датапака."
+      ]
+    },
+    {
+      "title": "Условия и ограничения",
+      "paragraphs": [
+        "В этом снимке нет полного набора функций maniac:game и карт: нельзя честно описать универсальные координаты выхода или объявить каждый взлом немедленной победой.",
+        "Прогресс компьютеров и таймер — разные условия; правила конкретной публичной ZIP-сборки отдельно не проверены."
+      ]
+    }
+  ],
+  "images": [],
+  "notes": [],
+  "evidence": [
+    {
+      "path": "src/main/java/org/example/maniacrevolution/hack/HackConfig.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/hack/HackManager.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/game/GameManager.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/gui/pages/TutorialPage.java"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+    }
+  ]
+}

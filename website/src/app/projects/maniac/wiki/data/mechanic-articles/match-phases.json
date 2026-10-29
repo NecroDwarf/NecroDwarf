@@ -1,0 +1,46 @@
+{
+  "id": "mechanic:match-phases",
+  "description": "Фаза определяет доступность перков и изменение правил охоты.",
+  "sections": [
+    {
+      "title": "Как это работает",
+      "paragraphs": [
+        "Значение 0 — матч не активен. HUNT соответствует scoreboard 1, MIDGAME — 2, REVERSAL — 3. START — отдельное событие начала для перков, а не дополнительный номер фазы.",
+        "На половине настроенного времени GameManager переводит HUNT в MIDGAME. Завершение необходимого числа компьютеров запускает WIN_COMMANDS и команду фазы 3."
+      ]
+    },
+    {
+      "title": "Результат и влияние на матч",
+      "paragraphs": [
+        "В REVERSAL выжившие могут получить возможность дать отпор; мод выполняет снятие перечисленных защитных эффектов и подсветку мест оружия через команды.",
+        "У каждого перка остаются собственные фазовые ограничения. ANY исключает состояние вне матча."
+      ]
+    },
+    {
+      "title": "Условия и ограничения",
+      "paragraphs": [
+        "Переход в фазу 2 разрешён только из фазы 1.",
+        "Подписи фаз в учебнике упрощены; для проверки чисел использованы PerkPhase и GameManager. GamePhase.java и GameTimer.java пусты."
+      ]
+    }
+  ],
+  "images": [],
+  "notes": [],
+  "evidence": [
+    {
+      "path": "src/main/java/org/example/maniacrevolution/game/GameManager.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/PerkPhase.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/Perk.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/hack/HackConfig.java"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+    }
+  ]
+}

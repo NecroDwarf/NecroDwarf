@@ -1,0 +1,131 @@
+{
+  "commit": "8692f66dc76582144be85d553d43a41f189b64e7",
+  "files": [
+    {
+      "source": "src/main/resources/assets/maniacrev/textures/gui/guide/maps/active_computer.png",
+      "sourceSha256": "2619f74d9aa6f827c4a1b72e2a5bf12b20c7fb2e2d246d6038be32a579e5e70a",
+      "local": "guide-hacking-0.webp",
+      "sha256": "9dc3249411290dac242262a442dc097173f4615d132a3480e0699584d90d1ea5",
+      "width": 1120,
+      "height": 658,
+      "transformation": "Original guide image, preserve aspect, max 1120×800, WebP quality 88"
+    },
+    {
+      "source": "src/main/resources/assets/maniacrev/textures/gui/guide/mechanics/qte.png",
+      "sourceSha256": "678088a5f5688c6f45c1fab1cb4eac6c2b3f8f76f904aee16236d232881ec339",
+      "local": "guide-qte-0.webp",
+      "sha256": "58c8a0e9169b02622cf57e798cc7823ec879262ae50079f536bc4d689bc36185",
+      "width": 340,
+      "height": 275,
+      "transformation": "Original guide image, preserve aspect, max 1120×800, WebP quality 88"
+    },
+    {
+      "source": "src/main/resources/assets/maniacrev/textures/gui/guide/mechanics/downed.png",
+      "sourceSha256": "89ce929169850558e4a0dd9ed50ef549e0398b77dd8e1920157d2e29c0683141",
+      "local": "guide-downed-0.webp",
+      "sha256": "2d7fd49a39349c940064c7d2a2d3d2060802790ddc743f886fbc107300e7549a",
+      "width": 1030,
+      "height": 709,
+      "transformation": "Original guide image, preserve aspect, max 1120×800, WebP quality 88"
+    },
+    {
+      "source": "src/main/resources/assets/maniacrev/textures/gui/guide/mechanics/open_door.png",
+      "sourceSha256": "49f394802f9c232dc24504fdef5d7f16e1dab05e97c725475cadc77550df33cc",
+      "local": "guide-map-interactions-0.webp",
+      "sha256": "71dfc6ba509bf8cac0cf948587a468b10f25f9fb923d83ee70bb62166c6140da",
+      "width": 674,
+      "height": 613,
+      "transformation": "Original guide image, preserve aspect, max 1120×800, WebP quality 88"
+    },
+    {
+      "source": "src/main/resources/assets/maniacrev/textures/gui/guide/mechanics/open_hatch.png",
+      "sourceSha256": "e52fe49a9ac6c097cfff2f400ee70fe0bbb6dbc5f7693d8ebb79ac9a5a448a97",
+      "local": "guide-map-interactions-1.webp",
+      "sha256": "67fbc929306c05ebd74a941c4aa2b68fe34a38ea0a004dc346ad6750da5b8fef",
+      "width": 735,
+      "height": 595,
+      "transformation": "Original guide image, preserve aspect, max 1120×800, WebP quality 88"
+    },
+    {
+      "source": "src/main/resources/assets/maniacrev/textures/gui/guide/mechanics/ventilation.png",
+      "sourceSha256": "fb5284f9c6efb422e5444676f15878ebefd4e184e157973b12061e19eb441d16",
+      "local": "guide-map-interactions-2.webp",
+      "sha256": "41782eb71d29768a94d53b84827693d684ea31319f9284caa23722c4394563f4",
+      "width": 1059,
+      "height": 744,
+      "transformation": "Original guide image, preserve aspect, max 1120×800, WebP quality 88"
+    },
+    {
+      "source": "src/main/resources/assets/maniacrev/textures/gui/guide/mechanics/characters/nightmare/area.png",
+      "sourceSha256": "bf8353e9cbb4b78f938c800ad282a0917e78cfabe3cb836df0682e1f1ef567ce",
+      "local": "guide-nightmare-trials-0.webp",
+      "sha256": "a6f286cd0b5e32c234d261c8f542e4a25b8bc4179754fa1b04aebde355689d07",
+      "width": 1120,
+      "height": 539,
+      "transformation": "Original guide image, preserve aspect, max 1120×800, WebP quality 88"
+    },
+    {
+      "source": "src/main/resources/assets/maniacrev/textures/gui/guide/mechanics/characters/addiction.png",
+      "sourceSha256": "f89d02d686ee6bce13f0103f361910b1f784818cedb6f624ef9f1a1778b0e2ef",
+      "local": "guide-addiction-0.webp",
+      "sha256": "6b940b5f365065b86fb3055872303dd991097558a2bfc38b2cf4429978c0e2dd",
+      "width": 328,
+      "height": 200,
+      "transformation": "Original guide image, preserve aspect, max 1120×800, WebP quality 88"
+    },
+    {
+      "source": "src/main/resources/assets/maniacrev/textures/gui/guide/mechanics/alch.png",
+      "sourceSha256": "e949db2497f42324e7043dc741701c18ce76ae538fb319787cae1d27fc4f076d",
+      "local": "guide-alchemy-0.webp",
+      "sha256": "b8908def57d031d3fdc916604b8997a8ac77206682783b9157f61f5f8725f068",
+      "width": 366,
+      "height": 228,
+      "transformation": "Original guide image, preserve aspect, max 1120×800, WebP quality 88"
+    },
+    {
+      "source": "src/main/resources/assets/maniacrev/textures/gui/guide/mechanics/characters/plague.png",
+      "sourceSha256": "9694482cb14076520c6cae0f2e043b13879b9fd0ddbd4c2061f58de51e788f1a",
+      "local": "guide-plague-0.webp",
+      "sha256": "168310a95c4ee1bf85e6f7fbf866624e602ea42623b750a97af68101a900e125",
+      "width": 446,
+      "height": 120,
+      "transformation": "Original guide image, preserve aspect, max 1120×800, WebP quality 88"
+    },
+    {
+      "source": "src/main/resources/assets/maniacrev/textures/gui/guide/mechanics/characters/medic_interface.png",
+      "sourceSha256": "0bf65ef138b3227d4df7b13d15acdd20127651dff1ec352d32665de57d0d7104",
+      "local": "guide-medical-care-0.webp",
+      "sha256": "3e7036754d258783eec61b83375eaa922d4e3c110793fb5fe58d1b95f684effd",
+      "width": 515,
+      "height": 403,
+      "transformation": "Original guide image, preserve aspect, max 1120×800, WebP quality 88"
+    },
+    {
+      "source": "src/main/resources/assets/maniacrev/textures/gui/guide/mechanics/characters/generator_fnaf.png",
+      "sourceSha256": "85d02fd700defabd2c0172f40793a0520e7cbde8a8a9f0762d2c6b22e386fdda",
+      "local": "guide-freddy-generator-0.webp",
+      "sha256": "94fc7409d49fcd43ecce84009e18374fecccd188dc09d3533b9318002e35d2b5",
+      "width": 185,
+      "height": 209,
+      "transformation": "Original guide image, preserve aspect, max 1120×800, WebP quality 88"
+    },
+    {
+      "source": "src/main/resources/assets/maniacrev/textures/gui/guide/mechanics/characters/agent_shop.png",
+      "sourceSha256": "f5b1de2eb0695e5211626398b1c0ca8be454b84476d72aa6f0bde00c73d595fe",
+      "local": "guide-agent-shop-0.webp",
+      "sha256": "c244bc604a2a59a7f0fd99053ce17c4bfe4ed2ca19da497b9c6360dc211fd309",
+      "width": 562,
+      "height": 445,
+      "transformation": "Original guide image, preserve aspect, max 1120×800, WebP quality 88"
+    },
+    {
+      "source": "src/main/resources/assets/maniacrev/textures/gui/guide/mechanics/characters/stack_ursa.png",
+      "sourceSha256": "33502fe349a7d9a4170d8208f0bd5272088e25d64fdb9c2456d3e1d3170284df",
+      "local": "guide-ursa-stacks-0.webp",
+      "sha256": "e73dabd1cfd3b26970e413e6e8788c8c375ed6fd6c9a8facc5c936af934f2335",
+      "width": 86,
+      "height": 64,
+      "transformation": "Original guide image, preserve aspect, max 1120×800, WebP quality 88"
+    }
+  ]
+}

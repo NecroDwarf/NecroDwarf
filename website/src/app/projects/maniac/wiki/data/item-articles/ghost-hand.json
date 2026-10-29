@@ -1,0 +1,39 @@
+{
+  "id": "item:ghost-hand",
+  "description": "Рука для одержимости выжившим и управления его движением.",
+  "sections": [
+    {
+      "title": "Получение и доступность",
+      "paragraphs": [
+        "Связан с персонажем Призрак. Настоящее наличие в инвентаре зависит от выдачи и правил конкретного матча; одно превью не является гарантией."
+      ]
+    },
+    {
+      "title": "Как использовать",
+      "paragraphs": [
+        "Выберите подходящую цель и активируйте предмет. Повторное применение может завершить одержимость. Серверный менеджер ограничивает состояние и возвращает управление."
+      ]
+    }
+  ],
+  "notes": ["Оригинальная плоская layer0-текстура модели."],
+  "evidence": [
+    {
+      "path": "src/main/java/org/example/maniacrevolution/ModItems.java"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/item/GhostHandItem.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/character/maniac/GhostClass.java"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/models/item/ghost_hand.json"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/item/ghost_hand.png"
+    }
+  ]
+}

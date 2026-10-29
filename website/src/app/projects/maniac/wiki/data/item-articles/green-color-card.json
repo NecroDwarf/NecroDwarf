@@ -1,0 +1,39 @@
+{
+  "id": "item:green-color-card",
+  "description": "Временная личная карта Цветной рулетки.",
+  "sections": [
+    {
+      "title": "Получение и доступность",
+      "paragraphs": [
+        "Создаётся или выдаётся логикой связанного перка; применяются его фазовые ограничения и условия."
+      ]
+    },
+    {
+      "title": "Как использовать",
+      "paragraphs": [
+        "Выжившему даёт лечение, маньяку — накопление дополнительного урона. Предмет привязан к владельцу и исчезает по окончании своего времени."
+      ]
+    }
+  ],
+  "notes": ["Оригинальная плоская layer0-текстура модели."],
+  "evidence": [
+    {
+      "path": "src/main/java/org/example/maniacrevolution/ModItems.java"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/item/ColorCardItem.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/colorroulette/ColorRouletteManager.java"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/models/item/green_color_card.json"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/item/green_color_card.png"
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "id": "mechanic:addiction",
+  "description": "Мефедронщик управляет растущей зависимостью, шприцами и дымом.",
+  "sections": [
+    {
+      "title": "Как это работает",
+      "paragraphs": [
+        "Шкала растёт каждый серверный тик; после использованных шприцев базовая скорость умножается на 1 + 0,03 × число шприцев. Дым может приостановить рост.",
+        "Шприц снижает текущую зависимость на 70%, но его ускорение становится короче и слабее с применениями. Эффект скорости добавляется к уже действующему времени."
+      ]
+    },
+    {
+      "title": "Результат и влияние на матч",
+      "paragraphs": [
+        "Стадии начинаются при 25%, 50% и 75%. В опасной стадии при не менее трёх шприцах система проверяет шанс смерти 1% каждую секунду.",
+        "SyringeItem отдельно задаёт OVERDOSE_SYRINGES=4 для последовательных применений в окне 400 тиков (20 с). Это правило исходного снимка."
+      ]
+    },
+    {
+      "title": "Условия и ограничения",
+      "paragraphs": [
+        "Историческая хроника указывает другие условия передозировки и вероятности; эти данные не заменены новым кодом.",
+        "Итоговая скорость и риск условны: стадия, история применений, паузы и условия серверного обработчика имеют значение."
+      ]
+    }
+  ],
+  "images": [
+    {
+      "file": "guide-addiction-0.webp",
+      "width": 328,
+      "height": 200,
+      "caption": "Шкала зависимости из игрового руководства."
+    }
+  ],
+  "notes": [
+    "Хроника 1.0: три шприца и 10%/с; pinned code: отдельный порог 4 и STAGE3_DEATH_CHANCE=0.01 при соблюдении условий."
+  ],
+  "evidence": [
+    {
+      "path": "src/main/java/org/example/maniacrevolution/capability/AddictionCapability.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/event/AddictionEventHandler.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/item/SyringeItem.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/entity/BongCloudEntity.java"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+    }
+  ]
+}

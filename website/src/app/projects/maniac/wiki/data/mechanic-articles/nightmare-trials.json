@@ -1,0 +1,55 @@
+{
+  "id": "mechanic:nightmare-trials",
+  "description": "Похищенный выживший проходит отдельное испытание, пока союзники могут помочь через кокон.",
+  "sections": [
+    {
+      "title": "Как это работает",
+      "paragraphs": [
+        "Срыв рассудка запускает проверку похищения. NightmareManager использует FORCED_MAZE_COUNT: первые два испытания цели принудительно являются лабиринтами; затем включается выбор других типов.",
+        "В лабиринте найдите выход, на арене переживите бой, в гонке уходите от преследователя. Союзники во внешнем мире могут взаимодействовать с коконом и Иглой пробуждения."
+      ]
+    },
+    {
+      "title": "Результат и влияние на матч",
+      "paragraphs": [
+        "Лабиринт рассчитан на 30 с; истечение времени наносит 6 HP. Арена — 45 с; гонка — 30 с, её поимка или таймаут наносят 6 HP.",
+        "После возвращения сервер восстанавливает внешнее состояние и включает защиту от нового похищения. Успех отдельного испытания не равен победе во всём матче."
+      ]
+    },
+    {
+      "title": "Условия и ограничения",
+      "paragraphs": [
+        "FORCED_MAZE_COUNT=2 в конфиге и действующем выборе; описание персонажа и историческая хроника говорят о трёх. История не исправлялась.",
+        "Кокон требует четыре засчитываемых удара по NightmareConfig; игольная мини-игра имеет собственные точность и урон. Не каждое нажатие гарантирует разрушение кокона."
+      ]
+    }
+  ],
+  "images": [
+    {
+      "file": "guide-nightmare-trials-0.webp",
+      "width": 1120,
+      "height": 539,
+      "caption": "Оригинальная иллюстрация пространства кошмарного испытания."
+    }
+  ],
+  "notes": [
+    "Расхождение числа начальных лабиринтов разрешено по NightmareManager и NightmareConfig; публичный ZIP не объявлен идентичным."
+  ],
+  "evidence": [
+    {
+      "path": "src/main/java/org/example/maniacrevolution/nightmare/NightmareConfig.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/nightmare/NightmareManager.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/nightmare/NightmareTrialBuilder.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/character/maniac/KeeperOfNightmaresClass.java"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+    }
+  ]
+}

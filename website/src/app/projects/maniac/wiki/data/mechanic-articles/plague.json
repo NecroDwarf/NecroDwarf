@@ -1,0 +1,51 @@
+{
+  "id": "mechanic:plague",
+  "description": "Чумной доктор заражает цели через систему чумы, ауру и сгусток.",
+  "sections": [
+    {
+      "title": "Как это работает",
+      "paragraphs": [
+        "Избегайте давления лампы и попаданий сгустка. PlagueCapability хранит заражение, а серверный обработчик обновляет его и связанные состояния.",
+        "Активный бросок сгустка и пассивное заражение — разные действия одного набора."
+      ]
+    },
+    {
+      "title": "Результат и влияние на матч",
+      "paragraphs": [
+        "Накопление заражения влияет на состояние выжившего. Дальность и стоимость сгустка относятся к предметной способности, а не ко всем источникам чумы."
+      ]
+    },
+    {
+      "title": "Условия и ограничения",
+      "paragraphs": [
+        "Не выводится одно постоянное время заражения: оно зависит от состояния, источника и условий обработчика."
+      ]
+    }
+  ],
+  "images": [
+    {
+      "file": "guide-plague-0.webp",
+      "width": 446,
+      "height": 120,
+      "caption": "Система чумы во внутриигровом руководстве."
+    }
+  ],
+  "notes": [],
+  "evidence": [
+    {
+      "path": "src/main/java/org/example/maniacrevolution/capability/PlagueCapability.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/event/PlagueLanternEventHandler.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/entity/PlagueOrbEntity.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/item/PlagueLanternItem.java"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+    }
+  ]
+}

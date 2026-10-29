@@ -1,0 +1,42 @@
+{
+  "id": "mechanic:sanity",
+  "description": "Хранитель снижает рассудок взглядом; срыв открывает путь в кошмарное испытание.",
+  "sections": [
+    {
+      "title": "Как это работает",
+      "paragraphs": [
+        "Избегайте направленного взгляда Хранителя. Менеджер проверяет подходящую цель и условия взгляда; базовая дальность — 40 блоков.",
+        "После прекращения давления восстановление начинается с задержкой. Концентрированный кошмар отдельно снимает долю максимального рассудка."
+      ]
+    },
+    {
+      "title": "Результат и влияние на матч",
+      "paragraphs": [
+        "При достижении порога срыва менеджер проверяет возможность похищения. После испытания есть защита от немедленного повторного похищения."
+      ]
+    },
+    {
+      "title": "Условия и ограничения",
+      "paragraphs": [
+        "NightmareConfig: максимум 100, breakpoint 0; потеря от взгляда — 1,55 за тик, задержка восстановления — 320 тиков (16 с), восстановление — 0,11 за тик.",
+        "Скорость за тик не следует безоговорочно превращать во время до срыва: действуют иммунитет, условия взгляда и эффекты."
+      ]
+    }
+  ],
+  "images": [],
+  "notes": [],
+  "evidence": [
+    {
+      "path": "src/main/java/org/example/maniacrevolution/nightmare/NightmareConfig.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/nightmare/NightmareManager.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/character/maniac/KeeperOfNightmaresClass.java"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+    }
+  ]
+}

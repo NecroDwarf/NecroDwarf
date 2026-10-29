@@ -1,0 +1,41 @@
+{
+  "id": "item:plague-lantern",
+  "description": "Лампа Чумного доктора связана с чумой и броском сгустка.",
+  "sections": [
+    {
+      "title": "Получение и доступность",
+      "paragraphs": [
+        "Связан с персонажем Чумной доктор. Настоящее наличие в инвентаре зависит от выдачи и правил конкретного матча; одно превью не является гарантией."
+      ]
+    },
+    {
+      "title": "Как использовать",
+      "paragraphs": [
+        "ПКМ создаёт PlagueOrbEntity при достаточной мане. Пассивная аура и заражение обрабатываются отдельно от активного снаряда."
+      ]
+    }
+  ],
+  "notes": [
+    "Сложный/custom renderer: корректный автоматический рендер не подтверждён. Показано текстовое представление, а не атлас."
+  ],
+  "evidence": [
+    {
+      "path": "src/main/java/org/example/maniacrevolution/ModItems.java"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/item/PlagueLanternItem.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/event/PlagueLanternEventHandler.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/character/maniac/PlagueDoctorClass.java"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/models/item/plague_lantern.json"
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "id": "mechanic:freddy-generator",
+  "description": "Генератор — отдельный игровой блок, связанный с ресурсами Фредди.",
+  "sections": [
+    {
+      "title": "Как это работает",
+      "paragraphs": [
+        "Найдите или установите предусмотренный генератор. Взаимодействие с его блоком и сохранёнными данными выполняется на сервере.",
+        "Фредди также использует микрофон и музыкальную волну; их стоимость и оглушение описаны в отдельной способности."
+      ]
+    },
+    {
+      "title": "Результат и влияние на матч",
+      "paragraphs": [
+        "Генератор и музыкальная способность составляют разные части набора персонажа."
+      ]
+    },
+    {
+      "title": "Условия и ограничения",
+      "paragraphs": [
+        "Точное наличие генераторов на карте и стартовая выдача блока не следуют из одного превью."
+      ]
+    }
+  ],
+  "images": [
+    {
+      "file": "guide-freddy-generator-0.webp",
+      "width": 185,
+      "height": 209,
+      "caption": "Генератор Фредди в руководстве."
+    }
+  ],
+  "notes": [],
+  "evidence": [
+    {
+      "path": "src/main/java/org/example/maniacrevolution/block/FNAFGeneratorBlock.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/block/entity/FNAFGeneratorBlockEntity.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/character/maniac/FreddyBearClass.java"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+    }
+  ]
+}

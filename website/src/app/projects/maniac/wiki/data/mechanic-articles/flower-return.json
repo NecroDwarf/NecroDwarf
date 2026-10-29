@@ -1,0 +1,41 @@
+{
+  "id": "mechanic:flower-return",
+  "description": "Незабудка создаёт личную точку, к которой можно вернуться после подготовки.",
+  "sections": [
+    {
+      "title": "Как это работает",
+      "paragraphs": [
+        "Установите личный цветок на подходящей поверхности. Сохранённая точка принадлежит владельцу и используется связанным перком.",
+        "Активируйте возврат и завершите подготовку. Движение и урон могут прервать процесс, а маньяк может уничтожить цветок."
+      ]
+    },
+    {
+      "title": "Результат и влияние на матч",
+      "paragraphs": [
+        "Успешное завершение переносит игрока к своей точке. Для успешного и прерванного применения действуют разные ограничения."
+      ]
+    },
+    {
+      "title": "Условия и ограничения",
+      "paragraphs": [
+        "Смотрите параметры source-снимка в статье перка. Хроника Flower Cleaning сохраняет исторические значения отдельно."
+      ]
+    }
+  ],
+  "images": [],
+  "notes": [],
+  "evidence": [
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/perks/survivor/ForgetMeNotPerk.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/forgetmenot/ForgetMeNotManager.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/item/ForgetMeNotItem.java"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+    }
+  ]
+}

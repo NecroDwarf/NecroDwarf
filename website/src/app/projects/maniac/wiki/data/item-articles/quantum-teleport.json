@@ -1,0 +1,57 @@
+{
+  "id": "item:quantum-teleport",
+  "description": "Устройство Учёного меняет местами с выбранным игроком.",
+  "sections": [
+    {
+      "title": "Получение и доступность",
+      "paragraphs": [
+        "Связан с персонажем Учёный. Настоящее наличие в инвентаре зависит от выдачи и правил конкретного матча; одно превью не является гарантией."
+      ]
+    },
+    {
+      "title": "Как использовать",
+      "paragraphs": [
+        "Выберите подходящую цель в пределах дальности сканирования и используйте устройство. После успешного обмена применяется защитный эффект; стоимость и cooldown — в статье способности."
+      ]
+    }
+  ],
+  "notes": ["Статичный рендер оригинальных cuboid elements с GUI transform."],
+  "evidence": [
+    {
+      "path": "src/main/java/org/example/maniacrevolution/ModItems.java"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/item/NetherSwapItem.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/character/survivor/ScientistClass.java"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/models/item/nether_swap.json"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/item/tube.png"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/item/bottle.png"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/item/top.png"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/item/small_tube.png"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/item/blue_star.png"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/item/red_star.png"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/item/handle.png"
+    }
+  ]
+}

@@ -2,6 +2,8 @@ import type { EntityId, EntityKind } from "./types";
 import { characterRouteMeta } from "../route-metadata";
 import { perkRouteMeta } from "../perk-route-metadata";
 import { abilityRouteMeta } from "../ability-route-metadata";
+import { itemRouteMeta } from "../item-route-metadata";
+import { mechanicRouteMeta } from "../mechanic-route-metadata";
 const sections: Record<EntityKind, string> = {
   character: "characters",
   ability: "abilities",
@@ -16,6 +18,14 @@ export function plannedEntityPath(kind: EntityKind, slug: string) {
 export const publishedEntityRoutes: Readonly<
   Partial<Record<EntityId, string>>
 > = Object.fromEntries([
+  ...itemRouteMeta.map((item) => [
+    item.id,
+    plannedEntityPath("item", item.slug),
+  ]),
+  ...mechanicRouteMeta.map((m) => [
+    m.id,
+    plannedEntityPath("mechanic", m.slug),
+  ]),
   ...characterRouteMeta.map((c) => [
     c.id,
     plannedEntityPath("character", c.slug),

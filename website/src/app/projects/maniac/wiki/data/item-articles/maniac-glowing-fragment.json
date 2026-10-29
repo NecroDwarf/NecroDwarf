@@ -1,0 +1,39 @@
+{
+  "id": "item:maniac-glowing-fragment",
+  "description": "Ингредиент зелья свечения.",
+  "sections": [
+    {
+      "title": "Получение и доступность",
+      "paragraphs": [
+        "Связан с персонажем Алхимик. Настоящее наличие в инвентаре зависит от выдачи и правил конкретного матча; одно превью не является гарантией."
+      ]
+    },
+    {
+      "title": "Как использовать",
+      "paragraphs": [
+        "Используется в зельеварке с основой AWKWARD. ModBrewingRecipes регистрирует переход для этого ингредиента; результат может отличаться формой бутылки от входной основы."
+      ]
+    }
+  ],
+  "notes": ["Оригинальная плоская layer0-текстура модели."],
+  "evidence": [
+    {
+      "path": "src/main/java/org/example/maniacrevolution/ModItems.java"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/brewing/ModBrewingRecipes.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/character/survivor/AlchemistClass.java"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/models/item/maniac_glowing_fragment.json"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/item/maniac_glowing_fragment.png"
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "id": "mechanic:shaman-spirits",
+  "description": "Шаман использует размещённый тотем для информации и души предков для лечения.",
+  "sections": [
+    {
+      "title": "Как это работает",
+      "paragraphs": [
+        "Разместите тотем на подходящей позиции. Его игровая роль — находить и подсвечивать подходящих маньяков.",
+        "Используйте душу предков для лечения. Формула учитывает погибших выживших-наблюдателей, поэтому ценность меняется по ходу матча."
+      ]
+    },
+    {
+      "title": "Результат и влияние на матч",
+      "paragraphs": [
+        "Тотем даёт информацию команде, а расходник восстанавливает здоровье по вычисляемой формуле."
+      ]
+    },
+    {
+      "title": "Условия и ограничения",
+      "paragraphs": [
+        "Наличие записи в наборе Шамана не гарантирует конкретное стартовое количество."
+      ]
+    }
+  ],
+  "images": [],
+  "notes": [],
+  "evidence": [
+    {
+      "path": "src/main/java/org/example/maniacrevolution/item/TotemSpawnItem.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/item/AncestorSoulItem.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/character/survivor/ShamanClass.java"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+    }
+  ]
+}

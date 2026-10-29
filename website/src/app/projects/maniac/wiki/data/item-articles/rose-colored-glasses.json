@@ -1,0 +1,38 @@
+{
+  "id": "item:rose-colored-glasses",
+  "description": "Личные очки защищают от определённых отрицательных состояний.",
+  "sections": [
+    {
+      "title": "Получение и доступность",
+      "paragraphs": [
+        "Создаётся или выдаётся логикой связанного перка; применяются его фазовые ограничения и условия."
+      ]
+    },
+    {
+      "title": "Как использовать",
+      "paragraphs": [
+        "Держите очки во второй руке. Защита расходует прочность по правилам RoseColoredGlassesManager; предмет привязан к владельцу, не ремонтируется и не передаётся."
+      ]
+    }
+  ],
+  "notes": [
+    "Сложный/custom renderer: корректный автоматический рендер не подтверждён. Показано текстовое представление, а не атлас."
+  ],
+  "evidence": [
+    {
+      "path": "src/main/java/org/example/maniacrevolution/ModItems.java"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/item/RoseColoredGlassesItem.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/roseglasses/RoseColoredGlassesManager.java"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/models/item/rose_colored_glasses.json"
+    }
+  ]
+}

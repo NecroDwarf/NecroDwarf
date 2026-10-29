@@ -1,0 +1,41 @@
+{
+  "id": "item:nightmare-lighter",
+  "description": "Переносной свет внутри кошмарных испытаний.",
+  "sections": [
+    {
+      "title": "Получение и доступность",
+      "paragraphs": [
+        "Связан с персонажем Хранитель кошмаров. Настоящее наличие в инвентаре зависит от выдачи и правил конкретного матча; одно превью не является гарантией."
+      ]
+    },
+    {
+      "title": "Как использовать",
+      "paragraphs": [
+        "Переключите зажигалку и держите её в руке. Включённый предмет расходует запас топлива с интервалом 10 тиков; максимум — 1200. При исчерпании топлива предмет исчезает."
+      ]
+    }
+  ],
+  "notes": [
+    "Переиспользован существующий рендер открытой оригинальной модели."
+  ],
+  "evidence": [
+    {
+      "path": "src/main/java/org/example/maniacrevolution/ModItems.java"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/item/NightmareLighterItem.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/nightmare/NightmareConfig.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/nightmare/NightmareManager.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/character/maniac/KeeperOfNightmaresClass.java"
+    }
+  ]
+}

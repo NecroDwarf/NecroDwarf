@@ -1,0 +1,32 @@
+{
+  "id": "item:soul-essence",
+  "description": "Ингредиент ремонта брони Некроманта.",
+  "sections": [
+    {
+      "title": "Получение и доступность",
+      "paragraphs": [
+        "Связан с персонажем Некромант. Настоящее наличие в инвентаре зависит от выдачи и правил конкретного матча; одно превью не является гарантией."
+      ]
+    },
+    {
+      "title": "Как использовать",
+      "paragraphs": [
+        "Указан как repairIngredient материала NECROMANCER. Надёжный способ получения в исследованном коде не установлен; предмет не объявлен стартовой выдачей."
+      ]
+    }
+  ],
+  "notes": [
+    "Модель с точным registry ID отсутствует. Текстурный атлас не показан как иконка."
+  ],
+  "evidence": [
+    {
+      "path": "src/main/java/org/example/maniacrevolution/ModItems.java"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/character/survivor/NecromancerClass.java"
+    }
+  ]
+}

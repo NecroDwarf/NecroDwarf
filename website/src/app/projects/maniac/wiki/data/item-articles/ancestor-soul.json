@@ -1,0 +1,39 @@
+{
+  "id": "item:ancestor-soul",
+  "description": "Лечит пользователя с учётом погибших выживших.",
+  "sections": [
+    {
+      "title": "Получение и доступность",
+      "paragraphs": [
+        "Связан с персонажем Шаман. Настоящее наличие в инвентаре зависит от выдачи и правил конкретного матча; одно превью не является гарантией."
+      ]
+    },
+    {
+      "title": "Как использовать",
+      "paragraphs": [
+        "Размер лечения вычисляется из базовых 2 HP и прибавки 2 HP за подходящего выжившего-наблюдателя. Число погибших — состояние матча, поэтому итог не фиксирован."
+      ]
+    }
+  ],
+  "notes": ["Статичный рендер оригинальных cuboid elements с GUI transform."],
+  "evidence": [
+    {
+      "path": "src/main/java/org/example/maniacrevolution/ModItems.java"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/item/AncestorSoulItem.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/character/survivor/ShamanClass.java"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/models/item/ancestor_soul.json"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/item/soul_texture.png"
+    }
+  ]
+}

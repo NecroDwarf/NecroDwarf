@@ -1,0 +1,39 @@
+{
+  "id": "item:medical-tablet",
+  "description": "Показывает здоровье союзника и открывает медицинский интерфейс.",
+  "sections": [
+    {
+      "title": "Получение и доступность",
+      "paragraphs": [
+        "Связан с персонажем Доктор. Настоящее наличие в инвентаре зависит от выдачи и правил конкретного матча; одно превью не является гарантией."
+      ]
+    },
+    {
+      "title": "Как использовать",
+      "paragraphs": [
+        "ПКМ по подходящему выжившему в пределах поиска 20 блоков показывает его здоровье; если цель не выбрана, открывается планшет. Отслеживание и его ограничения задаёт обработчик медицинской системы."
+      ]
+    }
+  ],
+  "notes": ["Статичный рендер оригинальных cuboid elements с GUI transform."],
+  "evidence": [
+    {
+      "path": "src/main/java/org/example/maniacrevolution/ModItems.java"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/item/MedicTabletItem.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/character/survivor/DoctorClass.java"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/models/item/medic_tablet.json"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/item/table_texture.png"
+    }
+  ]
+}

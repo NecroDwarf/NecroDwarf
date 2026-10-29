@@ -8,8 +8,10 @@ import { flowerAssets } from "./flower-assets";
 import { characterAbilityAssets } from "./character-ability-assets";
 import { registeredPerkAssets } from "./registered-perk-assets";
 import { ghostAbilityAsset } from "./ghost-ability-asset";
+import { systemAssets } from "./system-assets";
 
 export const entityAssets: Readonly<Record<string, EntityAsset>> = {
+  ...systemAssets,
   ...flowerAssets,
   ...characterAbilityAssets,
   ...registeredPerkAssets,

@@ -1,0 +1,781 @@
+[
+  {
+    "id": "mechanic:match-preparation",
+    "slug": "match-preparation",
+    "name": "Подготовка и начало матча",
+    "category": "match",
+    "description": "Готовность игроков, применение настроек и запуск раунда — отдельные шаги.",
+    "relatedIds": [
+      "mechanic:match-phases",
+      "mechanic:match-timer",
+      "item:awakening-needle"
+    ],
+    "stats": [],
+    "evidence": [
+      {
+        "path": "src/main/java/org/example/maniacrevolution/pregame/PreGameReadyManager.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/pregame/PreGameCountdownTask.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/game/GameManager.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/gui/pages/TutorialPage.java"
+      },
+      {
+        "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+      }
+    ]
+  },
+  {
+    "id": "mechanic:match-phases",
+    "slug": "match-phases",
+    "name": "Фазы матча",
+    "category": "match",
+    "description": "Фаза определяет доступность перков и изменение правил охоты.",
+    "relatedIds": ["mechanic:hacking", "mechanic:match-timer"],
+    "stats": [],
+    "evidence": [
+      {
+        "path": "src/main/java/org/example/maniacrevolution/game/GameManager.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/perk/PerkPhase.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/perk/Perk.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/hack/HackConfig.java"
+      },
+      {
+        "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+      }
+    ]
+  },
+  {
+    "id": "mechanic:match-timer",
+    "slug": "match-timer",
+    "name": "Таймер раунда",
+    "category": "match",
+    "description": "Обратный отсчёт синхронизируется с клиентом и управляет некоторыми переходами.",
+    "relatedIds": ["mechanic:match-phases", "mechanic:objectives-and-escape"],
+    "stats": [],
+    "evidence": [
+      {
+        "path": "src/main/java/org/example/maniacrevolution/game/GameManager.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/settings/GameSettings.java"
+      },
+      {
+        "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+      }
+    ]
+  },
+  {
+    "id": "mechanic:objectives-and-escape",
+    "slug": "objectives-and-escape",
+    "name": "Цели, побег и завершение",
+    "category": "match",
+    "description": "Выжившие выполняют компьютеры, а окончательные условия завершения зависят и от карты.",
+    "relatedIds": [
+      "mechanic:hacking",
+      "mechanic:map-interactions",
+      "mechanic:match-timer"
+    ],
+    "stats": [],
+    "evidence": [
+      {
+        "path": "src/main/java/org/example/maniacrevolution/hack/HackConfig.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/hack/HackManager.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/game/GameManager.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/gui/pages/TutorialPage.java"
+      },
+      {
+        "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+      }
+    ]
+  },
+  {
+    "id": "mechanic:hacking",
+    "slug": "hacking",
+    "name": "Компьютеры и взлом",
+    "category": "core",
+    "description": "Взлом складывается из работы участников, проверок реакции и специальных модификаторов.",
+    "relatedIds": [
+      "mechanic:qte",
+      "mechanic:match-phases",
+      "item:sber-sprout",
+      "item:blue-color-card"
+    ],
+    "stats": [],
+    "evidence": [
+      {
+        "path": "src/main/java/org/example/maniacrevolution/hack/ComputerBlock.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/hack/HackManager.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/hack/HackSession.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/hack/HackConfig.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/sbersprout/SberSproutManager.java"
+      },
+      {
+        "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+      }
+    ]
+  },
+  {
+    "id": "mechanic:qte",
+    "slug": "qte",
+    "name": "Проверки реакции",
+    "category": "core",
+    "description": "Во время взлома нужно вовремя подтвердить попадание индикатора в целевую область.",
+    "relatedIds": [
+      "mechanic:hacking",
+      "perk:quick-reflexes",
+      "perk:reality-anchor",
+      "item:awakening-needle"
+    ],
+    "stats": [],
+    "evidence": [
+      {
+        "path": "src/main/java/org/example/maniacrevolution/hack/HackSession.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/hack/HackManager.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/hack/HackConfig.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/gui/pages/TutorialPage.java"
+      },
+      {
+        "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+      }
+    ]
+  },
+  {
+    "id": "mechanic:downed",
+    "slug": "downed",
+    "name": "Нокдаун и подъём",
+    "category": "match",
+    "description": "Нокдаун даёт шанс на помощь вместо немедленного окончательного выбывания.",
+    "relatedIds": [
+      "character:doctor",
+      "item:bandages",
+      "mechanic:medical-care"
+    ],
+    "stats": [],
+    "evidence": [
+      {
+        "path": "src/main/java/org/example/maniacrevolution/downed/DownedData.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/downed/DownedEventHandler.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/gui/pages/TutorialPage.java"
+      },
+      {
+        "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+      }
+    ]
+  },
+  {
+    "id": "mechanic:map-interactions",
+    "slug": "map-interactions",
+    "name": "Двери, люки и вентиляция",
+    "category": "core",
+    "description": "Особые проходы карты меняют маршрут погони.",
+    "relatedIds": ["mechanic:objectives-and-escape"],
+    "stats": [],
+    "evidence": [
+      {
+        "path": "src/main/java/org/example/maniacrevolution/gui/pages/TutorialPage.java"
+      },
+      {
+        "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+      }
+    ]
+  },
+  {
+    "id": "mechanic:mana",
+    "slug": "mana",
+    "name": "Мана",
+    "category": "resource",
+    "description": "Общий ресурс для активируемых перков и способностей с индивидуальными затратами.",
+    "relatedIds": ["item:clarity", "mechanic:status-effects"],
+    "stats": [],
+    "evidence": [
+      {
+        "path": "src/main/java/org/example/maniacrevolution/mana/ManaData.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/event/ManaEvents.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/perk/Perk.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/effect/ManaFlowEffect.java"
+      },
+      {
+        "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+      }
+    ]
+  },
+  {
+    "id": "mechanic:sanity",
+    "slug": "sanity",
+    "name": "Рассудок",
+    "category": "resource",
+    "description": "Хранитель снижает рассудок взглядом; срыв открывает путь в кошмарное испытание.",
+    "relatedIds": [
+      "character:keeper-of-nightmares",
+      "ability:abyss-gaze",
+      "ability:concentrated-nightmare",
+      "mechanic:nightmare-trials",
+      "perk:reality-anchor"
+    ],
+    "stats": [],
+    "evidence": [
+      {
+        "path": "src/main/java/org/example/maniacrevolution/nightmare/NightmareConfig.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/nightmare/NightmareManager.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/character/maniac/KeeperOfNightmaresClass.java"
+      },
+      {
+        "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+      }
+    ]
+  },
+  {
+    "id": "mechanic:nightmare-trials",
+    "slug": "nightmare-trials",
+    "name": "Кошмарные испытания",
+    "category": "character-system",
+    "description": "Похищенный выживший проходит отдельное испытание, пока союзники могут помочь через кокон.",
+    "relatedIds": [
+      "mechanic:sanity",
+      "character:keeper-of-nightmares",
+      "item:nightmare-lighter",
+      "item:awakening-needle",
+      "perk:reality-anchor"
+    ],
+    "stats": [],
+    "evidence": [
+      {
+        "path": "src/main/java/org/example/maniacrevolution/nightmare/NightmareConfig.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/nightmare/NightmareManager.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/nightmare/NightmareTrialBuilder.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/character/maniac/KeeperOfNightmaresClass.java"
+      },
+      {
+        "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+      }
+    ]
+  },
+  {
+    "id": "mechanic:flower-return",
+    "slug": "flower-return",
+    "name": "Возврат к цветку",
+    "category": "perk-system",
+    "description": "Незабудка создаёт личную точку, к которой можно вернуться после подготовки.",
+    "relatedIds": ["perk:forget-me-not", "item:forget-me-not"],
+    "stats": [],
+    "evidence": [
+      {
+        "path": "src/main/java/org/example/maniacrevolution/perk/perks/survivor/ForgetMeNotPerk.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/forgetmenot/ForgetMeNotManager.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/item/ForgetMeNotItem.java"
+      },
+      {
+        "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+      }
+    ]
+  },
+  {
+    "id": "mechanic:addiction",
+    "slug": "addiction",
+    "name": "Зависимость и передозировка",
+    "category": "character-system",
+    "description": "Мефедронщик управляет растущей зависимостью, шприцами и дымом.",
+    "relatedIds": [
+      "character:mefedronshchik",
+      "item:adrenaline-syringe",
+      "item:bong"
+    ],
+    "stats": [],
+    "evidence": [
+      {
+        "path": "src/main/java/org/example/maniacrevolution/capability/AddictionCapability.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/event/AddictionEventHandler.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/item/SyringeItem.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/entity/BongCloudEntity.java"
+      },
+      {
+        "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+      }
+    ]
+  },
+  {
+    "id": "mechanic:casino",
+    "slug": "casino",
+    "name": "Монетки и казино",
+    "category": "character-system",
+    "description": "Додепович рискует случайным исходом монетки или результатом игрового автомата.",
+    "relatedIds": [
+      "character:dodepovich",
+      "item:dodepovich-coins",
+      "item:slot-machine",
+      "item:coin-elusiveness",
+      "item:coin-insight",
+      "item:coin-shackles",
+      "item:coin-health",
+      "item:coin-eagle",
+      "item:coin-debt",
+      "item:coin-reroll",
+      "item:coin-fate"
+    ],
+    "stats": [],
+    "evidence": [
+      {
+        "path": "src/main/java/org/example/maniacrevolution/dodepovich/DodepovichCasinoManager.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/dodepovich/DodepovichCoin.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/dodepovich/SlotMachineResult.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/item/DodepovichCoinItem.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/block/SlotMachineBlock.java"
+      },
+      {
+        "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+      }
+    ]
+  },
+  {
+    "id": "mechanic:alchemy",
+    "slug": "alchemy",
+    "name": "Алхимия и рецепты",
+    "category": "character-system",
+    "description": "Ингредиенты Алхимика превращают зелья через зарегистрированные рецепты варки.",
+    "relatedIds": [
+      "character:alchemist",
+      "item:alchemy-kit",
+      "item:brewing-stand",
+      "item:recipe-book"
+    ],
+    "stats": [],
+    "evidence": [
+      {
+        "path": "src/main/java/org/example/maniacrevolution/brewing/ModBrewingRecipes.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/potion/ModPotions.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/character/survivor/AlchemistClass.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/item/RecipeBookItem.java"
+      },
+      {
+        "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+      }
+    ]
+  },
+  {
+    "id": "mechanic:resurrection",
+    "slug": "resurrection",
+    "name": "Воскрешение Некроманта",
+    "category": "character-system",
+    "description": "Завершённый ритуал посоха открывает выбор подходящей погибшей души.",
+    "relatedIds": [
+      "character:necromancer",
+      "item:dead-staff",
+      "item:soul-essence"
+    ],
+    "stats": [],
+    "evidence": [
+      {
+        "path": "src/main/java/org/example/maniacrevolution/item/NecromancerStaffItem.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/network/packets/ResurrectPlayerPacket.java"
+      },
+      {
+        "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+      }
+    ]
+  },
+  {
+    "id": "mechanic:plague",
+    "slug": "plague",
+    "name": "Чума",
+    "category": "character-system",
+    "description": "Чумной доктор заражает цели через систему чумы, ауру и сгусток.",
+    "relatedIds": [
+      "character:plague-doctor",
+      "item:plague-lantern",
+      "ability:plague-orb"
+    ],
+    "stats": [],
+    "evidence": [
+      {
+        "path": "src/main/java/org/example/maniacrevolution/capability/PlagueCapability.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/event/PlagueLanternEventHandler.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/entity/PlagueOrbEntity.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/item/PlagueLanternItem.java"
+      },
+      {
+        "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+      }
+    ]
+  },
+  {
+    "id": "mechanic:ghost-states",
+    "slug": "ghost-states",
+    "name": "Невидимость и одержимость",
+    "category": "character-system",
+    "description": "Призрак чередует скрытие себя с управлением движением чужого тела.",
+    "relatedIds": [
+      "character:ghost",
+      "item:toy-knife",
+      "item:ghost-hand",
+      "item:ghost-armor",
+      "ability:ghost-possession",
+      "ability:phantom-veil"
+    ],
+    "stats": [],
+    "evidence": [
+      {
+        "path": "src/main/java/org/example/maniacrevolution/ghost/GhostStealthManager.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/ghost/GhostPossessionManager.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/ghost/GhostLoadoutManager.java"
+      },
+      {
+        "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+      }
+    ]
+  },
+  {
+    "id": "mechanic:medical-care",
+    "slug": "medical-care",
+    "name": "Лечение и медицинские устройства",
+    "category": "character-system",
+    "description": "Доктор сочетает расходуемое лечение, информацию планшета и разделение урона маской.",
+    "relatedIds": [
+      "character:doctor",
+      "item:bandages",
+      "item:medical-tablet",
+      "item:medical-mask",
+      "ability:damage-transfer",
+      "mechanic:downed"
+    ],
+    "stats": [],
+    "evidence": [
+      {
+        "path": "src/main/java/org/example/maniacrevolution/item/BandageItem.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/item/MedicTabletItem.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/event/MedicActiveAbility.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/config/MedicSystemConfig.java"
+      },
+      {
+        "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+      }
+    ]
+  },
+  {
+    "id": "mechanic:shaman-spirits",
+    "slug": "shaman-spirits",
+    "name": "Тотемы и души предков",
+    "category": "character-system",
+    "description": "Шаман использует размещённый тотем для информации и души предков для лечения.",
+    "relatedIds": [
+      "character:shaman",
+      "item:ancestral-totem",
+      "item:ancestor-soul"
+    ],
+    "stats": [],
+    "evidence": [
+      {
+        "path": "src/main/java/org/example/maniacrevolution/item/TotemSpawnItem.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/item/AncestorSoulItem.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/character/survivor/ShamanClass.java"
+      },
+      {
+        "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+      }
+    ]
+  },
+  {
+    "id": "mechanic:paint",
+    "slug": "paint",
+    "name": "Лужи краски",
+    "category": "perk-system",
+    "description": "Банка связанного перка создаёт личные лужи с отдельными правилами действия.",
+    "relatedIds": ["item:paint-can", "perk:the-paint-thickens"],
+    "stats": [],
+    "evidence": [
+      {
+        "path": "src/main/java/org/example/maniacrevolution/paint/PaintPuddleManager.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/item/PaintCanItem.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/perk/perks/maniac/ThePaintThickensPerk.java"
+      },
+      {
+        "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+      }
+    ]
+  },
+  {
+    "id": "mechanic:orchid-illusion",
+    "slug": "orchid-illusion",
+    "name": "Запись маршрута и иллюзия",
+    "category": "perk-system",
+    "description": "Орхидея записывает движение владельца и воспроизводит его иллюзией.",
+    "relatedIds": ["item:pink-orchid", "perk:pink-orchid"],
+    "stats": [],
+    "evidence": [
+      {
+        "path": "src/main/java/org/example/maniacrevolution/pinkorchid/PinkOrchidManager.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/pinkorchid/PinkOrchidRouteFrame.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/entity/PinkOrchidIllusionEntity.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/item/PinkOrchidItem.java"
+      },
+      {
+        "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+      }
+    ]
+  },
+  {
+    "id": "mechanic:color-roulette",
+    "slug": "color-roulette",
+    "name": "Цветная рулетка",
+    "category": "perk-system",
+    "description": "Перк выдаёт временную цветную карту с действием, зависящим от стороны.",
+    "relatedIds": [
+      "perk:color-roulette",
+      "item:red-color-card",
+      "item:blue-color-card",
+      "item:green-color-card",
+      "mechanic:hacking"
+    ],
+    "stats": [],
+    "evidence": [
+      {
+        "path": "src/main/java/org/example/maniacrevolution/colorroulette/ColorRouletteManager.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/colorroulette/ColorCard.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/item/ColorCardItem.java"
+      },
+      {
+        "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+      }
+    ]
+  },
+  {
+    "id": "mechanic:freddy-generator",
+    "slug": "freddy-generator",
+    "name": "Фредди и генератор",
+    "category": "character-system",
+    "description": "Генератор — отдельный игровой блок, связанный с ресурсами Фредди.",
+    "relatedIds": [
+      "character:freddy-bear",
+      "item:generator",
+      "item:microphone",
+      "ability:musical-wave"
+    ],
+    "stats": [],
+    "evidence": [
+      {
+        "path": "src/main/java/org/example/maniacrevolution/block/FNAFGeneratorBlock.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/block/entity/FNAFGeneratorBlockEntity.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/character/maniac/FreddyBearClass.java"
+      },
+      {
+        "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+      }
+    ]
+  },
+  {
+    "id": "mechanic:traps",
+    "slug": "traps",
+    "name": "Соль и размещаемые ловушки",
+    "category": "core",
+    "description": "Размещение и наступание на соль обрабатываются разными частями системы.",
+    "relatedIds": ["character:necromancer", "item:salt"],
+    "stats": [],
+    "evidence": [
+      {
+        "path": "src/main/java/org/example/maniacrevolution/item/SaltItem.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/block/SaltBlock.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/util/SaltTracker.java"
+      },
+      {
+        "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+      }
+    ]
+  },
+  {
+    "id": "mechanic:status-effects",
+    "slug": "status-effects",
+    "name": "Статусные эффекты и ограничения",
+    "category": "resource",
+    "description": "Состояния меняют ресурсы, передвижение и доступность действий.",
+    "relatedIds": ["mechanic:mana", "item:rose-colored-glasses"],
+    "stats": [],
+    "evidence": [
+      {
+        "path": "src/main/java/org/example/maniacrevolution/effect/ModEffects.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/perk/Perk.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/roseglasses/RoseColoredGlassesManager.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/config/GameRulesConfig.java"
+      },
+      {
+        "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+      }
+    ]
+  },
+  {
+    "id": "mechanic:agent-shop",
+    "slug": "agent-shop",
+    "name": "Магазин Агента 47",
+    "category": "character-system",
+    "description": "Персональный планшет открывает покупки, проверяемые сервером.",
+    "relatedIds": [
+      "character:agent",
+      "item:agent47-tablet",
+      "item:agent-pistol",
+      "item:agent-knife"
+    ],
+    "stats": [],
+    "evidence": [
+      {
+        "path": "src/main/java/org/example/maniacrevolution/item/Agent47TabletItem.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/character/maniac/AgentClass.java"
+      },
+      {
+        "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+      }
+    ]
+  },
+  {
+    "id": "mechanic:ursa-stacks",
+    "slug": "ursa-stacks",
+    "name": "Урса: атаки и ярость",
+    "category": "character-system",
+    "description": "Набор Урсы сочетает коготь, прыжок и расходуемый улей.",
+    "relatedIds": [
+      "character:ursa",
+      "item:beast-claw",
+      "item:beehive-food",
+      "ability:beast-leap"
+    ],
+    "stats": [],
+    "evidence": [
+      {
+        "path": "src/main/java/org/example/maniacrevolution/character/maniac/UrsaClass.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/item/BeastClawItem.java"
+      },
+      {
+        "path": "src/main/java/org/example/maniacrevolution/item/BeehiveItem.java"
+      },
+      {
+        "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+      }
+    ]
+  }
+]

@@ -18,13 +18,13 @@
     },
     {
       "path": "src/main/java/org/example/maniacrevolution/character/maniac/GhostClass.java",
-      "bytes": 1708,
-      "sha256": "26fccd7b981846346e3c780d2f5ecd01f44914c79fefd845a974e3399c3aa72e"
+      "sha256": "26fccd7b981846346e3c780d2f5ecd01f44914c79fefd845a974e3399c3aa72e",
+      "bytes": 1708
     },
     {
       "path": "src/main/java/org/example/maniacrevolution/character/survivor/DodepovichClass.java",
-      "bytes": 1720,
-      "sha256": "2482f7924c7370fc1477c63b50e594667aef2c6b1478dfa66fad62277fb8a622"
+      "sha256": "2482f7924c7370fc1477c63b50e594667aef2c6b1478dfa66fad62277fb8a622",
+      "bytes": 1720
     },
     {
       "path": "src/main/java/org/example/maniacrevolution/nightmare/NightmareConfig.java",
@@ -68,8 +68,8 @@
     },
     {
       "path": "src/main/java/org/example/maniacrevolution/item/NightmareLighterItem.java",
-      "bytes": 7734,
-      "sha256": "4ed869577e1a428a1c6f912c5429b4472a6a9e3fcb914b1e7ce01d6c5a40cd08"
+      "sha256": "4ed869577e1a428a1c6f912c5429b4472a6a9e3fcb914b1e7ce01d6c5a40cd08",
+      "bytes": 7734
     },
     {
       "path": "src/main/java/org/example/maniacrevolution/perk/perks/common/ColorRoulettePerk.java",
@@ -143,8 +143,8 @@
     },
     {
       "path": "src/main/java/org/example/maniacrevolution/ModItems.java",
-      "bytes": 15689,
-      "sha256": "04d2deec1766cf5335ca0c30e709986b50b4b25e2885ce36474e157d2b9698fe"
+      "sha256": "04d2deec1766cf5335ca0c30e709986b50b4b25e2885ce36474e157d2b9698fe",
+      "bytes": 15689
     },
     {
       "path": "src/main/java/org/example/maniacrevolution/character/CharacterClass.java",
@@ -163,63 +163,63 @@
     },
     {
       "path": "src/main/java/org/example/maniacrevolution/character/maniac/AgentClass.java",
-      "bytes": 1066,
-      "sha256": "540965639e6dbda8ad377b382a207838f809a920280cf26d5a2e5c1689a68a81"
+      "sha256": "540965639e6dbda8ad377b382a207838f809a920280cf26d5a2e5c1689a68a81",
+      "bytes": 1066
     },
     {
       "path": "src/main/java/org/example/maniacrevolution/character/maniac/DeathClass.java",
-      "bytes": 1245,
-      "sha256": "47c417901e5835482fc74a19c569a32b213a168333b6b4f95015a205ac88424c"
+      "sha256": "47c417901e5835482fc74a19c569a32b213a168333b6b4f95015a205ac88424c",
+      "bytes": 1245
     },
     {
       "path": "src/main/java/org/example/maniacrevolution/character/maniac/FreddyBearClass.java",
-      "bytes": 1211,
-      "sha256": "9ab65e2010bb4ba639b7bbfb54980e9a9e64f8c80d72e6c3fd97882865c972d6"
+      "sha256": "9ab65e2010bb4ba639b7bbfb54980e9a9e64f8c80d72e6c3fd97882865c972d6",
+      "bytes": 1211
     },
     {
       "path": "src/main/java/org/example/maniacrevolution/character/maniac/PlagueDoctorClass.java",
-      "bytes": 1375,
-      "sha256": "5346e4d14a0fcea47aa247c520c4baa296fdd80a861987f1f0b3edad2ed034c4"
+      "sha256": "5346e4d14a0fcea47aa247c520c4baa296fdd80a861987f1f0b3edad2ed034c4",
+      "bytes": 1375
     },
     {
       "path": "src/main/java/org/example/maniacrevolution/character/maniac/PudgeClass.java",
-      "bytes": 1022,
-      "sha256": "9e781ebf650486f787839c0a9508108d21502fd0fd16f766a61febc65fe4b455"
+      "sha256": "9e781ebf650486f787839c0a9508108d21502fd0fd16f766a61febc65fe4b455",
+      "bytes": 1022
     },
     {
       "path": "src/main/java/org/example/maniacrevolution/character/maniac/UrsaClass.java",
-      "bytes": 1597,
-      "sha256": "db17f9cd83da64a961809faa838502cc79381e8e9874a469253f44b83ab95985"
+      "sha256": "db17f9cd83da64a961809faa838502cc79381e8e9874a469253f44b83ab95985",
+      "bytes": 1597
     },
     {
       "path": "src/main/java/org/example/maniacrevolution/character/survivor/AlchemistClass.java",
-      "bytes": 1512,
-      "sha256": "ae7214f3d3a7b2aaf98b14f8d5d436b01d6e4b60218edd36bcba31949e40f3b8"
+      "sha256": "ae7214f3d3a7b2aaf98b14f8d5d436b01d6e4b60218edd36bcba31949e40f3b8",
+      "bytes": 1512
     },
     {
       "path": "src/main/java/org/example/maniacrevolution/character/survivor/DoctorClass.java",
-      "bytes": 1285,
-      "sha256": "7067bacbb6853e183c52e22932af5931e7f16c2aef7c2601be0bbb76c5dded41"
+      "sha256": "7067bacbb6853e183c52e22932af5931e7f16c2aef7c2601be0bbb76c5dded41",
+      "bytes": 1285
     },
     {
       "path": "src/main/java/org/example/maniacrevolution/character/survivor/MefedronshchikClass.java",
-      "bytes": 2787,
-      "sha256": "785bf19d3fd65e67e9ce98e6caf983bc880eca9889fbcd0280d8e56f3c2ccfbd"
+      "sha256": "785bf19d3fd65e67e9ce98e6caf983bc880eca9889fbcd0280d8e56f3c2ccfbd",
+      "bytes": 2787
     },
     {
       "path": "src/main/java/org/example/maniacrevolution/character/survivor/NecromancerClass.java",
-      "bytes": 1206,
-      "sha256": "3d4c2cc7345f1b69716cc8c4ae82b84fbeeadddbd8495de36672aa4a658203c9"
+      "sha256": "3d4c2cc7345f1b69716cc8c4ae82b84fbeeadddbd8495de36672aa4a658203c9",
+      "bytes": 1206
     },
     {
       "path": "src/main/java/org/example/maniacrevolution/character/survivor/ScientistClass.java",
-      "bytes": 1129,
-      "sha256": "29e6731bb4bede2ec51083ee53d87aa5aa2b1f5cec3587f06cd37ada39781b2e"
+      "sha256": "29e6731bb4bede2ec51083ee53d87aa5aa2b1f5cec3587f06cd37ada39781b2e",
+      "bytes": 1129
     },
     {
       "path": "src/main/java/org/example/maniacrevolution/character/survivor/ShamanClass.java",
-      "bytes": 1046,
-      "sha256": "ef8e41f167e0bdab3c63ed90f207fd5320d040516a093eb01d340f697b38786b"
+      "sha256": "ef8e41f167e0bdab3c63ed90f207fd5320d040516a093eb01d340f697b38786b",
+      "bytes": 1046
     },
     {
       "path": "src/main/java/org/example/maniacrevolution/client/screen/CharacterLoadoutPreview.java",
@@ -233,13 +233,13 @@
     },
     {
       "path": "src/main/java/org/example/maniacrevolution/ghost/GhostLoadoutManager.java",
-      "bytes": 7283,
-      "sha256": "cf0556a4a94d6ec206e2e622942a134b036c648cc2f3f88979e11de1bd5c24ce"
+      "sha256": "cf0556a4a94d6ec206e2e622942a134b036c648cc2f3f88979e11de1bd5c24ce",
+      "bytes": 7283
     },
     {
       "path": "src/main/java/org/example/maniacrevolution/item/AncestorSoulItem.java",
-      "bytes": 3570,
-      "sha256": "269a846450706e46fac0e498ca88f406b6852030765f1bc4a206af7ef89cc63d"
+      "sha256": "269a846450706e46fac0e498ca88f406b6852030765f1bc4a206af7ef89cc63d",
+      "bytes": 3570
     },
     {
       "path": "src/main/java/org/example/maniacrevolution/item/BeastClawItem.java",
@@ -248,8 +248,8 @@
     },
     {
       "path": "src/main/java/org/example/maniacrevolution/item/BeehiveItem.java",
-      "bytes": 4093,
-      "sha256": "2af98c42c21ecb64e3563b3ac825911ea31bf434d1b7f67ec5e329bb31ff1c6d"
+      "sha256": "2af98c42c21ecb64e3563b3ac825911ea31bf434d1b7f67ec5e329bb31ff1c6d",
+      "bytes": 4093
     },
     {
       "path": "src/main/java/org/example/maniacrevolution/item/BongItem.java",
@@ -273,8 +273,8 @@
     },
     {
       "path": "src/main/java/org/example/maniacrevolution/item/MedicTabletItem.java",
-      "bytes": 7098,
-      "sha256": "39511cac581ff66ac09f0f799d82f58c3840a079cce53129fa76eaf3e560668b"
+      "sha256": "39511cac581ff66ac09f0f799d82f58c3840a079cce53129fa76eaf3e560668b",
+      "bytes": 7098
     },
     {
       "path": "src/main/java/org/example/maniacrevolution/item/MicrophoneItem.java",
@@ -283,8 +283,8 @@
     },
     {
       "path": "src/main/java/org/example/maniacrevolution/item/NecromancerStaffItem.java",
-      "bytes": 8772,
-      "sha256": "bfef08e3d883f6815992add66a78aef9be99e809b56d032f6284c9be41ace950"
+      "sha256": "bfef08e3d883f6815992add66a78aef9be99e809b56d032f6284c9be41ace950",
+      "bytes": 8772
     },
     {
       "path": "src/main/java/org/example/maniacrevolution/item/NetherSwapItem.java",
@@ -298,13 +298,13 @@
     },
     {
       "path": "src/main/java/org/example/maniacrevolution/item/SyringeItem.java",
-      "bytes": 10726,
-      "sha256": "90aaeb01831e0147bfafeae9a94238a035bed8ab44108a978cc99d0fd3aa3f98"
+      "sha256": "90aaeb01831e0147bfafeae9a94238a035bed8ab44108a978cc99d0fd3aa3f98",
+      "bytes": 10726
     },
     {
       "path": "src/main/java/org/example/maniacrevolution/item/TotemSpawnItem.java",
-      "bytes": 4394,
-      "sha256": "866f3efd9d6da7ef13cf62ea2aaa81dbb3d4cf728a0bb138c8ccbc8c6cab3012"
+      "sha256": "866f3efd9d6da7ef13cf62ea2aaa81dbb3d4cf728a0bb138c8ccbc8c6cab3012",
+      "bytes": 4394
     },
     {
       "path": "src/main/java/org/example/maniacrevolution/item/ToyKnifeItem.java",
@@ -313,8 +313,8 @@
     },
     {
       "path": "src/main/java/org/example/maniacrevolution/item/armor/NecromancerArmorItem.java",
-      "bytes": 6085,
-      "sha256": "1566accd3b1635eb4a360678dc3bfc3d829e9c4ce7f78ce2fa6b978f1f8b7fec"
+      "sha256": "1566accd3b1635eb4a360678dc3bfc3d829e9c4ce7f78ce2fa6b978f1f8b7fec",
+      "bytes": 6085
     },
     {
       "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json",
@@ -765,6 +765,1076 @@
       "path": "src/main/resources/assets/maniacrev/textures/item/ghost_hand.png",
       "sha256": "52b63a511894305736fe6d7b01edf1d2d6ccd4bff1737b8f7f94039289cfd253",
       "bytes": 157853
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/item/ShopOpenItem.java",
+      "sha256": "2bc3506ca33ffbe00b99355922f91122cbde953ee51415be108436b2631d03c5",
+      "bytes": 2193
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/item/PerkOpenItem.java",
+      "sha256": "2d143dd546bbec7a8d3f525d89fb9671887d532e517cbc1badc862c061356f00",
+      "bytes": 1559
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/models/item/salt.json",
+      "sha256": "1eb8e0861906cf0dba4c59472aefe53a4fd11bc109fb252b0b7f178f4331846e",
+      "bytes": 99
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/item/salt.png",
+      "sha256": "d1e3ff70fd323523c4cd7222a7ed79704db08cb37e93c56cc9e3b2cd93e4fa5e",
+      "bytes": 18324
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/item/SaltItem.java",
+      "sha256": "78e5825124cf42f578695dedc0a8b199a1743b38775a1a98aa57c010deefa246",
+      "bytes": 3140
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/block/SaltBlock.java",
+      "sha256": "974ed4be1e7ae154047516284f65963aa95553cf209b641457cd49a42fe7cb3a",
+      "bytes": 4239
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/models/item/generator.json",
+      "sha256": "3ced00c2af8d1488d4adafa06913ef357da3d8b26ca5c7f4ab12e421f9a821d8",
+      "bytes": 43
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/models/block/generator.json",
+      "sha256": "790a9bd1567f5c04023d0d1939ad26ee671fed16d3e4d4333a0950c7e24378a5",
+      "bytes": 179191
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/block/box.png",
+      "sha256": "a2e7134aab8ee3d4765e2f7992755fd15832a7358d3d67c9537544f798cc9d7d",
+      "bytes": 174
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/block/frame.png",
+      "sha256": "991326e5a264e0cf30371be95072f61d55b8e8924345c1bcf7b4b271a7705ac3",
+      "bytes": 132
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/block/tablet.png",
+      "sha256": "dcb061286360fe8cf39a200797d15afd9c6ccf9d3d98d7378472f0ef136d2a02",
+      "bytes": 147
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/block/button.png",
+      "sha256": "03404e6f3b1378b119ed0cb422088f7e5df592ed40012d60153839ff45094db4",
+      "bytes": 171
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/block/handle.png",
+      "sha256": "337e8a8c083ef266b13fc45fc66e9ebb44e98df47c1ce4f0229a3ca5f640ccec",
+      "bytes": 133
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/block/freddy.png",
+      "sha256": "1bd7964a673ff90fedce6a84558de9a48d8969433c8f68f6a51db9242fc0c854",
+      "bytes": 13204
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/block/small_roles.png",
+      "sha256": "35c82d2e69b2fc3f7235e969d4e734472bacd40681ea553401a1b891dbc2243b",
+      "bytes": 599
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/block/generator_role.png",
+      "sha256": "fbd537b4244f1fe3faed38701444915a601eb800df244300600879793e7f72a8",
+      "bytes": 464
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/block/FNAFGeneratorBlock.java",
+      "sha256": "3ceb6f513c752b4a4164f894a3a991fcf206ca879e66d32898304e79590ef803",
+      "bytes": 4768
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/block/entity/FNAFGeneratorBlockEntity.java",
+      "sha256": "55d704745f74fe5e78644118afd112fdb3e8340824ab1012bd898acb42e3eef9",
+      "bytes": 9383
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/item/ClarityItem.java",
+      "sha256": "2e0c9e96151f10bffae61cae74564833703323633c8e9079b8ab576d91f14bb2",
+      "bytes": 2700
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/models/item/hook.json",
+      "sha256": "b56b88dc1e36861d1026f4183fba863b82f285069411bc97a8f08974345de208",
+      "bytes": 2795
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/item/hook.png",
+      "sha256": "92fbcb9511fabcbf74a1691a5922269e880c9d7f1dd8587ba0ca66e4169588a1",
+      "bytes": 428
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/models/item/death_scythe.json",
+      "sha256": "a18b229d53f97c65e89493a63783acf90d932454084c03bc401a9c5e9911182a",
+      "bytes": 3881
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/item/scythe_texture.png",
+      "sha256": "1ea7cde8bd57d6fb523dc48d242e19d0713d285f17d4189d48855811305df48d",
+      "bytes": 243
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/models/item/necromancer_staff.json",
+      "sha256": "385a0bc495ccc3b33363bb36f4a9d7e0fe6dbc79d1d036abaae8b44a1efc0f9f",
+      "bytes": 45061
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/item/black.png",
+      "sha256": "438e77dfa8d230344abfb7a42538c11a961f3441d878005761017b27e0a08a22",
+      "bytes": 89
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/item/bone.png",
+      "sha256": "cd197b98792127a28c8d77c44b43e3685d14402ac31d6d96dc8c8a7ba23422d8",
+      "bytes": 136
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/item/teath.png",
+      "sha256": "b1d71c702c9a801e0fa73ec42b30a706e586748a22179fa3ed5bd80c0954b521",
+      "bytes": 102
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/item/wood.png",
+      "sha256": "ebf7736174d3e6b57840a0b5062f2fda472a3f60e3e512cb580c9e8c523d76ae",
+      "bytes": 136
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/network/packets/ResurrectPlayerPacket.java",
+      "sha256": "d29a767865fc0965b75788068201bd06046df9051007d3088586f14d29498bbe",
+      "bytes": 7726
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/models/item/necromancer_helmet.json",
+      "sha256": "7a0c8b7cf936efaf41687eeea879d7667651e3b01550ef5dd5b32b5709b79a4b",
+      "bytes": 113
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/item/necromancer_helmet.png",
+      "sha256": "c7e6b06d2db853dacc13d630578e3b5769a8f8d932ff3c2fd5cd93bc2d9a8e39",
+      "bytes": 122
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/models/item/necromancer_chestplate.json",
+      "sha256": "336a6e17a4ba11423eda277f7e523c993f797cbb202ae5d8e6879bd64a677fc7",
+      "bytes": 117
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/item/necromancer_chestplate.png",
+      "sha256": "89d4e1460483fbc8db9434ace275a7aebd44a132cbaea0b5c91d905a93bbf9f0",
+      "bytes": 141
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/models/item/necromancer_leggings.json",
+      "sha256": "c4cd949ff7617c5df317dabf7693b8920a04797fe0e8e2e48297b1ced1f47699",
+      "bytes": 115
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/item/necromancer_leggings.png",
+      "sha256": "312e51576e5a4e66470950d8e4c797a34ccecc1d1ec266e064df00d47e3fc12c",
+      "bytes": 118
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/models/item/necromancer_boots.json",
+      "sha256": "8c1f270041e3fcbe710ad3127ed6aebadfb079471e19c85cc27d97e2f35e04e5",
+      "bytes": 112
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/item/necromancer_boots.png",
+      "sha256": "13f861cf189d74114ac2d448d60e5125c1ca7d84e9a0636e173c3b29a7918ad0",
+      "bytes": 123
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/item/SettingsItem.java",
+      "sha256": "f93530662cecb006a936ecb086944587a0f37cb17904a729643fa549b7d30e70",
+      "bytes": 1275
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/item/PreGameReadyItem.java",
+      "sha256": "3d727c6d96ad4e98ad6079607a4f797a33d2d285b660fa6409fd1db9efa7d7f5",
+      "bytes": 1405
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/item/PreGameReadyItemActive.java",
+      "sha256": "cbb791480f0a1bd394522194b60ef7933edd8ec101fb71f6d4697c97f69f09e0",
+      "bytes": 1614
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/models/item/maniac_regen_fragment.json",
+      "sha256": "af8690e8b68f3683d05706b891b45d3158da2965740796e6176cc40e516c5ebf",
+      "bytes": 116
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/item/maniac_regen_fragment.png",
+      "sha256": "6e11577d12e7ab6697189f05257c14079b5e2288895a344322ad17f0b57dca0a",
+      "bytes": 10661
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/brewing/ModBrewingRecipes.java",
+      "sha256": "d223ea8b3018ba7f4a12c52c78fa53572768101bfdf57bab495b90c69f3cf73e",
+      "bytes": 7076
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/models/item/maniac_strength_fragment.json",
+      "sha256": "135b229028ab4c2be1803575d508dd39c54b95692204312c50f62eb0c02284cf",
+      "bytes": 119
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/item/maniac_strength_fragment.png",
+      "sha256": "c3f53dc061d5dabfcadc5a473b69c6396cc1ef5244f2395daeef9675b3a29b40",
+      "bytes": 8217
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/models/item/maniac_speed_fragment.json",
+      "sha256": "4250f6dd84433138cc7a3e32bba6a6031874a713e0d733655d852dadaa970f51",
+      "bytes": 116
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/item/maniac_speed_fragment.png",
+      "sha256": "0b82b49b722f2d00e2ee273e8528e3b3d5cb677d90cdcc3a8662b8f0ec2e83da",
+      "bytes": 10113
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/models/item/maniac_slowness_fragment.json",
+      "sha256": "f7be84336689f5a114bd7de6104cb56a142b254e70534723c28f9f037e158828",
+      "bytes": 119
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/item/maniac_slowness_fragment.png",
+      "sha256": "76216e335ce33a2dab02485efc08721b00b19d99319a94a74746af685cb944b5",
+      "bytes": 12859
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/models/item/maniac_slow_falling_fragment.json",
+      "sha256": "32036060dee5ce47d1d3ea9825b9e4c5d288db483d56d7e8a30478ad5110a963",
+      "bytes": 123
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/item/maniac_slow_falling_fragment.png",
+      "sha256": "786293bdc8f6082ffeb0657b2c3e573cd6b6a6113b6aaf663299fed865fefc01",
+      "bytes": 13433
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/models/item/maniac_weakness_fragment.json",
+      "sha256": "d10e88b079ab61964a708ced111f11c91fe23e708477a48f77bb20a1960a0991",
+      "bytes": 119
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/item/maniac_weakness_fragment.png",
+      "sha256": "c2677cd6a9d890da2ad834dee0e6bca1a9095ea06d2981389da3b390eb45e0a3",
+      "bytes": 8614
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/models/item/maniac_healing_fragment.json",
+      "sha256": "2f34d133db06685f1d0c45606b7984fcf326bd3c492b811bf5ef1c38bbe437ec",
+      "bytes": 118
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/item/maniac_healing_fragment.png",
+      "sha256": "ab9e6a060c8b61339c4f6d587948e34966162263c0bc8d7efb8680c5e2b21554",
+      "bytes": 11856
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/models/item/maniac_blindness_fragment.json",
+      "sha256": "9f2384e76865ac0482ca5701936675d0633a4df1d026764c6556f132678b44f3",
+      "bytes": 120
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/item/maniac_blindness_fragment.png",
+      "sha256": "c7fa26d643729d15f2a5ca1f2e996c5121a5820eea3298d978a96624b37ae5d2",
+      "bytes": 8818
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/models/item/maniac_glowing_fragment.json",
+      "sha256": "f0727cbde2576fbe085e775e0c261fad9399e3d36214c189ea1d0176813edbc2",
+      "bytes": 118
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/item/maniac_glowing_fragment.png",
+      "sha256": "1f6d9862fec8b1e5f1d45e1e3de74ca92bc4ca35cf001dcf74ce98a8a07ca776",
+      "bytes": 14475
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/models/item/recipe_book.json",
+      "sha256": "b32a888c259ec4fd0af3b30e935f11406b1d3614dd69615c4c49ef769013fe2f",
+      "bytes": 106
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/item/recipe_book.png",
+      "sha256": "91b734b9e98d80f8801b0e9548f452151b09d7ca88e8f0eb8fbf079df681a6c0",
+      "bytes": 5974
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/item/RecipeBookItem.java",
+      "sha256": "ebdbe6ffb7ae3edfe9b21ca460dbcfe692bab6e2ae8615a7788ee6740e9b4204",
+      "bytes": 802
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/item/CharacterSelectionItem.java",
+      "sha256": "1d839affea825bc220a0a209b54407df96d66bafbb44fc015eb8bfeacb074249",
+      "bytes": 1281
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/item/ReadyItem.java",
+      "sha256": "6296e926f30dde77e0f78058c4982a38b87274b3b03c640ea56b1679f44e38ba",
+      "bytes": 4636
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/item/ReadyItemActive.java",
+      "sha256": "389a08b1c9bc47b208fa1f0e0f16db01d60449d261c5f138b654f760d6124bb5",
+      "bytes": 1544
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/item/VotingTicketItem.java",
+      "sha256": "09ece5baf6b43e62ceab3fef19b505028e2e5dada4370542cae622f2f26b23b4",
+      "bytes": 1698
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/models/item/bandage.json",
+      "sha256": "cfd9c5b13a5ab25aae81dbae725b8aa34766cadb268f15b75508cc6f2dbf6e05",
+      "bytes": 1779
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/item/bandage_texture.png",
+      "sha256": "607fa438a6e485ef52f9dec6afb99bd344cf442a3ab89fde421b7f93b98ba0db",
+      "bytes": 100
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/item/BandageItem.java",
+      "sha256": "f82f61cc6e71b6fc91806186ed3370bd5cc8f6b3f3dae4f4d2695cf855d7cd11",
+      "bytes": 6748
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/models/item/medic_tablet.json",
+      "sha256": "83296d77e04adf0770888a912185b790411a3ecb0f11aca50b80f5cd7a2e055c",
+      "bytes": 3234
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/item/table_texture.png",
+      "sha256": "8b51fc8ae96801fba98fc0b8eb83ade593ab8a6dbc23158cb2f6791a3da44990",
+      "bytes": 161
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/models/item/medical_mask.json",
+      "sha256": "57fa526e276fc06613e512c4960b71821f59030924a3cebb8e0407828c09f6e7",
+      "bytes": 97
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/item/medical_mask.png",
+      "sha256": "bbada862fa710b926a947f4bb0fd747fcd847492e107df01bd9aa07b8c5a9340",
+      "bytes": 112
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/models/item/agent47_tablet.json",
+      "sha256": "c1e04cfc5927ffb25967cbc588ab661be1a6a7953fbbfc5352c929211dfd71ed",
+      "bytes": 1017
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/item/Agent47TabletItem.java",
+      "sha256": "20d1780caa3c70f7c91ac3067a4b768567795a0ba9c3d60034af7b729aca24d3",
+      "bytes": 2589
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/models/item/microphone.json",
+      "sha256": "879aae9a442f88945b2878da6370556562dd3f314898cd5a241f3ceebb432ac0",
+      "bytes": 3703
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/item/head.png",
+      "sha256": "6fa95db811fa99091cc97fa7a6fed28472b1bc601cf31aed7918a2d1839f60d0",
+      "bytes": 120
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/item/body.png",
+      "sha256": "c925dffe51a7edee2d569fc0a9f931b849c047f66e9cff77b9f96493a1bdf219",
+      "bytes": 140
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/item/hand.png",
+      "sha256": "67d7d8e27bfab2a240e25f14c2064425968aeb5eeb5d3ddbce621a7d07e771a5",
+      "bytes": 117
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/models/item/toy_knife.json",
+      "sha256": "81c33f6f5ef528b6b952f9cff8cf183ce1ef224a1f06ef54719e3e6a6b31ef03",
+      "bytes": 689
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/models/item/ghost_hand.json",
+      "sha256": "171671f9b87b4054bac3fe3f0fd84a97fc0a7f4237d9a15e37f75a5478a3944a",
+      "bytes": 106
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/models/item/beast_claw.json",
+      "sha256": "31039f7f56671c5519b39062bb8e971764ff778393b8aabac4a3981e78bbd738",
+      "bytes": 7509
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/item/main_text.png",
+      "sha256": "d93b7d4fb9d1275e3873c479dd0e093169d9074cec16081d2e77d9ca275f6621",
+      "bytes": 134
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/item/nails_text.png",
+      "sha256": "e73c8e5feaa9f01ec68edb3f7fa80dd9d8106ad01b6e2934decb7460d90016de",
+      "bytes": 95
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/models/item/beehive_food.json",
+      "sha256": "1850d74c1f87ad0cfc14c0fc1ae1817aa7489d668a3dfb8ffe3b92d5024a27fd",
+      "bytes": 7857
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/item/gltf_embedded_1.png",
+      "sha256": "1830720b03697348c47110444a073b6dc6b74f49dafd71cce39df5e5a8af4088",
+      "bytes": 184
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/item/gltf_embedded_2.png",
+      "sha256": "0753086c113733fea8aa705cc6e893486e09171f54c71a158720f74d882d72c1",
+      "bytes": 225
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/item/gltf_embedded_3.png",
+      "sha256": "4ec6743890924e793a09b701c35864629160c63b601d6a1d3acd448aff78ce1d",
+      "bytes": 168
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/item/gltf_embedded_4.png",
+      "sha256": "2e5996ac517ed7f51e92871343d995458406155032573e5f3725cfc49bab613d",
+      "bytes": 172
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/models/item/plague_lantern.json",
+      "sha256": "3971783e15681abf0dca04d0368998ae0d5d7e865ba090630840c08629822bcd",
+      "bytes": 4773
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/item/texture.png",
+      "sha256": "e2af7ce6ed3d49b1681539436b4b3af27dc5dea5671555dd1b294b50c64f0a85",
+      "bytes": 252
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/item/texture_edging.png",
+      "sha256": "28a06a92e11bb5155d4d4651b307c09e651786d1c0a12f3bad0a8f83e98c91f7",
+      "bytes": 203
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/event/PlagueLanternEventHandler.java",
+      "sha256": "868e3ea246f9c75dd1887a2fe57272f59a89d15a580c2b2ea88eae87322cd587",
+      "bytes": 8008
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/models/item/bong.json",
+      "sha256": "f693df2a9931c9c9ca811a6a511ce110cddd97b3eb979e62768ab6508fe72ffb",
+      "bytes": 23218
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/block/bong_text.png",
+      "sha256": "d3718daea147c8536d1fd38b893d2846405ee5d5659fb99702024902588dde00",
+      "bytes": 224
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/block/bong_text2.png",
+      "sha256": "36e2ce7ae060a3ed5638c9ea4255d425e592c700ea611f54bfb1084ef7d955e3",
+      "bytes": 422
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/models/item/syringe.json",
+      "sha256": "5f78f0eedc60e816fa4979bce0e1a05e254fa6e45b5987b92d00aa114b2d99ba",
+      "bytes": 2773
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/item/texture_syringe.png",
+      "sha256": "a9486bda8c5f23477fea8c4d7a2efa34d2d050aa46ba4c549fd6c21c9b554b43",
+      "bytes": 145
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/event/AddictionEventHandler.java",
+      "sha256": "7d7652cc7c280f6d7f87d99dc51a88750acacf48a19d580ebe8973fa636ac1aa",
+      "bytes": 7759
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/capability/AddictionCapability.java",
+      "sha256": "c55f0bf954b0ef95455dfa45931df452af15db29bb3dc4ce12d99713a2875705",
+      "bytes": 6049
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/models/item/ancestor_soul.json",
+      "sha256": "43234837c4e60a430b90bdfa78364f7ef7442a8a9dadb4e39e8fcb8ac6c5ce00",
+      "bytes": 12138
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/item/soul_texture.png",
+      "sha256": "909da41ff35fd839c31869f4517c13ec423f18aa8a20dc713a328d4bf57cbf50",
+      "bytes": 155
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/models/item/totem_spawn_item.json",
+      "sha256": "c65af66ea109e00c27feb26532af6d65f8e5a0ead6c296229933b4247fe5b65c",
+      "bytes": 4462
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/item/texture_totem.png",
+      "sha256": "4bbba69bf021908213ec29e950ddf94e4c0838c647c5217a486d17d14c6fb3df",
+      "bytes": 516
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/models/item/nether_swap.json",
+      "sha256": "a173d071b9e313f900922462677054a150722bc29004e077ceebd3941bd66835",
+      "bytes": 220467
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/item/tube.png",
+      "sha256": "024c04dd8c7a6ac532127f73b7662a9cb61fe58e22ed45d9c1fb386fa568b668",
+      "bytes": 247
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/item/bottle.png",
+      "sha256": "ca39a0b2e8fd9209b2fb309e4161f20b30e171a152a4361e950f401964261cdb",
+      "bytes": 205
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/item/top.png",
+      "sha256": "c3959f9082c3b085b053c4d2bb9d586690409f79222b8a21b4a5c39730f90fd0",
+      "bytes": 550
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/item/small_tube.png",
+      "sha256": "fa67facebe8e4abbd027c18ec7bc931c027034970da9160e8bc580ffd93e5298",
+      "bytes": 195
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/item/blue_star.png",
+      "sha256": "37ebcf41d06b1940f01119411b908f2db9e38a40b53eacceacb571b768ce752c",
+      "bytes": 666
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/item/red_star.png",
+      "sha256": "3ff7d3adb85146aa40f56625d90db3495e90d7261d9b1a0a15c89ddc8a39a967",
+      "bytes": 335
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/item/handle.png",
+      "sha256": "6df2180ae27a5fa6d21fb1bf19f699fa49e68452071e5a8c277b62b27b7a09ca",
+      "bytes": 146
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/models/item/coin_elusiveness.json",
+      "sha256": "9f2c47ce763f2f708265661b052e9f35880debf499f50c4c324e2b69b36f9466",
+      "bytes": 112
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/item/coin_elusiveness.png",
+      "sha256": "5b7e48647f9a433a1e117aa80d43126b43cb35ff54ead7c0c0b804de287cc2a4",
+      "bytes": 464946
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/item/DodepovichCoinItem.java",
+      "sha256": "92452981c1c4338ad2b72f5fb422282c231311ceff2c7bf53e4fe9befca631c8",
+      "bytes": 5918
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/dodepovich/DodepovichCasinoManager.java",
+      "sha256": "8dc72eecbea7891e71353e01ff826a5ebfd82045c83bf18710503272df617e35",
+      "bytes": 25775
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/models/item/coin_insight.json",
+      "sha256": "efb712d1cd5478b97ea0ce83c678cba87d86ae016358d464840914fed4e12c73",
+      "bytes": 108
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/item/coin_insight.png",
+      "sha256": "2ee7cf347fc6d7bfd5e33e883de2c8b8198b8f0db3ceee28204ca7f344411cbd",
+      "bytes": 517168
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/models/item/coin_shackles.json",
+      "sha256": "f2e05a5a6f88221ccf9fe19c4a8a029adbac865db87564d4270e0974e8e122d5",
+      "bytes": 109
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/item/coin_shackles.png",
+      "sha256": "30cce64525c27afa11828c1c1a014193d920a8f01cd75c64ced1a7c3213723d3",
+      "bytes": 514733
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/models/item/coin_health.json",
+      "sha256": "a332070f398e03b144a8e9dee16c251953bdd19d9f719cdead707c55b8ca2c48",
+      "bytes": 107
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/item/coin_health.png",
+      "sha256": "d22476f094e141613917eb4e348199c8ddd3bd41eb0ea1869c69f49ae587a1b7",
+      "bytes": 510345
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/models/item/coin_eagle.json",
+      "sha256": "29ab5066ec2d30c28430f365f7ca85b173190d5cd3f83eff3ed32bf4afb993d3",
+      "bytes": 106
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/item/coin_eagle.png",
+      "sha256": "726bb0d0aee3a45c64b35497f06460634837063178f09e9f16b5c8d7b0148bf0",
+      "bytes": 532478
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/models/item/coin_debt.json",
+      "sha256": "fb3247d2a6334880e5bfdfb8978865474070ec4b317b74aa1e9bf30c5aa28147",
+      "bytes": 105
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/item/coin_debt.png",
+      "sha256": "9b15cc7c2420049c00155fe2cc7eb485ab9c46b6e4f61cdd993e325377816493",
+      "bytes": 513370
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/models/item/coin_reroll.json",
+      "sha256": "11c64aad30fea070dcee80e0c7f6ad1053d6c54a44a5a007d8e9011c90748f70",
+      "bytes": 107
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/item/coin_reroll.png",
+      "sha256": "ab4bfe2c60ab055511e9eb9a6efae35e7fe7a8e3859afae7ea2701e99fb08c8c",
+      "bytes": 514048
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/models/item/coin_fate.json",
+      "sha256": "f240ca9eb0c4437b5b8444d6fd4c3f01cadbdc4a8c6975d078a72f9c9c0a7325",
+      "bytes": 105
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/item/coin_fate.png",
+      "sha256": "c03d24df21382e0c8ed37809533791652dffacbf1e4dfbf0c5d9766aade642f9",
+      "bytes": 540782
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/models/item/slot_machine.json",
+      "sha256": "74d0ee29edaf038abb06bf9363f202b64cdba373065dc290722b06df22275ae4",
+      "bytes": 47
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/models/block/slot_machine.json",
+      "sha256": "26857247e72b89fe407d34cd6323a964b6932e6ade5730fb80986f61f70f68ed",
+      "bytes": 22037
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/block/slot_machine/machine.png",
+      "sha256": "fe13552030f8f006130d3ed921dc71ab092da21fbe5cc7eb6ce06a159636c363",
+      "bytes": 31766
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/block/slot_machine/lever.png",
+      "sha256": "7aa78a944e0bacd3e34a47ab08df65e59febc074f7aa6aecaa8101e5f4bd7659",
+      "bytes": 658
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/block/slot_machine/svinline.png",
+      "sha256": "1e8fbd8efe7bf33be0932ceb9dd621ed7b14c9d2588177b02bec2d3e5d81a930",
+      "bytes": 504570
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/block/slot_machine/bitbam.png",
+      "sha256": "dbdce91e3781af7c41f51dd11a969779656b1fbb7f44c093526864645869f120",
+      "bytes": 1625263
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/block/slot_machine/slot.png",
+      "sha256": "fd670433712ead2680dc6b05a60a158e6f84f055401b51f62dca8e1872e815a7",
+      "bytes": 4566
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/block/slot_machine/transparent.png",
+      "sha256": "5016a323018f09e292165ad5392d82dcbad5e79c2b6b93aff3322dffff80b309",
+      "bytes": 126
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/block/SlotMachineBlock.java",
+      "sha256": "efd5d9e5f6026544639e929e242a1c64514ec3b562d795936089f63d2cc446f1",
+      "bytes": 7841
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/nightmare/NightmareManager.java",
+      "sha256": "b34a5718fbc9ebd9ca831c1114a5ac3d47ff34fa250f736b56026a3b89329704",
+      "bytes": 29904
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/models/item/awakening_needle.json",
+      "sha256": "6ae769eb59955c2390a7f975222db1d2a698dd098e4d4f0271a6900ec2041250",
+      "bytes": 8014
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/item/awakening_needle.png",
+      "sha256": "5304453450d3600d607a67969bf59d5c438e9c15c6e5078ac16db05da584e836",
+      "bytes": 98770
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/game/GameManager.java",
+      "sha256": "8e2f52625cfb3a0df7f5ec7241f5e76f46eb2d0fece93f81338c1eb1ef8b4b32",
+      "bytes": 15008
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/models/item/paint_can.json",
+      "sha256": "0236759ff6bfd25518ea719478e2644065b2f5890b75dbe5b5b94e72f7de8cb0",
+      "bytes": 105
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/item/paint_can.png",
+      "sha256": "a3efcc8a9c2a1002dfa09d510ecb6e0593180daf251ff4efc623b9a913061f92",
+      "bytes": 1546
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/item/PaintCanItem.java",
+      "sha256": "9500b245b2528a14416b4033bbd5de982758ead391d171c0e5d0453328c816a5",
+      "bytes": 3840
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/paint/PaintPuddleManager.java",
+      "sha256": "90b186d8268f54301acbf8fb86ce51ca5c40417c2d8614d33dfc6588dfee760e",
+      "bytes": 21017
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/models/item/forget_me_not.json",
+      "sha256": "b78d24fcd7eab8c6b8201e10af2b3df793dd7fa456010925ff95a254ba5aca97",
+      "bytes": 109
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/item/forget_me_not.png",
+      "sha256": "cf3ac9e37041c87f3ea20a57b89f5a8c570c1f4e81ec36eff4578d212932d728",
+      "bytes": 1301
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/item/ForgetMeNotItem.java",
+      "sha256": "3eb4ffda4e4bae9ead6fd0b27d7c429e64c7cd9e099faca30615d376833ab650",
+      "bytes": 3823
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/forgetmenot/ForgetMeNotManager.java",
+      "sha256": "91e1e2f79e10c212e7e3e81b044c94fa2e119fd59c9d28bfdea4771c1823e00c",
+      "bytes": 30271
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/models/item/rose_colored_glasses.json",
+      "sha256": "0e7a7b34652549715935d6356c37906ee78e1cefb268fc8ba4fa185a88e2bb37",
+      "bytes": 57
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/item/RoseColoredGlassesItem.java",
+      "sha256": "8acb75e3418018d58b849516a624fa68a864a05c9488a3b52887fcaf0cf3e32d",
+      "bytes": 3321
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/roseglasses/RoseColoredGlassesManager.java",
+      "sha256": "f4340e05a04fdcfd4436f1fc04872675d6f51bbbaa59b9d110d2569891a330c5",
+      "bytes": 12086
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/models/item/pink_orchid.json",
+      "sha256": "0a6a2652a59ae7204fd709d6fb794ca309348fa0c74de91482da91a2e076afbf",
+      "bytes": 97
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/item/pink_orchid.png",
+      "sha256": "a379d23dba7aa2a21cc8749c49788459fa9103b6e69b4535bd9011bb47cb21d3",
+      "bytes": 810
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/item/PinkOrchidItem.java",
+      "sha256": "fe32c14470246cad8358c1a1571bd5cef6a7528029edc065a903c32666b40704",
+      "bytes": 3770
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/pinkorchid/PinkOrchidManager.java",
+      "sha256": "c341b24ffac17679abdb7f5f8f529a71b4d2bb2133db18e9775b27c98debe6c5",
+      "bytes": 27806
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/models/item/sber_sprout.json",
+      "sha256": "26894a85eeae95114efb1cbdd62466d4ca5873b08f4fc1d6be459b678549189d",
+      "bytes": 97
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/item/sber_sprout.png",
+      "sha256": "e654db27a969c7248dd072541d989b9f81682d31d3e2a3b5a253acecc2684207",
+      "bytes": 1630
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/item/SberSproutItem.java",
+      "sha256": "aa578b152998b32cb192aa95bee07c7e3acbed118a48232017463fdf7ba19d9d",
+      "bytes": 3978
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/sbersprout/SberSproutManager.java",
+      "sha256": "31f16a68d39e575cdf64cb10381fb91dc5174244366ffb47f70ada36f9e61c6b",
+      "bytes": 30071
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/models/item/guardian_head.json",
+      "sha256": "7e5450cc24da795d987e9fc37bebe886866ba09776e57086e9dfbfbbeafa8e1d",
+      "bytes": 100
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/models/item/red_color_card.json",
+      "sha256": "69726fefd94aba2d432f221e8f166ce07a3764473996e1e704666f13716a852c",
+      "bytes": 110
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/item/red_color_card.png",
+      "sha256": "630a82e015cc3eeee2da3b3c1c44acc69fdadec4b7a992784832c0116223b653",
+      "bytes": 1416
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/item/ColorCardItem.java",
+      "sha256": "5857cd25fe5bb1c6c19827b6f8040bbfac63507beb2b60e70c910d2cc3b68a95",
+      "bytes": 4256
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/colorroulette/ColorRouletteManager.java",
+      "sha256": "c79b174f4f7ce35d8de2bfecef8e18a88a89dd7eda7850353106901f8948d91a",
+      "bytes": 20068
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/models/item/blue_color_card.json",
+      "sha256": "d3f1b57d42821afad9081ccd753c44d37a4e3b48680122e66d267a77eec25b7c",
+      "bytes": 111
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/item/blue_color_card.png",
+      "sha256": "a80fc1b724c19817c69dacf683be44a31779064a346890577d8ff01f1b1a9039",
+      "bytes": 1796
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/models/item/green_color_card.json",
+      "sha256": "5ed013703041b131f59cde07173c119410bb58da36e7302896bdc1368c7d6154",
+      "bytes": 112
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/item/green_color_card.png",
+      "sha256": "3bf10a9da04cbe8a58b6c22446254f2539684ecbda87859e1682394695e860ec",
+      "bytes": 1755
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/pregame/PreGameReadyManager.java",
+      "sha256": "d5f6e320025d358aaf75b09c63ac11177ecea6b90a3759cd7b73e122ba9eee0d",
+      "bytes": 8963
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/pregame/PreGameCountdownTask.java",
+      "sha256": "67bb3345eba701673eac1763d4905eb4a8ae9cc805cbf7ccc5926e083a2dd1ab",
+      "bytes": 3061
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/gui/pages/TutorialPage.java",
+      "sha256": "0ef7dd90f2a44d0ba5f96f50d0093c3507f06b1fffe9fbdb4d9165be91e59942",
+      "bytes": 32986
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/hack/HackConfig.java",
+      "sha256": "4f79bb1e003353c136a420f899a1f14f3760ebae362f5b99588fcdfef810081a",
+      "bytes": 4829
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/settings/GameSettings.java",
+      "sha256": "43acf069f2059028659eb7e1fb373be72a0bcfb64b67b71009f1146b7b5a6f27",
+      "bytes": 12505
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/hack/HackManager.java",
+      "sha256": "8e23a2101b9d52930a7c61230654c4ddff03cfdbe0581777bcb3cfd7df5b6854",
+      "bytes": 31979
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/hack/ComputerBlock.java",
+      "sha256": "8f34f5f3fae2efdb0f7d2f6dd3750724b8f6eccf4fd9c8aa3287ddd80fbb493e",
+      "bytes": 6511
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/hack/HackSession.java",
+      "sha256": "4d0f1fe9237eb8883e63f9d6f84e6b9143661f474b26bd7796255da3a24eb694",
+      "bytes": 15676
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/gui/guide/maps/active_computer.png",
+      "sha256": "2619f74d9aa6f827c4a1b72e2a5bf12b20c7fb2e2d246d6038be32a579e5e70a",
+      "bytes": 1660330
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/gui/guide/mechanics/qte.png",
+      "sha256": "678088a5f5688c6f45c1fab1cb4eac6c2b3f8f76f904aee16236d232881ec339",
+      "bytes": 11955
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/downed/DownedData.java",
+      "sha256": "6e46a654782caca29500fdd61e421c8ff8e5da5ef39b3bc563d989d6756acb74",
+      "bytes": 8105
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/downed/DownedEventHandler.java",
+      "sha256": "771514c60b735269f1e4955d5ae8ff12ca0ec06f92be4cc65079d62ac3c7fc47",
+      "bytes": 34450
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/gui/guide/mechanics/downed.png",
+      "sha256": "89ce929169850558e4a0dd9ed50ef549e0398b77dd8e1920157d2e29c0683141",
+      "bytes": 1293190
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/gui/guide/mechanics/open_door.png",
+      "sha256": "49f394802f9c232dc24504fdef5d7f16e1dab05e97c725475cadc77550df33cc",
+      "bytes": 602289
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/gui/guide/mechanics/open_hatch.png",
+      "sha256": "e52fe49a9ac6c097cfff2f400ee70fe0bbb6dbc5f7693d8ebb79ac9a5a448a97",
+      "bytes": 622929
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/gui/guide/mechanics/ventilation.png",
+      "sha256": "fb5284f9c6efb422e5444676f15878ebefd4e184e157973b12061e19eb441d16",
+      "bytes": 959421
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/mana/ManaData.java",
+      "sha256": "82813a74cd9f31cf1be0436bcc9eee492671fb35d1e5c354edd5685e632ba14a",
+      "bytes": 4030
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/event/ManaEvents.java",
+      "sha256": "aca20f8324a883bcdb724d9aacf4b76bc1b52a56897d99e7a5f2eb33091dd4ed",
+      "bytes": 7908
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/effect/ManaFlowEffect.java",
+      "sha256": "d9fa455b850c9c399288ee954fce30eb180835fc2491aa508f2e81f539b040a0",
+      "bytes": 1907
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/nightmare/NightmareTrialBuilder.java",
+      "sha256": "4e51be799891011771bf4f0d75c1dea34afba54adc9c43e0ca665a97638cfd97",
+      "bytes": 11040
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/gui/guide/mechanics/characters/nightmare/area.png",
+      "sha256": "bf8353e9cbb4b78f938c800ad282a0917e78cfabe3cb836df0682e1f1ef567ce",
+      "bytes": 121589
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/gui/guide/mechanics/characters/addiction.png",
+      "sha256": "f89d02d686ee6bce13f0103f361910b1f784818cedb6f624ef9f1a1778b0e2ef",
+      "bytes": 5423
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/dodepovich/DodepovichCoin.java",
+      "sha256": "c055e7a957fae1f7b687cd12c2da2ea4a2b2ad31ab5e5a595ecd8870f82b9549",
+      "bytes": 874
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/dodepovich/SlotMachineResult.java",
+      "sha256": "b89be499bf9f6eba9a12cc6e4c2605da170d04f79108e5050fa59d581e577ee1",
+      "bytes": 2518
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/potion/ModPotions.java",
+      "sha256": "ec5c86a093ab24dee162cef1cd3c215d94bea057ba782fa70b6eeb8b40546405",
+      "bytes": 3419
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/gui/guide/mechanics/alch.png",
+      "sha256": "e949db2497f42324e7043dc741701c18ce76ae538fb319787cae1d27fc4f076d",
+      "bytes": 21025
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/capability/PlagueCapability.java",
+      "sha256": "948b0d45a00e4814a480f0ae2c16d78fb18c53582327e0c896ee1c3759df0e04",
+      "bytes": 4723
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/entity/PlagueOrbEntity.java",
+      "sha256": "b1976f3a77f9ebbf13b14ffa530467e7fa967731b63e0c7eeeb2e7f82ca1c23f",
+      "bytes": 10347
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/gui/guide/mechanics/characters/plague.png",
+      "sha256": "9694482cb14076520c6cae0f2e043b13879b9fd0ddbd4c2061f58de51e788f1a",
+      "bytes": 635
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/config/MedicSystemConfig.java",
+      "sha256": "8eb1dfc6128a62c9b3a76607af976ce84beeec5400a692c9697ee958bea007f8",
+      "bytes": 1440
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/gui/guide/mechanics/characters/medic_interface.png",
+      "sha256": "0bf65ef138b3227d4df7b13d15acdd20127651dff1ec352d32665de57d0d7104",
+      "bytes": 6368
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/pinkorchid/PinkOrchidRouteFrame.java",
+      "sha256": "3925a7410161f7a494acd91d5a1cc0150941c32f9f89b57d18fbc4756c70d12c",
+      "bytes": 1125
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/entity/PinkOrchidIllusionEntity.java",
+      "sha256": "c801f9600c8afb99ae382a43a3d9c874873ee40e487582d1e471d933c211ab6d",
+      "bytes": 13508
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/colorroulette/ColorCard.java",
+      "sha256": "4ee60f13f7b57b0e548937e6a5ba549b325a26290790cd586a7261ee0f00210e",
+      "bytes": 858
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/gui/guide/mechanics/characters/generator_fnaf.png",
+      "sha256": "85d02fd700defabd2c0172f40793a0520e7cbde8a8a9f0762d2c6b22e386fdda",
+      "bytes": 4406
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/util/SaltTracker.java",
+      "sha256": "d7145ceadcf1e2c7d4cf3198e6dae2fd886070eab68977949bd161e5c7d34fdf",
+      "bytes": 2536
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/effect/ModEffects.java",
+      "sha256": "6cf71f8f852888e34910cbbace4fc413b09afb7d5675dfcb8b4508badf2bc00c",
+      "bytes": 5792
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/config/GameRulesConfig.java",
+      "sha256": "afa0a7865f0f19ba211799c45d6553eb8aa201213eda6427021f14f9c1f92cb0",
+      "bytes": 755
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/gui/guide/mechanics/characters/agent_shop.png",
+      "sha256": "f5b1de2eb0695e5211626398b1c0ca8be454b84476d72aa6f0bde00c73d595fe",
+      "bytes": 3793
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/gui/guide/mechanics/characters/stack_ursa.png",
+      "sha256": "33502fe349a7d9a4170d8208f0bd5272088e25d64fdb9c2456d3e1d3170284df",
+      "bytes": 1053
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/models/item/computer.json",
+      "sha256": "2a34e5e4047647f2a736a85f098ff6b9eca45c33f2d5b091b4ac3daa11fa909c",
+      "bytes": 7229
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/item/texture_computer.png",
+      "sha256": "2f95b6bd87e9fb6f75e050976428dc1adce148f4f7b95bcbdc4ea73d49658486",
+      "bytes": 466
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/hack/ModHackRegistry.java",
+      "sha256": "60731d73fdd73a37e704f0a88f2bf47b8b3af263fc6e68761b431bd520ce321b",
+      "bytes": 2680
     }
   ]
 }

@@ -9,6 +9,7 @@ import { faceUVs, cubeGeometry } from "./convert-maniac-model.mjs";
 
 const server = await createServer({
   server: { middlewareMode: true },
+  optimizeDeps: { noDiscovery: true, include: [] },
   appType: "custom",
 });
 const root = "/src/app/projects/maniac/wiki/";
@@ -75,12 +76,12 @@ try {
   ]);
   for (const version of gameVersions)
     assert.ok(releases.some((r) => r.id === version.releaseId));
-  assert.equal(routes.length, 86);
+  assert.equal(routes.length, 185);
   assert.ok(routes.every((r) => !/lab/.test(r.path)));
-  assert.equal(Object.keys(publishedEntityRoutes).length, 71);
+  assert.equal(Object.keys(publishedEntityRoutes).length, 168);
   assert.ok(
     Object.keys(publishedEntityRoutes).every((id) =>
-      /^(character|perk|ability):/.test(id),
+      /^(character|perk|ability|item|mechanic):/.test(id),
     ),
   );
   for (const [id, path] of Object.entries(publishedEntityRoutes)) {

@@ -1,0 +1,55 @@
+{
+  "id": "mechanic:hacking",
+  "description": "Взлом складывается из работы участников, проверок реакции и специальных модификаторов.",
+  "sections": [
+    {
+      "title": "Как это работает",
+      "paragraphs": [
+        "Начните взаимодействие с подходящим незавершённым компьютером и оставайтесь рядом. Сессия проверяет жизнь, подключение и расстояние основного взломщика.",
+        "Помощники учитываются в отдельном радиусе. Их вклад и бонусы перков рассчитываются сервером, а QTE получают участники сессии."
+      ]
+    },
+    {
+      "title": "Результат и влияние на матч",
+      "paragraphs": [
+        "Накопление требуемого прогресса завершает компьютер и увеличивает общий счётчик. СберРосток и Цветная рулетка могут менять прогресс через отдельные обработчики."
+      ]
+    },
+    {
+      "title": "Условия и ограничения",
+      "paragraphs": [
+        "По исходным defaults требуется 10 очков на компьютер; базовый вклад обычного игрока — 0,1 в секунду, специалиста — 0,11. Радиусы: 1,3 блока для основного взломщика, 3 для помощников.",
+        "Это изменяемые настройки и базовые вклады, а не гарантированное время взлома с перками и QTE."
+      ]
+    }
+  ],
+  "images": [
+    {
+      "file": "guide-hacking-0.webp",
+      "width": 1120,
+      "height": 658,
+      "caption": "Активный компьютер во внутриигровом руководстве."
+    }
+  ],
+  "notes": [],
+  "evidence": [
+    {
+      "path": "src/main/java/org/example/maniacrevolution/hack/ComputerBlock.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/hack/HackManager.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/hack/HackSession.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/hack/HackConfig.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/sbersprout/SberSproutManager.java"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+    }
+  ]
+}

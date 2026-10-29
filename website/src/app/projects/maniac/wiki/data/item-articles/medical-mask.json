@@ -1,0 +1,42 @@
+{
+  "id": "item:medical-mask",
+  "description": "Маска активирует разделение входящего урона с союзником.",
+  "sections": [
+    {
+      "title": "Получение и доступность",
+      "paragraphs": [
+        "Связан с персонажем Доктор. Настоящее наличие в инвентаре зависит от выдачи и правил конкретного матча; одно превью не является гарантией."
+      ]
+    },
+    {
+      "title": "Как использовать",
+      "paragraphs": [
+        "Наденьте маску и активируйте способность брони. В течение её действия обработчик ищет ближайшего союзника; без него урон не разделяется. Подробности — «Спасибо, доктор»."
+      ]
+    }
+  ],
+  "notes": ["Оригинальная плоская layer0-текстура модели."],
+  "evidence": [
+    {
+      "path": "src/main/java/org/example/maniacrevolution/ModItems.java"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/item/armor/MedicalMaskItem.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/event/MedicActiveAbility.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/character/survivor/DoctorClass.java"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/models/item/medical_mask.json"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/item/medical_mask.png"
+    }
+  ]
+}

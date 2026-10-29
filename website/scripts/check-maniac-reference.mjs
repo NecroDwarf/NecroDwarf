@@ -11,6 +11,7 @@ const manifest = await json(
 );
 const server = await createServer({
   server: { middlewareMode: true },
+  optimizeDeps: { noDiscovery: true, include: [] },
   appType: "custom",
 });
 const hash = (text) => createHash("sha256").update(text).digest("hex");

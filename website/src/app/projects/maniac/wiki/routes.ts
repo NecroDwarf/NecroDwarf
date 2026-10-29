@@ -3,6 +3,14 @@ import { routePage } from "../../../shared/lib/route-page";
 import { characterRouteMeta } from "./route-metadata";
 import { perkRouteMeta } from "./perk-route-metadata";
 import { abilityRouteMeta } from "./ability-route-metadata";
+import { itemRouteMeta } from "./item-route-metadata";
+import { mechanicRouteMeta } from "./mechanic-route-metadata";
+const itemArticles = import.meta.glob<{ default: ComponentType }>(
+  "./pages/items/*.tsx",
+);
+const mechanicArticles = import.meta.glob<{ default: ComponentType }>(
+  "./pages/mechanics/*.tsx",
+);
 const perkArticles = import.meta.glob<{ default: ComponentType }>(
   "./pages/perks/*.tsx",
 );
@@ -13,6 +21,40 @@ const articles = import.meta.glob<{ default: ComponentType }>(
   "./pages/characters/*.tsx",
 );
 export const maniacWikiRoutes = [
+  {
+    path: "/projects/maniac/wiki/items",
+    title: "Предметы — Maniac Wiki · NecroDwarf",
+    description:
+      "Игровое снаряжение, оружие, расходники, ресурсы и предметы перков Maniac.",
+    page: routePage(() => import("./pages/ItemsPage").then((m) => m.ItemsPage)),
+  },
+  {
+    path: "/projects/maniac/wiki/mechanics",
+    title: "Механики — Maniac Wiki · NecroDwarf",
+    description:
+      "Правила матча, взлом, ресурсы и особые системы Maniac по проверенным исходникам.",
+    page: routePage(() =>
+      import("./pages/MechanicsPage").then((m) => m.MechanicsPage),
+    ),
+  },
+  ...itemRouteMeta.map((item) => ({
+    path: `/projects/maniac/wiki/items/${item.slug}`,
+    title: `${item.name} — Предметы Maniac Wiki · NecroDwarf`,
+    description: `${item.name}: назначение, применение, ограничения и связанные игровые материалы Maniac.`,
+    page: routePage(() =>
+      itemArticles[`./pages/items/${item.slug}.tsx`]().then((m) => m.default),
+    ),
+  })),
+  ...mechanicRouteMeta.map((m) => ({
+    path: `/projects/maniac/wiki/mechanics/${m.slug}`,
+    title: `${m.name} — Механики Maniac Wiki · NecroDwarf`,
+    description: `${m.name}: игровые правила, последовательность действий и подтверждённые ограничения Maniac.`,
+    page: routePage(() =>
+      mechanicArticles[`./pages/mechanics/${m.slug}.tsx`]().then(
+        (m) => m.default,
+      ),
+    ),
+  })),
   {
     path: "/projects/maniac/wiki/perks",
     title: "Перки — Maniac Wiki · NecroDwarf",

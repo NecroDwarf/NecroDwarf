@@ -1,0 +1,51 @@
+{
+  "id": "mechanic:medical-care",
+  "description": "Доктор сочетает расходуемое лечение, информацию планшета и разделение урона маской.",
+  "sections": [
+    {
+      "title": "Как это работает",
+      "paragraphs": [
+        "Бинт используется удержанием: можно лечить себя или выбранного игрока вблизи.",
+        "Планшет показывает здоровье выжившего под прицелом или открывает медицинский интерфейс. Маска активирует отдельное временное разделение урона с ближайшим союзником."
+      ]
+    },
+    {
+      "title": "Результат и влияние на матч",
+      "paragraphs": [
+        "Лечение, информационная функция и перенос части урона — разные действия. Они не объединены в выдуманную универсальную способность."
+      ]
+    },
+    {
+      "title": "Условия и ограничения",
+      "paragraphs": [
+        "Входящий урон перенаправляется только при действующей маске и подходящем союзнике; подробные параметры подтверждены в статье способности."
+      ]
+    }
+  ],
+  "images": [
+    {
+      "file": "guide-medical-care-0.webp",
+      "width": 515,
+      "height": 403,
+      "caption": "Медицинский интерфейс из руководства."
+    }
+  ],
+  "notes": [],
+  "evidence": [
+    {
+      "path": "src/main/java/org/example/maniacrevolution/item/BandageItem.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/item/MedicTabletItem.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/event/MedicActiveAbility.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/config/MedicSystemConfig.java"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+    }
+  ]
+}

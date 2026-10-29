@@ -8,6 +8,7 @@ import { renderToStaticMarkup } from "react-dom/server";
 const root = "/src/app/projects/maniac/wiki/";
 const server = await createServer({
   server: { middlewareMode: true },
+  optimizeDeps: { noDiscovery: true, include: [] },
   appType: "custom",
 });
 try {

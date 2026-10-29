@@ -1,0 +1,45 @@
+{
+  "id": "item:microphone",
+  "description": "Предмет Фредди с активной музыкальной волной.",
+  "sections": [
+    {
+      "title": "Получение и доступность",
+      "paragraphs": [
+        "Связан с персонажем Мишка Фредди. Настоящее наличие в инвентаре зависит от выдачи и правил конкретного матча; одно превью не является гарантией."
+      ]
+    },
+    {
+      "title": "Как использовать",
+      "paragraphs": [
+        "ПКМ расходует ману и запускает оглушение подходящих выживших в радиусе. Точные параметры приведены в статье способности."
+      ]
+    }
+  ],
+  "notes": ["Статичный рендер оригинальных cuboid elements с GUI transform."],
+  "evidence": [
+    {
+      "path": "src/main/java/org/example/maniacrevolution/ModItems.java"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/item/MicrophoneItem.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/character/maniac/FreddyBearClass.java"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/models/item/microphone.json"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/item/head.png"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/item/body.png"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/item/hand.png"
+    }
+  ]
+}

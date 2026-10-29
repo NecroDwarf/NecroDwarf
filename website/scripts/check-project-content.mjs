@@ -3,7 +3,10 @@ import { createElement } from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import { createServer } from "vite";
 
-const server = await createServer({ server: { middlewareMode: true } });
+const server = await createServer({
+  server: { middlewareMode: true },
+  optimizeDeps: { noDiscovery: true, include: [] },
+});
 try {
   const { MemoryRouter } = await server.ssrLoadModule("react-router");
   const { ProjectIntro } = await server.ssrLoadModule(

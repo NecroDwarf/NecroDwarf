@@ -1,0 +1,39 @@
+{
+  "id": "item:guardian-head",
+  "description": "Элемент брони для Концентрированного кошмара.",
+  "sections": [
+    {
+      "title": "Получение и доступность",
+      "paragraphs": [
+        "Связан с персонажем Хранитель кошмаров. Настоящее наличие в инвентаре зависит от выдачи и правил конкретного матча; одно превью не является гарантией."
+      ]
+    },
+    {
+      "title": "Как использовать",
+      "paragraphs": [
+        "Наденьте голову Хранителя и активируйте способность брони. У подходящей цели снимается доля максимального рассудка; стоимость поиска и cooldown задаются NightmareConfig."
+      ]
+    }
+  ],
+  "notes": ["Оригинальная плоская layer0-текстура модели."],
+  "evidence": [
+    {
+      "path": "src/main/java/org/example/maniacrevolution/ModItems.java"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/item/GuardianHeadItem.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/character/maniac/KeeperOfNightmaresClass.java"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/models/item/guardian_head.json"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/item/head.png"
+    }
+  ]
+}

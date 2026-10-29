@@ -1,0 +1,52 @@
+{
+  "id": "mechanic:qte",
+  "description": "Во время взлома нужно вовремя подтвердить попадание индикатора в целевую область.",
+  "sections": [
+    {
+      "title": "Как это работает",
+      "paragraphs": [
+        "Начните взлом и следите за индикатором. Сессия назначает проверки, а клиент отображает окно реакции.",
+        "Нажмите назначенную клавишу в нужный момент. Успешное попадание и критическая зона различаются; перки могут менять размер и поведение окна."
+      ]
+    },
+    {
+      "title": "Результат и влияние на матч",
+      "paragraphs": [
+        "Базовый успешный результат добавляет 0,4 очка, критический — 0,6. Результат обрабатывается серверной сессией, а не только анимацией HUD."
+      ]
+    },
+    {
+      "title": "Условия и ограничения",
+      "paragraphs": [
+        "Интервал по HackConfig — от 3 до 5 секунд. Итоговая частота и окно могут быть изменены эффектами.",
+        "Не путайте компьютерный QTE с отдельной проверкой Иглы пробуждения у кокона."
+      ]
+    }
+  ],
+  "images": [
+    {
+      "file": "guide-qte-0.webp",
+      "width": 340,
+      "height": 275,
+      "caption": "Оригинальная иллюстрация проверки реакции."
+    }
+  ],
+  "notes": [],
+  "evidence": [
+    {
+      "path": "src/main/java/org/example/maniacrevolution/hack/HackSession.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/hack/HackManager.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/hack/HackConfig.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/gui/pages/TutorialPage.java"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+    }
+  ]
+}

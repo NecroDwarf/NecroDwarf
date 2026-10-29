@@ -1,0 +1,44 @@
+{
+  "id": "mechanic:status-effects",
+  "description": "Состояния меняют ресурсы, передвижение и доступность действий.",
+  "sections": [
+    {
+      "title": "Как это работает",
+      "paragraphs": [
+        "Различайте ванильные эффекты, специальные эффекты мода и отдельные состояния менеджеров. Скрытый HUD-значок не означает отсутствие серверного эффекта.",
+        "При активации сервер проверяет условия конкретного перка или предмета. Отключение выбрасывания предметов также может зависеть от GameRulesConfig."
+      ]
+    },
+    {
+      "title": "Результат и влияние на матч",
+      "paragraphs": [
+        "Контроль, молчание, страх и ограничения могут препятствовать действию независимо от оставшейся маны. Защитные предметы работают только по предусмотренным правилам."
+      ]
+    },
+    {
+      "title": "Условия и ограничения",
+      "paragraphs": [
+        "Не каждому эффекту создана отдельная статья: здесь объясняется общее правило, а точные длительности и исключения остаются в соответствующих сущностях."
+      ]
+    }
+  ],
+  "images": [],
+  "notes": [],
+  "evidence": [
+    {
+      "path": "src/main/java/org/example/maniacrevolution/effect/ModEffects.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/Perk.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/roseglasses/RoseColoredGlassesManager.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/config/GameRulesConfig.java"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+    }
+  ]
+}

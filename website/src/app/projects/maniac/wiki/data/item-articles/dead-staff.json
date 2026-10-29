@@ -1,0 +1,51 @@
+{
+  "id": "item:dead-staff",
+  "description": "Посох для выбора и воскрешения погибшего союзника.",
+  "sections": [
+    {
+      "title": "Получение и доступность",
+      "paragraphs": [
+        "Связан с персонажем Некромант. Настоящее наличие в инвентаре зависит от выдачи и правил конкретного матча; одно превью не является гарантией."
+      ]
+    },
+    {
+      "title": "Как использовать",
+      "paragraphs": [
+        "Только Некромант может начать ритуал. Удерживайте использование 5 с при наличии 60 маны. Завершение списывает ману и 30 прочности, затем открывает выбор души. Прерывание тратит 10 прочности."
+      ]
+    }
+  ],
+  "notes": ["Статичный рендер оригинальных cuboid elements с GUI transform."],
+  "evidence": [
+    {
+      "path": "src/main/java/org/example/maniacrevolution/ModItems.java"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/item/NecromancerStaffItem.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/network/packets/ResurrectPlayerPacket.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/character/survivor/NecromancerClass.java"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/models/item/necromancer_staff.json"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/item/black.png"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/item/bone.png"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/item/teath.png"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/item/wood.png"
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "id": "item:awakening-needle",
+  "description": "Инструмент спасения союзника из кошмарного кокона.",
+  "sections": [
+    {
+      "title": "Получение и доступность",
+      "paragraphs": [
+        "GameManager выдаёт иглы случайной трети активных выживших (с округлением вверх), только при активном Хранителе."
+      ]
+    },
+    {
+      "title": "Как использовать",
+      "paragraphs": [
+        "Участвуйте в проверках иглой у кокона. При наличии активного Хранителя стартовый обработчик раздаёт иглы случайным активным выжившим: ceil(число выживших / 3). Это не личное оружие Хранителя."
+      ]
+    }
+  ],
+  "notes": ["Статичный рендер оригинальных cuboid elements с GUI transform."],
+  "evidence": [
+    {
+      "path": "src/main/java/org/example/maniacrevolution/ModItems.java"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/game/GameManager.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/nightmare/NightmareConfig.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/nightmare/NightmareManager.java"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/models/item/awakening_needle.json"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/item/awakening_needle.png"
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "id": "mechanic:orchid-illusion",
+  "description": "Орхидея записывает движение владельца и воспроизводит его иллюзией.",
+  "sections": [
+    {
+      "title": "Как это работает",
+      "paragraphs": [
+        "ПКМ орхидеей начинает или завершает запись. Записываются кадры маршрута и визуальное состояние персонажа.",
+        "Система воспроизводит кадры с помощью PinkOrchidIllusionEntity; экипировка иллюзии берётся из снимка."
+      ]
+    },
+    {
+      "title": "Результат и влияние на матч",
+      "paragraphs": [
+        "Иллюзия отвлекает преследователя движением записанного персонажа; она не является новым живым союзником."
+      ]
+    },
+    {
+      "title": "Условия и ограничения",
+      "paragraphs": [
+        "Доступность записи зависит от владельца предмета, перка и текущего состояния менеджера."
+      ]
+    }
+  ],
+  "images": [],
+  "notes": [],
+  "evidence": [
+    {
+      "path": "src/main/java/org/example/maniacrevolution/pinkorchid/PinkOrchidManager.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/pinkorchid/PinkOrchidRouteFrame.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/entity/PinkOrchidIllusionEntity.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/item/PinkOrchidItem.java"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+    }
+  ]
+}

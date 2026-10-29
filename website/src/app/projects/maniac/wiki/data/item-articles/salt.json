@@ -1,0 +1,42 @@
+{
+  "id": "item:salt",
+  "description": "Размещает соль-ловушку на подходящей поверхности.",
+  "sections": [
+    {
+      "title": "Получение и доступность",
+      "paragraphs": [
+        "Связан с персонажем Некромант. Настоящее наличие в инвентаре зависит от выдачи и правил конкретного матча; одно превью не является гарантией."
+      ]
+    },
+    {
+      "title": "Как использовать",
+      "paragraphs": [
+        "ПКМ по поверхности: требуется свободное место над твёрдым основанием. Размещение расходует одну соль вне творческого режима. Наступившую цель обрабатывают SaltBlock и SaltTracker."
+      ]
+    }
+  ],
+  "notes": ["Оригинальная плоская layer0-текстура модели."],
+  "evidence": [
+    {
+      "path": "src/main/java/org/example/maniacrevolution/ModItems.java"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/item/SaltItem.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/block/SaltBlock.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/character/survivor/NecromancerClass.java"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/models/item/salt.json"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/item/salt.png"
+    }
+  ]
+}

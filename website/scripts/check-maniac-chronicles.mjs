@@ -20,6 +20,7 @@ const decode = (text) =>
 const root = "/src/app/projects/maniac/";
 const server = await createServer({
   server: { middlewareMode: true },
+  optimizeDeps: { noDiscovery: true, include: [] },
   appType: "custom",
 });
 try {

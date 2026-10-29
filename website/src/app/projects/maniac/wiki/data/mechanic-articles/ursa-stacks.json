@@ -1,0 +1,48 @@
+{
+  "id": "mechanic:ursa-stacks",
+  "description": "Набор Урсы сочетает коготь, прыжок и расходуемый улей.",
+  "sections": [
+    {
+      "title": "Как это работает",
+      "paragraphs": [
+        "Используйте обычные атаки и следите за состоянием цели. Особенности накопления урона описаны в справочнике Урсы.",
+        "Коготь запускает прыжок, а поедание улья отдельно активирует ярость и выпуск пчёл."
+      ]
+    },
+    {
+      "title": "Результат и влияние на матч",
+      "paragraphs": [
+        "Урон приземления и бонусы ярости не объявлены постоянными параметрами каждого обычного удара."
+      ]
+    },
+    {
+      "title": "Условия и ограничения",
+      "paragraphs": [
+        "Число накопленных ударов и фактическое состояние игрока динамичны; выдуманная итоговая величина урона не приводится."
+      ]
+    }
+  ],
+  "images": [
+    {
+      "file": "guide-ursa-stacks-0.webp",
+      "width": 86,
+      "height": 64,
+      "caption": "Состояние Урсы из руководства."
+    }
+  ],
+  "notes": [],
+  "evidence": [
+    {
+      "path": "src/main/java/org/example/maniacrevolution/character/maniac/UrsaClass.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/item/BeastClawItem.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/item/BeehiveItem.java"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+    }
+  ]
+}

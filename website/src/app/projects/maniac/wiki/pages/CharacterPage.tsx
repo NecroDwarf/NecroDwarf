@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import { Link } from "react-router";
+import { RelatedLinks } from "../ui/RelatedLinks";
 import { ContentLink } from "../../../../shared/ui/ContentLink";
 import { getEntity, getRevision } from "../data/registry";
 import { sourceUrl, sourceCommit, verifiedSource } from "../data/snapshots";
@@ -171,6 +172,10 @@ export function CharacterPage({
               </section>
             )}
             <section className={s.articleSection} id="sources">
+              <RelatedLinks
+                id={entity.id}
+                exclude={[...data.itemIds, ...data.abilityIds]}
+              />
               <details className={s.sources}>
                 <summary>Об этой статье и источниках</summary>
                 <p>

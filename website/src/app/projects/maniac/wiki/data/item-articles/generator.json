@@ -1,0 +1,63 @@
+{
+  "id": "item:generator",
+  "description": "Устанавливаемый генератор, связанный с Фредди.",
+  "sections": [
+    {
+      "title": "Получение и доступность",
+      "paragraphs": [
+        "Связан с персонажем Мишка Фредди. Настоящее наличие в инвентаре зависит от выдачи и правил конкретного матча; одно превью не является гарантией."
+      ]
+    },
+    {
+      "title": "Как использовать",
+      "paragraphs": [
+        "Используется как игровой блок. Его энергия и взаимодействие с Фредди определяются FNAFGeneratorBlockEntity; регистрация не гарантирует наличие генератора на каждой карте."
+      ]
+    }
+  ],
+  "notes": ["Статичный рендер оригинальных cuboid elements с GUI transform."],
+  "evidence": [
+    {
+      "path": "src/main/java/org/example/maniacrevolution/ModItems.java"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/block/FNAFGeneratorBlock.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/block/entity/FNAFGeneratorBlockEntity.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/character/maniac/FreddyBearClass.java"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/models/item/generator.json"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/block/box.png"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/block/frame.png"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/block/tablet.png"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/block/button.png"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/block/handle.png"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/block/freddy.png"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/block/small_roles.png"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/block/generator_role.png"
+    }
+  ]
+}

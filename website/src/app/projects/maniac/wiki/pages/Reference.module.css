@@ -35,6 +35,15 @@
 .referenceCard:hover {
   border-color: #b58c98;
 }
+.reset {
+  border: 1px solid #48404b;
+  background: #171922;
+  color: #e5dfd7;
+  padding: 12px 18px;
+  margin-bottom: 24px;
+  cursor: pointer;
+  font: inherit;
+}
 .cardHeading {
   display: flex;
   align-items: center;

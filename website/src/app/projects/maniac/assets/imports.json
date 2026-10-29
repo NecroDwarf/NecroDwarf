@@ -730,6 +730,496 @@
       "sha256": "cce416e20c8cdc2e81e08f8c50b6b244a2b41f03b5a2e3e3e47b4e64a38f3c19",
       "size": [256, 256],
       "entityId": "ability:ghost-possession"
+    },
+    {
+      "source": "src/main/resources/assets/maniacrev/textures/item/salt.png",
+      "local": "wiki/systems/system-salt.webp",
+      "sourceSha256": "d1e3ff70fd323523c4cd7222a7ed79704db08cb37e93c56cc9e3b2cd93e4fa5e",
+      "sha256": "5feddcea1cf7831c735c9b40abc141acb3ad3a2215de7efaf73233a77775ad48",
+      "bytes": 48626,
+      "size": [320, 320],
+      "entityId": "item:salt",
+      "transformation": "RGBA, preserve proportions, max 320 px, lossless WebP"
+    },
+    {
+      "source": "src/main/resources/assets/maniacrev/models/item/generator.json",
+      "local": "wiki/systems/system-generator.png",
+      "sourceSha256": "3ced00c2af8d1488d4adafa06913ef357da3d8b26ca5c7f4ab12e421f9a821d8",
+      "sha256": "4ae38b22c83f33e1c78785a7d4f4946230adb0fa70099158e722d7e0d45231e3",
+      "bytes": 13655,
+      "size": [320, 320],
+      "entityId": "item:generator",
+      "transformation": "Minecraft JSON parent/textures/elements/rotation/GUI display, static orthographic render"
+    },
+    {
+      "source": "src/main/resources/assets/maniacrev/models/item/hook.json",
+      "local": "wiki/systems/system-hook.png",
+      "sourceSha256": "b56b88dc1e36861d1026f4183fba863b82f285069411bc97a8f08974345de208",
+      "sha256": "6d51544e718a5109116417c656bed51a0c09f34c8852650eb4b6a1f5c1f1a629",
+      "bytes": 10995,
+      "size": [320, 320],
+      "entityId": "item:hook",
+      "transformation": "Minecraft JSON parent/textures/elements/rotation/GUI display, static orthographic render"
+    },
+    {
+      "source": "src/main/resources/assets/maniacrev/models/item/necromancer_staff.json",
+      "local": "wiki/systems/system-dead-staff.png",
+      "sourceSha256": "385a0bc495ccc3b33363bb36f4a9d7e0fe6dbc79d1d036abaae8b44a1efc0f9f",
+      "sha256": "b5bd79bc3cfe14d010057b1e953a6d06ab923a114e63a318a2ea46b2b9916757",
+      "bytes": 12430,
+      "size": [320, 320],
+      "entityId": "item:dead-staff",
+      "transformation": "Minecraft JSON parent/textures/elements/rotation/GUI display, static orthographic render"
+    },
+    {
+      "source": "src/main/resources/assets/maniacrev/textures/item/necromancer_helmet.png",
+      "local": "wiki/systems/system-necromancer-helmet.webp",
+      "sourceSha256": "c7e6b06d2db853dacc13d630578e3b5769a8f8d932ff3c2fd5cd93bc2d9a8e39",
+      "sha256": "1204cb26a5339aa3239fb2654f59bbddf6de97fbdb2c70ea5286d19595aef7e8",
+      "bytes": 90,
+      "size": [16, 16],
+      "entityId": "item:necromancer-helmet",
+      "transformation": "RGBA, preserve proportions, max 320 px, lossless WebP"
+    },
+    {
+      "source": "src/main/resources/assets/maniacrev/textures/item/necromancer_chestplate.png",
+      "local": "wiki/systems/system-necromancer-chestplate.webp",
+      "sourceSha256": "89d4e1460483fbc8db9434ace275a7aebd44a132cbaea0b5c91d905a93bbf9f0",
+      "sha256": "88ae4989855b70d1561ea078270818b31dd9097df647d71e96f82e126b832c3b",
+      "bytes": 94,
+      "size": [16, 16],
+      "entityId": "item:necromancer-chestplate",
+      "transformation": "RGBA, preserve proportions, max 320 px, lossless WebP"
+    },
+    {
+      "source": "src/main/resources/assets/maniacrev/textures/item/necromancer_leggings.png",
+      "local": "wiki/systems/system-necromancer-leggings.webp",
+      "sourceSha256": "312e51576e5a4e66470950d8e4c797a34ccecc1d1ec266e064df00d47e3fc12c",
+      "sha256": "ac9d1fd45dfbf6a5a1c406db3ff51183825a00dfa463b02104c97295093de8b2",
+      "bytes": 92,
+      "size": [16, 16],
+      "entityId": "item:necromancer-leggings",
+      "transformation": "RGBA, preserve proportions, max 320 px, lossless WebP"
+    },
+    {
+      "source": "src/main/resources/assets/maniacrev/textures/item/necromancer_boots.png",
+      "local": "wiki/systems/system-necromancer-boots.webp",
+      "sourceSha256": "13f861cf189d74114ac2d448d60e5125c1ca7d84e9a0636e173c3b29a7918ad0",
+      "sha256": "c21f2bb7f45d1b8878390ec0ef4a02a07d1b2d4597e31180ccf1bfbcd59f7ada",
+      "bytes": 84,
+      "size": [16, 16],
+      "entityId": "item:necromancer-boots",
+      "transformation": "RGBA, preserve proportions, max 320 px, lossless WebP"
+    },
+    {
+      "source": "src/main/resources/assets/maniacrev/textures/item/maniac_regen_fragment.png",
+      "local": "wiki/systems/system-maniac-regen-fragment.webp",
+      "sourceSha256": "6e11577d12e7ab6697189f05257c14079b5e2288895a344322ad17f0b57dca0a",
+      "sha256": "8cb8d1bd4b454eead6b1fef5eb51909f6b691e9ce73be9304269f1e2beaa8fdd",
+      "bytes": 10786,
+      "size": [278, 278],
+      "entityId": "item:maniac-regen-fragment",
+      "transformation": "RGBA, preserve proportions, max 320 px, lossless WebP"
+    },
+    {
+      "source": "src/main/resources/assets/maniacrev/textures/item/maniac_strength_fragment.png",
+      "local": "wiki/systems/system-maniac-strength-fragment.webp",
+      "sourceSha256": "c3f53dc061d5dabfcadc5a473b69c6396cc1ef5244f2395daeef9675b3a29b40",
+      "sha256": "02a59794c3ac5c190d618f751cb4002975fce7451aa4219ab31dd8ac73f06ce1",
+      "bytes": 10292,
+      "size": [278, 278],
+      "entityId": "item:maniac-strength-fragment",
+      "transformation": "RGBA, preserve proportions, max 320 px, lossless WebP"
+    },
+    {
+      "source": "src/main/resources/assets/maniacrev/textures/item/maniac_speed_fragment.png",
+      "local": "wiki/systems/system-maniac-speed-fragment.webp",
+      "sourceSha256": "0b82b49b722f2d00e2ee273e8528e3b3d5cb677d90cdcc3a8662b8f0ec2e83da",
+      "sha256": "2020fa88b7c6acb75c3f1fb5c9ed5d088ee0051b7c4571122e918e596a89ae27",
+      "bytes": 12294,
+      "size": [278, 278],
+      "entityId": "item:maniac-speed-fragment",
+      "transformation": "RGBA, preserve proportions, max 320 px, lossless WebP"
+    },
+    {
+      "source": "src/main/resources/assets/maniacrev/textures/item/maniac_slowness_fragment.png",
+      "local": "wiki/systems/system-maniac-slowness-fragment.webp",
+      "sourceSha256": "76216e335ce33a2dab02485efc08721b00b19d99319a94a74746af685cb944b5",
+      "sha256": "50d5de9467c5e3213272278b50e76ca0547e8c7bede6841f824c3b04fccefa62",
+      "bytes": 14804,
+      "size": [278, 278],
+      "entityId": "item:maniac-slowness-fragment",
+      "transformation": "RGBA, preserve proportions, max 320 px, lossless WebP"
+    },
+    {
+      "source": "src/main/resources/assets/maniacrev/textures/item/maniac_slow_falling_fragment.png",
+      "local": "wiki/systems/system-maniac-slow-falling-fragment.webp",
+      "sourceSha256": "786293bdc8f6082ffeb0657b2c3e573cd6b6a6113b6aaf663299fed865fefc01",
+      "sha256": "667830925c88bc9d1197560e56712c06770d702514f98ea6136451d7ea2a4eb9",
+      "bytes": 14710,
+      "size": [278, 278],
+      "entityId": "item:maniac-slow-falling-fragment",
+      "transformation": "RGBA, preserve proportions, max 320 px, lossless WebP"
+    },
+    {
+      "source": "src/main/resources/assets/maniacrev/textures/item/maniac_weakness_fragment.png",
+      "local": "wiki/systems/system-maniac-weakness-fragment.webp",
+      "sourceSha256": "c2677cd6a9d890da2ad834dee0e6bca1a9095ea06d2981389da3b390eb45e0a3",
+      "sha256": "fb696fc411c7d076ef10315aae2f314e101c1004696be24dd87cf43a76f4dce4",
+      "bytes": 9434,
+      "size": [278, 278],
+      "entityId": "item:maniac-weakness-fragment",
+      "transformation": "RGBA, preserve proportions, max 320 px, lossless WebP"
+    },
+    {
+      "source": "src/main/resources/assets/maniacrev/textures/item/maniac_healing_fragment.png",
+      "local": "wiki/systems/system-maniac-healing-fragment.webp",
+      "sourceSha256": "ab9e6a060c8b61339c4f6d587948e34966162263c0bc8d7efb8680c5e2b21554",
+      "sha256": "e06bc881a6b9d8d74c853da3634b559d230693787836fdac25081f2f8eebaacb",
+      "bytes": 12642,
+      "size": [278, 278],
+      "entityId": "item:maniac-healing-fragment",
+      "transformation": "RGBA, preserve proportions, max 320 px, lossless WebP"
+    },
+    {
+      "source": "src/main/resources/assets/maniacrev/textures/item/maniac_blindness_fragment.png",
+      "local": "wiki/systems/system-maniac-blindness-fragment.webp",
+      "sourceSha256": "c7fa26d643729d15f2a5ca1f2e996c5121a5820eea3298d978a96624b37ae5d2",
+      "sha256": "e2a05ec637525bff6f66201f16e4b285c06bd35a79f5fdf25ce08c5f18b68f7e",
+      "bytes": 10716,
+      "size": [278, 278],
+      "entityId": "item:maniac-blindness-fragment",
+      "transformation": "RGBA, preserve proportions, max 320 px, lossless WebP"
+    },
+    {
+      "source": "src/main/resources/assets/maniacrev/textures/item/maniac_glowing_fragment.png",
+      "local": "wiki/systems/system-maniac-glowing-fragment.webp",
+      "sourceSha256": "1f6d9862fec8b1e5f1d45e1e3de74ca92bc4ca35cf001dcf74ce98a8a07ca776",
+      "sha256": "a628094ff38b1143b8aab1e3351d056cc67a6852f54f7269a34e81cc8223bd66",
+      "bytes": 15774,
+      "size": [278, 278],
+      "entityId": "item:maniac-glowing-fragment",
+      "transformation": "RGBA, preserve proportions, max 320 px, lossless WebP"
+    },
+    {
+      "source": "src/main/resources/assets/maniacrev/textures/item/recipe_book.png",
+      "local": "wiki/systems/system-recipe-book.webp",
+      "sourceSha256": "91b734b9e98d80f8801b0e9548f452151b09d7ca88e8f0eb8fbf079df681a6c0",
+      "sha256": "4421d1c0944d690921c64e06ee7b53714aee607c6b190912cdaa37d259b59681",
+      "bytes": 23102,
+      "size": [291, 320],
+      "entityId": "item:recipe-book",
+      "transformation": "RGBA, preserve proportions, max 320 px, lossless WebP"
+    },
+    {
+      "source": "src/main/resources/assets/maniacrev/models/item/bandage.json",
+      "local": "wiki/systems/system-bandages.png",
+      "sourceSha256": "cfd9c5b13a5ab25aae81dbae725b8aa34766cadb268f15b75508cc6f2dbf6e05",
+      "sha256": "c5ef7a1339efda52024dc661565c0ebcc69bf99d763c9a32dfc582ec0a5775e2",
+      "bytes": 7937,
+      "size": [320, 320],
+      "entityId": "item:bandages",
+      "transformation": "Minecraft JSON parent/textures/elements/rotation/GUI display, static orthographic render"
+    },
+    {
+      "source": "src/main/resources/assets/maniacrev/models/item/medic_tablet.json",
+      "local": "wiki/systems/system-medical-tablet.png",
+      "sourceSha256": "83296d77e04adf0770888a912185b790411a3ecb0f11aca50b80f5cd7a2e055c",
+      "sha256": "e0797524cdb9093c2f7094d4e8ac49562de4634411d53b1f738dac62c23d1816",
+      "bytes": 5792,
+      "size": [320, 320],
+      "entityId": "item:medical-tablet",
+      "transformation": "Minecraft JSON parent/textures/elements/rotation/GUI display, static orthographic render"
+    },
+    {
+      "source": "src/main/resources/assets/maniacrev/textures/item/medical_mask.png",
+      "local": "wiki/systems/system-medical-mask.webp",
+      "sourceSha256": "bbada862fa710b926a947f4bb0fd747fcd847492e107df01bd9aa07b8c5a9340",
+      "sha256": "ee82dfc5a8fdcb6dedcf1cc1e60155586f9dac50f5f89542590204b94cd5fbd0",
+      "bytes": 58,
+      "size": [16, 16],
+      "entityId": "item:medical-mask",
+      "transformation": "RGBA, preserve proportions, max 320 px, lossless WebP"
+    },
+    {
+      "source": "src/main/resources/assets/maniacrev/models/item/microphone.json",
+      "local": "wiki/systems/system-microphone.png",
+      "sourceSha256": "879aae9a442f88945b2878da6370556562dd3f314898cd5a241f3ceebb432ac0",
+      "sha256": "582b739b2644a4b8db687684a7b5d4421898e4e6c411cb12c926283f696402b7",
+      "bytes": 5869,
+      "size": [320, 320],
+      "entityId": "item:microphone",
+      "transformation": "Minecraft JSON parent/textures/elements/rotation/GUI display, static orthographic render"
+    },
+    {
+      "source": "src/main/resources/assets/maniacrev/textures/item/ghost_hand.png",
+      "local": "wiki/systems/system-ghost-hand.webp",
+      "sourceSha256": "52b63a511894305736fe6d7b01edf1d2d6ccd4bff1737b8f7f94039289cfd253",
+      "sha256": "cc1ff72e9337264cadc451ef5b11a751a05976e0436541752985287d9cda4c18",
+      "bytes": 103604,
+      "size": [320, 320],
+      "entityId": "item:ghost-hand",
+      "transformation": "RGBA, preserve proportions, max 320 px, lossless WebP"
+    },
+    {
+      "source": "src/main/resources/assets/maniacrev/models/item/beast_claw.json",
+      "local": "wiki/systems/system-beast-claw.png",
+      "sourceSha256": "31039f7f56671c5519b39062bb8e971764ff778393b8aabac4a3981e78bbd738",
+      "sha256": "45f634289641e1d260eff1a4b2900bd45d1fa93770ba65aa5fbe1dfb268dbe6a",
+      "bytes": 10806,
+      "size": [320, 320],
+      "entityId": "item:beast-claw",
+      "transformation": "Minecraft JSON parent/textures/elements/rotation/GUI display, static orthographic render"
+    },
+    {
+      "source": "src/main/resources/assets/maniacrev/models/item/beehive_food.json",
+      "local": "wiki/systems/system-beehive-food.png",
+      "sourceSha256": "1850d74c1f87ad0cfc14c0fc1ae1817aa7489d668a3dfb8ffe3b92d5024a27fd",
+      "sha256": "a9302c1f178d2f872e3a26965742c6f1c5efddfb24148df1506619d8804a0c17",
+      "bytes": 5779,
+      "size": [320, 320],
+      "entityId": "item:beehive-food",
+      "transformation": "Minecraft JSON parent/textures/elements/rotation/GUI display, static orthographic render"
+    },
+    {
+      "source": "src/main/resources/assets/maniacrev/models/item/bong.json",
+      "local": "wiki/systems/system-bong.png",
+      "sourceSha256": "f693df2a9931c9c9ca811a6a511ce110cddd97b3eb979e62768ab6508fe72ffb",
+      "sha256": "51722482bfc49598f2f3f5fd9955a7d0c1e7c8d75e887735a362e5e3856d5dc7",
+      "bytes": 17325,
+      "size": [320, 320],
+      "entityId": "item:bong",
+      "transformation": "Minecraft JSON parent/textures/elements/rotation/GUI display, static orthographic render"
+    },
+    {
+      "source": "src/main/resources/assets/maniacrev/models/item/syringe.json",
+      "local": "wiki/systems/system-adrenaline-syringe.png",
+      "sourceSha256": "5f78f0eedc60e816fa4979bce0e1a05e254fa6e45b5987b92d00aa114b2d99ba",
+      "sha256": "49ac0abcb01272e1d66755b1b5725684b7c2cd5ad1f5fc329469e6820f1e8d5b",
+      "bytes": 5755,
+      "size": [320, 320],
+      "entityId": "item:adrenaline-syringe",
+      "transformation": "Minecraft JSON parent/textures/elements/rotation/GUI display, static orthographic render"
+    },
+    {
+      "source": "src/main/resources/assets/maniacrev/models/item/ancestor_soul.json",
+      "local": "wiki/systems/system-ancestor-soul.png",
+      "sourceSha256": "43234837c4e60a430b90bdfa78364f7ef7442a8a9dadb4e39e8fcb8ac6c5ce00",
+      "sha256": "bb1b0001e4c6332f84f692f83c5a28b4aa54896f8758b6fc3f9356577220a142",
+      "bytes": 7525,
+      "size": [320, 320],
+      "entityId": "item:ancestor-soul",
+      "transformation": "Minecraft JSON parent/textures/elements/rotation/GUI display, static orthographic render"
+    },
+    {
+      "source": "src/main/resources/assets/maniacrev/models/item/totem_spawn_item.json",
+      "local": "wiki/systems/system-ancestral-totem.png",
+      "sourceSha256": "c65af66ea109e00c27feb26532af6d65f8e5a0ead6c296229933b4247fe5b65c",
+      "sha256": "7e96de0add47062ecf4fdb439f7dee3c7062841ac9419d97f50129c3a4aa3a89",
+      "bytes": 11296,
+      "size": [320, 320],
+      "entityId": "item:ancestral-totem",
+      "transformation": "Minecraft JSON parent/textures/elements/rotation/GUI display, static orthographic render"
+    },
+    {
+      "source": "src/main/resources/assets/maniacrev/models/item/nether_swap.json",
+      "local": "wiki/systems/system-quantum-teleport.png",
+      "sourceSha256": "a173d071b9e313f900922462677054a150722bc29004e077ceebd3941bd66835",
+      "sha256": "d09fb8c3198d34f0d1fe47c168552861e70203f7f8cbf2a0d87a7736959af52e",
+      "bytes": 7840,
+      "size": [320, 320],
+      "entityId": "item:quantum-teleport",
+      "transformation": "Minecraft JSON parent/textures/elements/rotation/GUI display, static orthographic render"
+    },
+    {
+      "source": "src/main/resources/assets/maniacrev/textures/item/coin_elusiveness.png",
+      "local": "wiki/systems/system-coin-elusiveness.webp",
+      "sourceSha256": "5b7e48647f9a433a1e117aa80d43126b43cb35ff54ead7c0c0b804de287cc2a4",
+      "sha256": "c2f9b2c7fbbdfded86e3170835f2afe5de66b099dd87ad479f74990725948bb8",
+      "bytes": 104632,
+      "size": [320, 318],
+      "entityId": "item:coin-elusiveness",
+      "transformation": "RGBA, preserve proportions, max 320 px, lossless WebP"
+    },
+    {
+      "source": "src/main/resources/assets/maniacrev/textures/item/coin_insight.png",
+      "local": "wiki/systems/system-coin-insight.webp",
+      "sourceSha256": "2ee7cf347fc6d7bfd5e33e883de2c8b8198b8f0db3ceee28204ca7f344411cbd",
+      "sha256": "6a1d7aa2426930ad030abfcc47f48fa7309b1d6941151d61853f07e50d8d8b21",
+      "bytes": 116848,
+      "size": [319, 320],
+      "entityId": "item:coin-insight",
+      "transformation": "RGBA, preserve proportions, max 320 px, lossless WebP"
+    },
+    {
+      "source": "src/main/resources/assets/maniacrev/textures/item/coin_shackles.png",
+      "local": "wiki/systems/system-coin-shackles.webp",
+      "sourceSha256": "30cce64525c27afa11828c1c1a014193d920a8f01cd75c64ced1a7c3213723d3",
+      "sha256": "e909d5dbe19f83e818a128077c7394045adcb88e5aa38c1802cc889996f9c9ff",
+      "bytes": 112530,
+      "size": [320, 318],
+      "entityId": "item:coin-shackles",
+      "transformation": "RGBA, preserve proportions, max 320 px, lossless WebP"
+    },
+    {
+      "source": "src/main/resources/assets/maniacrev/textures/item/coin_health.png",
+      "local": "wiki/systems/system-coin-health.webp",
+      "sourceSha256": "d22476f094e141613917eb4e348199c8ddd3bd41eb0ea1869c69f49ae587a1b7",
+      "sha256": "5cf50ab2ece1b8a1926485266f254c9f4d39944b1e856d8d5fa64c88d8773f84",
+      "bytes": 117456,
+      "size": [318, 320],
+      "entityId": "item:coin-health",
+      "transformation": "RGBA, preserve proportions, max 320 px, lossless WebP"
+    },
+    {
+      "source": "src/main/resources/assets/maniacrev/textures/item/coin_eagle.png",
+      "local": "wiki/systems/system-coin-eagle.webp",
+      "sourceSha256": "726bb0d0aee3a45c64b35497f06460634837063178f09e9f16b5c8d7b0148bf0",
+      "sha256": "0d579dd95c7e0e00c36257fa4096b45a46c9accea9bda32e95836bcffd0e3d71",
+      "bytes": 118954,
+      "size": [320, 318],
+      "entityId": "item:coin-eagle",
+      "transformation": "RGBA, preserve proportions, max 320 px, lossless WebP"
+    },
+    {
+      "source": "src/main/resources/assets/maniacrev/textures/item/coin_debt.png",
+      "local": "wiki/systems/system-coin-debt.webp",
+      "sourceSha256": "9b15cc7c2420049c00155fe2cc7eb485ab9c46b6e4f61cdd993e325377816493",
+      "sha256": "bb672b5d6318456a5c2a1b854c74193b5793926525d97a637c405441bc29359b",
+      "bytes": 111846,
+      "size": [318, 320],
+      "entityId": "item:coin-debt",
+      "transformation": "RGBA, preserve proportions, max 320 px, lossless WebP"
+    },
+    {
+      "source": "src/main/resources/assets/maniacrev/textures/item/coin_reroll.png",
+      "local": "wiki/systems/system-coin-reroll.webp",
+      "sourceSha256": "ab4bfe2c60ab055511e9eb9a6efae35e7fe7a8e3859afae7ea2701e99fb08c8c",
+      "sha256": "091ee3974669865912b0ba26da0e10349aa7a564f6ca18652d836d9c6aec55f0",
+      "bytes": 111514,
+      "size": [320, 318],
+      "entityId": "item:coin-reroll",
+      "transformation": "RGBA, preserve proportions, max 320 px, lossless WebP"
+    },
+    {
+      "source": "src/main/resources/assets/maniacrev/textures/item/coin_fate.png",
+      "local": "wiki/systems/system-coin-fate.webp",
+      "sourceSha256": "c03d24df21382e0c8ed37809533791652dffacbf1e4dfbf0c5d9766aade642f9",
+      "sha256": "aaf9ce6f842fd5f573cbe60a8e0ba118f4cdb1b9647622a4b3ead5b4a81bb77f",
+      "bytes": 120552,
+      "size": [318, 320],
+      "entityId": "item:coin-fate",
+      "transformation": "RGBA, preserve proportions, max 320 px, lossless WebP"
+    },
+    {
+      "source": "src/main/resources/assets/maniacrev/models/item/slot_machine.json",
+      "local": "wiki/systems/system-slot-machine.png",
+      "sourceSha256": "74d0ee29edaf038abb06bf9363f202b64cdba373065dc290722b06df22275ae4",
+      "sha256": "de1e0fa36a8d60e69cb215be150af98bfd937d68d2d647c0bc34f5d8541b5371",
+      "bytes": 31421,
+      "size": [320, 320],
+      "entityId": "item:slot-machine",
+      "transformation": "Minecraft JSON parent/textures/elements/rotation/GUI display, static orthographic render"
+    },
+    {
+      "source": "src/main/resources/assets/maniacrev/models/item/awakening_needle.json",
+      "local": "wiki/systems/system-awakening-needle.png",
+      "sourceSha256": "6ae769eb59955c2390a7f975222db1d2a698dd098e4d4f0271a6900ec2041250",
+      "sha256": "3ce1120e8bb528c53f97dfced041786029e9cba99ed9c33a394b6d34bcb1a97c",
+      "bytes": 24612,
+      "size": [320, 320],
+      "entityId": "item:awakening-needle",
+      "transformation": "Minecraft JSON parent/textures/elements/rotation/GUI display, static orthographic render"
+    },
+    {
+      "source": "src/main/resources/assets/maniacrev/textures/item/paint_can.png",
+      "local": "wiki/systems/system-paint-can.webp",
+      "sourceSha256": "a3efcc8a9c2a1002dfa09d510ecb6e0593180daf251ff4efc623b9a913061f92",
+      "sha256": "c8383fecc4545d66b3ebbcfef752dc10ea8cd1561ec19d345d6addb995b561e3",
+      "bytes": 1276,
+      "size": [32, 32],
+      "entityId": "item:paint-can",
+      "transformation": "RGBA, preserve proportions, max 320 px, lossless WebP"
+    },
+    {
+      "source": "src/main/resources/assets/maniacrev/textures/item/forget_me_not.png",
+      "local": "wiki/systems/system-forget-me-not.webp",
+      "sourceSha256": "cf3ac9e37041c87f3ea20a57b89f5a8c570c1f4e81ec36eff4578d212932d728",
+      "sha256": "c17b0889a1f205504dd3df030616db46b801f88a0285dc40d55e4acdddf177ac",
+      "bytes": 830,
+      "size": [32, 32],
+      "entityId": "item:forget-me-not",
+      "transformation": "RGBA, preserve proportions, max 320 px, lossless WebP"
+    },
+    {
+      "source": "src/main/resources/assets/maniacrev/textures/item/pink_orchid.png",
+      "local": "wiki/systems/system-pink-orchid.webp",
+      "sourceSha256": "a379d23dba7aa2a21cc8749c49788459fa9103b6e69b4535bd9011bb47cb21d3",
+      "sha256": "4885af603ccd9fd7bb4acc83831ee71a566aea6fa1d82b82dc83e8b9e6b1a1fe",
+      "bytes": 476,
+      "size": [32, 32],
+      "entityId": "item:pink-orchid",
+      "transformation": "RGBA, preserve proportions, max 320 px, lossless WebP"
+    },
+    {
+      "source": "src/main/resources/assets/maniacrev/textures/item/sber_sprout.png",
+      "local": "wiki/systems/system-sber-sprout.webp",
+      "sourceSha256": "e654db27a969c7248dd072541d989b9f81682d31d3e2a3b5a253acecc2684207",
+      "sha256": "0c2cfc4d1f9cb92f41eca2f4fffc543e64895fbaebe381d798bbac881738ca4e",
+      "bytes": 1266,
+      "size": [32, 32],
+      "entityId": "item:sber-sprout",
+      "transformation": "RGBA, preserve proportions, max 320 px, lossless WebP"
+    },
+    {
+      "source": "src/main/resources/assets/maniacrev/textures/item/head.png",
+      "local": "wiki/systems/system-guardian-head.webp",
+      "sourceSha256": "6fa95db811fa99091cc97fa7a6fed28472b1bc601cf31aed7918a2d1839f60d0",
+      "sha256": "82f729d927af258b81ee2320c8d9ae2703c751a4a3a2f45610d6b74872bf70cd",
+      "bytes": 74,
+      "size": [16, 16],
+      "entityId": "item:guardian-head",
+      "transformation": "RGBA, preserve proportions, max 320 px, lossless WebP"
+    },
+    {
+      "source": "src/main/resources/assets/maniacrev/textures/item/red_color_card.png",
+      "local": "wiki/systems/system-red-color-card.webp",
+      "sourceSha256": "630a82e015cc3eeee2da3b3c1c44acc69fdadec4b7a992784832c0116223b653",
+      "sha256": "5c273f7b77c79d9e0e4a7119d1ebb5b901acc283ec92afb9f13bc9ab3e6753a2",
+      "bytes": 910,
+      "size": [32, 32],
+      "entityId": "item:red-color-card",
+      "transformation": "RGBA, preserve proportions, max 320 px, lossless WebP"
+    },
+    {
+      "source": "src/main/resources/assets/maniacrev/textures/item/blue_color_card.png",
+      "local": "wiki/systems/system-blue-color-card.webp",
+      "sourceSha256": "a80fc1b724c19817c69dacf683be44a31779064a346890577d8ff01f1b1a9039",
+      "sha256": "56b5c7b673fd246d70dec16c11fea9ad9a7a75aba74ced188b8ff0cf72a7461a",
+      "bytes": 1296,
+      "size": [32, 32],
+      "entityId": "item:blue-color-card",
+      "transformation": "RGBA, preserve proportions, max 320 px, lossless WebP"
+    },
+    {
+      "source": "src/main/resources/assets/maniacrev/textures/item/green_color_card.png",
+      "local": "wiki/systems/system-green-color-card.webp",
+      "sourceSha256": "3bf10a9da04cbe8a58b6c22446254f2539684ecbda87859e1682394695e860ec",
+      "sha256": "b8d95ce1276bc7d40c8984d3aac1f8b85425cb9c214878e4caae3157f0677ba9",
+      "bytes": 1346,
+      "size": [32, 32],
+      "entityId": "item:green-color-card",
+      "transformation": "RGBA, preserve proportions, max 320 px, lossless WebP"
+    },
+    {
+      "source": "src/main/resources/assets/maniacrev/models/item/computer.json",
+      "local": "wiki/systems/system-computer.png",
+      "sourceSha256": "2a34e5e4047647f2a736a85f098ff6b9eca45c33f2d5b091b4ac3daa11fa909c",
+      "sha256": "93242788dbe48676511a1c67b47a1e664b5df1a2a7e622e0d85e53462747214f",
+      "bytes": 4108,
+      "size": [320, 320],
+      "entityId": "item:computer",
+      "transformation": "Minecraft JSON parent/textures/elements/rotation/GUI display, static orthographic render"
     }
   ]
 }

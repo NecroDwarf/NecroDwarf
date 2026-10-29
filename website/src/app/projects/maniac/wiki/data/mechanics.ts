@@ -1,8 +1,9 @@
 import type { Entity } from "./types";
 import { verifiedSource } from "./snapshots";
+import { mechanicCatalog } from "./systems-catalog";
 const source =
   "src/main/java/org/example/maniacrevolution/character/maniac/KeeperOfNightmaresClass.java";
-export const mechanics: readonly Entity<"mechanic">[] = [
+const existingMechanics: readonly Entity<"mechanic">[] = [
   {
     id: "mechanic:sanity",
     kind: "mechanic",
@@ -68,3 +69,22 @@ export const mechanics: readonly Entity<"mechanic">[] = [
     },
   },
 ];
+export const mechanics: readonly Entity<"mechanic">[] = mechanicCatalog.map(
+  (entry) => ({
+    id: entry.id,
+    kind: "mechanic",
+    slug: entry.slug,
+    name: entry.name,
+    revisions: {
+      ...existingMechanics.find((m) => m.id === entry.id)?.revisions,
+      [verifiedSource]: {
+        data: {
+          description: entry.description,
+          relatedIds: entry.relatedIds,
+          stats: entry.stats,
+        },
+        evidence: entry.evidence,
+      },
+    },
+  }),
+);

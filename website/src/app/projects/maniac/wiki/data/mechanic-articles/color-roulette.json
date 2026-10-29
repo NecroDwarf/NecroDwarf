@@ -1,0 +1,41 @@
+{
+  "id": "mechanic:color-roulette",
+  "description": "Перк выдаёт временную цветную карту с действием, зависящим от стороны.",
+  "sections": [
+    {
+      "title": "Как это работает",
+      "paragraphs": [
+        "Получите результат рулетки и используйте карту до истечения её времени. Карта хранит владельца и оставшееся время.",
+        "Красная карта связана с отбрасыванием или обнаружением компьютеров, синяя — с прогрессом компьютера, зелёная — с лечением или дополнительным уроном."
+      ]
+    },
+    {
+      "title": "Результат и влияние на матч",
+      "paragraphs": [
+        "Сервер выбирает подходящий вариант по стороне пользователя и проверяет цель действия. Синяя карта требует незавершённый компьютер."
+      ]
+    },
+    {
+      "title": "Условия и ограничения",
+      "paragraphs": [
+        "Личную карту нельзя выбросить и передать. Время и результат не являются постоянной характеристикой всех других цветочных предметов."
+      ]
+    }
+  ],
+  "images": [],
+  "notes": [],
+  "evidence": [
+    {
+      "path": "src/main/java/org/example/maniacrevolution/colorroulette/ColorRouletteManager.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/colorroulette/ColorCard.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/item/ColorCardItem.java"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+    }
+  ]
+}

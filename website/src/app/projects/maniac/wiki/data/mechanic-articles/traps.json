@@ -1,0 +1,41 @@
+{
+  "id": "mechanic:traps",
+  "description": "Размещение и наступание на соль обрабатываются разными частями системы.",
+  "sections": [
+    {
+      "title": "Как это работает",
+      "paragraphs": [
+        "Выберите свободную позицию над прочным основанием и разместите соль. Успех расходует предмет вне creative.",
+        "SaltTracker сохраняет позицию; взаимодействие сущности с блоком запускает проверку действия ловушки."
+      ]
+    },
+    {
+      "title": "Результат и влияние на матч",
+      "paragraphs": [
+        "Соль служит контролю движения и ограничению наступившей цели, а не прямой замене оружия."
+      ]
+    },
+    {
+      "title": "Условия и ограничения",
+      "paragraphs": [
+        "Ловушка требует правильной поверхности; нельзя объявлять её размещаемой в воздухе или на любом блоке."
+      ]
+    }
+  ],
+  "images": [],
+  "notes": [],
+  "evidence": [
+    {
+      "path": "src/main/java/org/example/maniacrevolution/item/SaltItem.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/block/SaltBlock.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/util/SaltTracker.java"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "id": "mechanic:agent-shop",
+  "description": "Персональный планшет открывает покупки, проверяемые сервером.",
+  "sections": [
+    {
+      "title": "Как это работает",
+      "paragraphs": [
+        "Откройте планшет Агента и выберите доступный товар. Интерфейс отправляет запрос серверу, где выполняется логика магазина."
+      ]
+    },
+    {
+      "title": "Результат и влияние на матч",
+      "paragraphs": [
+        "Покупка отличается от стартовой выдачи и от визуального списка CharacterLoadoutPreview."
+      ]
+    },
+    {
+      "title": "Условия и ограничения",
+      "paragraphs": [
+        "Не объявляется гарантированный пистолет с определённым уроном: описание класса и превью оружия расходятся, а универсальная выдача не восстановлена."
+      ]
+    }
+  ],
+  "images": [
+    {
+      "file": "guide-agent-shop-0.webp",
+      "width": 562,
+      "height": 445,
+      "caption": "Магазин Агента из руководства."
+    }
+  ],
+  "notes": [],
+  "evidence": [
+    {
+      "path": "src/main/java/org/example/maniacrevolution/item/Agent47TabletItem.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/character/maniac/AgentClass.java"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+    }
+  ]
+}

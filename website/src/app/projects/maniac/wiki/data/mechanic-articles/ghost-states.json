@@ -1,0 +1,41 @@
+{
+  "id": "mechanic:ghost-states",
+  "description": "Призрак чередует скрытие себя с управлением движением чужого тела.",
+  "sections": [
+    {
+      "title": "Как это работает",
+      "paragraphs": [
+        "Игрушечный нож переключает завесу; менеджер сохраняет и скрывает подходящие элементы экипировки.",
+        "Призрачная рука запускает одержимость подходящей целью. Движение, выход и возврат состояния контролируются отдельным менеджером."
+      ]
+    },
+    {
+      "title": "Результат и влияние на матч",
+      "paragraphs": [
+        "Полная невидимость и одержимость не являются простым обычным эффектом INVISIBILITY. После выхода из завесы есть запрет атаки."
+      ]
+    },
+    {
+      "title": "Условия и ограничения",
+      "paragraphs": [
+        "При завершении режима предметы и состояние возвращаются по серверным правилам. Отдельные способности имеют собственные стоимость и cooldown."
+      ]
+    }
+  ],
+  "images": [],
+  "notes": [],
+  "evidence": [
+    {
+      "path": "src/main/java/org/example/maniacrevolution/ghost/GhostStealthManager.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/ghost/GhostPossessionManager.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/ghost/GhostLoadoutManager.java"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+    }
+  ]
+}

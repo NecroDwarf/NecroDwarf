@@ -1,0 +1,7127 @@
+{
+  "routes": [
+    {
+      "path": "/projects/maniac/wiki/items",
+      "jsCount": 9,
+      "jsBytes": 480055,
+      "articleModules": [],
+      "scripts": [
+        {
+          "file": "assets/index-DIlyDRF1.js",
+          "bytes": 324580
+        },
+        {
+          "file": "assets/ItemsPage-Dix7Vpkp.js",
+          "bytes": 375
+        },
+        {
+          "file": "assets/SystemsCatalogPage-s7Aku3ta.js",
+          "bytes": 3887
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/systems-catalog-D7ryaJPj.js",
+          "bytes": 88703
+        },
+        {
+          "file": "assets/EntityIcon-DGbZdkoK.js",
+          "bytes": 34094
+        },
+        {
+          "file": "assets/equipment-assets-C5MI-Bzp.js",
+          "bytes": 9798
+        },
+        {
+          "file": "assets/Reference.module-ozFcrIXL.js",
+          "bytes": 700
+        },
+        {
+          "file": "assets/WikiLayout-DQ5YoCC1.js",
+          "bytes": 3440
+        }
+      ],
+      "images": [
+        "http://127.0.0.1:53288/assets/system-salt-Bi7Cn7KA.webp",
+        "http://127.0.0.1:53288/assets/system-generator-CAsmbuZu.png",
+        "http://127.0.0.1:53288/assets/system-hook-Ch4qR33Q.png",
+        "http://127.0.0.1:53288/assets/system-dead-staff-B2lv5CSp.png",
+        "http://127.0.0.1:53288/assets/system-maniac-regen-fragment-MlKKJYZL.webp",
+        "http://127.0.0.1:53288/assets/system-maniac-strength-fragment-CghHpYrm.webp",
+        "http://127.0.0.1:53288/assets/system-maniac-speed-fragment-pOs1B188.webp",
+        "http://127.0.0.1:53288/assets/system-maniac-slowness-fragment-BbGhf1fQ.webp",
+        "http://127.0.0.1:53288/assets/system-maniac-healing-fragment-CQOPJX7g.webp",
+        "http://127.0.0.1:53288/assets/system-maniac-weakness-fragment-CqeGgK3B.webp",
+        "http://127.0.0.1:53288/assets/system-maniac-slow-falling-fragment-D0L3MI6n.webp"
+      ]
+    },
+    {
+      "path": "/projects/maniac/wiki/mechanics",
+      "jsCount": 9,
+      "jsBytes": 480063,
+      "articleModules": [],
+      "scripts": [
+        {
+          "file": "assets/index-DIlyDRF1.js",
+          "bytes": 324580
+        },
+        {
+          "file": "assets/MechanicsPage-D8uTtEfe.js",
+          "bytes": 383
+        },
+        {
+          "file": "assets/SystemsCatalogPage-s7Aku3ta.js",
+          "bytes": 3887
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/WikiLayout-DQ5YoCC1.js",
+          "bytes": 3440
+        },
+        {
+          "file": "assets/equipment-assets-C5MI-Bzp.js",
+          "bytes": 9798
+        },
+        {
+          "file": "assets/systems-catalog-D7ryaJPj.js",
+          "bytes": 88703
+        },
+        {
+          "file": "assets/Reference.module-ozFcrIXL.js",
+          "bytes": 700
+        },
+        {
+          "file": "assets/EntityIcon-DGbZdkoK.js",
+          "bytes": 34094
+        }
+      ],
+      "images": []
+    },
+    {
+      "path": "/projects/maniac/wiki/items/salt",
+      "jsCount": 15,
+      "jsBytes": 573847,
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/item-articles/salt.json"
+      ],
+      "scripts": [
+        {
+          "file": "assets/index-DIlyDRF1.js",
+          "bytes": 324580
+        },
+        {
+          "file": "assets/salt-BScu1Mfp.js",
+          "bytes": 2071
+        },
+        {
+          "file": "assets/SystemsArticlePage-BowSTzet.js",
+          "bytes": 4769
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/EntityCards-DBl4CIOY.js",
+          "bytes": 4009
+        },
+        {
+          "file": "assets/equipment-assets-C5MI-Bzp.js",
+          "bytes": 9798
+        },
+        {
+          "file": "assets/registry-CfmMQjQ4.js",
+          "bytes": 41530
+        },
+        {
+          "file": "assets/EntityIcon-DGbZdkoK.js",
+          "bytes": 34094
+        },
+        {
+          "file": "assets/RelatedLinks-CxWHJHjD.js",
+          "bytes": 684
+        },
+        {
+          "file": "assets/systems-catalog-D7ryaJPj.js",
+          "bytes": 88703
+        },
+        {
+          "file": "assets/DifficultyStars-BMed4nG4.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/GameGlyph-aYIYk7Ws.js",
+          "bytes": 3896
+        },
+        {
+          "file": "assets/Reference.module-ozFcrIXL.js",
+          "bytes": 700
+        },
+        {
+          "file": "assets/WikiLayout-DQ5YoCC1.js",
+          "bytes": 3440
+        }
+      ],
+      "images": [
+        "http://127.0.0.1:53288/assets/system-salt-Bi7Cn7KA.webp"
+      ]
+    },
+    {
+      "path": "/projects/maniac/wiki/items/generator",
+      "jsCount": 15,
+      "jsBytes": 574394,
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/item-articles/generator.json"
+      ],
+      "scripts": [
+        {
+          "file": "assets/index-DIlyDRF1.js",
+          "bytes": 324580
+        },
+        {
+          "file": "assets/generator-ChbbckWp.js",
+          "bytes": 2618
+        },
+        {
+          "file": "assets/SystemsArticlePage-BowSTzet.js",
+          "bytes": 4769
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/equipment-assets-C5MI-Bzp.js",
+          "bytes": 9798
+        },
+        {
+          "file": "assets/systems-catalog-D7ryaJPj.js",
+          "bytes": 88703
+        },
+        {
+          "file": "assets/registry-CfmMQjQ4.js",
+          "bytes": 41530
+        },
+        {
+          "file": "assets/EntityCards-DBl4CIOY.js",
+          "bytes": 4009
+        },
+        {
+          "file": "assets/EntityIcon-DGbZdkoK.js",
+          "bytes": 34094
+        },
+        {
+          "file": "assets/GameGlyph-aYIYk7Ws.js",
+          "bytes": 3896
+        },
+        {
+          "file": "assets/DifficultyStars-BMed4nG4.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/RelatedLinks-CxWHJHjD.js",
+          "bytes": 684
+        },
+        {
+          "file": "assets/WikiLayout-DQ5YoCC1.js",
+          "bytes": 3440
+        },
+        {
+          "file": "assets/Reference.module-ozFcrIXL.js",
+          "bytes": 700
+        }
+      ],
+      "images": [
+        "http://127.0.0.1:53288/assets/system-generator-CAsmbuZu.png"
+      ]
+    },
+    {
+      "path": "/projects/maniac/wiki/items/clarity",
+      "jsCount": 15,
+      "jsBytes": 573580,
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/item-articles/clarity.json"
+      ],
+      "scripts": [
+        {
+          "file": "assets/index-DIlyDRF1.js",
+          "bytes": 324580
+        },
+        {
+          "file": "assets/clarity-CwWIutW_.js",
+          "bytes": 1804
+        },
+        {
+          "file": "assets/SystemsArticlePage-BowSTzet.js",
+          "bytes": 4769
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/equipment-assets-C5MI-Bzp.js",
+          "bytes": 9798
+        },
+        {
+          "file": "assets/EntityCards-DBl4CIOY.js",
+          "bytes": 4009
+        },
+        {
+          "file": "assets/DifficultyStars-BMed4nG4.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/registry-CfmMQjQ4.js",
+          "bytes": 41530
+        },
+        {
+          "file": "assets/RelatedLinks-CxWHJHjD.js",
+          "bytes": 684
+        },
+        {
+          "file": "assets/systems-catalog-D7ryaJPj.js",
+          "bytes": 88703
+        },
+        {
+          "file": "assets/GameGlyph-aYIYk7Ws.js",
+          "bytes": 3896
+        },
+        {
+          "file": "assets/EntityIcon-DGbZdkoK.js",
+          "bytes": 34094
+        },
+        {
+          "file": "assets/WikiLayout-DQ5YoCC1.js",
+          "bytes": 3440
+        },
+        {
+          "file": "assets/Reference.module-ozFcrIXL.js",
+          "bytes": 700
+        }
+      ],
+      "images": []
+    },
+    {
+      "path": "/projects/maniac/wiki/items/hook",
+      "jsCount": 15,
+      "jsBytes": 573727,
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/item-articles/hook.json"
+      ],
+      "scripts": [
+        {
+          "file": "assets/index-DIlyDRF1.js",
+          "bytes": 324580
+        },
+        {
+          "file": "assets/hook-n1gR4WpX.js",
+          "bytes": 1951
+        },
+        {
+          "file": "assets/SystemsArticlePage-BowSTzet.js",
+          "bytes": 4769
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/equipment-assets-C5MI-Bzp.js",
+          "bytes": 9798
+        },
+        {
+          "file": "assets/DifficultyStars-BMed4nG4.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/registry-CfmMQjQ4.js",
+          "bytes": 41530
+        },
+        {
+          "file": "assets/GameGlyph-aYIYk7Ws.js",
+          "bytes": 3896
+        },
+        {
+          "file": "assets/EntityIcon-DGbZdkoK.js",
+          "bytes": 34094
+        },
+        {
+          "file": "assets/systems-catalog-D7ryaJPj.js",
+          "bytes": 88703
+        },
+        {
+          "file": "assets/EntityCards-DBl4CIOY.js",
+          "bytes": 4009
+        },
+        {
+          "file": "assets/RelatedLinks-CxWHJHjD.js",
+          "bytes": 684
+        },
+        {
+          "file": "assets/Reference.module-ozFcrIXL.js",
+          "bytes": 700
+        },
+        {
+          "file": "assets/WikiLayout-DQ5YoCC1.js",
+          "bytes": 3440
+        }
+      ],
+      "images": [
+        "http://127.0.0.1:53288/assets/system-hook-Ch4qR33Q.png"
+      ]
+    },
+    {
+      "path": "/projects/maniac/wiki/items/death-scythe",
+      "jsCount": 15,
+      "jsBytes": 573851,
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/item-articles/death-scythe.json"
+      ],
+      "scripts": [
+        {
+          "file": "assets/index-DIlyDRF1.js",
+          "bytes": 324580
+        },
+        {
+          "file": "assets/death-scythe-CdARY5X_.js",
+          "bytes": 2075
+        },
+        {
+          "file": "assets/SystemsArticlePage-BowSTzet.js",
+          "bytes": 4769
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/equipment-assets-C5MI-Bzp.js",
+          "bytes": 9798
+        },
+        {
+          "file": "assets/registry-CfmMQjQ4.js",
+          "bytes": 41530
+        },
+        {
+          "file": "assets/systems-catalog-D7ryaJPj.js",
+          "bytes": 88703
+        },
+        {
+          "file": "assets/EntityIcon-DGbZdkoK.js",
+          "bytes": 34094
+        },
+        {
+          "file": "assets/DifficultyStars-BMed4nG4.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/EntityCards-DBl4CIOY.js",
+          "bytes": 4009
+        },
+        {
+          "file": "assets/RelatedLinks-CxWHJHjD.js",
+          "bytes": 684
+        },
+        {
+          "file": "assets/GameGlyph-aYIYk7Ws.js",
+          "bytes": 3896
+        },
+        {
+          "file": "assets/Reference.module-ozFcrIXL.js",
+          "bytes": 700
+        },
+        {
+          "file": "assets/WikiLayout-DQ5YoCC1.js",
+          "bytes": 3440
+        }
+      ],
+      "images": []
+    },
+    {
+      "path": "/projects/maniac/wiki/items/dead-staff",
+      "jsCount": 15,
+      "jsBytes": 574155,
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/item-articles/dead-staff.json"
+      ],
+      "scripts": [
+        {
+          "file": "assets/index-DIlyDRF1.js",
+          "bytes": 324580
+        },
+        {
+          "file": "assets/dead-staff-C28otPfo.js",
+          "bytes": 2379
+        },
+        {
+          "file": "assets/SystemsArticlePage-BowSTzet.js",
+          "bytes": 4769
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/equipment-assets-C5MI-Bzp.js",
+          "bytes": 9798
+        },
+        {
+          "file": "assets/registry-CfmMQjQ4.js",
+          "bytes": 41530
+        },
+        {
+          "file": "assets/EntityCards-DBl4CIOY.js",
+          "bytes": 4009
+        },
+        {
+          "file": "assets/systems-catalog-D7ryaJPj.js",
+          "bytes": 88703
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/DifficultyStars-BMed4nG4.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/RelatedLinks-CxWHJHjD.js",
+          "bytes": 684
+        },
+        {
+          "file": "assets/EntityIcon-DGbZdkoK.js",
+          "bytes": 34094
+        },
+        {
+          "file": "assets/GameGlyph-aYIYk7Ws.js",
+          "bytes": 3896
+        },
+        {
+          "file": "assets/WikiLayout-DQ5YoCC1.js",
+          "bytes": 3440
+        },
+        {
+          "file": "assets/Reference.module-ozFcrIXL.js",
+          "bytes": 700
+        }
+      ],
+      "images": [
+        "http://127.0.0.1:53288/assets/system-dead-staff-B2lv5CSp.png"
+      ]
+    },
+    {
+      "path": "/projects/maniac/wiki/items/necromancer-helmet",
+      "jsCount": 15,
+      "jsBytes": 573792,
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/item-articles/necromancer-helmet.json"
+      ],
+      "scripts": [
+        {
+          "file": "assets/index-DIlyDRF1.js",
+          "bytes": 324580
+        },
+        {
+          "file": "assets/necromancer-helmet-BDWn7M1g.js",
+          "bytes": 2016
+        },
+        {
+          "file": "assets/SystemsArticlePage-BowSTzet.js",
+          "bytes": 4769
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/equipment-assets-C5MI-Bzp.js",
+          "bytes": 9798
+        },
+        {
+          "file": "assets/EntityIcon-DGbZdkoK.js",
+          "bytes": 34094
+        },
+        {
+          "file": "assets/EntityCards-DBl4CIOY.js",
+          "bytes": 4009
+        },
+        {
+          "file": "assets/GameGlyph-aYIYk7Ws.js",
+          "bytes": 3896
+        },
+        {
+          "file": "assets/RelatedLinks-CxWHJHjD.js",
+          "bytes": 684
+        },
+        {
+          "file": "assets/registry-CfmMQjQ4.js",
+          "bytes": 41530
+        },
+        {
+          "file": "assets/DifficultyStars-BMed4nG4.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/Reference.module-ozFcrIXL.js",
+          "bytes": 700
+        },
+        {
+          "file": "assets/systems-catalog-D7ryaJPj.js",
+          "bytes": 88703
+        },
+        {
+          "file": "assets/WikiLayout-DQ5YoCC1.js",
+          "bytes": 3440
+        }
+      ],
+      "images": []
+    },
+    {
+      "path": "/projects/maniac/wiki/items/necromancer-chestplate",
+      "jsCount": 15,
+      "jsBytes": 573808,
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/item-articles/necromancer-chestplate.json"
+      ],
+      "scripts": [
+        {
+          "file": "assets/index-DIlyDRF1.js",
+          "bytes": 324580
+        },
+        {
+          "file": "assets/necromancer-chestplate-DcQVRKN-.js",
+          "bytes": 2032
+        },
+        {
+          "file": "assets/SystemsArticlePage-BowSTzet.js",
+          "bytes": 4769
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/registry-CfmMQjQ4.js",
+          "bytes": 41530
+        },
+        {
+          "file": "assets/equipment-assets-C5MI-Bzp.js",
+          "bytes": 9798
+        },
+        {
+          "file": "assets/systems-catalog-D7ryaJPj.js",
+          "bytes": 88703
+        },
+        {
+          "file": "assets/GameGlyph-aYIYk7Ws.js",
+          "bytes": 3896
+        },
+        {
+          "file": "assets/EntityCards-DBl4CIOY.js",
+          "bytes": 4009
+        },
+        {
+          "file": "assets/EntityIcon-DGbZdkoK.js",
+          "bytes": 34094
+        },
+        {
+          "file": "assets/DifficultyStars-BMed4nG4.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/RelatedLinks-CxWHJHjD.js",
+          "bytes": 684
+        },
+        {
+          "file": "assets/WikiLayout-DQ5YoCC1.js",
+          "bytes": 3440
+        },
+        {
+          "file": "assets/Reference.module-ozFcrIXL.js",
+          "bytes": 700
+        }
+      ],
+      "images": []
+    },
+    {
+      "path": "/projects/maniac/wiki/items/necromancer-leggings",
+      "jsCount": 15,
+      "jsBytes": 573800,
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/item-articles/necromancer-leggings.json"
+      ],
+      "scripts": [
+        {
+          "file": "assets/index-DIlyDRF1.js",
+          "bytes": 324580
+        },
+        {
+          "file": "assets/necromancer-leggings-BXNFpuXe.js",
+          "bytes": 2024
+        },
+        {
+          "file": "assets/SystemsArticlePage-BowSTzet.js",
+          "bytes": 4769
+        },
+        {
+          "file": "assets/registry-CfmMQjQ4.js",
+          "bytes": 41530
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/EntityCards-DBl4CIOY.js",
+          "bytes": 4009
+        },
+        {
+          "file": "assets/EntityIcon-DGbZdkoK.js",
+          "bytes": 34094
+        },
+        {
+          "file": "assets/equipment-assets-C5MI-Bzp.js",
+          "bytes": 9798
+        },
+        {
+          "file": "assets/DifficultyStars-BMed4nG4.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/systems-catalog-D7ryaJPj.js",
+          "bytes": 88703
+        },
+        {
+          "file": "assets/GameGlyph-aYIYk7Ws.js",
+          "bytes": 3896
+        },
+        {
+          "file": "assets/RelatedLinks-CxWHJHjD.js",
+          "bytes": 684
+        },
+        {
+          "file": "assets/Reference.module-ozFcrIXL.js",
+          "bytes": 700
+        },
+        {
+          "file": "assets/WikiLayout-DQ5YoCC1.js",
+          "bytes": 3440
+        }
+      ],
+      "images": []
+    },
+    {
+      "path": "/projects/maniac/wiki/items/necromancer-boots",
+      "jsCount": 15,
+      "jsBytes": 573788,
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/item-articles/necromancer-boots.json"
+      ],
+      "scripts": [
+        {
+          "file": "assets/index-DIlyDRF1.js",
+          "bytes": 324580
+        },
+        {
+          "file": "assets/necromancer-boots-B_BMqbkk.js",
+          "bytes": 2012
+        },
+        {
+          "file": "assets/SystemsArticlePage-BowSTzet.js",
+          "bytes": 4769
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/DifficultyStars-BMed4nG4.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/registry-CfmMQjQ4.js",
+          "bytes": 41530
+        },
+        {
+          "file": "assets/equipment-assets-C5MI-Bzp.js",
+          "bytes": 9798
+        },
+        {
+          "file": "assets/EntityIcon-DGbZdkoK.js",
+          "bytes": 34094
+        },
+        {
+          "file": "assets/RelatedLinks-CxWHJHjD.js",
+          "bytes": 684
+        },
+        {
+          "file": "assets/GameGlyph-aYIYk7Ws.js",
+          "bytes": 3896
+        },
+        {
+          "file": "assets/EntityCards-DBl4CIOY.js",
+          "bytes": 4009
+        },
+        {
+          "file": "assets/systems-catalog-D7ryaJPj.js",
+          "bytes": 88703
+        },
+        {
+          "file": "assets/WikiLayout-DQ5YoCC1.js",
+          "bytes": 3440
+        },
+        {
+          "file": "assets/Reference.module-ozFcrIXL.js",
+          "bytes": 700
+        }
+      ],
+      "images": []
+    },
+    {
+      "path": "/projects/maniac/wiki/items/soul-essence",
+      "jsCount": 15,
+      "jsBytes": 573562,
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/item-articles/soul-essence.json"
+      ],
+      "scripts": [
+        {
+          "file": "assets/index-DIlyDRF1.js",
+          "bytes": 324580
+        },
+        {
+          "file": "assets/soul-essence-Bo4nROp6.js",
+          "bytes": 1786
+        },
+        {
+          "file": "assets/SystemsArticlePage-BowSTzet.js",
+          "bytes": 4769
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/equipment-assets-C5MI-Bzp.js",
+          "bytes": 9798
+        },
+        {
+          "file": "assets/registry-CfmMQjQ4.js",
+          "bytes": 41530
+        },
+        {
+          "file": "assets/EntityIcon-DGbZdkoK.js",
+          "bytes": 34094
+        },
+        {
+          "file": "assets/EntityCards-DBl4CIOY.js",
+          "bytes": 4009
+        },
+        {
+          "file": "assets/DifficultyStars-BMed4nG4.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/RelatedLinks-CxWHJHjD.js",
+          "bytes": 684
+        },
+        {
+          "file": "assets/systems-catalog-D7ryaJPj.js",
+          "bytes": 88703
+        },
+        {
+          "file": "assets/GameGlyph-aYIYk7Ws.js",
+          "bytes": 3896
+        },
+        {
+          "file": "assets/Reference.module-ozFcrIXL.js",
+          "bytes": 700
+        },
+        {
+          "file": "assets/WikiLayout-DQ5YoCC1.js",
+          "bytes": 3440
+        }
+      ],
+      "images": []
+    },
+    {
+      "path": "/projects/maniac/wiki/items/maniac-regen-fragment",
+      "jsCount": 15,
+      "jsBytes": 573805,
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/item-articles/maniac-regen-fragment.json"
+      ],
+      "scripts": [
+        {
+          "file": "assets/index-DIlyDRF1.js",
+          "bytes": 324580
+        },
+        {
+          "file": "assets/SystemsArticlePage-BowSTzet.js",
+          "bytes": 4769
+        },
+        {
+          "file": "assets/maniac-regen-fragment-bI_8rJn_.js",
+          "bytes": 2029
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/equipment-assets-C5MI-Bzp.js",
+          "bytes": 9798
+        },
+        {
+          "file": "assets/registry-CfmMQjQ4.js",
+          "bytes": 41530
+        },
+        {
+          "file": "assets/EntityCards-DBl4CIOY.js",
+          "bytes": 4009
+        },
+        {
+          "file": "assets/GameGlyph-aYIYk7Ws.js",
+          "bytes": 3896
+        },
+        {
+          "file": "assets/RelatedLinks-CxWHJHjD.js",
+          "bytes": 684
+        },
+        {
+          "file": "assets/DifficultyStars-BMed4nG4.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/WikiLayout-DQ5YoCC1.js",
+          "bytes": 3440
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/Reference.module-ozFcrIXL.js",
+          "bytes": 700
+        },
+        {
+          "file": "assets/systems-catalog-D7ryaJPj.js",
+          "bytes": 88703
+        },
+        {
+          "file": "assets/EntityIcon-DGbZdkoK.js",
+          "bytes": 34094
+        }
+      ],
+      "images": [
+        "http://127.0.0.1:53288/assets/system-maniac-regen-fragment-MlKKJYZL.webp"
+      ]
+    },
+    {
+      "path": "/projects/maniac/wiki/items/maniac-strength-fragment",
+      "jsCount": 15,
+      "jsBytes": 573784,
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/item-articles/maniac-strength-fragment.json"
+      ],
+      "scripts": [
+        {
+          "file": "assets/index-DIlyDRF1.js",
+          "bytes": 324580
+        },
+        {
+          "file": "assets/maniac-strength-fragment-BFcGSMf4.js",
+          "bytes": 2008
+        },
+        {
+          "file": "assets/SystemsArticlePage-BowSTzet.js",
+          "bytes": 4769
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/registry-CfmMQjQ4.js",
+          "bytes": 41530
+        },
+        {
+          "file": "assets/equipment-assets-C5MI-Bzp.js",
+          "bytes": 9798
+        },
+        {
+          "file": "assets/EntityCards-DBl4CIOY.js",
+          "bytes": 4009
+        },
+        {
+          "file": "assets/EntityIcon-DGbZdkoK.js",
+          "bytes": 34094
+        },
+        {
+          "file": "assets/DifficultyStars-BMed4nG4.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/RelatedLinks-CxWHJHjD.js",
+          "bytes": 684
+        },
+        {
+          "file": "assets/GameGlyph-aYIYk7Ws.js",
+          "bytes": 3896
+        },
+        {
+          "file": "assets/WikiLayout-DQ5YoCC1.js",
+          "bytes": 3440
+        },
+        {
+          "file": "assets/Reference.module-ozFcrIXL.js",
+          "bytes": 700
+        },
+        {
+          "file": "assets/systems-catalog-D7ryaJPj.js",
+          "bytes": 88703
+        }
+      ],
+      "images": [
+        "http://127.0.0.1:53288/assets/system-maniac-strength-fragment-CghHpYrm.webp"
+      ]
+    },
+    {
+      "path": "/projects/maniac/wiki/items/maniac-speed-fragment",
+      "jsCount": 15,
+      "jsBytes": 573780,
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/item-articles/maniac-speed-fragment.json"
+      ],
+      "scripts": [
+        {
+          "file": "assets/index-DIlyDRF1.js",
+          "bytes": 324580
+        },
+        {
+          "file": "assets/maniac-speed-fragment-AmionCyX.js",
+          "bytes": 2004
+        },
+        {
+          "file": "assets/SystemsArticlePage-BowSTzet.js",
+          "bytes": 4769
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/DifficultyStars-BMed4nG4.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/GameGlyph-aYIYk7Ws.js",
+          "bytes": 3896
+        },
+        {
+          "file": "assets/EntityCards-DBl4CIOY.js",
+          "bytes": 4009
+        },
+        {
+          "file": "assets/registry-CfmMQjQ4.js",
+          "bytes": 41530
+        },
+        {
+          "file": "assets/RelatedLinks-CxWHJHjD.js",
+          "bytes": 684
+        },
+        {
+          "file": "assets/EntityIcon-DGbZdkoK.js",
+          "bytes": 34094
+        },
+        {
+          "file": "assets/equipment-assets-C5MI-Bzp.js",
+          "bytes": 9798
+        },
+        {
+          "file": "assets/systems-catalog-D7ryaJPj.js",
+          "bytes": 88703
+        },
+        {
+          "file": "assets/WikiLayout-DQ5YoCC1.js",
+          "bytes": 3440
+        },
+        {
+          "file": "assets/Reference.module-ozFcrIXL.js",
+          "bytes": 700
+        }
+      ],
+      "images": [
+        "http://127.0.0.1:53288/assets/system-maniac-speed-fragment-pOs1B188.webp"
+      ]
+    },
+    {
+      "path": "/projects/maniac/wiki/items/maniac-slowness-fragment",
+      "jsCount": 15,
+      "jsBytes": 573796,
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/item-articles/maniac-slowness-fragment.json"
+      ],
+      "scripts": [
+        {
+          "file": "assets/index-DIlyDRF1.js",
+          "bytes": 324580
+        },
+        {
+          "file": "assets/maniac-slowness-fragment-B2mG1EXe.js",
+          "bytes": 2020
+        },
+        {
+          "file": "assets/SystemsArticlePage-BowSTzet.js",
+          "bytes": 4769
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/equipment-assets-C5MI-Bzp.js",
+          "bytes": 9798
+        },
+        {
+          "file": "assets/EntityCards-DBl4CIOY.js",
+          "bytes": 4009
+        },
+        {
+          "file": "assets/DifficultyStars-BMed4nG4.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/systems-catalog-D7ryaJPj.js",
+          "bytes": 88703
+        },
+        {
+          "file": "assets/GameGlyph-aYIYk7Ws.js",
+          "bytes": 3896
+        },
+        {
+          "file": "assets/EntityIcon-DGbZdkoK.js",
+          "bytes": 34094
+        },
+        {
+          "file": "assets/RelatedLinks-CxWHJHjD.js",
+          "bytes": 684
+        },
+        {
+          "file": "assets/registry-CfmMQjQ4.js",
+          "bytes": 41530
+        },
+        {
+          "file": "assets/WikiLayout-DQ5YoCC1.js",
+          "bytes": 3440
+        },
+        {
+          "file": "assets/Reference.module-ozFcrIXL.js",
+          "bytes": 700
+        }
+      ],
+      "images": [
+        "http://127.0.0.1:53288/assets/system-maniac-slowness-fragment-BbGhf1fQ.webp"
+      ]
+    },
+    {
+      "path": "/projects/maniac/wiki/items/maniac-slow-falling-fragment",
+      "jsCount": 15,
+      "jsBytes": 573823,
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/item-articles/maniac-slow-falling-fragment.json"
+      ],
+      "scripts": [
+        {
+          "file": "assets/index-DIlyDRF1.js",
+          "bytes": 324580
+        },
+        {
+          "file": "assets/maniac-slow-falling-fragment-BFJzouM9.js",
+          "bytes": 2047
+        },
+        {
+          "file": "assets/SystemsArticlePage-BowSTzet.js",
+          "bytes": 4769
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/equipment-assets-C5MI-Bzp.js",
+          "bytes": 9798
+        },
+        {
+          "file": "assets/EntityCards-DBl4CIOY.js",
+          "bytes": 4009
+        },
+        {
+          "file": "assets/registry-CfmMQjQ4.js",
+          "bytes": 41530
+        },
+        {
+          "file": "assets/GameGlyph-aYIYk7Ws.js",
+          "bytes": 3896
+        },
+        {
+          "file": "assets/EntityIcon-DGbZdkoK.js",
+          "bytes": 34094
+        },
+        {
+          "file": "assets/DifficultyStars-BMed4nG4.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/RelatedLinks-CxWHJHjD.js",
+          "bytes": 684
+        },
+        {
+          "file": "assets/systems-catalog-D7ryaJPj.js",
+          "bytes": 88703
+        },
+        {
+          "file": "assets/Reference.module-ozFcrIXL.js",
+          "bytes": 700
+        },
+        {
+          "file": "assets/WikiLayout-DQ5YoCC1.js",
+          "bytes": 3440
+        }
+      ],
+      "images": [
+        "http://127.0.0.1:53288/assets/system-maniac-slow-falling-fragment-D0L3MI6n.webp"
+      ]
+    },
+    {
+      "path": "/projects/maniac/wiki/items/maniac-weakness-fragment",
+      "jsCount": 15,
+      "jsBytes": 573792,
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/item-articles/maniac-weakness-fragment.json"
+      ],
+      "scripts": [
+        {
+          "file": "assets/index-DIlyDRF1.js",
+          "bytes": 324580
+        },
+        {
+          "file": "assets/maniac-weakness-fragment-CVeJlCla.js",
+          "bytes": 2016
+        },
+        {
+          "file": "assets/SystemsArticlePage-BowSTzet.js",
+          "bytes": 4769
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/equipment-assets-C5MI-Bzp.js",
+          "bytes": 9798
+        },
+        {
+          "file": "assets/DifficultyStars-BMed4nG4.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/systems-catalog-D7ryaJPj.js",
+          "bytes": 88703
+        },
+        {
+          "file": "assets/RelatedLinks-CxWHJHjD.js",
+          "bytes": 684
+        },
+        {
+          "file": "assets/registry-CfmMQjQ4.js",
+          "bytes": 41530
+        },
+        {
+          "file": "assets/EntityCards-DBl4CIOY.js",
+          "bytes": 4009
+        },
+        {
+          "file": "assets/GameGlyph-aYIYk7Ws.js",
+          "bytes": 3896
+        },
+        {
+          "file": "assets/Reference.module-ozFcrIXL.js",
+          "bytes": 700
+        },
+        {
+          "file": "assets/WikiLayout-DQ5YoCC1.js",
+          "bytes": 3440
+        },
+        {
+          "file": "assets/EntityIcon-DGbZdkoK.js",
+          "bytes": 34094
+        }
+      ],
+      "images": [
+        "http://127.0.0.1:53288/assets/system-maniac-weakness-fragment-CqeGgK3B.webp"
+      ]
+    },
+    {
+      "path": "/projects/maniac/wiki/items/maniac-healing-fragment",
+      "jsCount": 15,
+      "jsBytes": 573786,
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/item-articles/maniac-healing-fragment.json"
+      ],
+      "scripts": [
+        {
+          "file": "assets/index-DIlyDRF1.js",
+          "bytes": 324580
+        },
+        {
+          "file": "assets/maniac-healing-fragment-AzMGa8az.js",
+          "bytes": 2010
+        },
+        {
+          "file": "assets/SystemsArticlePage-BowSTzet.js",
+          "bytes": 4769
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/registry-CfmMQjQ4.js",
+          "bytes": 41530
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/DifficultyStars-BMed4nG4.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/EntityIcon-DGbZdkoK.js",
+          "bytes": 34094
+        },
+        {
+          "file": "assets/RelatedLinks-CxWHJHjD.js",
+          "bytes": 684
+        },
+        {
+          "file": "assets/equipment-assets-C5MI-Bzp.js",
+          "bytes": 9798
+        },
+        {
+          "file": "assets/WikiLayout-DQ5YoCC1.js",
+          "bytes": 3440
+        },
+        {
+          "file": "assets/EntityCards-DBl4CIOY.js",
+          "bytes": 4009
+        },
+        {
+          "file": "assets/Reference.module-ozFcrIXL.js",
+          "bytes": 700
+        },
+        {
+          "file": "assets/systems-catalog-D7ryaJPj.js",
+          "bytes": 88703
+        },
+        {
+          "file": "assets/GameGlyph-aYIYk7Ws.js",
+          "bytes": 3896
+        }
+      ],
+      "images": [
+        "http://127.0.0.1:53288/assets/system-maniac-healing-fragment-CQOPJX7g.webp"
+      ]
+    },
+    {
+      "path": "/projects/maniac/wiki/items/maniac-blindness-fragment",
+      "jsCount": 15,
+      "jsBytes": 573794,
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/item-articles/maniac-blindness-fragment.json"
+      ],
+      "scripts": [
+        {
+          "file": "assets/index-DIlyDRF1.js",
+          "bytes": 324580
+        },
+        {
+          "file": "assets/maniac-blindness-fragment-Dnk7itGp.js",
+          "bytes": 2018
+        },
+        {
+          "file": "assets/SystemsArticlePage-BowSTzet.js",
+          "bytes": 4769
+        },
+        {
+          "file": "assets/equipment-assets-C5MI-Bzp.js",
+          "bytes": 9798
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/registry-CfmMQjQ4.js",
+          "bytes": 41530
+        },
+        {
+          "file": "assets/DifficultyStars-BMed4nG4.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/RelatedLinks-CxWHJHjD.js",
+          "bytes": 684
+        },
+        {
+          "file": "assets/EntityCards-DBl4CIOY.js",
+          "bytes": 4009
+        },
+        {
+          "file": "assets/systems-catalog-D7ryaJPj.js",
+          "bytes": 88703
+        },
+        {
+          "file": "assets/GameGlyph-aYIYk7Ws.js",
+          "bytes": 3896
+        },
+        {
+          "file": "assets/EntityIcon-DGbZdkoK.js",
+          "bytes": 34094
+        },
+        {
+          "file": "assets/Reference.module-ozFcrIXL.js",
+          "bytes": 700
+        },
+        {
+          "file": "assets/WikiLayout-DQ5YoCC1.js",
+          "bytes": 3440
+        }
+      ],
+      "images": [
+        "http://127.0.0.1:53288/assets/system-maniac-blindness-fragment-1kJ7oftl.webp"
+      ]
+    },
+    {
+      "path": "/projects/maniac/wiki/items/maniac-glowing-fragment",
+      "jsCount": 15,
+      "jsBytes": 573788,
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/item-articles/maniac-glowing-fragment.json"
+      ],
+      "scripts": [
+        {
+          "file": "assets/index-DIlyDRF1.js",
+          "bytes": 324580
+        },
+        {
+          "file": "assets/maniac-glowing-fragment-BN-1mV5C.js",
+          "bytes": 2012
+        },
+        {
+          "file": "assets/SystemsArticlePage-BowSTzet.js",
+          "bytes": 4769
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/equipment-assets-C5MI-Bzp.js",
+          "bytes": 9798
+        },
+        {
+          "file": "assets/EntityCards-DBl4CIOY.js",
+          "bytes": 4009
+        },
+        {
+          "file": "assets/systems-catalog-D7ryaJPj.js",
+          "bytes": 88703
+        },
+        {
+          "file": "assets/EntityIcon-DGbZdkoK.js",
+          "bytes": 34094
+        },
+        {
+          "file": "assets/registry-CfmMQjQ4.js",
+          "bytes": 41530
+        },
+        {
+          "file": "assets/DifficultyStars-BMed4nG4.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/RelatedLinks-CxWHJHjD.js",
+          "bytes": 684
+        },
+        {
+          "file": "assets/GameGlyph-aYIYk7Ws.js",
+          "bytes": 3896
+        },
+        {
+          "file": "assets/Reference.module-ozFcrIXL.js",
+          "bytes": 700
+        },
+        {
+          "file": "assets/WikiLayout-DQ5YoCC1.js",
+          "bytes": 3440
+        }
+      ],
+      "images": [
+        "http://127.0.0.1:53288/assets/system-maniac-glowing-fragment-h6T9yXP4.webp"
+      ]
+    },
+    {
+      "path": "/projects/maniac/wiki/items/recipe-book",
+      "jsCount": 15,
+      "jsBytes": 573743,
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/item-articles/recipe-book.json"
+      ],
+      "scripts": [
+        {
+          "file": "assets/index-DIlyDRF1.js",
+          "bytes": 324580
+        },
+        {
+          "file": "assets/recipe-book-pusTMHO6.js",
+          "bytes": 1967
+        },
+        {
+          "file": "assets/SystemsArticlePage-BowSTzet.js",
+          "bytes": 4769
+        },
+        {
+          "file": "assets/registry-CfmMQjQ4.js",
+          "bytes": 41530
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/EntityCards-DBl4CIOY.js",
+          "bytes": 4009
+        },
+        {
+          "file": "assets/equipment-assets-C5MI-Bzp.js",
+          "bytes": 9798
+        },
+        {
+          "file": "assets/DifficultyStars-BMed4nG4.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/EntityIcon-DGbZdkoK.js",
+          "bytes": 34094
+        },
+        {
+          "file": "assets/RelatedLinks-CxWHJHjD.js",
+          "bytes": 684
+        },
+        {
+          "file": "assets/GameGlyph-aYIYk7Ws.js",
+          "bytes": 3896
+        },
+        {
+          "file": "assets/Reference.module-ozFcrIXL.js",
+          "bytes": 700
+        },
+        {
+          "file": "assets/WikiLayout-DQ5YoCC1.js",
+          "bytes": 3440
+        },
+        {
+          "file": "assets/systems-catalog-D7ryaJPj.js",
+          "bytes": 88703
+        }
+      ],
+      "images": [
+        "http://127.0.0.1:53288/assets/system-recipe-book-Dfcu3bgp.webp"
+      ]
+    },
+    {
+      "path": "/projects/maniac/wiki/items/bandages",
+      "jsCount": 15,
+      "jsBytes": 574016,
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/item-articles/bandages.json"
+      ],
+      "scripts": [
+        {
+          "file": "assets/index-DIlyDRF1.js",
+          "bytes": 324580
+        },
+        {
+          "file": "assets/bandages-BtIMbUCo.js",
+          "bytes": 2240
+        },
+        {
+          "file": "assets/SystemsArticlePage-BowSTzet.js",
+          "bytes": 4769
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/registry-CfmMQjQ4.js",
+          "bytes": 41530
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/equipment-assets-C5MI-Bzp.js",
+          "bytes": 9798
+        },
+        {
+          "file": "assets/EntityIcon-DGbZdkoK.js",
+          "bytes": 34094
+        },
+        {
+          "file": "assets/EntityCards-DBl4CIOY.js",
+          "bytes": 4009
+        },
+        {
+          "file": "assets/DifficultyStars-BMed4nG4.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/GameGlyph-aYIYk7Ws.js",
+          "bytes": 3896
+        },
+        {
+          "file": "assets/systems-catalog-D7ryaJPj.js",
+          "bytes": 88703
+        },
+        {
+          "file": "assets/RelatedLinks-CxWHJHjD.js",
+          "bytes": 684
+        },
+        {
+          "file": "assets/Reference.module-ozFcrIXL.js",
+          "bytes": 700
+        },
+        {
+          "file": "assets/WikiLayout-DQ5YoCC1.js",
+          "bytes": 3440
+        }
+      ],
+      "images": [
+        "http://127.0.0.1:53288/assets/system-bandages-CqPUIuJF.png"
+      ]
+    },
+    {
+      "path": "/projects/maniac/wiki/items/medical-tablet",
+      "jsCount": 15,
+      "jsBytes": 573891,
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/item-articles/medical-tablet.json"
+      ],
+      "scripts": [
+        {
+          "file": "assets/index-DIlyDRF1.js",
+          "bytes": 324580
+        },
+        {
+          "file": "assets/medical-tablet-DcXBiAur.js",
+          "bytes": 2115
+        },
+        {
+          "file": "assets/SystemsArticlePage-BowSTzet.js",
+          "bytes": 4769
+        },
+        {
+          "file": "assets/registry-CfmMQjQ4.js",
+          "bytes": 41530
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/equipment-assets-C5MI-Bzp.js",
+          "bytes": 9798
+        },
+        {
+          "file": "assets/EntityCards-DBl4CIOY.js",
+          "bytes": 4009
+        },
+        {
+          "file": "assets/GameGlyph-aYIYk7Ws.js",
+          "bytes": 3896
+        },
+        {
+          "file": "assets/EntityIcon-DGbZdkoK.js",
+          "bytes": 34094
+        },
+        {
+          "file": "assets/systems-catalog-D7ryaJPj.js",
+          "bytes": 88703
+        },
+        {
+          "file": "assets/DifficultyStars-BMed4nG4.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/RelatedLinks-CxWHJHjD.js",
+          "bytes": 684
+        },
+        {
+          "file": "assets/Reference.module-ozFcrIXL.js",
+          "bytes": 700
+        },
+        {
+          "file": "assets/WikiLayout-DQ5YoCC1.js",
+          "bytes": 3440
+        }
+      ],
+      "images": [
+        "http://127.0.0.1:53288/assets/system-medical-tablet-jS4mLdKl.png"
+      ]
+    },
+    {
+      "path": "/projects/maniac/wiki/items/medical-mask",
+      "jsCount": 15,
+      "jsBytes": 573902,
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/item-articles/medical-mask.json"
+      ],
+      "scripts": [
+        {
+          "file": "assets/index-DIlyDRF1.js",
+          "bytes": 324580
+        },
+        {
+          "file": "assets/medical-mask-B5U5YP-l.js",
+          "bytes": 2126
+        },
+        {
+          "file": "assets/SystemsArticlePage-BowSTzet.js",
+          "bytes": 4769
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/registry-CfmMQjQ4.js",
+          "bytes": 41530
+        },
+        {
+          "file": "assets/EntityCards-DBl4CIOY.js",
+          "bytes": 4009
+        },
+        {
+          "file": "assets/equipment-assets-C5MI-Bzp.js",
+          "bytes": 9798
+        },
+        {
+          "file": "assets/DifficultyStars-BMed4nG4.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/RelatedLinks-CxWHJHjD.js",
+          "bytes": 684
+        },
+        {
+          "file": "assets/Reference.module-ozFcrIXL.js",
+          "bytes": 700
+        },
+        {
+          "file": "assets/GameGlyph-aYIYk7Ws.js",
+          "bytes": 3896
+        },
+        {
+          "file": "assets/WikiLayout-DQ5YoCC1.js",
+          "bytes": 3440
+        },
+        {
+          "file": "assets/systems-catalog-D7ryaJPj.js",
+          "bytes": 88703
+        },
+        {
+          "file": "assets/EntityIcon-DGbZdkoK.js",
+          "bytes": 34094
+        }
+      ],
+      "images": []
+    },
+    {
+      "path": "/projects/maniac/wiki/items/agent47-tablet",
+      "jsCount": 15,
+      "jsBytes": 573805,
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/item-articles/agent47-tablet.json"
+      ],
+      "scripts": [
+        {
+          "file": "assets/index-DIlyDRF1.js",
+          "bytes": 324580
+        },
+        {
+          "file": "assets/agent47-tablet-Cnz2qnww.js",
+          "bytes": 2029
+        },
+        {
+          "file": "assets/SystemsArticlePage-BowSTzet.js",
+          "bytes": 4769
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/EntityCards-DBl4CIOY.js",
+          "bytes": 4009
+        },
+        {
+          "file": "assets/equipment-assets-C5MI-Bzp.js",
+          "bytes": 9798
+        },
+        {
+          "file": "assets/EntityIcon-DGbZdkoK.js",
+          "bytes": 34094
+        },
+        {
+          "file": "assets/systems-catalog-D7ryaJPj.js",
+          "bytes": 88703
+        },
+        {
+          "file": "assets/RelatedLinks-CxWHJHjD.js",
+          "bytes": 684
+        },
+        {
+          "file": "assets/GameGlyph-aYIYk7Ws.js",
+          "bytes": 3896
+        },
+        {
+          "file": "assets/DifficultyStars-BMed4nG4.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/WikiLayout-DQ5YoCC1.js",
+          "bytes": 3440
+        },
+        {
+          "file": "assets/registry-CfmMQjQ4.js",
+          "bytes": 41530
+        },
+        {
+          "file": "assets/Reference.module-ozFcrIXL.js",
+          "bytes": 700
+        }
+      ],
+      "images": []
+    },
+    {
+      "path": "/projects/maniac/wiki/items/microphone",
+      "jsCount": 15,
+      "jsBytes": 573851,
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/item-articles/microphone.json"
+      ],
+      "scripts": [
+        {
+          "file": "assets/index-DIlyDRF1.js",
+          "bytes": 324580
+        },
+        {
+          "file": "assets/microphone-CuPkSbGV.js",
+          "bytes": 2075
+        },
+        {
+          "file": "assets/SystemsArticlePage-BowSTzet.js",
+          "bytes": 4769
+        },
+        {
+          "file": "assets/registry-CfmMQjQ4.js",
+          "bytes": 41530
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/equipment-assets-C5MI-Bzp.js",
+          "bytes": 9798
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/EntityIcon-DGbZdkoK.js",
+          "bytes": 34094
+        },
+        {
+          "file": "assets/systems-catalog-D7ryaJPj.js",
+          "bytes": 88703
+        },
+        {
+          "file": "assets/DifficultyStars-BMed4nG4.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/RelatedLinks-CxWHJHjD.js",
+          "bytes": 684
+        },
+        {
+          "file": "assets/GameGlyph-aYIYk7Ws.js",
+          "bytes": 3896
+        },
+        {
+          "file": "assets/Reference.module-ozFcrIXL.js",
+          "bytes": 700
+        },
+        {
+          "file": "assets/EntityCards-DBl4CIOY.js",
+          "bytes": 4009
+        },
+        {
+          "file": "assets/WikiLayout-DQ5YoCC1.js",
+          "bytes": 3440
+        }
+      ],
+      "images": [
+        "http://127.0.0.1:53288/assets/system-microphone-5q9QjCvH.png"
+      ]
+    },
+    {
+      "path": "/projects/maniac/wiki/items/toy-knife",
+      "jsCount": 15,
+      "jsBytes": 573776,
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/item-articles/toy-knife.json"
+      ],
+      "scripts": [
+        {
+          "file": "assets/index-DIlyDRF1.js",
+          "bytes": 324580
+        },
+        {
+          "file": "assets/toy-knife-p3NkL6PK.js",
+          "bytes": 2000
+        },
+        {
+          "file": "assets/SystemsArticlePage-BowSTzet.js",
+          "bytes": 4769
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/systems-catalog-D7ryaJPj.js",
+          "bytes": 88703
+        },
+        {
+          "file": "assets/registry-CfmMQjQ4.js",
+          "bytes": 41530
+        },
+        {
+          "file": "assets/GameGlyph-aYIYk7Ws.js",
+          "bytes": 3896
+        },
+        {
+          "file": "assets/EntityCards-DBl4CIOY.js",
+          "bytes": 4009
+        },
+        {
+          "file": "assets/equipment-assets-C5MI-Bzp.js",
+          "bytes": 9798
+        },
+        {
+          "file": "assets/DifficultyStars-BMed4nG4.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/RelatedLinks-CxWHJHjD.js",
+          "bytes": 684
+        },
+        {
+          "file": "assets/EntityIcon-DGbZdkoK.js",
+          "bytes": 34094
+        },
+        {
+          "file": "assets/WikiLayout-DQ5YoCC1.js",
+          "bytes": 3440
+        },
+        {
+          "file": "assets/Reference.module-ozFcrIXL.js",
+          "bytes": 700
+        }
+      ],
+      "images": []
+    },
+    {
+      "path": "/projects/maniac/wiki/items/ghost-hand",
+      "jsCount": 15,
+      "jsBytes": 573800,
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/item-articles/ghost-hand.json"
+      ],
+      "scripts": [
+        {
+          "file": "assets/index-DIlyDRF1.js",
+          "bytes": 324580
+        },
+        {
+          "file": "assets/ghost-hand-DYOB8csn.js",
+          "bytes": 2024
+        },
+        {
+          "file": "assets/SystemsArticlePage-BowSTzet.js",
+          "bytes": 4769
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/equipment-assets-C5MI-Bzp.js",
+          "bytes": 9798
+        },
+        {
+          "file": "assets/systems-catalog-D7ryaJPj.js",
+          "bytes": 88703
+        },
+        {
+          "file": "assets/EntityCards-DBl4CIOY.js",
+          "bytes": 4009
+        },
+        {
+          "file": "assets/registry-CfmMQjQ4.js",
+          "bytes": 41530
+        },
+        {
+          "file": "assets/EntityIcon-DGbZdkoK.js",
+          "bytes": 34094
+        },
+        {
+          "file": "assets/GameGlyph-aYIYk7Ws.js",
+          "bytes": 3896
+        },
+        {
+          "file": "assets/DifficultyStars-BMed4nG4.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/RelatedLinks-CxWHJHjD.js",
+          "bytes": 684
+        },
+        {
+          "file": "assets/WikiLayout-DQ5YoCC1.js",
+          "bytes": 3440
+        },
+        {
+          "file": "assets/Reference.module-ozFcrIXL.js",
+          "bytes": 700
+        }
+      ],
+      "images": [
+        "http://127.0.0.1:53288/assets/system-ghost-hand-e7DuvrYu.webp"
+      ]
+    },
+    {
+      "path": "/projects/maniac/wiki/items/beast-claw",
+      "jsCount": 15,
+      "jsBytes": 573796,
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/item-articles/beast-claw.json"
+      ],
+      "scripts": [
+        {
+          "file": "assets/index-DIlyDRF1.js",
+          "bytes": 324580
+        },
+        {
+          "file": "assets/beast-claw-D8lrd-6n.js",
+          "bytes": 2020
+        },
+        {
+          "file": "assets/SystemsArticlePage-BowSTzet.js",
+          "bytes": 4769
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/registry-CfmMQjQ4.js",
+          "bytes": 41530
+        },
+        {
+          "file": "assets/equipment-assets-C5MI-Bzp.js",
+          "bytes": 9798
+        },
+        {
+          "file": "assets/systems-catalog-D7ryaJPj.js",
+          "bytes": 88703
+        },
+        {
+          "file": "assets/EntityIcon-DGbZdkoK.js",
+          "bytes": 34094
+        },
+        {
+          "file": "assets/EntityCards-DBl4CIOY.js",
+          "bytes": 4009
+        },
+        {
+          "file": "assets/DifficultyStars-BMed4nG4.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/GameGlyph-aYIYk7Ws.js",
+          "bytes": 3896
+        },
+        {
+          "file": "assets/RelatedLinks-CxWHJHjD.js",
+          "bytes": 684
+        },
+        {
+          "file": "assets/Reference.module-ozFcrIXL.js",
+          "bytes": 700
+        },
+        {
+          "file": "assets/WikiLayout-DQ5YoCC1.js",
+          "bytes": 3440
+        }
+      ],
+      "images": [
+        "http://127.0.0.1:53288/assets/system-beast-claw-C6hZL8hS.png"
+      ]
+    },
+    {
+      "path": "/projects/maniac/wiki/items/beehive-food",
+      "jsCount": 15,
+      "jsBytes": 573959,
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/item-articles/beehive-food.json"
+      ],
+      "scripts": [
+        {
+          "file": "assets/index-DIlyDRF1.js",
+          "bytes": 324580
+        },
+        {
+          "file": "assets/beehive-food-DQQbR5P8.js",
+          "bytes": 2183
+        },
+        {
+          "file": "assets/SystemsArticlePage-BowSTzet.js",
+          "bytes": 4769
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/equipment-assets-C5MI-Bzp.js",
+          "bytes": 9798
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/registry-CfmMQjQ4.js",
+          "bytes": 41530
+        },
+        {
+          "file": "assets/DifficultyStars-BMed4nG4.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/GameGlyph-aYIYk7Ws.js",
+          "bytes": 3896
+        },
+        {
+          "file": "assets/systems-catalog-D7ryaJPj.js",
+          "bytes": 88703
+        },
+        {
+          "file": "assets/EntityCards-DBl4CIOY.js",
+          "bytes": 4009
+        },
+        {
+          "file": "assets/RelatedLinks-CxWHJHjD.js",
+          "bytes": 684
+        },
+        {
+          "file": "assets/EntityIcon-DGbZdkoK.js",
+          "bytes": 34094
+        },
+        {
+          "file": "assets/WikiLayout-DQ5YoCC1.js",
+          "bytes": 3440
+        },
+        {
+          "file": "assets/Reference.module-ozFcrIXL.js",
+          "bytes": 700
+        }
+      ],
+      "images": [
+        "http://127.0.0.1:53288/assets/system-beehive-food-BATtUEtk.png"
+      ]
+    },
+    {
+      "path": "/projects/maniac/wiki/items/plague-lantern",
+      "jsCount": 15,
+      "jsBytes": 573881,
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/item-articles/plague-lantern.json"
+      ],
+      "scripts": [
+        {
+          "file": "assets/index-DIlyDRF1.js",
+          "bytes": 324580
+        },
+        {
+          "file": "assets/plague-lantern-DhcnhadS.js",
+          "bytes": 2105
+        },
+        {
+          "file": "assets/SystemsArticlePage-BowSTzet.js",
+          "bytes": 4769
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/registry-CfmMQjQ4.js",
+          "bytes": 41530
+        },
+        {
+          "file": "assets/EntityCards-DBl4CIOY.js",
+          "bytes": 4009
+        },
+        {
+          "file": "assets/systems-catalog-D7ryaJPj.js",
+          "bytes": 88703
+        },
+        {
+          "file": "assets/equipment-assets-C5MI-Bzp.js",
+          "bytes": 9798
+        },
+        {
+          "file": "assets/EntityIcon-DGbZdkoK.js",
+          "bytes": 34094
+        },
+        {
+          "file": "assets/DifficultyStars-BMed4nG4.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/RelatedLinks-CxWHJHjD.js",
+          "bytes": 684
+        },
+        {
+          "file": "assets/GameGlyph-aYIYk7Ws.js",
+          "bytes": 3896
+        },
+        {
+          "file": "assets/WikiLayout-DQ5YoCC1.js",
+          "bytes": 3440
+        },
+        {
+          "file": "assets/Reference.module-ozFcrIXL.js",
+          "bytes": 700
+        }
+      ],
+      "images": []
+    },
+    {
+      "path": "/projects/maniac/wiki/items/bong",
+      "jsCount": 15,
+      "jsBytes": 573903,
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/item-articles/bong.json"
+      ],
+      "scripts": [
+        {
+          "file": "assets/index-DIlyDRF1.js",
+          "bytes": 324580
+        },
+        {
+          "file": "assets/bong-DEBsZu80.js",
+          "bytes": 2127
+        },
+        {
+          "file": "assets/SystemsArticlePage-BowSTzet.js",
+          "bytes": 4769
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/registry-CfmMQjQ4.js",
+          "bytes": 41530
+        },
+        {
+          "file": "assets/GameGlyph-aYIYk7Ws.js",
+          "bytes": 3896
+        },
+        {
+          "file": "assets/equipment-assets-C5MI-Bzp.js",
+          "bytes": 9798
+        },
+        {
+          "file": "assets/EntityIcon-DGbZdkoK.js",
+          "bytes": 34094
+        },
+        {
+          "file": "assets/systems-catalog-D7ryaJPj.js",
+          "bytes": 88703
+        },
+        {
+          "file": "assets/DifficultyStars-BMed4nG4.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/EntityCards-DBl4CIOY.js",
+          "bytes": 4009
+        },
+        {
+          "file": "assets/RelatedLinks-CxWHJHjD.js",
+          "bytes": 684
+        },
+        {
+          "file": "assets/Reference.module-ozFcrIXL.js",
+          "bytes": 700
+        },
+        {
+          "file": "assets/WikiLayout-DQ5YoCC1.js",
+          "bytes": 3440
+        }
+      ],
+      "images": [
+        "http://127.0.0.1:53288/assets/system-bong-DLUid2N6.png"
+      ]
+    },
+    {
+      "path": "/projects/maniac/wiki/items/adrenaline-syringe",
+      "jsCount": 15,
+      "jsBytes": 574202,
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/item-articles/adrenaline-syringe.json"
+      ],
+      "scripts": [
+        {
+          "file": "assets/index-DIlyDRF1.js",
+          "bytes": 324580
+        },
+        {
+          "file": "assets/adrenaline-syringe-BbWtXzTb.js",
+          "bytes": 2426
+        },
+        {
+          "file": "assets/SystemsArticlePage-BowSTzet.js",
+          "bytes": 4769
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/registry-CfmMQjQ4.js",
+          "bytes": 41530
+        },
+        {
+          "file": "assets/equipment-assets-C5MI-Bzp.js",
+          "bytes": 9798
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/DifficultyStars-BMed4nG4.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/GameGlyph-aYIYk7Ws.js",
+          "bytes": 3896
+        },
+        {
+          "file": "assets/EntityCards-DBl4CIOY.js",
+          "bytes": 4009
+        },
+        {
+          "file": "assets/systems-catalog-D7ryaJPj.js",
+          "bytes": 88703
+        },
+        {
+          "file": "assets/EntityIcon-DGbZdkoK.js",
+          "bytes": 34094
+        },
+        {
+          "file": "assets/RelatedLinks-CxWHJHjD.js",
+          "bytes": 684
+        },
+        {
+          "file": "assets/Reference.module-ozFcrIXL.js",
+          "bytes": 700
+        },
+        {
+          "file": "assets/WikiLayout-DQ5YoCC1.js",
+          "bytes": 3440
+        }
+      ],
+      "images": [
+        "http://127.0.0.1:53288/assets/system-adrenaline-syringe-D2fuHYHN.png"
+      ]
+    },
+    {
+      "path": "/projects/maniac/wiki/items/ancestor-soul",
+      "jsCount": 15,
+      "jsBytes": 573783,
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/item-articles/ancestor-soul.json"
+      ],
+      "scripts": [
+        {
+          "file": "assets/index-DIlyDRF1.js",
+          "bytes": 324580
+        },
+        {
+          "file": "assets/ancestor-soul-BG3GNzmD.js",
+          "bytes": 2007
+        },
+        {
+          "file": "assets/SystemsArticlePage-BowSTzet.js",
+          "bytes": 4769
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/systems-catalog-D7ryaJPj.js",
+          "bytes": 88703
+        },
+        {
+          "file": "assets/registry-CfmMQjQ4.js",
+          "bytes": 41530
+        },
+        {
+          "file": "assets/equipment-assets-C5MI-Bzp.js",
+          "bytes": 9798
+        },
+        {
+          "file": "assets/DifficultyStars-BMed4nG4.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/EntityIcon-DGbZdkoK.js",
+          "bytes": 34094
+        },
+        {
+          "file": "assets/RelatedLinks-CxWHJHjD.js",
+          "bytes": 684
+        },
+        {
+          "file": "assets/EntityCards-DBl4CIOY.js",
+          "bytes": 4009
+        },
+        {
+          "file": "assets/GameGlyph-aYIYk7Ws.js",
+          "bytes": 3896
+        },
+        {
+          "file": "assets/Reference.module-ozFcrIXL.js",
+          "bytes": 700
+        },
+        {
+          "file": "assets/WikiLayout-DQ5YoCC1.js",
+          "bytes": 3440
+        }
+      ],
+      "images": [
+        "http://127.0.0.1:53288/assets/system-ancestor-soul-k-7Qz_7A.png"
+      ]
+    },
+    {
+      "path": "/projects/maniac/wiki/items/ancestral-totem",
+      "jsCount": 15,
+      "jsBytes": 573859,
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/item-articles/ancestral-totem.json"
+      ],
+      "scripts": [
+        {
+          "file": "assets/index-DIlyDRF1.js",
+          "bytes": 324580
+        },
+        {
+          "file": "assets/ancestral-totem-Dv9iMqZr.js",
+          "bytes": 2083
+        },
+        {
+          "file": "assets/SystemsArticlePage-BowSTzet.js",
+          "bytes": 4769
+        },
+        {
+          "file": "assets/registry-CfmMQjQ4.js",
+          "bytes": 41530
+        },
+        {
+          "file": "assets/equipment-assets-C5MI-Bzp.js",
+          "bytes": 9798
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/systems-catalog-D7ryaJPj.js",
+          "bytes": 88703
+        },
+        {
+          "file": "assets/DifficultyStars-BMed4nG4.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/EntityIcon-DGbZdkoK.js",
+          "bytes": 34094
+        },
+        {
+          "file": "assets/RelatedLinks-CxWHJHjD.js",
+          "bytes": 684
+        },
+        {
+          "file": "assets/Reference.module-ozFcrIXL.js",
+          "bytes": 700
+        },
+        {
+          "file": "assets/EntityCards-DBl4CIOY.js",
+          "bytes": 4009
+        },
+        {
+          "file": "assets/GameGlyph-aYIYk7Ws.js",
+          "bytes": 3896
+        },
+        {
+          "file": "assets/WikiLayout-DQ5YoCC1.js",
+          "bytes": 3440
+        }
+      ],
+      "images": [
+        "http://127.0.0.1:53288/assets/system-ancestral-totem-BloBPrYf.png"
+      ]
+    },
+    {
+      "path": "/projects/maniac/wiki/items/quantum-teleport",
+      "jsCount": 15,
+      "jsBytes": 574268,
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/item-articles/quantum-teleport.json"
+      ],
+      "scripts": [
+        {
+          "file": "assets/index-DIlyDRF1.js",
+          "bytes": 324580
+        },
+        {
+          "file": "assets/quantum-teleport-MYqkWLNp.js",
+          "bytes": 2492
+        },
+        {
+          "file": "assets/SystemsArticlePage-BowSTzet.js",
+          "bytes": 4769
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/equipment-assets-C5MI-Bzp.js",
+          "bytes": 9798
+        },
+        {
+          "file": "assets/registry-CfmMQjQ4.js",
+          "bytes": 41530
+        },
+        {
+          "file": "assets/EntityCards-DBl4CIOY.js",
+          "bytes": 4009
+        },
+        {
+          "file": "assets/DifficultyStars-BMed4nG4.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/systems-catalog-D7ryaJPj.js",
+          "bytes": 88703
+        },
+        {
+          "file": "assets/RelatedLinks-CxWHJHjD.js",
+          "bytes": 684
+        },
+        {
+          "file": "assets/GameGlyph-aYIYk7Ws.js",
+          "bytes": 3896
+        },
+        {
+          "file": "assets/EntityIcon-DGbZdkoK.js",
+          "bytes": 34094
+        },
+        {
+          "file": "assets/Reference.module-ozFcrIXL.js",
+          "bytes": 700
+        },
+        {
+          "file": "assets/WikiLayout-DQ5YoCC1.js",
+          "bytes": 3440
+        }
+      ],
+      "images": [
+        "http://127.0.0.1:53288/assets/system-quantum-teleport-BmCLi70e.png"
+      ]
+    },
+    {
+      "path": "/projects/maniac/wiki/items/coin-elusiveness",
+      "jsCount": 15,
+      "jsBytes": 573996,
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/item-articles/coin-elusiveness.json"
+      ],
+      "scripts": [
+        {
+          "file": "assets/index-DIlyDRF1.js",
+          "bytes": 324580
+        },
+        {
+          "file": "assets/coin-elusiveness-CqwL1GoT.js",
+          "bytes": 2220
+        },
+        {
+          "file": "assets/SystemsArticlePage-BowSTzet.js",
+          "bytes": 4769
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/registry-CfmMQjQ4.js",
+          "bytes": 41530
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/equipment-assets-C5MI-Bzp.js",
+          "bytes": 9798
+        },
+        {
+          "file": "assets/DifficultyStars-BMed4nG4.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/EntityCards-DBl4CIOY.js",
+          "bytes": 4009
+        },
+        {
+          "file": "assets/systems-catalog-D7ryaJPj.js",
+          "bytes": 88703
+        },
+        {
+          "file": "assets/GameGlyph-aYIYk7Ws.js",
+          "bytes": 3896
+        },
+        {
+          "file": "assets/RelatedLinks-CxWHJHjD.js",
+          "bytes": 684
+        },
+        {
+          "file": "assets/EntityIcon-DGbZdkoK.js",
+          "bytes": 34094
+        },
+        {
+          "file": "assets/Reference.module-ozFcrIXL.js",
+          "bytes": 700
+        },
+        {
+          "file": "assets/WikiLayout-DQ5YoCC1.js",
+          "bytes": 3440
+        }
+      ],
+      "images": [
+        "http://127.0.0.1:53288/assets/system-coin-elusiveness-BaWi0t_G.webp"
+      ]
+    },
+    {
+      "path": "/projects/maniac/wiki/items/coin-insight",
+      "jsCount": 15,
+      "jsBytes": 573924,
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/item-articles/coin-insight.json"
+      ],
+      "scripts": [
+        {
+          "file": "assets/index-DIlyDRF1.js",
+          "bytes": 324580
+        },
+        {
+          "file": "assets/coin-insight-DgKkb1zx.js",
+          "bytes": 2148
+        },
+        {
+          "file": "assets/SystemsArticlePage-BowSTzet.js",
+          "bytes": 4769
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/equipment-assets-C5MI-Bzp.js",
+          "bytes": 9798
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/EntityCards-DBl4CIOY.js",
+          "bytes": 4009
+        },
+        {
+          "file": "assets/EntityIcon-DGbZdkoK.js",
+          "bytes": 34094
+        },
+        {
+          "file": "assets/GameGlyph-aYIYk7Ws.js",
+          "bytes": 3896
+        },
+        {
+          "file": "assets/registry-CfmMQjQ4.js",
+          "bytes": 41530
+        },
+        {
+          "file": "assets/systems-catalog-D7ryaJPj.js",
+          "bytes": 88703
+        },
+        {
+          "file": "assets/DifficultyStars-BMed4nG4.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/RelatedLinks-CxWHJHjD.js",
+          "bytes": 684
+        },
+        {
+          "file": "assets/Reference.module-ozFcrIXL.js",
+          "bytes": 700
+        },
+        {
+          "file": "assets/WikiLayout-DQ5YoCC1.js",
+          "bytes": 3440
+        }
+      ],
+      "images": [
+        "http://127.0.0.1:53288/assets/system-coin-insight-BTzQZ0na.webp"
+      ]
+    },
+    {
+      "path": "/projects/maniac/wiki/items/coin-shackles",
+      "jsCount": 15,
+      "jsBytes": 573923,
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/item-articles/coin-shackles.json"
+      ],
+      "scripts": [
+        {
+          "file": "assets/index-DIlyDRF1.js",
+          "bytes": 324580
+        },
+        {
+          "file": "assets/coin-shackles-Zczqvu5A.js",
+          "bytes": 2147
+        },
+        {
+          "file": "assets/SystemsArticlePage-BowSTzet.js",
+          "bytes": 4769
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/registry-CfmMQjQ4.js",
+          "bytes": 41530
+        },
+        {
+          "file": "assets/equipment-assets-C5MI-Bzp.js",
+          "bytes": 9798
+        },
+        {
+          "file": "assets/EntityIcon-DGbZdkoK.js",
+          "bytes": 34094
+        },
+        {
+          "file": "assets/DifficultyStars-BMed4nG4.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/EntityCards-DBl4CIOY.js",
+          "bytes": 4009
+        },
+        {
+          "file": "assets/GameGlyph-aYIYk7Ws.js",
+          "bytes": 3896
+        },
+        {
+          "file": "assets/RelatedLinks-CxWHJHjD.js",
+          "bytes": 684
+        },
+        {
+          "file": "assets/Reference.module-ozFcrIXL.js",
+          "bytes": 700
+        },
+        {
+          "file": "assets/WikiLayout-DQ5YoCC1.js",
+          "bytes": 3440
+        },
+        {
+          "file": "assets/systems-catalog-D7ryaJPj.js",
+          "bytes": 88703
+        }
+      ],
+      "images": [
+        "http://127.0.0.1:53288/assets/system-coin-shackles-BA0WN3ZK.webp"
+      ]
+    },
+    {
+      "path": "/projects/maniac/wiki/items/coin-health",
+      "jsCount": 15,
+      "jsBytes": 573901,
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/item-articles/coin-health.json"
+      ],
+      "scripts": [
+        {
+          "file": "assets/index-DIlyDRF1.js",
+          "bytes": 324580
+        },
+        {
+          "file": "assets/coin-health-BxrRM1qM.js",
+          "bytes": 2125
+        },
+        {
+          "file": "assets/SystemsArticlePage-BowSTzet.js",
+          "bytes": 4769
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/registry-CfmMQjQ4.js",
+          "bytes": 41530
+        },
+        {
+          "file": "assets/equipment-assets-C5MI-Bzp.js",
+          "bytes": 9798
+        },
+        {
+          "file": "assets/EntityCards-DBl4CIOY.js",
+          "bytes": 4009
+        },
+        {
+          "file": "assets/systems-catalog-D7ryaJPj.js",
+          "bytes": 88703
+        },
+        {
+          "file": "assets/RelatedLinks-CxWHJHjD.js",
+          "bytes": 684
+        },
+        {
+          "file": "assets/DifficultyStars-BMed4nG4.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/EntityIcon-DGbZdkoK.js",
+          "bytes": 34094
+        },
+        {
+          "file": "assets/WikiLayout-DQ5YoCC1.js",
+          "bytes": 3440
+        },
+        {
+          "file": "assets/Reference.module-ozFcrIXL.js",
+          "bytes": 700
+        },
+        {
+          "file": "assets/GameGlyph-aYIYk7Ws.js",
+          "bytes": 3896
+        }
+      ],
+      "images": [
+        "http://127.0.0.1:53288/assets/system-coin-health-C0omr836.webp"
+      ]
+    },
+    {
+      "path": "/projects/maniac/wiki/items/coin-eagle",
+      "jsCount": 15,
+      "jsBytes": 573890,
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/item-articles/coin-eagle.json"
+      ],
+      "scripts": [
+        {
+          "file": "assets/index-DIlyDRF1.js",
+          "bytes": 324580
+        },
+        {
+          "file": "assets/coin-eagle-ca0wqm5a.js",
+          "bytes": 2114
+        },
+        {
+          "file": "assets/SystemsArticlePage-BowSTzet.js",
+          "bytes": 4769
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/registry-CfmMQjQ4.js",
+          "bytes": 41530
+        },
+        {
+          "file": "assets/EntityIcon-DGbZdkoK.js",
+          "bytes": 34094
+        },
+        {
+          "file": "assets/equipment-assets-C5MI-Bzp.js",
+          "bytes": 9798
+        },
+        {
+          "file": "assets/DifficultyStars-BMed4nG4.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/RelatedLinks-CxWHJHjD.js",
+          "bytes": 684
+        },
+        {
+          "file": "assets/systems-catalog-D7ryaJPj.js",
+          "bytes": 88703
+        },
+        {
+          "file": "assets/GameGlyph-aYIYk7Ws.js",
+          "bytes": 3896
+        },
+        {
+          "file": "assets/EntityCards-DBl4CIOY.js",
+          "bytes": 4009
+        },
+        {
+          "file": "assets/WikiLayout-DQ5YoCC1.js",
+          "bytes": 3440
+        },
+        {
+          "file": "assets/Reference.module-ozFcrIXL.js",
+          "bytes": 700
+        }
+      ],
+      "images": [
+        "http://127.0.0.1:53288/assets/system-coin-eagle-BDJCqh3y.webp"
+      ]
+    },
+    {
+      "path": "/projects/maniac/wiki/items/coin-debt",
+      "jsCount": 15,
+      "jsBytes": 573929,
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/item-articles/coin-debt.json"
+      ],
+      "scripts": [
+        {
+          "file": "assets/index-DIlyDRF1.js",
+          "bytes": 324580
+        },
+        {
+          "file": "assets/coin-debt-s2WuFgcc.js",
+          "bytes": 2153
+        },
+        {
+          "file": "assets/SystemsArticlePage-BowSTzet.js",
+          "bytes": 4769
+        },
+        {
+          "file": "assets/equipment-assets-C5MI-Bzp.js",
+          "bytes": 9798
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/EntityCards-DBl4CIOY.js",
+          "bytes": 4009
+        },
+        {
+          "file": "assets/DifficultyStars-BMed4nG4.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/registry-CfmMQjQ4.js",
+          "bytes": 41530
+        },
+        {
+          "file": "assets/GameGlyph-aYIYk7Ws.js",
+          "bytes": 3896
+        },
+        {
+          "file": "assets/EntityIcon-DGbZdkoK.js",
+          "bytes": 34094
+        },
+        {
+          "file": "assets/RelatedLinks-CxWHJHjD.js",
+          "bytes": 684
+        },
+        {
+          "file": "assets/Reference.module-ozFcrIXL.js",
+          "bytes": 700
+        },
+        {
+          "file": "assets/WikiLayout-DQ5YoCC1.js",
+          "bytes": 3440
+        },
+        {
+          "file": "assets/systems-catalog-D7ryaJPj.js",
+          "bytes": 88703
+        }
+      ],
+      "images": [
+        "http://127.0.0.1:53288/assets/system-coin-debt-BfB08cYa.webp"
+      ]
+    },
+    {
+      "path": "/projects/maniac/wiki/items/coin-reroll",
+      "jsCount": 15,
+      "jsBytes": 573907,
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/item-articles/coin-reroll.json"
+      ],
+      "scripts": [
+        {
+          "file": "assets/index-DIlyDRF1.js",
+          "bytes": 324580
+        },
+        {
+          "file": "assets/SystemsArticlePage-BowSTzet.js",
+          "bytes": 4769
+        },
+        {
+          "file": "assets/coin-reroll-YjY45y61.js",
+          "bytes": 2131
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/EntityCards-DBl4CIOY.js",
+          "bytes": 4009
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/DifficultyStars-BMed4nG4.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/equipment-assets-C5MI-Bzp.js",
+          "bytes": 9798
+        },
+        {
+          "file": "assets/systems-catalog-D7ryaJPj.js",
+          "bytes": 88703
+        },
+        {
+          "file": "assets/registry-CfmMQjQ4.js",
+          "bytes": 41530
+        },
+        {
+          "file": "assets/GameGlyph-aYIYk7Ws.js",
+          "bytes": 3896
+        },
+        {
+          "file": "assets/RelatedLinks-CxWHJHjD.js",
+          "bytes": 684
+        },
+        {
+          "file": "assets/Reference.module-ozFcrIXL.js",
+          "bytes": 700
+        },
+        {
+          "file": "assets/EntityIcon-DGbZdkoK.js",
+          "bytes": 34094
+        },
+        {
+          "file": "assets/WikiLayout-DQ5YoCC1.js",
+          "bytes": 3440
+        }
+      ],
+      "images": [
+        "http://127.0.0.1:53288/assets/system-coin-reroll-BrBtm0-Q.webp"
+      ]
+    },
+    {
+      "path": "/projects/maniac/wiki/items/coin-fate",
+      "jsCount": 15,
+      "jsBytes": 573891,
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/item-articles/coin-fate.json"
+      ],
+      "scripts": [
+        {
+          "file": "assets/index-DIlyDRF1.js",
+          "bytes": 324580
+        },
+        {
+          "file": "assets/coin-fate-CyeuJiPX.js",
+          "bytes": 2115
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/SystemsArticlePage-BowSTzet.js",
+          "bytes": 4769
+        },
+        {
+          "file": "assets/registry-CfmMQjQ4.js",
+          "bytes": 41530
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/equipment-assets-C5MI-Bzp.js",
+          "bytes": 9798
+        },
+        {
+          "file": "assets/EntityCards-DBl4CIOY.js",
+          "bytes": 4009
+        },
+        {
+          "file": "assets/DifficultyStars-BMed4nG4.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/GameGlyph-aYIYk7Ws.js",
+          "bytes": 3896
+        },
+        {
+          "file": "assets/RelatedLinks-CxWHJHjD.js",
+          "bytes": 684
+        },
+        {
+          "file": "assets/systems-catalog-D7ryaJPj.js",
+          "bytes": 88703
+        },
+        {
+          "file": "assets/Reference.module-ozFcrIXL.js",
+          "bytes": 700
+        },
+        {
+          "file": "assets/EntityIcon-DGbZdkoK.js",
+          "bytes": 34094
+        },
+        {
+          "file": "assets/WikiLayout-DQ5YoCC1.js",
+          "bytes": 3440
+        }
+      ],
+      "images": [
+        "http://127.0.0.1:53288/assets/system-coin-fate-BzFhlmeh.webp"
+      ]
+    },
+    {
+      "path": "/projects/maniac/wiki/items/slot-machine",
+      "jsCount": 15,
+      "jsBytes": 574303,
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/item-articles/slot-machine.json"
+      ],
+      "scripts": [
+        {
+          "file": "assets/index-DIlyDRF1.js",
+          "bytes": 324580
+        },
+        {
+          "file": "assets/slot-machine-r3qsHbXZ.js",
+          "bytes": 2527
+        },
+        {
+          "file": "assets/SystemsArticlePage-BowSTzet.js",
+          "bytes": 4769
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/registry-CfmMQjQ4.js",
+          "bytes": 41530
+        },
+        {
+          "file": "assets/systems-catalog-D7ryaJPj.js",
+          "bytes": 88703
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/EntityCards-DBl4CIOY.js",
+          "bytes": 4009
+        },
+        {
+          "file": "assets/equipment-assets-C5MI-Bzp.js",
+          "bytes": 9798
+        },
+        {
+          "file": "assets/DifficultyStars-BMed4nG4.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/GameGlyph-aYIYk7Ws.js",
+          "bytes": 3896
+        },
+        {
+          "file": "assets/RelatedLinks-CxWHJHjD.js",
+          "bytes": 684
+        },
+        {
+          "file": "assets/WikiLayout-DQ5YoCC1.js",
+          "bytes": 3440
+        },
+        {
+          "file": "assets/EntityIcon-DGbZdkoK.js",
+          "bytes": 34094
+        },
+        {
+          "file": "assets/Reference.module-ozFcrIXL.js",
+          "bytes": 700
+        }
+      ],
+      "images": [
+        "http://127.0.0.1:53288/assets/system-slot-machine-2z8VAkXY.png"
+      ]
+    },
+    {
+      "path": "/projects/maniac/wiki/items/nightmare-lighter",
+      "jsCount": 15,
+      "jsBytes": 573889,
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/item-articles/nightmare-lighter.json"
+      ],
+      "scripts": [
+        {
+          "file": "assets/index-DIlyDRF1.js",
+          "bytes": 324580
+        },
+        {
+          "file": "assets/nightmare-lighter-BGQQ2zOX.js",
+          "bytes": 2113
+        },
+        {
+          "file": "assets/SystemsArticlePage-BowSTzet.js",
+          "bytes": 4769
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/equipment-assets-C5MI-Bzp.js",
+          "bytes": 9798
+        },
+        {
+          "file": "assets/DifficultyStars-BMed4nG4.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/EntityIcon-DGbZdkoK.js",
+          "bytes": 34094
+        },
+        {
+          "file": "assets/EntityCards-DBl4CIOY.js",
+          "bytes": 4009
+        },
+        {
+          "file": "assets/systems-catalog-D7ryaJPj.js",
+          "bytes": 88703
+        },
+        {
+          "file": "assets/registry-CfmMQjQ4.js",
+          "bytes": 41530
+        },
+        {
+          "file": "assets/WikiLayout-DQ5YoCC1.js",
+          "bytes": 3440
+        },
+        {
+          "file": "assets/Reference.module-ozFcrIXL.js",
+          "bytes": 700
+        },
+        {
+          "file": "assets/RelatedLinks-CxWHJHjD.js",
+          "bytes": 684
+        },
+        {
+          "file": "assets/GameGlyph-aYIYk7Ws.js",
+          "bytes": 3896
+        }
+      ],
+      "images": [
+        "http://127.0.0.1:53288/assets/nightmare-lighter-render-3metDctg.png"
+      ]
+    },
+    {
+      "path": "/projects/maniac/wiki/items/awakening-needle",
+      "jsCount": 15,
+      "jsBytes": 573880,
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/item-articles/awakening-needle.json"
+      ],
+      "scripts": [
+        {
+          "file": "assets/index-DIlyDRF1.js",
+          "bytes": 324580
+        },
+        {
+          "file": "assets/awakening-needle-D6Lx5Z23.js",
+          "bytes": 2104
+        },
+        {
+          "file": "assets/SystemsArticlePage-BowSTzet.js",
+          "bytes": 4769
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/equipment-assets-C5MI-Bzp.js",
+          "bytes": 9798
+        },
+        {
+          "file": "assets/GameGlyph-aYIYk7Ws.js",
+          "bytes": 3896
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/registry-CfmMQjQ4.js",
+          "bytes": 41530
+        },
+        {
+          "file": "assets/DifficultyStars-BMed4nG4.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/systems-catalog-D7ryaJPj.js",
+          "bytes": 88703
+        },
+        {
+          "file": "assets/Reference.module-ozFcrIXL.js",
+          "bytes": 700
+        },
+        {
+          "file": "assets/RelatedLinks-CxWHJHjD.js",
+          "bytes": 684
+        },
+        {
+          "file": "assets/WikiLayout-DQ5YoCC1.js",
+          "bytes": 3440
+        },
+        {
+          "file": "assets/EntityIcon-DGbZdkoK.js",
+          "bytes": 34094
+        },
+        {
+          "file": "assets/EntityCards-DBl4CIOY.js",
+          "bytes": 4009
+        }
+      ],
+      "images": [
+        "http://127.0.0.1:53288/assets/system-awakening-needle-ClsiGErm.png"
+      ]
+    },
+    {
+      "path": "/projects/maniac/wiki/items/paint-can",
+      "jsCount": 15,
+      "jsBytes": 573819,
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/item-articles/paint-can.json"
+      ],
+      "scripts": [
+        {
+          "file": "assets/index-DIlyDRF1.js",
+          "bytes": 324580
+        },
+        {
+          "file": "assets/paint-can-D2nTMQGR.js",
+          "bytes": 2043
+        },
+        {
+          "file": "assets/SystemsArticlePage-BowSTzet.js",
+          "bytes": 4769
+        },
+        {
+          "file": "assets/registry-CfmMQjQ4.js",
+          "bytes": 41530
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/equipment-assets-C5MI-Bzp.js",
+          "bytes": 9798
+        },
+        {
+          "file": "assets/EntityCards-DBl4CIOY.js",
+          "bytes": 4009
+        },
+        {
+          "file": "assets/DifficultyStars-BMed4nG4.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/RelatedLinks-CxWHJHjD.js",
+          "bytes": 684
+        },
+        {
+          "file": "assets/EntityIcon-DGbZdkoK.js",
+          "bytes": 34094
+        },
+        {
+          "file": "assets/Reference.module-ozFcrIXL.js",
+          "bytes": 700
+        },
+        {
+          "file": "assets/systems-catalog-D7ryaJPj.js",
+          "bytes": 88703
+        },
+        {
+          "file": "assets/WikiLayout-DQ5YoCC1.js",
+          "bytes": 3440
+        },
+        {
+          "file": "assets/GameGlyph-aYIYk7Ws.js",
+          "bytes": 3896
+        }
+      ],
+      "images": []
+    },
+    {
+      "path": "/projects/maniac/wiki/items/forget-me-not",
+      "jsCount": 15,
+      "jsBytes": 573794,
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/item-articles/forget-me-not.json"
+      ],
+      "scripts": [
+        {
+          "file": "assets/index-DIlyDRF1.js",
+          "bytes": 324580
+        },
+        {
+          "file": "assets/forget-me-not-AQB77oEA.js",
+          "bytes": 2018
+        },
+        {
+          "file": "assets/SystemsArticlePage-BowSTzet.js",
+          "bytes": 4769
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/EntityCards-DBl4CIOY.js",
+          "bytes": 4009
+        },
+        {
+          "file": "assets/systems-catalog-D7ryaJPj.js",
+          "bytes": 88703
+        },
+        {
+          "file": "assets/registry-CfmMQjQ4.js",
+          "bytes": 41530
+        },
+        {
+          "file": "assets/equipment-assets-C5MI-Bzp.js",
+          "bytes": 9798
+        },
+        {
+          "file": "assets/GameGlyph-aYIYk7Ws.js",
+          "bytes": 3896
+        },
+        {
+          "file": "assets/DifficultyStars-BMed4nG4.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/RelatedLinks-CxWHJHjD.js",
+          "bytes": 684
+        },
+        {
+          "file": "assets/EntityIcon-DGbZdkoK.js",
+          "bytes": 34094
+        },
+        {
+          "file": "assets/WikiLayout-DQ5YoCC1.js",
+          "bytes": 3440
+        },
+        {
+          "file": "assets/Reference.module-ozFcrIXL.js",
+          "bytes": 700
+        }
+      ],
+      "images": []
+    },
+    {
+      "path": "/projects/maniac/wiki/items/rose-colored-glasses",
+      "jsCount": 15,
+      "jsBytes": 573795,
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/item-articles/rose-colored-glasses.json"
+      ],
+      "scripts": [
+        {
+          "file": "assets/index-DIlyDRF1.js",
+          "bytes": 324580
+        },
+        {
+          "file": "assets/rose-colored-glasses-CBU1j4hL.js",
+          "bytes": 2019
+        },
+        {
+          "file": "assets/SystemsArticlePage-BowSTzet.js",
+          "bytes": 4769
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/EntityIcon-DGbZdkoK.js",
+          "bytes": 34094
+        },
+        {
+          "file": "assets/EntityCards-DBl4CIOY.js",
+          "bytes": 4009
+        },
+        {
+          "file": "assets/registry-CfmMQjQ4.js",
+          "bytes": 41530
+        },
+        {
+          "file": "assets/equipment-assets-C5MI-Bzp.js",
+          "bytes": 9798
+        },
+        {
+          "file": "assets/DifficultyStars-BMed4nG4.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/systems-catalog-D7ryaJPj.js",
+          "bytes": 88703
+        },
+        {
+          "file": "assets/RelatedLinks-CxWHJHjD.js",
+          "bytes": 684
+        },
+        {
+          "file": "assets/GameGlyph-aYIYk7Ws.js",
+          "bytes": 3896
+        },
+        {
+          "file": "assets/Reference.module-ozFcrIXL.js",
+          "bytes": 700
+        },
+        {
+          "file": "assets/WikiLayout-DQ5YoCC1.js",
+          "bytes": 3440
+        }
+      ],
+      "images": []
+    },
+    {
+      "path": "/projects/maniac/wiki/items/pink-orchid",
+      "jsCount": 15,
+      "jsBytes": 573669,
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/item-articles/pink-orchid.json"
+      ],
+      "scripts": [
+        {
+          "file": "assets/index-DIlyDRF1.js",
+          "bytes": 324580
+        },
+        {
+          "file": "assets/pink-orchid-JFtAtmjy.js",
+          "bytes": 1893
+        },
+        {
+          "file": "assets/SystemsArticlePage-BowSTzet.js",
+          "bytes": 4769
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/registry-CfmMQjQ4.js",
+          "bytes": 41530
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/EntityIcon-DGbZdkoK.js",
+          "bytes": 34094
+        },
+        {
+          "file": "assets/systems-catalog-D7ryaJPj.js",
+          "bytes": 88703
+        },
+        {
+          "file": "assets/equipment-assets-C5MI-Bzp.js",
+          "bytes": 9798
+        },
+        {
+          "file": "assets/DifficultyStars-BMed4nG4.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/EntityCards-DBl4CIOY.js",
+          "bytes": 4009
+        },
+        {
+          "file": "assets/GameGlyph-aYIYk7Ws.js",
+          "bytes": 3896
+        },
+        {
+          "file": "assets/RelatedLinks-CxWHJHjD.js",
+          "bytes": 684
+        },
+        {
+          "file": "assets/WikiLayout-DQ5YoCC1.js",
+          "bytes": 3440
+        },
+        {
+          "file": "assets/Reference.module-ozFcrIXL.js",
+          "bytes": 700
+        }
+      ],
+      "images": []
+    },
+    {
+      "path": "/projects/maniac/wiki/items/sber-sprout",
+      "jsCount": 15,
+      "jsBytes": 573774,
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/item-articles/sber-sprout.json"
+      ],
+      "scripts": [
+        {
+          "file": "assets/index-DIlyDRF1.js",
+          "bytes": 324580
+        },
+        {
+          "file": "assets/sber-sprout-BUH7nxWP.js",
+          "bytes": 1998
+        },
+        {
+          "file": "assets/SystemsArticlePage-BowSTzet.js",
+          "bytes": 4769
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/equipment-assets-C5MI-Bzp.js",
+          "bytes": 9798
+        },
+        {
+          "file": "assets/registry-CfmMQjQ4.js",
+          "bytes": 41530
+        },
+        {
+          "file": "assets/systems-catalog-D7ryaJPj.js",
+          "bytes": 88703
+        },
+        {
+          "file": "assets/EntityIcon-DGbZdkoK.js",
+          "bytes": 34094
+        },
+        {
+          "file": "assets/EntityCards-DBl4CIOY.js",
+          "bytes": 4009
+        },
+        {
+          "file": "assets/DifficultyStars-BMed4nG4.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/GameGlyph-aYIYk7Ws.js",
+          "bytes": 3896
+        },
+        {
+          "file": "assets/RelatedLinks-CxWHJHjD.js",
+          "bytes": 684
+        },
+        {
+          "file": "assets/Reference.module-ozFcrIXL.js",
+          "bytes": 700
+        },
+        {
+          "file": "assets/WikiLayout-DQ5YoCC1.js",
+          "bytes": 3440
+        }
+      ],
+      "images": []
+    },
+    {
+      "path": "/projects/maniac/wiki/items/guardian-head",
+      "jsCount": 15,
+      "jsBytes": 573804,
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/item-articles/guardian-head.json"
+      ],
+      "scripts": [
+        {
+          "file": "assets/index-DIlyDRF1.js",
+          "bytes": 324580
+        },
+        {
+          "file": "assets/guardian-head-DPXn0-VS.js",
+          "bytes": 2028
+        },
+        {
+          "file": "assets/SystemsArticlePage-BowSTzet.js",
+          "bytes": 4769
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/EntityCards-DBl4CIOY.js",
+          "bytes": 4009
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/registry-CfmMQjQ4.js",
+          "bytes": 41530
+        },
+        {
+          "file": "assets/equipment-assets-C5MI-Bzp.js",
+          "bytes": 9798
+        },
+        {
+          "file": "assets/GameGlyph-aYIYk7Ws.js",
+          "bytes": 3896
+        },
+        {
+          "file": "assets/DifficultyStars-BMed4nG4.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/EntityIcon-DGbZdkoK.js",
+          "bytes": 34094
+        },
+        {
+          "file": "assets/Reference.module-ozFcrIXL.js",
+          "bytes": 700
+        },
+        {
+          "file": "assets/RelatedLinks-CxWHJHjD.js",
+          "bytes": 684
+        },
+        {
+          "file": "assets/WikiLayout-DQ5YoCC1.js",
+          "bytes": 3440
+        },
+        {
+          "file": "assets/systems-catalog-D7ryaJPj.js",
+          "bytes": 88703
+        }
+      ],
+      "images": []
+    },
+    {
+      "path": "/projects/maniac/wiki/items/red-color-card",
+      "jsCount": 15,
+      "jsBytes": 573703,
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/item-articles/red-color-card.json"
+      ],
+      "scripts": [
+        {
+          "file": "assets/index-DIlyDRF1.js",
+          "bytes": 324580
+        },
+        {
+          "file": "assets/red-color-card-9dieFsi-.js",
+          "bytes": 1927
+        },
+        {
+          "file": "assets/SystemsArticlePage-BowSTzet.js",
+          "bytes": 4769
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/registry-CfmMQjQ4.js",
+          "bytes": 41530
+        },
+        {
+          "file": "assets/GameGlyph-aYIYk7Ws.js",
+          "bytes": 3896
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/DifficultyStars-BMed4nG4.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/systems-catalog-D7ryaJPj.js",
+          "bytes": 88703
+        },
+        {
+          "file": "assets/EntityCards-DBl4CIOY.js",
+          "bytes": 4009
+        },
+        {
+          "file": "assets/equipment-assets-C5MI-Bzp.js",
+          "bytes": 9798
+        },
+        {
+          "file": "assets/RelatedLinks-CxWHJHjD.js",
+          "bytes": 684
+        },
+        {
+          "file": "assets/Reference.module-ozFcrIXL.js",
+          "bytes": 700
+        },
+        {
+          "file": "assets/EntityIcon-DGbZdkoK.js",
+          "bytes": 34094
+        },
+        {
+          "file": "assets/WikiLayout-DQ5YoCC1.js",
+          "bytes": 3440
+        }
+      ],
+      "images": []
+    },
+    {
+      "path": "/projects/maniac/wiki/items/blue-color-card",
+      "jsCount": 15,
+      "jsBytes": 573707,
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/item-articles/blue-color-card.json"
+      ],
+      "scripts": [
+        {
+          "file": "assets/index-DIlyDRF1.js",
+          "bytes": 324580
+        },
+        {
+          "file": "assets/blue-color-card-CXu_EiJA.js",
+          "bytes": 1931
+        },
+        {
+          "file": "assets/SystemsArticlePage-BowSTzet.js",
+          "bytes": 4769
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/equipment-assets-C5MI-Bzp.js",
+          "bytes": 9798
+        },
+        {
+          "file": "assets/registry-CfmMQjQ4.js",
+          "bytes": 41530
+        },
+        {
+          "file": "assets/EntityCards-DBl4CIOY.js",
+          "bytes": 4009
+        },
+        {
+          "file": "assets/RelatedLinks-CxWHJHjD.js",
+          "bytes": 684
+        },
+        {
+          "file": "assets/DifficultyStars-BMed4nG4.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/systems-catalog-D7ryaJPj.js",
+          "bytes": 88703
+        },
+        {
+          "file": "assets/GameGlyph-aYIYk7Ws.js",
+          "bytes": 3896
+        },
+        {
+          "file": "assets/WikiLayout-DQ5YoCC1.js",
+          "bytes": 3440
+        },
+        {
+          "file": "assets/Reference.module-ozFcrIXL.js",
+          "bytes": 700
+        },
+        {
+          "file": "assets/EntityIcon-DGbZdkoK.js",
+          "bytes": 34094
+        }
+      ],
+      "images": []
+    },
+    {
+      "path": "/projects/maniac/wiki/items/green-color-card",
+      "jsCount": 15,
+      "jsBytes": 573664,
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/item-articles/green-color-card.json"
+      ],
+      "scripts": [
+        {
+          "file": "assets/index-DIlyDRF1.js",
+          "bytes": 324580
+        },
+        {
+          "file": "assets/green-color-card-Bg-LnM3g.js",
+          "bytes": 1888
+        },
+        {
+          "file": "assets/SystemsArticlePage-BowSTzet.js",
+          "bytes": 4769
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/registry-CfmMQjQ4.js",
+          "bytes": 41530
+        },
+        {
+          "file": "assets/equipment-assets-C5MI-Bzp.js",
+          "bytes": 9798
+        },
+        {
+          "file": "assets/EntityCards-DBl4CIOY.js",
+          "bytes": 4009
+        },
+        {
+          "file": "assets/DifficultyStars-BMed4nG4.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/GameGlyph-aYIYk7Ws.js",
+          "bytes": 3896
+        },
+        {
+          "file": "assets/EntityIcon-DGbZdkoK.js",
+          "bytes": 34094
+        },
+        {
+          "file": "assets/RelatedLinks-CxWHJHjD.js",
+          "bytes": 684
+        },
+        {
+          "file": "assets/systems-catalog-D7ryaJPj.js",
+          "bytes": 88703
+        },
+        {
+          "file": "assets/WikiLayout-DQ5YoCC1.js",
+          "bytes": 3440
+        },
+        {
+          "file": "assets/Reference.module-ozFcrIXL.js",
+          "bytes": 700
+        }
+      ],
+      "images": []
+    },
+    {
+      "path": "/projects/maniac/wiki/items/alchemy-kit",
+      "jsCount": 15,
+      "jsBytes": 573267,
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/item-articles/alchemy-kit.json"
+      ],
+      "scripts": [
+        {
+          "file": "assets/index-DIlyDRF1.js",
+          "bytes": 324580
+        },
+        {
+          "file": "assets/alchemy-kit-W5u5k6H8.js",
+          "bytes": 1491
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/registry-CfmMQjQ4.js",
+          "bytes": 41530
+        },
+        {
+          "file": "assets/SystemsArticlePage-BowSTzet.js",
+          "bytes": 4769
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/equipment-assets-C5MI-Bzp.js",
+          "bytes": 9798
+        },
+        {
+          "file": "assets/DifficultyStars-BMed4nG4.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/EntityCards-DBl4CIOY.js",
+          "bytes": 4009
+        },
+        {
+          "file": "assets/RelatedLinks-CxWHJHjD.js",
+          "bytes": 684
+        },
+        {
+          "file": "assets/EntityIcon-DGbZdkoK.js",
+          "bytes": 34094
+        },
+        {
+          "file": "assets/WikiLayout-DQ5YoCC1.js",
+          "bytes": 3440
+        },
+        {
+          "file": "assets/systems-catalog-D7ryaJPj.js",
+          "bytes": 88703
+        },
+        {
+          "file": "assets/GameGlyph-aYIYk7Ws.js",
+          "bytes": 3896
+        },
+        {
+          "file": "assets/Reference.module-ozFcrIXL.js",
+          "bytes": 700
+        }
+      ],
+      "images": []
+    },
+    {
+      "path": "/projects/maniac/wiki/items/brewing-stand",
+      "jsCount": 15,
+      "jsBytes": 573273,
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/item-articles/brewing-stand.json"
+      ],
+      "scripts": [
+        {
+          "file": "assets/index-DIlyDRF1.js",
+          "bytes": 324580
+        },
+        {
+          "file": "assets/brewing-stand-CXIPyga_.js",
+          "bytes": 1497
+        },
+        {
+          "file": "assets/SystemsArticlePage-BowSTzet.js",
+          "bytes": 4769
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/registry-CfmMQjQ4.js",
+          "bytes": 41530
+        },
+        {
+          "file": "assets/EntityCards-DBl4CIOY.js",
+          "bytes": 4009
+        },
+        {
+          "file": "assets/equipment-assets-C5MI-Bzp.js",
+          "bytes": 9798
+        },
+        {
+          "file": "assets/GameGlyph-aYIYk7Ws.js",
+          "bytes": 3896
+        },
+        {
+          "file": "assets/systems-catalog-D7ryaJPj.js",
+          "bytes": 88703
+        },
+        {
+          "file": "assets/DifficultyStars-BMed4nG4.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/RelatedLinks-CxWHJHjD.js",
+          "bytes": 684
+        },
+        {
+          "file": "assets/WikiLayout-DQ5YoCC1.js",
+          "bytes": 3440
+        },
+        {
+          "file": "assets/Reference.module-ozFcrIXL.js",
+          "bytes": 700
+        },
+        {
+          "file": "assets/EntityIcon-DGbZdkoK.js",
+          "bytes": 34094
+        }
+      ],
+      "images": []
+    },
+    {
+      "path": "/projects/maniac/wiki/items/dodepovich-coins",
+      "jsCount": 15,
+      "jsBytes": 573305,
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/item-articles/dodepovich-coins.json"
+      ],
+      "scripts": [
+        {
+          "file": "assets/index-DIlyDRF1.js",
+          "bytes": 324580
+        },
+        {
+          "file": "assets/dodepovich-coins-B64Ix_v3.js",
+          "bytes": 1529
+        },
+        {
+          "file": "assets/SystemsArticlePage-BowSTzet.js",
+          "bytes": 4769
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/EntityIcon-DGbZdkoK.js",
+          "bytes": 34094
+        },
+        {
+          "file": "assets/registry-CfmMQjQ4.js",
+          "bytes": 41530
+        },
+        {
+          "file": "assets/DifficultyStars-BMed4nG4.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/systems-catalog-D7ryaJPj.js",
+          "bytes": 88703
+        },
+        {
+          "file": "assets/equipment-assets-C5MI-Bzp.js",
+          "bytes": 9798
+        },
+        {
+          "file": "assets/RelatedLinks-CxWHJHjD.js",
+          "bytes": 684
+        },
+        {
+          "file": "assets/GameGlyph-aYIYk7Ws.js",
+          "bytes": 3896
+        },
+        {
+          "file": "assets/EntityCards-DBl4CIOY.js",
+          "bytes": 4009
+        },
+        {
+          "file": "assets/Reference.module-ozFcrIXL.js",
+          "bytes": 700
+        },
+        {
+          "file": "assets/WikiLayout-DQ5YoCC1.js",
+          "bytes": 3440
+        }
+      ],
+      "images": []
+    },
+    {
+      "path": "/projects/maniac/wiki/items/agent-pistol",
+      "jsCount": 15,
+      "jsBytes": 573538,
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/item-articles/agent-pistol.json"
+      ],
+      "scripts": [
+        {
+          "file": "assets/index-DIlyDRF1.js",
+          "bytes": 324580
+        },
+        {
+          "file": "assets/agent-pistol-BmbwoB1j.js",
+          "bytes": 1762
+        },
+        {
+          "file": "assets/SystemsArticlePage-BowSTzet.js",
+          "bytes": 4769
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/EntityCards-DBl4CIOY.js",
+          "bytes": 4009
+        },
+        {
+          "file": "assets/equipment-assets-C5MI-Bzp.js",
+          "bytes": 9798
+        },
+        {
+          "file": "assets/DifficultyStars-BMed4nG4.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/RelatedLinks-CxWHJHjD.js",
+          "bytes": 684
+        },
+        {
+          "file": "assets/systems-catalog-D7ryaJPj.js",
+          "bytes": 88703
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/registry-CfmMQjQ4.js",
+          "bytes": 41530
+        },
+        {
+          "file": "assets/Reference.module-ozFcrIXL.js",
+          "bytes": 700
+        },
+        {
+          "file": "assets/EntityIcon-DGbZdkoK.js",
+          "bytes": 34094
+        },
+        {
+          "file": "assets/GameGlyph-aYIYk7Ws.js",
+          "bytes": 3896
+        },
+        {
+          "file": "assets/WikiLayout-DQ5YoCC1.js",
+          "bytes": 3440
+        }
+      ],
+      "images": []
+    },
+    {
+      "path": "/projects/maniac/wiki/items/agent-knife",
+      "jsCount": 15,
+      "jsBytes": 573202,
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/item-articles/agent-knife.json"
+      ],
+      "scripts": [
+        {
+          "file": "assets/index-DIlyDRF1.js",
+          "bytes": 324580
+        },
+        {
+          "file": "assets/agent-knife-CBmjBIBl.js",
+          "bytes": 1426
+        },
+        {
+          "file": "assets/SystemsArticlePage-BowSTzet.js",
+          "bytes": 4769
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/equipment-assets-C5MI-Bzp.js",
+          "bytes": 9798
+        },
+        {
+          "file": "assets/systems-catalog-D7ryaJPj.js",
+          "bytes": 88703
+        },
+        {
+          "file": "assets/EntityIcon-DGbZdkoK.js",
+          "bytes": 34094
+        },
+        {
+          "file": "assets/DifficultyStars-BMed4nG4.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/registry-CfmMQjQ4.js",
+          "bytes": 41530
+        },
+        {
+          "file": "assets/RelatedLinks-CxWHJHjD.js",
+          "bytes": 684
+        },
+        {
+          "file": "assets/GameGlyph-aYIYk7Ws.js",
+          "bytes": 3896
+        },
+        {
+          "file": "assets/EntityCards-DBl4CIOY.js",
+          "bytes": 4009
+        },
+        {
+          "file": "assets/Reference.module-ozFcrIXL.js",
+          "bytes": 700
+        },
+        {
+          "file": "assets/WikiLayout-DQ5YoCC1.js",
+          "bytes": 3440
+        }
+      ],
+      "images": []
+    },
+    {
+      "path": "/projects/maniac/wiki/items/agent-armor",
+      "jsCount": 15,
+      "jsBytes": 573180,
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/item-articles/agent-armor.json"
+      ],
+      "scripts": [
+        {
+          "file": "assets/index-DIlyDRF1.js",
+          "bytes": 324580
+        },
+        {
+          "file": "assets/agent-armor-CWlCPu01.js",
+          "bytes": 1404
+        },
+        {
+          "file": "assets/SystemsArticlePage-BowSTzet.js",
+          "bytes": 4769
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/registry-CfmMQjQ4.js",
+          "bytes": 41530
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/equipment-assets-C5MI-Bzp.js",
+          "bytes": 9798
+        },
+        {
+          "file": "assets/EntityCards-DBl4CIOY.js",
+          "bytes": 4009
+        },
+        {
+          "file": "assets/RelatedLinks-CxWHJHjD.js",
+          "bytes": 684
+        },
+        {
+          "file": "assets/DifficultyStars-BMed4nG4.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/EntityIcon-DGbZdkoK.js",
+          "bytes": 34094
+        },
+        {
+          "file": "assets/systems-catalog-D7ryaJPj.js",
+          "bytes": 88703
+        },
+        {
+          "file": "assets/GameGlyph-aYIYk7Ws.js",
+          "bytes": 3896
+        },
+        {
+          "file": "assets/Reference.module-ozFcrIXL.js",
+          "bytes": 700
+        },
+        {
+          "file": "assets/WikiLayout-DQ5YoCC1.js",
+          "bytes": 3440
+        }
+      ],
+      "images": []
+    },
+    {
+      "path": "/projects/maniac/wiki/items/pudge-armor",
+      "jsCount": 15,
+      "jsBytes": 573180,
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/item-articles/pudge-armor.json"
+      ],
+      "scripts": [
+        {
+          "file": "assets/index-DIlyDRF1.js",
+          "bytes": 324580
+        },
+        {
+          "file": "assets/pudge-armor-DHoAH9x7.js",
+          "bytes": 1404
+        },
+        {
+          "file": "assets/SystemsArticlePage-BowSTzet.js",
+          "bytes": 4769
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/equipment-assets-C5MI-Bzp.js",
+          "bytes": 9798
+        },
+        {
+          "file": "assets/EntityIcon-DGbZdkoK.js",
+          "bytes": 34094
+        },
+        {
+          "file": "assets/GameGlyph-aYIYk7Ws.js",
+          "bytes": 3896
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/registry-CfmMQjQ4.js",
+          "bytes": 41530
+        },
+        {
+          "file": "assets/EntityCards-DBl4CIOY.js",
+          "bytes": 4009
+        },
+        {
+          "file": "assets/DifficultyStars-BMed4nG4.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/systems-catalog-D7ryaJPj.js",
+          "bytes": 88703
+        },
+        {
+          "file": "assets/RelatedLinks-CxWHJHjD.js",
+          "bytes": 684
+        },
+        {
+          "file": "assets/Reference.module-ozFcrIXL.js",
+          "bytes": 700
+        },
+        {
+          "file": "assets/WikiLayout-DQ5YoCC1.js",
+          "bytes": 3440
+        }
+      ],
+      "images": []
+    },
+    {
+      "path": "/projects/maniac/wiki/items/death-armor",
+      "jsCount": 15,
+      "jsBytes": 573255,
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/item-articles/death-armor.json"
+      ],
+      "scripts": [
+        {
+          "file": "assets/index-DIlyDRF1.js",
+          "bytes": 324580
+        },
+        {
+          "file": "assets/death-armor-BncUYJLU.js",
+          "bytes": 1479
+        },
+        {
+          "file": "assets/SystemsArticlePage-BowSTzet.js",
+          "bytes": 4769
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/equipment-assets-C5MI-Bzp.js",
+          "bytes": 9798
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/registry-CfmMQjQ4.js",
+          "bytes": 41530
+        },
+        {
+          "file": "assets/DifficultyStars-BMed4nG4.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/EntityCards-DBl4CIOY.js",
+          "bytes": 4009
+        },
+        {
+          "file": "assets/GameGlyph-aYIYk7Ws.js",
+          "bytes": 3896
+        },
+        {
+          "file": "assets/RelatedLinks-CxWHJHjD.js",
+          "bytes": 684
+        },
+        {
+          "file": "assets/systems-catalog-D7ryaJPj.js",
+          "bytes": 88703
+        },
+        {
+          "file": "assets/WikiLayout-DQ5YoCC1.js",
+          "bytes": 3440
+        },
+        {
+          "file": "assets/Reference.module-ozFcrIXL.js",
+          "bytes": 700
+        },
+        {
+          "file": "assets/EntityIcon-DGbZdkoK.js",
+          "bytes": 34094
+        }
+      ],
+      "images": []
+    },
+    {
+      "path": "/projects/maniac/wiki/items/ursa-armor",
+      "jsCount": 15,
+      "jsBytes": 573177,
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/item-articles/ursa-armor.json"
+      ],
+      "scripts": [
+        {
+          "file": "assets/index-DIlyDRF1.js",
+          "bytes": 324580
+        },
+        {
+          "file": "assets/ursa-armor-BFvllHCd.js",
+          "bytes": 1401
+        },
+        {
+          "file": "assets/SystemsArticlePage-BowSTzet.js",
+          "bytes": 4769
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/registry-CfmMQjQ4.js",
+          "bytes": 41530
+        },
+        {
+          "file": "assets/DifficultyStars-BMed4nG4.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/equipment-assets-C5MI-Bzp.js",
+          "bytes": 9798
+        },
+        {
+          "file": "assets/RelatedLinks-CxWHJHjD.js",
+          "bytes": 684
+        },
+        {
+          "file": "assets/GameGlyph-aYIYk7Ws.js",
+          "bytes": 3896
+        },
+        {
+          "file": "assets/EntityCards-DBl4CIOY.js",
+          "bytes": 4009
+        },
+        {
+          "file": "assets/EntityIcon-DGbZdkoK.js",
+          "bytes": 34094
+        },
+        {
+          "file": "assets/WikiLayout-DQ5YoCC1.js",
+          "bytes": 3440
+        },
+        {
+          "file": "assets/Reference.module-ozFcrIXL.js",
+          "bytes": 700
+        },
+        {
+          "file": "assets/systems-catalog-D7ryaJPj.js",
+          "bytes": 88703
+        }
+      ],
+      "images": []
+    },
+    {
+      "path": "/projects/maniac/wiki/items/plague-armor",
+      "jsCount": 15,
+      "jsBytes": 573189,
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/item-articles/plague-armor.json"
+      ],
+      "scripts": [
+        {
+          "file": "assets/index-DIlyDRF1.js",
+          "bytes": 324580
+        },
+        {
+          "file": "assets/plague-armor-CHbUCoQx.js",
+          "bytes": 1413
+        },
+        {
+          "file": "assets/SystemsArticlePage-BowSTzet.js",
+          "bytes": 4769
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/equipment-assets-C5MI-Bzp.js",
+          "bytes": 9798
+        },
+        {
+          "file": "assets/EntityCards-DBl4CIOY.js",
+          "bytes": 4009
+        },
+        {
+          "file": "assets/registry-CfmMQjQ4.js",
+          "bytes": 41530
+        },
+        {
+          "file": "assets/DifficultyStars-BMed4nG4.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/systems-catalog-D7ryaJPj.js",
+          "bytes": 88703
+        },
+        {
+          "file": "assets/RelatedLinks-CxWHJHjD.js",
+          "bytes": 684
+        },
+        {
+          "file": "assets/EntityIcon-DGbZdkoK.js",
+          "bytes": 34094
+        },
+        {
+          "file": "assets/GameGlyph-aYIYk7Ws.js",
+          "bytes": 3896
+        },
+        {
+          "file": "assets/Reference.module-ozFcrIXL.js",
+          "bytes": 700
+        },
+        {
+          "file": "assets/WikiLayout-DQ5YoCC1.js",
+          "bytes": 3440
+        }
+      ],
+      "images": []
+    },
+    {
+      "path": "/projects/maniac/wiki/items/ghost-armor",
+      "jsCount": 15,
+      "jsBytes": 573247,
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/item-articles/ghost-armor.json"
+      ],
+      "scripts": [
+        {
+          "file": "assets/index-DIlyDRF1.js",
+          "bytes": 324580
+        },
+        {
+          "file": "assets/ghost-armor-Bv_iGL-m.js",
+          "bytes": 1471
+        },
+        {
+          "file": "assets/SystemsArticlePage-BowSTzet.js",
+          "bytes": 4769
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/equipment-assets-C5MI-Bzp.js",
+          "bytes": 9798
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/DifficultyStars-BMed4nG4.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/registry-CfmMQjQ4.js",
+          "bytes": 41530
+        },
+        {
+          "file": "assets/RelatedLinks-CxWHJHjD.js",
+          "bytes": 684
+        },
+        {
+          "file": "assets/systems-catalog-D7ryaJPj.js",
+          "bytes": 88703
+        },
+        {
+          "file": "assets/EntityCards-DBl4CIOY.js",
+          "bytes": 4009
+        },
+        {
+          "file": "assets/GameGlyph-aYIYk7Ws.js",
+          "bytes": 3896
+        },
+        {
+          "file": "assets/EntityIcon-DGbZdkoK.js",
+          "bytes": 34094
+        },
+        {
+          "file": "assets/Reference.module-ozFcrIXL.js",
+          "bytes": 700
+        },
+        {
+          "file": "assets/WikiLayout-DQ5YoCC1.js",
+          "bytes": 3440
+        }
+      ],
+      "images": []
+    },
+    {
+      "path": "/projects/maniac/wiki/items/freddy-armor",
+      "jsCount": 15,
+      "jsBytes": 573187,
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/item-articles/freddy-armor.json"
+      ],
+      "scripts": [
+        {
+          "file": "assets/index-DIlyDRF1.js",
+          "bytes": 324580
+        },
+        {
+          "file": "assets/freddy-armor-COh1DM2l.js",
+          "bytes": 1411
+        },
+        {
+          "file": "assets/SystemsArticlePage-BowSTzet.js",
+          "bytes": 4769
+        },
+        {
+          "file": "assets/equipment-assets-C5MI-Bzp.js",
+          "bytes": 9798
+        },
+        {
+          "file": "assets/registry-CfmMQjQ4.js",
+          "bytes": 41530
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/GameGlyph-aYIYk7Ws.js",
+          "bytes": 3896
+        },
+        {
+          "file": "assets/EntityCards-DBl4CIOY.js",
+          "bytes": 4009
+        },
+        {
+          "file": "assets/systems-catalog-D7ryaJPj.js",
+          "bytes": 88703
+        },
+        {
+          "file": "assets/DifficultyStars-BMed4nG4.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/EntityIcon-DGbZdkoK.js",
+          "bytes": 34094
+        },
+        {
+          "file": "assets/RelatedLinks-CxWHJHjD.js",
+          "bytes": 684
+        },
+        {
+          "file": "assets/WikiLayout-DQ5YoCC1.js",
+          "bytes": 3440
+        },
+        {
+          "file": "assets/Reference.module-ozFcrIXL.js",
+          "bytes": 700
+        }
+      ],
+      "images": []
+    },
+    {
+      "path": "/projects/maniac/wiki/items/computer",
+      "jsCount": 15,
+      "jsBytes": 574198,
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/item-articles/computer.json"
+      ],
+      "scripts": [
+        {
+          "file": "assets/index-DIlyDRF1.js",
+          "bytes": 324580
+        },
+        {
+          "file": "assets/computer-CxpLxIQH.js",
+          "bytes": 2422
+        },
+        {
+          "file": "assets/SystemsArticlePage-BowSTzet.js",
+          "bytes": 4769
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/equipment-assets-C5MI-Bzp.js",
+          "bytes": 9798
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/EntityCards-DBl4CIOY.js",
+          "bytes": 4009
+        },
+        {
+          "file": "assets/registry-CfmMQjQ4.js",
+          "bytes": 41530
+        },
+        {
+          "file": "assets/systems-catalog-D7ryaJPj.js",
+          "bytes": 88703
+        },
+        {
+          "file": "assets/GameGlyph-aYIYk7Ws.js",
+          "bytes": 3896
+        },
+        {
+          "file": "assets/EntityIcon-DGbZdkoK.js",
+          "bytes": 34094
+        },
+        {
+          "file": "assets/DifficultyStars-BMed4nG4.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/RelatedLinks-CxWHJHjD.js",
+          "bytes": 684
+        },
+        {
+          "file": "assets/Reference.module-ozFcrIXL.js",
+          "bytes": 700
+        },
+        {
+          "file": "assets/WikiLayout-DQ5YoCC1.js",
+          "bytes": 3440
+        }
+      ],
+      "images": [
+        "http://127.0.0.1:53288/assets/system-computer-CGXH7cNy.png"
+      ]
+    },
+    {
+      "path": "/projects/maniac/wiki/mechanics/match-preparation",
+      "jsCount": 15,
+      "jsBytes": 574393,
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/mechanic-articles/match-preparation.json"
+      ],
+      "scripts": [
+        {
+          "file": "assets/index-DIlyDRF1.js",
+          "bytes": 324580
+        },
+        {
+          "file": "assets/match-preparation-DrsAHIfw.js",
+          "bytes": 2617
+        },
+        {
+          "file": "assets/SystemsArticlePage-BowSTzet.js",
+          "bytes": 4769
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/registry-CfmMQjQ4.js",
+          "bytes": 41530
+        },
+        {
+          "file": "assets/DifficultyStars-BMed4nG4.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/EntityIcon-DGbZdkoK.js",
+          "bytes": 34094
+        },
+        {
+          "file": "assets/RelatedLinks-CxWHJHjD.js",
+          "bytes": 684
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/EntityCards-DBl4CIOY.js",
+          "bytes": 4009
+        },
+        {
+          "file": "assets/systems-catalog-D7ryaJPj.js",
+          "bytes": 88703
+        },
+        {
+          "file": "assets/WikiLayout-DQ5YoCC1.js",
+          "bytes": 3440
+        },
+        {
+          "file": "assets/GameGlyph-aYIYk7Ws.js",
+          "bytes": 3896
+        },
+        {
+          "file": "assets/equipment-assets-C5MI-Bzp.js",
+          "bytes": 9798
+        },
+        {
+          "file": "assets/Reference.module-ozFcrIXL.js",
+          "bytes": 700
+        }
+      ],
+      "images": []
+    },
+    {
+      "path": "/projects/maniac/wiki/mechanics/match-phases",
+      "jsCount": 15,
+      "jsBytes": 574402,
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/mechanic-articles/match-phases.json"
+      ],
+      "scripts": [
+        {
+          "file": "assets/index-DIlyDRF1.js",
+          "bytes": 324580
+        },
+        {
+          "file": "assets/match-phases-C-olijJw.js",
+          "bytes": 2626
+        },
+        {
+          "file": "assets/SystemsArticlePage-BowSTzet.js",
+          "bytes": 4769
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/registry-CfmMQjQ4.js",
+          "bytes": 41530
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/EntityCards-DBl4CIOY.js",
+          "bytes": 4009
+        },
+        {
+          "file": "assets/GameGlyph-aYIYk7Ws.js",
+          "bytes": 3896
+        },
+        {
+          "file": "assets/DifficultyStars-BMed4nG4.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/RelatedLinks-CxWHJHjD.js",
+          "bytes": 684
+        },
+        {
+          "file": "assets/equipment-assets-C5MI-Bzp.js",
+          "bytes": 9798
+        },
+        {
+          "file": "assets/systems-catalog-D7ryaJPj.js",
+          "bytes": 88703
+        },
+        {
+          "file": "assets/EntityIcon-DGbZdkoK.js",
+          "bytes": 34094
+        },
+        {
+          "file": "assets/Reference.module-ozFcrIXL.js",
+          "bytes": 700
+        },
+        {
+          "file": "assets/WikiLayout-DQ5YoCC1.js",
+          "bytes": 3440
+        }
+      ],
+      "images": []
+    },
+    {
+      "path": "/projects/maniac/wiki/mechanics/match-timer",
+      "jsCount": 15,
+      "jsBytes": 574121,
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/mechanic-articles/match-timer.json"
+      ],
+      "scripts": [
+        {
+          "file": "assets/index-DIlyDRF1.js",
+          "bytes": 324580
+        },
+        {
+          "file": "assets/match-timer-BV1DqwR9.js",
+          "bytes": 2345
+        },
+        {
+          "file": "assets/SystemsArticlePage-BowSTzet.js",
+          "bytes": 4769
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/registry-CfmMQjQ4.js",
+          "bytes": 41530
+        },
+        {
+          "file": "assets/equipment-assets-C5MI-Bzp.js",
+          "bytes": 9798
+        },
+        {
+          "file": "assets/EntityIcon-DGbZdkoK.js",
+          "bytes": 34094
+        },
+        {
+          "file": "assets/EntityCards-DBl4CIOY.js",
+          "bytes": 4009
+        },
+        {
+          "file": "assets/systems-catalog-D7ryaJPj.js",
+          "bytes": 88703
+        },
+        {
+          "file": "assets/DifficultyStars-BMed4nG4.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/GameGlyph-aYIYk7Ws.js",
+          "bytes": 3896
+        },
+        {
+          "file": "assets/RelatedLinks-CxWHJHjD.js",
+          "bytes": 684
+        },
+        {
+          "file": "assets/Reference.module-ozFcrIXL.js",
+          "bytes": 700
+        },
+        {
+          "file": "assets/WikiLayout-DQ5YoCC1.js",
+          "bytes": 3440
+        }
+      ],
+      "images": []
+    },
+    {
+      "path": "/projects/maniac/wiki/mechanics/objectives-and-escape",
+      "jsCount": 15,
+      "jsBytes": 574495,
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/mechanic-articles/objectives-and-escape.json"
+      ],
+      "scripts": [
+        {
+          "file": "assets/index-DIlyDRF1.js",
+          "bytes": 324580
+        },
+        {
+          "file": "assets/objectives-and-escape-kwYCUMXY.js",
+          "bytes": 2719
+        },
+        {
+          "file": "assets/SystemsArticlePage-BowSTzet.js",
+          "bytes": 4769
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/registry-CfmMQjQ4.js",
+          "bytes": 41530
+        },
+        {
+          "file": "assets/equipment-assets-C5MI-Bzp.js",
+          "bytes": 9798
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/GameGlyph-aYIYk7Ws.js",
+          "bytes": 3896
+        },
+        {
+          "file": "assets/DifficultyStars-BMed4nG4.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/systems-catalog-D7ryaJPj.js",
+          "bytes": 88703
+        },
+        {
+          "file": "assets/EntityIcon-DGbZdkoK.js",
+          "bytes": 34094
+        },
+        {
+          "file": "assets/RelatedLinks-CxWHJHjD.js",
+          "bytes": 684
+        },
+        {
+          "file": "assets/EntityCards-DBl4CIOY.js",
+          "bytes": 4009
+        },
+        {
+          "file": "assets/WikiLayout-DQ5YoCC1.js",
+          "bytes": 3440
+        },
+        {
+          "file": "assets/Reference.module-ozFcrIXL.js",
+          "bytes": 700
+        }
+      ],
+      "images": []
+    },
+    {
+      "path": "/projects/maniac/wiki/mechanics/hacking",
+      "jsCount": 15,
+      "jsBytes": 574824,
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/mechanic-articles/hacking.json"
+      ],
+      "scripts": [
+        {
+          "file": "assets/index-DIlyDRF1.js",
+          "bytes": 324580
+        },
+        {
+          "file": "assets/hacking-DB_s7Cdk.js",
+          "bytes": 3048
+        },
+        {
+          "file": "assets/SystemsArticlePage-BowSTzet.js",
+          "bytes": 4769
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/equipment-assets-C5MI-Bzp.js",
+          "bytes": 9798
+        },
+        {
+          "file": "assets/systems-catalog-D7ryaJPj.js",
+          "bytes": 88703
+        },
+        {
+          "file": "assets/DifficultyStars-BMed4nG4.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/GameGlyph-aYIYk7Ws.js",
+          "bytes": 3896
+        },
+        {
+          "file": "assets/EntityCards-DBl4CIOY.js",
+          "bytes": 4009
+        },
+        {
+          "file": "assets/registry-CfmMQjQ4.js",
+          "bytes": 41530
+        },
+        {
+          "file": "assets/EntityIcon-DGbZdkoK.js",
+          "bytes": 34094
+        },
+        {
+          "file": "assets/WikiLayout-DQ5YoCC1.js",
+          "bytes": 3440
+        },
+        {
+          "file": "assets/RelatedLinks-CxWHJHjD.js",
+          "bytes": 684
+        },
+        {
+          "file": "assets/Reference.module-ozFcrIXL.js",
+          "bytes": 700
+        }
+      ],
+      "images": [
+        "http://127.0.0.1:53288/assets/guide-hacking-0-Gwv8F1Po.webp"
+      ]
+    },
+    {
+      "path": "/projects/maniac/wiki/mechanics/qte",
+      "jsCount": 15,
+      "jsBytes": 574399,
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/mechanic-articles/qte.json"
+      ],
+      "scripts": [
+        {
+          "file": "assets/index-DIlyDRF1.js",
+          "bytes": 324580
+        },
+        {
+          "file": "assets/SystemsArticlePage-BowSTzet.js",
+          "bytes": 4769
+        },
+        {
+          "file": "assets/qte-CBbLGamk.js",
+          "bytes": 2623
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/equipment-assets-C5MI-Bzp.js",
+          "bytes": 9798
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/EntityCards-DBl4CIOY.js",
+          "bytes": 4009
+        },
+        {
+          "file": "assets/registry-CfmMQjQ4.js",
+          "bytes": 41530
+        },
+        {
+          "file": "assets/GameGlyph-aYIYk7Ws.js",
+          "bytes": 3896
+        },
+        {
+          "file": "assets/RelatedLinks-CxWHJHjD.js",
+          "bytes": 684
+        },
+        {
+          "file": "assets/systems-catalog-D7ryaJPj.js",
+          "bytes": 88703
+        },
+        {
+          "file": "assets/DifficultyStars-BMed4nG4.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/EntityIcon-DGbZdkoK.js",
+          "bytes": 34094
+        },
+        {
+          "file": "assets/Reference.module-ozFcrIXL.js",
+          "bytes": 700
+        },
+        {
+          "file": "assets/WikiLayout-DQ5YoCC1.js",
+          "bytes": 3440
+        }
+      ],
+      "images": [
+        "http://127.0.0.1:53288/assets/guide-qte-0-BI4J4_L4.webp"
+      ]
+    },
+    {
+      "path": "/projects/maniac/wiki/mechanics/downed",
+      "jsCount": 15,
+      "jsBytes": 574395,
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/mechanic-articles/downed.json"
+      ],
+      "scripts": [
+        {
+          "file": "assets/index-DIlyDRF1.js",
+          "bytes": 324580
+        },
+        {
+          "file": "assets/downed-Daky9Ws7.js",
+          "bytes": 2619
+        },
+        {
+          "file": "assets/SystemsArticlePage-BowSTzet.js",
+          "bytes": 4769
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/equipment-assets-C5MI-Bzp.js",
+          "bytes": 9798
+        },
+        {
+          "file": "assets/registry-CfmMQjQ4.js",
+          "bytes": 41530
+        },
+        {
+          "file": "assets/DifficultyStars-BMed4nG4.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/systems-catalog-D7ryaJPj.js",
+          "bytes": 88703
+        },
+        {
+          "file": "assets/EntityCards-DBl4CIOY.js",
+          "bytes": 4009
+        },
+        {
+          "file": "assets/GameGlyph-aYIYk7Ws.js",
+          "bytes": 3896
+        },
+        {
+          "file": "assets/RelatedLinks-CxWHJHjD.js",
+          "bytes": 684
+        },
+        {
+          "file": "assets/EntityIcon-DGbZdkoK.js",
+          "bytes": 34094
+        },
+        {
+          "file": "assets/WikiLayout-DQ5YoCC1.js",
+          "bytes": 3440
+        },
+        {
+          "file": "assets/Reference.module-ozFcrIXL.js",
+          "bytes": 700
+        }
+      ],
+      "images": [
+        "http://127.0.0.1:53288/assets/guide-downed-0-D_JWGAl0.webp"
+      ]
+    },
+    {
+      "path": "/projects/maniac/wiki/mechanics/map-interactions",
+      "jsCount": 15,
+      "jsBytes": 574683,
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/mechanic-articles/map-interactions.json"
+      ],
+      "scripts": [
+        {
+          "file": "assets/index-DIlyDRF1.js",
+          "bytes": 324580
+        },
+        {
+          "file": "assets/map-interactions-CWMmA357.js",
+          "bytes": 2907
+        },
+        {
+          "file": "assets/SystemsArticlePage-BowSTzet.js",
+          "bytes": 4769
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/equipment-assets-C5MI-Bzp.js",
+          "bytes": 9798
+        },
+        {
+          "file": "assets/registry-CfmMQjQ4.js",
+          "bytes": 41530
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/EntityIcon-DGbZdkoK.js",
+          "bytes": 34094
+        },
+        {
+          "file": "assets/RelatedLinks-CxWHJHjD.js",
+          "bytes": 684
+        },
+        {
+          "file": "assets/DifficultyStars-BMed4nG4.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/GameGlyph-aYIYk7Ws.js",
+          "bytes": 3896
+        },
+        {
+          "file": "assets/systems-catalog-D7ryaJPj.js",
+          "bytes": 88703
+        },
+        {
+          "file": "assets/EntityCards-DBl4CIOY.js",
+          "bytes": 4009
+        },
+        {
+          "file": "assets/WikiLayout-DQ5YoCC1.js",
+          "bytes": 3440
+        },
+        {
+          "file": "assets/Reference.module-ozFcrIXL.js",
+          "bytes": 700
+        }
+      ],
+      "images": [
+        "http://127.0.0.1:53288/assets/guide-map-interactions-0-C0OvwBs9.webp"
+      ]
+    },
+    {
+      "path": "/projects/maniac/wiki/mechanics/mana",
+      "jsCount": 15,
+      "jsBytes": 574432,
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/mechanic-articles/mana.json"
+      ],
+      "scripts": [
+        {
+          "file": "assets/index-DIlyDRF1.js",
+          "bytes": 324580
+        },
+        {
+          "file": "assets/mana-D387Mqzt.js",
+          "bytes": 2656
+        },
+        {
+          "file": "assets/SystemsArticlePage-BowSTzet.js",
+          "bytes": 4769
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/registry-CfmMQjQ4.js",
+          "bytes": 41530
+        },
+        {
+          "file": "assets/equipment-assets-C5MI-Bzp.js",
+          "bytes": 9798
+        },
+        {
+          "file": "assets/systems-catalog-D7ryaJPj.js",
+          "bytes": 88703
+        },
+        {
+          "file": "assets/EntityCards-DBl4CIOY.js",
+          "bytes": 4009
+        },
+        {
+          "file": "assets/DifficultyStars-BMed4nG4.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/GameGlyph-aYIYk7Ws.js",
+          "bytes": 3896
+        },
+        {
+          "file": "assets/WikiLayout-DQ5YoCC1.js",
+          "bytes": 3440
+        },
+        {
+          "file": "assets/RelatedLinks-CxWHJHjD.js",
+          "bytes": 684
+        },
+        {
+          "file": "assets/Reference.module-ozFcrIXL.js",
+          "bytes": 700
+        },
+        {
+          "file": "assets/EntityIcon-DGbZdkoK.js",
+          "bytes": 34094
+        }
+      ],
+      "images": []
+    },
+    {
+      "path": "/projects/maniac/wiki/mechanics/sanity",
+      "jsCount": 15,
+      "jsBytes": 574375,
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/mechanic-articles/sanity.json"
+      ],
+      "scripts": [
+        {
+          "file": "assets/index-DIlyDRF1.js",
+          "bytes": 324580
+        },
+        {
+          "file": "assets/sanity-BT5E920d.js",
+          "bytes": 2599
+        },
+        {
+          "file": "assets/SystemsArticlePage-BowSTzet.js",
+          "bytes": 4769
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/equipment-assets-C5MI-Bzp.js",
+          "bytes": 9798
+        },
+        {
+          "file": "assets/registry-CfmMQjQ4.js",
+          "bytes": 41530
+        },
+        {
+          "file": "assets/DifficultyStars-BMed4nG4.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/EntityCards-DBl4CIOY.js",
+          "bytes": 4009
+        },
+        {
+          "file": "assets/systems-catalog-D7ryaJPj.js",
+          "bytes": 88703
+        },
+        {
+          "file": "assets/RelatedLinks-CxWHJHjD.js",
+          "bytes": 684
+        },
+        {
+          "file": "assets/GameGlyph-aYIYk7Ws.js",
+          "bytes": 3896
+        },
+        {
+          "file": "assets/WikiLayout-DQ5YoCC1.js",
+          "bytes": 3440
+        },
+        {
+          "file": "assets/EntityIcon-DGbZdkoK.js",
+          "bytes": 34094
+        },
+        {
+          "file": "assets/Reference.module-ozFcrIXL.js",
+          "bytes": 700
+        }
+      ],
+      "images": []
+    },
+    {
+      "path": "/projects/maniac/wiki/mechanics/nightmare-trials",
+      "jsCount": 15,
+      "jsBytes": 575412,
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/mechanic-articles/nightmare-trials.json"
+      ],
+      "scripts": [
+        {
+          "file": "assets/index-DIlyDRF1.js",
+          "bytes": 324580
+        },
+        {
+          "file": "assets/nightmare-trials-CJI6P0f9.js",
+          "bytes": 3636
+        },
+        {
+          "file": "assets/SystemsArticlePage-BowSTzet.js",
+          "bytes": 4769
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/EntityCards-DBl4CIOY.js",
+          "bytes": 4009
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/registry-CfmMQjQ4.js",
+          "bytes": 41530
+        },
+        {
+          "file": "assets/equipment-assets-C5MI-Bzp.js",
+          "bytes": 9798
+        },
+        {
+          "file": "assets/GameGlyph-aYIYk7Ws.js",
+          "bytes": 3896
+        },
+        {
+          "file": "assets/DifficultyStars-BMed4nG4.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/RelatedLinks-CxWHJHjD.js",
+          "bytes": 684
+        },
+        {
+          "file": "assets/EntityIcon-DGbZdkoK.js",
+          "bytes": 34094
+        },
+        {
+          "file": "assets/Reference.module-ozFcrIXL.js",
+          "bytes": 700
+        },
+        {
+          "file": "assets/systems-catalog-D7ryaJPj.js",
+          "bytes": 88703
+        },
+        {
+          "file": "assets/WikiLayout-DQ5YoCC1.js",
+          "bytes": 3440
+        }
+      ],
+      "images": [
+        "http://127.0.0.1:53288/assets/guide-nightmare-trials-0-BxsXmgu2.webp"
+      ]
+    },
+    {
+      "path": "/projects/maniac/wiki/mechanics/flower-return",
+      "jsCount": 15,
+      "jsBytes": 574044,
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/mechanic-articles/flower-return.json"
+      ],
+      "scripts": [
+        {
+          "file": "assets/index-DIlyDRF1.js",
+          "bytes": 324580
+        },
+        {
+          "file": "assets/flower-return-D67TF3GN.js",
+          "bytes": 2268
+        },
+        {
+          "file": "assets/SystemsArticlePage-BowSTzet.js",
+          "bytes": 4769
+        },
+        {
+          "file": "assets/systems-catalog-D7ryaJPj.js",
+          "bytes": 88703
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/equipment-assets-C5MI-Bzp.js",
+          "bytes": 9798
+        },
+        {
+          "file": "assets/EntityIcon-DGbZdkoK.js",
+          "bytes": 34094
+        },
+        {
+          "file": "assets/GameGlyph-aYIYk7Ws.js",
+          "bytes": 3896
+        },
+        {
+          "file": "assets/registry-CfmMQjQ4.js",
+          "bytes": 41530
+        },
+        {
+          "file": "assets/DifficultyStars-BMed4nG4.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/EntityCards-DBl4CIOY.js",
+          "bytes": 4009
+        },
+        {
+          "file": "assets/RelatedLinks-CxWHJHjD.js",
+          "bytes": 684
+        },
+        {
+          "file": "assets/WikiLayout-DQ5YoCC1.js",
+          "bytes": 3440
+        },
+        {
+          "file": "assets/Reference.module-ozFcrIXL.js",
+          "bytes": 700
+        }
+      ],
+      "images": []
+    },
+    {
+      "path": "/projects/maniac/wiki/mechanics/addiction",
+      "jsCount": 15,
+      "jsBytes": 575010,
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/mechanic-articles/addiction.json"
+      ],
+      "scripts": [
+        {
+          "file": "assets/index-DIlyDRF1.js",
+          "bytes": 324580
+        },
+        {
+          "file": "assets/addiction-BJ8IFq4q.js",
+          "bytes": 3234
+        },
+        {
+          "file": "assets/SystemsArticlePage-BowSTzet.js",
+          "bytes": 4769
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/registry-CfmMQjQ4.js",
+          "bytes": 41530
+        },
+        {
+          "file": "assets/equipment-assets-C5MI-Bzp.js",
+          "bytes": 9798
+        },
+        {
+          "file": "assets/EntityCards-DBl4CIOY.js",
+          "bytes": 4009
+        },
+        {
+          "file": "assets/DifficultyStars-BMed4nG4.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/GameGlyph-aYIYk7Ws.js",
+          "bytes": 3896
+        },
+        {
+          "file": "assets/RelatedLinks-CxWHJHjD.js",
+          "bytes": 684
+        },
+        {
+          "file": "assets/EntityIcon-DGbZdkoK.js",
+          "bytes": 34094
+        },
+        {
+          "file": "assets/WikiLayout-DQ5YoCC1.js",
+          "bytes": 3440
+        },
+        {
+          "file": "assets/Reference.module-ozFcrIXL.js",
+          "bytes": 700
+        },
+        {
+          "file": "assets/systems-catalog-D7ryaJPj.js",
+          "bytes": 88703
+        }
+      ],
+      "images": [
+        "http://127.0.0.1:53288/assets/guide-addiction-0-Dli3JPNF.webp"
+      ]
+    },
+    {
+      "path": "/projects/maniac/wiki/mechanics/casino",
+      "jsCount": 15,
+      "jsBytes": 575110,
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/mechanic-articles/casino.json"
+      ],
+      "scripts": [
+        {
+          "file": "assets/index-DIlyDRF1.js",
+          "bytes": 324580
+        },
+        {
+          "file": "assets/casino-Cx3Q0R2T.js",
+          "bytes": 3334
+        },
+        {
+          "file": "assets/SystemsArticlePage-BowSTzet.js",
+          "bytes": 4769
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/registry-CfmMQjQ4.js",
+          "bytes": 41530
+        },
+        {
+          "file": "assets/equipment-assets-C5MI-Bzp.js",
+          "bytes": 9798
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/EntityCards-DBl4CIOY.js",
+          "bytes": 4009
+        },
+        {
+          "file": "assets/DifficultyStars-BMed4nG4.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/GameGlyph-aYIYk7Ws.js",
+          "bytes": 3896
+        },
+        {
+          "file": "assets/EntityIcon-DGbZdkoK.js",
+          "bytes": 34094
+        },
+        {
+          "file": "assets/systems-catalog-D7ryaJPj.js",
+          "bytes": 88703
+        },
+        {
+          "file": "assets/RelatedLinks-CxWHJHjD.js",
+          "bytes": 684
+        },
+        {
+          "file": "assets/Reference.module-ozFcrIXL.js",
+          "bytes": 700
+        },
+        {
+          "file": "assets/WikiLayout-DQ5YoCC1.js",
+          "bytes": 3440
+        }
+      ],
+      "images": []
+    },
+    {
+      "path": "/projects/maniac/wiki/mechanics/alchemy",
+      "jsCount": 15,
+      "jsBytes": 574475,
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/mechanic-articles/alchemy.json"
+      ],
+      "scripts": [
+        {
+          "file": "assets/index-DIlyDRF1.js",
+          "bytes": 324580
+        },
+        {
+          "file": "assets/alchemy-DC32e_z6.js",
+          "bytes": 2699
+        },
+        {
+          "file": "assets/SystemsArticlePage-BowSTzet.js",
+          "bytes": 4769
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/equipment-assets-C5MI-Bzp.js",
+          "bytes": 9798
+        },
+        {
+          "file": "assets/registry-CfmMQjQ4.js",
+          "bytes": 41530
+        },
+        {
+          "file": "assets/DifficultyStars-BMed4nG4.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/EntityCards-DBl4CIOY.js",
+          "bytes": 4009
+        },
+        {
+          "file": "assets/EntityIcon-DGbZdkoK.js",
+          "bytes": 34094
+        },
+        {
+          "file": "assets/GameGlyph-aYIYk7Ws.js",
+          "bytes": 3896
+        },
+        {
+          "file": "assets/RelatedLinks-CxWHJHjD.js",
+          "bytes": 684
+        },
+        {
+          "file": "assets/WikiLayout-DQ5YoCC1.js",
+          "bytes": 3440
+        },
+        {
+          "file": "assets/Reference.module-ozFcrIXL.js",
+          "bytes": 700
+        },
+        {
+          "file": "assets/systems-catalog-D7ryaJPj.js",
+          "bytes": 88703
+        }
+      ],
+      "images": [
+        "http://127.0.0.1:53288/assets/guide-alchemy-0-Y28AaHix.webp"
+      ]
+    },
+    {
+      "path": "/projects/maniac/wiki/mechanics/resurrection",
+      "jsCount": 15,
+      "jsBytes": 574120,
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/mechanic-articles/resurrection.json"
+      ],
+      "scripts": [
+        {
+          "file": "assets/index-DIlyDRF1.js",
+          "bytes": 324580
+        },
+        {
+          "file": "assets/resurrection-DhwrjKXy.js",
+          "bytes": 2344
+        },
+        {
+          "file": "assets/SystemsArticlePage-BowSTzet.js",
+          "bytes": 4769
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/equipment-assets-C5MI-Bzp.js",
+          "bytes": 9798
+        },
+        {
+          "file": "assets/registry-CfmMQjQ4.js",
+          "bytes": 41530
+        },
+        {
+          "file": "assets/EntityCards-DBl4CIOY.js",
+          "bytes": 4009
+        },
+        {
+          "file": "assets/DifficultyStars-BMed4nG4.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/RelatedLinks-CxWHJHjD.js",
+          "bytes": 684
+        },
+        {
+          "file": "assets/GameGlyph-aYIYk7Ws.js",
+          "bytes": 3896
+        },
+        {
+          "file": "assets/EntityIcon-DGbZdkoK.js",
+          "bytes": 34094
+        },
+        {
+          "file": "assets/WikiLayout-DQ5YoCC1.js",
+          "bytes": 3440
+        },
+        {
+          "file": "assets/systems-catalog-D7ryaJPj.js",
+          "bytes": 88703
+        },
+        {
+          "file": "assets/Reference.module-ozFcrIXL.js",
+          "bytes": 700
+        }
+      ],
+      "images": []
+    },
+    {
+      "path": "/projects/maniac/wiki/mechanics/plague",
+      "jsCount": 15,
+      "jsBytes": 579235,
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/mechanic-articles/plague.json"
+      ],
+      "scripts": [
+        {
+          "file": "assets/index-DIlyDRF1.js",
+          "bytes": 324580
+        },
+        {
+          "file": "assets/plague-CnkEQeLM.js",
+          "bytes": 7459
+        },
+        {
+          "file": "assets/SystemsArticlePage-BowSTzet.js",
+          "bytes": 4769
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/registry-CfmMQjQ4.js",
+          "bytes": 41530
+        },
+        {
+          "file": "assets/equipment-assets-C5MI-Bzp.js",
+          "bytes": 9798
+        },
+        {
+          "file": "assets/EntityCards-DBl4CIOY.js",
+          "bytes": 4009
+        },
+        {
+          "file": "assets/DifficultyStars-BMed4nG4.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/GameGlyph-aYIYk7Ws.js",
+          "bytes": 3896
+        },
+        {
+          "file": "assets/RelatedLinks-CxWHJHjD.js",
+          "bytes": 684
+        },
+        {
+          "file": "assets/systems-catalog-D7ryaJPj.js",
+          "bytes": 88703
+        },
+        {
+          "file": "assets/EntityIcon-DGbZdkoK.js",
+          "bytes": 34094
+        },
+        {
+          "file": "assets/WikiLayout-DQ5YoCC1.js",
+          "bytes": 3440
+        },
+        {
+          "file": "assets/Reference.module-ozFcrIXL.js",
+          "bytes": 700
+        }
+      ],
+      "images": []
+    },
+    {
+      "path": "/projects/maniac/wiki/mechanics/ghost-states",
+      "jsCount": 15,
+      "jsBytes": 574047,
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/mechanic-articles/ghost-states.json"
+      ],
+      "scripts": [
+        {
+          "file": "assets/index-DIlyDRF1.js",
+          "bytes": 324580
+        },
+        {
+          "file": "assets/ghost-states-DsIvPK9r.js",
+          "bytes": 2271
+        },
+        {
+          "file": "assets/SystemsArticlePage-BowSTzet.js",
+          "bytes": 4769
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/equipment-assets-C5MI-Bzp.js",
+          "bytes": 9798
+        },
+        {
+          "file": "assets/GameGlyph-aYIYk7Ws.js",
+          "bytes": 3896
+        },
+        {
+          "file": "assets/systems-catalog-D7ryaJPj.js",
+          "bytes": 88703
+        },
+        {
+          "file": "assets/RelatedLinks-CxWHJHjD.js",
+          "bytes": 684
+        },
+        {
+          "file": "assets/EntityIcon-DGbZdkoK.js",
+          "bytes": 34094
+        },
+        {
+          "file": "assets/DifficultyStars-BMed4nG4.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/registry-CfmMQjQ4.js",
+          "bytes": 41530
+        },
+        {
+          "file": "assets/EntityCards-DBl4CIOY.js",
+          "bytes": 4009
+        },
+        {
+          "file": "assets/WikiLayout-DQ5YoCC1.js",
+          "bytes": 3440
+        },
+        {
+          "file": "assets/Reference.module-ozFcrIXL.js",
+          "bytes": 700
+        }
+      ],
+      "images": []
+    },
+    {
+      "path": "/projects/maniac/wiki/mechanics/medical-care",
+      "jsCount": 15,
+      "jsBytes": 574404,
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/mechanic-articles/medical-care.json"
+      ],
+      "scripts": [
+        {
+          "file": "assets/index-DIlyDRF1.js",
+          "bytes": 324580
+        },
+        {
+          "file": "assets/medical-care-CnN5B86n.js",
+          "bytes": 2628
+        },
+        {
+          "file": "assets/SystemsArticlePage-BowSTzet.js",
+          "bytes": 4769
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/registry-CfmMQjQ4.js",
+          "bytes": 41530
+        },
+        {
+          "file": "assets/systems-catalog-D7ryaJPj.js",
+          "bytes": 88703
+        },
+        {
+          "file": "assets/EntityIcon-DGbZdkoK.js",
+          "bytes": 34094
+        },
+        {
+          "file": "assets/equipment-assets-C5MI-Bzp.js",
+          "bytes": 9798
+        },
+        {
+          "file": "assets/DifficultyStars-BMed4nG4.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/EntityCards-DBl4CIOY.js",
+          "bytes": 4009
+        },
+        {
+          "file": "assets/RelatedLinks-CxWHJHjD.js",
+          "bytes": 684
+        },
+        {
+          "file": "assets/GameGlyph-aYIYk7Ws.js",
+          "bytes": 3896
+        },
+        {
+          "file": "assets/WikiLayout-DQ5YoCC1.js",
+          "bytes": 3440
+        },
+        {
+          "file": "assets/Reference.module-ozFcrIXL.js",
+          "bytes": 700
+        }
+      ],
+      "images": [
+        "http://127.0.0.1:53288/assets/guide-medical-care-0-CP71ti4w.webp"
+      ]
+    },
+    {
+      "path": "/projects/maniac/wiki/mechanics/shaman-spirits",
+      "jsCount": 15,
+      "jsBytes": 573915,
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/mechanic-articles/shaman-spirits.json"
+      ],
+      "scripts": [
+        {
+          "file": "assets/index-DIlyDRF1.js",
+          "bytes": 324580
+        },
+        {
+          "file": "assets/shaman-spirits-VwXI6_Ae.js",
+          "bytes": 2139
+        },
+        {
+          "file": "assets/SystemsArticlePage-BowSTzet.js",
+          "bytes": 4769
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/equipment-assets-C5MI-Bzp.js",
+          "bytes": 9798
+        },
+        {
+          "file": "assets/registry-CfmMQjQ4.js",
+          "bytes": 41530
+        },
+        {
+          "file": "assets/DifficultyStars-BMed4nG4.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/EntityCards-DBl4CIOY.js",
+          "bytes": 4009
+        },
+        {
+          "file": "assets/RelatedLinks-CxWHJHjD.js",
+          "bytes": 684
+        },
+        {
+          "file": "assets/systems-catalog-D7ryaJPj.js",
+          "bytes": 88703
+        },
+        {
+          "file": "assets/WikiLayout-DQ5YoCC1.js",
+          "bytes": 3440
+        },
+        {
+          "file": "assets/GameGlyph-aYIYk7Ws.js",
+          "bytes": 3896
+        },
+        {
+          "file": "assets/Reference.module-ozFcrIXL.js",
+          "bytes": 700
+        },
+        {
+          "file": "assets/EntityIcon-DGbZdkoK.js",
+          "bytes": 34094
+        }
+      ],
+      "images": []
+    },
+    {
+      "path": "/projects/maniac/wiki/mechanics/paint",
+      "jsCount": 15,
+      "jsBytes": 573954,
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/mechanic-articles/paint.json"
+      ],
+      "scripts": [
+        {
+          "file": "assets/index-DIlyDRF1.js",
+          "bytes": 324580
+        },
+        {
+          "file": "assets/paint-BqSZ_Fa0.js",
+          "bytes": 2178
+        },
+        {
+          "file": "assets/SystemsArticlePage-BowSTzet.js",
+          "bytes": 4769
+        },
+        {
+          "file": "assets/registry-CfmMQjQ4.js",
+          "bytes": 41530
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/equipment-assets-C5MI-Bzp.js",
+          "bytes": 9798
+        },
+        {
+          "file": "assets/systems-catalog-D7ryaJPj.js",
+          "bytes": 88703
+        },
+        {
+          "file": "assets/EntityCards-DBl4CIOY.js",
+          "bytes": 4009
+        },
+        {
+          "file": "assets/GameGlyph-aYIYk7Ws.js",
+          "bytes": 3896
+        },
+        {
+          "file": "assets/DifficultyStars-BMed4nG4.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/RelatedLinks-CxWHJHjD.js",
+          "bytes": 684
+        },
+        {
+          "file": "assets/WikiLayout-DQ5YoCC1.js",
+          "bytes": 3440
+        },
+        {
+          "file": "assets/Reference.module-ozFcrIXL.js",
+          "bytes": 700
+        },
+        {
+          "file": "assets/EntityIcon-DGbZdkoK.js",
+          "bytes": 34094
+        }
+      ],
+      "images": []
+    },
+    {
+      "path": "/projects/maniac/wiki/mechanics/orchid-illusion",
+      "jsCount": 15,
+      "jsBytes": 573970,
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/mechanic-articles/orchid-illusion.json"
+      ],
+      "scripts": [
+        {
+          "file": "assets/index-DIlyDRF1.js",
+          "bytes": 324580
+        },
+        {
+          "file": "assets/orchid-illusion-C30-HJij.js",
+          "bytes": 2194
+        },
+        {
+          "file": "assets/SystemsArticlePage-BowSTzet.js",
+          "bytes": 4769
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/registry-CfmMQjQ4.js",
+          "bytes": 41530
+        },
+        {
+          "file": "assets/equipment-assets-C5MI-Bzp.js",
+          "bytes": 9798
+        },
+        {
+          "file": "assets/EntityCards-DBl4CIOY.js",
+          "bytes": 4009
+        },
+        {
+          "file": "assets/DifficultyStars-BMed4nG4.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/GameGlyph-aYIYk7Ws.js",
+          "bytes": 3896
+        },
+        {
+          "file": "assets/RelatedLinks-CxWHJHjD.js",
+          "bytes": 684
+        },
+        {
+          "file": "assets/EntityIcon-DGbZdkoK.js",
+          "bytes": 34094
+        },
+        {
+          "file": "assets/WikiLayout-DQ5YoCC1.js",
+          "bytes": 3440
+        },
+        {
+          "file": "assets/Reference.module-ozFcrIXL.js",
+          "bytes": 700
+        },
+        {
+          "file": "assets/systems-catalog-D7ryaJPj.js",
+          "bytes": 88703
+        }
+      ],
+      "images": []
+    },
+    {
+      "path": "/projects/maniac/wiki/mechanics/color-roulette",
+      "jsCount": 15,
+      "jsBytes": 574134,
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/mechanic-articles/color-roulette.json"
+      ],
+      "scripts": [
+        {
+          "file": "assets/index-DIlyDRF1.js",
+          "bytes": 324580
+        },
+        {
+          "file": "assets/color-roulette-C7S1zw1T.js",
+          "bytes": 2358
+        },
+        {
+          "file": "assets/SystemsArticlePage-BowSTzet.js",
+          "bytes": 4769
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/EntityCards-DBl4CIOY.js",
+          "bytes": 4009
+        },
+        {
+          "file": "assets/DifficultyStars-BMed4nG4.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/GameGlyph-aYIYk7Ws.js",
+          "bytes": 3896
+        },
+        {
+          "file": "assets/equipment-assets-C5MI-Bzp.js",
+          "bytes": 9798
+        },
+        {
+          "file": "assets/registry-CfmMQjQ4.js",
+          "bytes": 41530
+        },
+        {
+          "file": "assets/EntityIcon-DGbZdkoK.js",
+          "bytes": 34094
+        },
+        {
+          "file": "assets/systems-catalog-D7ryaJPj.js",
+          "bytes": 88703
+        },
+        {
+          "file": "assets/RelatedLinks-CxWHJHjD.js",
+          "bytes": 684
+        },
+        {
+          "file": "assets/WikiLayout-DQ5YoCC1.js",
+          "bytes": 3440
+        },
+        {
+          "file": "assets/Reference.module-ozFcrIXL.js",
+          "bytes": 700
+        }
+      ],
+      "images": []
+    },
+    {
+      "path": "/projects/maniac/wiki/mechanics/freddy-generator",
+      "jsCount": 15,
+      "jsBytes": 574122,
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/mechanic-articles/freddy-generator.json"
+      ],
+      "scripts": [
+        {
+          "file": "assets/index-DIlyDRF1.js",
+          "bytes": 324580
+        },
+        {
+          "file": "assets/freddy-generator-CtGsF2kQ.js",
+          "bytes": 2346
+        },
+        {
+          "file": "assets/SystemsArticlePage-BowSTzet.js",
+          "bytes": 4769
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/equipment-assets-C5MI-Bzp.js",
+          "bytes": 9798
+        },
+        {
+          "file": "assets/EntityCards-DBl4CIOY.js",
+          "bytes": 4009
+        },
+        {
+          "file": "assets/registry-CfmMQjQ4.js",
+          "bytes": 41530
+        },
+        {
+          "file": "assets/systems-catalog-D7ryaJPj.js",
+          "bytes": 88703
+        },
+        {
+          "file": "assets/EntityIcon-DGbZdkoK.js",
+          "bytes": 34094
+        },
+        {
+          "file": "assets/DifficultyStars-BMed4nG4.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/GameGlyph-aYIYk7Ws.js",
+          "bytes": 3896
+        },
+        {
+          "file": "assets/RelatedLinks-CxWHJHjD.js",
+          "bytes": 684
+        },
+        {
+          "file": "assets/WikiLayout-DQ5YoCC1.js",
+          "bytes": 3440
+        },
+        {
+          "file": "assets/Reference.module-ozFcrIXL.js",
+          "bytes": 700
+        }
+      ],
+      "images": [
+        "http://127.0.0.1:53288/assets/guide-freddy-generator-0-DQ6umYzv.webp"
+      ]
+    },
+    {
+      "path": "/projects/maniac/wiki/mechanics/traps",
+      "jsCount": 15,
+      "jsBytes": 573830,
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/mechanic-articles/traps.json"
+      ],
+      "scripts": [
+        {
+          "file": "assets/index-DIlyDRF1.js",
+          "bytes": 324580
+        },
+        {
+          "file": "assets/traps-C7Lgqp-W.js",
+          "bytes": 2054
+        },
+        {
+          "file": "assets/SystemsArticlePage-BowSTzet.js",
+          "bytes": 4769
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/equipment-assets-C5MI-Bzp.js",
+          "bytes": 9798
+        },
+        {
+          "file": "assets/EntityCards-DBl4CIOY.js",
+          "bytes": 4009
+        },
+        {
+          "file": "assets/registry-CfmMQjQ4.js",
+          "bytes": 41530
+        },
+        {
+          "file": "assets/DifficultyStars-BMed4nG4.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/GameGlyph-aYIYk7Ws.js",
+          "bytes": 3896
+        },
+        {
+          "file": "assets/RelatedLinks-CxWHJHjD.js",
+          "bytes": 684
+        },
+        {
+          "file": "assets/EntityIcon-DGbZdkoK.js",
+          "bytes": 34094
+        },
+        {
+          "file": "assets/Reference.module-ozFcrIXL.js",
+          "bytes": 700
+        },
+        {
+          "file": "assets/WikiLayout-DQ5YoCC1.js",
+          "bytes": 3440
+        },
+        {
+          "file": "assets/systems-catalog-D7ryaJPj.js",
+          "bytes": 88703
+        }
+      ],
+      "images": []
+    },
+    {
+      "path": "/projects/maniac/wiki/mechanics/status-effects",
+      "jsCount": 15,
+      "jsBytes": 574332,
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/mechanic-articles/status-effects.json"
+      ],
+      "scripts": [
+        {
+          "file": "assets/index-DIlyDRF1.js",
+          "bytes": 324580
+        },
+        {
+          "file": "assets/status-effects-Bgx55Yel.js",
+          "bytes": 2556
+        },
+        {
+          "file": "assets/SystemsArticlePage-BowSTzet.js",
+          "bytes": 4769
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/equipment-assets-C5MI-Bzp.js",
+          "bytes": 9798
+        },
+        {
+          "file": "assets/registry-CfmMQjQ4.js",
+          "bytes": 41530
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/DifficultyStars-BMed4nG4.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/RelatedLinks-CxWHJHjD.js",
+          "bytes": 684
+        },
+        {
+          "file": "assets/EntityCards-DBl4CIOY.js",
+          "bytes": 4009
+        },
+        {
+          "file": "assets/EntityIcon-DGbZdkoK.js",
+          "bytes": 34094
+        },
+        {
+          "file": "assets/Reference.module-ozFcrIXL.js",
+          "bytes": 700
+        },
+        {
+          "file": "assets/GameGlyph-aYIYk7Ws.js",
+          "bytes": 3896
+        },
+        {
+          "file": "assets/WikiLayout-DQ5YoCC1.js",
+          "bytes": 3440
+        },
+        {
+          "file": "assets/systems-catalog-D7ryaJPj.js",
+          "bytes": 88703
+        }
+      ],
+      "images": []
+    },
+    {
+      "path": "/projects/maniac/wiki/mechanics/agent-shop",
+      "jsCount": 15,
+      "jsBytes": 573878,
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/mechanic-articles/agent-shop.json"
+      ],
+      "scripts": [
+        {
+          "file": "assets/index-DIlyDRF1.js",
+          "bytes": 324580
+        },
+        {
+          "file": "assets/agent-shop-Cogl6y95.js",
+          "bytes": 2102
+        },
+        {
+          "file": "assets/SystemsArticlePage-BowSTzet.js",
+          "bytes": 4769
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/EntityCards-DBl4CIOY.js",
+          "bytes": 4009
+        },
+        {
+          "file": "assets/equipment-assets-C5MI-Bzp.js",
+          "bytes": 9798
+        },
+        {
+          "file": "assets/DifficultyStars-BMed4nG4.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/EntityIcon-DGbZdkoK.js",
+          "bytes": 34094
+        },
+        {
+          "file": "assets/registry-CfmMQjQ4.js",
+          "bytes": 41530
+        },
+        {
+          "file": "assets/WikiLayout-DQ5YoCC1.js",
+          "bytes": 3440
+        },
+        {
+          "file": "assets/systems-catalog-D7ryaJPj.js",
+          "bytes": 88703
+        },
+        {
+          "file": "assets/RelatedLinks-CxWHJHjD.js",
+          "bytes": 684
+        },
+        {
+          "file": "assets/Reference.module-ozFcrIXL.js",
+          "bytes": 700
+        },
+        {
+          "file": "assets/GameGlyph-aYIYk7Ws.js",
+          "bytes": 3896
+        }
+      ],
+      "images": [
+        "http://127.0.0.1:53288/assets/guide-agent-shop-0-4-cpdWVk.webp"
+      ]
+    },
+    {
+      "path": "/projects/maniac/wiki/mechanics/ursa-stacks",
+      "jsCount": 15,
+      "jsBytes": 575584,
+      "articleModules": [
+        "src/app/projects/maniac/wiki/data/mechanic-articles/ursa-stacks.json"
+      ],
+      "scripts": [
+        {
+          "file": "assets/index-DIlyDRF1.js",
+          "bytes": 324580
+        },
+        {
+          "file": "assets/ursa-stacks-Dcle89mV.js",
+          "bytes": 3808
+        },
+        {
+          "file": "assets/SystemsArticlePage-BowSTzet.js",
+          "bytes": 4769
+        },
+        {
+          "file": "assets/reference-catalog-BSG4tq-p.js",
+          "bytes": 40547
+        },
+        {
+          "file": "assets/characters-B4rUB4No.js",
+          "bytes": 14478
+        },
+        {
+          "file": "assets/registry-CfmMQjQ4.js",
+          "bytes": 41530
+        },
+        {
+          "file": "assets/GameGlyph-aYIYk7Ws.js",
+          "bytes": 3896
+        },
+        {
+          "file": "assets/DifficultyStars-BMed4nG4.js",
+          "bytes": 548
+        },
+        {
+          "file": "assets/equipment-assets-C5MI-Bzp.js",
+          "bytes": 9798
+        },
+        {
+          "file": "assets/RelatedLinks-CxWHJHjD.js",
+          "bytes": 684
+        },
+        {
+          "file": "assets/systems-catalog-D7ryaJPj.js",
+          "bytes": 88703
+        },
+        {
+          "file": "assets/WikiLayout-DQ5YoCC1.js",
+          "bytes": 3440
+        },
+        {
+          "file": "assets/EntityCards-DBl4CIOY.js",
+          "bytes": 4009
+        },
+        {
+          "file": "assets/EntityIcon-DGbZdkoK.js",
+          "bytes": 34094
+        },
+        {
+          "file": "assets/Reference.module-ozFcrIXL.js",
+          "bytes": 700
+        }
+      ],
+      "images": []
+    }
+  ],
+  "responsive": [
+    {
+      "width": 320,
+      "pages": 10,
+      "overflow": false
+    },
+    {
+      "width": 390,
+      "pages": 10,
+      "overflow": false
+    },
+    {
+      "width": 768,
+      "pages": 10,
+      "overflow": false
+    },
+    {
+      "width": 1440,
+      "pages": 10,
+      "overflow": false
+    }
+  ],
+  "screenshots": [
+    "C:\\Users\\hardt\\.codex\\visualizations\\2026\\10\\24\\01a16f85-8f35-77a0-8f3d-5d8797288cef\\maniac-wiki-3c\\items-1440.png",
+    "C:\\Users\\hardt\\.codex\\visualizations\\2026\\10\\24\\01a16f85-8f35-77a0-8f3d-5d8797288cef\\maniac-wiki-3c\\mechanics-1440.png",
+    "C:\\Users\\hardt\\.codex\\visualizations\\2026\\10\\24\\01a16f85-8f35-77a0-8f3d-5d8797288cef\\maniac-wiki-3c\\lighter-1440.png",
+    "C:\\Users\\hardt\\.codex\\visualizations\\2026\\10\\24\\01a16f85-8f35-77a0-8f3d-5d8797288cef\\maniac-wiki-3c\\staff-1440.png",
+    "C:\\Users\\hardt\\.codex\\visualizations\\2026\\10\\24\\01a16f85-8f35-77a0-8f3d-5d8797288cef\\maniac-wiki-3c\\nightmare-1440.png",
+    "C:\\Users\\hardt\\.codex\\visualizations\\2026\\10\\24\\01a16f85-8f35-77a0-8f3d-5d8797288cef\\maniac-wiki-3c\\hacking-1440.png",
+    "C:\\Users\\hardt\\.codex\\visualizations\\2026\\10\\24\\01a16f85-8f35-77a0-8f3d-5d8797288cef\\maniac-wiki-3c\\items-390.png",
+    "C:\\Users\\hardt\\.codex\\visualizations\\2026\\10\\24\\01a16f85-8f35-77a0-8f3d-5d8797288cef\\maniac-wiki-3c\\mechanics-390.png",
+    "C:\\Users\\hardt\\.codex\\visualizations\\2026\\10\\24\\01a16f85-8f35-77a0-8f3d-5d8797288cef\\maniac-wiki-3c\\lighter-390.png",
+    "C:\\Users\\hardt\\.codex\\visualizations\\2026\\10\\24\\01a16f85-8f35-77a0-8f3d-5d8797288cef\\maniac-wiki-3c\\staff-390.png",
+    "C:\\Users\\hardt\\.codex\\visualizations\\2026\\10\\24\\01a16f85-8f35-77a0-8f3d-5d8797288cef\\maniac-wiki-3c\\nightmare-390.png",
+    "C:\\Users\\hardt\\.codex\\visualizations\\2026\\10\\24\\01a16f85-8f35-77a0-8f3d-5d8797288cef\\maniac-wiki-3c\\hacking-390.png"
+  ],
+  "checks": [
+    "Keeper 3D loads on demand and renders; all three chronicle backgrounds retain animations; Drive/Yandex buttons preserved.",
+    "All item/mechanic categories, all confirmed character filters, combined search/empty/reset, keyboard SPA, Hook ↔ ability."
+  ]
+}

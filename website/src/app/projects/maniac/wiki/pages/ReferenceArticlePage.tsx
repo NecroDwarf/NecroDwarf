@@ -6,6 +6,7 @@ import { entityAssets } from "../data/assets";
 import { EntityStats } from "../ui/EntityCards";
 import { EntityLink } from "../ui/EntityLink";
 import { GameGlyph } from "../ui/GameGlyph";
+import { RelatedLinks } from "../ui/RelatedLinks";
 import { sourceUrl, verifiedSource, sourceCommit } from "../data/snapshots";
 import type { EntityId, Evidence } from "../data/types";
 import {
@@ -202,6 +203,14 @@ export function ReferenceArticlePage({
             <section className={s.articleSection} id="related">
               <p className={s.eyebrow}>СВЯЗИ В ЭНЦИКЛОПЕДИИ</p>
               <h2>Связанные материалы</h2>
+              <RelatedLinks
+                id={id}
+                exclude={[
+                  ...(ability?.characterIds ?? []),
+                  ...(ability?.itemIds ?? []),
+                  ...data.mechanicIds,
+                ]}
+              />
               {ability?.characterIds?.map((owner) => (
                 <p key={owner}>
                   Персонаж:{" "}

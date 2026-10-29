@@ -1,0 +1,39 @@
+{
+  "id": "item:recipe-book",
+  "description": "Открывает внутриигровой список рецептов зелий.",
+  "sections": [
+    {
+      "title": "Получение и доступность",
+      "paragraphs": [
+        "Связан с персонажем Алхимик. Настоящее наличие в инвентаре зависит от выдачи и правил конкретного матча; одно превью не является гарантией."
+      ]
+    },
+    {
+      "title": "Как использовать",
+      "paragraphs": [
+        "Используйте предмет, чтобы открыть интерфейс рецептов. Сами преобразования ингредиентов проверяются по ModBrewingRecipes, а не по названию предмета."
+      ]
+    }
+  ],
+  "notes": ["Оригинальная плоская layer0-текстура модели."],
+  "evidence": [
+    {
+      "path": "src/main/java/org/example/maniacrevolution/ModItems.java"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/item/RecipeBookItem.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/character/survivor/AlchemistClass.java"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/models/item/recipe_book.json"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/item/recipe_book.png"
+    }
+  ]
+}

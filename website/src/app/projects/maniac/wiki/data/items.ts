@@ -1,7 +1,8 @@
 import type { Entity } from "./types";
 import { verifiedSource } from "./snapshots";
 import characterItems from "./character-items.json";
-export const items: readonly Entity<"item">[] = [
+import { itemCatalog } from "./systems-catalog";
+const existingItems: readonly Entity<"item">[] = [
   ...([
     [
       "guardian-head",
@@ -99,3 +100,39 @@ export const items: readonly Entity<"item">[] = [
     },
   },
 ];
+export const items: readonly Entity<"item">[] = itemCatalog.map((entry) => {
+  const previous = existingItems.find((item) => item.id === entry.id);
+  const oldData = previous?.revisions[verifiedSource]?.data;
+  return {
+    id: entry.id,
+    kind: "item",
+    slug: entry.slug,
+    name: entry.name,
+    revisions: {
+      ...previous?.revisions,
+      [verifiedSource]: {
+        data: {
+          ...oldData,
+          description: entry.description,
+          usage: entry.usage,
+          icon: entry.icon ?? oldData?.icon,
+          category: entry.category,
+          registryIds: entry.registryIds,
+          characterIds: entry.characterIds,
+          relatedIds: entry.relatedIds,
+          stats: [
+            ...new Map(
+              [...(oldData?.stats ?? []), ...entry.stats].map((stat) => [
+                stat.key,
+                stat,
+              ]),
+            ).values(),
+          ],
+          abilityIds: oldData?.abilityIds ?? [],
+          mechanicIds: oldData?.mechanicIds ?? [],
+        },
+        evidence: entry.evidence,
+      },
+    },
+  };
+});

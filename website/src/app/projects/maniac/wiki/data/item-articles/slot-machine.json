@@ -1,0 +1,57 @@
+{
+  "id": "item:slot-machine",
+  "description": "Казино-автомат для особого розыгрыша монеток Додеповича.",
+  "sections": [
+    {
+      "title": "Получение и доступность",
+      "paragraphs": [
+        "Связан с персонажем Никита Додепович. Настоящее наличие в инвентаре зависит от выдачи и правил конкретного матча; одно превью не является гарантией."
+      ]
+    },
+    {
+      "title": "Как использовать",
+      "paragraphs": [
+        "Взаимодействуйте с размещённым автоматом. Доступность ставки, выбор результата и изменения состояния контролирует DodepovichCasinoManager."
+      ]
+    }
+  ],
+  "notes": ["Статичный рендер оригинальных cuboid elements с GUI transform."],
+  "evidence": [
+    {
+      "path": "src/main/java/org/example/maniacrevolution/ModItems.java"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/dodepovich/DodepovichCasinoManager.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/block/SlotMachineBlock.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/character/survivor/DodepovichClass.java"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/models/item/slot_machine.json"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/block/slot_machine/machine.png"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/block/slot_machine/lever.png"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/block/slot_machine/svinline.png"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/block/slot_machine/bitbam.png"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/block/slot_machine/slot.png"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/block/slot_machine/transparent.png"
+    }
+  ]
+}

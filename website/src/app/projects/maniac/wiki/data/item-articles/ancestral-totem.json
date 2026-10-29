@@ -1,0 +1,39 @@
+{
+  "id": "item:ancestral-totem",
+  "description": "Устанавливает тотем Шамана для обнаружения маньяков.",
+  "sections": [
+    {
+      "title": "Получение и доступность",
+      "paragraphs": [
+        "Связан с персонажем Шаман. Настоящее наличие в инвентаре зависит от выдачи и правил конкретного матча; одно превью не является гарантией."
+      ]
+    },
+    {
+      "title": "Как использовать",
+      "paragraphs": [
+        "Примените предмет на допустимой поверхности. Предмет создаёт объект тотема, который отслеживается менеджером; условия размещения и действие не следует путать с простой иконкой в превью."
+      ]
+    }
+  ],
+  "notes": ["Статичный рендер оригинальных cuboid elements с GUI transform."],
+  "evidence": [
+    {
+      "path": "src/main/java/org/example/maniacrevolution/ModItems.java"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/item/TotemSpawnItem.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/character/survivor/ShamanClass.java"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/models/item/totem_spawn_item.json"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/item/texture_totem.png"
+    }
+  ]
+}

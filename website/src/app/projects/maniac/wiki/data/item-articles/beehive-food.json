@@ -1,0 +1,48 @@
+{
+  "id": "item:beehive-food",
+  "description": "Съедаемый улей Урсы запускает ярость и выпускает пчёл.",
+  "sections": [
+    {
+      "title": "Получение и доступность",
+      "paragraphs": [
+        "Связан с персонажем Урса. Настоящее наличие в инвентаре зависит от выдачи и правил конкретного матча; одно превью не является гарантией."
+      ]
+    },
+    {
+      "title": "Как использовать",
+      "paragraphs": [
+        "Удерживайте использование 60 тиков (3 с). Код задаёт 200 тиков ярости и выпуск пяти пчёл; предмет является расходуемой пищей."
+      ]
+    }
+  ],
+  "notes": ["Статичный рендер оригинальных cuboid elements с GUI transform."],
+  "evidence": [
+    {
+      "path": "src/main/java/org/example/maniacrevolution/ModItems.java"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/item/BeehiveItem.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/character/maniac/UrsaClass.java"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/models/item/beehive_food.json"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/item/gltf_embedded_1.png"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/item/gltf_embedded_2.png"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/item/gltf_embedded_3.png"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/item/gltf_embedded_4.png"
+    }
+  ]
+}

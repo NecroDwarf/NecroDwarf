@@ -44,6 +44,7 @@ interface BaseData {
   description: string;
   stats?: readonly Stat[];
   icon?: string;
+  relatedIds?: readonly EntityId[];
 }
 export interface EntityData {
   character: BaseData & {
@@ -72,6 +73,9 @@ export interface EntityData {
     mechanicIds: readonly EntityId<"mechanic">[];
   };
   item: BaseData & {
+    category?: string;
+    registryIds?: readonly string[];
+    characterIds?: readonly EntityId<"character">[];
     usage: string;
     abilityIds: readonly EntityId<"ability">[];
     mechanicIds: readonly EntityId<"mechanic">[];

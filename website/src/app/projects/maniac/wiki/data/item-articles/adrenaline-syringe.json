@@ -1,0 +1,45 @@
+{
+  "id": "item:adrenaline-syringe",
+  "description": "Снижает зависимость и добавляет ускорение с убывающей эффективностью.",
+  "sections": [
+    {
+      "title": "Получение и доступность",
+      "paragraphs": [
+        "Связан с персонажем Мефедронщик. Настоящее наличие в инвентаре зависит от выдачи и правил конкретного матча; одно превью не является гарантией."
+      ]
+    },
+    {
+      "title": "Как использовать",
+      "paragraphs": [
+        "Используйте шприц. Длительность новой порции скорости: max(1, 8 − число предыдущих шприцев) секунд. Уровень теряется каждые три применения, длительности складываются. Передозировка проверяется сервером; исторические числа хроники не заменяют текущий код."
+      ]
+    }
+  ],
+  "notes": ["Статичный рендер оригинальных cuboid elements с GUI transform."],
+  "evidence": [
+    {
+      "path": "src/main/java/org/example/maniacrevolution/ModItems.java"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/item/SyringeItem.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/event/AddictionEventHandler.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/capability/AddictionCapability.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/character/survivor/MefedronshchikClass.java"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/models/item/syringe.json"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/item/texture_syringe.png"
+    }
+  ]
+}

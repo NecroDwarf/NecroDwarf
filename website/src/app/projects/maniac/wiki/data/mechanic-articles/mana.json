@@ -1,0 +1,45 @@
+{
+  "id": "mechanic:mana",
+  "description": "Общий ресурс для активируемых перков и способностей с индивидуальными затратами.",
+  "sections": [
+    {
+      "title": "Как это работает",
+      "paragraphs": [
+        "Проверяйте запас перед применением. consumeMana выполняет действие только при достаточном количестве; setMana ограничивает запас от нуля до максимума.",
+        "Восстановление складывается из бонусной скорости и включённой базовой регенерации. Персонажи, эффекты и правила могут менять эти величины."
+      ]
+    },
+    {
+      "title": "Результат и влияние на матч",
+      "paragraphs": [
+        "Стоимость списывается логикой конкретного предмета или перка. Бонусная регенерация учитывается независимо от переключателя пассивной базовой регенерации."
+      ]
+    },
+    {
+      "title": "Условия и ограничения",
+      "paragraphs": [
+        "Конструктор ManaData по умолчанию задаёт максимум 100 и базовую регенерацию 0. Комментарий «1 ед/сек» противоречит коду; он не принят за правило всех персонажей.",
+        "Отсутствующая характеристика стоимости не означает подтверждённый ноль."
+      ]
+    }
+  ],
+  "images": [],
+  "notes": [],
+  "evidence": [
+    {
+      "path": "src/main/java/org/example/maniacrevolution/mana/ManaData.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/event/ManaEvents.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/perk/Perk.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/effect/ManaFlowEffect.java"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json"
+    }
+  ]
+}
