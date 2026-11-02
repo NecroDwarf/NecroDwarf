@@ -1,3 +1,4 @@
+import { wikiSectionPath } from "./sections";
 import type { ComponentType } from "react";
 import { routePage } from "../../../shared/lib/route-page";
 import { characterRouteMeta } from "./route-metadata";
@@ -26,7 +27,16 @@ const articles = import.meta.glob<{ default: ComponentType }>(
 );
 export const maniacWikiRoutes = [
   {
-    path: "/projects/maniac/wiki/maps",
+    path: wikiSectionPath("effects"),
+    title: "Эффекты — Maniac Wiki · NecroDwarf",
+    description:
+      "Все кастомные эффекты Maniac: действие, ограничения, состояния-индикаторы и проверенные исходники.",
+    page: routePage(() =>
+      import("./pages/EffectsPage").then((m) => m.EffectsPage),
+    ),
+  },
+  {
+    path: wikiSectionPath("maps"),
     title: "Карты — Maniac Wiki · NecroDwarf",
     description:
       "Особняк, Пиццерия и Форт: игровые превью, размеры и сложности по руководству, особенности локаций и выбор карты.",
@@ -41,14 +51,14 @@ export const maniacWikiRoutes = [
     ),
   })),
   {
-    path: "/projects/maniac/wiki/items",
+    path: wikiSectionPath("items"),
     title: "Предметы — Maniac Wiki · NecroDwarf",
     description:
       "Игровое снаряжение, оружие, расходники, ресурсы и предметы перков Maniac.",
     page: routePage(() => import("./pages/ItemsPage").then((m) => m.ItemsPage)),
   },
   {
-    path: "/projects/maniac/wiki/mechanics",
+    path: wikiSectionPath("mechanics"),
     title: "Механики — Maniac Wiki · NecroDwarf",
     description:
       "Правила матча, взлом, ресурсы и особые системы Maniac по проверенным исходникам.",
@@ -75,17 +85,15 @@ export const maniacWikiRoutes = [
     ),
   })),
   {
-    path: "/projects/maniac/wiki/perks",
+    path: wikiSectionPath("perks"),
     title: "Перки — Maniac Wiki · NecroDwarf",
-    description:
-      "Все 44 зарегистрированных перка Maniac: стороны, типы, фазы, игровые эффекты и условия.",
+    description: `Каталог перков Maniac (${perkRouteMeta.length}): стороны, типы, фазы, игровые эффекты и условия.`,
     page: routePage(() => import("./pages/PerksPage").then((m) => m.PerksPage)),
   },
   {
-    path: "/projects/maniac/wiki/abilities",
+    path: wikiSectionPath("abilities"),
     title: "Способности — Maniac Wiki · NecroDwarf",
-    description:
-      "12 подтверждённых способностей Maniac: персонажи, действия предметов и снаряжения, условия и параметры.",
+    description: `Каталог способностей Maniac (${abilityRouteMeta.length}): персонажи, действия предметов и снаряжения, условия и параметры.`,
     page: routePage(() =>
       import("./pages/AbilitiesPage").then((m) => m.AbilitiesPage),
     ),
@@ -109,7 +117,7 @@ export const maniacWikiRoutes = [
     ),
   })),
   {
-    path: "/projects/maniac/wiki",
+    path: wikiSectionPath("overview"),
     title: "Maniac Wiki — игровая энциклопедия · NecroDwarf",
     description:
       "Персонажи, игровые особенности и оригинальные материалы Maniac. Выберите свою сторону охоты.",
@@ -118,10 +126,9 @@ export const maniacWikiRoutes = [
     ),
   },
   {
-    path: "/projects/maniac/wiki/characters",
+    path: wikiSectionPath("characters"),
     title: "Персонажи — Maniac Wiki · NecroDwarf",
-    description:
-      "Все 15 персонажей Maniac: 8 маньяков и 7 выживших. Фрески, поиск, способности и снаряжение.",
+    description: `Все ${characterRouteMeta.length} персонажей Maniac: маньяки и выжившие. Фрески, поиск, способности и снаряжение.`,
     page: routePage(() =>
       import("./pages/CharactersPage").then((m) => m.CharactersPage),
     ),

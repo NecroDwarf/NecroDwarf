@@ -1,6 +1,6 @@
 {
   "id": "perk:hedgehog-skin",
-  "description": "На 5 сек. возвращает атакующему 50% полученного урона.",
+  "description": "На {{thorn.seconds}} сек. возвращает атакующему {{thorn.reflectedPercent}}% полученного урона. Входящий урон не снижает.",
   "conditions": [],
   "availability": {
     "cooldown": "100 с",

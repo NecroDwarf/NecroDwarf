@@ -8,7 +8,27 @@ let clientModules;
 await build({
   // One stylesheet keeps every prerendered page styled before JS, including
   // when JS is disabled. Route modules and content still split independently.
-  build: { outDir: "build/client", manifest: true, cssCodeSplit: false },
+  build: {
+    outDir: "build/client",
+    manifest: true,
+    cssCodeSplit: false,
+    rollupOptions: {
+      output: {
+        // Shared facts are also used by effects; keep catalogs out of that chunk.
+        manualChunks(id) {
+          const path = id.replaceAll("\\", "/");
+          if (
+            /\/wiki\/data\/(?:gameplay-facts|current-descriptions)\.ts$/.test(
+              path,
+            )
+          )
+            return "maniac-gameplay-facts";
+          if (/\/wiki\/data\/systems-catalog\.ts$/.test(path))
+            return "maniac-system-data";
+        },
+      },
+    },
+  },
   plugins: [
     {
       name: "record-client-modules",

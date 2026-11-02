@@ -1,11 +1,13 @@
+import { WikiBreadcrumb } from "../ui/WikiBreadcrumb";
 import { Link } from "react-router";
 import { mapCatalog } from "../data/maps";
 import type { EntityId, Evidence } from "../data/types";
 import { sourceUrl, sourceCommit, verifiedSource } from "../data/snapshots";
 import { RelatedLinks } from "../ui/RelatedLinks";
-import { ContentLink } from "../../../../shared/ui/ContentLink";
+import { ContentLink, BackLink } from "../../../../shared/ui/ContentLink";
 import { WikiLayout, DataNote } from "./WikiLayout";
 import { MapFacts } from "./MapFacts";
+import { StatText } from "../ui/StatText";
 import s from "./Wiki.module.css";
 import m from "./Maps.module.css";
 interface Article {
@@ -35,19 +37,20 @@ export function MapArticlePage({
     <WikiLayout>
       <article className={s.container} data-map-article={id}>
         <header className={m.articleHead}>
-          <nav className={s.breadcrumb} aria-label="Путь к статье">
-            <Link to="/projects/maniac/wiki">Wiki</Link>
-            <span>/</span>
-            <Link to="/projects/maniac/wiki/maps">Карты</Link>
-            <span>/</span>
-            <span>{map.name}</span>
-          </nav>
+          <WikiBreadcrumb
+            section="maps"
+            label="Карты"
+            name={map.name}
+            ariaLabel="Путь к статье"
+          />
           <p className={s.eyebrow}>MANIAC WIKI / ИГРОВАЯ КАРТА</p>
           <div className={m.titleRow}>
             <h1>{map.name}</h1>
             <MapFacts map={map} />
           </div>
-          <p className={s.lead}>{map.description}</p>
+          <p className={s.lead}>
+            <StatText text={map.description} />
+          </p>
           <figure className={m.heroImage}>
             <img
               {...image}
@@ -71,7 +74,7 @@ export function MapArticlePage({
               <a href="#related">02 · Связанные материалы</a>
               <a href="#sources">Источники</a>
             </nav>
-            <Link to="/projects/maniac/wiki/maps">← Все карты</Link>
+            <BackLink to="/projects/maniac/wiki/maps">Все карты</BackLink>
           </aside>
           <div className={s.articleContent}>
             <section className={s.articleSection} id="guide">
@@ -87,7 +90,9 @@ export function MapArticlePage({
                     <span aria-hidden="true">
                       {String(i + 1).padStart(2, "0")}
                     </span>
-                    <p>{detail}</p>
+                    <p>
+                      <StatText text={detail} />
+                    </p>
                   </li>
                 ))}
               </ol>
@@ -140,9 +145,9 @@ export function MapArticlePage({
                 </ul>
               </details>
             </section>
-            <Link className={s.textLink} to="/projects/maniac/wiki/maps">
-              ← Вернуться к картам
-            </Link>
+            <BackLink to="/projects/maniac/wiki/maps">
+              Вернуться к картам
+            </BackLink>
           </div>
         </div>
       </article>

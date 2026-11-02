@@ -1,34 +1,44 @@
-import { useState } from "react";
+import { StatText } from "../ui/StatText";
+import { useUrlFilter } from "../../../../shared/lib/use-url-filter";
+import { CatalogSelect } from "../ui/CatalogSelect";
 import { Link } from "react-router";
-import {
-  perkCatalog,
-  abilityCatalog,
-  type PerkMeta,
-  type AbilityMeta,
-} from "../data/reference-catalog";
+import { perkCatalog, abilityCatalog } from "../data/reference-catalog";
 import { entityAssets } from "../data/assets";
-import { characters } from "../data/characters";
+import { characterNames } from "../data/character-names";
+import { ownerGroup } from "../data/owner-teams";
+import { CharacterFilter } from "../ui/CharacterFilter";
+import {
+  CatalogHeader,
+  CatalogSearch,
+  CatalogResultCount,
+  useCatalogSearch,
+  CatalogGroup,
+  catalogGroups,
+} from "../ui/CatalogControls";
 import { EntityIcon } from "../ui/EntityIcon";
 import { GameGlyph } from "../ui/GameGlyph";
 import { WikiLayout, DataNote } from "./WikiLayout";
 import { teamLabels, typeLabels, abilityLabels } from "./reference-labels";
 import s from "./Wiki.module.css";
 import r from "./Reference.module.css";
+const perkGroups = {
+  MANIAC: "maniac",
+  SURVIVOR: "survivor",
+  ALL: "common",
+} as const;
 export function ReferenceCatalogPage({ kind }: { kind: "perk" | "ability" }) {
-  const [query, setQuery] = useState("");
-  const [team, setTeam] = useState("ALL_FILTER");
-  const [type, setType] = useState("");
-  const [owner, setOwner] = useState("");
+  const { query, setQuery, matchesName } = useCatalogSearch();
+  const [team, setTeam] = useUrlFilter("team", "ALL_FILTER");
+  const [type, setType] = useUrlFilter("type", "");
+  const [owner, setOwner] = useUrlFilter("owner", "");
   const entries = kind === "perk" ? perkCatalog : abilityCatalog;
-  const normalized = (s: string) =>
-    s.toLocaleLowerCase("ru").replaceAll("ё", "е").trim();
   const visible = entries.filter(
     (e) =>
-      normalized(e.name).includes(normalized(query)) &&
+      matchesName(e.name) &&
       ("team" in e
         ? (team === "ALL_FILTER" || e.team === team) &&
           (!type || e.perkType === type)
-        : !owner || e.characterIds.includes(owner as `character:${string}`)),
+        : !owner || e.characterIds.some((id) => id === owner)),
   );
   const reset = () => {
     setQuery("");
@@ -37,15 +47,17 @@ export function ReferenceCatalogPage({ kind }: { kind: "perk" | "ability" }) {
     setOwner("");
   };
   const section = kind === "perk" ? "perks" : "abilities";
+  const groups =
+    kind === "perk"
+      ? (["maniac", "survivor", "common"] as const)
+      : (["maniac", "survivor", "both", "unassigned"] as const);
   return (
     <WikiLayout>
       <div className={s.container}>
-        <header className={s.catalogHead}>
-          <p className={s.eyebrow}>
-            MANIAC WIKI / {kind === "perk" ? "ПЕРКИ" : "СПОСОБНОСТИ"}
-          </p>
-          <h1>
-            {kind === "perk" ? (
+        <CatalogHeader
+          label={kind === "perk" ? "ПЕРКИ" : "СПОСОБНОСТИ"}
+          title={
+            kind === "perk" ? (
               <>
                 Ваше <em>преимущество.</em>
               </>
@@ -53,79 +65,54 @@ export function ReferenceCatalogPage({ kind }: { kind: "perk" | "ability" }) {
               <>
                 Особые <em>действия.</em>
               </>
-            )}
-          </h1>
-          <p className={s.lead}>
-            {kind === "perk"
-              ? "44 зарегистрированных перка: выбирайте сторону и тип, изучайте условия и сочетайте эффекты."
-              : "12 подтверждённых способностей: действия предметов, снаряжения и отдельная пассивная способность Хранителя."}
-          </p>
-        </header>
+            )
+          }
+        >
+          {kind === "perk"
+            ? `Перков в каталоге: ${perkCatalog.length}. Выбирайте сторону и тип, изучайте условия и сочетайте эффекты.`
+            : `Способностей в каталоге: ${abilityCatalog.length}. Действия предметов, снаряжения и отдельная пассивная способность Хранителя.`}
+        </CatalogHeader>
         <div className={s.filters}>
-          <label className={s.search}>
-            Поиск по названию
-            <input
-              type="search"
-              placeholder="Название…"
-              value={query}
-              onChange={(e) => setQuery(e.target.value)}
-            />
-          </label>
+          <CatalogSearch value={query} onChange={setQuery} />
           {kind === "perk" ? (
             <>
-              <label className={r.selectLabel}>
-                Сторона
-                <select
-                  aria-label="Сторона перка"
-                  value={team}
-                  onChange={(e) => setTeam(e.target.value)}
-                >
-                  <option value="ALL_FILTER">Все · 44</option>
-                  <option value="SURVIVOR">Выжившие · 19</option>
-                  <option value="MANIAC">Маньяки · 15</option>
-                  <option value="ALL">Общие · 10</option>
-                </select>
-              </label>
-              <label className={r.selectLabel}>
-                Тип
-                <select
-                  aria-label="Тип перка"
-                  value={type}
-                  onChange={(e) => setType(e.target.value)}
-                >
-                  <option value="">Все типы</option>
-                  {Object.entries(typeLabels).map(([value, label]) => (
-                    <option value={value} key={value}>
-                      {label}
-                    </option>
-                  ))}
-                </select>
-              </label>
+              <CatalogSelect
+                label="Сторона"
+                ariaLabel="Сторона перка"
+                value={team}
+                onChange={setTeam}
+              >
+                <option value="ALL_FILTER">Все · {perkCatalog.length}</option>
+                {(["SURVIVOR", "MANIAC", "ALL"] as const).map((side) => (
+                  <option key={side} value={side}>
+                    {catalogGroups[perkGroups[side]].label} ·{" "}
+                    {perkCatalog.filter((entry) => entry.team === side).length}
+                  </option>
+                ))}
+              </CatalogSelect>
+              <CatalogSelect
+                label="Тип"
+                ariaLabel="Тип перка"
+                value={type}
+                onChange={setType}
+              >
+                <option value="">Все типы</option>
+                {Object.entries(typeLabels).map(([value, label]) => (
+                  <option value={value} key={value}>
+                    {label}
+                  </option>
+                ))}
+              </CatalogSelect>
             </>
           ) : (
-            <label className={r.selectLabel}>
-              Персонаж
-              <select
-                aria-label="Персонаж способности"
-                value={owner}
-                onChange={(e) => setOwner(e.target.value)}
-              >
-                <option value="">Все персонажи</option>
-                {characters
-                  .filter((c) =>
-                    abilityCatalog.some((a) => a.characterIds.includes(c.id)),
-                  )
-                  .map((c) => (
-                    <option value={c.id} key={c.id}>
-                      {c.name}
-                    </option>
-                  ))}
-              </select>
-            </label>
+            <CharacterFilter
+              entries={abilityCatalog}
+              label="Персонаж способности"
+              value={owner}
+              onChange={setOwner}
+            />
           )}
-          <p role="status" aria-live="polite">
-            Найдено: {visible.length}
-          </p>
+          <CatalogResultCount count={visible.length} />
         </div>
         <noscript>
           <p className={s.dataNote}>
@@ -135,59 +122,79 @@ export function ReferenceCatalogPage({ kind }: { kind: "perk" | "ability" }) {
         </noscript>
         <DataNote />
         <section
-          className={s.section}
           aria-label={
             kind === "perk" ? "Каталог перков" : "Каталог способностей"
           }
         >
-          <div className={r.referenceGrid}>
-            {visible.map((entry) => {
-              const asset = entry.icon ? entityAssets[entry.icon] : undefined;
-              return (
-                <Link
-                  key={entry.id}
-                  to={`/projects/maniac/wiki/${section}/${entry.slug}`}
-                  className={r.referenceCard}
-                  data-reference-id={entry.id}
-                >
-                  <div className={r.cardHeading}>
-                    {asset ? (
-                      <EntityIcon asset={asset} />
-                    ) : (
-                      <span className={r.fallbackIcon} aria-hidden="true">
-                        <GameGlyph name="sanity" />
-                      </span>
-                    )}
-                    <div>
-                      <p className={s.eyebrow}>
-                        {kind === "perk"
-                          ? teamLabels[(entry as PerkMeta).team]
-                          : abilityLabels[(entry as AbilityMeta).abilityKind]}
-                      </p>
-                      <h2>{entry.name}</h2>
-                    </div>
-                  </div>
-                  {"perkType" in entry && (
-                    <span className={r.typeBadge}>
-                      {typeLabels[entry.perkType]}
-                    </span>
-                  )}
-                  <p className={r.description}>{entry.description}</p>
-                  {"characterIds" in entry && (
-                    <p className={r.ownerLabel}>
-                      {entry.characterIds
-                        .map((id) => characters.find((c) => c.id === id)?.name)
-                        .join(", ")}
-                    </p>
-                  )}
-                  <span className={s.cardAction}>
-                    Изучить {kind === "perk" ? "перк" : "способность"}{" "}
-                    <span aria-hidden="true">↗</span>
-                  </span>
-                </Link>
-              );
-            })}
-          </div>
+          {groups.map((side) => {
+            const group = visible.filter(
+              (entry) =>
+                ("team" in entry
+                  ? perkGroups[entry.team]
+                  : ownerGroup(entry.characterIds)) === side,
+            );
+            return (
+              <CatalogGroup
+                key={side}
+                {...catalogGroups[side]}
+                count={group.length}
+              >
+                <div className={r.referenceGrid}>
+                  {group.map((entry) => {
+                    const asset = entry.icon
+                      ? entityAssets[entry.icon]
+                      : undefined;
+                    return (
+                      <Link
+                        key={entry.id}
+                        to={`/projects/maniac/wiki/${section}/${entry.slug}`}
+                        className={r.referenceCard}
+                        data-reference-id={entry.id}
+                      >
+                        <div className={r.cardHeading}>
+                          {asset ? (
+                            <EntityIcon asset={asset} />
+                          ) : (
+                            <span className={r.fallbackIcon} aria-hidden="true">
+                              <GameGlyph name="sanity" />
+                            </span>
+                          )}
+                          <div>
+                            <p className={s.eyebrow}>
+                              {"team" in entry
+                                ? teamLabels[entry.team]
+                                : abilityLabels[entry.abilityKind]}
+                            </p>
+                            <h3>{entry.name}</h3>
+                          </div>
+                        </div>
+                        {"perkType" in entry && (
+                          <span className={r.typeBadge}>
+                            {typeLabels[entry.perkType]}
+                          </span>
+                        )}
+                        <p className={r.description}>
+                          <StatText
+                            text={entry.description}
+                            interactive={false}
+                          />
+                        </p>
+                        {"characterIds" in entry && (
+                          <p className={r.ownerLabel}>
+                            {characterNames(entry.characterIds)}
+                          </p>
+                        )}
+                        <span className={s.cardAction}>
+                          Изучить {kind === "perk" ? "перк" : "способность"}{" "}
+                          <span aria-hidden="true">↗</span>
+                        </span>
+                      </Link>
+                    );
+                  })}
+                </div>
+              </CatalogGroup>
+            );
+          })}
           {!visible.length && (
             <div className={s.empty}>
               <h2>Ничего не найдено</h2>

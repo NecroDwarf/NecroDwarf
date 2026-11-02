@@ -5,7 +5,7 @@
     "name": "Соль",
     "registryIds": ["maniacrev:salt"],
     "category": "consumable",
-    "description": "Размещает соль-ловушку на подходящей поверхности.",
+    "description": "Ловушка: максимальное замедление на {{salt.slowSeconds}} сек. и Слепота на {{salt.blindSeconds}} сек. наступившему существу.",
     "usage": "Применение и ограничения приведены в статье предмета.",
     "characterIds": ["character:necromancer"],
     "relatedIds": ["mechanic:traps"],
@@ -98,7 +98,7 @@
     "name": "Балтика 9",
     "registryIds": ["maniacrev:clarity"],
     "category": "consumable",
-    "description": "Напиток, накладывающий усиление манопотока.",
+    "description": "Восстанавливает 4 маны / сек. в течение 6 сек.",
     "usage": "Применение и ограничения приведены в статье предмета.",
     "characterIds": [],
     "relatedIds": ["mechanic:mana", "perk:football-fan"],
@@ -106,14 +106,14 @@
       {
         "key": "use",
         "label": "Употребление",
-        "value": 1.6,
-        "unit": "seconds"
+        "unit": "seconds",
+        "valueRef": "clarity.drinkSeconds"
       },
       {
         "key": "duration",
         "label": "Манопоток",
-        "value": 6,
-        "unit": "seconds"
+        "unit": "seconds",
+        "valueRef": "clarity.effectSeconds"
       }
     ],
     "evidence": [
@@ -757,7 +757,7 @@
     "name": "Бинты",
     "registryIds": ["maniacrev:bandage"],
     "category": "consumable",
-    "description": "Лечит себя или другого подходящего игрока перед собой.",
+    "description": "За {{bandages.seconds}} сек.: +{{bandages.allyHealth}} HP игроку в пределах {{bandages.range}} блоков или +{{bandages.selfHealth}} HP себе. Бинт расходуется.",
     "usage": "Применение и ограничения приведены в статье предмета.",
     "characterIds": ["character:doctor"],
     "relatedIds": ["mechanic:downed"],
@@ -765,20 +765,20 @@
       {
         "key": "use",
         "label": "Завершение применения",
-        "value": 4.5,
-        "unit": "seconds"
+        "unit": "seconds",
+        "valueRef": "bandages.seconds"
       },
       {
         "key": "self-heal",
         "label": "Самолечение",
-        "value": 2,
-        "unit": "health"
+        "unit": "health",
+        "valueRef": "bandages.selfHealth"
       },
       {
         "key": "ally-heal",
         "label": "Лечение другого игрока",
-        "value": 4,
-        "unit": "health"
+        "unit": "health",
+        "valueRef": "bandages.allyHealth"
       }
     ],
     "evidence": [
@@ -1173,7 +1173,7 @@
     "name": "Шприц адреналина",
     "registryIds": ["maniacrev:syringe"],
     "category": "consumable",
-    "description": "Снижает зависимость и добавляет ускорение с убывающей эффективностью.",
+    "description": "−{{syringe.addictionReductionPercent}}% текущей зависимости. Первый шприц: Скорость {{syringe.initialLevel}} на {{syringe.initialSeconds}} сек.; следующие слабее и короче.",
     "usage": "Применение и ограничения приведены в статье предмета.",
     "characterIds": ["character:mefedronshchik"],
     "relatedIds": ["mechanic:addiction"],
@@ -1212,11 +1212,24 @@
     "name": "Душа предков",
     "registryIds": ["maniacrev:ancestor_soul"],
     "category": "consumable",
-    "description": "Лечит пользователя с учётом погибших выживших.",
+    "description": "+{{ancestor.baseHealth}} HP себе и ещё +{{ancestor.bonusHealth}} HP за каждого другого выжившего-наблюдателя на сервере.",
     "usage": "Применение и ограничения приведены в статье предмета.",
     "characterIds": ["character:shaman"],
     "relatedIds": ["mechanic:shaman-spirits"],
-    "stats": [],
+    "stats": [
+      {
+        "key": "base-heal",
+        "label": "Базовое лечение",
+        "valueRef": "ancestor.baseHealth",
+        "unit": "health"
+      },
+      {
+        "key": "spectator-heal",
+        "label": "За выжившего-наблюдателя",
+        "valueRef": "ancestor.bonusHealth",
+        "unit": "health"
+      }
+    ],
     "evidence": [
       {
         "path": "src/main/java/org/example/maniacrevolution/ModItems.java"
@@ -1329,7 +1342,7 @@
     "name": "Монетка Неуловимости",
     "registryIds": ["maniacrev:coin_elusiveness"],
     "category": "coin",
-    "description": "Разыгрывает положительное или отрицательное состояние, связанное с неуловимостью.",
+    "description": "Хороший исход: невидимость и Скорость I на {{coins.elusiveSeconds}} сек. Плохой: перенос к маньяку и Замедление I на {{coins.elusiveSlowSeconds}} сек.",
     "usage": "Применение и ограничения приведены в статье предмета.",
     "characterIds": ["character:dodepovich"],
     "relatedIds": ["mechanic:casino"],
@@ -1365,7 +1378,7 @@
     "name": "Монетка Прозрения",
     "registryIds": ["maniacrev:coin_insight"],
     "category": "coin",
-    "description": "Разыгрывает исход, связанный с обнаружением игроков.",
+    "description": "Хороший исход: показывает маньяка только вам на {{coins.insightSeconds}} сек. Плохой: ваша подсветка для всех на {{coins.exposedSeconds}} сек.",
     "usage": "Применение и ограничения приведены в статье предмета.",
     "characterIds": ["character:dodepovich"],
     "relatedIds": ["mechanic:casino"],
@@ -1401,7 +1414,7 @@
     "name": "Монетка Оков",
     "registryIds": ["maniacrev:coin_shackles"],
     "category": "coin",
-    "description": "Разыгрывает ограничение движения одной из сторон.",
+    "description": "На {{coins.shacklesSeconds}} сек. обездвиживает ближайшего маньяка при хорошем исходе или вас при плохом.",
     "usage": "Применение и ограничения приведены в статье предмета.",
     "characterIds": ["character:dodepovich"],
     "relatedIds": ["mechanic:casino"],
@@ -1437,7 +1450,7 @@
     "name": "Монетка ЗОЖ",
     "registryIds": ["maniacrev:coin_health"],
     "category": "coin",
-    "description": "Разыгрывает исход, связанный со здоровьем.",
+    "description": "Хороший исход: +{{coins.health}} HP; плохой: {{coins.health}} магического урона вам.",
     "usage": "Применение и ограничения приведены в статье предмета.",
     "characterIds": ["character:dodepovich"],
     "relatedIds": ["mechanic:casino"],
@@ -1473,7 +1486,7 @@
     "name": "Монетка Орла",
     "registryIds": ["maniacrev:coin_eagle"],
     "category": "coin",
-    "description": "Разыгрывает особый исход Монетки Орла.",
+    "description": "На {{coins.blindSeconds}} сек. ослепляет ближайшего маньяка при хорошем исходе или вас при плохом.",
     "usage": "Применение и ограничения приведены в статье предмета.",
     "characterIds": ["character:dodepovich"],
     "relatedIds": ["mechanic:casino"],
@@ -1509,7 +1522,7 @@
     "name": "Монетка Долга",
     "registryIds": ["maniacrev:coin_debt"],
     "category": "coin",
-    "description": "Разыгрывает исход долга с последствиями для состояния игрока.",
+    "description": "До {{coins.debtSeconds}} сек.: хороший исход блокирует следующий урон; плохой удваивает его. После срабатывания эффект снимается.",
     "usage": "Применение и ограничения приведены в статье предмета.",
     "characterIds": ["character:dodepovich"],
     "relatedIds": ["mechanic:casino"],
@@ -1581,7 +1594,7 @@
     "name": "Монеточка Судьбы",
     "registryIds": ["maniacrev:coin_fate"],
     "category": "coin",
-    "description": "Редкая монетка с особыми исходами судьбы.",
+    "description": "Хороший исход: возвращает выживших-наблюдателей к маньяку с {{coins.reviveHealthPercent}}% здоровья (минимум 1 HP). Плохой: {{coins.fateDamage}} магического урона активным союзникам и смерть пользователя.",
     "usage": "Применение и ограничения приведены в статье предмета.",
     "characterIds": ["character:dodepovich"],
     "relatedIds": ["mechanic:casino"],
@@ -1822,7 +1835,7 @@
     "name": "Розовые очки",
     "registryIds": ["maniacrev:rose_colored_glasses"],
     "category": "perk-item",
-    "description": "Личные очки защищают от определённых отрицательных состояний.",
+    "description": "Снижает входящий урон на 25% во второй руке в фазах 1–2.",
     "usage": "Применение и ограничения приведены в статье предмета.",
     "characterIds": [],
     "relatedIds": ["mechanic:status-effects", "perk:rose-colored-glasses"],
@@ -1950,7 +1963,7 @@
     "name": "Красная карта",
     "registryIds": ["maniacrev:red_color_card"],
     "category": "perk-item",
-    "description": "Временная личная карта Цветной рулетки.",
+    "description": "Выжившему: снаряд отталкивает маньяка без урона. Маньяку: показывает {{roulette.computers}} самых заряженных незавершённых компьютера на {{roulette.guidanceSeconds}} сек. Карта живёт {{roulette.lifetimeSeconds}} сек.",
     "usage": "Применение и ограничения приведены в статье предмета.",
     "characterIds": [],
     "relatedIds": ["mechanic:color-roulette", "perk:color-roulette"],
@@ -1983,7 +1996,7 @@
     "name": "Синяя карта",
     "registryIds": ["maniacrev:blue_color_card"],
     "category": "perk-item",
-    "description": "Временная личная карта Цветной рулетки.",
+    "description": "Выжившему: +{{roulette.computerPercent}}% прогресса незавершённого компьютера; маньяку: −{{roulette.computerPercent}}% прогресса (от полного). Карта живёт {{roulette.lifetimeSeconds}} сек.",
     "usage": "Применение и ограничения приведены в статье предмета.",
     "characterIds": [],
     "relatedIds": ["mechanic:color-roulette", "perk:color-roulette"],
@@ -2016,7 +2029,7 @@
     "name": "Зелёная карта",
     "registryIds": ["maniacrev:green_color_card"],
     "category": "perk-item",
-    "description": "Временная личная карта Цветной рулетки.",
+    "description": "Выжившему: +{{roulette.heal}} HP. Маньяку: +1 уровень Зелёного заряда — +{{roulette.damagePerCharge}} урона к следующей прямой атаке. Карта живёт {{roulette.lifetimeSeconds}} сек.",
     "usage": "Применение и ограничения приведены в статье предмета.",
     "characterIds": [],
     "relatedIds": ["mechanic:color-roulette", "perk:color-roulette"],

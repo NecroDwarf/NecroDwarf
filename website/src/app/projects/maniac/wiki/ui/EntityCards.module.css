@@ -13,6 +13,36 @@
 .header > div {
   min-width: 0;
 }
+.headerLink {
+  padding: 10px;
+  margin: -10px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+}
+.headerLink:hover,
+.headerLink:focus-visible {
+  border-color: var(--accent, var(--jade-glow));
+  background: color-mix(
+    in srgb,
+    var(--accent, var(--jade-glow)) 10%,
+    transparent
+  );
+}
+.card:has(.headerLink:hover),
+.card:has(.headerLink:focus-visible) {
+  border-color: var(--accent, var(--jade-glow));
+}
+.wikiAction {
+  display: block;
+  margin-top: 8px;
+  color: var(--accent, var(--jade-glow));
+  font-size: 12px;
+  line-height: 1.5;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
 .label {
   color: var(--ash);
   font-size: 12px;
@@ -42,6 +72,10 @@
   .header:has([data-kind]) h3 {
     grid-column: 1 / -1;
     grid-row: 2;
+  }
+  .header:has([data-kind]) .wikiAction {
+    grid-column: 1 / -1;
+    grid-row: 3;
   }
 }
 .card > p {

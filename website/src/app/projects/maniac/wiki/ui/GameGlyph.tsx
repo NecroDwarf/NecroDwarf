@@ -1,6 +1,31 @@
 import type { ReactNode } from "react";
+import type { StatSymbol } from "../data/stat-labels";
 import s from "./GameGlyph.module.css";
 const shapes = {
+  addiction: (
+    <>
+      <path d="M9 3h6v5l4 11a2 2 0 0 1-2 3H7a2 2 0 0 1-2-3L9 8Z M8 3h8 M7 16h10" />
+      <path d="m12 11-2 4h4l-2 4" />
+    </>
+  ),
+  strength: (
+    <path d="m3 15 4-7 3 1-1 4 4 1 2-3 5 2 1 6-7 3-8-2Z M7 8l1-5 5 1-1 4" />
+  ),
+  progress: (
+    <>
+      <rect x="2" y="7" width="20" height="10" rx="2" />
+      <path d="M6 10v4 M10 10v4 M14 10v4" />
+    </>
+  ),
+  durability: <path d="m5 4 4 1 4 5-3 3-5-4Z M13 10l8 8-3 3-8-8 M3 21l4-4" />,
+  hacking: (
+    <>
+      <rect x="3" y="3" width="18" height="13" rx="1" />
+      <path d="M8 21h8 M12 16v5 M10 7l-3 3 3 3 M14 7l3 3-3 3" />
+    </>
+  ),
+  speed: <path d="m13 2-9 12h7l-1 8 10-13h-7Z" />,
+  level: <path d="m5 11 7-7 7 7 M5 19l7-7 7 7" />,
   damage: (
     <>
       <path d="m14 3 7 0 0 7-11 11-7-7Z M14 3l7 7 M4 11l9 9 M3 21l4-4" />
@@ -128,14 +153,22 @@ export function GameGlyph({ name }: { name: Glyph }) {
     </svg>
   );
 }
-export function statGlyph(key: string, unit: string): Glyph {
+export function statGlyph(key: string, unit: string): StatSymbol {
   if (unit === "health") return "health";
   if (unit === "damage") return "damage";
   if (unit === "armor") return "armor";
   if (unit === "mana") return "mana";
   if (unit === "blocks") return "range";
-  if (/sanity/.test(key)) return "sanity";
   if (unit === "seconds") return "cooldown";
+  if (/durability/.test(key)) return "durability";
+  if (/progress/.test(key)) return "progress";
+  if (/addiction/.test(key)) return "addiction";
+  if (/strength/.test(key)) return "strength";
+  if (/hack/.test(key)) return "hacking";
+  if (/speed|movement/.test(key)) return "speed";
+  if (/level/.test(key)) return "level";
+  if (/sanity/.test(key)) return "sanity";
+  if (/damage|share/.test(key)) return "damage";
   return "count";
 }
 export function equipmentGlyph(slug: string): Glyph {

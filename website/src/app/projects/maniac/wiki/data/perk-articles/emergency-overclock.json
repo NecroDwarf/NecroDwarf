@@ -1,6 +1,6 @@
 {
   "id": "perk:emergency-overclock",
-  "description": "Только во время взлома: на 8 сек. отключает обычный вклад. Успех QTE получает +20%, крит +50%, а провал отнимает 0.8 очка и накладывает Тишину на 5 сек.",
+  "description": "Только во время взлома. На {{overclock.seconds}} сек.: обычный вклад во взлом отключён; успех QTE +{{overclock.successPercent}}%, крит +{{overclock.criticalPercent}}%. Провал: −{{overclock.failurePoints}} очка прогресса и Тишина на {{overclock.silenceSeconds}} сек.",
   "conditions": [],
   "availability": {
     "cooldown": "75 с",

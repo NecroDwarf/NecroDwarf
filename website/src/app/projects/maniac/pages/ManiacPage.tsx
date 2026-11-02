@@ -7,7 +7,7 @@ import { SectionHeading } from "../../../shared/ui/SectionHeading";
 import { contacts } from "../../../shared/content/team";
 import { meta } from "../meta";
 import { releases } from "../changelogs/registry";
-import { GoogleDriveIcon, YandexDiskIcon } from "../assets/DownloadIcons";
+import { DownloadActions } from "./DownloadActions";
 import {
   characters,
   download,
@@ -29,24 +29,7 @@ export function ManiacPage() {
       <div className={s.hero}>
         <ProjectIntro project={intro}>
           <div className={s.actions}>
-            <ContentLink
-              className={s.primary}
-              href={download.url}
-              aria-label={`Скачать Maniac ${download.version} с Google Drive`}
-            >
-              <span className={s.downloadLabel}>
-                <GoogleDriveIcon />
-                <span>Скачать Maniac {download.version}</span>
-              </span>
-              <span aria-hidden="true">↗</span>
-            </ContentLink>
-            <ContentLink className={s.secondary} href={download.mirrorUrl}>
-              <span className={s.downloadLabel}>
-                <YandexDiskIcon />
-                <span>Скачать с Яндекс Диска</span>
-              </span>{" "}
-              <span aria-hidden="true">↗</span>
-            </ContentLink>
+            <DownloadActions />
             {published.length > 0 && (
               <ContentLink
                 className={s.secondary}
@@ -250,24 +233,7 @@ export function ManiacPage() {
               Яндекс Диска.
             </p>
             <div className={s.actions}>
-              <ContentLink
-                className={s.primary}
-                href={download.url}
-                aria-label={`Скачать Maniac ${download.version} с Google Drive`}
-              >
-                <span className={s.downloadLabel}>
-                  <GoogleDriveIcon />
-                  <span>Скачать Maniac {download.version}</span>
-                </span>
-                <span aria-hidden="true">↗</span>
-              </ContentLink>
-              <ContentLink className={s.secondary} href={download.mirrorUrl}>
-                <span className={s.downloadLabel}>
-                  <YandexDiskIcon />
-                  <span>Скачать с Яндекс Диска</span>
-                </span>{" "}
-                <span aria-hidden="true">↗</span>
-              </ContentLink>
+              <DownloadActions />
             </div>
             <p className={s.downloadNote}>{download.note}</p>
           </div>

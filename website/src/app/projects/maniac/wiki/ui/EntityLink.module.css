@@ -1,0 +1,8 @@
+.link {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.link:hover,
+.link:focus-visible {
+  text-decoration-thickness: 2px;
+}

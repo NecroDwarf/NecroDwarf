@@ -55,6 +55,9 @@ try {
   const { characters } = await server.ssrLoadModule(
     "/" + dataRoot + "characters.ts",
   );
+  const { formatGameText } = await server.ssrLoadModule(
+    "/" + dataRoot + "current-descriptions.ts",
+  );
   const { characterRouteMeta } = await server.ssrLoadModule(
     "/src/app/projects/maniac/wiki/route-metadata.ts",
   );
@@ -94,7 +97,9 @@ try {
     for (const feature of article.features) {
       assert.ok(html.includes(escape(feature.name)), feature.name);
       assert.ok(
-        html.includes(escape(feature.description)),
+        html
+          .replace(/<[^>]*>/g, "")
+          .includes(escape(formatGameText(feature.description))),
         feature.description,
       );
       assert.doesNotMatch(

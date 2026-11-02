@@ -52,6 +52,9 @@ try {
     "../.audit/maniac-source-8692f66/src/main/java/org/example/maniacrevolution/ModItems.java",
     "utf8",
   ).catch(() => null);
+  const { formatGameText } = await server.ssrLoadModule(
+    "/" + root + "data/current-descriptions.ts",
+  );
   const provenance = await json(root + "data/provenance.json");
   if (source) {
     const ids = [...source.matchAll(/ITEMS\.register\("([^"]+)"/g)].map(
@@ -129,7 +132,10 @@ try {
     );
     assert.equal(
       (html.match(new RegExp(`data-system-id="${kind}:`, "g")) ?? []).length,
-      rows.length,
+      kind === "item"
+        ? (await server.ssrLoadModule("/" + root + "data/systems-catalog.ts"))
+            .listedItems.length
+        : rows.length,
     );
     for (const row of rows) {
       const path = publishedEntityRoutes[row.id];
@@ -144,13 +150,15 @@ try {
       for (const section of article.sections)
         for (const paragraph of section.paragraphs)
           assert.ok(
-            text.includes(
-              paragraph
-                .replaceAll("&", "&amp;")
-                .replaceAll("<", "&lt;")
-                .replaceAll(">", "&gt;")
-                .replaceAll('"', "&quot;"),
-            ),
+            text
+              .replace(/<[^>]*>/g, "")
+              .includes(
+                formatGameText(paragraph)
+                  .replaceAll("&", "&amp;")
+                  .replaceAll("<", "&lt;")
+                  .replaceAll(">", "&gt;")
+                  .replaceAll('"', "&quot;"),
+              ),
             row.id,
           );
       for (const ev of article.evidence)

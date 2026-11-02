@@ -1,6 +1,5 @@
-import { ContentLink } from "./ContentLink";
+import { ContentLink, BackLink } from "./ContentLink";
 import type { ReactNode } from "react";
-import { Link } from "react-router";
 import type { ProjectMeta, Project } from "../content/types";
 import { ProjectGallery } from "./ProjectGallery";
 import s from "./ProjectIntro.module.css";
@@ -26,9 +25,7 @@ export function ProjectIntro({
 }) {
   return (
     <section className={`${s.intro} ${project.theme}`}>
-      <Link to="/projects" className={s.back}>
-        ← Все проекты
-      </Link>
+      <BackLink to="/projects">Все проекты</BackLink>
       <div className={s.layout}>
         <div>
           <p className={s.label}>{project.category}</p>

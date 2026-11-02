@@ -1,10 +1,17 @@
-import { useEffect, useRef, useState } from "react";
-import { Route, Routes, useLocation } from "react-router";
+import { useEffect, useState, type ComponentType } from "react";
+import { Route, Routes, useLocation, useNavigationType } from "react-router";
+import type { Location, NavigationType } from "react-router";
 import { SiteLayout } from "./shared/layouts/SiteLayout";
 import { routes, notFoundMeta, normalizePath, pageForPath } from "./routes";
 import { renderHead, siteOrigin } from "./shared/lib/seo";
+import { projects } from "./projects/registry";
+const projectLinks = projects.map((project) => ({
+  label: project.name,
+  href: `/projects/${project.id}`,
+}));
+const loadProjectNavigation = () =>
+  import("./projects/navigation").then((module) => module.projectNavigation);
 function PageEffects({ pathname }: { pathname: string }) {
-  const firstRender = useRef(true);
   useEffect(() => {
     const path = normalizePath(pathname);
     const route = routes.find((r) => r.path === path);
@@ -21,16 +28,25 @@ function PageEffects({ pathname }: { pathname: string }) {
       )
       .forEach((node) => node.remove());
     document.head.append(head.content);
-    if (firstRender.current) firstRender.current = false;
-    else {
-      window.scrollTo(0, 0);
-      document.getElementById("main")?.focus({ preventScroll: true });
-    }
   }, [pathname]);
   return null;
 }
 export function App() {
   const location = useLocation();
+  const navigationType = useNavigationType();
+  const [Scroll, setScroll] = useState<ComponentType<{
+    location: Location;
+    navigationType: NavigationType;
+  }> | null>(null);
+  useEffect(() => {
+    let current = true;
+    import("./shared/lib/use-page-scroll").then((module) => {
+      if (current) setScroll(() => module.default);
+    });
+    return () => {
+      current = false;
+    };
+  }, []);
   const [ready, setReady] = useState(() => ({
     location,
     Page: pageForPath(location.pathname).read(),
@@ -53,7 +69,10 @@ export function App() {
   }, [location]);
   const { Page } = ready;
   return (
-    <SiteLayout>
+    <SiteLayout projects={projectLinks} loadProjects={loadProjectNavigation}>
+      {Scroll && (
+        <Scroll location={ready.location} navigationType={navigationType} />
+      )}
       <PageEffects pathname={ready.location.pathname} />
       {failed && (
         <p role="alert">

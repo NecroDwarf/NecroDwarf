@@ -1,0 +1,1 @@
+export { RelatedEffects } from "./EntityLink";

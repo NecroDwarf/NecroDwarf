@@ -73,6 +73,18 @@ const characters = JSON.parse(
 const articleJson = (m) => /wiki\/data\/character-articles\/.*\.json$/.test(m);
 const modelRuntime = (m) =>
   /node_modules\/three\/|wiki\/model\/ModelCanvas/.test(m);
+for (const source of ["ui/EntityLink.tsx", "pages/EffectsPage.tsx"]) {
+  const loaded = staticModules(
+    chunkFor(`src/app/projects/maniac/wiki/${source}`),
+  );
+  assert.ok(
+    !loaded.some((m) =>
+      /wiki\/data\/(?:registry\.ts|.*-catalog\.json|flower-perks\.ts)$/.test(m),
+    ),
+    `${source} loads entity catalogs or historical snapshots`,
+  );
+  assert.ok(!loaded.some(modelRuntime), `${source} loads Three.js`);
+}
 assert.ok(!initial.some(articleJson), "Wiki articles in initial JS");
 assert.ok(!initial.some(modelRuntime), "3D runtime in initial JS");
 for (const page of ["WikiHomePage", "CharactersPage"]) {

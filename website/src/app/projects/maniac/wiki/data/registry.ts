@@ -32,17 +32,5 @@ export function getRevision<K extends EntityKind>(
 ) {
   return getEntity(id)?.revisions[snapshot];
 }
-export function characterSummaries(ids: readonly EntityId<"character">[]) {
-  return ids.map((id) => {
-    const entity = getEntity(id),
-      revision = getRevision(id);
-    if (!entity || !revision)
-      throw new Error(`Missing verified character: ${id}`);
-    return {
-      name: entity.name,
-      role: revision.data.role === "maniac" ? "Маньяк" : "Выживший",
-      style: revision.data.style,
-      description: revision.data.description,
-    };
-  });
-}
+
+export { characterSummaries } from "./character-summaries";

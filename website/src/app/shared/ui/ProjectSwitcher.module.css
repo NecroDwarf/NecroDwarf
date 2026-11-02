@@ -1,0 +1,120 @@
+.panel {
+  max-width: 1800px;
+  margin: auto;
+  padding: 0 var(--space);
+  background: var(--void);
+  border-bottom: 1px solid var(--iron);
+}
+.panel[hidden],
+.subPanel[hidden] {
+  display: none;
+}
+.root,
+.submenu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.root {
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+}
+.branch {
+  position: relative;
+}
+.row {
+  display: flex;
+  align-items: stretch;
+  color: var(--ash);
+  border-bottom: 1px solid transparent;
+}
+.row a {
+  flex: 1;
+  padding: 11px 0;
+  white-space: nowrap;
+  font-size: 13px;
+  line-height: 20px;
+}
+.row:has(a[aria-current]),
+.row:hover,
+.row:focus-within {
+  border-bottom-color: var(--jade);
+  color: var(--bone);
+}
+.toggle {
+  padding: 0 8px;
+  border: 0;
+  background: transparent;
+  color: var(--jade-glow);
+  font: inherit;
+  cursor: pointer;
+}
+.root > .branch > .row > .toggle span {
+  display: inline-block;
+  transform: rotate(90deg);
+}
+.subPanel {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  width: 210px;
+  padding-left: 6px;
+  transform: translateY(var(--panel-shift-y, 0px));
+}
+.subPanel[data-side="left"] {
+  left: auto;
+  right: 100%;
+  padding-left: 0;
+  padding-right: 6px;
+}
+.root > .branch > .subPanel {
+  top: 100%;
+  left: 0;
+  padding: 0;
+}
+.submenu {
+  padding: 6px;
+  border: 1px solid var(--iron);
+  background: var(--void);
+  box-shadow: 0 12px 24px #0004;
+}
+.submenu .row a {
+  padding: 9px 12px;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+.articleList {
+  max-height: min(420px, calc(100dvh - 32px));
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+}
+.submenu .row:hover,
+.submenu .row:focus-within {
+  background: var(--stone);
+}
+@media (max-width: 700px) {
+  .panel {
+    max-height: calc(100dvh - 90px);
+    overflow-y: auto;
+  }
+  .root {
+    display: block;
+    padding-block: 6px;
+  }
+  .subPanel,
+  .root > .branch > .subPanel {
+    position: static;
+    width: auto;
+    padding: 0 0 0 12px;
+    transform: none;
+  }
+  .submenu {
+    border-width: 0 0 0 1px;
+    box-shadow: none;
+  }
+  .toggle {
+    min-width: 44px;
+  }
+}

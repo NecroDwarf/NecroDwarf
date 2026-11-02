@@ -1,12 +1,16 @@
+import { WikiText } from "./WikiText";
 import { entityAssets } from "../data/assets";
 import { getEntity, getRevision } from "../data/registry";
 import { snapshots, sourceUrl, verifiedSource } from "../data/snapshots";
 import type { EntityId, EntityKind, SnapshotId, Stat } from "../data/types";
 import { ContentLink } from "../../../../shared/ui/ContentLink";
 import { EntityLink } from "./EntityLink";
+import { Link } from "react-router";
+import { publishedEntityRoutes } from "../data/publication";
 import { EntityIcon } from "./EntityIcon";
-import { equipmentAssets } from "../data/equipment-assets";
+import { systemIconAsset } from "../data/system-icons";
 import { GameGlyph, statGlyph, equipmentGlyph } from "./GameGlyph";
+import { InlineStat } from "./InlineStat";
 import { DifficultyStars } from "./DifficultyStars";
 import iconStyles from "./EntityIcon.module.css";
 import type { ReactNode } from "react";
@@ -30,10 +34,14 @@ export function EntityStats({ stats }: { stats: readonly Stat[] }) {
             <span>{stat.label}</span>
           </dt>
           <dd>
-            <GameGlyph name={statGlyph(stat.key, stat.unit)} />
             <span>
-              {stat.value} {units[stat.unit]}
+              {stat.value}
+              {stat.unit === "percent" ? "%" : " "}
             </span>
+            <InlineStat
+              name={statGlyph(stat.key, stat.unit)}
+              original={stat.unit === "percent" ? undefined : units[stat.unit]}
+            />
           </dd>
         </div>
       ))}
@@ -45,6 +53,7 @@ export interface CardProps {
   snapshot?: SnapshotId;
   variant?: "compact" | "detail";
   editorial?: ReactNode;
+  /** Heading content only; the card supplies its Wiki link. */
   title?: ReactNode;
   showStats?: boolean;
   provenance?: "inline" | "deferred";
@@ -64,17 +73,52 @@ export function EntityCard({
   if (!revision)
     return <p>{entity.name}: данные для выбранного снимка не подтверждены.</p>;
   const { data } = revision,
-    asset = data.icon
-      ? entityAssets[data.icon]
-      : snapshot === verifiedSource && entity.kind === "item"
-        ? equipmentAssets[entity.slug]
-        : undefined;
+    asset =
+      snapshot === verifiedSource &&
+      (entity.kind === "item" || entity.kind === "mechanic")
+        ? systemIconAsset(id as EntityId<"item" | "mechanic">, data.icon)
+        : data.icon
+          ? entityAssets[data.icon]
+          : undefined;
   const relations: readonly EntityId[] = [
     ...("abilityIds" in data ? data.abilityIds : []),
     ...("itemIds" in data ? (data.itemIds ?? []) : []),
     ...("characterIds" in data ? (data.characterIds ?? []) : []),
     ...("mechanicIds" in data ? data.mechanicIds : []),
   ];
+  const wikiRoute = publishedEntityRoutes[id];
+  const heading = (
+    <>
+      {asset && <EntityIcon asset={asset} variant={variant} />}
+      {!asset && entity.kind === "item" && (
+        <span
+          className={`${iconStyles.frame} ${s.equipmentSymbol}`}
+          data-kind="symbol"
+          data-variant={variant}
+          title="Условное обозначение предмета"
+          aria-hidden="true"
+        >
+          <GameGlyph name={equipmentGlyph(entity.slug)} />
+        </span>
+      )}
+      <div>
+        <p className={s.label}>
+          {provenance === "deferred"
+            ? entity.kind === "ability"
+              ? "Способность"
+              : "Снаряжение"
+            : (snapshots[snapshot as keyof typeof snapshots]?.label ??
+              snapshot)}
+        </p>
+        <h3>{title ?? entity.name}</h3>
+        {wikiRoute && (
+          <span className={s.wikiAction}>
+            Открыть в Wiki <span aria-hidden="true">↗</span>
+          </span>
+        )}
+      </div>
+    </>
+  );
   return (
     <article
       className={s.card}
@@ -82,30 +126,18 @@ export function EntityCard({
       data-entity-card={id}
       data-snapshot={snapshot}
     >
-      <div className={s.header}>
-        {asset && <EntityIcon asset={asset} variant={variant} />}
-        {!asset && entity.kind === "item" && (
-          <span
-            className={`${iconStyles.frame} ${s.equipmentSymbol}`}
-            data-kind="symbol"
-            data-variant={variant}
-            title="Условное обозначение предмета"
-            aria-hidden="true"
+      <div>
+        {wikiRoute ? (
+          <Link
+            to={wikiRoute}
+            className={`${s.header} ${s.headerLink}`}
+            aria-label={`${entity.name} — открыть в Wiki`}
           >
-            <GameGlyph name={equipmentGlyph(entity.slug)} />
-          </span>
+            {heading}
+          </Link>
+        ) : (
+          <div className={s.header}>{heading}</div>
         )}
-        <div>
-          <p className={s.label}>
-            {provenance === "deferred"
-              ? entity.kind === "ability"
-                ? "Способность"
-                : "Снаряжение"
-              : (snapshots[snapshot as keyof typeof snapshots]?.label ??
-                snapshot)}
-          </p>
-          <h3>{title ?? <EntityLink id={id} />}</h3>
-        </div>
       </div>
       {"role" in data && (
         <p className={s.label}>
@@ -119,8 +151,14 @@ export function EntityCard({
       )}
       {editorial ?? (
         <>
-          <p>{data.description}</p>
-          {"usage" in data && data.usage && <p>{data.usage}</p>}
+          <p>
+            <WikiText text={data.description} />
+          </p>
+          {"usage" in data && data.usage && (
+            <p>
+              <WikiText text={data.usage} />
+            </p>
+          )}
         </>
       )}
       {showStats && data.stats?.length ? (

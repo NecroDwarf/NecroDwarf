@@ -1,3 +1,5 @@
+import { currentDescription, currentStats } from "./current-descriptions";
+import type { CurrentCatalogEntry } from "./gameplay-facts";
 import perks from "./perk-catalog.json";
 import abilities from "./ability-catalog.json";
 import type {
@@ -31,5 +33,17 @@ export interface AbilityMeta extends ReferenceMeta {
   characterIds: readonly EntityId<"character">[];
   itemIds: readonly EntityId<"item">[];
 }
-export const perkCatalog = perks as readonly PerkMeta[];
-export const abilityCatalog = abilities as readonly AbilityMeta[];
+export const perkCatalog = (
+  perks as readonly CurrentCatalogEntry<PerkMeta>[]
+).map((entry) => ({
+  ...entry,
+  description: currentDescription(entry.id, entry.description),
+  stats: currentStats(entry.id, entry.stats),
+}));
+export const abilityCatalog = (
+  abilities as readonly CurrentCatalogEntry<AbilityMeta>[]
+).map((entry) => ({
+  ...entry,
+  description: currentDescription(entry.id, entry.description),
+  stats: currentStats(entry.id, entry.stats),
+}));

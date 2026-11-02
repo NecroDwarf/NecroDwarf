@@ -1,0 +1,1081 @@
+{
+  "commit": "8692f66dc76582144be85d553d43a41f189b64e7",
+  "registry": {
+    "path": "src/main/java/org/example/maniacrevolution/effect/ModEffects.java",
+    "sha256": "6cf71f8f852888e34910cbbace4fc413b09afb7d5675dfcb8b4508badf2bc00c"
+  },
+  "language": {
+    "path": "src/main/resources/assets/maniacrev/lang/ru_ru.json",
+    "sha256": "e1aaec8a2bf4d08f9bbba9cdf0af58d4d5ba1de9b3894fa9c27179d9476148ee"
+  },
+  "effects": [
+    {
+      "id": "fear",
+      "symbol": "FEAR",
+      "implementation": {
+        "path": "src/main/java/org/example/maniacrevolution/effect/FearEffect.java",
+        "sha256": "2d8268cfdb92982c56b6c5254f33efd500ecde00f938a2e0fb4da5d27fe0281a"
+      },
+      "usages": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/effect/client/FearClientHandler.java",
+          "line": 48,
+          "code": "MobEffectInstance fearEffect = player.getEffect(ModEffects.FEAR.get());"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/effect/client/FearClientHandler.java",
+          "line": 166,
+          "code": "MobEffectInstance fearEffect = player.getEffect(ModEffects.FEAR.get());"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/perk/perks/common/FearWavePerk.java",
+          "line": 82,
+          "code": "entity.addEffect(new MobEffectInstance(ModEffects.FEAR.get(), FEAR_DURATION, 0,"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/perk/perks/survivor/RealityAnchorPerk.java",
+          "line": 147,
+          "code": "return effect == ModEffects.FEAR.get()"
+        }
+      ],
+      "icon": {
+        "path": "src/main/resources/assets/maniacrev/textures/mob_effect/fear.png",
+        "sha256": "d14052b0e0348a8b6bb855c7d6868daa9157759b8d93805fe3cff3749ff1ae67"
+      }
+    },
+    {
+      "id": "open_wound",
+      "symbol": "OPEN_WOUND",
+      "implementation": {
+        "path": "src/main/java/org/example/maniacrevolution/effect/OpenWoundEffect.java",
+        "sha256": "0a6e309cd9bc41dbfb2716f531aa4f56eee1be747770b3120f1f1989f80575d8"
+      },
+      "usages": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/perk/perks/maniac/BloodflowPerk.java",
+          "line": 96,
+          "code": "ModEffects.OPEN_WOUND.get(),"
+        }
+      ],
+      "icon": {
+        "path": "src/main/resources/assets/maniacrev/textures/mob_effect/open_wound.png",
+        "sha256": "31d0f5df064c52c79e8494f099dc8642383817aff0d3274eb24f0c34878f879d"
+      }
+    },
+    {
+      "id": "mana_flow",
+      "symbol": "MANA_FLOW",
+      "implementation": {
+        "path": "src/main/java/org/example/maniacrevolution/effect/ManaFlowEffect.java",
+        "sha256": "d9fa455b850c9c399288ee954fce30eb180835fc2491aa508f2e81f539b040a0"
+      },
+      "usages": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/event/ManaEvents.java",
+          "line": 114,
+          "code": "if (player.hasEffect(ModEffects.MANA_FLOW.get())) {"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/item/ClarityItem.java",
+          "line": 42,
+          "code": "ModEffects.MANA_FLOW.get(),"
+        }
+      ],
+      "icon": {
+        "path": "src/main/resources/assets/maniacrev/textures/mob_effect/mana_flow.png",
+        "sha256": "0a6ecb3df4aa29c9245b0f4a64ba4e4348d01f841cd4bada6ec69a12512ee965"
+      }
+    },
+    {
+      "id": "slow_regeneration",
+      "symbol": "SLOW_REGENERATION",
+      "implementation": {
+        "path": "src/main/java/org/example/maniacrevolution/effect/SlowRegenEffect.java",
+        "sha256": "bf91da8b8cbfb31db0118c3e9b6455f4bdf413070e46fc1a4ebf9d7837c5693b"
+      },
+      "usages": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/potion/ModPotions.java",
+          "line": 18,
+          "code": "() -> new Potion(\"slow_regeneration\", new MobEffectInstance(ModEffects.SLOW_REGENERATION.get(), 1200, 0, false, false, true)));"
+        }
+      ],
+      "icon": {
+        "path": "src/main/resources/assets/maniacrev/textures/mob_effect/slow_regeneration.png",
+        "sha256": "9c9124e2e3e4698cb442b6b0fada15ca49b0c278c6b32b2fbf20730858317c8a"
+      }
+    },
+    {
+      "id": "weak_weakness",
+      "symbol": "WEAK_WEAKNESS",
+      "implementation": {
+        "path": "src/main/java/org/example/maniacrevolution/effect/WeakWeaknessEffect.java",
+        "sha256": "45bb58bc98cf60cb8a841cb99bcc91bf3f205fbbad7a3a3b4a5906069e931d07"
+      },
+      "usages": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/potion/ModPotions.java",
+          "line": 38,
+          "code": "() -> new Potion(\"weak_weakness\", new MobEffectInstance(ModEffects.WEAK_WEAKNESS.get(), 300, 0, false, false, true)));"
+        }
+      ],
+      "icon": {
+        "path": "src/main/resources/assets/maniacrev/textures/mob_effect/weak_weakness.png",
+        "sha256": "2e2382807e2e76b4ba662fed536ae938a3a7e650ab73d91ca62ff7fd176bc669"
+      }
+    },
+    {
+      "id": "weak_instant_health",
+      "symbol": "WEAK_INSTANT_HEALTH",
+      "implementation": {
+        "path": "src/main/java/org/example/maniacrevolution/effect/WeakInstantHealthEffect.java",
+        "sha256": "72968cd9f987050cd9560070cb0af4b19c33b4588e1be74b8840c4dacd6451d4"
+      },
+      "usages": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/potion/ModPotions.java",
+          "line": 42,
+          "code": "() -> new Potion(\"weak_healing\", new MobEffectInstance(ModEffects.WEAK_INSTANT_HEALTH.get(), 1, 0, false, false, true)));"
+        }
+      ],
+      "icon": null
+    },
+    {
+      "id": "target",
+      "symbol": "TARGET_EFFECT",
+      "implementation": {
+        "path": "src/main/java/org/example/maniacrevolution/effect/TargetEffect.java",
+        "sha256": "3706c9119d9c834dd0763f6e7aec5b997ce465c5172987530aa880b1d33447dc"
+      },
+      "usages": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/hud/TargetEffectHudOverlay.java",
+          "line": 32,
+          "code": "boolean hasEffect = player.hasEffect(ModEffects.TARGET_EFFECT.get());"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/system/Agent47TargetManager.java",
+          "line": 41,
+          "code": "oldTarget.removeEffect(ModEffects.TARGET_EFFECT.get());"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/system/Agent47TargetManager.java",
+          "line": 50,
+          "code": "ModEffects.TARGET_EFFECT.get(),"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/system/Agent47TargetManager.java",
+          "line": 88,
+          "code": "return player.hasEffect(ModEffects.TARGET_EFFECT.get());"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/system/Agent47TargetManager.java",
+          "line": 192,
+          "code": "deadPlayer.removeEffect(ModEffects.TARGET_EFFECT.get());"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/system/Agent47TargetManager.java",
+          "line": 226,
+          "code": "target.removeEffect(ModEffects.TARGET_EFFECT.get());"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/system/Agent47TargetManager.java",
+          "line": 259,
+          "code": "target.removeEffect(ModEffects.TARGET_EFFECT.get());"
+        }
+      ],
+      "icon": {
+        "path": "src/main/resources/assets/maniacrev/textures/mob_effect/target.png",
+        "sha256": "7c2231cac91a7d13653a52cf28ebc8d514634965b2baf7004d16d82cd69e6b47"
+      }
+    },
+    {
+      "id": "death_race",
+      "symbol": "DEATH_RACE_EFFECT",
+      "implementation": {
+        "path": "src/main/java/org/example/maniacrevolution/effect/DeathRaceEffect.java",
+        "sha256": "f8c7692e56267936379019b3237ebf9ea3ba35e0ca1863bda1ed9302483ce55c"
+      },
+      "usages": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/event/DeathEventHandler.java",
+          "line": 65,
+          "code": "MobEffectInstance currentEffect = death.getEffect(ModEffects.DEATH_RACE_EFFECT.get());"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/event/DeathEventHandler.java",
+          "line": 74,
+          "code": "ModEffects.DEATH_RACE_EFFECT.get(),"
+        }
+      ],
+      "icon": {
+        "path": "src/main/resources/assets/maniacrev/textures/mob_effect/death_race.png",
+        "sha256": "08e70a5836837b198a219419fbf54688080a107f6ee32333e07868c8881d2630"
+      }
+    },
+    {
+      "id": "plague",
+      "symbol": "PLAGUE",
+      "implementation": {
+        "path": "src/main/java/org/example/maniacrevolution/effect/PlagueEffect.java",
+        "sha256": "25d96e067de5c44faf0da10e85cf964a73932b73c842a6724683d60715aed6eb"
+      },
+      "usages": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/command/ClearPlagueCommand.java",
+          "line": 74,
+          "code": "org.example.maniacrevolution.effect.ModEffects.PLAGUE.get()"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/event/PlagueLanternEventHandler.java",
+          "line": 103,
+          "code": "ModEffects.PLAGUE.get(),"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/event/PlagueLanternEventHandler.java",
+          "line": 122,
+          "code": "boolean hasPlague = player.hasEffect(ModEffects.PLAGUE.get());"
+        }
+      ],
+      "icon": {
+        "path": "src/main/resources/assets/maniacrev/textures/mob_effect/plague.png",
+        "sha256": "240198645c269650090d6011c0d44c8c4bb246cc8b7330e07f3ddce376a7570b"
+      }
+    },
+    {
+      "id": "thorn",
+      "symbol": "THORN",
+      "implementation": {
+        "path": "src/main/java/org/example/maniacrevolution/effect/ThornEffect.java",
+        "sha256": "fcd811dce02b7d154b98eba0e65a5acfd930ee828d6b1ada4a0c2e9f80228d07"
+      },
+      "usages": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/effect/ThornEffect.java",
+          "line": 58,
+          "code": "if (!victim.hasEffect(ModEffects.THORN.get())) return;"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/perk/perks/common/HedgehogSkinPerk.java",
+          "line": 50,
+          "code": "ModEffects.THORN.get(),"
+        }
+      ],
+      "icon": {
+        "path": "src/main/resources/assets/maniacrev/textures/mob_effect/thorn.png",
+        "sha256": "829f5e8e04408f729a9d4dcc4bd9569b351356119d2dfd3649e5dae85b5a03c3"
+      }
+    },
+    {
+      "id": "frozen",
+      "symbol": "FROZEN",
+      "implementation": {
+        "path": "src/main/java/org/example/maniacrevolution/effect/FrozenEffect.java",
+        "sha256": "42058fc85f0afbb9f83ffc7de7f79fce3d645603a5fff20678dfeca43dac2226"
+      },
+      "usages": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/perk/perks/common/FootballFanPerk.java",
+          "line": 65,
+          "code": "ModEffects.FROZEN.get(),"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/perk/perks/common/FootballFanPerk.java",
+          "line": 93,
+          "code": "if (event.getEffectInstance().getEffect() != ModEffects.FROZEN.get()) return;"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/perk/perks/common/FootballFanPerk.java",
+          "line": 144,
+          "code": "player.removeEffect(ModEffects.FROZEN.get());"
+        }
+      ],
+      "icon": {
+        "path": "src/main/resources/assets/maniacrev/textures/mob_effect/frozen.png",
+        "sha256": "f29a0ba8e3b9ee8451e97a6e2f32cb96ea37ddd2cc0416e682e86d12f960b3f1"
+      }
+    },
+    {
+      "id": "altruist_boost",
+      "symbol": "ALTRUIST_BOOST",
+      "implementation": {
+        "path": "src/main/java/org/example/maniacrevolution/effect/AltruistBoostEffect.java",
+        "sha256": "bf7f9209e9826679782b36834f3403538deebb018283b16be4a24a9ebe18a1aa"
+      },
+      "usages": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/perk/perks/survivor/AltruistExePerk.java",
+          "line": 64,
+          "code": "player.removeEffect(ModEffects.ALTRUIST_BOOST.get());"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/perk/perks/survivor/AltruistExePerk.java",
+          "line": 116,
+          "code": "ModEffects.ALTRUIST_BOOST.get(),"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/perk/perks/survivor/AltruistExePerk.java",
+          "line": 128,
+          "code": "return player.hasEffect(ModEffects.ALTRUIST_BOOST.get());"
+        }
+      ],
+      "icon": {
+        "path": "src/main/resources/assets/maniacrev/textures/mob_effect/altruist_boost.png",
+        "sha256": "6aa3815b5648811ccb3d9cd0cc6a485beb2c0d33690929c4789a58995ebf9a2d"
+      }
+    },
+    {
+      "id": "silence",
+      "symbol": "SILENCE",
+      "implementation": {
+        "path": "src/main/java/org/example/maniacrevolution/effect/SilenceEffect.java",
+        "sha256": "af23dc537b82f6d1769605e0e15c41f044199bf2e0626786367269c3e5413234"
+      },
+      "usages": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/network/packets/ActivatePerkPacket.java",
+          "line": 50,
+          "code": "if (player.hasEffect(org.example.maniacrevolution.effect.ModEffects.SILENCE.get())) {"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/network/packets/ActivatePerkPacket.java",
+          "line": 51,
+          "code": "int remaining = player.getEffect(org.example.maniacrevolution.effect.ModEffects.SILENCE.get()).getDuration() / 20;"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/perk/perks/maniac/SilencePerk.java",
+          "line": 53,
+          "code": "ModEffects.SILENCE.get(),"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/perk/perks/survivor/EmergencyOverclockPerk.java",
+          "line": 118,
+          "code": "ModEffects.SILENCE.get(),"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/perk/perks/survivor/RealityAnchorPerk.java",
+          "line": 148,
+          "code": "|| effect == ModEffects.SILENCE.get()"
+        }
+      ],
+      "icon": {
+        "path": "src/main/resources/assets/maniacrev/textures/mob_effect/silence.png",
+        "sha256": "7875f3f964a9b14c6fb22bfd759c01126169ae490155d373f956155e294df42b"
+      }
+    },
+    {
+      "id": "possession_timer",
+      "symbol": "POSSESSION_TIMER",
+      "implementation": {
+        "path": "src/main/java/org/example/maniacrevolution/effect/PossessionTimerEffect.java",
+        "sha256": "84ae94e63acdddbe210f37efcc2d356041747206a23261d9e036042ea272d4da"
+      },
+      "usages": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/ghost/GhostPossessionManager.java",
+          "line": 170,
+          "code": "target.removeEffect(ModEffects.POSSESSION_TIMER.get());"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/ghost/GhostPossessionManager.java",
+          "line": 173,
+          "code": "possessor.removeEffect(ModEffects.POSSESSION_TIMER.get());"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/ghost/GhostPossessionManager.java",
+          "line": 463,
+          "code": "|| !target.hasEffect(ModEffects.POSSESSION_TIMER.get())"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/ghost/GhostPossessionManager.java",
+          "line": 552,
+          "code": "possessor.removeEffect(ModEffects.POSSESSION_TIMER.get());"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/ghost/GhostPossessionManager.java",
+          "line": 567,
+          "code": "target.removeEffect(ModEffects.POSSESSION_TIMER.get());"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/ghost/GhostPossessionManager.java",
+          "line": 604,
+          "code": "player.addEffect(new MobEffectInstance(ModEffects.POSSESSION_TIMER.get(), durationTicks, 0, false, false, true));"
+        }
+      ],
+      "icon": {
+        "path": "src/main/resources/assets/maniacrev/textures/mob_effect/possession_timer.png",
+        "sha256": "7c2231cac91a7d13653a52cf28ebc8d514634965b2baf7004d16d82cd69e6b47"
+      }
+    },
+    {
+      "id": "stun",
+      "symbol": "STUN",
+      "implementation": {
+        "path": "src/main/java/org/example/maniacrevolution/effect/StunEffect.java",
+        "sha256": "6f8c89c39af1fd587f21163ed207ee2f79297d38fe60a15a3eed5c13d7dd5d9c"
+      },
+      "usages": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/effect/StunEffect.java",
+          "line": 50,
+          "code": "if (event.phase == TickEvent.Phase.END && event.player.hasEffect(ModEffects.STUN.get())) {"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/effect/StunEffect.java",
+          "line": 58,
+          "code": "if (event.getEntity().hasEffect(ModEffects.STUN.get())) {"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/ghost/GhostPossessionManager.java",
+          "line": 589,
+          "code": "possessor.addEffect(new MobEffectInstance(ModEffects.STUN.get(), 2 * 20, 0, false, false, true));"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/ghost/GhostStealthManager.java",
+          "line": 125,
+          "code": "player.removeEffect(ModEffects.STUN.get());"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/ghost/GhostStealthManager.java",
+          "line": 143,
+          "code": "player.addEffect(new MobEffectInstance(ModEffects.STUN.get(), RECOVERY_TICKS, 0, false, false, true));"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/paint/PaintPuddleManager.java",
+          "line": 324,
+          "code": "ModEffects.STUN.get(),"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/perk/perks/survivor/RealityAnchorPerk.java",
+          "line": 149,
+          "code": "|| effect == ModEffects.STUN.get();"
+        }
+      ],
+      "icon": {
+        "path": "src/main/resources/assets/maniacrev/textures/mob_effect/stun.png",
+        "sha256": "16cba192b5ca8783c92c81228ac8fb2361b1560a31ec380e173aa9d00962935b"
+      }
+    },
+    {
+      "id": "full_invisibility",
+      "symbol": "FULL_INVISIBILITY",
+      "implementation": {
+        "path": "src/main/java/org/example/maniacrevolution/effect/FullInvisibilityEffect.java",
+        "sha256": "44ba88a2a41f5442fd803ee741987dea72355810fd795d2f6416f79535c90129"
+      },
+      "usages": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/effect/FullInvisibilityEffect.java",
+          "line": 25,
+          "code": "if (event.getEntity().hasEffect(ModEffects.FULL_INVISIBILITY.get())) {"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/effect/FullInvisibilityEffect.java",
+          "line": 33,
+          "code": "&& player.hasEffect(ModEffects.FULL_INVISIBILITY.get())) {"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/ghost/GhostClientEvents.java",
+          "line": 60,
+          "code": "if (event.getEntity().hasEffect(ModEffects.FULL_INVISIBILITY.get())"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/ghost/GhostClientEvents.java",
+          "line": 78,
+          "code": "if (mc.player != null && mc.player.hasEffect(ModEffects.FULL_INVISIBILITY.get())) {"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/ghost/GhostPossessionManager.java",
+          "line": 69,
+          "code": "if (possessor.hasEffect(ModEffects.FULL_INVISIBILITY.get())) {"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/ghost/GhostStealthManager.java",
+          "line": 124,
+          "code": "player.removeEffect(ModEffects.FULL_INVISIBILITY.get());"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/ghost/GhostStealthManager.java",
+          "line": 238,
+          "code": "if (fullInvisibility && !player.hasEffect(ModEffects.FULL_INVISIBILITY.get())) {"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/ghost/GhostStealthManager.java",
+          "line": 240,
+          "code": "ModEffects.FULL_INVISIBILITY.get(),"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/ghost/GhostStealthManager.java",
+          "line": 249,
+          "code": "player.removeEffect(ModEffects.FULL_INVISIBILITY.get());"
+        }
+      ],
+      "icon": {
+        "path": "src/main/resources/assets/maniacrev/textures/mob_effect/full_invisibility.png",
+        "sha256": "030bd25475b50dc27ffbb6946533b0ad7912332841b4e5c13dfbabd75627fbf6"
+      }
+    },
+    {
+      "id": "dodepovich_insurance",
+      "symbol": "DODEPOVICH_INSURANCE",
+      "implementation": {
+        "path": "src/main/java/org/example/maniacrevolution/effect/DodepovichSimpleEffect.java",
+        "sha256": "423ad447163de604416d718e844fd31d7348388260fb469f66776328f1d8b283"
+      },
+      "usages": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/dodepovich/DodepovichCasinoManager.java",
+          "line": 214,
+          "code": "player.addEffect(new MobEffectInstance(ModEffects.DODEPOVICH_INSURANCE.get(), INSURANCE_SECONDS * 20, 0, false, false, true));"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/dodepovich/DodepovichCasinoManager.java",
+          "line": 271,
+          "code": "if (!player.hasEffect(ModEffects.DODEPOVICH_INSURANCE.get())) {"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/dodepovich/DodepovichCasinoManager.java",
+          "line": 274,
+          "code": "player.removeEffect(ModEffects.DODEPOVICH_INSURANCE.get());"
+        }
+      ],
+      "icon": {
+        "path": "src/main/resources/assets/maniacrev/textures/mob_effect/dodepovich_insurance.png",
+        "sha256": "d39f3b9a0600d8c43a96a319dc143011b46cd192b44df6663e0f1868ad88efdc"
+      }
+    },
+    {
+      "id": "dodepovich_damage_block",
+      "symbol": "DODEPOVICH_DAMAGE_BLOCK",
+      "implementation": {
+        "path": "src/main/java/org/example/maniacrevolution/effect/DodepovichSimpleEffect.java",
+        "sha256": "423ad447163de604416d718e844fd31d7348388260fb469f66776328f1d8b283"
+      },
+      "usages": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/dodepovich/DodepovichCasinoManager.java",
+          "line": 346,
+          "code": "player.addEffect(new MobEffectInstance(ModEffects.DODEPOVICH_DAMAGE_BLOCK.get(), DEBT_EFFECT_SECONDS * 20, 0, false, false, true));"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/event/DodepovichEffectHandler.java",
+          "line": 25,
+          "code": "if (player.hasEffect(ModEffects.DODEPOVICH_DAMAGE_BLOCK.get())) {"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/event/DodepovichEffectHandler.java",
+          "line": 26,
+          "code": "player.removeEffect(ModEffects.DODEPOVICH_DAMAGE_BLOCK.get());"
+        }
+      ],
+      "icon": {
+        "path": "src/main/resources/assets/maniacrev/textures/mob_effect/dodepovich_damage_block.png",
+        "sha256": "e6227195fbc6abf5604828df7e3b5b1d0fc0907826f9705d42f24f930adb747a"
+      }
+    },
+    {
+      "id": "dodepovich_double_damage",
+      "symbol": "DODEPOVICH_DOUBLE_DAMAGE",
+      "implementation": {
+        "path": "src/main/java/org/example/maniacrevolution/effect/DodepovichSimpleEffect.java",
+        "sha256": "423ad447163de604416d718e844fd31d7348388260fb469f66776328f1d8b283"
+      },
+      "usages": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/dodepovich/DodepovichCasinoManager.java",
+          "line": 349,
+          "code": "player.addEffect(new MobEffectInstance(ModEffects.DODEPOVICH_DOUBLE_DAMAGE.get(), DEBT_EFFECT_SECONDS * 20, 0, false, false, true));"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/event/DodepovichEffectHandler.java",
+          "line": 32,
+          "code": "if (player.hasEffect(ModEffects.DODEPOVICH_DOUBLE_DAMAGE.get())) {"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/event/DodepovichEffectHandler.java",
+          "line": 33,
+          "code": "player.removeEffect(ModEffects.DODEPOVICH_DOUBLE_DAMAGE.get());"
+        }
+      ],
+      "icon": {
+        "path": "src/main/resources/assets/maniacrev/textures/mob_effect/dodepovich_double_damage.png",
+        "sha256": "2e09d15ff4b856f5d46db7f17a71e3a8ee4cc8546706b792ac17dda99057a4bf"
+      }
+    },
+    {
+      "id": "dodepovich_credit",
+      "symbol": "DODEPOVICH_CREDIT",
+      "implementation": {
+        "path": "src/main/java/org/example/maniacrevolution/effect/DodepovichCreditEffect.java",
+        "sha256": "04df8cc1e0cf5ee91dca237c3c04e1baa04a797c3563577a3ad028238f24df55"
+      },
+      "usages": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/dodepovich/DodepovichCasinoManager.java",
+          "line": 218,
+          "code": "player.addEffect(new MobEffectInstance(ModEffects.DODEPOVICH_CREDIT.get(), 20 * CREDIT_TOTAL_SECONDS, 0, false, false, true));"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/event/DodepovichEffectHandler.java",
+          "line": 45,
+          "code": "if (!player.hasEffect(ModEffects.DODEPOVICH_CREDIT.get())) {"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/event/DodepovichEffectHandler.java",
+          "line": 53,
+          "code": "var effect = player.getEffect(ModEffects.DODEPOVICH_CREDIT.get());"
+        }
+      ],
+      "icon": {
+        "path": "src/main/resources/assets/maniacrev/textures/mob_effect/dodepovich_credit.png",
+        "sha256": "6ad726c8393a7134968a6ec9e09a80ac68e12db9cca0f10b1b247a5e3612794d"
+      }
+    },
+    {
+      "id": "dodepovich_slot_cooldown",
+      "symbol": "DODEPOVICH_SLOT_COOLDOWN",
+      "implementation": {
+        "path": "src/main/java/org/example/maniacrevolution/effect/DodepovichSimpleEffect.java",
+        "sha256": "423ad447163de604416d718e844fd31d7348388260fb469f66776328f1d8b283"
+      },
+      "usages": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/block/SlotMachineBlock.java",
+          "line": 128,
+          "code": "if (serverPlayer.hasEffect(ModEffects.DODEPOVICH_SLOT_COOLDOWN.get())) {"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/block/SlotMachineBlock.java",
+          "line": 142,
+          "code": "serverPlayer.addEffect(new MobEffectInstance(ModEffects.DODEPOVICH_SLOT_COOLDOWN.get(), 30 * 20, 0, false, false, true));"
+        }
+      ],
+      "icon": {
+        "path": "src/main/resources/assets/maniacrev/textures/mob_effect/dodepovich_slot_cooldown.png",
+        "sha256": "d4086c1a522eb493854372b94b80a73f6c08c6434d73d751b53ce1773a50e0b1"
+      }
+    },
+    {
+      "id": "jackpot",
+      "symbol": "JACKPOT",
+      "implementation": {
+        "path": "src/main/java/org/example/maniacrevolution/effect/JackpotEffect.java",
+        "sha256": "f04ddc3d2848be14e542352d44020b241fd14c4b0a9bed77763912fb9328a1c2"
+      },
+      "usages": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/block/SlotMachineBlock.java",
+          "line": 123,
+          "code": "if (serverPlayer.hasEffect(ModEffects.JACKPOT.get())) {"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/dodepovich/DodepovichCasinoManager.java",
+          "line": 391,
+          "code": "player.addEffect(new MobEffectInstance(ModEffects.JACKPOT.get(), JACKPOT_SECONDS * 20, 0, false, false, true));"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/dodepovich/DodepovichCasinoManager.java",
+          "line": 401,
+          "code": "return player != null && player.hasEffect(ModEffects.JACKPOT.get());"
+        }
+      ],
+      "icon": {
+        "path": "src/main/resources/assets/maniacrev/textures/mob_effect/jackpot.png",
+        "sha256": "1b5dee314f6506aef857a1ed5c967173fd834bc73fb344ca280f291f78fd130d"
+      }
+    },
+    {
+      "id": "acceleration",
+      "symbol": "ACCELERATION",
+      "implementation": {
+        "path": "src/main/java/org/example/maniacrevolution/effect/AccelerationEffect.java",
+        "sha256": "3a1f344772f4d656b9dffc9a9a205819aaaf95ccca1ef7a9581f2219bc0ba613"
+      },
+      "usages": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/perk/perks/maniac/HighVoltagePerk.java",
+          "line": 83,
+          "code": "MobEffectInstance current = player.getEffect(ModEffects.ACCELERATION.get());"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/perk/perks/maniac/HighVoltagePerk.java",
+          "line": 89,
+          "code": "ModEffects.ACCELERATION.get(),"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/perk/perks/survivor/FixedItImOutPerk.java",
+          "line": 113,
+          "code": "ModEffects.ACCELERATION.get(),"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/perk/perks/survivor/MagicKickPerk.java",
+          "line": 98,
+          "code": "ModEffects.ACCELERATION.get(),"
+        }
+      ],
+      "icon": {
+        "path": "src/main/resources/assets/maniacrev/textures/mob_effect/acceleration.png",
+        "sha256": "b8055bbb0a1cc9fa375868d6b2dfb89f32e6ded5191f4cb0b3bdd35377ddb7b1"
+      }
+    },
+    {
+      "id": "scream",
+      "symbol": "SCREAM",
+      "implementation": {
+        "path": "src/main/java/org/example/maniacrevolution/effect/ScreamEffect.java",
+        "sha256": "b71402bb5c941445f793db034d14c40fbda17c5cdeed77022bfa5c98a9e02263"
+      },
+      "usages": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/scream/ScreamManager.java",
+          "line": 35,
+          "code": "ModEffects.SCREAM.get(),"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/scream/ScreamManager.java",
+          "line": 47,
+          "code": "|| event.getEffectInstance().getEffect() != ModEffects.SCREAM.get()) {"
+        }
+      ],
+      "icon": {
+        "path": "src/main/resources/assets/maniacrev/textures/mob_effect/scream.png",
+        "sha256": "33e56854e3f9732c0c2fa97e589b9cfad5897b3ec35afb3b97f352d87c812f02"
+      }
+    },
+    {
+      "id": "slowdown",
+      "symbol": "SLOWDOWN",
+      "implementation": {
+        "path": "src/main/java/org/example/maniacrevolution/effect/SlowdownEffect.java",
+        "sha256": "075d25641787d6d74551d6ba910ac88525263fcac522d8bcb29037a13f83f342"
+      },
+      "usages": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/paint/PaintPuddleManager.java",
+          "line": 330,
+          "code": "ModEffects.SLOWDOWN.get(),"
+        }
+      ],
+      "icon": {
+        "path": "src/main/resources/assets/maniacrev/textures/mob_effect/slowdown.png",
+        "sha256": "bd9c8f1ec5344478bbbe15ce7bcd4edda2203d6f1cea70bd6fe04bd2c56edb67"
+      }
+    },
+    {
+      "id": "paint_protection",
+      "symbol": "PAINT_PROTECTION",
+      "implementation": {
+        "path": "src/main/java/org/example/maniacrevolution/effect/PaintProtectionEffect.java",
+        "sha256": "8a55b6033d85f6c56b0e256168e77467591c313878444001923ac724bb5a5903"
+      },
+      "usages": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/paint/PaintPuddleManager.java",
+          "line": 260,
+          "code": "|| player.hasEffect(ModEffects.PAINT_PROTECTION.get())) {"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/paint/PaintPuddleManager.java",
+          "line": 318,
+          "code": "ModEffects.PAINT_PROTECTION.get(),"
+        }
+      ],
+      "icon": {
+        "path": "src/main/resources/assets/maniacrev/textures/mob_effect/paint_protection.png",
+        "sha256": "e120dbf7ec104d0ad64eea7bfce5c282f0b64d5c47b66c9be1ecea675f5e4812"
+      }
+    },
+    {
+      "id": "bouquet",
+      "symbol": "BOUQUET",
+      "implementation": {
+        "path": "src/main/java/org/example/maniacrevolution/effect/BouquetEffect.java",
+        "sha256": "0ca81b38e59c719183ab0ff93d40a89fdb36d61cd4283bfedc01e3f555c084aa"
+      },
+      "usages": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/perk/perks/maniac/BouquetToTheOtherSidePerk.java",
+          "line": 207,
+          "code": "maniac.removeEffect(ModEffects.BOUQUET.get());"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/perk/perks/maniac/BouquetToTheOtherSidePerk.java",
+          "line": 220,
+          "code": "MobEffectInstance effect = maniac.getEffect(ModEffects.BOUQUET.get());"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/perk/perks/maniac/BouquetToTheOtherSidePerk.java",
+          "line": 251,
+          "code": "MobEffectInstance current = player.getEffect(ModEffects.BOUQUET.get());"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/perk/perks/maniac/BouquetToTheOtherSidePerk.java",
+          "line": 258,
+          "code": "ModEffects.BOUQUET.get(),"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/perk/perks/maniac/BouquetToTheOtherSidePerk.java",
+          "line": 269,
+          "code": "player.removeEffect(ModEffects.BOUQUET.get());"
+        }
+      ],
+      "icon": {
+        "path": "src/main/resources/assets/maniacrev/textures/mob_effect/bouquet.png",
+        "sha256": "438d0f9808ca96fdea85d8702a07c7109e87823e13f694e2e100fd6d9f60bf2e"
+      }
+    },
+    {
+      "id": "shaken_memory",
+      "symbol": "SHAKEN_MEMORY",
+      "implementation": {
+        "path": "src/main/java/org/example/maniacrevolution/effect/ShakenMemoryEffect.java",
+        "sha256": "fc2a05c9559383d0a7b2389dd2379cb7ce12523d6e02bec352789f28f2752041"
+      },
+      "usages": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/forgetmenot/ForgetMeNotManager.java",
+          "line": 180,
+          "code": "if (player.hasEffect(ModEffects.SHAKEN_MEMORY.get())) {"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/forgetmenot/ForgetMeNotManager.java",
+          "line": 292,
+          "code": "ModEffects.SHAKEN_MEMORY.get(),"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/forgetmenot/ForgetMeNotManager.java",
+          "line": 396,
+          "code": "|| isDowned(player) || player.hasEffect(ModEffects.SHAKEN_MEMORY.get())"
+        }
+      ],
+      "icon": {
+        "path": "src/main/resources/assets/maniacrev/textures/mob_effect/shaken_memory.png",
+        "sha256": "8cc7a4f43a640b833834a53ea4f0327e5aae8e9a3e0fe1488625730cc12298c8"
+      }
+    },
+    {
+      "id": "forget_me_not_call",
+      "symbol": "FORGET_ME_NOT_CALL",
+      "implementation": {
+        "path": "src/main/java/org/example/maniacrevolution/effect/ForgetMeNotCallEffect.java",
+        "sha256": "73a0590d78a215e0ec1b99782ed4b06b4d9ec6146f8213f58d696d629413abaa"
+      },
+      "usages": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/forgetmenot/ForgetMeNotManager.java",
+          "line": 205,
+          "code": "ModEffects.FORGET_ME_NOT_CALL.get(),"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/forgetmenot/ForgetMeNotManager.java",
+          "line": 311,
+          "code": "player.removeEffect(ModEffects.FORGET_ME_NOT_CALL.get());"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/forgetmenot/ForgetMeNotManager.java",
+          "line": 408,
+          "code": "player.removeEffect(ModEffects.FORGET_ME_NOT_CALL.get());"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/forgetmenot/ForgetMeNotManager.java",
+          "line": 428,
+          "code": "player.removeEffect(ModEffects.FORGET_ME_NOT_CALL.get());"
+        }
+      ],
+      "icon": {
+        "path": "src/main/resources/assets/maniacrev/textures/mob_effect/forget_me_not_call.png",
+        "sha256": "cafefaea20be955f9e412fbcf326b17cc9a783272c478e6c7232d4aa4a52dbca"
+      }
+    },
+    {
+      "id": "rose_colored_glasses",
+      "symbol": "ROSE_COLORED_GLASSES",
+      "implementation": {
+        "path": "src/main/java/org/example/maniacrevolution/effect/RoseColoredGlassesEffect.java",
+        "sha256": "0fa51b477b47063797a829ec32bf2b85a810b517de2d46eae4a4b1ed67a0bb7f"
+      },
+      "usages": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/hud/RoseColoredGlassesClientEvents.java",
+          "line": 32,
+          "code": "&& minecraft.player.hasEffect(ModEffects.ROSE_COLORED_GLASSES.get());"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/roseglasses/RoseColoredGlassesManager.java",
+          "line": 93,
+          "code": "|| !player.hasEffect(ModEffects.ROSE_COLORED_GLASSES.get())"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/roseglasses/RoseColoredGlassesManager.java",
+          "line": 143,
+          "code": "player.removeEffect(ModEffects.ROSE_COLORED_GLASSES.get());"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/roseglasses/RoseColoredGlassesManager.java",
+          "line": 199,
+          "code": "MobEffectInstance current = player.getEffect(ModEffects.ROSE_COLORED_GLASSES.get());"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/roseglasses/RoseColoredGlassesManager.java",
+          "line": 202,
+          "code": "ModEffects.ROSE_COLORED_GLASSES.get(),"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/roseglasses/RoseColoredGlassesManager.java",
+          "line": 220,
+          "code": "player.removeEffect(ModEffects.ROSE_COLORED_GLASSES.get());"
+        }
+      ],
+      "icon": {
+        "path": "src/main/resources/assets/maniacrev/textures/mob_effect/rose_colored_glasses.png",
+        "sha256": "9d47a1f06773731f05b325c5c5dbc978b869b2aa3d6819a94cdd51bc708b0701"
+      }
+    },
+    {
+      "id": "orchid_recording",
+      "symbol": "ORCHID_RECORDING",
+      "implementation": {
+        "path": "src/main/java/org/example/maniacrevolution/effect/OrchidRecordingEffect.java",
+        "sha256": "e8d7f3610cebcfed177e7a6a8cbd306c67bcffad3b24d297dfcc554f8d59e4b6"
+      },
+      "usages": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/pinkorchid/PinkOrchidManager.java",
+          "line": 199,
+          "code": "owner.removeEffect(ModEffects.ORCHID_RECORDING.get());"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/pinkorchid/PinkOrchidManager.java",
+          "line": 304,
+          "code": "ModEffects.ORCHID_RECORDING.get(),"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/pinkorchid/PinkOrchidManager.java",
+          "line": 341,
+          "code": "player.removeEffect(ModEffects.ORCHID_RECORDING.get());"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/pinkorchid/PinkOrchidManager.java",
+          "line": 441,
+          "code": "player.removeEffect(ModEffects.ORCHID_RECORDING.get());"
+        }
+      ],
+      "icon": {
+        "path": "src/main/resources/assets/maniacrev/textures/mob_effect/orchid_recording.png",
+        "sha256": "5118c5ea388556fe465e1d4c79964ab34e8ee7f6c5cf32668c632967e06e48d3"
+      }
+    },
+    {
+      "id": "sber_sprout_session",
+      "symbol": "SBER_SPROUT_SESSION",
+      "implementation": {
+        "path": "src/main/java/org/example/maniacrevolution/effect/SberSproutSessionEffect.java",
+        "sha256": "730420b825e7967157cd599c3ac68506de2ac70064f2510e49e157529e9d2ad2"
+      },
+      "usages": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/sbersprout/SberSproutManager.java",
+          "line": 308,
+          "code": "player.removeEffect(ModEffects.SBER_SPROUT_SESSION.get());"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/sbersprout/SberSproutManager.java",
+          "line": 321,
+          "code": "player.removeEffect(ModEffects.SBER_SPROUT_SESSION.get());"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/sbersprout/SberSproutManager.java",
+          "line": 428,
+          "code": "MobEffectInstance effect = player.getEffect(ModEffects.SBER_SPROUT_SESSION.get());"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/sbersprout/SberSproutManager.java",
+          "line": 436,
+          "code": "player.addEffect(new MobEffectInstance(ModEffects.SBER_SPROUT_SESSION.get(),"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/sbersprout/SberSproutManager.java",
+          "line": 515,
+          "code": "player.removeEffect(ModEffects.SBER_SPROUT_SESSION.get());"
+        }
+      ],
+      "icon": {
+        "path": "src/main/resources/assets/maniacrev/textures/mob_effect/sber_sprout_session.png",
+        "sha256": "d3e2b2c203d09e4b9cd6106aec4f4bdb9c206f3627e8856b74d58e9fd255314b"
+      }
+    },
+    {
+      "id": "red_guidance",
+      "symbol": "RED_GUIDANCE",
+      "implementation": {
+        "path": "src/main/java/org/example/maniacrevolution/effect/RedGuidanceEffect.java",
+        "sha256": "f1a15a906a665fcc73e97401414a253b378c926fce695ebbe942c08c32b98eeb"
+      },
+      "usages": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/colorroulette/ColorRouletteManager.java",
+          "line": 223,
+          "code": "player.addEffect(new MobEffectInstance(ModEffects.RED_GUIDANCE.get(),"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/colorroulette/ColorRouletteManager.java",
+          "line": 433,
+          "code": "player.removeEffect(ModEffects.RED_GUIDANCE.get());"
+        }
+      ],
+      "icon": {
+        "path": "src/main/resources/assets/maniacrev/textures/mob_effect/red_guidance.png",
+        "sha256": "4a4ec2bbe154c5033dffb3c17111ad683cfae65b33f381d38d90e3288e8ebeeb"
+      }
+    },
+    {
+      "id": "green_charge",
+      "symbol": "GREEN_CHARGE",
+      "implementation": {
+        "path": "src/main/java/org/example/maniacrevolution/effect/GreenChargeEffect.java",
+        "sha256": "1a824df4355dcb078cbf09d369f9c53a75a90e174f20556334bf9ac0450f1be7"
+      },
+      "usages": [
+        {
+          "path": "src/main/java/org/example/maniacrevolution/colorroulette/ColorRouletteManager.java",
+          "line": 147,
+          "code": "MobEffectInstance current = player.getEffect(ModEffects.GREEN_CHARGE.get());"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/colorroulette/ColorRouletteManager.java",
+          "line": 149,
+          "code": "player.addEffect(new MobEffectInstance(ModEffects.GREEN_CHARGE.get(), -1,"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/colorroulette/ColorRouletteManager.java",
+          "line": 311,
+          "code": "MobEffectInstance charge = attacker.getEffect(ModEffects.GREEN_CHARGE.get());"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/colorroulette/ColorRouletteManager.java",
+          "line": 316,
+          "code": "attacker.removeEffect(ModEffects.GREEN_CHARGE.get());"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/colorroulette/ColorRouletteManager.java",
+          "line": 434,
+          "code": "player.removeEffect(ModEffects.GREEN_CHARGE.get());"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/hud/CustomHud.java",
+          "line": 230,
+          "code": "if (effectType == ModEffects.GREEN_CHARGE.get()) {"
+        },
+        {
+          "path": "src/main/java/org/example/maniacrevolution/hud/CustomHud.java",
+          "line": 258,
+          "code": "|| effect.getEffect() == ModEffects.GREEN_CHARGE.get());"
+        }
+      ],
+      "icon": {
+        "path": "src/main/resources/assets/maniacrev/textures/mob_effect/green_charge.png",
+        "sha256": "3500ca99870ac40db17ec6e37a2cef60efbea3a899e7d53575ffe25cdb061979"
+      }
+    }
+  ]
+}

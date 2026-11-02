@@ -1,4 +1,4 @@
-import { characterSummaries } from "./wiki/data/registry";
+import { characterSummaries } from "./wiki/data/character-summaries";
 // Editorial summaries of the public 1.0–1.2 chronicles and Minecraft Inside.
 // Sources and verified archive/mirror checksum: CONTENT_SOURCES.md.
 export const download = {

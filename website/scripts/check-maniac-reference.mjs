@@ -26,11 +26,14 @@ try {
   const { perkCatalog, abilityCatalog } = await server.ssrLoadModule(
     "/" + base + "data/reference-catalog.ts",
   );
-  const { entities, getRevision } = await server.ssrLoadModule(
+  const { entities, getEntity, getRevision } = await server.ssrLoadModule(
     "/" + base + "data/registry.ts",
   );
   const { publishedEntityRoutes } = await server.ssrLoadModule(
     "/" + base + "data/publication.ts",
+  );
+  const { referenceChronicles } = await server.ssrLoadModule(
+    "/" + base + "data/reference-chronicles.ts",
   );
   assert.equal(perkCatalog.length, 44);
   assert.equal(abilityCatalog.length, 12);
@@ -90,17 +93,29 @@ try {
     );
     assert.equal(hash(bytes), asset.sha256);
   }
+  const { currentDescription, formatGameText } = await server.ssrLoadModule(
+    "/" + base + "data/current-descriptions.ts",
+  );
   for (const entry of [...perkCatalog, ...abilityCatalog]) {
     const kind = entry.id.startsWith("perk:") ? "perk" : "ability";
     const route = publishedEntityRoutes[entry.id];
     assert.ok(route);
     const html = await readFile("build/client" + route + ".html", "utf8");
+    for (const release of referenceChronicles(getEntity(entry.id))) {
+      assert.ok(html.includes(`href="${release.href}"`), entry.id);
+      assert.ok(
+        html.includes(`<strong>${escape(release.title)}</strong>`),
+        entry.id,
+      );
+    }
     const article = await json(
       base + "data/" + kind + "-articles/" + entry.slug + ".json",
     );
     assert.equal(article.id, entry.id);
     assert.ok(
-      html.includes(escape(article.description)),
+      html
+        .replace(/<[^>]*>/g, "")
+        .includes(escape(currentDescription(entry.id, article.description))),
       entry.id + " full SSG text",
     );
     assert.doesNotMatch(article.description, /%(?:[sd]|\.[0-9]+f)/);

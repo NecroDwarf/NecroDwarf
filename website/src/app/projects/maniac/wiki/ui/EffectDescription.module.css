@@ -1,0 +1,13 @@
+.description {
+  white-space: pre-line;
+}
+.description a {
+  color: var(--accent, var(--jade-glow));
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.description a:hover,
+.description a:focus-visible {
+  background: #35303b;
+  text-decoration-thickness: 2px;
+}

@@ -1,0 +1,24 @@
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 48px;
+  max-width: 100%;
+  padding: 12px 18px;
+  border: 1px solid var(--iron);
+  background: transparent;
+  color: var(--bone);
+  font: 500 18px/1.4 var(--font-body);
+  text-decoration: none;
+}
+.backLink:hover,
+.backLink:focus-visible {
+  background: var(--stone);
+  border-color: var(--accent, var(--project-accent, var(--jade-glow)));
+  color: var(--bone);
+}
+.arrow {
+  flex-shrink: 0;
+  color: var(--accent, var(--project-accent, var(--jade-glow)));
+  font-size: 22px;
+}

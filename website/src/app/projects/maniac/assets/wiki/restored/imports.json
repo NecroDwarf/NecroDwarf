@@ -1,0 +1,84 @@
+{
+  "commit": "8692f66dc76582144be85d553d43a41f189b64e7",
+  "renderer": "Orthographic CPU cuboid/UV rasterization, original GUI rotation, depth buffer; 256px transparent PNG",
+  "files": [
+    {
+      "slug": "death-scythe",
+      "width": 256,
+      "height": 256,
+      "kind": "item-render",
+      "sha256": "73a74cff606f2182df918ff63fec6d5f7e69c0001a8438c6c0540089d27d292e",
+      "model": "src/main/resources/assets/maniacrev/models/item/death_scythe.json"
+    },
+    {
+      "slug": "plague-lantern",
+      "width": 256,
+      "height": 256,
+      "kind": "item-render",
+      "sha256": "92557dd3195349aa8f2a769f0eba29e6a36fd64e54fb9429d24822958f0f0da9",
+      "model": "src/main/resources/assets/maniacrev/models/item/plague_lantern.json"
+    },
+    {
+      "slug": "agent47-tablet",
+      "width": 256,
+      "height": 256,
+      "kind": "item-render",
+      "sha256": "ce742ab47b347ab6d2b67be1ded095a834f497d8104dec20a96b3095dc3e5f3c",
+      "model": "src/main/resources/assets/maniacrev/models/item/agent47_tablet_base.json"
+    },
+    {
+      "slug": "clarity",
+      "width": 32,
+      "height": 32,
+      "kind": "pixel-texture",
+      "sha256": "b8ce4023c5189476b64a96cfb121c4c4fd0d28b31066ad8f6fa5feafad88567b",
+      "source": "src/main/resources/assets/maniacrev/textures/item/clarity.png"
+    },
+    {
+      "slug": "rose-colored-glasses",
+      "width": 18,
+      "height": 18,
+      "kind": "pixel-texture",
+      "sha256": "9d47a1f06773731f05b325c5c5dbc978b869b2aa3d6819a94cdd51bc708b0701",
+      "source": "src/main/resources/assets/maniacrev/textures/mob_effect/rose_colored_glasses.png"
+    }
+  ],
+  "sources": [
+    {
+      "path": "src/main/resources/assets/maniacrev/models/item/death_scythe.json",
+      "sha256": "a18b229d53f97c65e89493a63783acf90d932454084c03bc401a9c5e9911182a"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/item/scythe_texture.png",
+      "sha256": "1ea7cde8bd57d6fb523dc48d242e19d0713d285f17d4189d48855811305df48d"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/models/item/plague_lantern.json",
+      "sha256": "3971783e15681abf0dca04d0368998ae0d5d7e865ba090630840c08629822bcd"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/item/texture_edging.png",
+      "sha256": "28a06a92e11bb5155d4d4651b307c09e651786d1c0a12f3bad0a8f83e98c91f7"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/item/texture.png",
+      "sha256": "e2af7ce6ed3d49b1681539436b4b3af27dc5dea5671555dd1b294b50c64f0a85"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/models/item/agent47_tablet_base.json",
+      "sha256": "9c53d03b353f71bccfcdbd5cda5d5809f2ff9236c903afd546d66642217eec17"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/item/texture2.png",
+      "sha256": "f85787afcfc7b373bbe63e2a740637a594cc308faaf254ac64d814bfa00faffa"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/item/clarity.png",
+      "sha256": "b8ce4023c5189476b64a96cfb121c4c4fd0d28b31066ad8f6fa5feafad88567b"
+    },
+    {
+      "path": "src/main/resources/assets/maniacrev/textures/mob_effect/rose_colored_glasses.png",
+      "sha256": "9d47a1f06773731f05b325c5c5dbc978b869b2aa3d6819a94cdd51bc708b0701"
+    }
+  ]
+}

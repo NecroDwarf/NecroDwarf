@@ -125,7 +125,7 @@
     "team": "ALL",
     "perkType": "PASSIVE",
     "phases": ["REVERSAL"],
-    "description": "Внемли силе земли!",
+    "description": "Даёт Силу I в фазе «Переворот».",
     "icon": "registered-str-perk",
     "stats": [],
     "evidence": [
@@ -148,7 +148,7 @@
     "team": "ALL",
     "perkType": "PASSIVE_COOLDOWN",
     "phases": ["ANY"],
-    "description": "Удар по противнику снимает 10 ед.",
+    "description": "Удар по противнику снимает {{manaBreak.amount}} маны.",
     "icon": "registered-mana-break",
     "stats": [
       {
@@ -178,7 +178,7 @@
     "team": "ALL",
     "perkType": "ACTIVE",
     "phases": ["ANY"],
-    "description": "На 5 сек.",
+    "description": "На {{thorn.seconds}} сек. возвращает атакующему {{thorn.reflectedPercent}}% полученного урона. Входящий урон не снижает.",
     "icon": "registered-hedgehog-skin",
     "stats": [
       {
@@ -190,7 +190,7 @@
       {
         "key": "mana",
         "label": "Стоимость срабатывания",
-        "value": 10.0,
+        "value": 10,
         "unit": "mana"
       }
     ],
@@ -217,7 +217,7 @@
     "team": "ALL",
     "perkType": "ACTIVE",
     "phases": ["ANY"],
-    "description": "Бросает пиво, обездвиживая выжившего на 60 сек.",
+    "description": "Обездвиживает владельца, затем выдаёт Балтику: 60 сек. за выжившего, 30 сек. за маньяка.",
     "icon": "registered-football-fan",
     "stats": [],
     "evidence": [
@@ -499,7 +499,7 @@
       {
         "key": "mana",
         "label": "Стоимость срабатывания",
-        "value": 10.0,
+        "value": 10,
         "unit": "mana"
       }
     ],
@@ -535,7 +535,7 @@
       {
         "key": "mana",
         "label": "Стоимость срабатывания",
-        "value": 5.0,
+        "value": 5,
         "unit": "mana"
       }
     ],
@@ -654,7 +654,7 @@
     "team": "SURVIVOR",
     "perkType": "ACTIVE",
     "phases": ["ANY"],
-    "description": "Только во время взлома: на 8 сек.",
+    "description": "На {{overclock.seconds}} сек.: обычный вклад во взлом отключён; успех QTE +{{overclock.successPercent}}%, крит +{{overclock.criticalPercent}}%. Провал: −{{overclock.failurePoints}} очка прогресса и Тишина на {{overclock.silenceSeconds}} сек.",
     "icon": "registered-emergency-overclock",
     "stats": [
       {
@@ -666,7 +666,7 @@
       {
         "key": "mana",
         "label": "Стоимость срабатывания",
-        "value": 15.0,
+        "value": 15,
         "unit": "mana"
       }
     ],
@@ -748,7 +748,7 @@
       {
         "key": "mana",
         "label": "Стоимость срабатывания",
-        "value": 10.0,
+        "value": 10,
         "unit": "mana"
       }
     ],
@@ -772,7 +772,7 @@
     "team": "SURVIVOR",
     "perkType": "PASSIVE",
     "phases": ["HUNT", "MIDGAME"],
-    "description": "В начале матча вы получаете привязанные Розовые очки с прочностью 15.",
+    "description": "Выдаёт Розовые очки: −{{glasses.reductionPercent}}% входящего урона во второй руке, прочность {{glasses.durability}}. Работают в фазах 1–2.",
     "icon": "registered-rose-colored-glasses",
     "stats": [],
     "evidence": [
@@ -801,14 +801,14 @@
       {
         "key": "cooldown",
         "label": "Перезарядка",
-        "value": 45,
-        "unit": "seconds"
+        "unit": "seconds",
+        "valueRef": "orchid.cooldownSeconds"
       },
       {
         "key": "mana",
         "label": "Стоимость срабатывания",
-        "value": 10,
-        "unit": "mana"
+        "unit": "mana",
+        "valueRef": "orchid.mana"
       }
     ],
     "evidence": [
@@ -837,8 +837,8 @@
       {
         "key": "mana",
         "label": "Стоимость срабатывания",
-        "value": 5,
-        "unit": "mana"
+        "unit": "mana",
+        "valueRef": "sprout.mana"
       }
     ],
     "evidence": [
@@ -970,7 +970,7 @@
     "team": "MANIAC",
     "perkType": "PASSIVE",
     "phases": ["HUNT", "MIDGAME"],
-    "description": "Каждый активный выживший раз в 6 сек.",
+    "description": "Выжившие каждые {{flowerTrail.intervalSeconds}} сек. оставляют цветочный след на {{flowerTrail.lifetimeSeconds}} сек. Следы видят только маньяки с этим перком.",
     "icon": "registered-flowers-lead-the-investigation",
     "stats": [],
     "evidence": [
@@ -1022,7 +1022,7 @@
       {
         "key": "mana",
         "label": "Стоимость срабатывания",
-        "value": 3.0,
+        "value": 3,
         "unit": "mana"
       }
     ],
@@ -1088,7 +1088,7 @@
       {
         "key": "mana",
         "label": "Стоимость срабатывания",
-        "value": 10.0,
+        "value": 10,
         "unit": "mana"
       }
     ],
@@ -1147,7 +1147,7 @@
       {
         "key": "mana",
         "label": "Стоимость срабатывания",
-        "value": 10.0,
+        "value": 10,
         "unit": "mana"
       }
     ],
@@ -1183,7 +1183,7 @@
       {
         "key": "mana",
         "label": "Стоимость срабатывания",
-        "value": 2.0,
+        "value": 2,
         "unit": "mana"
       }
     ],
@@ -1279,7 +1279,7 @@
       {
         "key": "mana",
         "label": "Стоимость срабатывания",
-        "value": 2.0,
+        "value": 2,
         "unit": "mana"
       }
     ],

@@ -16,23 +16,28 @@ const sections: Record<EntityKind, string> = {
 export function plannedEntityPath(kind: EntityKind, slug: string) {
   return `/projects/maniac/wiki/${sections[kind]}/${slug}`;
 }
-// Only existing SSG articles: characters, registered perks and verified abilities.
+// Published SSG metadata only: links must not import gameplay data or snapshots.
+const publishedEntries = (
+  [
+    ["map", mapRouteMeta],
+    ["item", itemRouteMeta],
+    ["mechanic", mechanicRouteMeta],
+    ["character", characterRouteMeta],
+    ["perk", perkRouteMeta],
+    ["ability", abilityRouteMeta],
+  ] as const
+).flatMap(([kind, entries]) =>
+  entries.map(
+    (entry) =>
+      [
+        entry.id,
+        { name: entry.name, href: plannedEntityPath(kind, entry.slug) },
+      ] as const,
+  ),
+);
+export const publishedEntityMeta: Readonly<
+  Partial<Record<EntityId, { name: string; href: string }>>
+> = Object.fromEntries(publishedEntries);
 export const publishedEntityRoutes: Readonly<
   Partial<Record<EntityId, string>>
-> = Object.fromEntries([
-  ...mapRouteMeta.map((m) => [m.id, plannedEntityPath("map", m.slug)]),
-  ...itemRouteMeta.map((item) => [
-    item.id,
-    plannedEntityPath("item", item.slug),
-  ]),
-  ...mechanicRouteMeta.map((m) => [
-    m.id,
-    plannedEntityPath("mechanic", m.slug),
-  ]),
-  ...characterRouteMeta.map((c) => [
-    c.id,
-    plannedEntityPath("character", c.slug),
-  ]),
-  ...perkRouteMeta.map((p) => [p.id, plannedEntityPath("perk", p.slug)]),
-  ...abilityRouteMeta.map((a) => [a.id, plannedEntityPath("ability", a.slug)]),
-]);
+> = Object.fromEntries(publishedEntries.map(([id, meta]) => [id, meta.href]));

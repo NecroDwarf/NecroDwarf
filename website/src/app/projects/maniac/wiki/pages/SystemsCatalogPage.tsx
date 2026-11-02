@@ -1,49 +1,104 @@
-import { useState } from "react";
+import { StatText } from "../ui/StatText";
+import { useUrlFilter } from "../../../../shared/lib/use-url-filter";
+import { CatalogSelect } from "../ui/CatalogSelect";
 import { Link } from "react-router";
 import {
-  itemCatalog,
+  type ItemMeta,
+  listedItems,
   mechanicCatalog,
   itemCategoryLabels,
   mechanicCategoryLabels,
 } from "../data/systems-catalog";
-import { characters } from "../data/characters";
-import { entityAssets } from "../data/assets";
-import { equipmentAssets } from "../data/equipment-assets";
-import { EntityIcon } from "../ui/EntityIcon";
+import { characterNames } from "../data/character-names";
+import { matchesItemTeam, itemOwnerGroup } from "../data/owner-teams";
+import { CharacterFilter } from "../ui/CharacterFilter";
+import {
+  CatalogHeader,
+  CatalogSearch,
+  CatalogResultCount,
+  useCatalogSearch,
+  CatalogGroup,
+  catalogGroups,
+} from "../ui/CatalogControls";
+import { SystemIcon } from "../ui/SystemIcon";
+import { InlineStat } from "../ui/InlineStat";
 import { WikiLayout, DataNote } from "./WikiLayout";
 import s from "./Wiki.module.css";
 import r from "./Reference.module.css";
 export function SystemsCatalogPage({ kind }: { kind: "item" | "mechanic" }) {
-  const [query, setQuery] = useState(""),
-    [category, setCategory] = useState(""),
-    [owner, setOwner] = useState("");
-  const entries = kind === "item" ? itemCatalog : mechanicCatalog,
+  const { query, setQuery, matchesName } = useCatalogSearch();
+  const [category, setCategory] = useUrlFilter("category", ""),
+    [owner, setOwner] = useUrlFilter("owner", "");
+  const [team, setTeam] = useUrlFilter("team", "all");
+  const entries = kind === "item" ? listedItems : mechanicCatalog,
     labels = kind === "item" ? itemCategoryLabels : mechanicCategoryLabels;
-  const normalized = (value: string) =>
-    value.toLocaleLowerCase("ru").replaceAll("ё", "е").trim();
   const visible = entries.filter(
     (e) =>
-      normalized(e.name).includes(normalized(query)) &&
+      matchesName(e.name) &&
       (!category || e.category === category) &&
+      (kind !== "item" ||
+        ("characterIds" in e && matchesItemTeam(e as ItemMeta, team))) &&
       (!owner ||
-        ("characterIds" in e &&
-          e.characterIds.includes(owner as `character:${string}`))),
+        ("characterIds" in e && e.characterIds.some((id) => id === owner))),
   );
   const reset = () => {
     setQuery("");
     setCategory("");
     setOwner("");
+    setTeam("all");
   };
   const section = kind === "item" ? "items" : "mechanics";
+  const renderCards = (cards: typeof visible) => (
+    <div className={r.referenceGrid}>
+      {cards.map((entry) => {
+        const damage =
+          entry.category === "weapon"
+            ? entry.stats.find((stat) => stat.key === "base-damage")
+            : undefined;
+        return (
+          <Link
+            key={entry.id}
+            to={`/projects/maniac/wiki/${section}/${entry.slug}`}
+            className={r.referenceCard}
+            data-system-id={entry.id}
+          >
+            <div className={r.cardHeading}>
+              <SystemIcon id={entry.id} icon={entry.icon} />
+              <div>
+                <p className={s.eyebrow}>{labels[entry.category]}</p>
+                <h3>{entry.name}</h3>
+              </div>
+            </div>
+            <p className={r.description}>
+              <StatText text={entry.description} interactive={false} />
+            </p>
+            {damage && (
+              <p className={r.weaponDamage}>
+                <span>{damage.label}</span>
+                <strong>
+                  {String(damage.value).replace(".", ",")}{" "}
+                  <InlineStat name="damage" interactive={false} />
+                </strong>
+              </p>
+            )}
+            {"characterIds" in entry && !!entry.characterIds.length && (
+              <p className={r.ownerLabel}>
+                {characterNames(entry.characterIds)}
+              </p>
+            )}
+            <span className={s.textLink}>Читать статью →</span>
+          </Link>
+        );
+      })}
+    </div>
+  );
   return (
     <WikiLayout>
       <div className={s.container}>
-        <header className={s.catalogHead}>
-          <p className={s.eyebrow}>
-            MANIAC WIKI / {kind === "item" ? "ПРЕДМЕТЫ" : "МЕХАНИКИ"}
-          </p>
-          <h1>
-            {kind === "item" ? (
+        <CatalogHeader
+          label={kind === "item" ? "ПРЕДМЕТЫ" : "МЕХАНИКИ"}
+          title={
+            kind === "item" ? (
               <>
                 Ваше <em>снаряжение.</em>
               </>
@@ -51,67 +106,52 @@ export function SystemsCatalogPage({ kind }: { kind: "item" | "mechanic" }) {
               <>
                 Правила <em>охоты.</em>
               </>
-            )}
-          </h1>
-          <p className={s.lead}>
-            {kind === "item"
-              ? `${entries.length} подтверждённых предметов и наборов: назначение, применение и связи с персонажами.`
-              : `${entries.length} игровых систем: от начала матча и взлома до испытаний и особых ресурсов.`}
-          </p>
-        </header>
+            )
+          }
+        >
+          {kind === "item"
+            ? `${entries.length} подтверждённых предметов и наборов: назначение, применение и связи с персонажами.`
+            : `${entries.length} игровых систем: от начала матча и взлома до испытаний и особых ресурсов.`}
+        </CatalogHeader>
         <div className={s.filters}>
-          <label className={s.search}>
-            Поиск по названию
-            <input
-              type="search"
-              value={query}
-              placeholder="Название…"
-              onChange={(e) => setQuery(e.target.value)}
-            />
-          </label>
-          <label className={r.selectLabel}>
-            Категория
-            <select
-              aria-label="Категория"
-              value={category}
-              onChange={(e) => setCategory(e.target.value)}
-            >
-              <option value="">Все категории · {entries.length}</option>
-              {Object.entries(labels)
-                .filter(([key]) => entries.some((e) => e.category === key))
-                .map(([key, name]) => (
-                  <option key={key} value={key}>
-                    {name} · {entries.filter((e) => e.category === key).length}
-                  </option>
-                ))}
-            </select>
-          </label>
+          <CatalogSearch value={query} onChange={setQuery} />
+          <CatalogSelect
+            label="Категория"
+            ariaLabel="Категория"
+            value={category}
+            onChange={setCategory}
+          >
+            <option value="">Все категории · {entries.length}</option>
+            {Object.entries(labels)
+              .filter(([key]) => entries.some((e) => e.category === key))
+              .map(([key, name]) => (
+                <option key={key} value={key}>
+                  {name} · {entries.filter((e) => e.category === key).length}
+                </option>
+              ))}
+          </CatalogSelect>
           {kind === "item" && (
-            <label className={r.selectLabel}>
-              Персонаж
-              <select
-                aria-label="Персонаж предмета"
-                value={owner}
-                onChange={(e) => setOwner(e.target.value)}
+            <>
+              <CatalogSelect
+                label="Команда владельца"
+                ariaLabel="Команда владельца предмета"
+                value={team}
+                onChange={setTeam}
               >
-                <option value="">Все персонажи</option>
-                {characters
-                  .filter((c) =>
-                    itemCatalog.some((item) =>
-                      item.characterIds.includes(c.id),
-                    ),
-                  )
-                  .map((c) => (
-                    <option value={c.id} key={c.id}>
-                      {c.name}
-                    </option>
-                  ))}
-              </select>
-            </label>
+                <option value="all">Все команды</option>
+                <option value="maniac">Маньяки</option>
+                <option value="survivor">Выжившие</option>
+                <option value="unassigned">Без указанного владельца</option>
+              </CatalogSelect>
+              <CharacterFilter
+                entries={listedItems}
+                label="Персонаж предмета"
+                value={owner}
+                onChange={setOwner}
+              />
+            </>
           )}
-          <p role="status" aria-live="polite">
-            Найдено: {visible.length}
-          </p>
+          <CatalogResultCount count={visible.length} />
         </div>
         <noscript>
           <p>
@@ -120,7 +160,7 @@ export function SystemsCatalogPage({ kind }: { kind: "item" | "mechanic" }) {
           </p>
         </noscript>
         <DataNote />
-        {(query || category || owner) && (
+        {(query || category || owner || team !== "all") && (
           <button className={r.reset} onClick={reset}>
             Сбросить фильтры
           </button>
@@ -130,41 +170,42 @@ export function SystemsCatalogPage({ kind }: { kind: "item" | "mechanic" }) {
             <h2>Ничего не найдено</h2>
             <p>Измените запрос или сбросьте фильтры.</p>
           </div>
-        ) : (
-          <div className={r.referenceGrid}>
-            {visible.map((entry) => {
-              const asset = entry.icon
-                ? entityAssets[entry.icon]
-                : kind === "item"
-                  ? equipmentAssets[entry.slug]
-                  : undefined;
-              return (
-                <Link
-                  key={entry.id}
-                  to={`/projects/maniac/wiki/${section}/${entry.slug}`}
-                  className={r.referenceCard}
-                  data-system-id={entry.id}
-                >
-                  <div className={r.cardHeading}>
-                    {asset && <EntityIcon asset={asset} />}
-                    <div>
-                      <p className={s.eyebrow}>{labels[entry.category]}</p>
-                      <h2>{entry.name}</h2>
-                    </div>
-                  </div>
-                  <p className={r.description}>{entry.description}</p>
-                  {"characterIds" in entry && !!entry.characterIds.length && (
-                    <p className={r.ownerLabel}>
-                      {entry.characterIds
-                        .map((id) => characters.find((c) => c.id === id)?.name)
-                        .join(", ")}
-                    </p>
-                  )}
-                  <span className={s.textLink}>Читать статью →</span>
-                </Link>
+        ) : kind === "item" ? (
+          (["maniac", "survivor", "both", "unassigned"] as const).map(
+            (side) => {
+              const group = visible.filter(
+                (entry) =>
+                  "characterIds" in entry &&
+                  itemOwnerGroup(entry as ItemMeta) === side,
               );
-            })}
-          </div>
+              return (
+                <CatalogGroup
+                  key={side}
+                  {...catalogGroups[side]}
+                  count={group.length}
+                >
+                  {renderCards(group)}
+                </CatalogGroup>
+              );
+            },
+          )
+        ) : (
+          Object.entries(mechanicCategoryLabels).map(([categoryId, label]) => {
+            const group = visible.filter(
+              (entry) => entry.category === categoryId,
+            );
+            return (
+              <CatalogGroup
+                key={categoryId}
+                id={categoryId}
+                label={label}
+                kicker="ИГРОВЫЕ ПРАВИЛА И ВЗАИМОДЕЙСТВИЯ"
+                count={group.length}
+              >
+                {renderCards(group)}
+              </CatalogGroup>
+            );
+          })
         )}
       </div>
     </WikiLayout>

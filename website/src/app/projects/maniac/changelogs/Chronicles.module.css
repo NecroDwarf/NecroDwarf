@@ -690,9 +690,6 @@
   margin-inline: auto;
 }
 .indexHead > a {
-  color: var(--ash);
-  font-size: 14px;
-  display: inline-block;
   margin-bottom: 42px;
 }
 .indexHead h1 {

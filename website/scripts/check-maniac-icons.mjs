@@ -52,6 +52,98 @@ try {
       e.id,
     );
   }
+  const { mechanicIconAssets, systemIconAsset } = await server.ssrLoadModule(
+    root + "data/system-icons.ts",
+  );
+  const { mechanicCatalog } = await server.ssrLoadModule(
+    root + "data/systems-catalog.ts",
+  );
+  assert.equal(Object.keys(mechanicIconAssets).length, mechanicCatalog.length);
+  const distinct = new Set();
+  for (const mechanic of mechanicCatalog) {
+    assert.equal(systemIconAsset(mechanic.id)?.entityId, mechanic.id);
+    const svg = await readFile(
+      `src/app/projects/maniac/assets/wiki/mechanics/${mechanic.slug}.svg`,
+      "utf8",
+    );
+    assert.match(svg, /viewBox="0 0 64 64"/);
+    assert.doesNotMatch(svg, /<script|<image|href=/);
+    distinct.add(createHash("sha256").update(svg).digest("hex"));
+    const article = await readFile(
+      `build/client/projects/maniac/wiki/mechanics/${mechanic.slug}.html`,
+      "utf8",
+    );
+    assert.ok(article.includes(`data-entity="${mechanic.id}"`), mechanic.id);
+  }
+  assert.equal(
+    distinct.size,
+    mechanicCatalog.length,
+    "Mechanics need distinct semantic artwork",
+  );
+  const restored = JSON.parse(
+    await readFile(
+      "src/app/projects/maniac/assets/wiki/restored/imports.json",
+      "utf8",
+    ),
+  );
+  const { sourceCommit } = await server.ssrLoadModule(
+    root + "data/snapshots.ts",
+  );
+  assert.equal(restored.commit, sourceCommit);
+  for (const file of restored.files) {
+    const bytes = await readFile(
+      `src/app/projects/maniac/assets/wiki/restored/${file.slug}.png`,
+    );
+    assert.equal(createHash("sha256").update(bytes).digest("hex"), file.sha256);
+    assert.deepEqual(ImageUtils.getSize(bytes, "image/png"), [
+      file.width,
+      file.height,
+    ]);
+    assert.equal(
+      systemIconAsset(`item:${file.slug}`)?.entityId,
+      `item:${file.slug}`,
+    );
+  }
+  assert.ok(
+    restored.sources.some((s) =>
+      s.path.endsWith("models/item/death_scythe.json"),
+    ),
+  );
+  assert.ok(
+    restored.sources.some((s) =>
+      s.path.endsWith("textures/item/scythe_texture.png"),
+    ),
+  );
+  for (const [page, attribute, count] of [
+    ["items", "data-system-id", 51],
+    ["mechanics", "data-system-id", 28],
+    ["perks", "data-reference-id", 44],
+    ["abilities", "data-reference-id", 12],
+    ["characters", "data-character", 15],
+    ["maps", "data-map-id", 3],
+  ]) {
+    const html = await readFile(
+      `build/client/projects/maniac/wiki/${page}.html`,
+      "utf8",
+    );
+    const cards = [
+      ...html.matchAll(
+        new RegExp(
+          `<a[^>]*${attribute}="([^"]+)"[^>]*>([\\s\\S]*?)<\\/a>`,
+          "g",
+        ),
+      ),
+    ];
+    assert.equal(cards.length, count, page);
+    for (const [, id, body] of cards) {
+      const heading = body.split(/<h[23]\b/)[0];
+      assert.match(
+        heading,
+        /<(?:img|svg)\b/,
+        `${page}/${id}: missing heading icon`,
+      );
+    }
+  }
   assert.match(
     render(ItemCard, "item:agent-armor"),
     /data-kind="pixel-texture"/,

@@ -1,3 +1,4 @@
+import { BackLink } from "../../../shared/ui/ContentLink";
 import { Link } from "react-router";
 import { releases } from "./registry";
 import s from "./Chronicles.module.css";
@@ -5,7 +6,7 @@ export function ManiacChangelogPage() {
   return (
     <div className={`${s.page} ${s.index}`} data-chronicle="index">
       <header className={s.indexHead}>
-        <Link to="/projects/maniac">← Maniac</Link>
+        <BackLink to="/projects/maniac">Maniac</BackLink>
         <p className={s.kicker}>MANIAC / ИСТОРИЯ ОБНОВЛЕНИЙ</p>
         <h1>
           Каждая версия —<br />

@@ -1,6 +1,15 @@
+import { StatText } from "../ui/StatText";
+import { RelatedEffects } from "../ui/RelatedEffects";
+import { WikiText } from "../ui/WikiText";
+import {
+  currentDescription,
+  formatGameText,
+} from "../data/current-descriptions";
+import { WikiBreadcrumb } from "../ui/WikiBreadcrumb";
 import { Link } from "react-router";
-import { ContentLink } from "../../../../shared/ui/ContentLink";
+import { ContentLink, BackLink } from "../../../../shared/ui/ContentLink";
 import { getEntity, getRevision } from "../data/registry";
+import { referenceChronicles } from "../data/reference-chronicles";
 import { EntityIcon } from "../ui/EntityIcon";
 import { entityAssets } from "../data/assets";
 import { EntityStats } from "../ui/EntityCards";
@@ -27,33 +36,6 @@ interface Article {
   notes: readonly string[];
   evidence: readonly Evidence[];
 }
-const reforgeIds = new Set([
-  "ejection",
-  "family-discord",
-  "griefer",
-  "silence",
-  "independence",
-  "altruist-exe",
-  "magic-lover",
-  "dutch-helm",
-  "idealych",
-  "mental-bond",
-  "football-fan",
-  "hedgehog-skin",
-  "mana-break",
-  "bigmoney",
-  "fear-wave",
-  "megamind",
-  "gto-medal",
-  "computer-breaker",
-  "blindness",
-  "i-am-speed",
-  "last-breath",
-  "mimic",
-  "quick-reflexes",
-  "wallhack",
-  "catch-mistakes",
-]);
 export function ReferenceArticlePage({
   id,
   article,
@@ -75,24 +57,17 @@ export function ReferenceArticlePage({
   const section = perk ? "perks" : "abilities";
   const label = perk ? "Перки" : "Способности";
   const asset = data.icon ? entityAssets[data.icon] : undefined;
-  const releases = entity.revisions["release:1.2"]
-    ? ["1.2"]
-    : entity.revisions["release:1.1"]
-      ? ["1.1"]
-      : perk && reforgeIds.has(entity.slug)
-        ? ["1.0"]
-        : [];
+  const releases = referenceChronicles(entity);
   return (
     <WikiLayout>
       <div className={s.container}>
         <header className={r.articleHead}>
-          <nav className={s.breadcrumb} aria-label="Путь к статье">
-            <Link to="/projects/maniac/wiki">Wiki</Link>
-            <span>/</span>
-            <Link to={`/projects/maniac/wiki/${section}`}>{label}</Link>
-            <span>/</span>
-            <span>{entity.name}</span>
-          </nav>
+          <WikiBreadcrumb
+            section={section}
+            label={label}
+            name={entity.name}
+            ariaLabel="Путь к статье"
+          />
           <div className={r.titleRow}>
             {asset ? (
               <div className={r.largeIcon}>
@@ -131,13 +106,15 @@ export function ReferenceArticlePage({
               <a href="#related">04 · Связанные материалы</a>
               <a href="#sources">Источники</a>
             </nav>
-            <Link to={`/projects/maniac/wiki/${section}`}>← {label}</Link>
+            <BackLink to={`/projects/maniac/wiki/${section}`}>{label}</BackLink>
           </aside>
           <div className={s.articleContent}>
             <section className={s.articleSection} id="effect">
               <p className={s.eyebrow}>ИГРОВОЕ ДЕЙСТВИЕ</p>
               <h2>Эффект</h2>
-              <p className={r.fullDescription}>{article.description}</p>
+              <p className={r.fullDescription}>
+                <WikiText text={currentDescription(id, article.description)} />
+              </p>
             </section>
             <section className={s.articleSection} id="parameters">
               <p className={s.eyebrow}>ПОДТВЕРЖДЁННЫЕ ПАРАМЕТРЫ</p>
@@ -148,8 +125,12 @@ export function ReferenceArticlePage({
                   <div>
                     <dt>Мана</dt>
                     <dd>
-                      {article.availability.mana ??
-                        "Для этого действия не указана"}
+                      <StatText
+                        text={formatGameText(
+                          article.availability.mana ??
+                            "Для этого действия не указана",
+                        )}
+                      />
                     </dd>
                   </div>
                 )}
@@ -157,8 +138,12 @@ export function ReferenceArticlePage({
                   <div>
                     <dt>Перезарядка</dt>
                     <dd>
-                      {article.availability.cooldown ??
-                        "Для этого действия не указана"}
+                      <StatText
+                        text={formatGameText(
+                          article.availability.cooldown ??
+                            "Для этого действия не указана",
+                        )}
+                      />
                     </dd>
                   </div>
                 )}
@@ -190,7 +175,9 @@ export function ReferenceArticlePage({
               {article.conditions.length > 0 && (
                 <ul className={r.conditions}>
                   {article.conditions.map((text) => (
-                    <li key={text}>{text}</li>
+                    <li key={text}>
+                      <WikiText text={formatGameText(text)} />
+                    </li>
                   ))}
                 </ul>
               )}
@@ -203,6 +190,7 @@ export function ReferenceArticlePage({
             <section className={s.articleSection} id="related">
               <p className={s.eyebrow}>СВЯЗИ В ЭНЦИКЛОПЕДИИ</p>
               <h2>Связанные материалы</h2>
+              <RelatedEffects entityId={id} />
               <RelatedLinks
                 id={id}
                 exclude={[
@@ -243,20 +231,14 @@ export function ReferenceArticlePage({
                   </ul>
                 </>
               )}
-              {releases.map((version) => (
+              {releases.map((release) => (
                 <Link
                   className={s.chronicleLink}
-                  key={version}
-                  to={`/projects/maniac/changelog/${version}`}
+                  key={release.version}
+                  to={release.href}
                 >
-                  <span>ХРОНИКИ {version}</span>
-                  <strong>
-                    {version === "1.2"
-                      ? "Flower Cleaning"
-                      : version === "1.1"
-                        ? "Кошмарный додеп"
-                        : "Maniac Reforge"}
-                  </strong>
+                  <span>ХРОНИКИ {release.version}</span>
+                  <strong>{release.title}</strong>
                   <span>Исторические значения на момент выпуска →</span>
                 </Link>
               ))}
@@ -288,12 +270,9 @@ export function ReferenceArticlePage({
                 </ul>
               </details>
             </section>
-            <Link
-              className={s.textLink}
-              to={`/projects/maniac/wiki/${section}`}
-            >
-              ← Вернуться в каталог
-            </Link>
+            <BackLink to={`/projects/maniac/wiki/${section}`}>
+              Вернуться в каталог
+            </BackLink>
           </div>
         </div>
       </div>

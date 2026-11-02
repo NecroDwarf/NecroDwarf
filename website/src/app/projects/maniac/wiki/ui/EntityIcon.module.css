@@ -30,6 +30,7 @@
   object-fit: contain;
   transform: translate(-50%, -50%) scale(var(--icon-scale));
   mix-blend-mode: var(--icon-blend);
+  filter: brightness(var(--icon-brightness, 1));
 }
 .frame[data-kind="pixel-texture"] img {
   image-rendering: pixelated;

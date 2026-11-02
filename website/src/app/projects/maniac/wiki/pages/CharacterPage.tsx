@@ -1,7 +1,11 @@
+import { WikiText } from "../ui/WikiText";
+import { formatGameText } from "../data/current-descriptions";
+import { WikiBreadcrumb } from "../ui/WikiBreadcrumb";
 import type { ReactNode } from "react";
 import { Link } from "react-router";
 import { RelatedLinks } from "../ui/RelatedLinks";
-import { ContentLink } from "../../../../shared/ui/ContentLink";
+import { RelatedEffects } from "../ui/RelatedEffects";
+import { ContentLink, BackLink } from "../../../../shared/ui/ContentLink";
 import { getEntity, getRevision } from "../data/registry";
 import { sourceUrl, sourceCommit, verifiedSource } from "../data/snapshots";
 import type { EntityId } from "../data/types";
@@ -35,18 +39,19 @@ export function CharacterPage({
     <WikiLayout>
       <header className={s.characterHero} data-side={data.role}>
         <div>
-          <nav className={s.breadcrumb} aria-label="Путь к персонажу">
-            <Link to="/projects/maniac/wiki">Wiki</Link>
-            <span>/</span>
-            <Link to="/projects/maniac/wiki/characters">Персонажи</Link>
-            <span>/</span>
-            <span>{entity.name}</span>
-          </nav>
+          <WikiBreadcrumb
+            section="characters"
+            label="Персонажи"
+            name={entity.name}
+            ariaLabel="Путь к персонажу"
+          />
           <p className={s.eyebrow}>
             {data.role === "maniac" ? "Маньяк" : "Выживший"} / ДОСЬЕ ПЕРСОНАЖА
           </p>
           <h1>{entity.name}</h1>
-          <p className={s.lead}>{data.description}</p>
+          <p className={s.lead}>
+            <WikiText text={data.description} />
+          </p>
           <ul className={s.tags}>
             {data.tags?.map((tag) => (
               <li key={tag}>{tag}</li>
@@ -90,7 +95,9 @@ export function CharacterPage({
               {hasHistory && <a href="#chronicles">05 · Хроники</a>}
               <a href="#sources">Источники</a>
             </nav>
-            <Link to="/projects/maniac/wiki/characters">← Все персонажи</Link>
+            <BackLink to="/projects/maniac/wiki/characters">
+              Все персонажи
+            </BackLink>
           </aside>
           <div className={s.articleContent}>
             <section className={s.articleSection} id="features">
@@ -103,7 +110,9 @@ export function CharacterPage({
                       {String(i + 1).padStart(2, "0")}
                     </span>
                     <h3>{f.name}</h3>
-                    <p>{f.description}</p>
+                    <p>
+                      <WikiText text={formatGameText(f.description)} />
+                    </p>
                   </article>
                 ))}
               </div>
@@ -172,6 +181,7 @@ export function CharacterPage({
               </section>
             )}
             <section className={s.articleSection} id="sources">
+              <RelatedEffects entityId={id} />
               <RelatedLinks
                 id={entity.id}
                 exclude={[...data.itemIds, ...data.abilityIds]}
@@ -204,9 +214,9 @@ export function CharacterPage({
                 </p>
               </details>
             </section>
-            <Link className={s.textLink} to="/projects/maniac/wiki/characters">
-              ← Вернуться к персонажам
-            </Link>
+            <BackLink to="/projects/maniac/wiki/characters">
+              Вернуться к персонажам
+            </BackLink>
           </div>
         </div>
       </div>

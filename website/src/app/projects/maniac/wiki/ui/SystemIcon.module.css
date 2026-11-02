@@ -1,0 +1,13 @@
+.symbol {
+  display: grid;
+  place-items: center;
+  color: #c8b6ad;
+}
+.symbol svg {
+  width: 48px;
+  height: 48px;
+}
+.symbol[data-variant="compact"] svg {
+  width: 36px;
+  height: 36px;
+}

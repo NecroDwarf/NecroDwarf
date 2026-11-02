@@ -1,5 +1,6 @@
 import type { EntityChange } from "../data/types";
 import { EntityCard } from "./EntityCards";
+import { StatText } from "./StatText";
 import s from "./EntityCards.module.css";
 import type { ReactNode } from "react";
 export function ReleaseEntityChange({
@@ -20,7 +21,9 @@ export function ReleaseEntityChange({
     );
   return (
     <article className={s.change}>
-      <p>{change.editorial}</p>
+      <p>
+        <StatText text={change.editorial} />
+      </p>
       <div className={s.comparison}>
         {change.before && (
           <div>

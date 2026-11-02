@@ -1,6 +1,6 @@
 import { Link } from "react-router";
 import { Fragment } from "react";
-import { ContentLink } from "../../../shared/ui/ContentLink";
+import { ContentLink, BackLink } from "../../../shared/ui/ContentLink";
 import { releases } from "./registry";
 import type { ChronicleContent } from "./content/types";
 import { ChronicleText } from "./ChronicleText";
@@ -153,7 +153,7 @@ export function ChroniclePage({
           )}
         </nav>
         <div className={s.bottomNav}>
-          <Link to="/projects/maniac">← На страницу Maniac</Link>
+          <BackLink to="/projects/maniac">На страницу Maniac</BackLink>
           <a href="#chronicle-top">В начало ↑</a>
         </div>
       </div>

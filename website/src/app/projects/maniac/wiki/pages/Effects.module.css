@@ -1,0 +1,35 @@
+.card {
+  min-width: 0;
+  padding: 24px;
+  border: 1px solid #393a46;
+  background: #171922;
+  scroll-margin-top: 24px;
+}
+.card:target {
+  border-color: var(--accent, var(--jade-glow));
+}
+.icon {
+  flex: 0 0 48px;
+  image-rendering: pixelated;
+}
+.card > p {
+  font-size: 15px;
+  line-height: 1.8;
+  color: #b8bac7;
+}
+.sources {
+  font-size: 13px;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+.sources summary {
+  cursor: pointer;
+  padding-block: 12px;
+}
+.sources ul {
+  padding-left: 18px;
+}
+.sources a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}

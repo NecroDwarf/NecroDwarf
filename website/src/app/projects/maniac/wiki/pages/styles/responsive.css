@@ -1,0 +1,269 @@
+@media (min-width: 1600px) {
+  .cardCopy h3 {
+    font-size: 28px;
+  }
+}
+@media (max-width: 1000px) {
+  .homeHero,
+  .characterHero {
+    gap: 26px;
+  }
+  .triptych {
+    height: 450px;
+    gap: 8px;
+  }
+  .characterGrid {
+    gap: 16px;
+  }
+  .characterCard {
+    grid-template-columns: 1fr;
+  }
+  .cardArt {
+    padding: 22px 16px 0;
+  }
+  .cardArt img {
+    height: 330px;
+  }
+  .cardCopy {
+    padding: 22px;
+  }
+  .futureCategories {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .futureCategories > div {
+    border-bottom: 1px solid #2b2e37;
+  }
+  .featured {
+    gap: 35px;
+    padding: 32px;
+  }
+  .articleLayout {
+    grid-template-columns: 155px minmax(0, 1fr);
+    gap: 30px;
+  }
+  .featureGrid,
+  .entityGrid {
+    grid-template-columns: 1fr;
+  }
+  .heroFresco img {
+    height: 500px;
+  }
+}
+@media (max-width: 700px) {
+  .localNav {
+    flex-direction: column;
+    align-items: start;
+    gap: 16px;
+    padding-block: 20px;
+  }
+  .localNav > div {
+    width: 100%;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  .localNav > div a {
+    font-size: 12px;
+  }
+  .homeHero {
+    grid-template-columns: 1fr;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    gap: 20px;
+  }
+  .homeHero h1 {
+    font-size: clamp(46px, 12vw, 70px);
+  }
+  .heroLead br {
+    display: none;
+  }
+  .triptych {
+    height: 365px;
+    max-width: 430px;
+    width: 100%;
+    margin-inline: auto;
+    gap: 12px;
+  }
+  .triptych img {
+    max-height: 285px;
+  }
+  .triptych img:nth-child(2) {
+    max-height: 345px;
+    transform: translateY(0);
+  }
+  .triptych img:first-child {
+    transform: translateY(25px);
+  }
+  .lead {
+    font-size: 15px;
+  }
+  .heroCounts {
+    gap: 24px;
+    margin-top: 30px;
+  }
+  .section {
+    padding-top: 48px;
+  }
+  .sectionHeading {
+    align-items: start;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .sideChoices {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .sideChoices > a {
+    padding: 24px;
+  }
+  .sideChoices h3 {
+    font-size: 29px;
+  }
+  .futureCategories {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .futureCategories > div {
+    padding: 18px;
+  }
+  .featured {
+    grid-template-columns: 1fr;
+    padding: 26px;
+    gap: 26px;
+    margin-top: 44px;
+  }
+  .featuredArt img {
+    height: 350px;
+  }
+  .featured h2 br {
+    display: none;
+  }
+  .historyGrid {
+    grid-template-columns: 1fr;
+  }
+  .wikiFooter {
+    gap: 22px;
+    padding-block: 32px;
+    margin-top: 40px;
+  }
+  .wikiFooter > span {
+    flex-basis: 100%;
+  }
+  .catalogHead {
+    padding-top: 40px;
+  }
+  .filters {
+    gap: 18px;
+  }
+  .filters > p {
+    margin: 0;
+  }
+  .filters button {
+    padding-inline: 11px;
+    font-size: 12px;
+  }
+  .characterGrid {
+    grid-template-columns: 1fr;
+  }
+  .characterCard {
+    grid-template-columns: 0.8fr 1fr;
+    min-height: 330px;
+  }
+  .cardArt {
+    padding: 18px 0 18px 14px;
+  }
+  .cardArt img {
+    height: 280px;
+  }
+  .cardCopy {
+    padding: 20px 14px;
+  }
+  .cardCopy h3 {
+    font-size: 20px;
+  }
+  .cardCopy > p:not(.eyebrow) {
+    font-size: 12px;
+  }
+  .cardCopy .tags {
+    gap: 5px;
+  }
+  .cardCopy .tags li {
+    font-size: 9px;
+    padding: 4px 6px;
+  }
+  .characterHero {
+    grid-template-columns: 1fr;
+    padding-top: 24px;
+    gap: 0;
+  }
+  .characterHero h1 {
+    font-size: clamp(39px, 10.5vw, 60px);
+  }
+  .breadcrumb {
+    margin-bottom: 32px;
+  }
+  .heroFresco {
+    padding-top: 0;
+  }
+  .heroFresco img {
+    height: 460px;
+  }
+  .heroDifficulty {
+    margin-top: 15px;
+  }
+  .articleLayout {
+    grid-template-columns: 1fr;
+    padding-top: 30px;
+    gap: 34px;
+  }
+  .articleNav {
+    position: static;
+  }
+  .articleNav nav {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 16px;
+    margin-bottom: 18px;
+  }
+  .articleSection {
+    margin-bottom: 44px;
+  }
+  .featureCard {
+    padding: 22px;
+  }
+}
+@media (max-width: 370px) {
+  .characterCard {
+    grid-template-columns: 1fr;
+  }
+  .cardArt {
+    padding: 20px 20px 0;
+  }
+  .cardArt img {
+    height: 350px;
+  }
+  .cardCopy {
+    padding: 22px;
+  }
+  .filters button {
+    padding-inline: 9px;
+    font-size: 11px;
+  }
+  .triptych {
+    gap: 6px;
+    height: 330px;
+  }
+  .localNav > div {
+    gap: 9px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .wiki *,
+  .wiki *::before,
+  .wiki *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+  .characterCard:hover {
+    transform: none;
+  }
+}

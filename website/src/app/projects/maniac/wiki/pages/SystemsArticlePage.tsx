@@ -1,3 +1,10 @@
+import { RelatedEffects } from "../ui/RelatedEffects";
+import { WikiText } from "../ui/WikiText";
+import {
+  currentDescription,
+  formatGameText,
+} from "../data/current-descriptions";
+import { WikiBreadcrumb } from "../ui/WikiBreadcrumb";
 import { Link } from "react-router";
 import { getEntity, getRevision } from "../data/registry";
 import {
@@ -6,13 +13,11 @@ import {
   itemCategoryLabels,
   mechanicCategoryLabels,
 } from "../data/systems-catalog";
-import { entityAssets } from "../data/assets";
-import { equipmentAssets } from "../data/equipment-assets";
 import { sourceUrl, verifiedSource, sourceCommit } from "../data/snapshots";
-import { EntityIcon } from "../ui/EntityIcon";
+import { SystemIcon } from "../ui/SystemIcon";
 import { EntityStats } from "../ui/EntityCards";
 import { RelatedLinks } from "../ui/RelatedLinks";
-import { ContentLink } from "../../../../shared/ui/ContentLink";
+import { ContentLink, BackLink } from "../../../../shared/ui/ContentLink";
 import type { EntityId, Evidence } from "../data/types";
 import { WikiLayout, DataNote } from "./WikiLayout";
 import s from "./Wiki.module.css";
@@ -49,11 +54,6 @@ export function SystemsArticlePage({
   const section = isItem ? "items" : "mechanics",
     label = isItem ? "Предметы" : "Механики",
     labels = isItem ? itemCategoryLabels : mechanicCategoryLabels;
-  const asset = revision.data.icon
-    ? entityAssets[revision.data.icon]
-    : isItem
-      ? equipmentAssets[entity.slug]
-      : undefined;
   const versions = Object.keys(entity.revisions)
     .filter((key) => key.startsWith("release:"))
     .map((key) => key.slice(8));
@@ -61,19 +61,16 @@ export function SystemsArticlePage({
     <WikiLayout>
       <div className={s.container}>
         <header className={r.articleHead}>
-          <nav className={s.breadcrumb} aria-label="Путь к статье">
-            <Link to="/projects/maniac/wiki">Wiki</Link>
-            <span>/</span>
-            <Link to={`/projects/maniac/wiki/${section}`}>{label}</Link>
-            <span>/</span>
-            <span>{entity.name}</span>
-          </nav>
+          <WikiBreadcrumb
+            section={section}
+            label={label}
+            name={entity.name}
+            ariaLabel="Путь к статье"
+          />
           <div className={r.titleRow}>
-            {asset && (
-              <div className={r.largeIcon}>
-                <EntityIcon asset={asset} />
-              </div>
-            )}
+            <div className={r.largeIcon}>
+              <SystemIcon id={id} icon={revision.data.icon} />
+            </div>
             <div>
               <p className={s.eyebrow}>
                 MANIAC WIKI / {isItem ? "ПРЕДМЕТ" : "МЕХАНИКА"}
@@ -99,7 +96,7 @@ export function SystemsArticlePage({
               <a href="#related">Связанные материалы</a>
               <a href="#sources">Источники</a>
             </nav>
-            <Link to={`/projects/maniac/wiki/${section}`}>← {label}</Link>
+            <BackLink to={`/projects/maniac/wiki/${section}`}>{label}</BackLink>
           </aside>
           <div className={s.articleContent}>
             <section className={s.articleSection} id="overview">
@@ -107,7 +104,9 @@ export function SystemsArticlePage({
                 {isItem ? "ИГРОВОЕ НАЗНАЧЕНИЕ" : "ПРАВИЛА И ВЗАИМОДЕЙСТВИЯ"}
               </p>
               <h2>{isItem ? "Что это" : "Основное правило"}</h2>
-              <p className={r.fullDescription}>{article.description}</p>
+              <p className={r.fullDescription}>
+                <WikiText text={currentDescription(id, article.description)} />
+              </p>
               {!!revision.data.stats?.length && (
                 <EntityStats stats={revision.data.stats} />
               )}
@@ -121,7 +120,7 @@ export function SystemsArticlePage({
                 <h2>{sec.title}</h2>
                 {sec.paragraphs.map((paragraph, k) => (
                   <p className={r.fullDescription} key={k}>
-                    {paragraph}
+                    <WikiText text={formatGameText(paragraph)} />
                   </p>
                 ))}
               </section>
@@ -150,6 +149,12 @@ export function SystemsArticlePage({
               <p className={s.eyebrow}>СВЯЗИ В ЭНЦИКЛОПЕДИИ</p>
               <h2>Связанные материалы</h2>
               <RelatedLinks id={id} />
+              <RelatedEffects entityId={id} />
+              {id === "mechanic:status-effects" && (
+                <Link className={s.textLink} to="/projects/maniac/wiki/effects">
+                  Все кастомные эффекты мода →
+                </Link>
+              )}
               {versions.map((v) => (
                 <Link
                   key={v}
@@ -190,12 +195,9 @@ export function SystemsArticlePage({
                 </ul>
               </details>
             </section>
-            <Link
-              className={s.textLink}
-              to={`/projects/maniac/wiki/${section}`}
-            >
-              ← Вернуться в каталог
-            </Link>
+            <BackLink to={`/projects/maniac/wiki/${section}`}>
+              Вернуться в каталог
+            </BackLink>
           </div>
         </div>
       </div>

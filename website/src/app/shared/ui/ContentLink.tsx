@@ -1,4 +1,17 @@
 import type { ComponentProps } from "react";
+import { Link, type LinkProps } from "react-router";
+import s from "./BackLink.module.css";
+
+export function BackLink({ to, children }: Pick<LinkProps, "to" | "children">) {
+  return (
+    <Link to={to} className={s.backLink}>
+      <span className={s.arrow} aria-hidden="true">
+        ←
+      </span>
+      <span>{children}</span>
+    </Link>
+  );
+}
 
 export function ContentLink({
   href,

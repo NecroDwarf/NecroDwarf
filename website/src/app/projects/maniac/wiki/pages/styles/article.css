@@ -1,0 +1,207 @@
+.characterHero {
+  grid-template-columns: 1.4fr 0.8fr;
+  padding-top: 28px;
+  padding-bottom: 50px;
+  align-items: stretch;
+  background: radial-gradient(ellipse at 80% 50%, #6c354427, transparent 65%);
+}
+.characterHero[data-side="survivor"] {
+  --accent: #a7c7c7;
+  background: radial-gradient(ellipse at 80% 50%, #284b542c, transparent 65%);
+}
+.characterHero > div:first-child {
+  padding-block: 0 32px;
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+}
+.breadcrumb {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  font-size: 11px;
+  color: var(--ash);
+  margin-bottom: 50px;
+  line-height: 1.7;
+}
+.breadcrumb a {
+  color: #c8c2cd;
+  text-decoration: none;
+}
+.characterHero h1 {
+  font-size: clamp(42px, 5.8vw, 76px);
+  margin-top: 18px;
+  max-width: 740px;
+}
+.heroDifficulty {
+  font-size: 12px;
+  color: var(--ash);
+  margin-top: 25px;
+  display: grid;
+  grid-template-columns: auto auto;
+  column-gap: 16px;
+  align-items: center;
+}
+.heroDifficulty strong {
+  font-size: 25px;
+  color: var(--bone);
+  font-family: var(--font-display);
+}
+.heroDifficulty strong span {
+  color: var(--ash);
+  font-size: 16px;
+  font-weight: 400;
+}
+.heroDifficulty small {
+  grid-column: 1/-1;
+  font-size: 10px;
+}
+.characterHero blockquote {
+  border-left: 1px solid #6b515c;
+  color: #b8a9b4;
+  font-style: italic;
+  font-size: 14px;
+  line-height: 1.75;
+  padding-left: 16px;
+  margin: 18px 0 32px;
+  max-width: 600px;
+}
+.heroFresco {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-block: 15px;
+  min-width: 0;
+}
+.heroFresco img {
+  width: 100%;
+  height: 560px;
+  object-fit: contain;
+  filter: drop-shadow(0 15px 35px #000a);
+}
+.heroFresco > span {
+  font-size: 8px;
+  color: #9693a2;
+  letter-spacing: 0.15em;
+  margin-top: 22px;
+}
+.textLink {
+  color: #deb3bc !important;
+  text-decoration: underline;
+  text-underline-offset: 5px;
+  font-size: 13px;
+}
+.articleLayout {
+  display: grid;
+  grid-template-columns: 200px minmax(0, 1fr);
+  gap: 55px;
+  padding-top: 50px;
+}
+.articleNav {
+  align-self: start;
+  position: sticky;
+  top: 24px;
+}
+.articleNav nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-block: 18px 28px;
+}
+.articleNav nav a {
+  text-decoration: none;
+  font-size: 12px;
+  color: #b0b2bf;
+  border-bottom: 1px solid #2d303b;
+  padding-block: 12px;
+}
+.articleContent {
+  min-width: 0;
+}
+.articleSection {
+  margin-bottom: 65px;
+  scroll-margin-top: 25px;
+}
+.articleSection h2 {
+  font-size: clamp(25px, 3vw, 34px);
+}
+.sectionIntro {
+  color: #abadb9;
+  font-size: 14px;
+  max-width: 720px;
+  margin-bottom: 24px;
+}
+.featureGrid,
+.entityGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+.featureCard {
+  padding: 26px;
+  border: 1px solid #323641;
+  background: #171a23;
+}
+.featureIndex {
+  color: #9b7180;
+  font-size: 11px;
+  font-family: var(--font-display);
+}
+.featureCard h3 {
+  font-size: 20px;
+  letter-spacing: -0.02em;
+  margin-block: 14px;
+}
+.featureCard p {
+  color: #bfc0c9;
+  font-size: 14px;
+  margin-bottom: 0;
+}
+.entityGrid > article {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.entityGrid h3 {
+  font-size: 20px;
+}
+.entityGrid > article > p {
+  font-size: 14px;
+}
+.entityGrid details {
+  font-size: 11px;
+}
+.chronicleLink {
+  display: flex;
+  flex-direction: column;
+  padding: 26px;
+  gap: 14px;
+  border: 1px solid #51405f;
+  background: linear-gradient(100deg, #32233f, #171923);
+  text-decoration: none;
+}
+.chronicleLink > span {
+  color: #b9a7ce;
+  font-size: 11px;
+}
+.chronicleLink strong {
+  font-size: 23px;
+  font-family: var(--font-display);
+}
+.chronicleLink + .chronicleLink {
+  margin-top: 14px;
+}
+.sources {
+  color: var(--ash);
+  font-size: 12px;
+  border-block: 1px solid var(--iron);
+  padding-block: 20px;
+  overflow-wrap: anywhere;
+}
+.sources summary {
+  cursor: pointer;
+  color: #cbc3cb;
+}
+.sources code {
+  color: #dec5cd;
+}

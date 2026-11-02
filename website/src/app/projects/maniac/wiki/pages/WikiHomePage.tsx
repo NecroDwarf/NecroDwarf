@@ -6,6 +6,32 @@ import s from "./Wiki.module.css";
 import { itemRouteMeta } from "../item-route-metadata";
 import { mechanicRouteMeta } from "../mechanic-route-metadata";
 import { mapRouteMeta } from "../map-route-metadata";
+import { perkRouteMeta } from "../perk-route-metadata";
+import { abilityRouteMeta } from "../ability-route-metadata";
+const categories = [
+  { slug: "perks", name: "Перки", count: `Всего: ${perkRouteMeta.length}` },
+  {
+    slug: "abilities",
+    name: "Способности",
+    count: `Всего: ${abilityRouteMeta.length}`,
+  },
+  {
+    slug: "items",
+    name: "Предметы",
+    count: `Всего: ${itemRouteMeta.length}`,
+  },
+  {
+    slug: "mechanics",
+    name: "Механики",
+    count: `Всего: ${mechanicRouteMeta.length}`,
+  },
+  { slug: "maps", name: "Карты", count: `Всего: ${mapRouteMeta.length}` },
+  {
+    slug: "effects",
+    name: "Эффекты",
+    count: "Кастомные эффекты мода",
+  },
+];
 export function WikiHomePage() {
   const keeper = characterEntries.find(
     (c) => c.slug === "keeper-of-nightmares",
@@ -36,7 +62,7 @@ export function WikiHomePage() {
           </Link>
           <div className={s.heroCounts}>
             <span>
-              <b>15</b> персонажей
+              <b>{characterEntries.length}</b> персонажей
             </span>
             <span>
               <b>02</b> стороны охоты
@@ -85,36 +111,16 @@ export function WikiHomePage() {
             </Link>
           </div>
           <div className={s.futureCategories}>
-            {["Перки", "Способности", "Предметы", "Механики", "Карты"].map(
-              (name, i) =>
-                i < 5 ? (
-                  <Link
-                    key={name}
-                    to={`/projects/maniac/wiki/${["perks", "abilities", "items", "mechanics", "maps"][i]}`}
-                  >
-                    <span className={s.eyebrow}>0{i + 3}</span>
-                    <h3>{name}</h3>
-                    <span>
-                      {
-                        [
-                          "44 перка",
-                          "12 способностей",
-                          `${itemRouteMeta.length} предметов`,
-                          `${mechanicRouteMeta.length} механик`,
-                          `${mapRouteMeta.length} карты`,
-                        ][i]
-                      }{" "}
-                      ↗
-                    </span>
-                  </Link>
-                ) : (
-                  <div key={name}>
-                    <span className={s.eyebrow}>0{i + 3}</span>
-                    <h3>{name}</h3>
-                    <span>Следующий раздел</span>
-                  </div>
-                ),
-            )}
+            {categories.map((category, i) => (
+              <Link
+                key={category.slug}
+                to={`/projects/maniac/wiki/${category.slug}`}
+              >
+                <span className={s.eyebrow}>0{i + 3}</span>
+                <h3>{category.name}</h3>
+                <span>{category.count} ↗</span>
+              </Link>
+            ))}
           </div>
         </section>
         <section className={s.featured} aria-labelledby="featured-character">

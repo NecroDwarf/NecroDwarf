@@ -10,11 +10,13 @@ export function EntityIcon({
   variant?: "compact" | "detail";
 }) {
   const {
+    brightness = 1,
     scale = 1,
     position = [50, 50],
     blend = "normal",
   } = asset.presentation ?? {};
   const style = {
+    "--icon-brightness": brightness,
     "--icon-scale": scale,
     "--icon-x": `${position[0]}%`,
     "--icon-y": `${position[1]}%`,

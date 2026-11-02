@@ -152,8 +152,9 @@ for cls in registered:
  evidence=[{'path':class_paths[cls]},{'path':class_paths['Perk']},{'path':lang_path}]
  for dependency in sorted(set(re.findall(r'\b([A-Z]\w+)\.[A-Z][A-Z_]+',' '.join(expression_args)))-{'Math','PerkPhase'}):
   if dependency in class_paths:evidence.append({'path':class_paths[dependency]})
- summary=re.split(r'(?<=[.!?])\s',description)[0]
- if len(summary)>170:summary=summary[:167].rsplit(' ',1)[0]+'…'
+ # Preserve the complete action: abbreviations such as «сек.» are not sentence
+ # boundaries. Curated catalog summaries may be shortened manually afterwards.
+ summary=description
  rows.append({'id':id,'slug':slug,'name':name,'gameId':game_id,'team':team,'perkType':typ,'phases':phases,'description':summary,'icon':icon_key,'stats':stats,'evidence':evidence})
  conditions=[]
  cond=re.search(r'Component getConditionNotMetMessage\([^)]*\)\s*\{([\s\S]*?)\n    }',s)

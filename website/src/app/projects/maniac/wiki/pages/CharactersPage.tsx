@@ -1,62 +1,66 @@
-import { useEffect, useState } from "react";
+import { useUrlFilter } from "../../../../shared/lib/use-url-filter";
+import { useEffect } from "react";
 import { Link, useLocation } from "react-router";
 import { characterEntries, roleLabel } from "./catalog";
 import { WikiLayout, DataNote } from "./WikiLayout";
+import {
+  CatalogHeader,
+  CatalogSearch,
+  CatalogResultCount,
+  useCatalogSearch,
+  CatalogGroup,
+  catalogGroups,
+} from "../ui/CatalogControls";
 import { DifficultyStars } from "../ui/DifficultyStars";
 import s from "./Wiki.module.css";
-type Side = "all" | "maniac" | "survivor";
 export function CharactersPage() {
-  const [query, setQuery] = useState("");
-  const [side, setSide] = useState<Side>("all");
+  const { query, setQuery, matchesName } = useCatalogSearch();
+  const [side, setSide] = useUrlFilter("side", "all");
   const { hash } = useLocation();
   useEffect(() => {
+    if (!hash) return;
     setSide(
       hash === "#maniacs"
         ? "maniac"
         : hash === "#survivors"
           ? "survivor"
           : "all",
+      true,
     );
   }, [hash]);
-  const normalize = (text: string) =>
-    text.toLocaleLowerCase("ru").replaceAll("ё", "е").trim();
   const visible = characterEntries.filter(
-    (c) =>
-      (side === "all" || c.data.role === side) &&
-      normalize(c.name).includes(normalize(query)),
+    (c) => (side === "all" || c.data.role === side) && matchesName(c.name),
   );
   return (
     <WikiLayout>
       <div className={s.container}>
-        <header className={s.catalogHead}>
-          <p className={s.eyebrow}>MANIAC WIKI / ПЕРСОНАЖИ</p>
-          <h1>
-            Лица <em>охоты.</em>
-          </h1>
-          <p className={s.lead}>
-            Пятнадцать способов изменить ход матча.
-            <br />
-            Найдите своего персонажа и изучите его правила игры.
-          </p>
-        </header>
+        <CatalogHeader
+          label="ПЕРСОНАЖИ"
+          title={
+            <>
+              Лица <em>охоты.</em>
+            </>
+          }
+        >
+          Персонажей в каталоге: {characterEntries.length}.
+          <br />
+          Найдите своего персонажа и изучите его правила игры.
+        </CatalogHeader>
         <div className={s.filters}>
-          <label className={s.search}>
-            Поиск персонажа
-            <input
-              type="search"
-              placeholder="Имя персонажа…"
-              value={query}
-              onChange={(e) => setQuery(e.target.value)}
-            />
-          </label>
+          <CatalogSearch
+            label="Поиск персонажа"
+            placeholder="Имя персонажа…"
+            value={query}
+            onChange={setQuery}
+          />
           <fieldset>
             <legend>Сторона</legend>
             <div>
               {(
                 [
-                  ["all", "Все · 15"],
-                  ["maniac", "Маньяки · 8"],
-                  ["survivor", "Выжившие · 7"],
+                  ["all", "Все"],
+                  ["maniac", "Маньяки"],
+                  ["survivor", "Выжившие"],
                 ] as const
               ).map(([value, label]) => (
                 <button
@@ -65,14 +69,17 @@ export function CharactersPage() {
                   aria-pressed={side === value}
                   onClick={() => setSide(value)}
                 >
-                  {label}
+                  {label} ·{" "}
+                  {value === "all"
+                    ? characterEntries.length
+                    : characterEntries.filter(
+                        (entry) => entry.data.role === value,
+                      ).length}
                 </button>
               ))}
             </div>
           </fieldset>
-          <p role="status" aria-live="polite">
-            Найдено: {visible.length}
-          </p>
+          <CatalogResultCount count={visible.length} />
         </div>
         <noscript>
           <p className={s.dataNote}>
@@ -84,26 +91,11 @@ export function CharactersPage() {
         {(["maniac", "survivor"] as const).map((role) => {
           const group = visible.filter((c) => c.data.role === role);
           return group.length ? (
-            <section
-              className={s.section}
-              id={role === "maniac" ? "maniacs" : "survivors"}
+            <CatalogGroup
               key={role}
+              {...catalogGroups[role]}
+              count={group.length}
             >
-              <div className={s.sectionHeading}>
-                <div>
-                  <p className={s.eyebrow}>
-                    {role === "maniac"
-                      ? "ПРЕСЛЕДУЙ / КОНТРОЛИРУЙ"
-                      : "ВЫЖИВАЙ / ПОМОГАЙ"}
-                  </p>
-                  <h2>
-                    {role === "maniac" ? "Маньяки" : "Выжившие"}{" "}
-                    <span className={s.counter}>
-                      {group.length.toString().padStart(2, "0")}
-                    </span>
-                  </h2>
-                </div>
-              </div>
               <div className={s.characterGrid}>
                 {group.map((c) => (
                   <Link
@@ -145,7 +137,7 @@ export function CharactersPage() {
                   </Link>
                 ))}
               </div>
-            </section>
+            </CatalogGroup>
           ) : null;
         })}
         {!visible.length && (

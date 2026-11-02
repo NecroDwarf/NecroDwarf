@@ -23,6 +23,7 @@ export interface EntityAsset {
   entityId: EntityId;
   kind: "illustration" | "pixel-texture" | "item-render";
   presentation?: {
+    brightness?: number;
     scale?: number;
     position?: readonly [number, number];
     blend?: "normal" | "screen";

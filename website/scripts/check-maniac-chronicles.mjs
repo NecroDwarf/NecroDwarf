@@ -17,6 +17,25 @@ const decode = (text) =>
         "&#39;": "'",
       })[entity],
   );
+// Original text can contain nested stat icons. Read text nodes, including the
+// visually hidden original units, so the source hash remains an exact check.
+function originalText(html) {
+  let depth = 0;
+  let originalDepth = 0;
+  let text = "";
+  for (const [token] of html.matchAll(/<!--[\s\S]*?-->|<[^>]+>|[^<]+/g)) {
+    if (token.startsWith("<span")) {
+      depth++;
+      if (token.includes('data-original-text=""')) originalDepth = depth;
+    } else if (token === "</span>") {
+      if (depth === originalDepth) originalDepth = 0;
+      depth--;
+    } else if (originalDepth && !token.startsWith("<")) {
+      text += decode(token);
+    }
+  }
+  return text;
+}
 const root = "/src/app/projects/maniac/";
 const server = await createServer({
   server: { middlewareMode: true },
@@ -91,11 +110,7 @@ try {
         ),
       )?.[1];
       assert.ok(rendered, section.id);
-      const original = [
-        ...rendered.matchAll(/<span data-original-text="">([^<]*)<\/span>/g),
-      ]
-        .map((m) => decode(m[1]))
-        .join("");
+      const original = originalText(rendered);
       assert.equal(
         hash(original),
         section.originalCompactSha256,

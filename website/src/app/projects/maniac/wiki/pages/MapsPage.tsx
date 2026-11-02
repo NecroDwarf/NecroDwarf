@@ -1,3 +1,4 @@
+import { CatalogHeader } from "../ui/CatalogControls";
 import { Link } from "react-router";
 import { mapCatalog } from "../data/maps";
 import voting from "../data/map-voting.json";
@@ -6,6 +7,7 @@ import { publishedEntityRoutes } from "../data/publication";
 import { ContentLink } from "../../../../shared/ui/ContentLink";
 import { WikiLayout, DataNote } from "./WikiLayout";
 import { MapFacts } from "./MapFacts";
+import { StatText } from "../ui/StatText";
 import { mapCardImages } from "./map-card-images";
 import { useMapAnchor } from "./useMapAnchor";
 import s from "./Wiki.module.css";
@@ -15,16 +17,17 @@ export function MapsPage() {
   return (
     <WikiLayout>
       <div className={s.container}>
-        <header className={s.catalogHead}>
-          <p className={s.eyebrow}>MANIAC WIKI / ЛОКАЦИИ</p>
-          <h1>
-            Место <em>охоты.</em>
-          </h1>
-          <p className={s.lead}>
-            Три карты. Тайные маршруты, тесные коридоры и открытые линии обзора
-            — изучите место следующей встречи.
-          </p>
-        </header>
+        <CatalogHeader
+          label="ЛОКАЦИИ"
+          title={
+            <>
+              Место <em>охоты.</em>
+            </>
+          }
+        >
+          Карт в каталоге: {mapCatalog.length}. Тайные маршруты, тесные коридоры
+          и открытые линии обзора — изучите место следующей встречи.
+        </CatalogHeader>
         <DataNote />
         <div className={m.grid}>
           {mapCatalog.map((map) => {
@@ -48,7 +51,9 @@ export function MapsPage() {
                 <div className={m.cardBody}>
                   <p className={s.eyebrow}>ИГРОВАЯ КАРТА</p>
                   <h2>{map.name}</h2>
-                  <p>{map.description}</p>
+                  <p>
+                    <StatText text={map.description} interactive={false} />
+                  </p>
                   <MapFacts map={map} />
                   <ul className={m.features}>
                     {map.features.map((feature) => (
@@ -75,7 +80,9 @@ export function MapsPage() {
             {voting.paragraphs.map((p, i) => (
               <li key={p}>
                 <span aria-hidden="true">0{i + 1}</span>
-                <p>{p}</p>
+                <p>
+                  <StatText text={p} />
+                </p>
               </li>
             ))}
           </ol>

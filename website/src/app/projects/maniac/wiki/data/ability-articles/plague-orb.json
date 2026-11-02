@@ -1,8 +1,8 @@
 {
   "id": "ability:plague-orb",
-  "description": "Бросает сгусток, ускоряющий заражение чумой.",
+  "description": "При попадании в выжившего наносит {{plague.damage}} магического урона и сбрасывает накопление чумы.",
   "conditions": [
-    "ПКМ чумной лампой. Попадание сгустком ускоряет заражение цели."
+    "ПКМ чумной лампой. Попадает только по игрокам; урон получает выживший в режиме приключения. Наличие эффекта чумы для попадания не требуется."
   ],
   "availability": {
     "mana": "5 маны",
@@ -10,6 +10,12 @@
   },
   "notes": [],
   "evidence": [
+    {
+      "path": "src/main/java/org/example/maniacrevolution/entity/PlagueOrbEntity.java"
+    },
+    {
+      "path": "src/main/java/org/example/maniacrevolution/capability/PlagueCapability.java"
+    },
     {
       "path": "src/main/java/org/example/maniacrevolution/item/PlagueLanternItem.java"
     },

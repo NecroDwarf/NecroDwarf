@@ -2,6 +2,7 @@ import { Link, NavLink } from "react-router";
 import type { ReactNode } from "react";
 import theme from "../../theme/theme.module.css";
 import s from "./Wiki.module.css";
+import { wikiSections } from "../sections";
 export function WikiLayout({ children }: { children: ReactNode }) {
   return (
     <div className={`${theme.page} ${s.wiki}`}>
@@ -10,15 +11,15 @@ export function WikiLayout({ children }: { children: ReactNode }) {
           MANIAC <span>WIKI</span>
         </Link>
         <div>
-          <NavLink to="/projects/maniac/wiki" end>
-            Обзор
-          </NavLink>
-          <NavLink to="/projects/maniac/wiki/characters">Персонажи</NavLink>
-          <NavLink to="/projects/maniac/wiki/perks">Перки</NavLink>
-          <NavLink to="/projects/maniac/wiki/abilities">Способности</NavLink>
-          <NavLink to="/projects/maniac/wiki/items">Предметы</NavLink>
-          <NavLink to="/projects/maniac/wiki/mechanics">Механики</NavLink>
-          <NavLink to="/projects/maniac/wiki/maps">Карты</NavLink>
+          {wikiSections.map((item) => (
+            <NavLink
+              key={item.href}
+              to={item.href}
+              end={item.href === "/projects/maniac/wiki"}
+            >
+              {item.label}
+            </NavLink>
+          ))}
           <Link to="/projects/maniac/changelog">Хроники ↗</Link>
           <Link to="/projects/maniac">К игре ↗</Link>
         </div>

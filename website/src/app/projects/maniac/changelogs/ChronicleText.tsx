@@ -1,7 +1,7 @@
+import { StatText } from "../wiki/ui/StatText";
 import { createElement, type ReactNode } from "react";
 import { ContentLink } from "../../../shared/ui/ContentLink";
 import { EntityCard } from "../wiki/ui/EntityCards";
-import { EntityLink } from "../wiki/ui/EntityLink";
 import { ReleaseEntityChange } from "../wiki/ui/ReleaseEntityChange";
 import { getRevision } from "../wiki/data/registry";
 import { gameVersions } from "../wiki/data/versions";
@@ -29,7 +29,7 @@ export function ChronicleText({
     if (typeof node === "string")
       return node.trim() ? (
         <span key={key} data-original-text="">
-          {node}
+          <StatText text={node} interactive={false} />
         </span>
       ) : (
         node
@@ -47,7 +47,6 @@ export function ChronicleText({
       );
       const originalTitle =
         typeof heading === "object" ? heading.children.map(render) : title;
-      const titleContent = <EntityLink id={id}>{originalTitle}</EntityLink>;
       const editorial = (
         <div>
           {node.children.filter((n) => n !== heading).map(render)}
@@ -66,7 +65,7 @@ export function ChronicleText({
           <ReleaseEntityChange
             key={key}
             change={change}
-            entry={{ title: titleContent, editorial }}
+            entry={{ title: originalTitle, editorial }}
           />
         );
       return (
@@ -76,7 +75,7 @@ export function ChronicleText({
           snapshot={snapshot}
           variant="compact"
           showStats={false}
-          title={titleContent}
+          title={originalTitle}
           editorial={editorial}
         />
       );

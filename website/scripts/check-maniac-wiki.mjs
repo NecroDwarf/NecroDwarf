@@ -29,7 +29,7 @@ try {
   const { characterModels } = await server.ssrLoadModule(
     root + "model/models.ts",
   );
-  const { publishedEntityRoutes, plannedEntityPath } =
+  const { publishedEntityRoutes, publishedEntityMeta, plannedEntityPath } =
     await server.ssrLoadModule(root + "data/publication.ts");
   const { releases } = await server.ssrLoadModule(
     "/src/app/projects/maniac/changelogs/registry.ts",
@@ -76,7 +76,10 @@ try {
   ]);
   for (const version of gameVersions)
     assert.ok(releases.some((r) => r.id === version.releaseId));
-  assert.equal(routes.length, 189);
+  assert.equal(routes.length, 190);
+  assert.ok(
+    routes.some((route) => route.path === "/projects/maniac/wiki/effects"),
+  );
   assert.ok(routes.every((r) => !/lab/.test(r.path)));
   assert.equal(Object.keys(publishedEntityRoutes).length, 171);
   assert.ok(
@@ -303,6 +306,23 @@ try {
     renderToStaticMarkup(
       createElement(MemoryRouter, null, createElement(Component, props)),
     );
+  assert.equal(Object.keys(publishedEntityMeta).length, entities.length);
+  for (const entity of entities) {
+    assert.equal(publishedEntityMeta[entity.id]?.name, entity.name, entity.id);
+    assert.equal(
+      publishedEntityMeta[entity.id]?.href,
+      plannedEntityPath(entity.kind, entity.slug),
+      entity.id,
+    );
+  }
+  assert.equal(
+    render(EntityLink, { id: "perk:missing" }),
+    "<span>Неизвестная сущность</span>",
+  );
+  assert.equal(
+    render(EntityLink, { id: "perk:missing", children: "Своя подпись" }),
+    "<span>Своя подпись</span>",
+  );
   for (const variant of ["compact", "detail"]) {
     const iconHTML = render(EntityIcon, {
       asset: entityAssets["nightmare-lighter"],

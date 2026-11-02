@@ -3,10 +3,6 @@
   margin: auto;
   padding: 45px var(--space) 0;
 }
-.back {
-  color: var(--ash);
-  font-size: 16px;
-}
 .layout {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);

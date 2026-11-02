@@ -1,10 +1,10 @@
 {
   "id": "perk:mana-break",
-  "description": "Удар по противнику снимает 10 ед. маны. КД: 90 сек.",
+  "description": "Удар по противнику снимает {{manaBreak.amount}} маны. Перезарядка: 90 сек.",
   "conditions": [],
   "availability": {
     "cooldown": "90 с",
-    "mana": "Не задана в базовом классе этого перка"
+    "mana": "Не указана"
   },
   "notes": [],
   "evidence": [
