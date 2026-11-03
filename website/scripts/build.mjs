@@ -1,11 +1,33 @@
 import { build } from "vite";
 import { readFile, writeFile, mkdir } from "node:fs/promises";
 import { dirname, resolve } from "node:path";
+import { createHash } from "node:crypto";
 const originValue = process.env.SITE_URL;
 // Same public origin for generated HTML and client navigation.
 process.env.VITE_SITE_URL = originValue || "";
+// Compact production class names offset the permanent Wiki search UI. Keep the
+// same mapping in client and SSG builds so hydration retains the static styles.
+const scopes = new Map();
+function generateScopedName(name, filename) {
+  const scope = createHash("sha256")
+    .update(filename)
+    .digest("base64url")
+    .slice(0, 5);
+  let module = scopes.get(scope);
+  if (module && module.filename !== filename)
+    throw new Error(`CSS module scope collision: ${filename}`);
+  if (!module) {
+    module = { filename, names: new Map() };
+    scopes.set(scope, module);
+  }
+  if (!module.names.has(name))
+    module.names.set(name, `n${scope}_${module.names.size.toString(36)}`);
+  return module.names.get(name);
+}
+const css = { modules: { generateScopedName } };
 let clientModules;
 await build({
+  css,
   // One stylesheet keeps every prerendered page styled before JS, including
   // when JS is disabled. Route modules and content still split independently.
   build: {
@@ -54,6 +76,7 @@ await build({
   ],
 });
 await build({
+  css,
   build: { ssr: "src/entry-server.tsx", outDir: ".ssg", emptyOutDir: true },
 });
 const { paths, render, projects, siteOrigin } = await import(

@@ -1,0 +1,247 @@
+{
+  "date": "2026-11-04",
+  "before": [
+    {
+      "source": "src/main.tsx",
+      "jsCount": 1,
+      "bytes": 333227,
+      "gzip": 103522,
+      "files": ["assets/index-DfQ2Izb2.js"]
+    },
+    {
+      "source": "src/app/projects/maniac/pages/ManiacPage.tsx",
+      "jsCount": 8,
+      "bytes": 366449,
+      "gzip": 115483,
+      "files": [
+        "assets/ManiacPage-DMlOG3Ol.js",
+        "assets/index-DfQ2Izb2.js",
+        "assets/ProjectIntro-DdQc724H.js",
+        "assets/ReleaseList-CM96in3z.js",
+        "assets/Content.module-BehQglrY.js",
+        "assets/SectionHeading-SCzpUL06.js",
+        "assets/characters-DImKs2vR.js",
+        "assets/snapshots-Dz8FZ_D7.js"
+      ]
+    },
+    {
+      "source": "src/app/projects/maniac/wiki/pages/WikiHomePage.tsx",
+      "jsCount": 6,
+      "bytes": 358143,
+      "gzip": 112277,
+      "files": [
+        "assets/WikiHomePage-CUHkElJK.js",
+        "assets/index-DfQ2Izb2.js",
+        "assets/catalog-6s9Vv8Ca.js",
+        "assets/characters-DImKs2vR.js",
+        "assets/snapshots-Dz8FZ_D7.js",
+        "assets/WikiLayout-DjRZoHs2.js"
+      ]
+    },
+    {
+      "source": "src/app/projects/maniac/wiki/pages/CharactersPage.tsx",
+      "jsCount": 8,
+      "bytes": 358665,
+      "gzip": 113541,
+      "files": [
+        "assets/CharactersPage-DNZ_euWf.js",
+        "assets/index-DfQ2Izb2.js",
+        "assets/CatalogControls-DCS6_ugI.js",
+        "assets/WikiLayout-DjRZoHs2.js",
+        "assets/catalog-6s9Vv8Ca.js",
+        "assets/characters-DImKs2vR.js",
+        "assets/snapshots-Dz8FZ_D7.js",
+        "assets/DifficultyStars-DBT41hv9.js"
+      ]
+    }
+  ],
+  "after": [
+    {
+      "source": "src/main.tsx",
+      "jsCount": 1,
+      "bytes": 333418,
+      "gzip": 103585,
+      "files": ["assets/index-DR3nxG2y.js"]
+    },
+    {
+      "source": "src/app/projects/maniac/pages/ManiacPage.tsx",
+      "jsCount": 8,
+      "bytes": 366640,
+      "gzip": 115547,
+      "files": [
+        "assets/ManiacPage-BPgib4nx.js",
+        "assets/index-DR3nxG2y.js",
+        "assets/ProjectIntro-DHZT7p4g.js",
+        "assets/ReleaseList-CpZP2rDc.js",
+        "assets/Content.module-BehQglrY.js",
+        "assets/SectionHeading-DR-x6ELS.js",
+        "assets/characters-DImKs2vR.js",
+        "assets/snapshots-Dz8FZ_D7.js"
+      ]
+    },
+    {
+      "source": "src/app/projects/maniac/wiki/pages/WikiHomePage.tsx",
+      "jsCount": 6,
+      "bytes": 358248,
+      "gzip": 112303,
+      "files": [
+        "assets/WikiHomePage-Dlkz98By.js",
+        "assets/index-DR3nxG2y.js",
+        "assets/catalog-6s9Vv8Ca.js",
+        "assets/characters-DImKs2vR.js",
+        "assets/snapshots-Dz8FZ_D7.js",
+        "assets/WikiLayout-ynCcrW29.js"
+      ]
+    },
+    {
+      "source": "src/app/projects/maniac/wiki/pages/CharactersPage.tsx",
+      "jsCount": 8,
+      "bytes": 358694,
+      "gzip": 113526,
+      "files": [
+        "assets/CharactersPage-DXVNkEN4.js",
+        "assets/index-DR3nxG2y.js",
+        "assets/CatalogControls-C9apKrLO.js",
+        "assets/WikiLayout-ynCcrW29.js",
+        "assets/catalog-6s9Vv8Ca.js",
+        "assets/characters-DImKs2vR.js",
+        "assets/snapshots-Dz8FZ_D7.js",
+        "assets/DifficultyStars-BbTI5bq8.js"
+      ]
+    }
+  ],
+  "network": [
+    {
+      "width": 390,
+      "resources": [
+        {
+          "phase": "initial",
+          "file": "/assets/index-DR3nxG2y.js",
+          "bytes": 333418,
+          "gzipBytes": 103585
+        },
+        {
+          "phase": "initial",
+          "file": "/assets/catalog-6s9Vv8Ca.js",
+          "bytes": 1690,
+          "gzipBytes": 687
+        },
+        {
+          "phase": "initial",
+          "file": "/assets/characters-DImKs2vR.js",
+          "bytes": 13987,
+          "gzipBytes": 4174
+        },
+        {
+          "phase": "initial",
+          "file": "/assets/WikiHomePage-Dlkz98By.js",
+          "bytes": 5426,
+          "gzipBytes": 1932
+        },
+        {
+          "phase": "initial",
+          "file": "/assets/snapshots-Dz8FZ_D7.js",
+          "bytes": 544,
+          "gzipBytes": 335
+        },
+        {
+          "phase": "initial",
+          "file": "/assets/WikiLayout-ynCcrW29.js",
+          "bytes": 3183,
+          "gzipBytes": 1590
+        },
+        {
+          "phase": "initial",
+          "file": "/assets/use-page-scroll-9OHwaaDG.js",
+          "bytes": 972,
+          "gzipBytes": 531
+        },
+        {
+          "phase": "interaction",
+          "file": "/assets/HeaderSearchSuggestions-5ob5JCRM.js",
+          "bytes": 5074,
+          "gzipBytes": 2201
+        },
+        {
+          "phase": "interaction",
+          "file": "/assets/search-index-B4-U8Dwt.js",
+          "bytes": 1029,
+          "gzipBytes": 670
+        },
+        {
+          "phase": "interaction",
+          "file": "/assets/published-effects-DraP4bIJ.js",
+          "bytes": 2484,
+          "gzipBytes": 926
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "resources": [
+        {
+          "phase": "initial",
+          "file": "/assets/index-DR3nxG2y.js",
+          "bytes": 333418,
+          "gzipBytes": 103585
+        },
+        {
+          "phase": "initial",
+          "file": "/assets/WikiHomePage-Dlkz98By.js",
+          "bytes": 5426,
+          "gzipBytes": 1932
+        },
+        {
+          "phase": "initial",
+          "file": "/assets/snapshots-Dz8FZ_D7.js",
+          "bytes": 544,
+          "gzipBytes": 335
+        },
+        {
+          "phase": "initial",
+          "file": "/assets/catalog-6s9Vv8Ca.js",
+          "bytes": 1690,
+          "gzipBytes": 687
+        },
+        {
+          "phase": "initial",
+          "file": "/assets/characters-DImKs2vR.js",
+          "bytes": 13987,
+          "gzipBytes": 4174
+        },
+        {
+          "phase": "initial",
+          "file": "/assets/WikiLayout-ynCcrW29.js",
+          "bytes": 3183,
+          "gzipBytes": 1590
+        },
+        {
+          "phase": "initial",
+          "file": "/assets/use-page-scroll-9OHwaaDG.js",
+          "bytes": 972,
+          "gzipBytes": 531
+        },
+        {
+          "phase": "interaction",
+          "file": "/assets/HeaderSearchSuggestions-5ob5JCRM.js",
+          "bytes": 5074,
+          "gzipBytes": 2201
+        },
+        {
+          "phase": "interaction",
+          "file": "/assets/published-effects-DraP4bIJ.js",
+          "bytes": 2484,
+          "gzipBytes": 926
+        },
+        {
+          "phase": "interaction",
+          "file": "/assets/search-index-B4-U8Dwt.js",
+          "bytes": 1029,
+          "gzipBytes": 670
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "measurement": "Cold production preview; actual JS response bodies; gzip is a local estimate."
+}

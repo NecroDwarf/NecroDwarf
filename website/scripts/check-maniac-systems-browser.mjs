@@ -166,7 +166,9 @@ await withBrowserCheck(
       );
     }
     await owner.selectOption("");
-    await p.getByRole("searchbox").fill("кошмарная зажигалка");
+    await p
+      .getByRole("searchbox", { name: "Поиск по названию", exact: true })
+      .fill("кошмарная зажигалка");
     await expect(p.locator("[data-system-id]")).toHaveCount(1);
     await category.selectOption("coin");
     await expect(p.locator("[data-system-id]")).toHaveCount(0);
@@ -245,16 +247,15 @@ await withBrowserCheck(
           .getAttribute("href")
       ).includes("drive.usercontent.google.com/download"),
     );
-    assert.ok(
-      (
-        await p
-          .getByRole("link", { name: /Скачать с Яндекс Диска/ })
-          .first()
-          .getAttribute("href")
-      ).includes("disk.yandex.ru"),
+    assert.equal(
+      await p
+        .getByRole("link", { name: /Скачать с Яндекс Диска/ })
+        .first()
+        .getAttribute("href"),
+      "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
     );
     report.checks.push(
-      "Keeper 3D loads on demand and renders; all three chronicle backgrounds retain animations; Drive/Yandex buttons preserved.",
+      "Keeper 3D loads on demand and renders; all three chronicle backgrounds retain animations; Drive download and temporary Yandex Rickroll placeholder preserved.",
     );
     report.checks.push(
       "All item/mechanic categories, all confirmed character filters, combined search/empty/reset, keyboard SPA, Hook ↔ ability.",

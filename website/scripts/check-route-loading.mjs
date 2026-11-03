@@ -23,6 +23,35 @@ function staticModules(...entries) {
 const main = chunkFor("src/main.tsx");
 const initial = staticModules(main);
 assert.ok(
+  !initial.some((m) => m.endsWith("/wiki/search-index.ts")),
+  "Search index must load on demand",
+);
+for (const page of [
+  "pages/WikiSearchPage.tsx",
+  "search-index.ts",
+  "ui/HeaderSearchSuggestions.tsx",
+]) {
+  const loaded = staticModules(
+    main,
+    chunkFor(`src/app/projects/maniac/wiki/${page}`),
+  );
+  assert.ok(
+    !loaded.some((m) =>
+      /wiki\/data\/|node_modules\/three\/|ModelCanvas|changelogs\/content\//.test(
+        m,
+      ),
+    ),
+    `${page}: search must use lightweight publication metadata only`,
+  );
+}
+assert.ok(
+  !staticModules(
+    main,
+    chunkFor("src/app/projects/maniac/wiki/pages/WikiLayout.tsx"),
+  ).some((m) => /HeaderSearchSuggestions|search-index/.test(m)),
+  "Header suggestions and index must wait for interaction",
+);
+assert.ok(
   !initial.some((m) => /changelogs\/content\/1\.[012]\.json$/.test(m)),
   "Chronicle JSON in initial JS",
 );

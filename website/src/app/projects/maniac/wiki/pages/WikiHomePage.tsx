@@ -48,8 +48,7 @@ export function WikiHomePage() {
             Maniac <em>Wiki</em>
           </h1>
           <p className={s.heroLead}>
-            У каждой охоты
-            <br />
+            У каждой охоты <br />
             есть две стороны.
           </p>
           <p className={s.lead}>
@@ -60,6 +59,11 @@ export function WikiHomePage() {
           <Link className={s.primary} to="/projects/maniac/wiki/characters">
             Открыть персонажей <span aria-hidden="true">↗</span>
           </Link>
+          <p>
+            <Link className={s.textLink} to="/projects/maniac/wiki/search">
+              Поиск по всей Wiki →
+            </Link>
+          </p>
           <div className={s.heroCounts}>
             <span>
               <b>{characterEntries.length}</b> персонажей
@@ -110,7 +114,7 @@ export function WikiHomePage() {
               <p>Помогайте друг другу, рискуйте и находите путь к спасению.</p>
             </Link>
           </div>
-          <div className={s.futureCategories}>
+          <div className={s.futureCategories} data-wiki-categories>
             {categories.map((category, i) => (
               <Link
                 key={category.slug}
@@ -136,8 +140,7 @@ export function WikiHomePage() {
           <div>
             <p className={s.eyebrow}>В ФОКУСЕ / МАНЬЯК</p>
             <h2 id="featured-character">
-              Не смотри
-              <br />
+              Не смотри <br />
               слишком долго.
             </h2>
             <h3>Хранитель кошмаров</h3>

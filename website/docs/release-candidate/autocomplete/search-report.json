@@ -1,0 +1,61 @@
+{
+  "entries": 204,
+  "indexResponses": [
+    {
+      "file": "/assets/search-index-B4-U8Dwt.js",
+      "bytes": 1029,
+      "gzipBytes": 670
+    },
+    {
+      "file": "/assets/search-index-B4-U8Dwt.js",
+      "bytes": 1029,
+      "gzipBytes": 670
+    },
+    {
+      "file": "/assets/search-index-B4-U8Dwt.js",
+      "bytes": 1029,
+      "gzipBytes": 670
+    },
+    {
+      "file": "/assets/search-index-B4-U8Dwt.js",
+      "bytes": 1029,
+      "gzipBytes": 670
+    },
+    {
+      "file": "/assets/search-index-B4-U8Dwt.js",
+      "bytes": 1029,
+      "gzipBytes": 670
+    },
+    {
+      "file": "/assets/search-index-B4-U8Dwt.js",
+      "bytes": 1029,
+      "gzipBytes": 670
+    },
+    {
+      "file": "/assets/search-index-B4-U8Dwt.js",
+      "bytes": 1029,
+      "gzipBytes": 670
+    },
+    {
+      "file": "/assets/search-index-B4-U8Dwt.js",
+      "bytes": 1029,
+      "gzipBytes": 670
+    },
+    {
+      "file": "/assets/search-index-B4-U8Dwt.js",
+      "bytes": 1029,
+      "gzipBytes": 670
+    }
+  ],
+  "errors": [],
+  "checks": [
+    "Every published entity searchable; unpublished effect excluded",
+    "Russian case/е/ё, multiple words, IDs, empty and missing queries",
+    "Grouping, keyboard, Escape, Back/Forward, effect anchors",
+    "Touch entry and results; 320/390/768/1440; long queries",
+    "SSG fallback without JavaScript; lazy index; failed index recovery",
+    "Permanent header form: Enter/button, Escape, same-document navigation, catalog independence, touch and native no-JS GET",
+    "Ranked live suggestions: six results, category labels, keyboard selection, pointer/touch, outside dismissal and empty state",
+    "Delayed index uses the latest query, Escape stays closed, composition Enter, short viewport, Tab and load failure recovery"
+  ]
+}

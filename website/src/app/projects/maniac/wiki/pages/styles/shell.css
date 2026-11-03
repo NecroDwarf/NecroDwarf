@@ -20,6 +20,7 @@
 .wiki a:focus-visible,
 .wiki button:focus-visible,
 .wiki input:focus-visible,
+.wiki select:focus-visible,
 .wiki summary:focus-visible {
   outline: 2px solid #e6c4a4;
   outline-offset: 5px;
@@ -60,10 +61,11 @@
   padding-inline: clamp(20px, 5.6vw, 80px);
 }
 .localNav {
-  display: flex;
+  display: grid;
+  grid-template-columns: auto minmax(240px, 440px);
   justify-content: space-between;
   align-items: center;
-  gap: 24px;
+  gap: 16px 32px;
   padding-block: 25px;
   border-bottom: 1px solid var(--iron);
 }
@@ -82,23 +84,65 @@
   padding-left: 12px;
   margin-left: 8px;
 }
-.localNav > div {
+.localLinks {
+  grid-column: 1 / -1;
   display: flex;
   gap: clamp(16px, 2.5vw, 32px);
   align-items: center;
   flex-wrap: wrap;
 }
-.localNav > div a {
+.localLinks a {
   font-size: 13px;
   color: var(--ash);
   text-decoration: none;
-  min-height: 28px;
+  min-height: 36px;
   display: inline-flex;
   align-items: center;
 }
-.localNav > div a[aria-current],
-.localNav > div a:hover {
+.localLinks a[aria-current],
+.localLinks a:hover {
   color: var(--bone);
+}
+.navSearch {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  gap: 8px;
+  width: 100%;
+  min-width: 0;
+}
+.navSearch input {
+  flex: 1;
+  min-width: 0;
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #626878;
+  border-radius: 0;
+  background: var(--stone);
+  color: var(--bone);
+  font: inherit;
+  font-size: 16px;
+}
+.navSearch input::placeholder {
+  color: var(--ash);
+}
+.navSearch button {
+  min-height: 44px;
+  padding: 10px 16px;
+  border: 1px solid #865763;
+  background: #59333f;
+  color: var(--bone);
+  font: inherit;
+  font-size: 14px;
+  cursor: pointer;
+}
+.navSearch button:hover {
+  background: #704351;
+}
+.navSearch input:focus-visible,
+.navSearch button:focus-visible {
+  outline-width: 1px;
+  outline-offset: -1px;
 }
 .eyebrow {
   font-size: 10px;
@@ -280,7 +324,7 @@
 }
 .futureCategories {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(6, minmax(0, 1fr));
   margin-top: 20px;
   border: 1px solid #2b2e37;
 }

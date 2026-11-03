@@ -121,7 +121,11 @@ try {
   );
   assert.equal(primary.searchParams.get("export"), "download");
   assert.equal(primary.searchParams.get("confirm"), "t");
-  assert.equal(download.mirrorUrl, "https://disk.yandex.ru/d/z7mqmWDD3k9OTg");
+  assert.equal(
+    download.mirrorUrl,
+    "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+  );
+  assert.match(download.note, /Зеркало Яндекс Диска временно недоступно/);
   assert.equal(download.version, "1.2");
   assert.equal(download.releaseName, "Flower Cleaning");
   const links = [...maniac.matchAll(/<a\b([^>]*)>([\s\S]*?)<\/a>/g)];

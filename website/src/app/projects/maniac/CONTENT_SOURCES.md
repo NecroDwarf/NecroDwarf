@@ -75,6 +75,13 @@ Maniac, commit `83bd17a968e528ac11fa11a03a194a43f6fa40be`:
 
 ## Скачивание Flower Cleaning 1.2 — проверено 24.10.2026
 
+Актуализация 03.11.2026: прежнее зеркало Яндекс Диска больше не доступно
+(`404 DiskNotFoundError`). По прямому указанию владельца кнопка зеркала временно
+ведёт на [Rickroll](https://www.youtube.com/watch?v=dQw4w9WgXcQ).
+Основная загрузка Google Drive сохранена. После восстановления зеркала заменить
+`download.mirrorUrl` в `content.ts`; проверки сейчас явно ожидают временную заглушку.
+Ниже сохранены исторические результаты проверки настоящего архива.
+
 Основная кнопка в Hero и блоке установки ведёт непосредственно на
 [Google Drive download](https://drive.usercontent.google.com/download?id=1Pe_mgHtMvoVIn5-FwG5Nj_sG0xuDvY6D&export=download&confirm=t).
 Рядом доступно [зеркало Яндекс Диска](https://disk.yandex.ru/d/z7mqmWDD3k9OTg).

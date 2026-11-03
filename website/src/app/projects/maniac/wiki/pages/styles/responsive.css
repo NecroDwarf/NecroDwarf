@@ -51,17 +51,17 @@
 }
 @media (max-width: 700px) {
   .localNav {
-    flex-direction: column;
-    align-items: start;
+    grid-template-columns: minmax(0, 1fr);
+    justify-items: start;
     gap: 16px;
     padding-block: 20px;
   }
-  .localNav > div {
+  .localLinks {
     width: 100%;
     justify-content: space-between;
     gap: 12px;
   }
-  .localNav > div a {
+  .localLinks a {
     font-size: 12px;
   }
   .homeHero {
@@ -251,7 +251,7 @@
     gap: 6px;
     height: 330px;
   }
-  .localNav > div {
+  .localLinks {
     gap: 9px;
   }
 }

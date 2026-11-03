@@ -229,8 +229,8 @@ export function ManiacPage() {
             <h3>Сборка, моды и карта</h3>
             <p>
               Maniac {download.version} — {download.releaseName}. ZIP-архив с
-              модами и картой доступен в Google Drive и на резервном зеркале
-              Яндекс Диска.
+              модами и картой доступен в Google Drive. Зеркало Яндекс Диска пока
+              не работает.
             </p>
             <div className={s.actions}>
               <DownloadActions />

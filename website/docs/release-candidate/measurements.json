@@ -1,0 +1,6597 @@
+{
+  "date": "2026-11-03",
+  "baselineCommit": "c3950ae",
+  "configuration": "Cold context per URL; 1440x1000; local uncompressed SSG; SITE_URL absent; bytes are actual response bodies; gzip is a local estimate.",
+  "before": {
+    "network": [
+      {
+        "path": "/projects/maniac",
+        "js": 368266,
+        "gzipJS": 116381,
+        "resources": [
+          {
+            "file": "projects/maniac",
+            "bytes": 20700,
+            "gzipBytes": 6218
+          },
+          {
+            "file": "assets/style-BFf94-tp.css",
+            "bytes": 79593,
+            "gzipBytes": 17267
+          },
+          {
+            "file": "brand/necrodwarf-mark.png",
+            "bytes": 12080,
+            "gzipBytes": 12103
+          },
+          {
+            "file": "assets/index-CQnfydM8.js",
+            "bytes": 333458,
+            "gzipBytes": 103642
+          },
+          {
+            "file": "assets/ManiacPage-SmE_DWms.js",
+            "bytes": 14270,
+            "gzipBytes": 5223
+          },
+          {
+            "file": "assets/ProjectIntro-qRHoDB56.js",
+            "bytes": 2655,
+            "gzipBytes": 1187
+          },
+          {
+            "file": "assets/ReleaseList-bB_v1vFG.js",
+            "bytes": 1248,
+            "gzipBytes": 681
+          },
+          {
+            "file": "assets/Content.module-_AHIhrYo.js",
+            "bytes": 786,
+            "gzipBytes": 382
+          },
+          {
+            "file": "assets/characters-DImKs2vR.js",
+            "bytes": 13987,
+            "gzipBytes": 4174
+          },
+          {
+            "file": "assets/SectionHeading-CymVYNTF.js",
+            "bytes": 346,
+            "gzipBytes": 227
+          },
+          {
+            "file": "assets/snapshots-Dz8FZ_D7.js",
+            "bytes": 544,
+            "gzipBytes": 335
+          },
+          {
+            "file": "assets/rubik-cyrillic-wght-normal-DveCct9I.woff2",
+            "bytes": 15112,
+            "gzipBytes": 15135
+          },
+          {
+            "file": "assets/rubik-latin-wght-normal-CnQIisVs.woff2",
+            "bytes": 35348,
+            "gzipBytes": 35361
+          },
+          {
+            "file": "assets/geologica-latin-wght-normal-BBL8hQxZ.woff2",
+            "bytes": 24944,
+            "gzipBytes": 24972
+          },
+          {
+            "file": "assets/use-page-scroll-B7k50qbX.js",
+            "bytes": 972,
+            "gzipBytes": 530
+          },
+          {
+            "file": "assets/geologica-cyrillic-wght-normal-DbeVG3Ps.woff2",
+            "bytes": 16428,
+            "gzipBytes": 16454
+          },
+          {
+            "file": "assets/flower-cleaning-DfJf6tQL.jpg",
+            "bytes": 167017,
+            "gzipBytes": 166493
+          }
+        ]
+      },
+      {
+        "path": "/projects/maniac/wiki",
+        "js": 358925,
+        "gzipJS": 112560,
+        "resources": [
+          {
+            "file": "projects/maniac/wiki",
+            "bytes": 11127,
+            "gzipBytes": 3376
+          },
+          {
+            "file": "assets/style-BFf94-tp.css",
+            "bytes": 79593,
+            "gzipBytes": 17267
+          },
+          {
+            "file": "assets/ghost-card-fC3NjMfp.webp",
+            "bytes": 44364,
+            "gzipBytes": 44397
+          },
+          {
+            "file": "assets/keeper_of_nightmares-card-E92OWx7n.webp",
+            "bytes": 55566,
+            "gzipBytes": 55604
+          },
+          {
+            "file": "assets/shaman-card-ChTgPmEQ.webp",
+            "bytes": 55174,
+            "gzipBytes": 54969
+          },
+          {
+            "file": "brand/necrodwarf-mark.png",
+            "bytes": 12080,
+            "gzipBytes": 12103
+          },
+          {
+            "file": "assets/index-CQnfydM8.js",
+            "bytes": 333458,
+            "gzipBytes": 103642
+          },
+          {
+            "file": "assets/WikiHomePage-Dcg-16nW.js",
+            "bytes": 5265,
+            "gzipBytes": 1879
+          },
+          {
+            "file": "assets/catalog-6s9Vv8Ca.js",
+            "bytes": 1690,
+            "gzipBytes": 687
+          },
+          {
+            "file": "assets/rubik-cyrillic-wght-normal-DveCct9I.woff2",
+            "bytes": 15112,
+            "gzipBytes": 15135
+          },
+          {
+            "file": "assets/snapshots-Dz8FZ_D7.js",
+            "bytes": 544,
+            "gzipBytes": 335
+          },
+          {
+            "file": "assets/WikiLayout-Ew57mnxw.js",
+            "bytes": 3009,
+            "gzipBytes": 1313
+          },
+          {
+            "file": "assets/characters-DImKs2vR.js",
+            "bytes": 13987,
+            "gzipBytes": 4174
+          },
+          {
+            "file": "assets/rubik-latin-wght-normal-CnQIisVs.woff2",
+            "bytes": 35348,
+            "gzipBytes": 35361
+          },
+          {
+            "file": "assets/geologica-latin-wght-normal-BBL8hQxZ.woff2",
+            "bytes": 24944,
+            "gzipBytes": 24972
+          },
+          {
+            "file": "assets/geologica-cyrillic-wght-normal-DbeVG3Ps.woff2",
+            "bytes": 16428,
+            "gzipBytes": 16454
+          },
+          {
+            "file": "assets/use-page-scroll-B7k50qbX.js",
+            "bytes": 972,
+            "gzipBytes": 530
+          }
+        ]
+      },
+      {
+        "path": "/projects/maniac/wiki/characters",
+        "js": 359622,
+        "gzipJS": 113881,
+        "resources": [
+          {
+            "file": "projects/maniac/wiki/characters",
+            "bytes": 36173,
+            "gzipBytes": 5460
+          },
+          {
+            "file": "assets/style-BFf94-tp.css",
+            "bytes": 79593,
+            "gzipBytes": 17267
+          },
+          {
+            "file": "brand/necrodwarf-mark.png",
+            "bytes": 12080,
+            "gzipBytes": 12103
+          },
+          {
+            "file": "assets/index-CQnfydM8.js",
+            "bytes": 333458,
+            "gzipBytes": 103642
+          },
+          {
+            "file": "assets/agent-card-MmCUT58c.webp",
+            "bytes": 55368,
+            "gzipBytes": 55165
+          },
+          {
+            "file": "assets/pudge-card-IBzAQ2gt.webp",
+            "bytes": 69804,
+            "gzipBytes": 69590
+          },
+          {
+            "file": "assets/ursa-card-CuHhh8Dl.webp",
+            "bytes": 51502,
+            "gzipBytes": 51136
+          },
+          {
+            "file": "assets/death-card-BvIylbhL.webp",
+            "bytes": 62806,
+            "gzipBytes": 62620
+          },
+          {
+            "file": "assets/plague_doctor-card-CeP_9Nhc.webp",
+            "bytes": 37758,
+            "gzipBytes": 37791
+          },
+          {
+            "file": "assets/ghost-card-fC3NjMfp.webp",
+            "bytes": 44364,
+            "gzipBytes": 44397
+          },
+          {
+            "file": "assets/freddy_bear-card-2frTQE29.webp",
+            "bytes": 71546,
+            "gzipBytes": 71405
+          },
+          {
+            "file": "assets/keeper_of_nightmares-card-E92OWx7n.webp",
+            "bytes": 55566,
+            "gzipBytes": 55604
+          },
+          {
+            "file": "assets/alchemist-card-HMmPje42.webp",
+            "bytes": 38232,
+            "gzipBytes": 38265
+          },
+          {
+            "file": "assets/shaman-card-ChTgPmEQ.webp",
+            "bytes": 55174,
+            "gzipBytes": 54969
+          },
+          {
+            "file": "assets/mefedronshchik-card-P3UPY7gj.webp",
+            "bytes": 68382,
+            "gzipBytes": 68266
+          },
+          {
+            "file": "assets/scientist-card-vZnN5u_w.webp",
+            "bytes": 71506,
+            "gzipBytes": 71364
+          },
+          {
+            "file": "assets/dodepovich-card-5d5dShc3.webp",
+            "bytes": 63860,
+            "gzipBytes": 63898
+          },
+          {
+            "file": "assets/necromancer-card-BOOLm-5A.webp",
+            "bytes": 68816,
+            "gzipBytes": 68603
+          },
+          {
+            "file": "assets/CharactersPage-CKt4wST2.js",
+            "bytes": 3064,
+            "gzipBytes": 1515
+          },
+          {
+            "file": "assets/CatalogControls-D6WVvdgN.js",
+            "bytes": 2350,
+            "gzipBytes": 1265
+          },
+          {
+            "file": "assets/WikiLayout-Ew57mnxw.js",
+            "bytes": 3009,
+            "gzipBytes": 1313
+          },
+          {
+            "file": "assets/catalog-6s9Vv8Ca.js",
+            "bytes": 1690,
+            "gzipBytes": 687
+          },
+          {
+            "file": "assets/snapshots-Dz8FZ_D7.js",
+            "bytes": 544,
+            "gzipBytes": 335
+          },
+          {
+            "file": "assets/characters-DImKs2vR.js",
+            "bytes": 13987,
+            "gzipBytes": 4174
+          },
+          {
+            "file": "assets/DifficultyStars-DQ6jgCuD.js",
+            "bytes": 548,
+            "gzipBytes": 420
+          },
+          {
+            "file": "assets/rubik-latin-wght-normal-CnQIisVs.woff2",
+            "bytes": 35348,
+            "gzipBytes": 35361
+          },
+          {
+            "file": "assets/geologica-latin-wght-normal-BBL8hQxZ.woff2",
+            "bytes": 24944,
+            "gzipBytes": 24972
+          },
+          {
+            "file": "assets/rubik-cyrillic-wght-normal-DveCct9I.woff2",
+            "bytes": 15112,
+            "gzipBytes": 15135
+          },
+          {
+            "file": "assets/geologica-cyrillic-wght-normal-DbeVG3Ps.woff2",
+            "bytes": 16428,
+            "gzipBytes": 16454
+          },
+          {
+            "file": "assets/use-page-scroll-B7k50qbX.js",
+            "bytes": 972,
+            "gzipBytes": 530
+          }
+        ]
+      },
+      {
+        "path": "/projects/maniac/wiki/perks",
+        "js": 451641,
+        "gzipJS": 144959,
+        "resources": [
+          {
+            "file": "projects/maniac/wiki/perks",
+            "bytes": 74745,
+            "gzipBytes": 8975
+          },
+          {
+            "file": "assets/style-BFf94-tp.css",
+            "bytes": 79593,
+            "gzipBytes": 17267
+          },
+          {
+            "file": "brand/necrodwarf-mark.png",
+            "bytes": 12080,
+            "gzipBytes": 12103
+          },
+          {
+            "file": "assets/index-CQnfydM8.js",
+            "bytes": 333458,
+            "gzipBytes": 103642
+          },
+          {
+            "file": "assets/bloodflow-lCu5wv6r.webp",
+            "bytes": 30712,
+            "gzipBytes": 30740
+          },
+          {
+            "file": "assets/i-am-speed-t1G2IWyN.webp",
+            "bytes": 19200,
+            "gzipBytes": 19224
+          },
+          {
+            "file": "assets/high_voltage-DaSO8P7h.webp",
+            "bytes": 63326,
+            "gzipBytes": 63364
+          },
+          {
+            "file": "assets/go_next-BZCG1GKC.webp",
+            "bytes": 35008,
+            "gzipBytes": 35024
+          },
+          {
+            "file": "assets/flowers_lead_the_investigation-4eHPO4Vy.webp",
+            "bytes": 56268,
+            "gzipBytes": 56306
+          },
+          {
+            "file": "assets/bouquet_to_the_other_side-CWCrlSU3.webp",
+            "bytes": 84710,
+            "gzipBytes": 84758
+          },
+          {
+            "file": "assets/bud_dispatcher-BCQGxu1h.webp",
+            "bytes": 56256,
+            "gzipBytes": 56294
+          },
+          {
+            "file": "assets/catch-mistakes-SPaRRadG.webp",
+            "bytes": 20416,
+            "gzipBytes": 20444
+          },
+          {
+            "file": "assets/computer-breaker-B9FKwwiX.webp",
+            "bytes": 21172,
+            "gzipBytes": 21200
+          },
+          {
+            "file": "assets/highlight-DpFVPhHY.webp",
+            "bytes": 21726,
+            "gzipBytes": 21754
+          },
+          {
+            "file": "assets/silence-CBVHkEPv.webp",
+            "bytes": 13108,
+            "gzipBytes": 13131
+          },
+          {
+            "file": "assets/ejection-DM5U1Tdz.webp",
+            "bytes": 23550,
+            "gzipBytes": 23578
+          },
+          {
+            "file": "assets/family-discord-Ca9rPkLX.webp",
+            "bytes": 13620,
+            "gzipBytes": 13643
+          },
+          {
+            "file": "assets/griefer-B6YSkQ3K.webp",
+            "bytes": 14234,
+            "gzipBytes": 14257
+          },
+          {
+            "file": "assets/guiding-light-3P5kLXuI.webp",
+            "bytes": 18660,
+            "gzipBytes": 18664
+          },
+          {
+            "file": "assets/mimic-Q-diiqJW.webp",
+            "bytes": 11738,
+            "gzipBytes": 11761
+          },
+          {
+            "file": "assets/wallhack-D_6bk-o4.webp",
+            "bytes": 18066,
+            "gzipBytes": 18094
+          },
+          {
+            "file": "assets/last-breath-rqg0b6ov.webp",
+            "bytes": 7878,
+            "gzipBytes": 7653
+          },
+          {
+            "file": "assets/quick-reflexes-kaZ2U6sh.webp",
+            "bytes": 26852,
+            "gzipBytes": 26880
+          },
+          {
+            "file": "assets/blindness-C6uk6yQd.webp",
+            "bytes": 27888,
+            "gzipBytes": 27863
+          },
+          {
+            "file": "assets/mental-bond-DNloALa0.webp",
+            "bytes": 29624,
+            "gzipBytes": 29652
+          },
+          {
+            "file": "assets/dutch-helm-CTZ0lH8K.webp",
+            "bytes": 13530,
+            "gzipBytes": 13553
+          },
+          {
+            "file": "assets/independence-CM3aQZKO.webp",
+            "bytes": 22580,
+            "gzipBytes": 22608
+          },
+          {
+            "file": "assets/altruist-exe-C47mw1hY.webp",
+            "bytes": 6558,
+            "gzipBytes": 6581
+          },
+          {
+            "file": "assets/magic-lover-BnuB38q0.webp",
+            "bytes": 16412,
+            "gzipBytes": 16437
+          },
+          {
+            "file": "assets/idealych-DxdfhUDT.webp",
+            "bytes": 18586,
+            "gzipBytes": 18614
+          },
+          {
+            "file": "assets/emergency_overclock-B_jlCSlo.webp",
+            "bytes": 78554,
+            "gzipBytes": 78446
+          },
+          {
+            "file": "assets/reality_anchor-CE2q1L-B.webp",
+            "bytes": 110032,
+            "gzipBytes": 110085
+          },
+          {
+            "file": "assets/fixed_it_im_out-DYxbOlPp.webp",
+            "bytes": 60876,
+            "gzipBytes": 60914
+          },
+          {
+            "file": "assets/magic_kick-GxFkK2sT.webp",
+            "bytes": 61288,
+            "gzipBytes": 61326
+          },
+          {
+            "file": "assets/PerksPage-SDQTspLR.js",
+            "bytes": 598,
+            "gzipBytes": 361
+          },
+          {
+            "file": "assets/ReferenceCatalogPage-ONDW8Wgq.js",
+            "bytes": 4300,
+            "gzipBytes": 1951
+          },
+          {
+            "file": "assets/StatText-Dm4i1USb.js",
+            "bytes": 9259,
+            "gzipBytes": 3831
+          },
+          {
+            "file": "assets/CatalogControls-D6WVvdgN.js",
+            "bytes": 2350,
+            "gzipBytes": 1265
+          },
+          {
+            "file": "assets/CatalogSelect-DTTPKSer.js",
+            "bytes": 315,
+            "gzipBytes": 230
+          },
+          {
+            "file": "assets/WikiLayout-Ew57mnxw.js",
+            "bytes": 3009,
+            "gzipBytes": 1313
+          },
+          {
+            "file": "assets/rubik-latin-wght-normal-CnQIisVs.woff2",
+            "bytes": 35348,
+            "gzipBytes": 35361
+          },
+          {
+            "file": "assets/Reference.module-DXylhMWA.js",
+            "bytes": 744,
+            "gzipBytes": 377
+          },
+          {
+            "file": "assets/maniac-gameplay-facts-NhEPXo0J.js",
+            "bytes": 3235,
+            "gzipBytes": 1667
+          },
+          {
+            "file": "assets/reference-catalog-2uiUw1Ei.js",
+            "bytes": 41769,
+            "gzipBytes": 7282
+          },
+          {
+            "file": "assets/EntityIcon-CIh1HWrz.js",
+            "bytes": 34133,
+            "gzipBytes": 16486
+          },
+          {
+            "file": "assets/CharacterFilter-rPBWAtBR.js",
+            "bytes": 1456,
+            "gzipBytes": 742
+          },
+          {
+            "file": "assets/characters-DImKs2vR.js",
+            "bytes": 13987,
+            "gzipBytes": 4174
+          },
+          {
+            "file": "assets/geologica-latin-wght-normal-BBL8hQxZ.woff2",
+            "bytes": 24944,
+            "gzipBytes": 24972
+          },
+          {
+            "file": "assets/snapshots-Dz8FZ_D7.js",
+            "bytes": 544,
+            "gzipBytes": 335
+          },
+          {
+            "file": "assets/reference-labels-3seqGaiy.js",
+            "bytes": 1512,
+            "gzipBytes": 773
+          },
+          {
+            "file": "assets/rubik-cyrillic-wght-normal-DveCct9I.woff2",
+            "bytes": 15112,
+            "gzipBytes": 15135
+          },
+          {
+            "file": "assets/geologica-cyrillic-wght-normal-DbeVG3Ps.woff2",
+            "bytes": 16428,
+            "gzipBytes": 16454
+          },
+          {
+            "file": "assets/use-page-scroll-B7k50qbX.js",
+            "bytes": 972,
+            "gzipBytes": 530
+          }
+        ]
+      },
+      {
+        "path": "/projects/maniac/wiki/abilities",
+        "js": 451648,
+        "gzipJS": 144963,
+        "resources": [
+          {
+            "file": "projects/maniac/wiki/abilities",
+            "bytes": 31233,
+            "gzipBytes": 8274
+          },
+          {
+            "file": "brand/necrodwarf-mark.png",
+            "bytes": 12080,
+            "gzipBytes": 12103
+          },
+          {
+            "file": "assets/style-BFf94-tp.css",
+            "bytes": 79593,
+            "gzipBytes": 17267
+          },
+          {
+            "file": "assets/index-CQnfydM8.js",
+            "bytes": 333458,
+            "gzipBytes": 103642
+          },
+          {
+            "file": "assets/death-teleport-COFNxRb6.webp",
+            "bytes": 25454,
+            "gzipBytes": 25482
+          },
+          {
+            "file": "assets/beast-leap-DUpI-QoJ.webp",
+            "bytes": 7270,
+            "gzipBytes": 7293
+          },
+          {
+            "file": "assets/ghost-possession-B9IisNYk.webp",
+            "bytes": 70768,
+            "gzipBytes": 70811
+          },
+          {
+            "file": "assets/plague-orb-h3rgGoWX.webp",
+            "bytes": 90254,
+            "gzipBytes": 90302
+          },
+          {
+            "file": "assets/phantom-veil-C7cmHsu6.webp",
+            "bytes": 15490,
+            "gzipBytes": 15513
+          },
+          {
+            "file": "assets/musical-wave-DhWwo4MU.webp",
+            "bytes": 103012,
+            "gzipBytes": 103065
+          },
+          {
+            "file": "assets/hook-throw-Bh1K8bPc.webp",
+            "bytes": 67310,
+            "gzipBytes": 67285
+          },
+          {
+            "file": "assets/concentrated-nightmare-CFqeCOEf.webp",
+            "bytes": 73978,
+            "gzipBytes": 74021
+          },
+          {
+            "file": "assets/quantum-swap-Kzm1OIxB.webp",
+            "bytes": 116980,
+            "gzipBytes": 117038
+          },
+          {
+            "file": "assets/smoke-cloud-DTbFvxfx.webp",
+            "bytes": 98738,
+            "gzipBytes": 98791
+          },
+          {
+            "file": "assets/AbilitiesPage-CzYJDwMn.js",
+            "bytes": 605,
+            "gzipBytes": 365
+          },
+          {
+            "file": "assets/ReferenceCatalogPage-ONDW8Wgq.js",
+            "bytes": 4300,
+            "gzipBytes": 1951
+          },
+          {
+            "file": "assets/StatText-Dm4i1USb.js",
+            "bytes": 9259,
+            "gzipBytes": 3831
+          },
+          {
+            "file": "assets/WikiLayout-Ew57mnxw.js",
+            "bytes": 3009,
+            "gzipBytes": 1313
+          },
+          {
+            "file": "assets/CatalogControls-D6WVvdgN.js",
+            "bytes": 2350,
+            "gzipBytes": 1265
+          },
+          {
+            "file": "assets/CatalogSelect-DTTPKSer.js",
+            "bytes": 315,
+            "gzipBytes": 230
+          },
+          {
+            "file": "assets/Reference.module-DXylhMWA.js",
+            "bytes": 744,
+            "gzipBytes": 377
+          },
+          {
+            "file": "assets/maniac-gameplay-facts-NhEPXo0J.js",
+            "bytes": 3235,
+            "gzipBytes": 1667
+          },
+          {
+            "file": "assets/reference-catalog-2uiUw1Ei.js",
+            "bytes": 41769,
+            "gzipBytes": 7282
+          },
+          {
+            "file": "assets/rubik-latin-wght-normal-CnQIisVs.woff2",
+            "bytes": 35348,
+            "gzipBytes": 35361
+          },
+          {
+            "file": "assets/snapshots-Dz8FZ_D7.js",
+            "bytes": 544,
+            "gzipBytes": 335
+          },
+          {
+            "file": "assets/reference-labels-3seqGaiy.js",
+            "bytes": 1512,
+            "gzipBytes": 773
+          },
+          {
+            "file": "assets/CharacterFilter-rPBWAtBR.js",
+            "bytes": 1456,
+            "gzipBytes": 742
+          },
+          {
+            "file": "assets/characters-DImKs2vR.js",
+            "bytes": 13987,
+            "gzipBytes": 4174
+          },
+          {
+            "file": "assets/EntityIcon-CIh1HWrz.js",
+            "bytes": 34133,
+            "gzipBytes": 16486
+          },
+          {
+            "file": "assets/geologica-latin-wght-normal-BBL8hQxZ.woff2",
+            "bytes": 24944,
+            "gzipBytes": 24972
+          },
+          {
+            "file": "assets/rubik-cyrillic-wght-normal-DveCct9I.woff2",
+            "bytes": 15112,
+            "gzipBytes": 15135
+          },
+          {
+            "file": "assets/geologica-cyrillic-wght-normal-DbeVG3Ps.woff2",
+            "bytes": 16428,
+            "gzipBytes": 16454
+          },
+          {
+            "file": "assets/use-page-scroll-B7k50qbX.js",
+            "bytes": 972,
+            "gzipBytes": 530
+          }
+        ]
+      },
+      {
+        "path": "/projects/maniac/wiki/items",
+        "js": 541673,
+        "gzipJS": 165714,
+        "resources": [
+          {
+            "file": "projects/maniac/wiki/items",
+            "bytes": 100988,
+            "gzipBytes": 29132
+          },
+          {
+            "file": "assets/style-BFf94-tp.css",
+            "bytes": 79593,
+            "gzipBytes": 17267
+          },
+          {
+            "file": "brand/necrodwarf-mark.png",
+            "bytes": 12080,
+            "gzipBytes": 12103
+          },
+          {
+            "file": "assets/index-CQnfydM8.js",
+            "bytes": 333458,
+            "gzipBytes": 103642
+          },
+          {
+            "file": "assets/system-generator-CAsmbuZu.png",
+            "bytes": 13655,
+            "gzipBytes": 13445
+          },
+          {
+            "file": "assets/system-hook-Ch4qR33Q.png",
+            "bytes": 10995,
+            "gzipBytes": 10887
+          },
+          {
+            "file": "assets/system-microphone-5q9QjCvH.png",
+            "bytes": 5869,
+            "gzipBytes": 5554
+          },
+          {
+            "file": "assets/system-beehive-food-BATtUEtk.png",
+            "bytes": 5779,
+            "gzipBytes": 5499
+          },
+          {
+            "file": "assets/system-beast-claw-C6hZL8hS.png",
+            "bytes": 10806,
+            "gzipBytes": 10602
+          },
+          {
+            "file": "assets/system-ghost-hand-e7DuvrYu.webp",
+            "bytes": 103604,
+            "gzipBytes": 103657
+          },
+          {
+            "file": "assets/nightmare-lighter-render-3metDctg.png",
+            "bytes": 37305,
+            "gzipBytes": 36092
+          },
+          {
+            "file": "assets/system-salt-Bi7Cn7KA.webp",
+            "bytes": 48626,
+            "gzipBytes": 48659
+          },
+          {
+            "file": "assets/system-dead-staff-B2lv5CSp.png",
+            "bytes": 12430,
+            "gzipBytes": 12317
+          },
+          {
+            "file": "assets/system-maniac-regen-fragment-MlKKJYZL.webp",
+            "bytes": 10786,
+            "gzipBytes": 10809
+          },
+          {
+            "file": "assets/system-maniac-strength-fragment-CghHpYrm.webp",
+            "bytes": 10292,
+            "gzipBytes": 10315
+          },
+          {
+            "file": "assets/system-maniac-speed-fragment-pOs1B188.webp",
+            "bytes": 12294,
+            "gzipBytes": 12317
+          },
+          {
+            "file": "assets/system-maniac-slowness-fragment-BbGhf1fQ.webp",
+            "bytes": 14804,
+            "gzipBytes": 14827
+          },
+          {
+            "file": "assets/system-maniac-slow-falling-fragment-D0L3MI6n.webp",
+            "bytes": 14710,
+            "gzipBytes": 14733
+          },
+          {
+            "file": "assets/system-maniac-weakness-fragment-CqeGgK3B.webp",
+            "bytes": 9434,
+            "gzipBytes": 9457
+          },
+          {
+            "file": "assets/system-maniac-healing-fragment-CQOPJX7g.webp",
+            "bytes": 12642,
+            "gzipBytes": 12665
+          },
+          {
+            "file": "assets/system-maniac-blindness-fragment-1kJ7oftl.webp",
+            "bytes": 10716,
+            "gzipBytes": 10739
+          },
+          {
+            "file": "assets/system-maniac-glowing-fragment-h6T9yXP4.webp",
+            "bytes": 15774,
+            "gzipBytes": 15797
+          },
+          {
+            "file": "assets/system-recipe-book-Dfcu3bgp.webp",
+            "bytes": 23102,
+            "gzipBytes": 23130
+          },
+          {
+            "file": "assets/system-bandages-CqPUIuJF.png",
+            "bytes": 7937,
+            "gzipBytes": 7772
+          },
+          {
+            "file": "assets/system-medical-tablet-jS4mLdKl.png",
+            "bytes": 5792,
+            "gzipBytes": 5593
+          },
+          {
+            "file": "assets/system-bong-DLUid2N6.png",
+            "bytes": 17325,
+            "gzipBytes": 17123
+          },
+          {
+            "file": "assets/ItemsPage-BqcH7rlL.js",
+            "bytes": 626,
+            "gzipBytes": 379
+          },
+          {
+            "file": "assets/SystemsCatalogPage-BJqbg3AB.js",
+            "bytes": 4412,
+            "gzipBytes": 2015
+          },
+          {
+            "file": "assets/CatalogControls-D6WVvdgN.js",
+            "bytes": 2350,
+            "gzipBytes": 1265
+          },
+          {
+            "file": "assets/StatText-Dm4i1USb.js",
+            "bytes": 9259,
+            "gzipBytes": 3831
+          },
+          {
+            "file": "assets/CatalogSelect-DTTPKSer.js",
+            "bytes": 315,
+            "gzipBytes": 230
+          },
+          {
+            "file": "assets/WikiLayout-Ew57mnxw.js",
+            "bytes": 3009,
+            "gzipBytes": 1313
+          },
+          {
+            "file": "assets/rubik-latin-wght-normal-CnQIisVs.woff2",
+            "bytes": 35348,
+            "gzipBytes": 35361
+          },
+          {
+            "file": "assets/Reference.module-DXylhMWA.js",
+            "bytes": 744,
+            "gzipBytes": 377
+          },
+          {
+            "file": "assets/CharacterFilter-rPBWAtBR.js",
+            "bytes": 1456,
+            "gzipBytes": 742
+          },
+          {
+            "file": "assets/maniac-gameplay-facts-NhEPXo0J.js",
+            "bytes": 3235,
+            "gzipBytes": 1667
+          },
+          {
+            "file": "assets/maniac-system-data-C_jFLPGE.js",
+            "bytes": 91692,
+            "gzipBytes": 12421
+          },
+          {
+            "file": "assets/snapshots-Dz8FZ_D7.js",
+            "bytes": 544,
+            "gzipBytes": 335
+          },
+          {
+            "file": "assets/characters-DImKs2vR.js",
+            "bytes": 13987,
+            "gzipBytes": 4174
+          },
+          {
+            "file": "assets/SystemIcon-B6g6OCQo.js",
+            "bytes": 512,
+            "gzipBytes": 353
+          },
+          {
+            "file": "assets/system-icons-DQd-uIVD.js",
+            "bytes": 40969,
+            "gzipBytes": 15954
+          },
+          {
+            "file": "assets/geologica-latin-wght-normal-BBL8hQxZ.woff2",
+            "bytes": 24944,
+            "gzipBytes": 24972
+          },
+          {
+            "file": "assets/rubik-cyrillic-wght-normal-DveCct9I.woff2",
+            "bytes": 15112,
+            "gzipBytes": 15135
+          },
+          {
+            "file": "assets/geologica-cyrillic-wght-normal-DbeVG3Ps.woff2",
+            "bytes": 16428,
+            "gzipBytes": 16454
+          },
+          {
+            "file": "assets/EntityIcon-CIh1HWrz.js",
+            "bytes": 34133,
+            "gzipBytes": 16486
+          },
+          {
+            "file": "assets/use-page-scroll-B7k50qbX.js",
+            "bytes": 972,
+            "gzipBytes": 530
+          }
+        ]
+      },
+      {
+        "path": "/projects/maniac/wiki/mechanics",
+        "js": 541681,
+        "gzipJS": 165718,
+        "resources": [
+          {
+            "file": "projects/maniac/wiki/mechanics",
+            "bytes": 56714,
+            "gzipBytes": 8046
+          },
+          {
+            "file": "assets/style-BFf94-tp.css",
+            "bytes": 79593,
+            "gzipBytes": 17267
+          },
+          {
+            "file": "brand/necrodwarf-mark.png",
+            "bytes": 12080,
+            "gzipBytes": 12103
+          },
+          {
+            "file": "assets/index-CQnfydM8.js",
+            "bytes": 333458,
+            "gzipBytes": 103642
+          },
+          {
+            "file": "assets/MechanicsPage-KJQY_9p3.js",
+            "bytes": 634,
+            "gzipBytes": 383
+          },
+          {
+            "file": "assets/rubik-latin-wght-normal-CnQIisVs.woff2",
+            "bytes": 35348,
+            "gzipBytes": 35361
+          },
+          {
+            "file": "assets/CatalogControls-D6WVvdgN.js",
+            "bytes": 2350,
+            "gzipBytes": 1265
+          },
+          {
+            "file": "assets/CatalogSelect-DTTPKSer.js",
+            "bytes": 315,
+            "gzipBytes": 230
+          },
+          {
+            "file": "assets/SystemsCatalogPage-BJqbg3AB.js",
+            "bytes": 4412,
+            "gzipBytes": 2015
+          },
+          {
+            "file": "assets/WikiLayout-Ew57mnxw.js",
+            "bytes": 3009,
+            "gzipBytes": 1313
+          },
+          {
+            "file": "assets/Reference.module-DXylhMWA.js",
+            "bytes": 744,
+            "gzipBytes": 377
+          },
+          {
+            "file": "assets/maniac-gameplay-facts-NhEPXo0J.js",
+            "bytes": 3235,
+            "gzipBytes": 1667
+          },
+          {
+            "file": "assets/CharacterFilter-rPBWAtBR.js",
+            "bytes": 1456,
+            "gzipBytes": 742
+          },
+          {
+            "file": "assets/StatText-Dm4i1USb.js",
+            "bytes": 9259,
+            "gzipBytes": 3831
+          },
+          {
+            "file": "assets/snapshots-Dz8FZ_D7.js",
+            "bytes": 544,
+            "gzipBytes": 335
+          },
+          {
+            "file": "assets/SystemIcon-B6g6OCQo.js",
+            "bytes": 512,
+            "gzipBytes": 353
+          },
+          {
+            "file": "assets/characters-DImKs2vR.js",
+            "bytes": 13987,
+            "gzipBytes": 4174
+          },
+          {
+            "file": "assets/maniac-system-data-C_jFLPGE.js",
+            "bytes": 91692,
+            "gzipBytes": 12421
+          },
+          {
+            "file": "assets/system-icons-DQd-uIVD.js",
+            "bytes": 40969,
+            "gzipBytes": 15954
+          },
+          {
+            "file": "assets/EntityIcon-CIh1HWrz.js",
+            "bytes": 34133,
+            "gzipBytes": 16486
+          },
+          {
+            "file": "assets/geologica-latin-wght-normal-BBL8hQxZ.woff2",
+            "bytes": 24944,
+            "gzipBytes": 24972
+          },
+          {
+            "file": "assets/geologica-cyrillic-wght-normal-DbeVG3Ps.woff2",
+            "bytes": 16428,
+            "gzipBytes": 16454
+          },
+          {
+            "file": "assets/rubik-cyrillic-wght-normal-DveCct9I.woff2",
+            "bytes": 15112,
+            "gzipBytes": 15135
+          },
+          {
+            "file": "assets/use-page-scroll-B7k50qbX.js",
+            "bytes": 972,
+            "gzipBytes": 530
+          }
+        ]
+      },
+      {
+        "path": "/projects/maniac/wiki/maps",
+        "js": 361788,
+        "gzipJS": 116648,
+        "resources": [
+          {
+            "file": "projects/maniac/wiki/maps",
+            "bytes": 19943,
+            "gzipBytes": 5056
+          },
+          {
+            "file": "assets/style-BFf94-tp.css",
+            "bytes": 79593,
+            "gzipBytes": 17267
+          },
+          {
+            "file": "brand/necrodwarf-mark.png",
+            "bytes": 12080,
+            "gzipBytes": 12103
+          },
+          {
+            "file": "assets/index-CQnfydM8.js",
+            "bytes": 333458,
+            "gzipBytes": 103642
+          },
+          {
+            "file": "assets/mansion-640-fjO2QVfE.webp",
+            "bytes": 48754,
+            "gzipBytes": 48787
+          },
+          {
+            "file": "assets/pizzeria-640-BVzpSVLF.webp",
+            "bytes": 32630,
+            "gzipBytes": 32658
+          },
+          {
+            "file": "assets/fort-640-C79NE5JT.webp",
+            "bytes": 43764,
+            "gzipBytes": 43797
+          },
+          {
+            "file": "assets/MapsPage-Bq2_tKDt.js",
+            "bytes": 6414,
+            "gzipBytes": 2808
+          },
+          {
+            "file": "assets/CatalogControls-D6WVvdgN.js",
+            "bytes": 2350,
+            "gzipBytes": 1265
+          },
+          {
+            "file": "assets/WikiLayout-Ew57mnxw.js",
+            "bytes": 3009,
+            "gzipBytes": 1313
+          },
+          {
+            "file": "assets/maps-DwIpDSsl.js",
+            "bytes": 3189,
+            "gzipBytes": 1085
+          },
+          {
+            "file": "assets/snapshots-Dz8FZ_D7.js",
+            "bytes": 544,
+            "gzipBytes": 335
+          },
+          {
+            "file": "assets/rubik-cyrillic-wght-normal-DveCct9I.woff2",
+            "bytes": 15112,
+            "gzipBytes": 15135
+          },
+          {
+            "file": "assets/publication-C-4hTvi6.js",
+            "bytes": 494,
+            "gzipBytes": 322
+          },
+          {
+            "file": "assets/MapFacts-BxQy-aFk.js",
+            "bytes": 959,
+            "gzipBytes": 557
+          },
+          {
+            "file": "assets/DifficultyStars-DQ6jgCuD.js",
+            "bytes": 548,
+            "gzipBytes": 420
+          },
+          {
+            "file": "assets/mansion-960-Cr-0HIIz.js",
+            "bytes": 105,
+            "gzipBytes": 102
+          },
+          {
+            "file": "assets/pizzeria-814-FSqYAsZN.js",
+            "bytes": 107,
+            "gzipBytes": 104
+          },
+          {
+            "file": "assets/StatText-Dm4i1USb.js",
+            "bytes": 9259,
+            "gzipBytes": 3831
+          },
+          {
+            "file": "assets/rubik-latin-wght-normal-CnQIisVs.woff2",
+            "bytes": 35348,
+            "gzipBytes": 35361
+          },
+          {
+            "file": "assets/fort-960-CtkuzoVb.js",
+            "bytes": 99,
+            "gzipBytes": 99
+          },
+          {
+            "file": "assets/useMapAnchor-C766DRGG.js",
+            "bytes": 281,
+            "gzipBytes": 235
+          },
+          {
+            "file": "assets/geologica-latin-wght-normal-BBL8hQxZ.woff2",
+            "bytes": 24944,
+            "gzipBytes": 24972
+          },
+          {
+            "file": "assets/geologica-cyrillic-wght-normal-DbeVG3Ps.woff2",
+            "bytes": 16428,
+            "gzipBytes": 16454
+          },
+          {
+            "file": "assets/use-page-scroll-B7k50qbX.js",
+            "bytes": 972,
+            "gzipBytes": 530
+          }
+        ]
+      },
+      {
+        "path": "/projects/maniac/wiki/effects",
+        "js": 418914,
+        "gzipJS": 137066,
+        "resources": [
+          {
+            "file": "projects/maniac/wiki/effects",
+            "bytes": 85450,
+            "gzipBytes": 19080
+          },
+          {
+            "file": "assets/style-BFf94-tp.css",
+            "bytes": 79593,
+            "gzipBytes": 17267
+          },
+          {
+            "file": "brand/necrodwarf-mark.png",
+            "bytes": 12080,
+            "gzipBytes": 12103
+          },
+          {
+            "file": "assets/index-CQnfydM8.js",
+            "bytes": 333458,
+            "gzipBytes": 103642
+          },
+          {
+            "file": "assets/mana_flow-CwggGFXn.png",
+            "bytes": 99272,
+            "gzipBytes": 99119
+          },
+          {
+            "file": "assets/death_race-nIveO_yW.png",
+            "bytes": 104955,
+            "gzipBytes": 104480
+          },
+          {
+            "file": "assets/thorn-C3mF6Zme.png",
+            "bytes": 118403,
+            "gzipBytes": 117611
+          },
+          {
+            "file": "assets/altruist_boost-DJy6XlnF.png",
+            "bytes": 126709,
+            "gzipBytes": 125365
+          },
+          {
+            "file": "assets/dodepovich_insurance-DH8BkbYL.png",
+            "bytes": 552665,
+            "gzipBytes": 551404
+          },
+          {
+            "file": "assets/fear-Bs89cZBY.png",
+            "bytes": 59364,
+            "gzipBytes": 55359
+          },
+          {
+            "file": "assets/open_wound-BuvbVO3p.png",
+            "bytes": 65223,
+            "gzipBytes": 61772
+          },
+          {
+            "file": "assets/dodepovich_damage_block-6PkhEYju.png",
+            "bytes": 571336,
+            "gzipBytes": 570188
+          },
+          {
+            "file": "assets/target-BlB23Ub9.png",
+            "bytes": 71272,
+            "gzipBytes": 71270
+          },
+          {
+            "file": "assets/plague-BLMs9t6H.png",
+            "bytes": 61502,
+            "gzipBytes": 61420
+          },
+          {
+            "file": "assets/silence-B8n25mUk.png",
+            "bytes": 179996,
+            "gzipBytes": 179876
+          },
+          {
+            "file": "assets/frozen-sBaw-M6x.png",
+            "bytes": 452509,
+            "gzipBytes": 445346
+          },
+          {
+            "file": "assets/stun-Djd8jydB.png",
+            "bytes": 461597,
+            "gzipBytes": 460176
+          },
+          {
+            "file": "assets/dodepovich_credit-CCO_ikUI.png",
+            "bytes": 878816,
+            "gzipBytes": 878268
+          },
+          {
+            "file": "assets/dodepovich_double_damage-46kKPemj.png",
+            "bytes": 872273,
+            "gzipBytes": 872167
+          },
+          {
+            "file": "assets/dodepovich_slot_cooldown-BFRu0NKM.png",
+            "bytes": 507438,
+            "gzipBytes": 505614
+          },
+          {
+            "file": "assets/published-effects-DraP4bIJ.js",
+            "bytes": 2484,
+            "gzipBytes": 926
+          },
+          {
+            "file": "assets/EntityLink-ak5rqic7.js",
+            "bytes": 1696,
+            "gzipBytes": 886
+          },
+          {
+            "file": "assets/EffectsPage-CHxFpJTx.js",
+            "bytes": 58597,
+            "gzipBytes": 20810
+          },
+          {
+            "file": "assets/publication-C-4hTvi6.js",
+            "bytes": 494,
+            "gzipBytes": 322
+          },
+          {
+            "file": "assets/CatalogControls-D6WVvdgN.js",
+            "bytes": 2350,
+            "gzipBytes": 1265
+          },
+          {
+            "file": "assets/WikiLayout-Ew57mnxw.js",
+            "bytes": 3009,
+            "gzipBytes": 1313
+          },
+          {
+            "file": "assets/snapshots-Dz8FZ_D7.js",
+            "bytes": 544,
+            "gzipBytes": 335
+          },
+          {
+            "file": "assets/maniac-gameplay-facts-NhEPXo0J.js",
+            "bytes": 3235,
+            "gzipBytes": 1667
+          },
+          {
+            "file": "assets/CatalogSelect-DTTPKSer.js",
+            "bytes": 315,
+            "gzipBytes": 230
+          },
+          {
+            "file": "assets/Reference.module-DXylhMWA.js",
+            "bytes": 744,
+            "gzipBytes": 377
+          },
+          {
+            "file": "assets/WikiText-D7LFU47D.js",
+            "bytes": 1757,
+            "gzipBytes": 932
+          },
+          {
+            "file": "assets/StatText-Dm4i1USb.js",
+            "bytes": 9259,
+            "gzipBytes": 3831
+          },
+          {
+            "file": "assets/rubik-latin-wght-normal-CnQIisVs.woff2",
+            "bytes": 35348,
+            "gzipBytes": 35361
+          },
+          {
+            "file": "assets/geologica-latin-wght-normal-BBL8hQxZ.woff2",
+            "bytes": 24944,
+            "gzipBytes": 24972
+          },
+          {
+            "file": "assets/rubik-cyrillic-wght-normal-DveCct9I.woff2",
+            "bytes": 15112,
+            "gzipBytes": 15135
+          },
+          {
+            "file": "assets/geologica-cyrillic-wght-normal-DbeVG3Ps.woff2",
+            "bytes": 16428,
+            "gzipBytes": 16454
+          },
+          {
+            "file": "assets/use-page-scroll-B7k50qbX.js",
+            "bytes": 972,
+            "gzipBytes": 530
+          }
+        ]
+      },
+      {
+        "path": "/projects/maniac/wiki/characters/keeper-of-nightmares",
+        "js": 640686,
+        "gzipJS": 187808,
+        "resources": [
+          {
+            "file": "projects/maniac/wiki/characters/keeper-of-nightmares",
+            "bytes": 31702,
+            "gzipBytes": 6153
+          },
+          {
+            "file": "assets/style-BFf94-tp.css",
+            "bytes": 79593,
+            "gzipBytes": 17267
+          },
+          {
+            "file": "assets/keeper_of_nightmares-large-CZm-EnWi.webp",
+            "bytes": 242698,
+            "gzipBytes": 242617
+          },
+          {
+            "file": "brand/necrodwarf-mark.png",
+            "bytes": 12080,
+            "gzipBytes": 12103
+          },
+          {
+            "file": "assets/index-CQnfydM8.js",
+            "bytes": 333458,
+            "gzipBytes": 103642
+          },
+          {
+            "file": "assets/keeper-of-nightmares-QjZGyEis.js",
+            "bytes": 3530,
+            "gzipBytes": 1880
+          },
+          {
+            "file": "assets/EntityLink-ak5rqic7.js",
+            "bytes": 1696,
+            "gzipBytes": 886
+          },
+          {
+            "file": "assets/CharacterPage-CawaCtIi.js",
+            "bytes": 7436,
+            "gzipBytes": 2918
+          },
+          {
+            "file": "assets/WikiText-D7LFU47D.js",
+            "bytes": 1757,
+            "gzipBytes": 932
+          },
+          {
+            "file": "assets/publication-C-4hTvi6.js",
+            "bytes": 494,
+            "gzipBytes": 322
+          },
+          {
+            "file": "assets/StatText-Dm4i1USb.js",
+            "bytes": 9259,
+            "gzipBytes": 3831
+          },
+          {
+            "file": "assets/published-effects-DraP4bIJ.js",
+            "bytes": 2484,
+            "gzipBytes": 926
+          },
+          {
+            "file": "assets/maniac-gameplay-facts-NhEPXo0J.js",
+            "bytes": 3235,
+            "gzipBytes": 1667
+          },
+          {
+            "file": "assets/RelatedLinks-eGF6jnAh.js",
+            "bytes": 1124,
+            "gzipBytes": 662
+          },
+          {
+            "file": "assets/WikiLayout-Ew57mnxw.js",
+            "bytes": 3009,
+            "gzipBytes": 1313
+          },
+          {
+            "file": "assets/snapshots-Dz8FZ_D7.js",
+            "bytes": 544,
+            "gzipBytes": 335
+          },
+          {
+            "file": "assets/maps-DwIpDSsl.js",
+            "bytes": 3189,
+            "gzipBytes": 1085
+          },
+          {
+            "file": "assets/characters-DImKs2vR.js",
+            "bytes": 13987,
+            "gzipBytes": 4174
+          },
+          {
+            "file": "assets/reference-catalog-2uiUw1Ei.js",
+            "bytes": 41769,
+            "gzipBytes": 7282
+          },
+          {
+            "file": "assets/EntityCards-WAgjPTX6.js",
+            "bytes": 4041,
+            "gzipBytes": 1919
+          },
+          {
+            "file": "assets/DifficultyStars-DQ6jgCuD.js",
+            "bytes": 548,
+            "gzipBytes": 420
+          },
+          {
+            "file": "assets/registry-DM5oGDRv.js",
+            "bytes": 41360,
+            "gzipBytes": 8223
+          },
+          {
+            "file": "assets/system-icons-DQd-uIVD.js",
+            "bytes": 40969,
+            "gzipBytes": 15954
+          },
+          {
+            "file": "assets/maniac-system-data-C_jFLPGE.js",
+            "bytes": 91692,
+            "gzipBytes": 12421
+          },
+          {
+            "file": "assets/EntityIcon-CIh1HWrz.js",
+            "bytes": 34133,
+            "gzipBytes": 16486
+          },
+          {
+            "file": "assets/concentrated-nightmare-CFqeCOEf.webp",
+            "bytes": 73978,
+            "gzipBytes": 74021
+          },
+          {
+            "file": "assets/system-awakening-needle-ClsiGErm.png",
+            "bytes": 24612,
+            "gzipBytes": 24352
+          },
+          {
+            "file": "assets/nightmare-lighter-render-3metDctg.png",
+            "bytes": 37305,
+            "gzipBytes": 36092
+          },
+          {
+            "file": "assets/rubik-cyrillic-wght-normal-DveCct9I.woff2",
+            "bytes": 15112,
+            "gzipBytes": 15135
+          },
+          {
+            "file": "assets/rubik-latin-wght-normal-CnQIisVs.woff2",
+            "bytes": 35348,
+            "gzipBytes": 35361
+          },
+          {
+            "file": "assets/geologica-latin-wght-normal-BBL8hQxZ.woff2",
+            "bytes": 24944,
+            "gzipBytes": 24972
+          },
+          {
+            "file": "assets/geologica-cyrillic-wght-normal-DbeVG3Ps.woff2",
+            "bytes": 16428,
+            "gzipBytes": 16454
+          },
+          {
+            "file": "assets/use-page-scroll-B7k50qbX.js",
+            "bytes": 972,
+            "gzipBytes": 530
+          }
+        ]
+      },
+      {
+        "path": "/projects/maniac/wiki/perks/rose-colored-glasses",
+        "js": 641587,
+        "gzipJS": 188257,
+        "resources": [
+          {
+            "file": "projects/maniac/wiki/perks/rose-colored-glasses",
+            "bytes": 12684,
+            "gzipBytes": 4115
+          },
+          {
+            "file": "assets/style-BFf94-tp.css",
+            "bytes": 79593,
+            "gzipBytes": 17267
+          },
+          {
+            "file": "brand/necrodwarf-mark.png",
+            "bytes": 12080,
+            "gzipBytes": 12103
+          },
+          {
+            "file": "assets/index-CQnfydM8.js",
+            "bytes": 333458,
+            "gzipBytes": 103642
+          },
+          {
+            "file": "assets/rose_colored_glasses-B5XSgV4y.webp",
+            "bytes": 75992,
+            "gzipBytes": 76035
+          },
+          {
+            "file": "assets/rubik-cyrillic-wght-normal-DveCct9I.woff2",
+            "bytes": 15112,
+            "gzipBytes": 15135
+          },
+          {
+            "file": "assets/rubik-latin-wght-normal-CnQIisVs.woff2",
+            "bytes": 35348,
+            "gzipBytes": 35361
+          },
+          {
+            "file": "assets/rose-colored-glasses-DgzqyjKv.js",
+            "bytes": 2038,
+            "gzipBytes": 1134
+          },
+          {
+            "file": "assets/ReferenceArticlePage-DmoeGEtR.js",
+            "bytes": 7573,
+            "gzipBytes": 2963
+          },
+          {
+            "file": "assets/EntityLink-ak5rqic7.js",
+            "bytes": 1696,
+            "gzipBytes": 886
+          },
+          {
+            "file": "assets/published-effects-DraP4bIJ.js",
+            "bytes": 2484,
+            "gzipBytes": 926
+          },
+          {
+            "file": "assets/maniac-gameplay-facts-NhEPXo0J.js",
+            "bytes": 3235,
+            "gzipBytes": 1667
+          },
+          {
+            "file": "assets/publication-C-4hTvi6.js",
+            "bytes": 494,
+            "gzipBytes": 322
+          },
+          {
+            "file": "assets/WikiText-D7LFU47D.js",
+            "bytes": 1757,
+            "gzipBytes": 932
+          },
+          {
+            "file": "assets/RelatedLinks-eGF6jnAh.js",
+            "bytes": 1124,
+            "gzipBytes": 662
+          },
+          {
+            "file": "assets/StatText-Dm4i1USb.js",
+            "bytes": 9259,
+            "gzipBytes": 3831
+          },
+          {
+            "file": "assets/WikiLayout-Ew57mnxw.js",
+            "bytes": 3009,
+            "gzipBytes": 1313
+          },
+          {
+            "file": "assets/snapshots-Dz8FZ_D7.js",
+            "bytes": 544,
+            "gzipBytes": 335
+          },
+          {
+            "file": "assets/maps-DwIpDSsl.js",
+            "bytes": 3189,
+            "gzipBytes": 1085
+          },
+          {
+            "file": "assets/characters-DImKs2vR.js",
+            "bytes": 13987,
+            "gzipBytes": 4174
+          },
+          {
+            "file": "assets/reference-catalog-2uiUw1Ei.js",
+            "bytes": 41769,
+            "gzipBytes": 7282
+          },
+          {
+            "file": "assets/EntityCards-WAgjPTX6.js",
+            "bytes": 4041,
+            "gzipBytes": 1919
+          },
+          {
+            "file": "assets/system-icons-DQd-uIVD.js",
+            "bytes": 40969,
+            "gzipBytes": 15954
+          },
+          {
+            "file": "assets/Reference.module-DXylhMWA.js",
+            "bytes": 744,
+            "gzipBytes": 377
+          },
+          {
+            "file": "assets/DifficultyStars-DQ6jgCuD.js",
+            "bytes": 548,
+            "gzipBytes": 420
+          },
+          {
+            "file": "assets/reference-labels-3seqGaiy.js",
+            "bytes": 1512,
+            "gzipBytes": 773
+          },
+          {
+            "file": "assets/registry-DM5oGDRv.js",
+            "bytes": 41360,
+            "gzipBytes": 8223
+          },
+          {
+            "file": "assets/EntityIcon-CIh1HWrz.js",
+            "bytes": 34133,
+            "gzipBytes": 16486
+          },
+          {
+            "file": "assets/maniac-system-data-C_jFLPGE.js",
+            "bytes": 91692,
+            "gzipBytes": 12421
+          },
+          {
+            "file": "assets/geologica-latin-wght-normal-BBL8hQxZ.woff2",
+            "bytes": 24944,
+            "gzipBytes": 24972
+          },
+          {
+            "file": "assets/geologica-cyrillic-wght-normal-DbeVG3Ps.woff2",
+            "bytes": 16428,
+            "gzipBytes": 16454
+          },
+          {
+            "file": "assets/use-page-scroll-B7k50qbX.js",
+            "bytes": 972,
+            "gzipBytes": 530
+          }
+        ]
+      },
+      {
+        "path": "/projects/maniac/wiki/abilities/abyss-gaze",
+        "js": 641587,
+        "gzipJS": 188197,
+        "resources": [
+          {
+            "file": "projects/maniac/wiki/abilities/abyss-gaze",
+            "bytes": 15591,
+            "gzipBytes": 3967
+          },
+          {
+            "file": "assets/style-BFf94-tp.css",
+            "bytes": 79593,
+            "gzipBytes": 17267
+          },
+          {
+            "file": "brand/necrodwarf-mark.png",
+            "bytes": 12080,
+            "gzipBytes": 12103
+          },
+          {
+            "file": "assets/index-CQnfydM8.js",
+            "bytes": 333458,
+            "gzipBytes": 103642
+          },
+          {
+            "file": "assets/rubik-cyrillic-wght-normal-DveCct9I.woff2",
+            "bytes": 15112,
+            "gzipBytes": 15135
+          },
+          {
+            "file": "assets/rubik-latin-wght-normal-CnQIisVs.woff2",
+            "bytes": 35348,
+            "gzipBytes": 35361
+          },
+          {
+            "file": "assets/abyss-gaze-CRhZ_8p5.js",
+            "bytes": 2038,
+            "gzipBytes": 1074
+          },
+          {
+            "file": "assets/ReferenceArticlePage-DmoeGEtR.js",
+            "bytes": 7573,
+            "gzipBytes": 2963
+          },
+          {
+            "file": "assets/StatText-Dm4i1USb.js",
+            "bytes": 9259,
+            "gzipBytes": 3831
+          },
+          {
+            "file": "assets/publication-C-4hTvi6.js",
+            "bytes": 494,
+            "gzipBytes": 322
+          },
+          {
+            "file": "assets/geologica-cyrillic-wght-normal-DbeVG3Ps.woff2",
+            "bytes": 16428,
+            "gzipBytes": 16454
+          },
+          {
+            "file": "assets/EntityLink-ak5rqic7.js",
+            "bytes": 1696,
+            "gzipBytes": 886
+          },
+          {
+            "file": "assets/RelatedLinks-eGF6jnAh.js",
+            "bytes": 1124,
+            "gzipBytes": 662
+          },
+          {
+            "file": "assets/published-effects-DraP4bIJ.js",
+            "bytes": 2484,
+            "gzipBytes": 926
+          },
+          {
+            "file": "assets/WikiText-D7LFU47D.js",
+            "bytes": 1757,
+            "gzipBytes": 932
+          },
+          {
+            "file": "assets/WikiLayout-Ew57mnxw.js",
+            "bytes": 3009,
+            "gzipBytes": 1313
+          },
+          {
+            "file": "assets/maniac-gameplay-facts-NhEPXo0J.js",
+            "bytes": 3235,
+            "gzipBytes": 1667
+          },
+          {
+            "file": "assets/snapshots-Dz8FZ_D7.js",
+            "bytes": 544,
+            "gzipBytes": 335
+          },
+          {
+            "file": "assets/characters-DImKs2vR.js",
+            "bytes": 13987,
+            "gzipBytes": 4174
+          },
+          {
+            "file": "assets/maps-DwIpDSsl.js",
+            "bytes": 3189,
+            "gzipBytes": 1085
+          },
+          {
+            "file": "assets/reference-catalog-2uiUw1Ei.js",
+            "bytes": 41769,
+            "gzipBytes": 7282
+          },
+          {
+            "file": "assets/DifficultyStars-DQ6jgCuD.js",
+            "bytes": 548,
+            "gzipBytes": 420
+          },
+          {
+            "file": "assets/EntityCards-WAgjPTX6.js",
+            "bytes": 4041,
+            "gzipBytes": 1919
+          },
+          {
+            "file": "assets/reference-labels-3seqGaiy.js",
+            "bytes": 1512,
+            "gzipBytes": 773
+          },
+          {
+            "file": "assets/system-icons-DQd-uIVD.js",
+            "bytes": 40969,
+            "gzipBytes": 15954
+          },
+          {
+            "file": "assets/maniac-system-data-C_jFLPGE.js",
+            "bytes": 91692,
+            "gzipBytes": 12421
+          },
+          {
+            "file": "assets/EntityIcon-CIh1HWrz.js",
+            "bytes": 34133,
+            "gzipBytes": 16486
+          },
+          {
+            "file": "assets/Reference.module-DXylhMWA.js",
+            "bytes": 744,
+            "gzipBytes": 377
+          },
+          {
+            "file": "assets/registry-DM5oGDRv.js",
+            "bytes": 41360,
+            "gzipBytes": 8223
+          },
+          {
+            "file": "assets/geologica-latin-wght-normal-BBL8hQxZ.woff2",
+            "bytes": 24944,
+            "gzipBytes": 24972
+          },
+          {
+            "file": "assets/use-page-scroll-B7k50qbX.js",
+            "bytes": 972,
+            "gzipBytes": 530
+          }
+        ]
+      },
+      {
+        "path": "/projects/maniac/wiki/items/death-scythe",
+        "js": 638371,
+        "gzipJS": 187215,
+        "resources": [
+          {
+            "file": "projects/maniac/wiki/items/death-scythe",
+            "bytes": 14998,
+            "gzipBytes": 6854
+          },
+          {
+            "file": "assets/style-BFf94-tp.css",
+            "bytes": 79593,
+            "gzipBytes": 17267
+          },
+          {
+            "file": "brand/necrodwarf-mark.png",
+            "bytes": 12080,
+            "gzipBytes": 12103
+          },
+          {
+            "file": "assets/index-CQnfydM8.js",
+            "bytes": 333458,
+            "gzipBytes": 103642
+          },
+          {
+            "file": "assets/rubik-cyrillic-wght-normal-DveCct9I.woff2",
+            "bytes": 15112,
+            "gzipBytes": 15135
+          },
+          {
+            "file": "assets/rubik-latin-wght-normal-CnQIisVs.woff2",
+            "bytes": 35348,
+            "gzipBytes": 35361
+          },
+          {
+            "file": "assets/death-scythe-3iA2n43H.js",
+            "bytes": 2572,
+            "gzipBytes": 1345
+          },
+          {
+            "file": "assets/geologica-latin-wght-normal-BBL8hQxZ.woff2",
+            "bytes": 24944,
+            "gzipBytes": 24972
+          },
+          {
+            "file": "assets/geologica-cyrillic-wght-normal-DbeVG3Ps.woff2",
+            "bytes": 16428,
+            "gzipBytes": 16454
+          },
+          {
+            "file": "assets/publication-C-4hTvi6.js",
+            "bytes": 494,
+            "gzipBytes": 322
+          },
+          {
+            "file": "assets/SystemsArticlePage-P7iOclci.js",
+            "bytes": 4823,
+            "gzipBytes": 2130
+          },
+          {
+            "file": "assets/maniac-gameplay-facts-NhEPXo0J.js",
+            "bytes": 3235,
+            "gzipBytes": 1667
+          },
+          {
+            "file": "assets/snapshots-Dz8FZ_D7.js",
+            "bytes": 544,
+            "gzipBytes": 335
+          },
+          {
+            "file": "assets/WikiText-D7LFU47D.js",
+            "bytes": 1757,
+            "gzipBytes": 932
+          },
+          {
+            "file": "assets/RelatedLinks-eGF6jnAh.js",
+            "bytes": 1124,
+            "gzipBytes": 662
+          },
+          {
+            "file": "assets/EntityLink-ak5rqic7.js",
+            "bytes": 1696,
+            "gzipBytes": 886
+          },
+          {
+            "file": "assets/published-effects-DraP4bIJ.js",
+            "bytes": 2484,
+            "gzipBytes": 926
+          },
+          {
+            "file": "assets/StatText-Dm4i1USb.js",
+            "bytes": 9259,
+            "gzipBytes": 3831
+          },
+          {
+            "file": "assets/WikiLayout-Ew57mnxw.js",
+            "bytes": 3009,
+            "gzipBytes": 1313
+          },
+          {
+            "file": "assets/characters-DImKs2vR.js",
+            "bytes": 13987,
+            "gzipBytes": 4174
+          },
+          {
+            "file": "assets/maps-DwIpDSsl.js",
+            "bytes": 3189,
+            "gzipBytes": 1085
+          },
+          {
+            "file": "assets/reference-catalog-2uiUw1Ei.js",
+            "bytes": 41769,
+            "gzipBytes": 7282
+          },
+          {
+            "file": "assets/SystemIcon-B6g6OCQo.js",
+            "bytes": 512,
+            "gzipBytes": 353
+          },
+          {
+            "file": "assets/registry-DM5oGDRv.js",
+            "bytes": 41360,
+            "gzipBytes": 8223
+          },
+          {
+            "file": "assets/EntityCards-WAgjPTX6.js",
+            "bytes": 4041,
+            "gzipBytes": 1919
+          },
+          {
+            "file": "assets/DifficultyStars-DQ6jgCuD.js",
+            "bytes": 548,
+            "gzipBytes": 420
+          },
+          {
+            "file": "assets/system-icons-DQd-uIVD.js",
+            "bytes": 40969,
+            "gzipBytes": 15954
+          },
+          {
+            "file": "assets/Reference.module-DXylhMWA.js",
+            "bytes": 744,
+            "gzipBytes": 377
+          },
+          {
+            "file": "assets/maniac-system-data-C_jFLPGE.js",
+            "bytes": 91692,
+            "gzipBytes": 12421
+          },
+          {
+            "file": "assets/EntityIcon-CIh1HWrz.js",
+            "bytes": 34133,
+            "gzipBytes": 16486
+          },
+          {
+            "file": "assets/use-page-scroll-B7k50qbX.js",
+            "bytes": 972,
+            "gzipBytes": 530
+          }
+        ]
+      },
+      {
+        "path": "/projects/maniac/wiki/mechanics/sanity",
+        "js": 638380,
+        "gzipJS": 187161,
+        "resources": [
+          {
+            "file": "projects/maniac/wiki/mechanics/sanity",
+            "bytes": 16568,
+            "gzipBytes": 4331
+          },
+          {
+            "file": "assets/style-BFf94-tp.css",
+            "bytes": 79593,
+            "gzipBytes": 17267
+          },
+          {
+            "file": "brand/necrodwarf-mark.png",
+            "bytes": 12080,
+            "gzipBytes": 12103
+          },
+          {
+            "file": "assets/index-CQnfydM8.js",
+            "bytes": 333458,
+            "gzipBytes": 103642
+          },
+          {
+            "file": "assets/rubik-cyrillic-wght-normal-DveCct9I.woff2",
+            "bytes": 15112,
+            "gzipBytes": 15135
+          },
+          {
+            "file": "assets/geologica-latin-wght-normal-BBL8hQxZ.woff2",
+            "bytes": 24944,
+            "gzipBytes": 24972
+          },
+          {
+            "file": "assets/rubik-latin-wght-normal-CnQIisVs.woff2",
+            "bytes": 35348,
+            "gzipBytes": 35361
+          },
+          {
+            "file": "assets/geologica-cyrillic-wght-normal-DbeVG3Ps.woff2",
+            "bytes": 16428,
+            "gzipBytes": 16454
+          },
+          {
+            "file": "assets/published-effects-DraP4bIJ.js",
+            "bytes": 2484,
+            "gzipBytes": 926
+          },
+          {
+            "file": "assets/sanity-_uWBPgEg.js",
+            "bytes": 2581,
+            "gzipBytes": 1291
+          },
+          {
+            "file": "assets/EntityLink-ak5rqic7.js",
+            "bytes": 1696,
+            "gzipBytes": 886
+          },
+          {
+            "file": "assets/publication-C-4hTvi6.js",
+            "bytes": 494,
+            "gzipBytes": 322
+          },
+          {
+            "file": "assets/WikiText-D7LFU47D.js",
+            "bytes": 1757,
+            "gzipBytes": 932
+          },
+          {
+            "file": "assets/RelatedLinks-eGF6jnAh.js",
+            "bytes": 1124,
+            "gzipBytes": 662
+          },
+          {
+            "file": "assets/SystemsArticlePage-P7iOclci.js",
+            "bytes": 4823,
+            "gzipBytes": 2130
+          },
+          {
+            "file": "assets/WikiLayout-Ew57mnxw.js",
+            "bytes": 3009,
+            "gzipBytes": 1313
+          },
+          {
+            "file": "assets/maniac-gameplay-facts-NhEPXo0J.js",
+            "bytes": 3235,
+            "gzipBytes": 1667
+          },
+          {
+            "file": "assets/StatText-Dm4i1USb.js",
+            "bytes": 9259,
+            "gzipBytes": 3831
+          },
+          {
+            "file": "assets/snapshots-Dz8FZ_D7.js",
+            "bytes": 544,
+            "gzipBytes": 335
+          },
+          {
+            "file": "assets/characters-DImKs2vR.js",
+            "bytes": 13987,
+            "gzipBytes": 4174
+          },
+          {
+            "file": "assets/maps-DwIpDSsl.js",
+            "bytes": 3189,
+            "gzipBytes": 1085
+          },
+          {
+            "file": "assets/SystemIcon-B6g6OCQo.js",
+            "bytes": 512,
+            "gzipBytes": 353
+          },
+          {
+            "file": "assets/reference-catalog-2uiUw1Ei.js",
+            "bytes": 41769,
+            "gzipBytes": 7282
+          },
+          {
+            "file": "assets/registry-DM5oGDRv.js",
+            "bytes": 41360,
+            "gzipBytes": 8223
+          },
+          {
+            "file": "assets/EntityCards-WAgjPTX6.js",
+            "bytes": 4041,
+            "gzipBytes": 1919
+          },
+          {
+            "file": "assets/DifficultyStars-DQ6jgCuD.js",
+            "bytes": 548,
+            "gzipBytes": 420
+          },
+          {
+            "file": "assets/Reference.module-DXylhMWA.js",
+            "bytes": 744,
+            "gzipBytes": 377
+          },
+          {
+            "file": "assets/system-icons-DQd-uIVD.js",
+            "bytes": 40969,
+            "gzipBytes": 15954
+          },
+          {
+            "file": "assets/maniac-system-data-C_jFLPGE.js",
+            "bytes": 91692,
+            "gzipBytes": 12421
+          },
+          {
+            "file": "assets/EntityIcon-CIh1HWrz.js",
+            "bytes": 34133,
+            "gzipBytes": 16486
+          },
+          {
+            "file": "assets/use-page-scroll-B7k50qbX.js",
+            "bytes": 972,
+            "gzipBytes": 530
+          }
+        ]
+      },
+      {
+        "path": "/projects/maniac/wiki/maps/mansion",
+        "js": 556435,
+        "gzipJS": 151479,
+        "resources": [
+          {
+            "file": "projects/maniac/wiki/maps/mansion",
+            "bytes": 13624,
+            "gzipBytes": 4248
+          },
+          {
+            "file": "assets/style-BFf94-tp.css",
+            "bytes": 79593,
+            "gzipBytes": 17267
+          },
+          {
+            "file": "brand/necrodwarf-mark.png",
+            "bytes": 12080,
+            "gzipBytes": 12103
+          },
+          {
+            "file": "assets/mansion-1261-DAHQTOVZ.webp",
+            "bytes": 125824,
+            "gzipBytes": 125882
+          },
+          {
+            "file": "assets/index-CQnfydM8.js",
+            "bytes": 333458,
+            "gzipBytes": 103642
+          },
+          {
+            "file": "assets/rubik-cyrillic-wght-normal-DveCct9I.woff2",
+            "bytes": 15112,
+            "gzipBytes": 15135
+          },
+          {
+            "file": "assets/rubik-latin-wght-normal-CnQIisVs.woff2",
+            "bytes": 35348,
+            "gzipBytes": 35361
+          },
+          {
+            "file": "assets/mansion-DTvc5F87.js",
+            "bytes": 2045,
+            "gzipBytes": 1145
+          },
+          {
+            "file": "assets/RelatedLinks-eGF6jnAh.js",
+            "bytes": 1124,
+            "gzipBytes": 662
+          },
+          {
+            "file": "assets/mansion-960-Cr-0HIIz.js",
+            "bytes": 105,
+            "gzipBytes": 102
+          },
+          {
+            "file": "assets/MapArticlePage-9iXhtMF_.js",
+            "bytes": 4506,
+            "gzipBytes": 1956
+          },
+          {
+            "file": "assets/WikiLayout-Ew57mnxw.js",
+            "bytes": 3009,
+            "gzipBytes": 1313
+          },
+          {
+            "file": "assets/snapshots-Dz8FZ_D7.js",
+            "bytes": 544,
+            "gzipBytes": 335
+          },
+          {
+            "file": "assets/characters-DImKs2vR.js",
+            "bytes": 13987,
+            "gzipBytes": 4174
+          },
+          {
+            "file": "assets/maniac-gameplay-facts-NhEPXo0J.js",
+            "bytes": 3235,
+            "gzipBytes": 1667
+          },
+          {
+            "file": "assets/reference-catalog-2uiUw1Ei.js",
+            "bytes": 41769,
+            "gzipBytes": 7282
+          },
+          {
+            "file": "assets/maps-DwIpDSsl.js",
+            "bytes": 3189,
+            "gzipBytes": 1085
+          },
+          {
+            "file": "assets/publication-C-4hTvi6.js",
+            "bytes": 494,
+            "gzipBytes": 322
+          },
+          {
+            "file": "assets/published-effects-DraP4bIJ.js",
+            "bytes": 2484,
+            "gzipBytes": 926
+          },
+          {
+            "file": "assets/MapFacts-BxQy-aFk.js",
+            "bytes": 959,
+            "gzipBytes": 557
+          },
+          {
+            "file": "assets/EntityLink-ak5rqic7.js",
+            "bytes": 1696,
+            "gzipBytes": 886
+          },
+          {
+            "file": "assets/registry-DM5oGDRv.js",
+            "bytes": 41360,
+            "gzipBytes": 8223
+          },
+          {
+            "file": "assets/DifficultyStars-DQ6jgCuD.js",
+            "bytes": 548,
+            "gzipBytes": 420
+          },
+          {
+            "file": "assets/maniac-system-data-C_jFLPGE.js",
+            "bytes": 91692,
+            "gzipBytes": 12421
+          },
+          {
+            "file": "assets/StatText-Dm4i1USb.js",
+            "bytes": 9259,
+            "gzipBytes": 3831
+          },
+          {
+            "file": "assets/geologica-latin-wght-normal-BBL8hQxZ.woff2",
+            "bytes": 24944,
+            "gzipBytes": 24972
+          },
+          {
+            "file": "assets/geologica-cyrillic-wght-normal-DbeVG3Ps.woff2",
+            "bytes": 16428,
+            "gzipBytes": 16454
+          },
+          {
+            "file": "assets/use-page-scroll-B7k50qbX.js",
+            "bytes": 972,
+            "gzipBytes": 530
+          }
+        ]
+      },
+      {
+        "path": "/projects/maniac/changelog/1.0",
+        "js": 676332,
+        "gzipJS": 192473,
+        "resources": [
+          {
+            "file": "projects/maniac/changelog/1.0",
+            "bytes": 74253,
+            "gzipBytes": 9728
+          },
+          {
+            "file": "assets/style-BFf94-tp.css",
+            "bytes": 79593,
+            "gzipBytes": 17267
+          },
+          {
+            "file": "assets/reforge-BZV3ZyUh.jpg",
+            "bytes": 82806,
+            "gzipBytes": 81167
+          },
+          {
+            "file": "brand/necrodwarf-mark.png",
+            "bytes": 12080,
+            "gzipBytes": 12103
+          },
+          {
+            "file": "assets/index-CQnfydM8.js",
+            "bytes": 333458,
+            "gzipBytes": 103642
+          },
+          {
+            "file": "assets/rubik-cyrillic-wght-normal-DveCct9I.woff2",
+            "bytes": 15112,
+            "gzipBytes": 15135
+          },
+          {
+            "file": "assets/geologica-latin-wght-normal-BBL8hQxZ.woff2",
+            "bytes": 24944,
+            "gzipBytes": 24972
+          },
+          {
+            "file": "assets/1.0.page-DrKQU6jY.js",
+            "bytes": 39089,
+            "gzipBytes": 6418
+          },
+          {
+            "file": "assets/ChroniclePage-CBVkvTc7.js",
+            "bytes": 10023,
+            "gzipBytes": 4132
+          },
+          {
+            "file": "assets/EntityLink-ak5rqic7.js",
+            "bytes": 1696,
+            "gzipBytes": 886
+          },
+          {
+            "file": "assets/WikiText-D7LFU47D.js",
+            "bytes": 1757,
+            "gzipBytes": 932
+          },
+          {
+            "file": "assets/EntityCards-WAgjPTX6.js",
+            "bytes": 4041,
+            "gzipBytes": 1919
+          },
+          {
+            "file": "assets/published-effects-DraP4bIJ.js",
+            "bytes": 2484,
+            "gzipBytes": 926
+          },
+          {
+            "file": "assets/StatText-Dm4i1USb.js",
+            "bytes": 9259,
+            "gzipBytes": 3831
+          },
+          {
+            "file": "assets/publication-C-4hTvi6.js",
+            "bytes": 494,
+            "gzipBytes": 322
+          },
+          {
+            "file": "assets/snapshots-Dz8FZ_D7.js",
+            "bytes": 544,
+            "gzipBytes": 335
+          },
+          {
+            "file": "assets/maniac-gameplay-facts-NhEPXo0J.js",
+            "bytes": 3235,
+            "gzipBytes": 1667
+          },
+          {
+            "file": "assets/maps-DwIpDSsl.js",
+            "bytes": 3189,
+            "gzipBytes": 1085
+          },
+          {
+            "file": "assets/EntityIcon-CIh1HWrz.js",
+            "bytes": 34133,
+            "gzipBytes": 16486
+          },
+          {
+            "file": "assets/characters-DImKs2vR.js",
+            "bytes": 13987,
+            "gzipBytes": 4174
+          },
+          {
+            "file": "assets/DifficultyStars-DQ6jgCuD.js",
+            "bytes": 548,
+            "gzipBytes": 420
+          },
+          {
+            "file": "assets/reference-catalog-2uiUw1Ei.js",
+            "bytes": 41769,
+            "gzipBytes": 7282
+          },
+          {
+            "file": "assets/Chronicles.module-Co92TrWQ.js",
+            "bytes": 1352,
+            "gzipBytes": 653
+          },
+          {
+            "file": "assets/useMapAnchor-C766DRGG.js",
+            "bytes": 281,
+            "gzipBytes": 235
+          },
+          {
+            "file": "assets/system-icons-DQd-uIVD.js",
+            "bytes": 40969,
+            "gzipBytes": 15954
+          },
+          {
+            "file": "assets/registry-DM5oGDRv.js",
+            "bytes": 41360,
+            "gzipBytes": 8223
+          },
+          {
+            "file": "assets/rubik-latin-wght-normal-CnQIisVs.woff2",
+            "bytes": 35348,
+            "gzipBytes": 35361
+          },
+          {
+            "file": "assets/maniac-system-data-C_jFLPGE.js",
+            "bytes": 91692,
+            "gzipBytes": 12421
+          },
+          {
+            "file": "assets/geologica-cyrillic-wght-normal-DbeVG3Ps.woff2",
+            "bytes": 16428,
+            "gzipBytes": 16454
+          },
+          {
+            "file": "assets/use-page-scroll-B7k50qbX.js",
+            "bytes": 972,
+            "gzipBytes": 530
+          }
+        ]
+      },
+      {
+        "path": "/projects/maniac/changelog/1.1",
+        "js": 661455,
+        "gzipJS": 191467,
+        "resources": [
+          {
+            "file": "projects/maniac/changelog/1.1",
+            "bytes": 58324,
+            "gzipBytes": 9528
+          },
+          {
+            "file": "assets/style-BFf94-tp.css",
+            "bytes": 79593,
+            "gzipBytes": 17267
+          },
+          {
+            "file": "assets/nightmare-Ci1QtmeW.jpg",
+            "bytes": 84235,
+            "gzipBytes": 82233
+          },
+          {
+            "file": "brand/necrodwarf-mark.png",
+            "bytes": 12080,
+            "gzipBytes": 12103
+          },
+          {
+            "file": "assets/index-CQnfydM8.js",
+            "bytes": 333458,
+            "gzipBytes": 103642
+          },
+          {
+            "file": "assets/concentrated-nightmare-CFqeCOEf.webp",
+            "bytes": 73978,
+            "gzipBytes": 74021
+          },
+          {
+            "file": "assets/nightmare-lighter-render-3metDctg.png",
+            "bytes": 37305,
+            "gzipBytes": 36092
+          },
+          {
+            "file": "assets/rubik-cyrillic-wght-normal-DveCct9I.woff2",
+            "bytes": 15112,
+            "gzipBytes": 15135
+          },
+          {
+            "file": "assets/1.1.page-D3WxXATf.js",
+            "bytes": 24212,
+            "gzipBytes": 5412
+          },
+          {
+            "file": "assets/rubik-latin-wght-normal-CnQIisVs.woff2",
+            "bytes": 35348,
+            "gzipBytes": 35361
+          },
+          {
+            "file": "assets/EntityCards-WAgjPTX6.js",
+            "bytes": 4041,
+            "gzipBytes": 1919
+          },
+          {
+            "file": "assets/ChroniclePage-CBVkvTc7.js",
+            "bytes": 10023,
+            "gzipBytes": 4132
+          },
+          {
+            "file": "assets/EntityLink-ak5rqic7.js",
+            "bytes": 1696,
+            "gzipBytes": 886
+          },
+          {
+            "file": "assets/publication-C-4hTvi6.js",
+            "bytes": 494,
+            "gzipBytes": 322
+          },
+          {
+            "file": "assets/WikiText-D7LFU47D.js",
+            "bytes": 1757,
+            "gzipBytes": 932
+          },
+          {
+            "file": "assets/published-effects-DraP4bIJ.js",
+            "bytes": 2484,
+            "gzipBytes": 926
+          },
+          {
+            "file": "assets/StatText-Dm4i1USb.js",
+            "bytes": 9259,
+            "gzipBytes": 3831
+          },
+          {
+            "file": "assets/snapshots-Dz8FZ_D7.js",
+            "bytes": 544,
+            "gzipBytes": 335
+          },
+          {
+            "file": "assets/maps-DwIpDSsl.js",
+            "bytes": 3189,
+            "gzipBytes": 1085
+          },
+          {
+            "file": "assets/characters-DImKs2vR.js",
+            "bytes": 13987,
+            "gzipBytes": 4174
+          },
+          {
+            "file": "assets/reference-catalog-2uiUw1Ei.js",
+            "bytes": 41769,
+            "gzipBytes": 7282
+          },
+          {
+            "file": "assets/EntityIcon-CIh1HWrz.js",
+            "bytes": 34133,
+            "gzipBytes": 16486
+          },
+          {
+            "file": "assets/DifficultyStars-DQ6jgCuD.js",
+            "bytes": 548,
+            "gzipBytes": 420
+          },
+          {
+            "file": "assets/maniac-gameplay-facts-NhEPXo0J.js",
+            "bytes": 3235,
+            "gzipBytes": 1667
+          },
+          {
+            "file": "assets/Chronicles.module-Co92TrWQ.js",
+            "bytes": 1352,
+            "gzipBytes": 653
+          },
+          {
+            "file": "assets/system-icons-DQd-uIVD.js",
+            "bytes": 40969,
+            "gzipBytes": 15954
+          },
+          {
+            "file": "assets/registry-DM5oGDRv.js",
+            "bytes": 41360,
+            "gzipBytes": 8223
+          },
+          {
+            "file": "assets/useMapAnchor-C766DRGG.js",
+            "bytes": 281,
+            "gzipBytes": 235
+          },
+          {
+            "file": "assets/maniac-system-data-C_jFLPGE.js",
+            "bytes": 91692,
+            "gzipBytes": 12421
+          },
+          {
+            "file": "assets/geologica-cyrillic-wght-normal-DbeVG3Ps.woff2",
+            "bytes": 16428,
+            "gzipBytes": 16454
+          },
+          {
+            "file": "assets/geologica-latin-wght-normal-BBL8hQxZ.woff2",
+            "bytes": 24944,
+            "gzipBytes": 24972
+          },
+          {
+            "file": "assets/use-page-scroll-B7k50qbX.js",
+            "bytes": 972,
+            "gzipBytes": 530
+          }
+        ]
+      },
+      {
+        "path": "/projects/maniac/changelog/1.2",
+        "js": 663871,
+        "gzipJS": 192799,
+        "resources": [
+          {
+            "file": "projects/maniac/changelog/1.2",
+            "bytes": 65123,
+            "gzipBytes": 11297
+          },
+          {
+            "file": "assets/style-BFf94-tp.css",
+            "bytes": 79593,
+            "gzipBytes": 17267
+          },
+          {
+            "file": "brand/necrodwarf-mark.png",
+            "bytes": 12080,
+            "gzipBytes": 12103
+          },
+          {
+            "file": "assets/flower-cleaning-DfJf6tQL.jpg",
+            "bytes": 167017,
+            "gzipBytes": 166493
+          },
+          {
+            "file": "assets/index-CQnfydM8.js",
+            "bytes": 333458,
+            "gzipBytes": 103642
+          },
+          {
+            "file": "assets/forget-me-not-perk-DRyxwUIM.webp",
+            "bytes": 58758,
+            "gzipBytes": 58796
+          },
+          {
+            "file": "assets/sber_sprout-Beu1Qhuo.webp",
+            "bytes": 67914,
+            "gzipBytes": 67957
+          },
+          {
+            "file": "assets/pink_orchid-DhXGe9oZ.webp",
+            "bytes": 92166,
+            "gzipBytes": 92214
+          },
+          {
+            "file": "assets/rose_colored_glasses-B5XSgV4y.webp",
+            "bytes": 75992,
+            "gzipBytes": 76035
+          },
+          {
+            "file": "assets/reality_anchor-CE2q1L-B.webp",
+            "bytes": 110032,
+            "gzipBytes": 110085
+          },
+          {
+            "file": "assets/emergency_overclock-B_jlCSlo.webp",
+            "bytes": 78554,
+            "gzipBytes": 78446
+          },
+          {
+            "file": "assets/fixed_it_im_out-DYxbOlPp.webp",
+            "bytes": 60876,
+            "gzipBytes": 60914
+          },
+          {
+            "file": "assets/magic_kick-GxFkK2sT.webp",
+            "bytes": 61288,
+            "gzipBytes": 61326
+          },
+          {
+            "file": "assets/1.2.page-CLGo8KSD.js",
+            "bytes": 26628,
+            "gzipBytes": 6744
+          },
+          {
+            "file": "assets/ChroniclePage-CBVkvTc7.js",
+            "bytes": 10023,
+            "gzipBytes": 4132
+          },
+          {
+            "file": "assets/published-effects-DraP4bIJ.js",
+            "bytes": 2484,
+            "gzipBytes": 926
+          },
+          {
+            "file": "assets/EntityCards-WAgjPTX6.js",
+            "bytes": 4041,
+            "gzipBytes": 1919
+          },
+          {
+            "file": "assets/WikiText-D7LFU47D.js",
+            "bytes": 1757,
+            "gzipBytes": 932
+          },
+          {
+            "file": "assets/EntityLink-ak5rqic7.js",
+            "bytes": 1696,
+            "gzipBytes": 886
+          },
+          {
+            "file": "assets/StatText-Dm4i1USb.js",
+            "bytes": 9259,
+            "gzipBytes": 3831
+          },
+          {
+            "file": "assets/snapshots-Dz8FZ_D7.js",
+            "bytes": 544,
+            "gzipBytes": 335
+          },
+          {
+            "file": "assets/publication-C-4hTvi6.js",
+            "bytes": 494,
+            "gzipBytes": 322
+          },
+          {
+            "file": "assets/EntityIcon-CIh1HWrz.js",
+            "bytes": 34133,
+            "gzipBytes": 16486
+          },
+          {
+            "file": "assets/reference-catalog-2uiUw1Ei.js",
+            "bytes": 41769,
+            "gzipBytes": 7282
+          },
+          {
+            "file": "assets/characters-DImKs2vR.js",
+            "bytes": 13987,
+            "gzipBytes": 4174
+          },
+          {
+            "file": "assets/registry-DM5oGDRv.js",
+            "bytes": 41360,
+            "gzipBytes": 8223
+          },
+          {
+            "file": "assets/maps-DwIpDSsl.js",
+            "bytes": 3189,
+            "gzipBytes": 1085
+          },
+          {
+            "file": "assets/rubik-cyrillic-wght-normal-DveCct9I.woff2",
+            "bytes": 15112,
+            "gzipBytes": 15135
+          },
+          {
+            "file": "assets/maniac-gameplay-facts-NhEPXo0J.js",
+            "bytes": 3235,
+            "gzipBytes": 1667
+          },
+          {
+            "file": "assets/system-icons-DQd-uIVD.js",
+            "bytes": 40969,
+            "gzipBytes": 15954
+          },
+          {
+            "file": "assets/maniac-system-data-C_jFLPGE.js",
+            "bytes": 91692,
+            "gzipBytes": 12421
+          },
+          {
+            "file": "assets/DifficultyStars-DQ6jgCuD.js",
+            "bytes": 548,
+            "gzipBytes": 420
+          },
+          {
+            "file": "assets/Chronicles.module-Co92TrWQ.js",
+            "bytes": 1352,
+            "gzipBytes": 653
+          },
+          {
+            "file": "assets/useMapAnchor-C766DRGG.js",
+            "bytes": 281,
+            "gzipBytes": 235
+          },
+          {
+            "file": "assets/rubik-latin-wght-normal-CnQIisVs.woff2",
+            "bytes": 35348,
+            "gzipBytes": 35361
+          },
+          {
+            "file": "assets/geologica-latin-wght-normal-BBL8hQxZ.woff2",
+            "bytes": 24944,
+            "gzipBytes": 24972
+          },
+          {
+            "file": "assets/geologica-cyrillic-wght-normal-DbeVG3Ps.woff2",
+            "bytes": 16428,
+            "gzipBytes": 16454
+          },
+          {
+            "file": "assets/use-page-scroll-B7k50qbX.js",
+            "bytes": 972,
+            "gzipBytes": 530
+          }
+        ]
+      }
+    ],
+    "dev": [
+      {
+        "path": "/projects/maniac/wiki",
+        "errors": [
+          "Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\nhttps://react.dev/link/hydration-mismatch\n\n  <BrowserRouter>\n    <Router basename={undefined} location={{pathname:\"...\", ...}} navigationType=\"POP\" navigator={{action:\"POP\", ...}} ...>\n      <App>\n        <SiteLayout projects={[...]} loadProjects={function loadProjectNavigation}>\n          <ContentLink href=\"#main\" className=\"_skip_nfe2...\">\n+           <a className=\"_skip_nfe21_91\" href=\"#main\" target={undefined} rel={undefined}>\n          ...\n"
+        ]
+      },
+      {
+        "path": "/projects/maniac/wiki/perks/independence",
+        "errors": [
+          "Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\nhttps://react.dev/link/hydration-mismatch\n\n  <BrowserRouter>\n    <Router basename={undefined} location={{pathname:\"...\", ...}} navigationType=\"POP\" navigator={{action:\"POP\", ...}} ...>\n      <App>\n        <SiteLayout projects={[...]} loadProjects={function loadProjectNavigation}>\n          <ContentLink href=\"#main\" className=\"_skip_nfe2...\">\n+           <a className=\"_skip_nfe21_91\" href=\"#main\" target={undefined} rel={undefined}>\n          ...\n"
+        ]
+      }
+    ]
+  },
+  "after": {
+    "network": [
+      {
+        "path": "/projects/maniac",
+        "js": 368288,
+        "gzipJS": 116353,
+        "resources": [
+          {
+            "file": "projects/maniac",
+            "bytes": 20700,
+            "gzipBytes": 6218
+          },
+          {
+            "file": "assets/style-DwsVs4lw.css",
+            "bytes": 80846,
+            "gzipBytes": 17509
+          },
+          {
+            "file": "brand/necrodwarf-mark.png",
+            "bytes": 12080,
+            "gzipBytes": 12103
+          },
+          {
+            "file": "assets/index-B1EsayeT.js",
+            "bytes": 333480,
+            "gzipBytes": 103620
+          },
+          {
+            "file": "assets/ProjectIntro-DxIGLcrW.js",
+            "bytes": 2655,
+            "gzipBytes": 1186
+          },
+          {
+            "file": "assets/ManiacPage-BbZJkh7_.js",
+            "bytes": 14270,
+            "gzipBytes": 5223
+          },
+          {
+            "file": "assets/ReleaseList-qZlw6YPh.js",
+            "bytes": 1248,
+            "gzipBytes": 680
+          },
+          {
+            "file": "assets/Content.module-_AHIhrYo.js",
+            "bytes": 786,
+            "gzipBytes": 382
+          },
+          {
+            "file": "assets/SectionHeading-CCWiqvP5.js",
+            "bytes": 346,
+            "gzipBytes": 225
+          },
+          {
+            "file": "assets/characters-DImKs2vR.js",
+            "bytes": 13987,
+            "gzipBytes": 4174
+          },
+          {
+            "file": "assets/snapshots-Dz8FZ_D7.js",
+            "bytes": 544,
+            "gzipBytes": 335
+          },
+          {
+            "file": "assets/rubik-cyrillic-wght-normal-DveCct9I.woff2",
+            "bytes": 15112,
+            "gzipBytes": 15135
+          },
+          {
+            "file": "assets/flower-cleaning-DfJf6tQL.jpg",
+            "bytes": 167017,
+            "gzipBytes": 166493
+          },
+          {
+            "file": "assets/rubik-latin-wght-normal-CnQIisVs.woff2",
+            "bytes": 35348,
+            "gzipBytes": 35361
+          },
+          {
+            "file": "assets/geologica-latin-wght-normal-BBL8hQxZ.woff2",
+            "bytes": 24944,
+            "gzipBytes": 24972
+          },
+          {
+            "file": "assets/geologica-cyrillic-wght-normal-DbeVG3Ps.woff2",
+            "bytes": 16428,
+            "gzipBytes": 16454
+          },
+          {
+            "file": "assets/use-page-scroll-BUQtcdAb.js",
+            "bytes": 972,
+            "gzipBytes": 528
+          }
+        ]
+      },
+      {
+        "path": "/projects/maniac/wiki",
+        "js": 359082,
+        "gzipJS": 112575,
+        "resources": [
+          {
+            "file": "projects/maniac/wiki",
+            "bytes": 11228,
+            "gzipBytes": 3392
+          },
+          {
+            "file": "assets/style-DwsVs4lw.css",
+            "bytes": 80846,
+            "gzipBytes": 17509
+          },
+          {
+            "file": "assets/ghost-card-fC3NjMfp.webp",
+            "bytes": 44364,
+            "gzipBytes": 44397
+          },
+          {
+            "file": "assets/keeper_of_nightmares-card-E92OWx7n.webp",
+            "bytes": 55566,
+            "gzipBytes": 55604
+          },
+          {
+            "file": "assets/shaman-card-ChTgPmEQ.webp",
+            "bytes": 55174,
+            "gzipBytes": 54969
+          },
+          {
+            "file": "brand/necrodwarf-mark.png",
+            "bytes": 12080,
+            "gzipBytes": 12103
+          },
+          {
+            "file": "assets/index-B1EsayeT.js",
+            "bytes": 333480,
+            "gzipBytes": 103620
+          },
+          {
+            "file": "assets/WikiHomePage-BPUdmsII.js",
+            "bytes": 5400,
+            "gzipBytes": 1919
+          },
+          {
+            "file": "assets/catalog-6s9Vv8Ca.js",
+            "bytes": 1690,
+            "gzipBytes": 687
+          },
+          {
+            "file": "assets/characters-DImKs2vR.js",
+            "bytes": 13987,
+            "gzipBytes": 4174
+          },
+          {
+            "file": "assets/snapshots-Dz8FZ_D7.js",
+            "bytes": 544,
+            "gzipBytes": 335
+          },
+          {
+            "file": "assets/WikiLayout-g0CVobX2.js",
+            "bytes": 3009,
+            "gzipBytes": 1312
+          },
+          {
+            "file": "assets/rubik-cyrillic-wght-normal-DveCct9I.woff2",
+            "bytes": 15112,
+            "gzipBytes": 15135
+          },
+          {
+            "file": "assets/geologica-latin-wght-normal-BBL8hQxZ.woff2",
+            "bytes": 24944,
+            "gzipBytes": 24972
+          },
+          {
+            "file": "assets/rubik-latin-wght-normal-CnQIisVs.woff2",
+            "bytes": 35348,
+            "gzipBytes": 35361
+          },
+          {
+            "file": "assets/geologica-cyrillic-wght-normal-DbeVG3Ps.woff2",
+            "bytes": 16428,
+            "gzipBytes": 16454
+          },
+          {
+            "file": "assets/use-page-scroll-BUQtcdAb.js",
+            "bytes": 972,
+            "gzipBytes": 528
+          }
+        ]
+      },
+      {
+        "path": "/projects/maniac/wiki/characters",
+        "js": 359651,
+        "gzipJS": 113862,
+        "resources": [
+          {
+            "file": "projects/maniac/wiki/characters",
+            "bytes": 36256,
+            "gzipBytes": 5471
+          },
+          {
+            "file": "assets/style-DwsVs4lw.css",
+            "bytes": 80846,
+            "gzipBytes": 17509
+          },
+          {
+            "file": "brand/necrodwarf-mark.png",
+            "bytes": 12080,
+            "gzipBytes": 12103
+          },
+          {
+            "file": "assets/index-B1EsayeT.js",
+            "bytes": 333480,
+            "gzipBytes": 103620
+          },
+          {
+            "file": "assets/agent-card-MmCUT58c.webp",
+            "bytes": 55368,
+            "gzipBytes": 55165
+          },
+          {
+            "file": "assets/pudge-card-IBzAQ2gt.webp",
+            "bytes": 69804,
+            "gzipBytes": 69590
+          },
+          {
+            "file": "assets/death-card-BvIylbhL.webp",
+            "bytes": 62806,
+            "gzipBytes": 62620
+          },
+          {
+            "file": "assets/ursa-card-CuHhh8Dl.webp",
+            "bytes": 51502,
+            "gzipBytes": 51136
+          },
+          {
+            "file": "assets/plague_doctor-card-CeP_9Nhc.webp",
+            "bytes": 37758,
+            "gzipBytes": 37791
+          },
+          {
+            "file": "assets/ghost-card-fC3NjMfp.webp",
+            "bytes": 44364,
+            "gzipBytes": 44397
+          },
+          {
+            "file": "assets/freddy_bear-card-2frTQE29.webp",
+            "bytes": 71546,
+            "gzipBytes": 71405
+          },
+          {
+            "file": "assets/keeper_of_nightmares-card-E92OWx7n.webp",
+            "bytes": 55566,
+            "gzipBytes": 55604
+          },
+          {
+            "file": "assets/alchemist-card-HMmPje42.webp",
+            "bytes": 38232,
+            "gzipBytes": 38265
+          },
+          {
+            "file": "assets/shaman-card-ChTgPmEQ.webp",
+            "bytes": 55174,
+            "gzipBytes": 54969
+          },
+          {
+            "file": "assets/mefedronshchik-card-P3UPY7gj.webp",
+            "bytes": 68382,
+            "gzipBytes": 68266
+          },
+          {
+            "file": "assets/scientist-card-vZnN5u_w.webp",
+            "bytes": 71506,
+            "gzipBytes": 71364
+          },
+          {
+            "file": "assets/dodepovich-card-5d5dShc3.webp",
+            "bytes": 63860,
+            "gzipBytes": 63898
+          },
+          {
+            "file": "assets/necromancer-card-BOOLm-5A.webp",
+            "bytes": 68816,
+            "gzipBytes": 68603
+          },
+          {
+            "file": "assets/CharactersPage-Ll2iXKQQ.js",
+            "bytes": 3064,
+            "gzipBytes": 1520
+          },
+          {
+            "file": "assets/WikiLayout-g0CVobX2.js",
+            "bytes": 3009,
+            "gzipBytes": 1312
+          },
+          {
+            "file": "assets/CatalogControls-BA_p5pH6.js",
+            "bytes": 2357,
+            "gzipBytes": 1267
+          },
+          {
+            "file": "assets/catalog-6s9Vv8Ca.js",
+            "bytes": 1690,
+            "gzipBytes": 687
+          },
+          {
+            "file": "assets/snapshots-Dz8FZ_D7.js",
+            "bytes": 544,
+            "gzipBytes": 335
+          },
+          {
+            "file": "assets/DifficultyStars-UmNziP9u.js",
+            "bytes": 548,
+            "gzipBytes": 419
+          },
+          {
+            "file": "assets/characters-DImKs2vR.js",
+            "bytes": 13987,
+            "gzipBytes": 4174
+          },
+          {
+            "file": "assets/rubik-latin-wght-normal-CnQIisVs.woff2",
+            "bytes": 35348,
+            "gzipBytes": 35361
+          },
+          {
+            "file": "assets/geologica-latin-wght-normal-BBL8hQxZ.woff2",
+            "bytes": 24944,
+            "gzipBytes": 24972
+          },
+          {
+            "file": "assets/rubik-cyrillic-wght-normal-DveCct9I.woff2",
+            "bytes": 15112,
+            "gzipBytes": 15135
+          },
+          {
+            "file": "assets/geologica-cyrillic-wght-normal-DbeVG3Ps.woff2",
+            "bytes": 16428,
+            "gzipBytes": 16454
+          },
+          {
+            "file": "assets/use-page-scroll-BUQtcdAb.js",
+            "bytes": 972,
+            "gzipBytes": 528
+          }
+        ]
+      },
+      {
+        "path": "/projects/maniac/wiki/perks",
+        "js": 451670,
+        "gzipJS": 144936,
+        "resources": [
+          {
+            "file": "projects/maniac/wiki/perks",
+            "bytes": 74828,
+            "gzipBytes": 8990
+          },
+          {
+            "file": "brand/necrodwarf-mark.png",
+            "bytes": 12080,
+            "gzipBytes": 12103
+          },
+          {
+            "file": "assets/style-DwsVs4lw.css",
+            "bytes": 80846,
+            "gzipBytes": 17509
+          },
+          {
+            "file": "assets/index-B1EsayeT.js",
+            "bytes": 333480,
+            "gzipBytes": 103620
+          },
+          {
+            "file": "assets/bloodflow-lCu5wv6r.webp",
+            "bytes": 30712,
+            "gzipBytes": 30740
+          },
+          {
+            "file": "assets/i-am-speed-t1G2IWyN.webp",
+            "bytes": 19200,
+            "gzipBytes": 19224
+          },
+          {
+            "file": "assets/go_next-BZCG1GKC.webp",
+            "bytes": 35008,
+            "gzipBytes": 35024
+          },
+          {
+            "file": "assets/high_voltage-DaSO8P7h.webp",
+            "bytes": 63326,
+            "gzipBytes": 63364
+          },
+          {
+            "file": "assets/flowers_lead_the_investigation-4eHPO4Vy.webp",
+            "bytes": 56268,
+            "gzipBytes": 56306
+          },
+          {
+            "file": "assets/bouquet_to_the_other_side-CWCrlSU3.webp",
+            "bytes": 84710,
+            "gzipBytes": 84758
+          },
+          {
+            "file": "assets/bud_dispatcher-BCQGxu1h.webp",
+            "bytes": 56256,
+            "gzipBytes": 56294
+          },
+          {
+            "file": "assets/catch-mistakes-SPaRRadG.webp",
+            "bytes": 20416,
+            "gzipBytes": 20444
+          },
+          {
+            "file": "assets/computer-breaker-B9FKwwiX.webp",
+            "bytes": 21172,
+            "gzipBytes": 21200
+          },
+          {
+            "file": "assets/highlight-DpFVPhHY.webp",
+            "bytes": 21726,
+            "gzipBytes": 21754
+          },
+          {
+            "file": "assets/silence-CBVHkEPv.webp",
+            "bytes": 13108,
+            "gzipBytes": 13131
+          },
+          {
+            "file": "assets/ejection-DM5U1Tdz.webp",
+            "bytes": 23550,
+            "gzipBytes": 23578
+          },
+          {
+            "file": "assets/family-discord-Ca9rPkLX.webp",
+            "bytes": 13620,
+            "gzipBytes": 13643
+          },
+          {
+            "file": "assets/griefer-B6YSkQ3K.webp",
+            "bytes": 14234,
+            "gzipBytes": 14257
+          },
+          {
+            "file": "assets/guiding-light-3P5kLXuI.webp",
+            "bytes": 18660,
+            "gzipBytes": 18664
+          },
+          {
+            "file": "assets/mimic-Q-diiqJW.webp",
+            "bytes": 11738,
+            "gzipBytes": 11761
+          },
+          {
+            "file": "assets/wallhack-D_6bk-o4.webp",
+            "bytes": 18066,
+            "gzipBytes": 18094
+          },
+          {
+            "file": "assets/last-breath-rqg0b6ov.webp",
+            "bytes": 7878,
+            "gzipBytes": 7653
+          },
+          {
+            "file": "assets/quick-reflexes-kaZ2U6sh.webp",
+            "bytes": 26852,
+            "gzipBytes": 26880
+          },
+          {
+            "file": "assets/blindness-C6uk6yQd.webp",
+            "bytes": 27888,
+            "gzipBytes": 27863
+          },
+          {
+            "file": "assets/mental-bond-DNloALa0.webp",
+            "bytes": 29624,
+            "gzipBytes": 29652
+          },
+          {
+            "file": "assets/dutch-helm-CTZ0lH8K.webp",
+            "bytes": 13530,
+            "gzipBytes": 13553
+          },
+          {
+            "file": "assets/independence-CM3aQZKO.webp",
+            "bytes": 22580,
+            "gzipBytes": 22608
+          },
+          {
+            "file": "assets/altruist-exe-C47mw1hY.webp",
+            "bytes": 6558,
+            "gzipBytes": 6581
+          },
+          {
+            "file": "assets/magic-lover-BnuB38q0.webp",
+            "bytes": 16412,
+            "gzipBytes": 16437
+          },
+          {
+            "file": "assets/idealych-DxdfhUDT.webp",
+            "bytes": 18586,
+            "gzipBytes": 18614
+          },
+          {
+            "file": "assets/reality_anchor-CE2q1L-B.webp",
+            "bytes": 110032,
+            "gzipBytes": 110085
+          },
+          {
+            "file": "assets/emergency_overclock-B_jlCSlo.webp",
+            "bytes": 78554,
+            "gzipBytes": 78446
+          },
+          {
+            "file": "assets/fixed_it_im_out-DYxbOlPp.webp",
+            "bytes": 60876,
+            "gzipBytes": 60914
+          },
+          {
+            "file": "assets/magic_kick-GxFkK2sT.webp",
+            "bytes": 61288,
+            "gzipBytes": 61326
+          },
+          {
+            "file": "assets/PerksPage-Dl4bH_zK.js",
+            "bytes": 598,
+            "gzipBytes": 361
+          },
+          {
+            "file": "assets/ReferenceCatalogPage-DkG21HiR.js",
+            "bytes": 4300,
+            "gzipBytes": 1949
+          },
+          {
+            "file": "assets/StatText-DkxJnCCQ.js",
+            "bytes": 9259,
+            "gzipBytes": 3831
+          },
+          {
+            "file": "assets/CatalogControls-BA_p5pH6.js",
+            "bytes": 2357,
+            "gzipBytes": 1267
+          },
+          {
+            "file": "assets/WikiLayout-g0CVobX2.js",
+            "bytes": 3009,
+            "gzipBytes": 1312
+          },
+          {
+            "file": "assets/rubik-latin-wght-normal-CnQIisVs.woff2",
+            "bytes": 35348,
+            "gzipBytes": 35361
+          },
+          {
+            "file": "assets/geologica-latin-wght-normal-BBL8hQxZ.woff2",
+            "bytes": 24944,
+            "gzipBytes": 24972
+          },
+          {
+            "file": "assets/rubik-cyrillic-wght-normal-DveCct9I.woff2",
+            "bytes": 15112,
+            "gzipBytes": 15135
+          },
+          {
+            "file": "assets/geologica-cyrillic-wght-normal-DbeVG3Ps.woff2",
+            "bytes": 16428,
+            "gzipBytes": 16454
+          },
+          {
+            "file": "assets/CatalogSelect-LFqpJnHc.js",
+            "bytes": 315,
+            "gzipBytes": 231
+          },
+          {
+            "file": "assets/Reference.module-DXylhMWA.js",
+            "bytes": 744,
+            "gzipBytes": 377
+          },
+          {
+            "file": "assets/reference-catalog-2uiUw1Ei.js",
+            "bytes": 41769,
+            "gzipBytes": 7282
+          },
+          {
+            "file": "assets/maniac-gameplay-facts-NhEPXo0J.js",
+            "bytes": 3235,
+            "gzipBytes": 1667
+          },
+          {
+            "file": "assets/CharacterFilter-VUnsuahV.js",
+            "bytes": 1456,
+            "gzipBytes": 743
+          },
+          {
+            "file": "assets/snapshots-Dz8FZ_D7.js",
+            "bytes": 544,
+            "gzipBytes": 335
+          },
+          {
+            "file": "assets/characters-DImKs2vR.js",
+            "bytes": 13987,
+            "gzipBytes": 4174
+          },
+          {
+            "file": "assets/reference-labels-3seqGaiy.js",
+            "bytes": 1512,
+            "gzipBytes": 773
+          },
+          {
+            "file": "assets/EntityIcon-pMJ9GyN0.js",
+            "bytes": 34133,
+            "gzipBytes": 16486
+          },
+          {
+            "file": "assets/use-page-scroll-BUQtcdAb.js",
+            "bytes": 972,
+            "gzipBytes": 528
+          }
+        ]
+      },
+      {
+        "path": "/projects/maniac/wiki/abilities",
+        "js": 451677,
+        "gzipJS": 144935,
+        "resources": [
+          {
+            "file": "projects/maniac/wiki/abilities",
+            "bytes": 31316,
+            "gzipBytes": 8283
+          },
+          {
+            "file": "brand/necrodwarf-mark.png",
+            "bytes": 12080,
+            "gzipBytes": 12103
+          },
+          {
+            "file": "assets/style-DwsVs4lw.css",
+            "bytes": 80846,
+            "gzipBytes": 17509
+          },
+          {
+            "file": "assets/index-B1EsayeT.js",
+            "bytes": 333480,
+            "gzipBytes": 103620
+          },
+          {
+            "file": "assets/death-teleport-COFNxRb6.webp",
+            "bytes": 25454,
+            "gzipBytes": 25482
+          },
+          {
+            "file": "assets/beast-leap-DUpI-QoJ.webp",
+            "bytes": 7270,
+            "gzipBytes": 7293
+          },
+          {
+            "file": "assets/plague-orb-h3rgGoWX.webp",
+            "bytes": 90254,
+            "gzipBytes": 90302
+          },
+          {
+            "file": "assets/ghost-possession-B9IisNYk.webp",
+            "bytes": 70768,
+            "gzipBytes": 70811
+          },
+          {
+            "file": "assets/phantom-veil-C7cmHsu6.webp",
+            "bytes": 15490,
+            "gzipBytes": 15513
+          },
+          {
+            "file": "assets/musical-wave-DhWwo4MU.webp",
+            "bytes": 103012,
+            "gzipBytes": 103065
+          },
+          {
+            "file": "assets/hook-throw-Bh1K8bPc.webp",
+            "bytes": 67310,
+            "gzipBytes": 67285
+          },
+          {
+            "file": "assets/concentrated-nightmare-CFqeCOEf.webp",
+            "bytes": 73978,
+            "gzipBytes": 74021
+          },
+          {
+            "file": "assets/quantum-swap-Kzm1OIxB.webp",
+            "bytes": 116980,
+            "gzipBytes": 117038
+          },
+          {
+            "file": "assets/smoke-cloud-DTbFvxfx.webp",
+            "bytes": 98738,
+            "gzipBytes": 98791
+          },
+          {
+            "file": "assets/AbilitiesPage-C3LWEyfI.js",
+            "bytes": 605,
+            "gzipBytes": 360
+          },
+          {
+            "file": "assets/ReferenceCatalogPage-DkG21HiR.js",
+            "bytes": 4300,
+            "gzipBytes": 1949
+          },
+          {
+            "file": "assets/StatText-DkxJnCCQ.js",
+            "bytes": 9259,
+            "gzipBytes": 3831
+          },
+          {
+            "file": "assets/CatalogControls-BA_p5pH6.js",
+            "bytes": 2357,
+            "gzipBytes": 1267
+          },
+          {
+            "file": "assets/CatalogSelect-LFqpJnHc.js",
+            "bytes": 315,
+            "gzipBytes": 231
+          },
+          {
+            "file": "assets/WikiLayout-g0CVobX2.js",
+            "bytes": 3009,
+            "gzipBytes": 1312
+          },
+          {
+            "file": "assets/Reference.module-DXylhMWA.js",
+            "bytes": 744,
+            "gzipBytes": 377
+          },
+          {
+            "file": "assets/rubik-latin-wght-normal-CnQIisVs.woff2",
+            "bytes": 35348,
+            "gzipBytes": 35361
+          },
+          {
+            "file": "assets/maniac-gameplay-facts-NhEPXo0J.js",
+            "bytes": 3235,
+            "gzipBytes": 1667
+          },
+          {
+            "file": "assets/reference-catalog-2uiUw1Ei.js",
+            "bytes": 41769,
+            "gzipBytes": 7282
+          },
+          {
+            "file": "assets/EntityIcon-pMJ9GyN0.js",
+            "bytes": 34133,
+            "gzipBytes": 16486
+          },
+          {
+            "file": "assets/CharacterFilter-VUnsuahV.js",
+            "bytes": 1456,
+            "gzipBytes": 743
+          },
+          {
+            "file": "assets/snapshots-Dz8FZ_D7.js",
+            "bytes": 544,
+            "gzipBytes": 335
+          },
+          {
+            "file": "assets/characters-DImKs2vR.js",
+            "bytes": 13987,
+            "gzipBytes": 4174
+          },
+          {
+            "file": "assets/reference-labels-3seqGaiy.js",
+            "bytes": 1512,
+            "gzipBytes": 773
+          },
+          {
+            "file": "assets/geologica-latin-wght-normal-BBL8hQxZ.woff2",
+            "bytes": 24944,
+            "gzipBytes": 24972
+          },
+          {
+            "file": "assets/rubik-cyrillic-wght-normal-DveCct9I.woff2",
+            "bytes": 15112,
+            "gzipBytes": 15135
+          },
+          {
+            "file": "assets/geologica-cyrillic-wght-normal-DbeVG3Ps.woff2",
+            "bytes": 16428,
+            "gzipBytes": 16454
+          },
+          {
+            "file": "assets/use-page-scroll-BUQtcdAb.js",
+            "bytes": 972,
+            "gzipBytes": 528
+          }
+        ]
+      },
+      {
+        "path": "/projects/maniac/wiki/items",
+        "js": 541702,
+        "gzipJS": 165692,
+        "resources": [
+          {
+            "file": "projects/maniac/wiki/items",
+            "bytes": 101071,
+            "gzipBytes": 29141
+          },
+          {
+            "file": "assets/style-DwsVs4lw.css",
+            "bytes": 80846,
+            "gzipBytes": 17509
+          },
+          {
+            "file": "brand/necrodwarf-mark.png",
+            "bytes": 12080,
+            "gzipBytes": 12103
+          },
+          {
+            "file": "assets/index-B1EsayeT.js",
+            "bytes": 333480,
+            "gzipBytes": 103620
+          },
+          {
+            "file": "assets/system-generator-CAsmbuZu.png",
+            "bytes": 13655,
+            "gzipBytes": 13445
+          },
+          {
+            "file": "assets/system-hook-Ch4qR33Q.png",
+            "bytes": 10995,
+            "gzipBytes": 10887
+          },
+          {
+            "file": "assets/system-microphone-5q9QjCvH.png",
+            "bytes": 5869,
+            "gzipBytes": 5554
+          },
+          {
+            "file": "assets/system-ghost-hand-e7DuvrYu.webp",
+            "bytes": 103604,
+            "gzipBytes": 103657
+          },
+          {
+            "file": "assets/system-beast-claw-C6hZL8hS.png",
+            "bytes": 10806,
+            "gzipBytes": 10602
+          },
+          {
+            "file": "assets/system-beehive-food-BATtUEtk.png",
+            "bytes": 5779,
+            "gzipBytes": 5499
+          },
+          {
+            "file": "assets/nightmare-lighter-render-3metDctg.png",
+            "bytes": 37305,
+            "gzipBytes": 36092
+          },
+          {
+            "file": "assets/system-salt-Bi7Cn7KA.webp",
+            "bytes": 48626,
+            "gzipBytes": 48659
+          },
+          {
+            "file": "assets/system-dead-staff-B2lv5CSp.png",
+            "bytes": 12430,
+            "gzipBytes": 12317
+          },
+          {
+            "file": "assets/system-maniac-regen-fragment-MlKKJYZL.webp",
+            "bytes": 10786,
+            "gzipBytes": 10809
+          },
+          {
+            "file": "assets/system-maniac-strength-fragment-CghHpYrm.webp",
+            "bytes": 10292,
+            "gzipBytes": 10315
+          },
+          {
+            "file": "assets/system-maniac-speed-fragment-pOs1B188.webp",
+            "bytes": 12294,
+            "gzipBytes": 12317
+          },
+          {
+            "file": "assets/system-maniac-slowness-fragment-BbGhf1fQ.webp",
+            "bytes": 14804,
+            "gzipBytes": 14827
+          },
+          {
+            "file": "assets/system-maniac-slow-falling-fragment-D0L3MI6n.webp",
+            "bytes": 14710,
+            "gzipBytes": 14733
+          },
+          {
+            "file": "assets/system-maniac-weakness-fragment-CqeGgK3B.webp",
+            "bytes": 9434,
+            "gzipBytes": 9457
+          },
+          {
+            "file": "assets/system-maniac-healing-fragment-CQOPJX7g.webp",
+            "bytes": 12642,
+            "gzipBytes": 12665
+          },
+          {
+            "file": "assets/system-maniac-blindness-fragment-1kJ7oftl.webp",
+            "bytes": 10716,
+            "gzipBytes": 10739
+          },
+          {
+            "file": "assets/system-maniac-glowing-fragment-h6T9yXP4.webp",
+            "bytes": 15774,
+            "gzipBytes": 15797
+          },
+          {
+            "file": "assets/system-recipe-book-Dfcu3bgp.webp",
+            "bytes": 23102,
+            "gzipBytes": 23130
+          },
+          {
+            "file": "assets/system-bandages-CqPUIuJF.png",
+            "bytes": 7937,
+            "gzipBytes": 7772
+          },
+          {
+            "file": "assets/system-medical-tablet-jS4mLdKl.png",
+            "bytes": 5792,
+            "gzipBytes": 5593
+          },
+          {
+            "file": "assets/system-bong-DLUid2N6.png",
+            "bytes": 17325,
+            "gzipBytes": 17123
+          },
+          {
+            "file": "assets/ItemsPage-Bq6OYTvJ.js",
+            "bytes": 626,
+            "gzipBytes": 379
+          },
+          {
+            "file": "assets/SystemsCatalogPage-CT4KvfA6.js",
+            "bytes": 4412,
+            "gzipBytes": 2014
+          },
+          {
+            "file": "assets/StatText-DkxJnCCQ.js",
+            "bytes": 9259,
+            "gzipBytes": 3831
+          },
+          {
+            "file": "assets/CatalogControls-BA_p5pH6.js",
+            "bytes": 2357,
+            "gzipBytes": 1267
+          },
+          {
+            "file": "assets/CatalogSelect-LFqpJnHc.js",
+            "bytes": 315,
+            "gzipBytes": 231
+          },
+          {
+            "file": "assets/WikiLayout-g0CVobX2.js",
+            "bytes": 3009,
+            "gzipBytes": 1312
+          },
+          {
+            "file": "assets/Reference.module-DXylhMWA.js",
+            "bytes": 744,
+            "gzipBytes": 377
+          },
+          {
+            "file": "assets/rubik-latin-wght-normal-CnQIisVs.woff2",
+            "bytes": 35348,
+            "gzipBytes": 35361
+          },
+          {
+            "file": "assets/geologica-latin-wght-normal-BBL8hQxZ.woff2",
+            "bytes": 24944,
+            "gzipBytes": 24972
+          },
+          {
+            "file": "assets/rubik-cyrillic-wght-normal-DveCct9I.woff2",
+            "bytes": 15112,
+            "gzipBytes": 15135
+          },
+          {
+            "file": "assets/geologica-cyrillic-wght-normal-DbeVG3Ps.woff2",
+            "bytes": 16428,
+            "gzipBytes": 16454
+          },
+          {
+            "file": "assets/maniac-gameplay-facts-NhEPXo0J.js",
+            "bytes": 3235,
+            "gzipBytes": 1667
+          },
+          {
+            "file": "assets/CharacterFilter-VUnsuahV.js",
+            "bytes": 1456,
+            "gzipBytes": 743
+          },
+          {
+            "file": "assets/snapshots-Dz8FZ_D7.js",
+            "bytes": 544,
+            "gzipBytes": 335
+          },
+          {
+            "file": "assets/SystemIcon-Kp4PqsGw.js",
+            "bytes": 512,
+            "gzipBytes": 353
+          },
+          {
+            "file": "assets/characters-DImKs2vR.js",
+            "bytes": 13987,
+            "gzipBytes": 4174
+          },
+          {
+            "file": "assets/system-icons-CPiUVVkA.js",
+            "bytes": 40969,
+            "gzipBytes": 15954
+          },
+          {
+            "file": "assets/maniac-system-data-C_jFLPGE.js",
+            "bytes": 91692,
+            "gzipBytes": 12421
+          },
+          {
+            "file": "assets/EntityIcon-pMJ9GyN0.js",
+            "bytes": 34133,
+            "gzipBytes": 16486
+          },
+          {
+            "file": "assets/use-page-scroll-BUQtcdAb.js",
+            "bytes": 972,
+            "gzipBytes": 528
+          }
+        ]
+      },
+      {
+        "path": "/projects/maniac/wiki/mechanics",
+        "js": 541710,
+        "gzipJS": 165696,
+        "resources": [
+          {
+            "file": "projects/maniac/wiki/mechanics",
+            "bytes": 56797,
+            "gzipBytes": 8053
+          },
+          {
+            "file": "assets/style-DwsVs4lw.css",
+            "bytes": 80846,
+            "gzipBytes": 17509
+          },
+          {
+            "file": "brand/necrodwarf-mark.png",
+            "bytes": 12080,
+            "gzipBytes": 12103
+          },
+          {
+            "file": "assets/index-B1EsayeT.js",
+            "bytes": 333480,
+            "gzipBytes": 103620
+          },
+          {
+            "file": "assets/MechanicsPage-JV1qMHEF.js",
+            "bytes": 634,
+            "gzipBytes": 383
+          },
+          {
+            "file": "assets/CatalogControls-BA_p5pH6.js",
+            "bytes": 2357,
+            "gzipBytes": 1267
+          },
+          {
+            "file": "assets/SystemsCatalogPage-CT4KvfA6.js",
+            "bytes": 4412,
+            "gzipBytes": 2014
+          },
+          {
+            "file": "assets/CatalogSelect-LFqpJnHc.js",
+            "bytes": 315,
+            "gzipBytes": 231
+          },
+          {
+            "file": "assets/maniac-gameplay-facts-NhEPXo0J.js",
+            "bytes": 3235,
+            "gzipBytes": 1667
+          },
+          {
+            "file": "assets/WikiLayout-g0CVobX2.js",
+            "bytes": 3009,
+            "gzipBytes": 1312
+          },
+          {
+            "file": "assets/Reference.module-DXylhMWA.js",
+            "bytes": 744,
+            "gzipBytes": 377
+          },
+          {
+            "file": "assets/StatText-DkxJnCCQ.js",
+            "bytes": 9259,
+            "gzipBytes": 3831
+          },
+          {
+            "file": "assets/rubik-latin-wght-normal-CnQIisVs.woff2",
+            "bytes": 35348,
+            "gzipBytes": 35361
+          },
+          {
+            "file": "assets/CharacterFilter-VUnsuahV.js",
+            "bytes": 1456,
+            "gzipBytes": 743
+          },
+          {
+            "file": "assets/snapshots-Dz8FZ_D7.js",
+            "bytes": 544,
+            "gzipBytes": 335
+          },
+          {
+            "file": "assets/SystemIcon-Kp4PqsGw.js",
+            "bytes": 512,
+            "gzipBytes": 353
+          },
+          {
+            "file": "assets/maniac-system-data-C_jFLPGE.js",
+            "bytes": 91692,
+            "gzipBytes": 12421
+          },
+          {
+            "file": "assets/characters-DImKs2vR.js",
+            "bytes": 13987,
+            "gzipBytes": 4174
+          },
+          {
+            "file": "assets/system-icons-CPiUVVkA.js",
+            "bytes": 40969,
+            "gzipBytes": 15954
+          },
+          {
+            "file": "assets/EntityIcon-pMJ9GyN0.js",
+            "bytes": 34133,
+            "gzipBytes": 16486
+          },
+          {
+            "file": "assets/geologica-latin-wght-normal-BBL8hQxZ.woff2",
+            "bytes": 24944,
+            "gzipBytes": 24972
+          },
+          {
+            "file": "assets/rubik-cyrillic-wght-normal-DveCct9I.woff2",
+            "bytes": 15112,
+            "gzipBytes": 15135
+          },
+          {
+            "file": "assets/geologica-cyrillic-wght-normal-DbeVG3Ps.woff2",
+            "bytes": 16428,
+            "gzipBytes": 16454
+          },
+          {
+            "file": "assets/use-page-scroll-BUQtcdAb.js",
+            "bytes": 972,
+            "gzipBytes": 528
+          }
+        ]
+      },
+      {
+        "path": "/projects/maniac/wiki/maps",
+        "js": 361817,
+        "gzipJS": 116625,
+        "resources": [
+          {
+            "file": "projects/maniac/wiki/maps",
+            "bytes": 19888,
+            "gzipBytes": 5057
+          },
+          {
+            "file": "assets/style-DwsVs4lw.css",
+            "bytes": 80846,
+            "gzipBytes": 17509
+          },
+          {
+            "file": "brand/necrodwarf-mark.png",
+            "bytes": 12080,
+            "gzipBytes": 12103
+          },
+          {
+            "file": "assets/index-B1EsayeT.js",
+            "bytes": 333480,
+            "gzipBytes": 103620
+          },
+          {
+            "file": "assets/MapsPage-CQE8TDlX.js",
+            "bytes": 6414,
+            "gzipBytes": 2810
+          },
+          {
+            "file": "assets/CatalogControls-BA_p5pH6.js",
+            "bytes": 2357,
+            "gzipBytes": 1267
+          },
+          {
+            "file": "assets/snapshots-Dz8FZ_D7.js",
+            "bytes": 544,
+            "gzipBytes": 335
+          },
+          {
+            "file": "assets/maps-DwIpDSsl.js",
+            "bytes": 3189,
+            "gzipBytes": 1085
+          },
+          {
+            "file": "assets/WikiLayout-g0CVobX2.js",
+            "bytes": 3009,
+            "gzipBytes": 1312
+          },
+          {
+            "file": "assets/MapFacts-Bra_04o_.js",
+            "bytes": 959,
+            "gzipBytes": 557
+          },
+          {
+            "file": "assets/publication-D8NCPwDM.js",
+            "bytes": 494,
+            "gzipBytes": 322
+          },
+          {
+            "file": "assets/DifficultyStars-UmNziP9u.js",
+            "bytes": 548,
+            "gzipBytes": 419
+          },
+          {
+            "file": "assets/mansion-960-Cr-0HIIz.js",
+            "bytes": 105,
+            "gzipBytes": 102
+          },
+          {
+            "file": "assets/pizzeria-814-FSqYAsZN.js",
+            "bytes": 107,
+            "gzipBytes": 104
+          },
+          {
+            "file": "assets/fort-960-CtkuzoVb.js",
+            "bytes": 99,
+            "gzipBytes": 99
+          },
+          {
+            "file": "assets/useMapAnchor-DNymz8UD.js",
+            "bytes": 281,
+            "gzipBytes": 234
+          },
+          {
+            "file": "assets/StatText-DkxJnCCQ.js",
+            "bytes": 9259,
+            "gzipBytes": 3831
+          },
+          {
+            "file": "assets/mansion-640-fjO2QVfE.webp",
+            "bytes": 48754,
+            "gzipBytes": 48787
+          },
+          {
+            "file": "assets/pizzeria-640-BVzpSVLF.webp",
+            "bytes": 32630,
+            "gzipBytes": 32658
+          },
+          {
+            "file": "assets/fort-640-C79NE5JT.webp",
+            "bytes": 43764,
+            "gzipBytes": 43797
+          },
+          {
+            "file": "assets/rubik-cyrillic-wght-normal-DveCct9I.woff2",
+            "bytes": 15112,
+            "gzipBytes": 15135
+          },
+          {
+            "file": "assets/use-page-scroll-BUQtcdAb.js",
+            "bytes": 972,
+            "gzipBytes": 528
+          },
+          {
+            "file": "assets/rubik-latin-wght-normal-CnQIisVs.woff2",
+            "bytes": 35348,
+            "gzipBytes": 35361
+          },
+          {
+            "file": "assets/geologica-latin-wght-normal-BBL8hQxZ.woff2",
+            "bytes": 24944,
+            "gzipBytes": 24972
+          },
+          {
+            "file": "assets/geologica-cyrillic-wght-normal-DbeVG3Ps.woff2",
+            "bytes": 16428,
+            "gzipBytes": 16454
+          }
+        ]
+      },
+      {
+        "path": "/projects/maniac/wiki/effects",
+        "js": 418943,
+        "gzipJS": 137042,
+        "resources": [
+          {
+            "file": "projects/maniac/wiki/effects",
+            "bytes": 85533,
+            "gzipBytes": 19088
+          },
+          {
+            "file": "assets/style-DwsVs4lw.css",
+            "bytes": 80846,
+            "gzipBytes": 17509
+          },
+          {
+            "file": "brand/necrodwarf-mark.png",
+            "bytes": 12080,
+            "gzipBytes": 12103
+          },
+          {
+            "file": "assets/index-B1EsayeT.js",
+            "bytes": 333480,
+            "gzipBytes": 103620
+          },
+          {
+            "file": "assets/mana_flow-CwggGFXn.png",
+            "bytes": 99272,
+            "gzipBytes": 99119
+          },
+          {
+            "file": "assets/altruist_boost-DJy6XlnF.png",
+            "bytes": 126709,
+            "gzipBytes": 125365
+          },
+          {
+            "file": "assets/death_race-nIveO_yW.png",
+            "bytes": 104955,
+            "gzipBytes": 104480
+          },
+          {
+            "file": "assets/thorn-C3mF6Zme.png",
+            "bytes": 118403,
+            "gzipBytes": 117611
+          },
+          {
+            "file": "assets/fear-Bs89cZBY.png",
+            "bytes": 59364,
+            "gzipBytes": 55359
+          },
+          {
+            "file": "assets/dodepovich_insurance-DH8BkbYL.png",
+            "bytes": 552665,
+            "gzipBytes": 551404
+          },
+          {
+            "file": "assets/dodepovich_damage_block-6PkhEYju.png",
+            "bytes": 571336,
+            "gzipBytes": 570188
+          },
+          {
+            "file": "assets/open_wound-BuvbVO3p.png",
+            "bytes": 65223,
+            "gzipBytes": 61772
+          },
+          {
+            "file": "assets/plague-BLMs9t6H.png",
+            "bytes": 61502,
+            "gzipBytes": 61420
+          },
+          {
+            "file": "assets/target-BlB23Ub9.png",
+            "bytes": 71272,
+            "gzipBytes": 71270
+          },
+          {
+            "file": "assets/frozen-sBaw-M6x.png",
+            "bytes": 452509,
+            "gzipBytes": 445346
+          },
+          {
+            "file": "assets/silence-B8n25mUk.png",
+            "bytes": 179996,
+            "gzipBytes": 179876
+          },
+          {
+            "file": "assets/stun-Djd8jydB.png",
+            "bytes": 461597,
+            "gzipBytes": 460176
+          },
+          {
+            "file": "assets/dodepovich_double_damage-46kKPemj.png",
+            "bytes": 872273,
+            "gzipBytes": 872167
+          },
+          {
+            "file": "assets/dodepovich_slot_cooldown-BFRu0NKM.png",
+            "bytes": 507438,
+            "gzipBytes": 505614
+          },
+          {
+            "file": "assets/dodepovich_credit-CCO_ikUI.png",
+            "bytes": 878816,
+            "gzipBytes": 878268
+          },
+          {
+            "file": "assets/EffectsPage-DQ7xdHdO.js",
+            "bytes": 58597,
+            "gzipBytes": 20806
+          },
+          {
+            "file": "assets/EntityLink-CWlRC64o.js",
+            "bytes": 1696,
+            "gzipBytes": 887
+          },
+          {
+            "file": "assets/published-effects-DraP4bIJ.js",
+            "bytes": 2484,
+            "gzipBytes": 926
+          },
+          {
+            "file": "assets/publication-D8NCPwDM.js",
+            "bytes": 494,
+            "gzipBytes": 322
+          },
+          {
+            "file": "assets/CatalogControls-BA_p5pH6.js",
+            "bytes": 2357,
+            "gzipBytes": 1267
+          },
+          {
+            "file": "assets/WikiLayout-g0CVobX2.js",
+            "bytes": 3009,
+            "gzipBytes": 1312
+          },
+          {
+            "file": "assets/maniac-gameplay-facts-NhEPXo0J.js",
+            "bytes": 3235,
+            "gzipBytes": 1667
+          },
+          {
+            "file": "assets/snapshots-Dz8FZ_D7.js",
+            "bytes": 544,
+            "gzipBytes": 335
+          },
+          {
+            "file": "assets/CatalogSelect-LFqpJnHc.js",
+            "bytes": 315,
+            "gzipBytes": 231
+          },
+          {
+            "file": "assets/Reference.module-DXylhMWA.js",
+            "bytes": 744,
+            "gzipBytes": 377
+          },
+          {
+            "file": "assets/WikiText-Ceje7ebA.js",
+            "bytes": 1757,
+            "gzipBytes": 933
+          },
+          {
+            "file": "assets/StatText-DkxJnCCQ.js",
+            "bytes": 9259,
+            "gzipBytes": 3831
+          },
+          {
+            "file": "assets/rubik-latin-wght-normal-CnQIisVs.woff2",
+            "bytes": 35348,
+            "gzipBytes": 35361
+          },
+          {
+            "file": "assets/geologica-latin-wght-normal-BBL8hQxZ.woff2",
+            "bytes": 24944,
+            "gzipBytes": 24972
+          },
+          {
+            "file": "assets/rubik-cyrillic-wght-normal-DveCct9I.woff2",
+            "bytes": 15112,
+            "gzipBytes": 15135
+          },
+          {
+            "file": "assets/geologica-cyrillic-wght-normal-DbeVG3Ps.woff2",
+            "bytes": 16428,
+            "gzipBytes": 16454
+          },
+          {
+            "file": "assets/use-page-scroll-BUQtcdAb.js",
+            "bytes": 972,
+            "gzipBytes": 528
+          }
+        ]
+      },
+      {
+        "path": "/projects/maniac/wiki/characters/keeper-of-nightmares",
+        "js": 640708,
+        "gzipJS": 187798,
+        "resources": [
+          {
+            "file": "projects/maniac/wiki/characters/keeper-of-nightmares",
+            "bytes": 31785,
+            "gzipBytes": 6167
+          },
+          {
+            "file": "assets/style-DwsVs4lw.css",
+            "bytes": 80846,
+            "gzipBytes": 17509
+          },
+          {
+            "file": "assets/keeper_of_nightmares-large-CZm-EnWi.webp",
+            "bytes": 242698,
+            "gzipBytes": 242617
+          },
+          {
+            "file": "brand/necrodwarf-mark.png",
+            "bytes": 12080,
+            "gzipBytes": 12103
+          },
+          {
+            "file": "assets/index-B1EsayeT.js",
+            "bytes": 333480,
+            "gzipBytes": 103620
+          },
+          {
+            "file": "assets/concentrated-nightmare-CFqeCOEf.webp",
+            "bytes": 73978,
+            "gzipBytes": 74021
+          },
+          {
+            "file": "assets/nightmare-lighter-render-3metDctg.png",
+            "bytes": 37305,
+            "gzipBytes": 36092
+          },
+          {
+            "file": "assets/system-awakening-needle-ClsiGErm.png",
+            "bytes": 24612,
+            "gzipBytes": 24352
+          },
+          {
+            "file": "assets/WikiText-Ceje7ebA.js",
+            "bytes": 1757,
+            "gzipBytes": 933
+          },
+          {
+            "file": "assets/keeper-of-nightmares-D8NKSzlG.js",
+            "bytes": 3530,
+            "gzipBytes": 1886
+          },
+          {
+            "file": "assets/CharacterPage-D8Y7omup.js",
+            "bytes": 7436,
+            "gzipBytes": 2919
+          },
+          {
+            "file": "assets/EntityLink-CWlRC64o.js",
+            "bytes": 1696,
+            "gzipBytes": 887
+          },
+          {
+            "file": "assets/StatText-DkxJnCCQ.js",
+            "bytes": 9259,
+            "gzipBytes": 3831
+          },
+          {
+            "file": "assets/published-effects-DraP4bIJ.js",
+            "bytes": 2484,
+            "gzipBytes": 926
+          },
+          {
+            "file": "assets/publication-D8NCPwDM.js",
+            "bytes": 494,
+            "gzipBytes": 322
+          },
+          {
+            "file": "assets/RelatedLinks-CTcGKiAx.js",
+            "bytes": 1124,
+            "gzipBytes": 664
+          },
+          {
+            "file": "assets/WikiLayout-g0CVobX2.js",
+            "bytes": 3009,
+            "gzipBytes": 1312
+          },
+          {
+            "file": "assets/rubik-cyrillic-wght-normal-DveCct9I.woff2",
+            "bytes": 15112,
+            "gzipBytes": 15135
+          },
+          {
+            "file": "assets/maniac-gameplay-facts-NhEPXo0J.js",
+            "bytes": 3235,
+            "gzipBytes": 1667
+          },
+          {
+            "file": "assets/rubik-latin-wght-normal-CnQIisVs.woff2",
+            "bytes": 35348,
+            "gzipBytes": 35361
+          },
+          {
+            "file": "assets/geologica-latin-wght-normal-BBL8hQxZ.woff2",
+            "bytes": 24944,
+            "gzipBytes": 24972
+          },
+          {
+            "file": "assets/geologica-cyrillic-wght-normal-DbeVG3Ps.woff2",
+            "bytes": 16428,
+            "gzipBytes": 16454
+          },
+          {
+            "file": "assets/registry-DM5oGDRv.js",
+            "bytes": 41360,
+            "gzipBytes": 8223
+          },
+          {
+            "file": "assets/characters-DImKs2vR.js",
+            "bytes": 13987,
+            "gzipBytes": 4174
+          },
+          {
+            "file": "assets/maps-DwIpDSsl.js",
+            "bytes": 3189,
+            "gzipBytes": 1085
+          },
+          {
+            "file": "assets/snapshots-Dz8FZ_D7.js",
+            "bytes": 544,
+            "gzipBytes": 335
+          },
+          {
+            "file": "assets/reference-catalog-2uiUw1Ei.js",
+            "bytes": 41769,
+            "gzipBytes": 7282
+          },
+          {
+            "file": "assets/EntityCards-aqhxtSM9.js",
+            "bytes": 4041,
+            "gzipBytes": 1924
+          },
+          {
+            "file": "assets/DifficultyStars-UmNziP9u.js",
+            "bytes": 548,
+            "gzipBytes": 419
+          },
+          {
+            "file": "assets/maniac-system-data-C_jFLPGE.js",
+            "bytes": 91692,
+            "gzipBytes": 12421
+          },
+          {
+            "file": "assets/system-icons-CPiUVVkA.js",
+            "bytes": 40969,
+            "gzipBytes": 15954
+          },
+          {
+            "file": "assets/EntityIcon-pMJ9GyN0.js",
+            "bytes": 34133,
+            "gzipBytes": 16486
+          },
+          {
+            "file": "assets/use-page-scroll-BUQtcdAb.js",
+            "bytes": 972,
+            "gzipBytes": 528
+          }
+        ]
+      },
+      {
+        "path": "/projects/maniac/wiki/perks/rose-colored-glasses",
+        "js": 641609,
+        "gzipJS": 188245,
+        "resources": [
+          {
+            "file": "projects/maniac/wiki/perks/rose-colored-glasses",
+            "bytes": 12767,
+            "gzipBytes": 4129
+          },
+          {
+            "file": "assets/style-DwsVs4lw.css",
+            "bytes": 80846,
+            "gzipBytes": 17509
+          },
+          {
+            "file": "brand/necrodwarf-mark.png",
+            "bytes": 12080,
+            "gzipBytes": 12103
+          },
+          {
+            "file": "assets/index-B1EsayeT.js",
+            "bytes": 333480,
+            "gzipBytes": 103620
+          },
+          {
+            "file": "assets/ReferenceArticlePage-DIGJwEAf.js",
+            "bytes": 7573,
+            "gzipBytes": 2963
+          },
+          {
+            "file": "assets/rose-colored-glasses-GBOcsEzL.js",
+            "bytes": 2038,
+            "gzipBytes": 1139
+          },
+          {
+            "file": "assets/EntityLink-CWlRC64o.js",
+            "bytes": 1696,
+            "gzipBytes": 887
+          },
+          {
+            "file": "assets/published-effects-DraP4bIJ.js",
+            "bytes": 2484,
+            "gzipBytes": 926
+          },
+          {
+            "file": "assets/WikiText-Ceje7ebA.js",
+            "bytes": 1757,
+            "gzipBytes": 933
+          },
+          {
+            "file": "assets/publication-D8NCPwDM.js",
+            "bytes": 494,
+            "gzipBytes": 322
+          },
+          {
+            "file": "assets/maniac-gameplay-facts-NhEPXo0J.js",
+            "bytes": 3235,
+            "gzipBytes": 1667
+          },
+          {
+            "file": "assets/StatText-DkxJnCCQ.js",
+            "bytes": 9259,
+            "gzipBytes": 3831
+          },
+          {
+            "file": "assets/RelatedLinks-CTcGKiAx.js",
+            "bytes": 1124,
+            "gzipBytes": 664
+          },
+          {
+            "file": "assets/WikiLayout-g0CVobX2.js",
+            "bytes": 3009,
+            "gzipBytes": 1312
+          },
+          {
+            "file": "assets/snapshots-Dz8FZ_D7.js",
+            "bytes": 544,
+            "gzipBytes": 335
+          },
+          {
+            "file": "assets/characters-DImKs2vR.js",
+            "bytes": 13987,
+            "gzipBytes": 4174
+          },
+          {
+            "file": "assets/maps-DwIpDSsl.js",
+            "bytes": 3189,
+            "gzipBytes": 1085
+          },
+          {
+            "file": "assets/reference-catalog-2uiUw1Ei.js",
+            "bytes": 41769,
+            "gzipBytes": 7282
+          },
+          {
+            "file": "assets/registry-DM5oGDRv.js",
+            "bytes": 41360,
+            "gzipBytes": 8223
+          },
+          {
+            "file": "assets/DifficultyStars-UmNziP9u.js",
+            "bytes": 548,
+            "gzipBytes": 419
+          },
+          {
+            "file": "assets/EntityCards-aqhxtSM9.js",
+            "bytes": 4041,
+            "gzipBytes": 1924
+          },
+          {
+            "file": "assets/system-icons-CPiUVVkA.js",
+            "bytes": 40969,
+            "gzipBytes": 15954
+          },
+          {
+            "file": "assets/Reference.module-DXylhMWA.js",
+            "bytes": 744,
+            "gzipBytes": 377
+          },
+          {
+            "file": "assets/reference-labels-3seqGaiy.js",
+            "bytes": 1512,
+            "gzipBytes": 773
+          },
+          {
+            "file": "assets/EntityIcon-pMJ9GyN0.js",
+            "bytes": 34133,
+            "gzipBytes": 16486
+          },
+          {
+            "file": "assets/maniac-system-data-C_jFLPGE.js",
+            "bytes": 91692,
+            "gzipBytes": 12421
+          },
+          {
+            "file": "assets/rose_colored_glasses-B5XSgV4y.webp",
+            "bytes": 75992,
+            "gzipBytes": 76035
+          },
+          {
+            "file": "assets/rubik-cyrillic-wght-normal-DveCct9I.woff2",
+            "bytes": 15112,
+            "gzipBytes": 15135
+          },
+          {
+            "file": "assets/use-page-scroll-BUQtcdAb.js",
+            "bytes": 972,
+            "gzipBytes": 528
+          },
+          {
+            "file": "assets/rubik-latin-wght-normal-CnQIisVs.woff2",
+            "bytes": 35348,
+            "gzipBytes": 35361
+          },
+          {
+            "file": "assets/geologica-latin-wght-normal-BBL8hQxZ.woff2",
+            "bytes": 24944,
+            "gzipBytes": 24972
+          },
+          {
+            "file": "assets/geologica-cyrillic-wght-normal-DbeVG3Ps.woff2",
+            "bytes": 16428,
+            "gzipBytes": 16454
+          }
+        ]
+      },
+      {
+        "path": "/projects/maniac/wiki/abilities/abyss-gaze",
+        "js": 641609,
+        "gzipJS": 188184,
+        "resources": [
+          {
+            "file": "projects/maniac/wiki/abilities/abyss-gaze",
+            "bytes": 15674,
+            "gzipBytes": 3982
+          },
+          {
+            "file": "assets/style-DwsVs4lw.css",
+            "bytes": 80846,
+            "gzipBytes": 17509
+          },
+          {
+            "file": "brand/necrodwarf-mark.png",
+            "bytes": 12080,
+            "gzipBytes": 12103
+          },
+          {
+            "file": "assets/index-B1EsayeT.js",
+            "bytes": 333480,
+            "gzipBytes": 103620
+          },
+          {
+            "file": "assets/abyss-gaze-N5gdGNad.js",
+            "bytes": 2038,
+            "gzipBytes": 1078
+          },
+          {
+            "file": "assets/published-effects-DraP4bIJ.js",
+            "bytes": 2484,
+            "gzipBytes": 926
+          },
+          {
+            "file": "assets/ReferenceArticlePage-DIGJwEAf.js",
+            "bytes": 7573,
+            "gzipBytes": 2963
+          },
+          {
+            "file": "assets/EntityLink-CWlRC64o.js",
+            "bytes": 1696,
+            "gzipBytes": 887
+          },
+          {
+            "file": "assets/WikiText-Ceje7ebA.js",
+            "bytes": 1757,
+            "gzipBytes": 933
+          },
+          {
+            "file": "assets/maniac-gameplay-facts-NhEPXo0J.js",
+            "bytes": 3235,
+            "gzipBytes": 1667
+          },
+          {
+            "file": "assets/publication-D8NCPwDM.js",
+            "bytes": 494,
+            "gzipBytes": 322
+          },
+          {
+            "file": "assets/WikiLayout-g0CVobX2.js",
+            "bytes": 3009,
+            "gzipBytes": 1312
+          },
+          {
+            "file": "assets/StatText-DkxJnCCQ.js",
+            "bytes": 9259,
+            "gzipBytes": 3831
+          },
+          {
+            "file": "assets/RelatedLinks-CTcGKiAx.js",
+            "bytes": 1124,
+            "gzipBytes": 664
+          },
+          {
+            "file": "assets/snapshots-Dz8FZ_D7.js",
+            "bytes": 544,
+            "gzipBytes": 335
+          },
+          {
+            "file": "assets/characters-DImKs2vR.js",
+            "bytes": 13987,
+            "gzipBytes": 4174
+          },
+          {
+            "file": "assets/maps-DwIpDSsl.js",
+            "bytes": 3189,
+            "gzipBytes": 1085
+          },
+          {
+            "file": "assets/reference-catalog-2uiUw1Ei.js",
+            "bytes": 41769,
+            "gzipBytes": 7282
+          },
+          {
+            "file": "assets/registry-DM5oGDRv.js",
+            "bytes": 41360,
+            "gzipBytes": 8223
+          },
+          {
+            "file": "assets/EntityCards-aqhxtSM9.js",
+            "bytes": 4041,
+            "gzipBytes": 1924
+          },
+          {
+            "file": "assets/DifficultyStars-UmNziP9u.js",
+            "bytes": 548,
+            "gzipBytes": 419
+          },
+          {
+            "file": "assets/reference-labels-3seqGaiy.js",
+            "bytes": 1512,
+            "gzipBytes": 773
+          },
+          {
+            "file": "assets/system-icons-CPiUVVkA.js",
+            "bytes": 40969,
+            "gzipBytes": 15954
+          },
+          {
+            "file": "assets/Reference.module-DXylhMWA.js",
+            "bytes": 744,
+            "gzipBytes": 377
+          },
+          {
+            "file": "assets/EntityIcon-pMJ9GyN0.js",
+            "bytes": 34133,
+            "gzipBytes": 16486
+          },
+          {
+            "file": "assets/maniac-system-data-C_jFLPGE.js",
+            "bytes": 91692,
+            "gzipBytes": 12421
+          },
+          {
+            "file": "assets/rubik-cyrillic-wght-normal-DveCct9I.woff2",
+            "bytes": 15112,
+            "gzipBytes": 15135
+          },
+          {
+            "file": "assets/rubik-latin-wght-normal-CnQIisVs.woff2",
+            "bytes": 35348,
+            "gzipBytes": 35361
+          },
+          {
+            "file": "assets/geologica-latin-wght-normal-BBL8hQxZ.woff2",
+            "bytes": 24944,
+            "gzipBytes": 24972
+          },
+          {
+            "file": "assets/geologica-cyrillic-wght-normal-DbeVG3Ps.woff2",
+            "bytes": 16428,
+            "gzipBytes": 16454
+          },
+          {
+            "file": "assets/use-page-scroll-BUQtcdAb.js",
+            "bytes": 972,
+            "gzipBytes": 528
+          }
+        ]
+      },
+      {
+        "path": "/projects/maniac/wiki/items/death-scythe",
+        "js": 638393,
+        "gzipJS": 187197,
+        "resources": [
+          {
+            "file": "projects/maniac/wiki/items/death-scythe",
+            "bytes": 15081,
+            "gzipBytes": 6870
+          },
+          {
+            "file": "assets/style-DwsVs4lw.css",
+            "bytes": 80846,
+            "gzipBytes": 17509
+          },
+          {
+            "file": "brand/necrodwarf-mark.png",
+            "bytes": 12080,
+            "gzipBytes": 12103
+          },
+          {
+            "file": "assets/index-B1EsayeT.js",
+            "bytes": 333480,
+            "gzipBytes": 103620
+          },
+          {
+            "file": "assets/rubik-cyrillic-wght-normal-DveCct9I.woff2",
+            "bytes": 15112,
+            "gzipBytes": 15135
+          },
+          {
+            "file": "assets/rubik-latin-wght-normal-CnQIisVs.woff2",
+            "bytes": 35348,
+            "gzipBytes": 35361
+          },
+          {
+            "file": "assets/death-scythe-CzMuaa4f.js",
+            "bytes": 2572,
+            "gzipBytes": 1346
+          },
+          {
+            "file": "assets/SystemsArticlePage-DAf2WKcy.js",
+            "bytes": 4823,
+            "gzipBytes": 2128
+          },
+          {
+            "file": "assets/published-effects-DraP4bIJ.js",
+            "bytes": 2484,
+            "gzipBytes": 926
+          },
+          {
+            "file": "assets/WikiText-Ceje7ebA.js",
+            "bytes": 1757,
+            "gzipBytes": 933
+          },
+          {
+            "file": "assets/WikiLayout-g0CVobX2.js",
+            "bytes": 3009,
+            "gzipBytes": 1312
+          },
+          {
+            "file": "assets/EntityLink-CWlRC64o.js",
+            "bytes": 1696,
+            "gzipBytes": 887
+          },
+          {
+            "file": "assets/geologica-latin-wght-normal-BBL8hQxZ.woff2",
+            "bytes": 24944,
+            "gzipBytes": 24972
+          },
+          {
+            "file": "assets/publication-D8NCPwDM.js",
+            "bytes": 494,
+            "gzipBytes": 322
+          },
+          {
+            "file": "assets/RelatedLinks-CTcGKiAx.js",
+            "bytes": 1124,
+            "gzipBytes": 664
+          },
+          {
+            "file": "assets/maniac-gameplay-facts-NhEPXo0J.js",
+            "bytes": 3235,
+            "gzipBytes": 1667
+          },
+          {
+            "file": "assets/snapshots-Dz8FZ_D7.js",
+            "bytes": 544,
+            "gzipBytes": 335
+          },
+          {
+            "file": "assets/StatText-DkxJnCCQ.js",
+            "bytes": 9259,
+            "gzipBytes": 3831
+          },
+          {
+            "file": "assets/characters-DImKs2vR.js",
+            "bytes": 13987,
+            "gzipBytes": 4174
+          },
+          {
+            "file": "assets/maps-DwIpDSsl.js",
+            "bytes": 3189,
+            "gzipBytes": 1085
+          },
+          {
+            "file": "assets/SystemIcon-Kp4PqsGw.js",
+            "bytes": 512,
+            "gzipBytes": 353
+          },
+          {
+            "file": "assets/reference-catalog-2uiUw1Ei.js",
+            "bytes": 41769,
+            "gzipBytes": 7282
+          },
+          {
+            "file": "assets/DifficultyStars-UmNziP9u.js",
+            "bytes": 548,
+            "gzipBytes": 419
+          },
+          {
+            "file": "assets/system-icons-CPiUVVkA.js",
+            "bytes": 40969,
+            "gzipBytes": 15954
+          },
+          {
+            "file": "assets/EntityCards-aqhxtSM9.js",
+            "bytes": 4041,
+            "gzipBytes": 1924
+          },
+          {
+            "file": "assets/Reference.module-DXylhMWA.js",
+            "bytes": 744,
+            "gzipBytes": 377
+          },
+          {
+            "file": "assets/registry-DM5oGDRv.js",
+            "bytes": 41360,
+            "gzipBytes": 8223
+          },
+          {
+            "file": "assets/maniac-system-data-C_jFLPGE.js",
+            "bytes": 91692,
+            "gzipBytes": 12421
+          },
+          {
+            "file": "assets/EntityIcon-pMJ9GyN0.js",
+            "bytes": 34133,
+            "gzipBytes": 16486
+          },
+          {
+            "file": "assets/geologica-cyrillic-wght-normal-DbeVG3Ps.woff2",
+            "bytes": 16428,
+            "gzipBytes": 16454
+          },
+          {
+            "file": "assets/use-page-scroll-BUQtcdAb.js",
+            "bytes": 972,
+            "gzipBytes": 528
+          }
+        ]
+      },
+      {
+        "path": "/projects/maniac/wiki/mechanics/sanity",
+        "js": 638402,
+        "gzipJS": 187143,
+        "resources": [
+          {
+            "file": "projects/maniac/wiki/mechanics/sanity",
+            "bytes": 16651,
+            "gzipBytes": 4339
+          },
+          {
+            "file": "assets/style-DwsVs4lw.css",
+            "bytes": 80846,
+            "gzipBytes": 17509
+          },
+          {
+            "file": "brand/necrodwarf-mark.png",
+            "bytes": 12080,
+            "gzipBytes": 12103
+          },
+          {
+            "file": "assets/index-B1EsayeT.js",
+            "bytes": 333480,
+            "gzipBytes": 103620
+          },
+          {
+            "file": "assets/rubik-cyrillic-wght-normal-DveCct9I.woff2",
+            "bytes": 15112,
+            "gzipBytes": 15135
+          },
+          {
+            "file": "assets/sanity-CyjVZzeD.js",
+            "bytes": 2581,
+            "gzipBytes": 1292
+          },
+          {
+            "file": "assets/SystemsArticlePage-DAf2WKcy.js",
+            "bytes": 4823,
+            "gzipBytes": 2128
+          },
+          {
+            "file": "assets/EntityLink-CWlRC64o.js",
+            "bytes": 1696,
+            "gzipBytes": 887
+          },
+          {
+            "file": "assets/published-effects-DraP4bIJ.js",
+            "bytes": 2484,
+            "gzipBytes": 926
+          },
+          {
+            "file": "assets/publication-D8NCPwDM.js",
+            "bytes": 494,
+            "gzipBytes": 322
+          },
+          {
+            "file": "assets/RelatedLinks-CTcGKiAx.js",
+            "bytes": 1124,
+            "gzipBytes": 664
+          },
+          {
+            "file": "assets/WikiLayout-g0CVobX2.js",
+            "bytes": 3009,
+            "gzipBytes": 1312
+          },
+          {
+            "file": "assets/maniac-gameplay-facts-NhEPXo0J.js",
+            "bytes": 3235,
+            "gzipBytes": 1667
+          },
+          {
+            "file": "assets/WikiText-Ceje7ebA.js",
+            "bytes": 1757,
+            "gzipBytes": 933
+          },
+          {
+            "file": "assets/snapshots-Dz8FZ_D7.js",
+            "bytes": 544,
+            "gzipBytes": 335
+          },
+          {
+            "file": "assets/characters-DImKs2vR.js",
+            "bytes": 13987,
+            "gzipBytes": 4174
+          },
+          {
+            "file": "assets/rubik-latin-wght-normal-CnQIisVs.woff2",
+            "bytes": 35348,
+            "gzipBytes": 35361
+          },
+          {
+            "file": "assets/maps-DwIpDSsl.js",
+            "bytes": 3189,
+            "gzipBytes": 1085
+          },
+          {
+            "file": "assets/reference-catalog-2uiUw1Ei.js",
+            "bytes": 41769,
+            "gzipBytes": 7282
+          },
+          {
+            "file": "assets/registry-DM5oGDRv.js",
+            "bytes": 41360,
+            "gzipBytes": 8223
+          },
+          {
+            "file": "assets/StatText-DkxJnCCQ.js",
+            "bytes": 9259,
+            "gzipBytes": 3831
+          },
+          {
+            "file": "assets/maniac-system-data-C_jFLPGE.js",
+            "bytes": 91692,
+            "gzipBytes": 12421
+          },
+          {
+            "file": "assets/SystemIcon-Kp4PqsGw.js",
+            "bytes": 512,
+            "gzipBytes": 353
+          },
+          {
+            "file": "assets/DifficultyStars-UmNziP9u.js",
+            "bytes": 548,
+            "gzipBytes": 419
+          },
+          {
+            "file": "assets/EntityCards-aqhxtSM9.js",
+            "bytes": 4041,
+            "gzipBytes": 1924
+          },
+          {
+            "file": "assets/system-icons-CPiUVVkA.js",
+            "bytes": 40969,
+            "gzipBytes": 15954
+          },
+          {
+            "file": "assets/Reference.module-DXylhMWA.js",
+            "bytes": 744,
+            "gzipBytes": 377
+          },
+          {
+            "file": "assets/EntityIcon-pMJ9GyN0.js",
+            "bytes": 34133,
+            "gzipBytes": 16486
+          },
+          {
+            "file": "assets/geologica-latin-wght-normal-BBL8hQxZ.woff2",
+            "bytes": 24944,
+            "gzipBytes": 24972
+          },
+          {
+            "file": "assets/geologica-cyrillic-wght-normal-DbeVG3Ps.woff2",
+            "bytes": 16428,
+            "gzipBytes": 16454
+          },
+          {
+            "file": "assets/use-page-scroll-BUQtcdAb.js",
+            "bytes": 972,
+            "gzipBytes": 528
+          }
+        ]
+      },
+      {
+        "path": "/projects/maniac/wiki/maps/mansion",
+        "js": 556457,
+        "gzipJS": 151456,
+        "resources": [
+          {
+            "file": "projects/maniac/wiki/maps/mansion",
+            "bytes": 13501,
+            "gzipBytes": 4235
+          },
+          {
+            "file": "assets/style-DwsVs4lw.css",
+            "bytes": 80846,
+            "gzipBytes": 17509
+          },
+          {
+            "file": "brand/necrodwarf-mark.png",
+            "bytes": 12080,
+            "gzipBytes": 12103
+          },
+          {
+            "file": "assets/mansion-1261-DAHQTOVZ.webp",
+            "bytes": 125824,
+            "gzipBytes": 125882
+          },
+          {
+            "file": "assets/index-B1EsayeT.js",
+            "bytes": 333480,
+            "gzipBytes": 103620
+          },
+          {
+            "file": "assets/mansion-ByvBAZzr.js",
+            "bytes": 2045,
+            "gzipBytes": 1145
+          },
+          {
+            "file": "assets/mansion-960-Cr-0HIIz.js",
+            "bytes": 105,
+            "gzipBytes": 102
+          },
+          {
+            "file": "assets/RelatedLinks-CTcGKiAx.js",
+            "bytes": 1124,
+            "gzipBytes": 664
+          },
+          {
+            "file": "assets/MapArticlePage-Dbg6EPmW.js",
+            "bytes": 4506,
+            "gzipBytes": 1956
+          },
+          {
+            "file": "assets/WikiLayout-g0CVobX2.js",
+            "bytes": 3009,
+            "gzipBytes": 1312
+          },
+          {
+            "file": "assets/snapshots-Dz8FZ_D7.js",
+            "bytes": 544,
+            "gzipBytes": 335
+          },
+          {
+            "file": "assets/maniac-gameplay-facts-NhEPXo0J.js",
+            "bytes": 3235,
+            "gzipBytes": 1667
+          },
+          {
+            "file": "assets/characters-DImKs2vR.js",
+            "bytes": 13987,
+            "gzipBytes": 4174
+          },
+          {
+            "file": "assets/reference-catalog-2uiUw1Ei.js",
+            "bytes": 41769,
+            "gzipBytes": 7282
+          },
+          {
+            "file": "assets/maps-DwIpDSsl.js",
+            "bytes": 3189,
+            "gzipBytes": 1085
+          },
+          {
+            "file": "assets/publication-D8NCPwDM.js",
+            "bytes": 494,
+            "gzipBytes": 322
+          },
+          {
+            "file": "assets/registry-DM5oGDRv.js",
+            "bytes": 41360,
+            "gzipBytes": 8223
+          },
+          {
+            "file": "assets/EntityLink-CWlRC64o.js",
+            "bytes": 1696,
+            "gzipBytes": 887
+          },
+          {
+            "file": "assets/published-effects-DraP4bIJ.js",
+            "bytes": 2484,
+            "gzipBytes": 926
+          },
+          {
+            "file": "assets/MapFacts-Bra_04o_.js",
+            "bytes": 959,
+            "gzipBytes": 557
+          },
+          {
+            "file": "assets/DifficultyStars-UmNziP9u.js",
+            "bytes": 548,
+            "gzipBytes": 419
+          },
+          {
+            "file": "assets/maniac-system-data-C_jFLPGE.js",
+            "bytes": 91692,
+            "gzipBytes": 12421
+          },
+          {
+            "file": "assets/StatText-DkxJnCCQ.js",
+            "bytes": 9259,
+            "gzipBytes": 3831
+          },
+          {
+            "file": "assets/rubik-cyrillic-wght-normal-DveCct9I.woff2",
+            "bytes": 15112,
+            "gzipBytes": 15135
+          },
+          {
+            "file": "assets/rubik-latin-wght-normal-CnQIisVs.woff2",
+            "bytes": 35348,
+            "gzipBytes": 35361
+          },
+          {
+            "file": "assets/geologica-latin-wght-normal-BBL8hQxZ.woff2",
+            "bytes": 24944,
+            "gzipBytes": 24972
+          },
+          {
+            "file": "assets/geologica-cyrillic-wght-normal-DbeVG3Ps.woff2",
+            "bytes": 16428,
+            "gzipBytes": 16454
+          },
+          {
+            "file": "assets/use-page-scroll-BUQtcdAb.js",
+            "bytes": 972,
+            "gzipBytes": 528
+          }
+        ]
+      },
+      {
+        "path": "/projects/maniac/changelog/1.0",
+        "js": 676354,
+        "gzipJS": 192457,
+        "resources": [
+          {
+            "file": "projects/maniac/changelog/1.0",
+            "bytes": 74253,
+            "gzipBytes": 9728
+          },
+          {
+            "file": "assets/style-DwsVs4lw.css",
+            "bytes": 80846,
+            "gzipBytes": 17509
+          },
+          {
+            "file": "brand/necrodwarf-mark.png",
+            "bytes": 12080,
+            "gzipBytes": 12103
+          },
+          {
+            "file": "assets/reforge-BZV3ZyUh.jpg",
+            "bytes": 82806,
+            "gzipBytes": 81167
+          },
+          {
+            "file": "assets/index-B1EsayeT.js",
+            "bytes": 333480,
+            "gzipBytes": 103620
+          },
+          {
+            "file": "assets/rubik-cyrillic-wght-normal-DveCct9I.woff2",
+            "bytes": 15112,
+            "gzipBytes": 15135
+          },
+          {
+            "file": "assets/rubik-latin-wght-normal-CnQIisVs.woff2",
+            "bytes": 35348,
+            "gzipBytes": 35361
+          },
+          {
+            "file": "assets/geologica-latin-wght-normal-BBL8hQxZ.woff2",
+            "bytes": 24944,
+            "gzipBytes": 24972
+          },
+          {
+            "file": "assets/geologica-cyrillic-wght-normal-DbeVG3Ps.woff2",
+            "bytes": 16428,
+            "gzipBytes": 16454
+          },
+          {
+            "file": "assets/ChroniclePage-CryA_Ewl.js",
+            "bytes": 10023,
+            "gzipBytes": 4130
+          },
+          {
+            "file": "assets/1.0.page-B-xSAI9T.js",
+            "bytes": 39089,
+            "gzipBytes": 6423
+          },
+          {
+            "file": "assets/WikiText-Ceje7ebA.js",
+            "bytes": 1757,
+            "gzipBytes": 933
+          },
+          {
+            "file": "assets/EntityCards-aqhxtSM9.js",
+            "bytes": 4041,
+            "gzipBytes": 1924
+          },
+          {
+            "file": "assets/published-effects-DraP4bIJ.js",
+            "bytes": 2484,
+            "gzipBytes": 926
+          },
+          {
+            "file": "assets/publication-D8NCPwDM.js",
+            "bytes": 494,
+            "gzipBytes": 322
+          },
+          {
+            "file": "assets/StatText-DkxJnCCQ.js",
+            "bytes": 9259,
+            "gzipBytes": 3831
+          },
+          {
+            "file": "assets/characters-DImKs2vR.js",
+            "bytes": 13987,
+            "gzipBytes": 4174
+          },
+          {
+            "file": "assets/snapshots-Dz8FZ_D7.js",
+            "bytes": 544,
+            "gzipBytes": 335
+          },
+          {
+            "file": "assets/EntityIcon-pMJ9GyN0.js",
+            "bytes": 34133,
+            "gzipBytes": 16486
+          },
+          {
+            "file": "assets/maniac-gameplay-facts-NhEPXo0J.js",
+            "bytes": 3235,
+            "gzipBytes": 1667
+          },
+          {
+            "file": "assets/registry-DM5oGDRv.js",
+            "bytes": 41360,
+            "gzipBytes": 8223
+          },
+          {
+            "file": "assets/maps-DwIpDSsl.js",
+            "bytes": 3189,
+            "gzipBytes": 1085
+          },
+          {
+            "file": "assets/DifficultyStars-UmNziP9u.js",
+            "bytes": 548,
+            "gzipBytes": 419
+          },
+          {
+            "file": "assets/reference-catalog-2uiUw1Ei.js",
+            "bytes": 41769,
+            "gzipBytes": 7282
+          },
+          {
+            "file": "assets/system-icons-CPiUVVkA.js",
+            "bytes": 40969,
+            "gzipBytes": 15954
+          },
+          {
+            "file": "assets/EntityLink-CWlRC64o.js",
+            "bytes": 1696,
+            "gzipBytes": 887
+          },
+          {
+            "file": "assets/Chronicles.module-Co92TrWQ.js",
+            "bytes": 1352,
+            "gzipBytes": 653
+          },
+          {
+            "file": "assets/useMapAnchor-DNymz8UD.js",
+            "bytes": 281,
+            "gzipBytes": 234
+          },
+          {
+            "file": "assets/maniac-system-data-C_jFLPGE.js",
+            "bytes": 91692,
+            "gzipBytes": 12421
+          },
+          {
+            "file": "assets/use-page-scroll-BUQtcdAb.js",
+            "bytes": 972,
+            "gzipBytes": 528
+          }
+        ]
+      },
+      {
+        "path": "/projects/maniac/changelog/1.1",
+        "js": 661477,
+        "gzipJS": 191450,
+        "resources": [
+          {
+            "file": "projects/maniac/changelog/1.1",
+            "bytes": 58324,
+            "gzipBytes": 9528
+          },
+          {
+            "file": "assets/style-DwsVs4lw.css",
+            "bytes": 80846,
+            "gzipBytes": 17509
+          },
+          {
+            "file": "assets/nightmare-Ci1QtmeW.jpg",
+            "bytes": 84235,
+            "gzipBytes": 82233
+          },
+          {
+            "file": "brand/necrodwarf-mark.png",
+            "bytes": 12080,
+            "gzipBytes": 12103
+          },
+          {
+            "file": "assets/index-B1EsayeT.js",
+            "bytes": 333480,
+            "gzipBytes": 103620
+          },
+          {
+            "file": "assets/concentrated-nightmare-CFqeCOEf.webp",
+            "bytes": 73978,
+            "gzipBytes": 74021
+          },
+          {
+            "file": "assets/nightmare-lighter-render-3metDctg.png",
+            "bytes": 37305,
+            "gzipBytes": 36092
+          },
+          {
+            "file": "assets/1.1.page-C8kH3rP3.js",
+            "bytes": 24212,
+            "gzipBytes": 5416
+          },
+          {
+            "file": "assets/rubik-cyrillic-wght-normal-DveCct9I.woff2",
+            "bytes": 15112,
+            "gzipBytes": 15135
+          },
+          {
+            "file": "assets/ChroniclePage-CryA_Ewl.js",
+            "bytes": 10023,
+            "gzipBytes": 4130
+          },
+          {
+            "file": "assets/EntityLink-CWlRC64o.js",
+            "bytes": 1696,
+            "gzipBytes": 887
+          },
+          {
+            "file": "assets/published-effects-DraP4bIJ.js",
+            "bytes": 2484,
+            "gzipBytes": 926
+          },
+          {
+            "file": "assets/WikiText-Ceje7ebA.js",
+            "bytes": 1757,
+            "gzipBytes": 933
+          },
+          {
+            "file": "assets/publication-D8NCPwDM.js",
+            "bytes": 494,
+            "gzipBytes": 322
+          },
+          {
+            "file": "assets/StatText-DkxJnCCQ.js",
+            "bytes": 9259,
+            "gzipBytes": 3831
+          },
+          {
+            "file": "assets/EntityCards-aqhxtSM9.js",
+            "bytes": 4041,
+            "gzipBytes": 1924
+          },
+          {
+            "file": "assets/EntityIcon-pMJ9GyN0.js",
+            "bytes": 34133,
+            "gzipBytes": 16486
+          },
+          {
+            "file": "assets/characters-DImKs2vR.js",
+            "bytes": 13987,
+            "gzipBytes": 4174
+          },
+          {
+            "file": "assets/registry-DM5oGDRv.js",
+            "bytes": 41360,
+            "gzipBytes": 8223
+          },
+          {
+            "file": "assets/snapshots-Dz8FZ_D7.js",
+            "bytes": 544,
+            "gzipBytes": 335
+          },
+          {
+            "file": "assets/maps-DwIpDSsl.js",
+            "bytes": 3189,
+            "gzipBytes": 1085
+          },
+          {
+            "file": "assets/maniac-gameplay-facts-NhEPXo0J.js",
+            "bytes": 3235,
+            "gzipBytes": 1667
+          },
+          {
+            "file": "assets/reference-catalog-2uiUw1Ei.js",
+            "bytes": 41769,
+            "gzipBytes": 7282
+          },
+          {
+            "file": "assets/system-icons-CPiUVVkA.js",
+            "bytes": 40969,
+            "gzipBytes": 15954
+          },
+          {
+            "file": "assets/maniac-system-data-C_jFLPGE.js",
+            "bytes": 91692,
+            "gzipBytes": 12421
+          },
+          {
+            "file": "assets/rubik-latin-wght-normal-CnQIisVs.woff2",
+            "bytes": 35348,
+            "gzipBytes": 35361
+          },
+          {
+            "file": "assets/geologica-cyrillic-wght-normal-DbeVG3Ps.woff2",
+            "bytes": 16428,
+            "gzipBytes": 16454
+          },
+          {
+            "file": "assets/geologica-latin-wght-normal-BBL8hQxZ.woff2",
+            "bytes": 24944,
+            "gzipBytes": 24972
+          },
+          {
+            "file": "assets/DifficultyStars-UmNziP9u.js",
+            "bytes": 548,
+            "gzipBytes": 419
+          },
+          {
+            "file": "assets/useMapAnchor-DNymz8UD.js",
+            "bytes": 281,
+            "gzipBytes": 234
+          },
+          {
+            "file": "assets/Chronicles.module-Co92TrWQ.js",
+            "bytes": 1352,
+            "gzipBytes": 653
+          },
+          {
+            "file": "assets/use-page-scroll-BUQtcdAb.js",
+            "bytes": 972,
+            "gzipBytes": 528
+          }
+        ]
+      },
+      {
+        "path": "/projects/maniac/changelog/1.2",
+        "js": 663893,
+        "gzipJS": 192784,
+        "resources": [
+          {
+            "file": "projects/maniac/changelog/1.2",
+            "bytes": 65123,
+            "gzipBytes": 11298
+          },
+          {
+            "file": "assets/style-DwsVs4lw.css",
+            "bytes": 80846,
+            "gzipBytes": 17509
+          },
+          {
+            "file": "assets/flower-cleaning-DfJf6tQL.jpg",
+            "bytes": 167017,
+            "gzipBytes": 166493
+          },
+          {
+            "file": "brand/necrodwarf-mark.png",
+            "bytes": 12080,
+            "gzipBytes": 12103
+          },
+          {
+            "file": "assets/index-B1EsayeT.js",
+            "bytes": 333480,
+            "gzipBytes": 103620
+          },
+          {
+            "file": "assets/1.2.page-Dw1TtZQn.js",
+            "bytes": 26628,
+            "gzipBytes": 6750
+          },
+          {
+            "file": "assets/EntityLink-CWlRC64o.js",
+            "bytes": 1696,
+            "gzipBytes": 887
+          },
+          {
+            "file": "assets/EntityCards-aqhxtSM9.js",
+            "bytes": 4041,
+            "gzipBytes": 1924
+          },
+          {
+            "file": "assets/WikiText-Ceje7ebA.js",
+            "bytes": 1757,
+            "gzipBytes": 933
+          },
+          {
+            "file": "assets/published-effects-DraP4bIJ.js",
+            "bytes": 2484,
+            "gzipBytes": 926
+          },
+          {
+            "file": "assets/ChroniclePage-CryA_Ewl.js",
+            "bytes": 10023,
+            "gzipBytes": 4130
+          },
+          {
+            "file": "assets/publication-D8NCPwDM.js",
+            "bytes": 494,
+            "gzipBytes": 322
+          },
+          {
+            "file": "assets/characters-DImKs2vR.js",
+            "bytes": 13987,
+            "gzipBytes": 4174
+          },
+          {
+            "file": "assets/snapshots-Dz8FZ_D7.js",
+            "bytes": 544,
+            "gzipBytes": 335
+          },
+          {
+            "file": "assets/EntityIcon-pMJ9GyN0.js",
+            "bytes": 34133,
+            "gzipBytes": 16486
+          },
+          {
+            "file": "assets/StatText-DkxJnCCQ.js",
+            "bytes": 9259,
+            "gzipBytes": 3831
+          },
+          {
+            "file": "assets/reference-catalog-2uiUw1Ei.js",
+            "bytes": 41769,
+            "gzipBytes": 7282
+          },
+          {
+            "file": "assets/maniac-gameplay-facts-NhEPXo0J.js",
+            "bytes": 3235,
+            "gzipBytes": 1667
+          },
+          {
+            "file": "assets/registry-DM5oGDRv.js",
+            "bytes": 41360,
+            "gzipBytes": 8223
+          },
+          {
+            "file": "assets/maps-DwIpDSsl.js",
+            "bytes": 3189,
+            "gzipBytes": 1085
+          },
+          {
+            "file": "assets/DifficultyStars-UmNziP9u.js",
+            "bytes": 548,
+            "gzipBytes": 419
+          },
+          {
+            "file": "assets/system-icons-CPiUVVkA.js",
+            "bytes": 40969,
+            "gzipBytes": 15954
+          },
+          {
+            "file": "assets/Chronicles.module-Co92TrWQ.js",
+            "bytes": 1352,
+            "gzipBytes": 653
+          },
+          {
+            "file": "assets/useMapAnchor-DNymz8UD.js",
+            "bytes": 281,
+            "gzipBytes": 234
+          },
+          {
+            "file": "assets/maniac-system-data-C_jFLPGE.js",
+            "bytes": 91692,
+            "gzipBytes": 12421
+          },
+          {
+            "file": "assets/rubik-cyrillic-wght-normal-DveCct9I.woff2",
+            "bytes": 15112,
+            "gzipBytes": 15135
+          },
+          {
+            "file": "assets/forget-me-not-perk-DRyxwUIM.webp",
+            "bytes": 58758,
+            "gzipBytes": 58796
+          },
+          {
+            "file": "assets/pink_orchid-DhXGe9oZ.webp",
+            "bytes": 92166,
+            "gzipBytes": 92214
+          },
+          {
+            "file": "assets/rose_colored_glasses-B5XSgV4y.webp",
+            "bytes": 75992,
+            "gzipBytes": 76035
+          },
+          {
+            "file": "assets/sber_sprout-Beu1Qhuo.webp",
+            "bytes": 67914,
+            "gzipBytes": 67957
+          },
+          {
+            "file": "assets/reality_anchor-CE2q1L-B.webp",
+            "bytes": 110032,
+            "gzipBytes": 110085
+          },
+          {
+            "file": "assets/emergency_overclock-B_jlCSlo.webp",
+            "bytes": 78554,
+            "gzipBytes": 78446
+          },
+          {
+            "file": "assets/fixed_it_im_out-DYxbOlPp.webp",
+            "bytes": 60876,
+            "gzipBytes": 60914
+          },
+          {
+            "file": "assets/magic_kick-GxFkK2sT.webp",
+            "bytes": 61288,
+            "gzipBytes": 61326
+          },
+          {
+            "file": "assets/rubik-latin-wght-normal-CnQIisVs.woff2",
+            "bytes": 35348,
+            "gzipBytes": 35361
+          },
+          {
+            "file": "assets/geologica-latin-wght-normal-BBL8hQxZ.woff2",
+            "bytes": 24944,
+            "gzipBytes": 24972
+          },
+          {
+            "file": "assets/geologica-cyrillic-wght-normal-DbeVG3Ps.woff2",
+            "bytes": 16428,
+            "gzipBytes": 16454
+          },
+          {
+            "file": "assets/use-page-scroll-BUQtcdAb.js",
+            "bytes": 972,
+            "gzipBytes": 528
+          }
+        ]
+      },
+      {
+        "path": "/projects/maniac/wiki/search",
+        "js": 347107,
+        "gzipJS": 110063,
+        "resources": [
+          {
+            "file": "projects/maniac/wiki/search",
+            "bytes": 6728,
+            "gzipBytes": 2280
+          },
+          {
+            "file": "assets/style-DwsVs4lw.css",
+            "bytes": 80846,
+            "gzipBytes": 17509
+          },
+          {
+            "file": "brand/necrodwarf-mark.png",
+            "bytes": 12080,
+            "gzipBytes": 12103
+          },
+          {
+            "file": "assets/index-B1EsayeT.js",
+            "bytes": 333480,
+            "gzipBytes": 103620
+          },
+          {
+            "file": "assets/WikiSearchPage-CTQnGS1B.js",
+            "bytes": 3922,
+            "gzipBytes": 1820
+          },
+          {
+            "file": "assets/CatalogControls-BA_p5pH6.js",
+            "bytes": 2357,
+            "gzipBytes": 1267
+          },
+          {
+            "file": "assets/WikiLayout-g0CVobX2.js",
+            "bytes": 3009,
+            "gzipBytes": 1312
+          },
+          {
+            "file": "assets/rubik-latin-wght-normal-CnQIisVs.woff2",
+            "bytes": 35348,
+            "gzipBytes": 35361
+          },
+          {
+            "file": "assets/geologica-latin-wght-normal-BBL8hQxZ.woff2",
+            "bytes": 24944,
+            "gzipBytes": 24972
+          },
+          {
+            "file": "assets/rubik-cyrillic-wght-normal-DveCct9I.woff2",
+            "bytes": 15112,
+            "gzipBytes": 15135
+          },
+          {
+            "file": "assets/geologica-cyrillic-wght-normal-DbeVG3Ps.woff2",
+            "bytes": 16428,
+            "gzipBytes": 16454
+          },
+          {
+            "file": "assets/search-index-C6b112OH.js",
+            "bytes": 883,
+            "gzipBytes": 590
+          },
+          {
+            "file": "assets/use-page-scroll-BUQtcdAb.js",
+            "bytes": 972,
+            "gzipBytes": 528
+          },
+          {
+            "file": "assets/published-effects-DraP4bIJ.js",
+            "bytes": 2484,
+            "gzipBytes": 926
+          }
+        ]
+      }
+    ],
+    "responsive": [
+      {
+        "path": "/projects/maniac/wiki",
+        "width": 320,
+        "overflow": false
+      },
+      {
+        "path": "/projects/maniac/wiki/characters",
+        "width": 320,
+        "overflow": false
+      },
+      {
+        "path": "/projects/maniac/wiki/perks",
+        "width": 320,
+        "overflow": false
+      },
+      {
+        "path": "/projects/maniac/wiki/items",
+        "width": 320,
+        "overflow": false
+      },
+      {
+        "path": "/projects/maniac/wiki/characters/keeper-of-nightmares",
+        "width": 320,
+        "overflow": false
+      },
+      {
+        "path": "/projects/maniac/wiki/perks/rose-colored-glasses",
+        "width": 320,
+        "overflow": false
+      },
+      {
+        "path": "/projects/maniac/wiki/abilities/abyss-gaze",
+        "width": 320,
+        "overflow": false
+      },
+      {
+        "path": "/projects/maniac/wiki/items/death-scythe",
+        "width": 320,
+        "overflow": false
+      },
+      {
+        "path": "/projects/maniac/wiki/mechanics/sanity",
+        "width": 320,
+        "overflow": false
+      },
+      {
+        "path": "/projects/maniac/wiki/maps/mansion",
+        "width": 320,
+        "overflow": false
+      },
+      {
+        "path": "/projects/maniac/wiki/effects",
+        "width": 320,
+        "overflow": false
+      },
+      {
+        "path": "/projects/maniac/wiki",
+        "width": 390,
+        "overflow": false
+      },
+      {
+        "path": "/projects/maniac/wiki/characters",
+        "width": 390,
+        "overflow": false
+      },
+      {
+        "path": "/projects/maniac/wiki/perks",
+        "width": 390,
+        "overflow": false
+      },
+      {
+        "path": "/projects/maniac/wiki/items",
+        "width": 390,
+        "overflow": false
+      },
+      {
+        "path": "/projects/maniac/wiki/characters/keeper-of-nightmares",
+        "width": 390,
+        "overflow": false
+      },
+      {
+        "path": "/projects/maniac/wiki/perks/rose-colored-glasses",
+        "width": 390,
+        "overflow": false
+      },
+      {
+        "path": "/projects/maniac/wiki/abilities/abyss-gaze",
+        "width": 390,
+        "overflow": false
+      },
+      {
+        "path": "/projects/maniac/wiki/items/death-scythe",
+        "width": 390,
+        "overflow": false
+      },
+      {
+        "path": "/projects/maniac/wiki/mechanics/sanity",
+        "width": 390,
+        "overflow": false
+      },
+      {
+        "path": "/projects/maniac/wiki/maps/mansion",
+        "width": 390,
+        "overflow": false
+      },
+      {
+        "path": "/projects/maniac/wiki/effects",
+        "width": 390,
+        "overflow": false
+      },
+      {
+        "path": "/projects/maniac/wiki",
+        "width": 768,
+        "overflow": false
+      },
+      {
+        "path": "/projects/maniac/wiki/characters",
+        "width": 768,
+        "overflow": false
+      },
+      {
+        "path": "/projects/maniac/wiki/perks",
+        "width": 768,
+        "overflow": false
+      },
+      {
+        "path": "/projects/maniac/wiki/items",
+        "width": 768,
+        "overflow": false
+      },
+      {
+        "path": "/projects/maniac/wiki/characters/keeper-of-nightmares",
+        "width": 768,
+        "overflow": false
+      },
+      {
+        "path": "/projects/maniac/wiki/perks/rose-colored-glasses",
+        "width": 768,
+        "overflow": false
+      },
+      {
+        "path": "/projects/maniac/wiki/abilities/abyss-gaze",
+        "width": 768,
+        "overflow": false
+      },
+      {
+        "path": "/projects/maniac/wiki/items/death-scythe",
+        "width": 768,
+        "overflow": false
+      },
+      {
+        "path": "/projects/maniac/wiki/mechanics/sanity",
+        "width": 768,
+        "overflow": false
+      },
+      {
+        "path": "/projects/maniac/wiki/maps/mansion",
+        "width": 768,
+        "overflow": false
+      },
+      {
+        "path": "/projects/maniac/wiki/effects",
+        "width": 768,
+        "overflow": false
+      },
+      {
+        "path": "/projects/maniac/wiki",
+        "width": 1440,
+        "overflow": false
+      },
+      {
+        "path": "/projects/maniac/wiki/characters",
+        "width": 1440,
+        "overflow": false
+      },
+      {
+        "path": "/projects/maniac/wiki/perks",
+        "width": 1440,
+        "overflow": false
+      },
+      {
+        "path": "/projects/maniac/wiki/items",
+        "width": 1440,
+        "overflow": false
+      },
+      {
+        "path": "/projects/maniac/wiki/characters/keeper-of-nightmares",
+        "width": 1440,
+        "overflow": false
+      },
+      {
+        "path": "/projects/maniac/wiki/perks/rose-colored-glasses",
+        "width": 1440,
+        "overflow": false
+      },
+      {
+        "path": "/projects/maniac/wiki/abilities/abyss-gaze",
+        "width": 1440,
+        "overflow": false
+      },
+      {
+        "path": "/projects/maniac/wiki/items/death-scythe",
+        "width": 1440,
+        "overflow": false
+      },
+      {
+        "path": "/projects/maniac/wiki/mechanics/sanity",
+        "width": 1440,
+        "overflow": false
+      },
+      {
+        "path": "/projects/maniac/wiki/maps/mansion",
+        "width": 1440,
+        "overflow": false
+      },
+      {
+        "path": "/projects/maniac/wiki/effects",
+        "width": 1440,
+        "overflow": false
+      }
+    ],
+    "dev": [
+      {
+        "path": "/projects/maniac/wiki",
+        "errors": []
+      },
+      {
+        "path": "/projects/maniac/wiki/perks/independence",
+        "errors": []
+      }
+    ],
+    "images": [
+      {
+        "name": "Коса смерти",
+        "images": [
+          {
+            "src": "inline original asset",
+            "width": 256,
+            "height": 256
+          }
+        ]
+      },
+      {
+        "name": "Чумная лампа",
+        "images": [
+          {
+            "src": "inline original asset",
+            "width": 256,
+            "height": 256
+          }
+        ]
+      },
+      {
+        "name": "Планшет агента",
+        "images": [
+          {
+            "src": "inline original asset",
+            "width": 256,
+            "height": 256
+          }
+        ]
+      },
+      {
+        "name": "Розовые очки",
+        "images": [
+          {
+            "src": "inline original asset",
+            "width": 18,
+            "height": 18
+          }
+        ]
+      }
+    ]
+  },
+  "comparison": [
+    {
+      "path": "/projects/maniac",
+      "beforeJS": 368266,
+      "afterJS": 368288,
+      "gzipJS": 116353
+    },
+    {
+      "path": "/projects/maniac/wiki",
+      "beforeJS": 358925,
+      "afterJS": 359082,
+      "gzipJS": 112575
+    },
+    {
+      "path": "/projects/maniac/wiki/characters",
+      "beforeJS": 359622,
+      "afterJS": 359651,
+      "gzipJS": 113862
+    },
+    {
+      "path": "/projects/maniac/wiki/perks",
+      "beforeJS": 451641,
+      "afterJS": 451670,
+      "gzipJS": 144936
+    },
+    {
+      "path": "/projects/maniac/wiki/abilities",
+      "beforeJS": 451648,
+      "afterJS": 451677,
+      "gzipJS": 144935
+    },
+    {
+      "path": "/projects/maniac/wiki/items",
+      "beforeJS": 541673,
+      "afterJS": 541702,
+      "gzipJS": 165692
+    },
+    {
+      "path": "/projects/maniac/wiki/mechanics",
+      "beforeJS": 541681,
+      "afterJS": 541710,
+      "gzipJS": 165696
+    },
+    {
+      "path": "/projects/maniac/wiki/maps",
+      "beforeJS": 361788,
+      "afterJS": 361817,
+      "gzipJS": 116625
+    },
+    {
+      "path": "/projects/maniac/wiki/effects",
+      "beforeJS": 418914,
+      "afterJS": 418943,
+      "gzipJS": 137042
+    },
+    {
+      "path": "/projects/maniac/wiki/characters/keeper-of-nightmares",
+      "beforeJS": 640686,
+      "afterJS": 640708,
+      "gzipJS": 187798
+    },
+    {
+      "path": "/projects/maniac/wiki/perks/rose-colored-glasses",
+      "beforeJS": 641587,
+      "afterJS": 641609,
+      "gzipJS": 188245
+    },
+    {
+      "path": "/projects/maniac/wiki/abilities/abyss-gaze",
+      "beforeJS": 641587,
+      "afterJS": 641609,
+      "gzipJS": 188184
+    },
+    {
+      "path": "/projects/maniac/wiki/items/death-scythe",
+      "beforeJS": 638371,
+      "afterJS": 638393,
+      "gzipJS": 187197
+    },
+    {
+      "path": "/projects/maniac/wiki/mechanics/sanity",
+      "beforeJS": 638380,
+      "afterJS": 638402,
+      "gzipJS": 187143
+    },
+    {
+      "path": "/projects/maniac/wiki/maps/mansion",
+      "beforeJS": 556435,
+      "afterJS": 556457,
+      "gzipJS": 151456
+    },
+    {
+      "path": "/projects/maniac/changelog/1.0",
+      "beforeJS": 676332,
+      "afterJS": 676354,
+      "gzipJS": 192457
+    },
+    {
+      "path": "/projects/maniac/changelog/1.1",
+      "beforeJS": 661455,
+      "afterJS": 661477,
+      "gzipJS": 191450
+    },
+    {
+      "path": "/projects/maniac/changelog/1.2",
+      "beforeJS": 663871,
+      "afterJS": 663893,
+      "gzipJS": 192784
+    },
+    {
+      "path": "/projects/maniac/wiki/search",
+      "afterJS": 347107,
+      "gzipJS": 110063
+    }
+  ],
+  "search": {
+    "entries": 204,
+    "indexResponses": [
+      {
+        "file": "/assets/search-index-C6b112OH.js",
+        "bytes": 883,
+        "gzipBytes": 590
+      }
+    ],
+    "errors": [],
+    "checks": [
+      "Every published entity searchable; unpublished effect excluded",
+      "Russian case/е/ё, multiple words, IDs, empty and missing queries",
+      "Grouping, keyboard, Escape, Back/Forward, effect anchors",
+      "Touch entry and results; 320/390/768/1440; long queries",
+      "SSG fallback without JavaScript; lazy index; failed index recovery"
+    ]
+  },
+  "suites": {
+    "wiki": {
+      "directRoutes": 17,
+      "checks": [
+        "Name search with ё/е, role/intersection filters, empty state/reset, keyboard SPA navigation",
+        "Keeper model requested only after button, renders, camera drag/zoom/rotation/reset work",
+        "WebGL fallback keeps article readable; reduced motion removes card transforms"
+      ],
+      "errors": []
+    },
+    "reference": {
+      "directRoutes": 58,
+      "checks": [
+        "All team/type counts, combined search/empty/reset, keyboard SPA navigation, ability owner filter and Pudge → Hook → Pudge"
+      ],
+      "errors": []
+    },
+    "systems": {
+      "directRoutes": 99,
+      "checks": [
+        "Keeper 3D loads on demand and renders; all three chronicle backgrounds retain animations; Drive/Yandex buttons preserved.",
+        "All item/mechanic categories, all confirmed character filters, combined search/empty/reset, keyboard SPA, Hook ↔ ability."
+      ],
+      "errors": []
+    },
+    "maps": {
+      "directRoutes": 4,
+      "checks": [
+        "Keyboard SPA catalog → Fort; Fort ↔ chronicle 1.1 without document reload and working anchors; voting anchor; reverse mechanics → maps links.",
+        "Reduced motion disables hover transition/zoom; native image proportions retained with contain.",
+        "All three chronicle animations and Maniac Drive/Yandex buttons preserved."
+      ],
+      "errors": []
+    },
+    "navigation": {
+      "checks": [
+        "mobile nested menu and Escape focus",
+        "effect search/intersection/reset and anchor",
+        "keyboard article navigation",
+        "Back restores URL/search/scroll"
+      ],
+      "errors": []
+    },
+    "search": {
+      "checks": [
+        "Every published entity searchable; unpublished effect excluded",
+        "Russian case/е/ё, multiple words, IDs, empty and missing queries",
+        "Grouping, keyboard, Escape, Back/Forward, effect anchors",
+        "Touch entry and results; 320/390/768/1440; long queries",
+        "SSG fallback without JavaScript; lazy index; failed index recovery"
+      ],
+      "errors": []
+    },
+    "hydration": {
+      "checks": [
+        {
+          "devMarkup": "<!--app-html-->",
+          "result": "createRoot without hydration errors"
+        },
+        {
+          "devMarkup": " \n<!--app-html-->\n ",
+          "result": "createRoot without hydration errors"
+        },
+        {
+          "devMarkup": "",
+          "result": "createRoot without hydration errors"
+        },
+        {
+          "devMarkup": " \n ",
+          "result": "createRoot without hydration errors"
+        },
+        {
+          "path": "/projects/maniac/wiki",
+          "result": "SSG node preserved throughout delayed hydration"
+        },
+        {
+          "path": "/projects/maniac/wiki/perks/independence",
+          "result": "SSG node preserved throughout delayed hydration"
+        },
+        {
+          "path": "/projects/maniac/wiki/search?q=учёный",
+          "result": "SSG node preserved throughout delayed hydration"
+        }
+      ],
+      "errors": []
+    },
+    "journeys": {
+      "checks": [
+        "Character → ability → item → mechanic → character; active Wiki sections",
+        "Word separation at hidden line breaks; six category cards form complete rows at four widths",
+        "All three chronicle animations run; reduced motion stops them",
+        "All 232 unique published Wiki images decode, including srcset and inline assets"
+      ],
+      "errors": []
+    }
+  },
+  "nativeCommands": {
+    "report": [
+      {
+        "origin": "http://127.0.0.1:5173",
+        "status": 200,
+        "heading": "Maniac Wiki",
+        "errors": []
+      },
+      {
+        "origin": "http://127.0.0.1:4173",
+        "status": 200,
+        "heading": "Maniac Wiki",
+        "errors": []
+      }
+    ],
+    "model": [
+      {
+        "file": "/assets/ModelCanvas-D-I1K6b9.js",
+        "status": 200,
+        "bytes": 643963
+      },
+      {
+        "file": "/assets/keeper--JhZDz1A.glb",
+        "status": 200,
+        "bytes": 104768
+      }
+    ]
+  },
+  "downloads": {
+    "googleHTTP": {
+      "url": "https://drive.usercontent.google.com/download?id=1Pe_mgHtMvoVIn5-FwG5Nj_sG0xuDvY6D&export=download&confirm=t",
+      "status": 206,
+      "finalURL": "https://drive.usercontent.google.com/download?id=1Pe_mgHtMvoVIn5-FwG5Nj_sG0xuDvY6D&export=download&confirm=t",
+      "type": "application/octet-stream",
+      "disposition": "attachment; filename=\"maniac 1.2.zip\"",
+      "range": "bytes 0-3/220494053"
+    },
+    "yandexHTTP": {
+      "status": 403,
+      "path": "/showcaptcha"
+    },
+    "browser": {
+      "google": {
+        "filename": "maniac 1.2.zip",
+        "result": "download event observed; immediately cancelled"
+      },
+      "yandex": {
+        "url": "https://disk.yandex.ru/d/z7mqmWDD3k9OTg",
+        "title": "Ничего не найдено — Яндекс Диск",
+        "newTab": true
+      }
+    },
+    "yandexAPI": {
+      "status": 404,
+      "error": "DiskNotFoundError",
+      "description": "Resource not found."
+    }
+  }
+}

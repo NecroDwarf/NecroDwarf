@@ -229,7 +229,7 @@ try {
       .all()) {
       assert.equal(
         await mirror.getAttribute("href"),
-        "https://disk.yandex.ru/d/z7mqmWDD3k9OTg",
+        "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
       );
     }
     assert.deepEqual(mobileErrors, []);
@@ -268,7 +268,7 @@ try {
                 "Delayed SPA navigation and race cancellation",
                 "Chunk failure retains content",
                 "Mobile overflow/animations/reduced motion",
-                "Google Drive and Yandex links preserved",
+                "Google Drive and temporary Yandex Rickroll placeholder preserved",
               ]
             : [
                 "SSG heading node retained",

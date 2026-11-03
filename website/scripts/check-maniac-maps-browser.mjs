@@ -268,16 +268,15 @@ await withBrowserCheck(
           .getAttribute("href")
       ).includes("drive.usercontent.google.com/download"),
     );
-    assert.ok(
-      (
-        await p
-          .getByRole("link", { name: /Скачать с Яндекс Диска/ })
-          .first()
-          .getAttribute("href")
-      ).includes("disk.yandex.ru"),
+    assert.equal(
+      await p
+        .getByRole("link", { name: /Скачать с Яндекс Диска/ })
+        .first()
+        .getAttribute("href"),
+      "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
     );
     report.checks.push(
-      "All three chronicle animations and Maniac Drive/Yandex buttons preserved.",
+      "All three chronicle animations, Maniac Drive download and temporary Yandex Rickroll placeholder preserved.",
     );
     assert.deepEqual(errors, []);
     await writeFile(reportPath, JSON.stringify(report, null, 2) + "\n");

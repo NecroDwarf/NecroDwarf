@@ -76,7 +76,10 @@ try {
   ]);
   for (const version of gameVersions)
     assert.ok(releases.some((r) => r.id === version.releaseId));
-  assert.equal(routes.length, 190);
+  assert.equal(routes.length, 191);
+  assert.ok(
+    routes.some((route) => route.path === "/projects/maniac/wiki/search"),
+  );
   assert.ok(
     routes.some((route) => route.path === "/projects/maniac/wiki/effects"),
   );

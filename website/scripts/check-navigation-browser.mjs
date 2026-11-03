@@ -30,7 +30,9 @@ await withBrowserCheck(
     await expect(page.locator("#main-navigation")).toBeHidden();
     const effects = page.locator("[data-effect-id]");
     await expect(effects).toHaveCount(33);
-    await page.getByRole("searchbox").fill("Тишина");
+    await page
+      .getByRole("searchbox", { name: "Поиск по названию", exact: true })
+      .fill("Тишина");
     await expect(effects).toHaveCount(1);
     await page
       .getByRole("combobox", { name: "Тип эффекта" })

@@ -1,0 +1,79 @@
+.form {
+  max-width: 760px;
+  margin-block: 24px;
+}
+.label {
+  font-size: 14px;
+  color: var(--ash);
+}
+.controls {
+  display: flex;
+  gap: 12px;
+  margin-top: 10px;
+}
+.controls input {
+  min-width: 0;
+  flex: 1;
+  padding: 14px;
+  background: #151820;
+  color: var(--bone);
+  border: 1px solid var(--ash);
+  border-radius: 4px;
+  font: inherit;
+  font-size: 16px;
+}
+.controls button,
+.retry {
+  padding: 12px;
+  border: 1px solid var(--ash);
+  border-radius: 4px;
+  background: #24212a;
+  color: var(--bone);
+  font: inherit;
+  cursor: pointer;
+}
+.form p {
+  color: var(--ash);
+  font-size: 13px;
+}
+.group {
+  margin-block: 36px;
+}
+.group ul,
+.sections ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+  gap: 12px;
+  padding: 0;
+  list-style: none;
+}
+.group li,
+.sections li {
+  min-width: 0;
+}
+.group a,
+.sections a {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px;
+  border: 1px solid var(--iron);
+  background: var(--stone);
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+.group a:hover,
+.sections a:hover {
+  border-color: var(--accent);
+}
+.sections {
+  margin-block: 48px;
+}
+@media (max-width: 370px) {
+  .controls {
+    flex-wrap: wrap;
+  }
+  .controls input {
+    flex-basis: 100%;
+  }
+}

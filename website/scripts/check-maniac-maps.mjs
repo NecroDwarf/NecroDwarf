@@ -65,7 +65,7 @@ try {
   const paths = await json(".ssg/paths.json"),
     old = await json("docs/maniac-3c2-existing-routes.json");
   assert.equal(old.length, 185);
-  assert.equal(paths.length, 190);
+  assert.equal(paths.length, 191);
   assert.ok(paths.includes("/projects/maniac/wiki/effects"));
   for (const path of old) assert.ok(paths.includes(path), path);
   assert.equal(new Set(catalog.map((m) => m.id)).size, 3);

@@ -2,6 +2,13 @@ import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import { createStaticServer } from "./serve.mjs";
 const paths = JSON.parse(await readFile(".ssg/paths.json", "utf8"));
+const originalPaths = JSON.parse(
+  await readFile("docs/maniac-rc-existing-routes.json", "utf8"),
+);
+assert.ok(
+  originalPaths.every((path) => paths.includes(path)),
+  "All pre-RC public URLs must remain",
+);
 const server = createStaticServer();
 await new Promise((resolve) => server.listen(0, "127.0.0.1", resolve));
 const origin = `http://127.0.0.1:${server.address().port}`;
@@ -35,7 +42,17 @@ try {
         continue;
       }
       if (!url.startsWith("/")) continue;
-      if (paths.includes(url)) continue;
+      const target = new URL(url.replaceAll("&amp;", "&"), origin);
+      if (paths.includes(target.pathname)) {
+        if (target.hash)
+          assert.ok(
+            documents
+              .get(target.pathname)
+              .includes(`id="${decodeURIComponent(target.hash.slice(1))}"`),
+            `${path}: missing target ${url}`,
+          );
+        continue;
+      }
       assets.add(url);
     }
   }

@@ -5,10 +5,11 @@ export const download = {
   version: "1.2",
   releaseName: "Flower Cleaning",
   url: "https://drive.usercontent.google.com/download?id=1Pe_mgHtMvoVIn5-FwG5Nj_sG0xuDvY6D&export=download&confirm=t",
-  mirrorUrl: "https://disk.yandex.ru/d/z7mqmWDD3k9OTg",
+  // Temporary Rickroll placeholder approved by the owner; replace when the mirror returns.
+  mirrorUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
   minecraft: "1.20.1",
   loader: "Forge",
-  note: "Если Google Drive попросит подтвердить скачивание, подтвердите его на странице сервиса. При недоступности загрузки используйте зеркало Яндекс Диска.",
+  note: "Если Google Drive попросит подтвердить скачивание, подтвердите его на странице сервиса. Зеркало Яндекс Диска временно недоступно — пока вместо него музыкальная заглушка.",
 };
 
 export const gameplay = {

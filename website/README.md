@@ -97,6 +97,7 @@ brand-source/                 оригиналы предоставленных 
 - `/about`
 - `/projects/maniac/changelog` и `/projects/maniac/changelog/1.0`, `/1.1`, `/1.2`
 - `/projects/maniac/wiki` и `/projects/maniac/wiki/characters`
+- `/projects/maniac/wiki/search` — общий поиск по 204 опубликованным сущностям
 - `/projects/maniac/wiki/characters/:slug` — 15 статей подтверждённых персонажей
 - `/projects/maniac/wiki/perks` и `/projects/maniac/wiki/perks/:slug` — каталог и 44 статьи
 - `/projects/maniac/wiki/abilities` и `/projects/maniac/wiki/abilities/:slug` — каталог и 12 статей
@@ -105,7 +106,7 @@ brand-source/                 оригиналы предоставленных 
 - `/projects/maniac/wiki/maps` и `/projects/maniac/wiki/maps/:slug` — Особняк, Пиццерия и Форт
 - `/projects/maniac/wiki/effects` — 33 опубликованных эффекта, переходы к эффектам по якорям
 
-Всего 190 опубликованных маршрутов. Остальные адреса возвращают 404.
+Всего 191 опубликованный маршрут. Остальные адреса возвращают 404.
 DEV Preview остаётся отдельным. Списки хроник ведут на готовые внутренние страницы.
 
 Этап 3A: [публичная Wiki, источники, ограничения и проверка](docs/MANIAC_3A_VERIFICATION.md).
@@ -197,17 +198,26 @@ npm run preview:maniac
 проверки — в [`MANIAC_2A_VERIFICATION.md`](MANIAC_2A_VERIFICATION.md).
 Прямая загрузка Google Drive и зеркало Яндекс Диска проверены отдельно:
 [`MANIAC_DOWNLOAD_VERIFICATION.md`](MANIAC_DOWNLOAD_VERIFICATION.md).
+С 03.11.2026 зеркало недоступно: по просьбе владельца его кнопка временно ведёт
+на Rickroll. Основная загрузка Google Drive сохранена; актуальный статус — в
+[отчёте RC](../MANIAC_WIKI_RELEASE_CANDIDATE.md).
 
 Этап 2B реализован: `/projects/maniac/changelog` и выпуски `/1.0`, `/1.1`, `/1.2`.
 Полные тексты, темы и CSS-анимации — [отчёт 2B](docs/MANIAC_2B_VERIFICATION.md),
 [соответствие разделов](docs/MANIAC_CHRONICLES_SECTIONS.md).
 
 Следующие продуктовые задачи — только по отдельной команде: новые проверенные
-материалы Wiki и общий поиск по её содержимому; переход длинных материалов на MDX;
+материалы Wiki; переход длинных материалов на MDX;
 детали FriendSheep и NovellMaker после получения материалов; домен, preview на
 Cloudflare, production-публикация и план перехода со старых URL. Каталожный поиск,
 фильтры, текущие характеристики и открытые статьи Wiki уже реализованы.
 
-Текущее состояние проверок — [RELEASE_READINESS.md](docs/RELEASE_READINESS.md).
+Текущее состояние проверок — [MANIAC_WIKI_RELEASE_CANDIDATE.md](../MANIAC_WIKI_RELEASE_CANDIDATE.md).
+Общий поиск использует лёгкие метаданные публикации; индекс загружается на странице
+поиска или при первом непустом вводе в шапке. Постоянное поле в шапке всех страниц
+Wiki показывает до шести живых подсказок с категориями. Стрелки и Enter открывают
+выбранную запись; «Найти» и «Все результаты» открывают полную выдачу.
+Поиск внутри каталога остаётся отдельным.
+Предыдущие итоги исправлений — [RELEASE_READINESS.md](docs/RELEASE_READINESS.md).
 `STAGE_1_VERIFICATION.md` и остальные отчёты этапов сохраняют состояние на момент
 их написания; `VERIFICATION.md` относится к прототипам.

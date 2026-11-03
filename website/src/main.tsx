@@ -13,7 +13,8 @@ const app = (
 pageForPath(window.location.pathname)
   .preload()
   .then(() => {
-    if (root.hasChildNodes()) hydrateRoot(root, app);
+    // The Vite template contains a comment, which is not server-rendered UI.
+    if (root.firstElementChild) hydrateRoot(root, app);
     else createRoot(root).render(app);
   })
   .catch((error) =>
