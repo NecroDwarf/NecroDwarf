@@ -7,7 +7,7 @@ import {
 } from "../data/current-descriptions";
 import { WikiBreadcrumb } from "../ui/WikiBreadcrumb";
 import { Link } from "react-router";
-import { ContentLink, BackLink } from "../../../../shared/ui/ContentLink";
+import { BackLink } from "../../../../shared/ui/ContentLink";
 import { getEntity, getRevision } from "../data/registry";
 import { referenceChronicles } from "../data/reference-chronicles";
 import { EntityIcon } from "../ui/EntityIcon";
@@ -16,7 +16,6 @@ import { EntityStats } from "../ui/EntityCards";
 import { EntityLink } from "../ui/EntityLink";
 import { GameGlyph } from "../ui/GameGlyph";
 import { RelatedLinks } from "../ui/RelatedLinks";
-import { sourceUrl, verifiedSource, sourceCommit } from "../data/snapshots";
 import type { EntityId, Evidence } from "../data/types";
 import {
   typeLabels,
@@ -25,7 +24,7 @@ import {
   typeDescriptions,
   abilityLabels,
 } from "./reference-labels";
-import { WikiLayout, DataNote } from "./WikiLayout";
+import { WikiLayout } from "./WikiLayout";
 import s from "./Wiki.module.css";
 import r from "./Reference.module.css";
 interface Article {
@@ -95,7 +94,6 @@ export function ReferenceArticlePage({
             </div>
           </div>
         </header>
-        <DataNote />
         <div className={s.articleLayout}>
           <aside className={s.articleNav}>
             <p className={s.eyebrow}>В ЭТОЙ СТАТЬЕ</p>
@@ -104,7 +102,6 @@ export function ReferenceArticlePage({
               <a href="#parameters">02 · Характеристики</a>
               <a href="#conditions">03 · Условия</a>
               <a href="#related">04 · Связанные материалы</a>
-              <a href="#sources">Источники</a>
             </nav>
             <BackLink to={`/projects/maniac/wiki/${section}`}>{label}</BackLink>
           </aside>
@@ -117,7 +114,7 @@ export function ReferenceArticlePage({
               </p>
             </section>
             <section className={s.articleSection} id="parameters">
-              <p className={s.eyebrow}>ПОДТВЕРЖДЁННЫЕ ПАРАМЕТРЫ</p>
+              <p className={s.eyebrow}>ПАРАМЕТРЫ</p>
               <h2>Характеристики</h2>
               {!!data.stats?.length && <EntityStats stats={data.stats} />}
               <dl className={r.availability}>
@@ -181,11 +178,6 @@ export function ReferenceArticlePage({
                   ))}
                 </ul>
               )}
-              <p className={s.sectionIntro}>
-                Условия срабатывания, накопления и расходования ресурсов указаны
-                в описании эффекта. Динамический результат не считается
-                постоянной характеристикой.
-              </p>
             </section>
             <section className={s.articleSection} id="related">
               <p className={s.eyebrow}>СВЯЗИ В ЭНЦИКЛОПЕДИИ</p>
@@ -248,27 +240,6 @@ export function ReferenceArticlePage({
                   автоматически не назначается.
                 </p>
               )}
-            </section>
-            <section className={s.articleSection} id="sources">
-              <details className={s.sources}>
-                <summary>Проверенные источники и различия</summary>
-                <p>
-                  Снимок исходников <code>{sourceCommit.slice(0, 7)}</code>.
-                  Значения не объявлены идентичными публичному ZIP 1.2.
-                </p>
-                {article.notes.map((note) => (
-                  <p key={note}>{note}</p>
-                ))}
-                <ul>
-                  {article.evidence.map((ev) => (
-                    <li key={ev.path}>
-                      <ContentLink href={sourceUrl(ev.path, verifiedSource)!}>
-                        {ev.path.split("/").at(-1)}
-                      </ContentLink>
-                    </li>
-                  ))}
-                </ul>
-              </details>
             </section>
             <BackLink to={`/projects/maniac/wiki/${section}`}>
               Вернуться в каталог

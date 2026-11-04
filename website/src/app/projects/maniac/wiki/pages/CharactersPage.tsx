@@ -2,7 +2,7 @@ import { useUrlFilter } from "../../../../shared/lib/use-url-filter";
 import { useEffect } from "react";
 import { Link, useLocation } from "react-router";
 import { characterEntries, roleLabel } from "./catalog";
-import { WikiLayout, DataNote } from "./WikiLayout";
+import { WikiLayout } from "./WikiLayout";
 import {
   CatalogHeader,
   CatalogSearch,
@@ -87,7 +87,6 @@ export function CharactersPage() {
             ниже.
           </p>
         </noscript>
-        <DataNote />
         {(["maniac", "survivor"] as const).map((role) => {
           const group = visible.filter((c) => c.data.role === role);
           return group.length ? (

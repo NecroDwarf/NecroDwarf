@@ -17,7 +17,7 @@ import {
 } from "../ui/CatalogControls";
 import { EntityIcon } from "../ui/EntityIcon";
 import { GameGlyph } from "../ui/GameGlyph";
-import { WikiLayout, DataNote } from "./WikiLayout";
+import { WikiLayout } from "./WikiLayout";
 import { teamLabels, typeLabels, abilityLabels } from "./reference-labels";
 import s from "./Wiki.module.css";
 import r from "./Reference.module.css";
@@ -120,7 +120,6 @@ export function ReferenceCatalogPage({ kind }: { kind: "perk" | "ability" }) {
             JavaScript.
           </p>
         </noscript>
-        <DataNote />
         <section
           aria-label={
             kind === "perk" ? "Каталог перков" : "Каталог способностей"

@@ -1,0 +1,58 @@
+{
+  "sourceDocument": "Диплом.docx",
+  "sourceSha256": "15f8406c0805a9f259b49ce5e7f6a07449045d6a40cb9c116c96aa909e295b18",
+  "images": [
+    {
+      "media": "word/media/image19.png",
+      "figure": "19",
+      "sourceSize": [406, 264],
+      "sourceBytes": 86237,
+      "sourceSha256": "a05ae399870cd49f35a0aa61b33587b1d0c4c092e6262d6b04e3e757884a7a65",
+      "full": "event-card.png",
+      "preview": "event-card.webp",
+      "previewSize": [406, 264],
+      "previewBytes": 16542,
+      "previewSha256": "6ce44c0d02ead37cecbe6aa243af70c02b45dcf2d49c716b63404f4cd1f52c8e",
+      "transformation": "WebP quality 92; пропорции сохранены, без обрезки, перерисовки и изменения содержимого. PNG полного размера сохранён отдельно для просмотра по ссылке."
+    },
+    {
+      "media": "word/media/image20.png",
+      "figure": "20",
+      "sourceSize": [634, 577],
+      "sourceBytes": 90989,
+      "sourceSha256": "3408c13baec0c1e456bd0fb226615c065bc3c4f039bdfa508ef249154dff131a",
+      "full": "create-event.png",
+      "preview": "create-event.webp",
+      "previewSize": [634, 577],
+      "previewBytes": 27356,
+      "previewSha256": "9798b134661f3704a80027a584be38150b97d23608c8ed0502f282d1c6557b48",
+      "transformation": "WebP quality 92; пропорции сохранены, без обрезки, перерисовки и изменения содержимого. PNG полного размера сохранён отдельно для просмотра по ссылке."
+    },
+    {
+      "media": "word/media/image28.png",
+      "figure": "П1.3",
+      "sourceSize": [2544, 1281],
+      "sourceBytes": 387297,
+      "sourceSha256": "2859e87ffb33d8265459d3dd0cb6548d3056e551083129ca2dca5a061e1480b8",
+      "full": "event-feed.png",
+      "preview": "event-feed.webp",
+      "previewSize": [1200, 604],
+      "previewBytes": 27972,
+      "previewSha256": "1ab9699deb40da126b4f7258696178e8728f17b3f2c9b164f103c15e91282683",
+      "transformation": "WebP quality 92; пропорции сохранены, без обрезки, перерисовки и изменения содержимого. PNG полного размера сохранён отдельно для просмотра по ссылке."
+    },
+    {
+      "media": "word/media/image29.png",
+      "figure": "П1.4",
+      "sourceSize": [1037, 517],
+      "sourceBytes": 162781,
+      "sourceSha256": "578ba948ab25fecab440b30e21e28d891561cafd8aa64555c72eeb407bfd20bb",
+      "full": "group.png",
+      "preview": "group.webp",
+      "previewSize": [1037, 517],
+      "previewBytes": 45350,
+      "previewSha256": "1625fd58bd3fc76a8cde9975bc2e8d14340cbf94b5f7b760d2e59aca6af73d90",
+      "transformation": "WebP quality 92; пропорции сохранены, без обрезки, перерисовки и изменения содержимого. PNG полного размера сохранён отдельно для просмотра по ссылке."
+    }
+  ]
+}

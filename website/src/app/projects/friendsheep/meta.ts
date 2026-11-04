@@ -6,7 +6,7 @@ export const meta: ProjectMeta = {
   name: "FriendSheep",
   category: "Сервис / Мероприятия",
   description:
-    "Сервис для организации мероприятий. Встречи начинаются с идеи собраться вместе.",
+    "FriendSheep — сервис для организации мероприятий: встречи друзей, концерты, лекции и учебные события. Время, место и участники — в одном месте.",
   tagline: "Повод быть вместе.",
   theme: theme.project,
   Art: FriendSheepArt,

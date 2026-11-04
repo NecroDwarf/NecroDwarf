@@ -1,0 +1,222 @@
+.imageLink {
+  display: block;
+  min-width: 0;
+  background: white;
+}
+.imageLink img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.heroPreview {
+  position: relative;
+  isolation: isolate;
+  min-width: 0;
+  margin: 0;
+  padding: 65px 0 25px;
+}
+.heroBackdrop {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #e7f2fd;
+  border: 1px solid #d7e9f9;
+  top: 25px;
+}
+.heroScreen {
+  position: relative;
+  width: 100%;
+  border: 1px solid #c7ddef;
+  border-radius: 13px;
+  background: white;
+  box-shadow: 0 25px 50px #23497714;
+  transform: rotate(-3deg);
+}
+.heroScreen .imageLink {
+  border-radius: 0 0 12px 12px;
+}
+.heroScreen img {
+  border-radius: inherit;
+}
+.screenLabel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 16px;
+  font-size: 11px;
+  color: #285b9d;
+}
+.heroCard {
+  position: relative;
+  width: min(72%, 330px);
+  margin: -24px 10px 0 auto;
+  padding: 8px;
+  border: 1px solid #d0e2f2;
+  border-radius: 14px;
+  background: white;
+  box-shadow: 0 15px 35px #23497720;
+  transform: rotate(3deg);
+}
+.heroCard .imageLink,
+.heroCard img {
+  border-radius: 9px;
+}
+.heroCard > span {
+  display: block;
+  text-align: center;
+  font-size: 10px;
+  color: #50647c;
+  padding: 8px 3px 3px;
+}
+.gallery {
+  min-width: 0;
+}
+.gallery figure {
+  margin: 0;
+  border: 1px solid #d3e2ef;
+  border-radius: 16px;
+  background: white;
+  box-shadow: 0 15px 35px #23497708;
+  overflow: hidden;
+}
+.gallery .imageLink {
+  padding: 12px;
+  border-radius: 15px 15px 0 0;
+}
+.gallery .imageLink:hover {
+  background: #eaf3fd;
+}
+.featured .imageLink {
+  padding: 0;
+}
+.featured img {
+  border-radius: 15px 15px 0 0;
+}
+.gallery figcaption {
+  padding: 24px 28px;
+  border-top: 1px solid #e2ebf3;
+}
+.gallery figcaption h3 {
+  margin-bottom: 10px;
+  font-size: 22px;
+}
+.gallery figcaption p {
+  font-size: 14px;
+  margin-bottom: 14px;
+}
+.details {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+  margin-top: 22px;
+}
+.details figure {
+  display: flex;
+  flex-direction: column;
+}
+.details .detailImage {
+  position: relative;
+  aspect-ratio: 16/10;
+  flex: none;
+  background: #f1f6fb;
+  padding: 0;
+}
+.detailImage img {
+  position: absolute;
+  inset: 20px;
+  width: calc(100% - 40px);
+  height: calc(100% - 40px);
+  object-fit: contain;
+}
+.details figcaption {
+  flex: 1;
+}
+.gallery .galleryHint {
+  margin: 24px 0 8px;
+  font-size: 13px;
+  color: #285b9d;
+}
+@media (max-width: 1050px) {
+  .heroPreview {
+    padding-top: 45px;
+  }
+  .screenLabel {
+    font-size: 10px;
+    padding-inline: 12px;
+  }
+  .heroCard {
+    width: 75%;
+  }
+}
+@media (max-width: 800px) {
+  .heroPreview {
+    width: min(100%, 510px);
+    margin-inline: auto;
+    padding-top: 40px;
+  }
+  .heroCard {
+    width: min(72%, 330px);
+  }
+  .screenLabel {
+    font-size: 11px;
+  }
+  .gallery figcaption {
+    padding: 22px;
+  }
+  .details {
+    gap: 18px;
+  }
+}
+@media (max-width: 540px) {
+  .heroPreview {
+    padding: 30px 3px 10px;
+  }
+  .heroBackdrop {
+    top: 8px;
+  }
+  .heroScreen {
+    transform: rotate(-2deg);
+  }
+  .screenLabel {
+    font-size: 9px;
+    gap: 8px;
+    padding: 10px;
+  }
+  .heroCard {
+    width: 80%;
+    margin: -10px 5px 0 auto;
+    padding: 6px;
+  }
+  .heroCard > span {
+    font-size: 9px;
+    padding-top: 6px;
+  }
+  .details {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    margin-top: 18px;
+  }
+  .details .detailImage {
+    padding: 0;
+  }
+  .detailImage img {
+    inset: 15px;
+    width: calc(100% - 30px);
+    height: calc(100% - 30px);
+  }
+  .gallery figcaption {
+    padding: 20px;
+  }
+  .gallery figcaption h3 {
+    font-size: 21px;
+  }
+  .gallery figcaption p {
+    font-size: 13px;
+  }
+  .gallery .galleryHint {
+    font-size: 12px;
+  }
+}

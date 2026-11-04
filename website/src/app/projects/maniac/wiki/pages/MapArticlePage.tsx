@@ -2,10 +2,9 @@ import { WikiBreadcrumb } from "../ui/WikiBreadcrumb";
 import { Link } from "react-router";
 import { mapCatalog } from "../data/maps";
 import type { EntityId, Evidence } from "../data/types";
-import { sourceUrl, sourceCommit, verifiedSource } from "../data/snapshots";
 import { RelatedLinks } from "../ui/RelatedLinks";
-import { ContentLink, BackLink } from "../../../../shared/ui/ContentLink";
-import { WikiLayout, DataNote } from "./WikiLayout";
+import { BackLink } from "../../../../shared/ui/ContentLink";
+import { WikiLayout } from "./WikiLayout";
 import { MapFacts } from "./MapFacts";
 import { StatText } from "../ui/StatText";
 import s from "./Wiki.module.css";
@@ -55,30 +54,23 @@ export function MapArticlePage({
             <img
               {...image}
               sizes="(min-width:1440px) 1280px, calc(100vw - 48px)"
-              alt={`Оригинальное игровое превью карты «${map.name}»`}
+              alt={`Превью карты «${map.name}»`}
               fetchPriority="high"
               decoding="async"
             />
-            <figcaption>
-              Игровое превью из меню Maniac. Изображение не является точной
-              схемой уровня.
-            </figcaption>
           </figure>
         </header>
-        <DataNote />
         <div className={s.articleLayout}>
           <aside className={s.articleNav}>
             <p className={s.eyebrow}>В ЭТОЙ СТАТЬЕ</p>
             <nav aria-label="Содержание статьи">
               <a href="#guide">01 · Особенности и советы</a>
               <a href="#related">02 · Связанные материалы</a>
-              <a href="#sources">Источники</a>
             </nav>
             <BackLink to="/projects/maniac/wiki/maps">Все карты</BackLink>
           </aside>
           <div className={s.articleContent}>
             <section className={s.articleSection} id="guide">
-              <p className={s.eyebrow}>ИЗ ВНУТРИИГРОВОГО РУКОВОДСТВА</p>
               <h2>Особенности и советы</h2>
               <p className={s.sectionIntro}>
                 Изучайте маршруты и учитывайте обстановку: рекомендации помогают
@@ -116,34 +108,6 @@ export function MapArticlePage({
                   Как выбирается карта →
                 </Link>
               </p>
-            </section>
-            <section className={s.articleSection} id="sources">
-              <details className={s.sources}>
-                <summary>Проверенные источники и различия</summary>
-                <p>
-                  Снимок <code>{sourceCommit.slice(0, 7)}</code>. Название,
-                  размер, сложность и рекомендации взяты из локализованного
-                  руководства; точные геометрические размеры и координаты не
-                  подтверждены.
-                </p>
-                <p>
-                  String ID: <code>{map.slug}</code>; внутренний scoreboard ID:{" "}
-                  <code>{map.numericId}</code>.
-                </p>
-                <p>Описание в MapRegistry: {article.registryDescription}</p>
-                {article.notes.map((note) => (
-                  <p key={note}>{note}</p>
-                ))}
-                <ul>
-                  {article.evidence.map((ev) => (
-                    <li key={ev.path}>
-                      <ContentLink href={sourceUrl(ev.path, verifiedSource)!}>
-                        {ev.path.split("/").at(-1)}
-                      </ContentLink>
-                    </li>
-                  ))}
-                </ul>
-              </details>
             </section>
             <BackLink to="/projects/maniac/wiki/maps">
               Вернуться к картам

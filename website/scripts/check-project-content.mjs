@@ -104,6 +104,7 @@ try {
   for (const release of projects.find((p) => p.id === "maniac").releases)
     assert.ok(maniac.includes(release.title), `Maniac: ${release.title}`);
   assert.equal((maniac.match(/<h1[ >]/g) || []).length, 1);
+  assert.doesNotMatch(maniac, /Художественная иллюстрация/);
   assert.doesNotMatch(
     maniac,
     /id="gallery"|href="#gallery"|minecraft-inside\.ru|changelog_maniac|Версия доступного архива пока не подтверждена/,

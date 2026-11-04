@@ -5,15 +5,18 @@ import type { ReactNode } from "react";
 import { Link } from "react-router";
 import { RelatedLinks } from "../ui/RelatedLinks";
 import { RelatedEffects } from "../ui/RelatedEffects";
-import { ContentLink, BackLink } from "../../../../shared/ui/ContentLink";
+import { BackLink } from "../../../../shared/ui/ContentLink";
 import { getEntity, getRevision } from "../data/registry";
-import { sourceUrl, sourceCommit, verifiedSource } from "../data/snapshots";
+import { relatedEntityIds } from "../data/relations";
+import { publishedEntityRoutes } from "../data/publication";
+import { effectConnections } from "../data/effect-connections";
+import { publishedEffectMeta } from "../published-effects";
 import type { EntityId } from "../data/types";
 import { AbilityCard, ItemCard } from "../ui/EntityCards";
 import { DifficultyStars } from "../ui/DifficultyStars";
 import { characterChronicles } from "../data/character-chronicles";
 import { releases } from "../../changelogs/registry";
-import { WikiLayout, DataNote } from "./WikiLayout";
+import { WikiLayout } from "./WikiLayout";
 import s from "./Wiki.module.css";
 interface Article {
   gameId: string;
@@ -35,6 +38,15 @@ export function CharacterPage({
   const data = revision.data;
   const history = characterChronicles[id] ?? [];
   const hasHistory = history.length > 0;
+  const relatedExclude: EntityId[] = [...data.itemIds, ...data.abilityIds];
+  const hasRelated =
+    relatedEntityIds(id).some(
+      (target) =>
+        publishedEntityRoutes[target] && !relatedExclude.includes(target),
+    ) ||
+    publishedEffectMeta.some((effect) =>
+      effectConnections[effect.id]?.includes(id),
+    );
   return (
     <WikiLayout>
       <header className={s.characterHero} data-side={data.role}>
@@ -74,14 +86,12 @@ export function CharacterPage({
             src={fresco.src}
             width={fresco.width}
             height={fresco.height}
-            alt={`Оригинальная фреска: ${entity.name}`}
+            alt={`Фреска: ${entity.name}`}
             fetchPriority="high"
           />
-          <span>ОРИГИНАЛЬНАЯ ФРЕСКА / MANIAC</span>
         </div>
       </header>
       <div className={s.container}>
-        <DataNote />
         <div className={s.articleLayout}>
           <aside className={s.articleNav}>
             <p className={s.eyebrow}>В ЭТОМ ДОСЬЕ</p>
@@ -93,7 +103,7 @@ export function CharacterPage({
               <a href="#equipment">03 · Снаряжение</a>
               {children && <a href="#model">04 · 3D-модель</a>}
               {hasHistory && <a href="#chronicles">05 · Хроники</a>}
-              <a href="#sources">Источники</a>
+              {hasRelated && <a href="#related">Связанные материалы</a>}
             </nav>
             <BackLink to="/projects/maniac/wiki/characters">
               Все персонажи
@@ -149,7 +159,7 @@ export function CharacterPage({
             {children && (
               <section className={s.articleSection} id="model">
                 <p className={s.eyebrow}>ВЗГЛЯД СО ВСЕХ СТОРОН</p>
-                <h2>Оригинальная 3D-модель</h2>
+                <h2>3D-модель</h2>
                 <p className={s.sectionIntro}>
                   Одна модель Хранителя, без дополнительных форм. Загрузите её,
                   чтобы рассмотреть детали, повернуть и приблизить.
@@ -174,46 +184,15 @@ export function CharacterPage({
                     <span>{entry.label} →</span>
                   </Link>
                 ))}
-                <p className={s.sectionIntro}>
-                  Хроника сохраняет характеристики на момент выпуска. Сведения
-                  этой статьи проверены отдельно по исходникам.
-                </p>
               </section>
             )}
-            <section className={s.articleSection} id="sources">
-              <RelatedEffects entityId={id} />
-              <RelatedLinks
-                id={entity.id}
-                exclude={[...data.itemIds, ...data.abilityIds]}
-              />
-              <details className={s.sources}>
-                <summary>Об этой статье и источниках</summary>
-                <p>
-                  Снимок исходников <code>{sourceCommit.slice(0, 7)}</code>. Он
-                  не подтверждает идентичность значений скачиваемому архиву
-                  Flower Cleaning 1.2.
-                </p>
-                <p>
-                  Имена, теги, сложность, особенности и предметы сверены с
-                  классом персонажа и русской локализацией. Указанная сложность
-                  — игровая шкала от 1 до 5.
-                </p>
-                <ul>
-                  {revision.evidence.map((ev) => (
-                    <li key={ev.path}>
-                      <ContentLink href={sourceUrl(ev.path, verifiedSource)!}>
-                        {ev.path.split("/").at(-1)}
-                      </ContentLink>
-                    </li>
-                  ))}
-                </ul>
-                <p>
-                  Фреска сопоставлена по игровому ID{" "}
-                  <code>{article.gameId}</code>. Её композиция сохранена
-                  целиком.
-                </p>
-              </details>
-            </section>
+            {hasRelated && (
+              <section className={s.articleSection} id="related">
+                <h2>Связанные материалы</h2>
+                <RelatedEffects entityId={id} />
+                <RelatedLinks id={entity.id} exclude={relatedExclude} />
+              </section>
+            )}
             <BackLink to="/projects/maniac/wiki/characters">
               Вернуться к персонажам
             </BackLink>

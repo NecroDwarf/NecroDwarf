@@ -128,7 +128,15 @@ try {
       html.includes("Загрузить 3D-модель"),
       c.slug === "keeper-of-nightmares",
     );
-    assert.ok(html.includes("скачиваемой сборки Flower Cleaning 1.2"));
+    assert.doesNotMatch(
+      html,
+      /скачиваемой сборки Flower Cleaning 1\.2|Об этой статье и источниках|ОРИГИНАЛЬНАЯ ФРЕСКА|href="#sources"/,
+    );
+    const related = html.match(
+      /<section\b[^>]*id="related"[^>]*>([\s\S]*?)<\/section>/,
+    );
+    assert.equal(html.includes('href="#related"'), Boolean(related));
+    if (related) assert.match(related[1], /<a\b/, c.slug);
     for (const entry of characterChronicles[c.id] ?? []) {
       assert.ok(
         html.includes(
@@ -147,7 +155,7 @@ try {
       characters.find((c) => c.slug === historic).revisions["release:1.1"],
     );
   console.log(
-    "PASS: 15 character articles, 8/7 actual roles, matching ID/fresco hashes and proportions, complete SSG features/equipment, unique Keeper viewer and explicit data-version boundary.",
+    "PASS: 15 character articles, 8/7 actual roles, matching ID/fresco hashes and proportions, complete SSG features/equipment, unique Keeper viewer, related links and no editorial source notices.",
   );
 } finally {
   await server.close();

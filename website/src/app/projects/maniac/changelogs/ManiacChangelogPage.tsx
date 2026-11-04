@@ -49,10 +49,6 @@ export function ManiacChangelogPage() {
           </article>
         ))}
       </div>
-      <p className={s.indexFoot}>
-        Точные даты выпусков не подтверждены. Хроники расположены в порядке
-        версий.
-      </p>
     </div>
   );
 }

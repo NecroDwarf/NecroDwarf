@@ -19,9 +19,11 @@ const linkLabels = {
 export function ProjectIntro({
   project,
   children,
+  showArtCaption = true,
 }: {
   project: ProjectMeta;
   children?: ReactNode;
+  showArtCaption?: boolean;
 }) {
   return (
     <section className={`${s.intro} ${project.theme}`}>
@@ -68,11 +70,12 @@ export function ProjectIntro({
             ) : (
               project.Art && <project.Art />
             )}
-            {project.cover ? (
-              project.cover.caption && <span>{project.cover.caption}</span>
-            ) : (
-              <span>Художественная иллюстрация</span>
-            )}
+            {showArtCaption &&
+              (project.cover ? (
+                project.cover.caption && <span>{project.cover.caption}</span>
+              ) : (
+                <span>Художественная иллюстрация</span>
+              ))}
           </div>
         )}
       </div>

@@ -38,7 +38,7 @@ export const maniacWikiRoutes = [
     path: wikiSectionPath("effects"),
     title: "Эффекты — Maniac Wiki · NecroDwarf",
     description:
-      "Все кастомные эффекты Maniac: действие, ограничения, состояния-индикаторы и проверенные исходники.",
+      "Все кастомные эффекты Maniac: действие, ограничения и состояния-индикаторы.",
     page: routePage(() =>
       import("./pages/EffectsPage").then((m) => m.EffectsPage),
     ),
@@ -68,8 +68,7 @@ export const maniacWikiRoutes = [
   {
     path: wikiSectionPath("mechanics"),
     title: "Механики — Maniac Wiki · NecroDwarf",
-    description:
-      "Правила матча, взлом, ресурсы и особые системы Maniac по проверенным исходникам.",
+    description: "Правила матча, взлом, ресурсы и особые системы Maniac.",
     page: routePage(() =>
       import("./pages/MechanicsPage").then((m) => m.MechanicsPage),
     ),
@@ -85,7 +84,7 @@ export const maniacWikiRoutes = [
   ...mechanicRouteMeta.map((m) => ({
     path: `${wikiSectionPath("mechanics")}/${m.slug}`,
     title: `${m.name} — Механики Maniac Wiki · NecroDwarf`,
-    description: `${m.name}: игровые правила, последовательность действий и подтверждённые ограничения Maniac.`,
+    description: `${m.name}: игровые правила, последовательность действий и ограничения Maniac.`,
     page: routePage(() =>
       mechanicArticles[`./pages/mechanics/${m.slug}.tsx`]().then(
         (m) => m.default,
@@ -109,7 +108,7 @@ export const maniacWikiRoutes = [
   ...perkRouteMeta.map((p) => ({
     path: `${wikiSectionPath("perks")}/${p.slug}`,
     title: `${p.name} — Перки Maniac Wiki · NecroDwarf`,
-    description: `${p.name}: игровой эффект, тип, доступная сторона, фазы и проверенные характеристики из исходников Maniac.`,
+    description: `${p.name}: игровой эффект, тип, доступная сторона, фазы и характеристики Maniac.`,
     page: routePage(() =>
       perkArticles[`./pages/perks/${p.slug}.tsx`]().then((m) => m.default),
     ),
@@ -117,7 +116,7 @@ export const maniacWikiRoutes = [
   ...abilityRouteMeta.map((a) => ({
     path: `${wikiSectionPath("abilities")}/${a.slug}`,
     title: `${a.name} — Способности Maniac Wiki · NecroDwarf`,
-    description: `${a.name}: связанный персонаж, условия применения и подтверждённые параметры действия в Maniac.`,
+    description: `${a.name}: связанный персонаж, условия применения и параметры действия в Maniac.`,
     page: routePage(() =>
       abilityArticles[`./pages/abilities/${a.slug}.tsx`]().then(
         (m) => m.default,
@@ -144,7 +143,7 @@ export const maniacWikiRoutes = [
   ...characterRouteMeta.map((c) => ({
     path: `${wikiSectionPath("characters")}/${c.slug}`,
     title: `${c.name} — Maniac Wiki · NecroDwarf`,
-    description: `${c.name}: особенности игры, способности, снаряжение и оригинальная фреска. Подтверждённые сведения из исходников Maniac.`,
+    description: `${c.name}: особенности игры, способности, снаряжение и фреска персонажа Maniac.`,
     page: routePage(() =>
       articles[`./pages/characters/${c.slug}.tsx`]().then((m) => m.default),
     ),

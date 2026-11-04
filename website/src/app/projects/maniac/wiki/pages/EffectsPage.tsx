@@ -3,7 +3,6 @@ import { useUrlFilter } from "../../../../shared/lib/use-url-filter";
 import { useEffect } from "react";
 import { Link, useLocation } from "react-router";
 import { effects } from "../data/effects";
-import { sourceUrl, verifiedSource } from "../data/snapshots";
 import {
   CatalogGroup,
   CatalogHeader,
@@ -13,8 +12,7 @@ import {
 } from "../ui/CatalogControls";
 import { CatalogSelect } from "../ui/CatalogSelect";
 import { EffectDescription } from "../ui/EffectDescription";
-import { ContentLink } from "../../../../shared/ui/ContentLink";
-import { WikiLayout, DataNote } from "./WikiLayout";
+import { WikiLayout } from "./WikiLayout";
 import s from "./Wiki.module.css";
 import r from "./Reference.module.css";
 import e from "./Effects.module.css";
@@ -80,7 +78,6 @@ export function EffectsPage() {
           </CatalogSelect>
           <CatalogResultCount count={visible.length} />
         </div>
-        <DataNote />
         <p className={s.lead}>
           Длительность и сила эффекта зависят от предмета, перка или
           способности, которые его накладывают.
@@ -140,26 +137,6 @@ export function EffectsPage() {
                     </div>
                     <EffectDescription parts={effect.description} />
                     <RelatedEffects effectId={effect.id} />
-                    <details className={e.sources}>
-                      <summary>Проверенные источники</summary>
-                      <p>
-                        Игровой ID: <code>maniacrev:{effect.id}</code>
-                      </p>
-                      {!effect.icon && (
-                        <p>Отдельная иконка в проверенном снимке не найдена.</p>
-                      )}
-                      <ul>
-                        {effect.evidence.map((path) => (
-                          <li key={path}>
-                            <ContentLink
-                              href={sourceUrl(path, verifiedSource)!}
-                            >
-                              {path.split("/").at(-1)}
-                            </ContentLink>
-                          </li>
-                        ))}
-                      </ul>
-                    </details>
                   </article>
                 ))}
               </div>

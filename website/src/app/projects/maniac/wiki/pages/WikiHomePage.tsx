@@ -1,7 +1,7 @@
 import { Link } from "react-router";
 import { releases } from "../../changelogs/registry";
 import { characterEntries } from "./catalog";
-import { WikiLayout, DataNote } from "./WikiLayout";
+import { WikiLayout } from "./WikiLayout";
 import s from "./Wiki.module.css";
 import { itemRouteMeta } from "../item-route-metadata";
 import { mechanicRouteMeta } from "../mechanic-route-metadata";
@@ -83,7 +83,6 @@ export function WikiHomePage() {
         </div>
       </header>
       <div className={s.container}>
-        <DataNote />
         <section className={s.section} aria-labelledby="wiki-sections">
           <div className={s.sectionHeading}>
             <div>
@@ -133,7 +132,7 @@ export function WikiHomePage() {
               src={keeper.fresco}
               width="205"
               height="480"
-              alt="Оригинальная фреска Хранителя кошмаров"
+              alt="Фреска Хранителя кошмаров"
               loading="lazy"
             />
           </div>
@@ -149,7 +148,7 @@ export function WikiHomePage() {
               Открыть досье <span aria-hidden="true">↗</span>
             </Link>
             <span className={s.featuredNote}>
-              В статье — оригинальная 3D-модель персонажа.
+              В статье — 3D-модель персонажа.
             </span>
           </div>
         </section>

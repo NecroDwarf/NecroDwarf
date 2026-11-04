@@ -1,9 +1,8 @@
 import { WikiText } from "./WikiText";
 import { entityAssets } from "../data/assets";
 import { getEntity, getRevision } from "../data/registry";
-import { snapshots, sourceUrl, verifiedSource } from "../data/snapshots";
+import { snapshots, verifiedSource } from "../data/snapshots";
 import type { EntityId, EntityKind, SnapshotId, Stat } from "../data/types";
-import { ContentLink } from "../../../../shared/ui/ContentLink";
 import { EntityLink } from "./EntityLink";
 import { Link } from "react-router";
 import { publishedEntityRoutes } from "../data/publication";
@@ -103,7 +102,7 @@ export function EntityCard({
       )}
       <div>
         <p className={s.label}>
-          {provenance === "deferred"
+          {provenance === "deferred" || snapshot === verifiedSource
             ? entity.kind === "ability"
               ? "Способность"
               : "Снаряжение"
@@ -175,25 +174,6 @@ export function EntityCard({
               ))}
             </ul>
           )}
-          <details>
-            <summary>Проверенные источники</summary>
-            <ul>
-              {revision.evidence.map((source) => {
-                const href = sourceUrl(source.path, snapshot),
-                  label = source.path.split("/").at(-1);
-                return (
-                  <li key={source.path}>
-                    {href ? (
-                      <ContentLink href={href}>{label}</ContentLink>
-                    ) : (
-                      <span>{label}</span>
-                    )}
-                    {source.note && <p>{source.note}</p>}
-                  </li>
-                );
-              })}
-            </ul>
-          </details>
         </>
       )}
     </article>

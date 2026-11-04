@@ -13,13 +13,12 @@ import {
   itemCategoryLabels,
   mechanicCategoryLabels,
 } from "../data/systems-catalog";
-import { sourceUrl, verifiedSource, sourceCommit } from "../data/snapshots";
 import { SystemIcon } from "../ui/SystemIcon";
 import { EntityStats } from "../ui/EntityCards";
 import { RelatedLinks } from "../ui/RelatedLinks";
-import { ContentLink, BackLink } from "../../../../shared/ui/ContentLink";
+import { BackLink } from "../../../../shared/ui/ContentLink";
 import type { EntityId, Evidence } from "../data/types";
-import { WikiLayout, DataNote } from "./WikiLayout";
+import { WikiLayout } from "./WikiLayout";
 import s from "./Wiki.module.css";
 import r from "./Reference.module.css";
 import a from "./Systems.module.css";
@@ -35,6 +34,15 @@ interface Picture {
   width: number;
   height: number;
   caption: string;
+}
+function imageAlt(caption: string) {
+  return caption
+    .replace(/^Оригинальная /, "")
+    .replace(
+      /\s(?:из (?:игрового )?руководства|во внутриигровом руководстве|в руководстве(?: игры)?)\.?$/,
+      ".",
+    )
+    .replace(/^\p{Ll}/u, (letter) => letter.toLocaleUpperCase("ru"));
 }
 export function SystemsArticlePage({
   id,
@@ -82,7 +90,6 @@ export function SystemsArticlePage({
             </div>
           </div>
         </header>
-        <DataNote />
         <div className={s.articleLayout}>
           <aside className={s.articleNav}>
             <p className={s.eyebrow}>В ЭТОЙ СТАТЬЕ</p>
@@ -94,7 +101,6 @@ export function SystemsArticlePage({
                 </a>
               ))}
               <a href="#related">Связанные материалы</a>
-              <a href="#sources">Источники</a>
             </nav>
             <BackLink to={`/projects/maniac/wiki/${section}`}>{label}</BackLink>
           </aside>
@@ -126,21 +132,17 @@ export function SystemsArticlePage({
               </section>
             ))}
             {!!pictures.length && (
-              <section
-                className={s.articleSection}
-                aria-label="Иллюстрации из игрового руководства"
-              >
+              <section className={s.articleSection} aria-label="Иллюстрации">
                 {pictures.map((picture) => (
                   <figure className={a.figure} key={picture.src}>
                     <img
                       src={picture.src}
                       width={picture.width}
                       height={picture.height}
-                      alt={picture.caption}
+                      alt={imageAlt(picture.caption)}
                       loading="lazy"
                       decoding="async"
                     />
-                    <figcaption>{picture.caption}</figcaption>
                   </figure>
                 ))}
               </section>
@@ -165,35 +167,6 @@ export function SystemsArticlePage({
                   <span>Историческое состояние →</span>
                 </Link>
               ))}
-            </section>
-            <section className={s.articleSection} id="sources">
-              <details className={s.sources}>
-                <summary>Проверенные источники и ограничения</summary>
-                <p>
-                  Снимок исходников <code>{sourceCommit.slice(0, 7)}</code>.
-                  Совпадение всего баланса с публичным ZIP 1.2 не заявляется.
-                </p>
-                {article.notes.map((note, i) => (
-                  <p key={i}>{note}</p>
-                ))}
-                {"registryIds" in entry && (
-                  <p>
-                    Registry ID:{" "}
-                    {entry.registryIds.length
-                      ? entry.registryIds.join(", ")
-                      : "Составной набор или ванильная запись справочника, не отдельный ModItems ID."}
-                  </p>
-                )}
-                <ul>
-                  {article.evidence.map((ev) => (
-                    <li key={ev.path}>
-                      <ContentLink href={sourceUrl(ev.path, verifiedSource)!}>
-                        {ev.path.split("/").at(-1)}
-                      </ContentLink>
-                    </li>
-                  ))}
-                </ul>
-              </details>
             </section>
             <BackLink to={`/projects/maniac/wiki/${section}`}>
               Вернуться в каталог

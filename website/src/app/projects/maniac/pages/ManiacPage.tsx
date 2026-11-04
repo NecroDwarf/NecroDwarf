@@ -27,7 +27,7 @@ export function ManiacPage() {
   return (
     <div className={`${theme.page} ${s.page}`}>
       <div className={s.hero}>
-        <ProjectIntro project={intro}>
+        <ProjectIntro project={intro} showArtCaption={false}>
           <div className={s.actions}>
             <DownloadActions />
             {published.length > 0 && (

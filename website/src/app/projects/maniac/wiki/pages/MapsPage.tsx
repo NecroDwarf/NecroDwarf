@@ -2,10 +2,8 @@ import { CatalogHeader } from "../ui/CatalogControls";
 import { Link } from "react-router";
 import { mapCatalog } from "../data/maps";
 import voting from "../data/map-voting.json";
-import { sourceUrl, verifiedSource, sourceCommit } from "../data/snapshots";
 import { publishedEntityRoutes } from "../data/publication";
-import { ContentLink } from "../../../../shared/ui/ContentLink";
-import { WikiLayout, DataNote } from "./WikiLayout";
+import { WikiLayout } from "./WikiLayout";
 import { MapFacts } from "./MapFacts";
 import { StatText } from "../ui/StatText";
 import { mapCardImages } from "./map-card-images";
@@ -28,7 +26,6 @@ export function MapsPage() {
           Карт в каталоге: {mapCatalog.length}. Тайные маршруты, тесные коридоры
           и открытые линии обзора — изучите место следующей встречи.
         </CatalogHeader>
-        <DataNote />
         <div className={m.grid}>
           {mapCatalog.map((map) => {
             const image = mapCardImages[map.slug as keyof typeof mapCardImages];
@@ -66,9 +63,6 @@ export function MapsPage() {
             );
           })}
         </div>
-        <p className={m.previewNote}>
-          Изображения — игровые превью из меню мода, а не точные планы уровней.
-        </p>
         <section className={s.section} id="map-voting">
           <div className={s.sectionHeading}>
             <div>
@@ -91,24 +85,6 @@ export function MapsPage() {
               Подготовка и начало матча →
             </Link>
           </p>
-          <details className={s.sources}>
-            <summary>Источники выбора карты</summary>
-            <p>
-              Снимок <code>{sourceCommit.slice(0, 7)}</code>.
-            </p>
-            {voting.notes.map((note) => (
-              <p key={note}>{note}</p>
-            ))}
-            <ul>
-              {voting.evidence.map((ev) => (
-                <li key={ev.path}>
-                  <ContentLink href={sourceUrl(ev.path, verifiedSource)!}>
-                    {ev.path.split("/").at(-1)}
-                  </ContentLink>
-                </li>
-              ))}
-            </ul>
-          </details>
         </section>
       </div>
     </WikiLayout>

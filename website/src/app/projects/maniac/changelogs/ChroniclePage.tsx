@@ -92,10 +92,6 @@ export function ChroniclePage({
             </ContentLink>
           </aside>
           <div className={s.article} id="release-content">
-            <p className={s.historyNote}>
-              Историческая запись версии {version}. Значения и формулировки
-              сохранены на момент обновления.
-            </p>
             {content.sections.map((section, i) => (
               <section
                 className={s.section}

@@ -34,7 +34,7 @@ export function CharacterModelViewer({ model }: { model?: CharacterModel }) {
           </Suspense>
         ) : (
           <div className={s.placeholder}>
-            <p>Оригинальная модель · {model.label}</p>
+            <p>3D-модель · {model.label}</p>
             <button type="button" onClick={() => setActive(true)}>
               Загрузить 3D-модель
             </button>

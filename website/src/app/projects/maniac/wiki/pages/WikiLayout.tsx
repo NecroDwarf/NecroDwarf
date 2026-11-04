@@ -85,11 +85,3 @@ export function WikiLayout({
     </div>
   );
 }
-export function DataNote() {
-  return (
-    <p className={s.dataNote}>
-      Сведения проверены по исходникам игры. Они могут отличаться от скачиваемой
-      сборки Flower Cleaning 1.2; исторические значения сохранены в хрониках.
-    </p>
-  );
-}

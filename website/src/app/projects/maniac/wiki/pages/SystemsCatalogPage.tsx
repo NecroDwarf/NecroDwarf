@@ -22,7 +22,7 @@ import {
 } from "../ui/CatalogControls";
 import { SystemIcon } from "../ui/SystemIcon";
 import { InlineStat } from "../ui/InlineStat";
-import { WikiLayout, DataNote } from "./WikiLayout";
+import { WikiLayout } from "./WikiLayout";
 import s from "./Wiki.module.css";
 import r from "./Reference.module.css";
 export function SystemsCatalogPage({ kind }: { kind: "item" | "mechanic" }) {
@@ -110,7 +110,7 @@ export function SystemsCatalogPage({ kind }: { kind: "item" | "mechanic" }) {
           }
         >
           {kind === "item"
-            ? `${entries.length} подтверждённых предметов и наборов: назначение, применение и связи с персонажами.`
+            ? `${entries.length} предметов и наборов: назначение, применение и связи с персонажами.`
             : `${entries.length} игровых систем: от начала матча и взлома до испытаний и особых ресурсов.`}
         </CatalogHeader>
         <div className={s.filters}>
@@ -159,7 +159,6 @@ export function SystemsCatalogPage({ kind }: { kind: "item" | "mechanic" }) {
             JavaScript.
           </p>
         </noscript>
-        <DataNote />
         {(query || category || owner || team !== "all") && (
           <button className={r.reset} onClick={reset}>
             Сбросить фильтры
