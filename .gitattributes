@@ -1,2 +1,4 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+# Pinned upstream documentation is verified byte-for-byte on every platform.
+website/src/app/projects/novellmaker/docs/source/*.md -text

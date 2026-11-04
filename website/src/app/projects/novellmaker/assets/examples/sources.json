@@ -1,0 +1,16 @@
+{
+  "repository": "https://github.com/doflare123/NovellMaker",
+  "commit": "5e885944ee36f5945a734c18c19c65c261402445",
+  "assets": [
+    {
+      "file": "traveller.png",
+      "path": "examples/author-interface/Assets/Images/traveller.png",
+      "sha256": "0ed2687a6c951959ebea1a11eb6808251fbcf5b7a3db20abf0c117b85236091e"
+    },
+    {
+      "file": "mechanic.png",
+      "path": "examples/character-animation/Assets/Images/1235f1b448684f1ca50d54a483b84b61.png",
+      "sha256": "1c652de36fb6b700e491913e1e7990545474b0579953552ff52526da3b01f10e"
+    }
+  ]
+}

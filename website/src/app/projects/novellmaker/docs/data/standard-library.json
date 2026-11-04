@@ -1,0 +1,6130 @@
+{
+  "title": "Ограниченная стандартная библиотека",
+  "headings": [
+    {
+      "title": "Ограниченная стандартная библиотека",
+      "id": "ограниченная-стандартная-библиотека",
+      "level": 1
+    },
+    {
+      "title": "Данные и недоступные возможности",
+      "id": "данные-и-недоступные-возможности",
+      "level": 3
+    },
+    { "title": "type", "id": "type", "level": 2 },
+    { "title": "tostring", "id": "tostring", "level": 2 },
+    { "title": "tonumber", "id": "tonumber", "level": 2 },
+    { "title": "pairs", "id": "pairs", "level": 2 },
+    { "title": "ipairs", "id": "ipairs", "level": 2 },
+    { "title": "math.abs", "id": "math-abs", "level": 2 },
+    { "title": "math.ceil", "id": "math-ceil", "level": 2 },
+    { "title": "math.floor", "id": "math-floor", "level": 2 },
+    { "title": "math.sqrt", "id": "math-sqrt", "level": 2 },
+    { "title": "math.sin", "id": "math-sin", "level": 2 },
+    { "title": "math.cos", "id": "math-cos", "level": 2 },
+    { "title": "math.tan", "id": "math-tan", "level": 2 },
+    { "title": "math.asin", "id": "math-asin", "level": 2 },
+    { "title": "math.acos", "id": "math-acos", "level": 2 },
+    { "title": "math.atan", "id": "math-atan", "level": 2 },
+    { "title": "math.exp", "id": "math-exp", "level": 2 },
+    { "title": "math.deg", "id": "math-deg", "level": 2 },
+    { "title": "math.rad", "id": "math-rad", "level": 2 },
+    { "title": "math.atan2", "id": "math-atan2", "level": 2 },
+    { "title": "math.pow", "id": "math-pow", "level": 2 },
+    { "title": "math.fmod", "id": "math-fmod", "level": 2 },
+    { "title": "math.log", "id": "math-log", "level": 2 },
+    { "title": "math.modf", "id": "math-modf", "level": 2 },
+    { "title": "math.min", "id": "math-min", "level": 2 },
+    { "title": "math.max", "id": "math-max", "level": 2 },
+    { "title": "string.len", "id": "string-len", "level": 2 },
+    { "title": "string.sub", "id": "string-sub", "level": 2 },
+    { "title": "string.lower", "id": "string-lower", "level": 2 },
+    { "title": "string.upper", "id": "string-upper", "level": 2 },
+    { "title": "string.reverse", "id": "string-reverse", "level": 2 },
+    { "title": "string.rep", "id": "string-rep", "level": 2 },
+    { "title": "string.find", "id": "string-find", "level": 2 },
+    { "title": "table.insert", "id": "table-insert", "level": 2 },
+    { "title": "table.remove", "id": "table-remove", "level": 2 },
+    { "title": "table.concat", "id": "table-concat", "level": 2 }
+  ],
+  "nodes": [
+    {
+      "tag": "h1",
+      "children": ["Ограниченная стандартная библиотека"],
+      "props": { "id": "ограниченная-стандартная-библиотека" }
+    },
+    {
+      "tag": "p",
+      "children": [
+        {
+          "tag": "a",
+          "children": ["Оглавление"],
+          "props": { "href": "/projects/novellmaker/docs/lua" }
+        },
+        " · ",
+        {
+          "tag": "a",
+          "children": ["Модель исполнения"],
+          "props": { "href": "/projects/novellmaker/docs/lua/execution-model" }
+        },
+        " · ",
+        {
+          "tag": "a",
+          "children": ["События"],
+          "props": { "href": "/projects/novellmaker/docs/lua/events" }
+        },
+        " · ",
+        {
+          "tag": "a",
+          "children": ["Квоты"],
+          "props": { "href": "/projects/novellmaker/docs/lua/limits" }
+        }
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Доступна ",
+        { "tag": "strong", "children": ["только"] },
+        " обработчикам ui и импортированным модулям, в том числе при загрузке исходника, on_load, on_event и восстанавливающем on_load. В сценарном game не установлена. Это собственный allowlist поверх ",
+        { "tag": "code", "children": ["CoreModules.None"] },
+        ", а не все библиотеки Lua 5.2/MoonSharp."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Общие правила ",
+        { "tag": "strong", "children": ["каждой"] },
+        " функции: ",
+        {
+          "tag": "a",
+          "children": ["локальная VM и восстановление"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["атомарность"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#batch"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["квоты"],
+          "props": { "href": "/projects/novellmaker/docs/lua/limits#standard" }
+        },
+        ". Стандартные функции выполняются немедленно, не ставят host-команды, сами ничего не сохраняют в слот/профиль. При превышении бюджета/неверном типе возникает ошибка Lua, весь игровой пакет обработчика не применяется; локальные мутации VM не являются сохранённым состоянием. На загрузку исходника и на каждый обработчик бюджет сбрасывается, но все импорты/модули текущего вызова делят его."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Строка на входе/выходе <=8192 единиц UTF-16, сумма строковых результатов <=32768. Все числа, проверяемые функцией, должны быть конечными. ",
+        { "tag": "code", "children": ["int32"] },
+        " — целое [-2147483648,2147483647]. Типы точные, implicit tonumber/tostring не делается. Число аргументов точное в пределах сигнатуры: ",
+        {
+          "tag": "strong",
+          "children": [
+            "отсутствие optional выбирает default, явный nil даёт ошибку"
+          ]
+        },
+        ", если запись не говорит иначе. Дополнительные аргументы не игнорируются. Стоимость native работы <=65536 единиц/вызов обработчика, включая модули; это отдельный предел от 20000 Lua-инструкций."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Табличные функции проверяют <=1024 ",
+        { "tag": "strong", "children": ["физических"] },
+        " записей, в том числе удалённые tombstones MoonSharp. Поэтому активно дописываемую/очищаемую таблицу лучше пересоздавать. Для списков дополнительно требуются все живые ключи 1..N без пропусков. Метатаблицы не допускаются. Сканирование расходует по единице на физическую запись, включая пропущенные nil; каждая функция ещё минимум 1 единицу. В отличие от этого преобразование в Value пропускает tombstones."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        "В примерах с ui.set_text заранее назначьте refs.label обычному Text собственного холста. Остальные примеры библиотеки не требуют ресурсов."
+      ]
+    },
+    {
+      "tag": "h3",
+      "children": ["Данные и недоступные возможности"],
+      "props": { "id": "данные-и-недоступные-возможности" }
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "code", "children": ["math.pi"] },
+        " — единственная числовая константа math, около 3.141592653589793; не функция. Строковый синтаксис ",
+        { "tag": "code", "children": ["s:sub(...)"] },
+        " не следует считать подключённым стандартным string metatable: вызывайте ",
+        { "tag": "code", "children": ["string.sub(s,...)"] },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Отсутствуют глобальные ",
+        { "tag": "code", "children": ["_G"] },
+        ", ",
+        { "tag": "code", "children": ["_VERSION"] },
+        ", ",
+        { "tag": "code", "children": ["assert"] },
+        ", ",
+        { "tag": "code", "children": ["error"] },
+        ", ",
+        { "tag": "code", "children": ["pcall"] },
+        ", ",
+        { "tag": "code", "children": ["xpcall"] },
+        ", ",
+        { "tag": "code", "children": ["print"] },
+        ", ",
+        { "tag": "code", "children": ["next"] },
+        ", ",
+        { "tag": "code", "children": ["select"] },
+        ", ",
+        { "tag": "code", "children": ["unpack"] },
+        ", ",
+        { "tag": "code", "children": ["rawequal"] },
+        ", ",
+        { "tag": "code", "children": ["rawget"] },
+        ", ",
+        { "tag": "code", "children": ["rawset"] },
+        ", ",
+        { "tag": "code", "children": ["getmetatable"] },
+        ", ",
+        { "tag": "code", "children": ["setmetatable"] },
+        ", ",
+        { "tag": "code", "children": ["load"] },
+        ", ",
+        { "tag": "code", "children": ["loadstring"] },
+        ", ",
+        { "tag": "code", "children": ["loadfile"] },
+        ", ",
+        { "tag": "code", "children": ["dofile"] },
+        ", ",
+        { "tag": "code", "children": ["require"] },
+        ", ",
+        { "tag": "code", "children": ["collectgarbage"] },
+        "; таблицы ",
+        { "tag": "code", "children": ["io"] },
+        ", ",
+        { "tag": "code", "children": ["os"] },
+        ", ",
+        { "tag": "code", "children": ["debug"] },
+        ", ",
+        { "tag": "code", "children": ["package"] },
+        ", ",
+        { "tag": "code", "children": ["coroutine"] },
+        ", ",
+        { "tag": "code", "children": ["bit32"] },
+        ", ",
+        { "tag": "code", "children": ["utf8"] },
+        ", ",
+        { "tag": "code", "children": ["clr"] },
+        ", ",
+        { "tag": "code", "children": ["luanet"] },
+        " не установлены. Нет файлового require, CLR reflection, произвольной сети, системных часов, создания coroutine/yield или динамической загрузки кода. В math нет random/randomseed/huge (используйте ui.random); в string нет byte/char/format/dump/gsub/match/gmatch/patterns; в table нет sort/pack/unpack. Всё не перечисленное в алфавитном указателе не обещано. Язык по-прежнему позволяет операторы, циклы, таблицы, Lua-функции/замыкания, generic for; это не дополнительные зарегистрированные API-функции."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [{ "tag": "span", "children": [], "props": { "id": "type" } }]
+    },
+    { "tag": "h2", "children": ["type"], "props": { "id": "type-1" } },
+    { "tag": "p", "children": ["Узнать тип Lua-значения."] },
+    {
+      "tag": "pre",
+      "text": "type(value) -> string",
+      "language": "lua",
+      "children": [
+        {
+          "tag": "span",
+          "children": ["type"],
+          "props": { "className": "hljs-built_in" }
+        },
+        "(value) -> ",
+        {
+          "tag": "span",
+          "children": ["string"],
+          "props": { "className": "hljs-built_in" }
+        }
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Доступность:"] },
+        " ui при загрузке исходника, on_load/on_event, модуль, мини-игра; restore допустим. В game отсутствует."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Аргументы и ошибки:"] },
+        " Ровно один аргумент, любой, в том числе явный nil; отсутствие — ошибка."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Возврат:"] },
+        " nil/boolean/number/string/table/function/userdata как строка. ui.null — userdata. Lua- и callback-функции обе function."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Эффект и ограничения:"] },
+        " Немедленно; длина результата расходует строковый бюджет. Общие ",
+        {
+          "tag": "a",
+          "children": ["квоты"],
+          "props": { "href": "/projects/novellmaker/docs/lua/limits" }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["атомарность"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#batch"
+          }
+        },
+        " и ",
+        {
+          "tag": "a",
+          "children": ["lifecycle/сохранение"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        " применяются, если здесь не указано исключение."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Пример"] },
+        " (предусловия refs/ресурсов приведены в начале страницы; это фрагмент соответствующего обработчика, если не показан полный return):"
+      ]
+    },
+    {
+      "tag": "pre",
+      "text": "local t = type(ui.null) -- \"userdata\"",
+      "language": "lua",
+      "children": [
+        {
+          "tag": "span",
+          "children": ["local"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " t = ",
+        {
+          "tag": "span",
+          "children": ["type"],
+          "props": { "className": "hljs-built_in" }
+        },
+        "(ui.null) ",
+        {
+          "tag": "span",
+          "children": ["-- \"userdata\""],
+          "props": { "className": "hljs-comment" }
+        }
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Связи:"] },
+        " ",
+        {
+          "tag": "a",
+          "children": ["tostring"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/standard-library#tostring"
+          }
+        },
+        ", ",
+        { "tag": "code", "children": ["ui.null"] },
+        ". ",
+        {
+          "tag": "a",
+          "children": ["Регистрация и аргументы"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Scripting/LuaStandardLibrary.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["тесты"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Screens/LuaStandardLibraryTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "span", "children": [], "props": { "id": "tostring" } }
+      ]
+    },
+    { "tag": "h2", "children": ["tostring"], "props": { "id": "tostring-1" } },
+    { "tag": "p", "children": ["Преобразовать скаляр в текст."] },
+    {
+      "tag": "pre",
+      "text": "tostring(value) -> string",
+      "language": "lua",
+      "children": [
+        {
+          "tag": "span",
+          "children": ["tostring"],
+          "props": { "className": "hljs-built_in" }
+        },
+        "(value) -> ",
+        {
+          "tag": "span",
+          "children": ["string"],
+          "props": { "className": "hljs-built_in" }
+        }
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Доступность:"] },
+        " ui при загрузке исходника, on_load/on_event, модуль, мини-игра; restore допустим. В game отсутствует."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Аргументы и ошибки:"] },
+        " Ровно один nil/boolean/конечное number/string <=8192. Таблицы, функции, ui.null запрещены; метаметоды не вызываются."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Возврат:"] },
+        " \"nil\", \"true\", \"false\", число в invariant формате G либо исходная строка."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Эффект и ограничения:"] },
+        " Немедленно; размер результата входит в квоты текста и работы. Общие ",
+        {
+          "tag": "a",
+          "children": ["квоты"],
+          "props": { "href": "/projects/novellmaker/docs/lua/limits" }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["атомарность"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#batch"
+          }
+        },
+        " и ",
+        {
+          "tag": "a",
+          "children": ["lifecycle/сохранение"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        " применяются, если здесь не указано исключение."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Пример"] },
+        " (предусловия refs/ресурсов приведены в начале страницы; это фрагмент соответствующего обработчика, если не показан полный return):"
+      ]
+    },
+    {
+      "tag": "pre",
+      "text": "ui.set_text(refs.label, tostring(12.5))",
+      "language": "lua",
+      "children": [
+        "ui.set_text(refs.label, ",
+        {
+          "tag": "span",
+          "children": ["tostring"],
+          "props": { "className": "hljs-built_in" }
+        },
+        "(",
+        {
+          "tag": "span",
+          "children": ["12.5"],
+          "props": { "className": "hljs-number" }
+        },
+        "))"
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Связи:"] },
+        " ",
+        {
+          "tag": "a",
+          "children": ["type"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/standard-library#type"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["tonumber"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/standard-library#tonumber"
+          }
+        },
+        ". ",
+        {
+          "tag": "a",
+          "children": ["Регистрация и аргументы"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Scripting/LuaStandardLibrary.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["тесты"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Screens/LuaStandardLibraryTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "span", "children": [], "props": { "id": "tonumber" } }
+      ]
+    },
+    { "tag": "h2", "children": ["tonumber"], "props": { "id": "tonumber-1" } },
+    { "tag": "p", "children": ["Прочитать десятичное число из строки."] },
+    {
+      "tag": "pre",
+      "text": "tonumber(value) -> number | nil",
+      "language": "lua",
+      "children": [
+        {
+          "tag": "span",
+          "children": ["tonumber"],
+          "props": { "className": "hljs-built_in" }
+        },
+        "(value) -> number | ",
+        {
+          "tag": "span",
+          "children": ["nil"],
+          "props": { "className": "hljs-literal" }
+        }
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Доступность:"] },
+        " ui при загрузке исходника, on_load/on_event, модуль, мини-игра; restore допустим. В game отсутствует."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Аргументы и ошибки:"] },
+        " Ровно один аргумент. Число должно быть конечным; строка <=8192, формат invariant NumberStyles.Float (пробелы, знак, десятичная точка, экспонента). Второго основания нет."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Возврат:"] },
+        " Число либо nil при неподходящем типе/неразбираемой строке/строковом NaN или Infinity. Числовые NaN/Infinity — ошибка."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Эффект и ограничения:"] },
+        " Немедленно; дополнительно length строки единиц работы, даже при неуспехе. Общие ",
+        {
+          "tag": "a",
+          "children": ["квоты"],
+          "props": { "href": "/projects/novellmaker/docs/lua/limits" }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["атомарность"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#batch"
+          }
+        },
+        " и ",
+        {
+          "tag": "a",
+          "children": ["lifecycle/сохранение"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        " применяются, если здесь не указано исключение."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Пример"] },
+        " (предусловия refs/ресурсов приведены в начале страницы; это фрагмент соответствующего обработчика, если не показан полный return):"
+      ]
+    },
+    {
+      "tag": "pre",
+      "text": "local n = tonumber(\" 1.25e2 \") -- 125",
+      "language": "lua",
+      "children": [
+        {
+          "tag": "span",
+          "children": ["local"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " n = ",
+        {
+          "tag": "span",
+          "children": ["tonumber"],
+          "props": { "className": "hljs-built_in" }
+        },
+        "(",
+        {
+          "tag": "span",
+          "children": ["\" 1.25e2 \""],
+          "props": { "className": "hljs-string" }
+        },
+        ") ",
+        {
+          "tag": "span",
+          "children": ["-- 125"],
+          "props": { "className": "hljs-comment" }
+        }
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Связи:"] },
+        " ",
+        {
+          "tag": "a",
+          "children": ["tostring"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/standard-library#tostring"
+          }
+        },
+        ". ",
+        {
+          "tag": "a",
+          "children": ["Регистрация и аргументы"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Scripting/LuaStandardLibrary.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["тесты"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Screens/LuaStandardLibraryTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "span", "children": [], "props": { "id": "pairs" } }
+      ]
+    },
+    { "tag": "h2", "children": ["pairs"], "props": { "id": "pairs-1" } },
+    { "tag": "p", "children": ["Перебирать снимок пар таблицы."] },
+    {
+      "tag": "pre",
+      "text": "pairs(value) -> iterator",
+      "language": "lua",
+      "children": [
+        {
+          "tag": "span",
+          "children": ["pairs"],
+          "props": { "className": "hljs-built_in" }
+        },
+        "(value) -> iterator"
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Доступность:"] },
+        " ui при загрузке исходника, on_load/on_event, модуль, мини-игра; restore допустим. В game отсутствует."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Аргументы и ошибки:"] },
+        " Ровно одна таблица без метатаблицы, <=1024 физических записей (включая удалённые tombstones). nil — ошибка."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Возврат:"] },
+        " Одна callback-функция: iterator() -> key,value либо nil в конце. Это не стандартная тройка iterator,state,key; generic for работает. Порядок не обещан."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Эффект и ограничения:"] },
+        " Копирует пары на момент вызова; последующие замены значений исходной таблицы не видны. Вложенные таблицы остаются ссылочными Lua-значениями. Стоимость: 1 + физические записи; каждый iterator(), даже после конца, ещё 1. Общие ",
+        {
+          "tag": "a",
+          "children": ["квоты"],
+          "props": { "href": "/projects/novellmaker/docs/lua/limits" }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["атомарность"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#batch"
+          }
+        },
+        " и ",
+        {
+          "tag": "a",
+          "children": ["lifecycle/сохранение"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        " применяются, если здесь не указано исключение."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Пример"] },
+        " (предусловия refs/ресурсов приведены в начале страницы; это фрагмент соответствующего обработчика, если не показан полный return):"
+      ]
+    },
+    {
+      "tag": "pre",
+      "text": "local total = 0\nfor k,v in pairs({a=2,b=3}) do total=total+v end -- 5",
+      "language": "lua",
+      "children": [
+        {
+          "tag": "span",
+          "children": ["local"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " total = ",
+        {
+          "tag": "span",
+          "children": ["0"],
+          "props": { "className": "hljs-number" }
+        },
+        "\n",
+        {
+          "tag": "span",
+          "children": ["for"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " k,v ",
+        {
+          "tag": "span",
+          "children": ["in"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " ",
+        {
+          "tag": "span",
+          "children": ["pairs"],
+          "props": { "className": "hljs-built_in" }
+        },
+        "({a=",
+        {
+          "tag": "span",
+          "children": ["2"],
+          "props": { "className": "hljs-number" }
+        },
+        ",b=",
+        {
+          "tag": "span",
+          "children": ["3"],
+          "props": { "className": "hljs-number" }
+        },
+        "}) ",
+        {
+          "tag": "span",
+          "children": ["do"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " total=total+v ",
+        {
+          "tag": "span",
+          "children": ["end"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " ",
+        {
+          "tag": "span",
+          "children": ["-- 5"],
+          "props": { "className": "hljs-comment" }
+        }
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Связи:"] },
+        " ",
+        {
+          "tag": "a",
+          "children": ["ipairs"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/standard-library#ipairs"
+          }
+        },
+        ". ",
+        {
+          "tag": "a",
+          "children": ["Регистрация и аргументы"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Scripting/LuaStandardLibrary.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["тесты"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Screens/LuaStandardLibraryTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "span", "children": [], "props": { "id": "ipairs" } }
+      ]
+    },
+    { "tag": "h2", "children": ["ipairs"], "props": { "id": "ipairs-1" } },
+    { "tag": "p", "children": ["Перебирать снимок плотного списка."] },
+    {
+      "tag": "pre",
+      "text": "ipairs(value) -> iterator",
+      "language": "lua",
+      "children": [
+        {
+          "tag": "span",
+          "children": ["ipairs"],
+          "props": { "className": "hljs-built_in" }
+        },
+        "(value) -> iterator"
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Доступность:"] },
+        " ui при загрузке исходника, on_load/on_event, модуль, мини-игра; restore допустим. В game отсутствует."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Аргументы и ошибки:"] },
+        " Ровно одна таблица без метатаблицы с ключами 1..N без пропусков и посторонних ключей, <=1024 физических записей."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Возврат:"] },
+        " Одна функция iterator() -> index,value или nil. Пропуски отвергаются, а не завершают обход на первом nil."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Эффект и ограничения:"] },
+        " Снимок значений на момент вызова; стоимость как pairs. Итератор живёт в VM, не сериализуется. Общие ",
+        {
+          "tag": "a",
+          "children": ["квоты"],
+          "props": { "href": "/projects/novellmaker/docs/lua/limits" }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["атомарность"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#batch"
+          }
+        },
+        " и ",
+        {
+          "tag": "a",
+          "children": ["lifecycle/сохранение"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        " применяются, если здесь не указано исключение."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Пример"] },
+        " (предусловия refs/ресурсов приведены в начале страницы; это фрагмент соответствующего обработчика, если не показан полный return):"
+      ]
+    },
+    {
+      "tag": "pre",
+      "text": "for i,v in ipairs({\"a\",\"b\"}) do ui.log(\"info\", v) end",
+      "language": "lua",
+      "children": [
+        {
+          "tag": "span",
+          "children": ["for"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " i,v ",
+        {
+          "tag": "span",
+          "children": ["in"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " ",
+        {
+          "tag": "span",
+          "children": ["ipairs"],
+          "props": { "className": "hljs-built_in" }
+        },
+        "({",
+        {
+          "tag": "span",
+          "children": ["\"a\""],
+          "props": { "className": "hljs-string" }
+        },
+        ",",
+        {
+          "tag": "span",
+          "children": ["\"b\""],
+          "props": { "className": "hljs-string" }
+        },
+        "}) ",
+        {
+          "tag": "span",
+          "children": ["do"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " ui.",
+        {
+          "tag": "span",
+          "children": ["log"],
+          "props": { "className": "hljs-built_in" }
+        },
+        "(",
+        {
+          "tag": "span",
+          "children": ["\"info\""],
+          "props": { "className": "hljs-string" }
+        },
+        ", v) ",
+        {
+          "tag": "span",
+          "children": ["end"],
+          "props": { "className": "hljs-keyword" }
+        }
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Связи:"] },
+        " ",
+        {
+          "tag": "a",
+          "children": ["pairs"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/standard-library#pairs"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["table.insert"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/standard-library#table-insert"
+          }
+        },
+        ". ",
+        {
+          "tag": "a",
+          "children": ["Регистрация и аргументы"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Scripting/LuaStandardLibrary.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["тесты"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Screens/LuaStandardLibraryTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "span", "children": [], "props": { "id": "math-abs" } }
+      ]
+    },
+    { "tag": "h2", "children": ["math.abs"], "props": { "id": "mathabs" } },
+    { "tag": "p", "children": ["Модуль числа."] },
+    {
+      "tag": "pre",
+      "text": "math.abs(x) -> number",
+      "language": "lua",
+      "children": [
+        {
+          "tag": "span",
+          "children": ["math"],
+          "props": { "className": "hljs-built_in" }
+        },
+        ".",
+        {
+          "tag": "span",
+          "children": ["abs"],
+          "props": { "className": "hljs-built_in" }
+        },
+        "(x) -> number"
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Доступность:"] },
+        " ui при загрузке исходника, on_load/on_event, модуль, мини-игра; restore допустим. В game отсутствует."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Аргументы и ошибки:"] },
+        " Ровно одно конечное number; строки/nil запрещены. Результат должен оставаться конечным."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Возврат:"] },
+        " Конечное number. Недопустимая область или переполнение .NET Math → ошибка Lua вместо NaN/Infinity."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Эффект и ограничения:"] },
+        " Немедленно; 1 единица общего бюджета работы. Нет команды/host-эффекта. Общие ",
+        {
+          "tag": "a",
+          "children": ["квоты"],
+          "props": { "href": "/projects/novellmaker/docs/lua/limits" }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["атомарность"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#batch"
+          }
+        },
+        " и ",
+        {
+          "tag": "a",
+          "children": ["lifecycle/сохранение"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        " применяются, если здесь не указано исключение."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Пример"] },
+        " (предусловия refs/ресурсов приведены в начале страницы; это фрагмент соответствующего обработчика, если не показан полный return):"
+      ]
+    },
+    {
+      "tag": "pre",
+      "text": "local n = math.abs(-3) -- 3",
+      "language": "lua",
+      "children": [
+        {
+          "tag": "span",
+          "children": ["local"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " n = ",
+        {
+          "tag": "span",
+          "children": ["math"],
+          "props": { "className": "hljs-built_in" }
+        },
+        ".",
+        {
+          "tag": "span",
+          "children": ["abs"],
+          "props": { "className": "hljs-built_in" }
+        },
+        "(",
+        {
+          "tag": "span",
+          "children": ["-3"],
+          "props": { "className": "hljs-number" }
+        },
+        ") ",
+        {
+          "tag": "span",
+          "children": ["-- 3"],
+          "props": { "className": "hljs-comment" }
+        }
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Связи:"] },
+        " ",
+        { "tag": "code", "children": ["math.pi"] },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["math.atan2"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/standard-library#math-atan2"
+          }
+        },
+        ". ",
+        {
+          "tag": "a",
+          "children": ["Регистрация и аргументы"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Scripting/LuaStandardLibrary.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["тесты"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Screens/LuaStandardLibraryTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "span", "children": [], "props": { "id": "math-ceil" } }
+      ]
+    },
+    { "tag": "h2", "children": ["math.ceil"], "props": { "id": "mathceil" } },
+    { "tag": "p", "children": ["Округление вверх."] },
+    {
+      "tag": "pre",
+      "text": "math.ceil(x) -> number",
+      "language": "lua",
+      "children": [
+        {
+          "tag": "span",
+          "children": ["math"],
+          "props": { "className": "hljs-built_in" }
+        },
+        ".",
+        {
+          "tag": "span",
+          "children": ["ceil"],
+          "props": { "className": "hljs-built_in" }
+        },
+        "(x) -> number"
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Доступность:"] },
+        " ui при загрузке исходника, on_load/on_event, модуль, мини-игра; restore допустим. В game отсутствует."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Аргументы и ошибки:"] },
+        " Ровно одно конечное number; строки/nil запрещены. Результат должен оставаться конечным."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Возврат:"] },
+        " Конечное number. Недопустимая область или переполнение .NET Math → ошибка Lua вместо NaN/Infinity."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Эффект и ограничения:"] },
+        " Немедленно; 1 единица общего бюджета работы. Нет команды/host-эффекта. Общие ",
+        {
+          "tag": "a",
+          "children": ["квоты"],
+          "props": { "href": "/projects/novellmaker/docs/lua/limits" }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["атомарность"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#batch"
+          }
+        },
+        " и ",
+        {
+          "tag": "a",
+          "children": ["lifecycle/сохранение"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        " применяются, если здесь не указано исключение."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Пример"] },
+        " (предусловия refs/ресурсов приведены в начале страницы; это фрагмент соответствующего обработчика, если не показан полный return):"
+      ]
+    },
+    {
+      "tag": "pre",
+      "text": "local n = math.ceil(1.2) -- 2",
+      "language": "lua",
+      "children": [
+        {
+          "tag": "span",
+          "children": ["local"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " n = ",
+        {
+          "tag": "span",
+          "children": ["math"],
+          "props": { "className": "hljs-built_in" }
+        },
+        ".",
+        {
+          "tag": "span",
+          "children": ["ceil"],
+          "props": { "className": "hljs-built_in" }
+        },
+        "(",
+        {
+          "tag": "span",
+          "children": ["1.2"],
+          "props": { "className": "hljs-number" }
+        },
+        ") ",
+        {
+          "tag": "span",
+          "children": ["-- 2"],
+          "props": { "className": "hljs-comment" }
+        }
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Связи:"] },
+        " ",
+        { "tag": "code", "children": ["math.pi"] },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["math.atan2"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/standard-library#math-atan2"
+          }
+        },
+        ". ",
+        {
+          "tag": "a",
+          "children": ["Регистрация и аргументы"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Scripting/LuaStandardLibrary.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["тесты"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Screens/LuaStandardLibraryTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "span", "children": [], "props": { "id": "math-floor" } }
+      ]
+    },
+    { "tag": "h2", "children": ["math.floor"], "props": { "id": "mathfloor" } },
+    { "tag": "p", "children": ["Округление вниз."] },
+    {
+      "tag": "pre",
+      "text": "math.floor(x) -> number",
+      "language": "lua",
+      "children": [
+        {
+          "tag": "span",
+          "children": ["math"],
+          "props": { "className": "hljs-built_in" }
+        },
+        ".",
+        {
+          "tag": "span",
+          "children": ["floor"],
+          "props": { "className": "hljs-built_in" }
+        },
+        "(x) -> number"
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Доступность:"] },
+        " ui при загрузке исходника, on_load/on_event, модуль, мини-игра; restore допустим. В game отсутствует."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Аргументы и ошибки:"] },
+        " Ровно одно конечное number; строки/nil запрещены. Результат должен оставаться конечным."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Возврат:"] },
+        " Конечное number. Недопустимая область или переполнение .NET Math → ошибка Lua вместо NaN/Infinity."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Эффект и ограничения:"] },
+        " Немедленно; 1 единица общего бюджета работы. Нет команды/host-эффекта. Общие ",
+        {
+          "tag": "a",
+          "children": ["квоты"],
+          "props": { "href": "/projects/novellmaker/docs/lua/limits" }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["атомарность"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#batch"
+          }
+        },
+        " и ",
+        {
+          "tag": "a",
+          "children": ["lifecycle/сохранение"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        " применяются, если здесь не указано исключение."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Пример"] },
+        " (предусловия refs/ресурсов приведены в начале страницы; это фрагмент соответствующего обработчика, если не показан полный return):"
+      ]
+    },
+    {
+      "tag": "pre",
+      "text": "local n = math.floor(-1.2) -- -2",
+      "language": "lua",
+      "children": [
+        {
+          "tag": "span",
+          "children": ["local"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " n = ",
+        {
+          "tag": "span",
+          "children": ["math"],
+          "props": { "className": "hljs-built_in" }
+        },
+        ".",
+        {
+          "tag": "span",
+          "children": ["floor"],
+          "props": { "className": "hljs-built_in" }
+        },
+        "(",
+        {
+          "tag": "span",
+          "children": ["-1.2"],
+          "props": { "className": "hljs-number" }
+        },
+        ") ",
+        {
+          "tag": "span",
+          "children": ["-- -2"],
+          "props": { "className": "hljs-comment" }
+        }
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Связи:"] },
+        " ",
+        { "tag": "code", "children": ["math.pi"] },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["math.atan2"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/standard-library#math-atan2"
+          }
+        },
+        ". ",
+        {
+          "tag": "a",
+          "children": ["Регистрация и аргументы"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Scripting/LuaStandardLibrary.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["тесты"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Screens/LuaStandardLibraryTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "span", "children": [], "props": { "id": "math-sqrt" } }
+      ]
+    },
+    { "tag": "h2", "children": ["math.sqrt"], "props": { "id": "mathsqrt" } },
+    { "tag": "p", "children": ["Квадратный корень."] },
+    {
+      "tag": "pre",
+      "text": "math.sqrt(x) -> number",
+      "language": "lua",
+      "children": [
+        {
+          "tag": "span",
+          "children": ["math"],
+          "props": { "className": "hljs-built_in" }
+        },
+        ".",
+        {
+          "tag": "span",
+          "children": ["sqrt"],
+          "props": { "className": "hljs-built_in" }
+        },
+        "(x) -> number"
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Доступность:"] },
+        " ui при загрузке исходника, on_load/on_event, модуль, мини-игра; restore допустим. В game отсутствует."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Аргументы и ошибки:"] },
+        " Ровно одно конечное number; строки/nil запрещены. x>=0."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Возврат:"] },
+        " Конечное number. Недопустимая область или переполнение .NET Math → ошибка Lua вместо NaN/Infinity."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Эффект и ограничения:"] },
+        " Немедленно; 1 единица общего бюджета работы. Нет команды/host-эффекта. Общие ",
+        {
+          "tag": "a",
+          "children": ["квоты"],
+          "props": { "href": "/projects/novellmaker/docs/lua/limits" }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["атомарность"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#batch"
+          }
+        },
+        " и ",
+        {
+          "tag": "a",
+          "children": ["lifecycle/сохранение"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        " применяются, если здесь не указано исключение."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Пример"] },
+        " (предусловия refs/ресурсов приведены в начале страницы; это фрагмент соответствующего обработчика, если не показан полный return):"
+      ]
+    },
+    {
+      "tag": "pre",
+      "text": "local n = math.sqrt(9) -- 3",
+      "language": "lua",
+      "children": [
+        {
+          "tag": "span",
+          "children": ["local"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " n = ",
+        {
+          "tag": "span",
+          "children": ["math"],
+          "props": { "className": "hljs-built_in" }
+        },
+        ".",
+        {
+          "tag": "span",
+          "children": ["sqrt"],
+          "props": { "className": "hljs-built_in" }
+        },
+        "(",
+        {
+          "tag": "span",
+          "children": ["9"],
+          "props": { "className": "hljs-number" }
+        },
+        ") ",
+        {
+          "tag": "span",
+          "children": ["-- 3"],
+          "props": { "className": "hljs-comment" }
+        }
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Связи:"] },
+        " ",
+        { "tag": "code", "children": ["math.pi"] },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["math.atan2"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/standard-library#math-atan2"
+          }
+        },
+        ". ",
+        {
+          "tag": "a",
+          "children": ["Регистрация и аргументы"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Scripting/LuaStandardLibrary.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["тесты"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Screens/LuaStandardLibraryTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "span", "children": [], "props": { "id": "math-sin" } }
+      ]
+    },
+    { "tag": "h2", "children": ["math.sin"], "props": { "id": "mathsin" } },
+    { "tag": "p", "children": ["Синус угла в радианах."] },
+    {
+      "tag": "pre",
+      "text": "math.sin(x) -> number",
+      "language": "lua",
+      "children": [
+        {
+          "tag": "span",
+          "children": ["math"],
+          "props": { "className": "hljs-built_in" }
+        },
+        ".",
+        {
+          "tag": "span",
+          "children": ["sin"],
+          "props": { "className": "hljs-built_in" }
+        },
+        "(x) -> number"
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Доступность:"] },
+        " ui при загрузке исходника, on_load/on_event, модуль, мини-игра; restore допустим. В game отсутствует."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Аргументы и ошибки:"] },
+        " Ровно одно конечное number; строки/nil запрещены. Результат должен оставаться конечным."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Возврат:"] },
+        " Конечное number. Недопустимая область или переполнение .NET Math → ошибка Lua вместо NaN/Infinity."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Эффект и ограничения:"] },
+        " Немедленно; 1 единица общего бюджета работы. Нет команды/host-эффекта. Общие ",
+        {
+          "tag": "a",
+          "children": ["квоты"],
+          "props": { "href": "/projects/novellmaker/docs/lua/limits" }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["атомарность"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#batch"
+          }
+        },
+        " и ",
+        {
+          "tag": "a",
+          "children": ["lifecycle/сохранение"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        " применяются, если здесь не указано исключение."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Пример"] },
+        " (предусловия refs/ресурсов приведены в начале страницы; это фрагмент соответствующего обработчика, если не показан полный return):"
+      ]
+    },
+    {
+      "tag": "pre",
+      "text": "local n = math.sin(0) -- 0",
+      "language": "lua",
+      "children": [
+        {
+          "tag": "span",
+          "children": ["local"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " n = ",
+        {
+          "tag": "span",
+          "children": ["math"],
+          "props": { "className": "hljs-built_in" }
+        },
+        ".",
+        {
+          "tag": "span",
+          "children": ["sin"],
+          "props": { "className": "hljs-built_in" }
+        },
+        "(",
+        {
+          "tag": "span",
+          "children": ["0"],
+          "props": { "className": "hljs-number" }
+        },
+        ") ",
+        {
+          "tag": "span",
+          "children": ["-- 0"],
+          "props": { "className": "hljs-comment" }
+        }
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Связи:"] },
+        " ",
+        { "tag": "code", "children": ["math.pi"] },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["math.atan2"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/standard-library#math-atan2"
+          }
+        },
+        ". ",
+        {
+          "tag": "a",
+          "children": ["Регистрация и аргументы"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Scripting/LuaStandardLibrary.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["тесты"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Screens/LuaStandardLibraryTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "span", "children": [], "props": { "id": "math-cos" } }
+      ]
+    },
+    { "tag": "h2", "children": ["math.cos"], "props": { "id": "mathcos" } },
+    { "tag": "p", "children": ["Косинус угла в радианах."] },
+    {
+      "tag": "pre",
+      "text": "math.cos(x) -> number",
+      "language": "lua",
+      "children": [
+        {
+          "tag": "span",
+          "children": ["math"],
+          "props": { "className": "hljs-built_in" }
+        },
+        ".",
+        {
+          "tag": "span",
+          "children": ["cos"],
+          "props": { "className": "hljs-built_in" }
+        },
+        "(x) -> number"
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Доступность:"] },
+        " ui при загрузке исходника, on_load/on_event, модуль, мини-игра; restore допустим. В game отсутствует."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Аргументы и ошибки:"] },
+        " Ровно одно конечное number; строки/nil запрещены. Результат должен оставаться конечным."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Возврат:"] },
+        " Конечное number. Недопустимая область или переполнение .NET Math → ошибка Lua вместо NaN/Infinity."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Эффект и ограничения:"] },
+        " Немедленно; 1 единица общего бюджета работы. Нет команды/host-эффекта. Общие ",
+        {
+          "tag": "a",
+          "children": ["квоты"],
+          "props": { "href": "/projects/novellmaker/docs/lua/limits" }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["атомарность"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#batch"
+          }
+        },
+        " и ",
+        {
+          "tag": "a",
+          "children": ["lifecycle/сохранение"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        " применяются, если здесь не указано исключение."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Пример"] },
+        " (предусловия refs/ресурсов приведены в начале страницы; это фрагмент соответствующего обработчика, если не показан полный return):"
+      ]
+    },
+    {
+      "tag": "pre",
+      "text": "local n = math.cos(0) -- 1",
+      "language": "lua",
+      "children": [
+        {
+          "tag": "span",
+          "children": ["local"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " n = ",
+        {
+          "tag": "span",
+          "children": ["math"],
+          "props": { "className": "hljs-built_in" }
+        },
+        ".",
+        {
+          "tag": "span",
+          "children": ["cos"],
+          "props": { "className": "hljs-built_in" }
+        },
+        "(",
+        {
+          "tag": "span",
+          "children": ["0"],
+          "props": { "className": "hljs-number" }
+        },
+        ") ",
+        {
+          "tag": "span",
+          "children": ["-- 1"],
+          "props": { "className": "hljs-comment" }
+        }
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Связи:"] },
+        " ",
+        { "tag": "code", "children": ["math.pi"] },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["math.atan2"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/standard-library#math-atan2"
+          }
+        },
+        ". ",
+        {
+          "tag": "a",
+          "children": ["Регистрация и аргументы"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Scripting/LuaStandardLibrary.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["тесты"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Screens/LuaStandardLibraryTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "span", "children": [], "props": { "id": "math-tan" } }
+      ]
+    },
+    { "tag": "h2", "children": ["math.tan"], "props": { "id": "mathtan" } },
+    { "tag": "p", "children": ["Тангенс угла в радианах."] },
+    {
+      "tag": "pre",
+      "text": "math.tan(x) -> number",
+      "language": "lua",
+      "children": [
+        {
+          "tag": "span",
+          "children": ["math"],
+          "props": { "className": "hljs-built_in" }
+        },
+        ".",
+        {
+          "tag": "span",
+          "children": ["tan"],
+          "props": { "className": "hljs-built_in" }
+        },
+        "(x) -> number"
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Доступность:"] },
+        " ui при загрузке исходника, on_load/on_event, модуль, мини-игра; restore допустим. В game отсутствует."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Аргументы и ошибки:"] },
+        " Ровно одно конечное number; строки/nil запрещены. Результат должен оставаться конечным."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Возврат:"] },
+        " Конечное number. Недопустимая область или переполнение .NET Math → ошибка Lua вместо NaN/Infinity."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Эффект и ограничения:"] },
+        " Немедленно; 1 единица общего бюджета работы. Нет команды/host-эффекта. Общие ",
+        {
+          "tag": "a",
+          "children": ["квоты"],
+          "props": { "href": "/projects/novellmaker/docs/lua/limits" }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["атомарность"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#batch"
+          }
+        },
+        " и ",
+        {
+          "tag": "a",
+          "children": ["lifecycle/сохранение"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        " применяются, если здесь не указано исключение."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Пример"] },
+        " (предусловия refs/ресурсов приведены в начале страницы; это фрагмент соответствующего обработчика, если не показан полный return):"
+      ]
+    },
+    {
+      "tag": "pre",
+      "text": "local n = math.tan(0) -- 0",
+      "language": "lua",
+      "children": [
+        {
+          "tag": "span",
+          "children": ["local"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " n = ",
+        {
+          "tag": "span",
+          "children": ["math"],
+          "props": { "className": "hljs-built_in" }
+        },
+        ".",
+        {
+          "tag": "span",
+          "children": ["tan"],
+          "props": { "className": "hljs-built_in" }
+        },
+        "(",
+        {
+          "tag": "span",
+          "children": ["0"],
+          "props": { "className": "hljs-number" }
+        },
+        ") ",
+        {
+          "tag": "span",
+          "children": ["-- 0"],
+          "props": { "className": "hljs-comment" }
+        }
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Связи:"] },
+        " ",
+        { "tag": "code", "children": ["math.pi"] },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["math.atan2"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/standard-library#math-atan2"
+          }
+        },
+        ". ",
+        {
+          "tag": "a",
+          "children": ["Регистрация и аргументы"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Scripting/LuaStandardLibrary.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["тесты"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Screens/LuaStandardLibraryTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "span", "children": [], "props": { "id": "math-asin" } }
+      ]
+    },
+    { "tag": "h2", "children": ["math.asin"], "props": { "id": "mathasin" } },
+    { "tag": "p", "children": ["Арксинус в радианах."] },
+    {
+      "tag": "pre",
+      "text": "math.asin(x) -> number",
+      "language": "lua",
+      "children": [
+        {
+          "tag": "span",
+          "children": ["math"],
+          "props": { "className": "hljs-built_in" }
+        },
+        ".",
+        {
+          "tag": "span",
+          "children": ["asin"],
+          "props": { "className": "hljs-built_in" }
+        },
+        "(x) -> number"
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Доступность:"] },
+        " ui при загрузке исходника, on_load/on_event, модуль, мини-игра; restore допустим. В game отсутствует."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Аргументы и ошибки:"] },
+        " Ровно одно конечное number; строки/nil запрещены. -1<=x<=1."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Возврат:"] },
+        " Конечное number. Недопустимая область или переполнение .NET Math → ошибка Lua вместо NaN/Infinity."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Эффект и ограничения:"] },
+        " Немедленно; 1 единица общего бюджета работы. Нет команды/host-эффекта. Общие ",
+        {
+          "tag": "a",
+          "children": ["квоты"],
+          "props": { "href": "/projects/novellmaker/docs/lua/limits" }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["атомарность"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#batch"
+          }
+        },
+        " и ",
+        {
+          "tag": "a",
+          "children": ["lifecycle/сохранение"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        " применяются, если здесь не указано исключение."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Пример"] },
+        " (предусловия refs/ресурсов приведены в начале страницы; это фрагмент соответствующего обработчика, если не показан полный return):"
+      ]
+    },
+    {
+      "tag": "pre",
+      "text": "local n = math.asin(0) -- 0",
+      "language": "lua",
+      "children": [
+        {
+          "tag": "span",
+          "children": ["local"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " n = ",
+        {
+          "tag": "span",
+          "children": ["math"],
+          "props": { "className": "hljs-built_in" }
+        },
+        ".",
+        {
+          "tag": "span",
+          "children": ["asin"],
+          "props": { "className": "hljs-built_in" }
+        },
+        "(",
+        {
+          "tag": "span",
+          "children": ["0"],
+          "props": { "className": "hljs-number" }
+        },
+        ") ",
+        {
+          "tag": "span",
+          "children": ["-- 0"],
+          "props": { "className": "hljs-comment" }
+        }
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Связи:"] },
+        " ",
+        { "tag": "code", "children": ["math.pi"] },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["math.atan2"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/standard-library#math-atan2"
+          }
+        },
+        ". ",
+        {
+          "tag": "a",
+          "children": ["Регистрация и аргументы"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Scripting/LuaStandardLibrary.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["тесты"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Screens/LuaStandardLibraryTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "span", "children": [], "props": { "id": "math-acos" } }
+      ]
+    },
+    { "tag": "h2", "children": ["math.acos"], "props": { "id": "mathacos" } },
+    { "tag": "p", "children": ["Арккосинус в радианах."] },
+    {
+      "tag": "pre",
+      "text": "math.acos(x) -> number",
+      "language": "lua",
+      "children": [
+        {
+          "tag": "span",
+          "children": ["math"],
+          "props": { "className": "hljs-built_in" }
+        },
+        ".",
+        {
+          "tag": "span",
+          "children": ["acos"],
+          "props": { "className": "hljs-built_in" }
+        },
+        "(x) -> number"
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Доступность:"] },
+        " ui при загрузке исходника, on_load/on_event, модуль, мини-игра; restore допустим. В game отсутствует."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Аргументы и ошибки:"] },
+        " Ровно одно конечное number; строки/nil запрещены. -1<=x<=1."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Возврат:"] },
+        " Конечное number. Недопустимая область или переполнение .NET Math → ошибка Lua вместо NaN/Infinity."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Эффект и ограничения:"] },
+        " Немедленно; 1 единица общего бюджета работы. Нет команды/host-эффекта. Общие ",
+        {
+          "tag": "a",
+          "children": ["квоты"],
+          "props": { "href": "/projects/novellmaker/docs/lua/limits" }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["атомарность"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#batch"
+          }
+        },
+        " и ",
+        {
+          "tag": "a",
+          "children": ["lifecycle/сохранение"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        " применяются, если здесь не указано исключение."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Пример"] },
+        " (предусловия refs/ресурсов приведены в начале страницы; это фрагмент соответствующего обработчика, если не показан полный return):"
+      ]
+    },
+    {
+      "tag": "pre",
+      "text": "local n = math.acos(1) -- 0",
+      "language": "lua",
+      "children": [
+        {
+          "tag": "span",
+          "children": ["local"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " n = ",
+        {
+          "tag": "span",
+          "children": ["math"],
+          "props": { "className": "hljs-built_in" }
+        },
+        ".",
+        {
+          "tag": "span",
+          "children": ["acos"],
+          "props": { "className": "hljs-built_in" }
+        },
+        "(",
+        {
+          "tag": "span",
+          "children": ["1"],
+          "props": { "className": "hljs-number" }
+        },
+        ") ",
+        {
+          "tag": "span",
+          "children": ["-- 0"],
+          "props": { "className": "hljs-comment" }
+        }
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Связи:"] },
+        " ",
+        { "tag": "code", "children": ["math.pi"] },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["math.atan2"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/standard-library#math-atan2"
+          }
+        },
+        ". ",
+        {
+          "tag": "a",
+          "children": ["Регистрация и аргументы"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Scripting/LuaStandardLibrary.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["тесты"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Screens/LuaStandardLibraryTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "span", "children": [], "props": { "id": "math-atan" } }
+      ]
+    },
+    { "tag": "h2", "children": ["math.atan"], "props": { "id": "mathatan" } },
+    { "tag": "p", "children": ["Арктангенс в радианах."] },
+    {
+      "tag": "pre",
+      "text": "math.atan(x) -> number",
+      "language": "lua",
+      "children": [
+        {
+          "tag": "span",
+          "children": ["math"],
+          "props": { "className": "hljs-built_in" }
+        },
+        ".",
+        {
+          "tag": "span",
+          "children": ["atan"],
+          "props": { "className": "hljs-built_in" }
+        },
+        "(x) -> number"
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Доступность:"] },
+        " ui при загрузке исходника, on_load/on_event, модуль, мини-игра; restore допустим. В game отсутствует."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Аргументы и ошибки:"] },
+        " Ровно одно конечное number; строки/nil запрещены. Результат должен оставаться конечным."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Возврат:"] },
+        " Конечное number. Недопустимая область или переполнение .NET Math → ошибка Lua вместо NaN/Infinity."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Эффект и ограничения:"] },
+        " Немедленно; 1 единица общего бюджета работы. Нет команды/host-эффекта. Общие ",
+        {
+          "tag": "a",
+          "children": ["квоты"],
+          "props": { "href": "/projects/novellmaker/docs/lua/limits" }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["атомарность"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#batch"
+          }
+        },
+        " и ",
+        {
+          "tag": "a",
+          "children": ["lifecycle/сохранение"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        " применяются, если здесь не указано исключение."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Пример"] },
+        " (предусловия refs/ресурсов приведены в начале страницы; это фрагмент соответствующего обработчика, если не показан полный return):"
+      ]
+    },
+    {
+      "tag": "pre",
+      "text": "local n = math.atan(0) -- 0",
+      "language": "lua",
+      "children": [
+        {
+          "tag": "span",
+          "children": ["local"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " n = ",
+        {
+          "tag": "span",
+          "children": ["math"],
+          "props": { "className": "hljs-built_in" }
+        },
+        ".",
+        {
+          "tag": "span",
+          "children": ["atan"],
+          "props": { "className": "hljs-built_in" }
+        },
+        "(",
+        {
+          "tag": "span",
+          "children": ["0"],
+          "props": { "className": "hljs-number" }
+        },
+        ") ",
+        {
+          "tag": "span",
+          "children": ["-- 0"],
+          "props": { "className": "hljs-comment" }
+        }
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Связи:"] },
+        " ",
+        { "tag": "code", "children": ["math.pi"] },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["math.atan2"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/standard-library#math-atan2"
+          }
+        },
+        ". ",
+        {
+          "tag": "a",
+          "children": ["Регистрация и аргументы"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Scripting/LuaStandardLibrary.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["тесты"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Screens/LuaStandardLibraryTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "span", "children": [], "props": { "id": "math-exp" } }
+      ]
+    },
+    { "tag": "h2", "children": ["math.exp"], "props": { "id": "mathexp" } },
+    { "tag": "p", "children": ["Экспонента e^x."] },
+    {
+      "tag": "pre",
+      "text": "math.exp(x) -> number",
+      "language": "lua",
+      "children": [
+        {
+          "tag": "span",
+          "children": ["math"],
+          "props": { "className": "hljs-built_in" }
+        },
+        ".",
+        {
+          "tag": "span",
+          "children": ["exp"],
+          "props": { "className": "hljs-built_in" }
+        },
+        "(x) -> number"
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Доступность:"] },
+        " ui при загрузке исходника, on_load/on_event, модуль, мини-игра; restore допустим. В game отсутствует."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Аргументы и ошибки:"] },
+        " Ровно одно конечное number; строки/nil запрещены. Результат должен оставаться конечным."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Возврат:"] },
+        " Конечное number. Недопустимая область или переполнение .NET Math → ошибка Lua вместо NaN/Infinity."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Эффект и ограничения:"] },
+        " Немедленно; 1 единица общего бюджета работы. Нет команды/host-эффекта. Общие ",
+        {
+          "tag": "a",
+          "children": ["квоты"],
+          "props": { "href": "/projects/novellmaker/docs/lua/limits" }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["атомарность"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#batch"
+          }
+        },
+        " и ",
+        {
+          "tag": "a",
+          "children": ["lifecycle/сохранение"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        " применяются, если здесь не указано исключение."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Пример"] },
+        " (предусловия refs/ресурсов приведены в начале страницы; это фрагмент соответствующего обработчика, если не показан полный return):"
+      ]
+    },
+    {
+      "tag": "pre",
+      "text": "local n = math.exp(0) -- 1",
+      "language": "lua",
+      "children": [
+        {
+          "tag": "span",
+          "children": ["local"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " n = ",
+        {
+          "tag": "span",
+          "children": ["math"],
+          "props": { "className": "hljs-built_in" }
+        },
+        ".",
+        {
+          "tag": "span",
+          "children": ["exp"],
+          "props": { "className": "hljs-built_in" }
+        },
+        "(",
+        {
+          "tag": "span",
+          "children": ["0"],
+          "props": { "className": "hljs-number" }
+        },
+        ") ",
+        {
+          "tag": "span",
+          "children": ["-- 1"],
+          "props": { "className": "hljs-comment" }
+        }
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Связи:"] },
+        " ",
+        { "tag": "code", "children": ["math.pi"] },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["math.atan2"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/standard-library#math-atan2"
+          }
+        },
+        ". ",
+        {
+          "tag": "a",
+          "children": ["Регистрация и аргументы"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Scripting/LuaStandardLibrary.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["тесты"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Screens/LuaStandardLibraryTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "span", "children": [], "props": { "id": "math-deg" } }
+      ]
+    },
+    { "tag": "h2", "children": ["math.deg"], "props": { "id": "mathdeg" } },
+    { "tag": "p", "children": ["Перевод радиан в градусы."] },
+    {
+      "tag": "pre",
+      "text": "math.deg(x) -> number",
+      "language": "lua",
+      "children": [
+        {
+          "tag": "span",
+          "children": ["math"],
+          "props": { "className": "hljs-built_in" }
+        },
+        ".",
+        {
+          "tag": "span",
+          "children": ["deg"],
+          "props": { "className": "hljs-built_in" }
+        },
+        "(x) -> number"
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Доступность:"] },
+        " ui при загрузке исходника, on_load/on_event, модуль, мини-игра; restore допустим. В game отсутствует."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Аргументы и ошибки:"] },
+        " Ровно одно конечное number; строки/nil запрещены. Результат должен оставаться конечным."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Возврат:"] },
+        " Конечное number. Недопустимая область или переполнение .NET Math → ошибка Lua вместо NaN/Infinity."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Эффект и ограничения:"] },
+        " Немедленно; 1 единица общего бюджета работы. Нет команды/host-эффекта. Общие ",
+        {
+          "tag": "a",
+          "children": ["квоты"],
+          "props": { "href": "/projects/novellmaker/docs/lua/limits" }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["атомарность"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#batch"
+          }
+        },
+        " и ",
+        {
+          "tag": "a",
+          "children": ["lifecycle/сохранение"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        " применяются, если здесь не указано исключение."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Пример"] },
+        " (предусловия refs/ресурсов приведены в начале страницы; это фрагмент соответствующего обработчика, если не показан полный return):"
+      ]
+    },
+    {
+      "tag": "pre",
+      "text": "local n = math.deg(math.pi) -- 180",
+      "language": "lua",
+      "children": [
+        {
+          "tag": "span",
+          "children": ["local"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " n = ",
+        {
+          "tag": "span",
+          "children": ["math"],
+          "props": { "className": "hljs-built_in" }
+        },
+        ".",
+        {
+          "tag": "span",
+          "children": ["deg"],
+          "props": { "className": "hljs-built_in" }
+        },
+        "(",
+        {
+          "tag": "span",
+          "children": ["math"],
+          "props": { "className": "hljs-built_in" }
+        },
+        ".",
+        {
+          "tag": "span",
+          "children": ["pi"],
+          "props": { "className": "hljs-built_in" }
+        },
+        ") ",
+        {
+          "tag": "span",
+          "children": ["-- 180"],
+          "props": { "className": "hljs-comment" }
+        }
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Связи:"] },
+        " ",
+        { "tag": "code", "children": ["math.pi"] },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["math.atan2"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/standard-library#math-atan2"
+          }
+        },
+        ". ",
+        {
+          "tag": "a",
+          "children": ["Регистрация и аргументы"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Scripting/LuaStandardLibrary.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["тесты"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Screens/LuaStandardLibraryTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "span", "children": [], "props": { "id": "math-rad" } }
+      ]
+    },
+    { "tag": "h2", "children": ["math.rad"], "props": { "id": "mathrad" } },
+    { "tag": "p", "children": ["Перевод градусов в радианы."] },
+    {
+      "tag": "pre",
+      "text": "math.rad(x) -> number",
+      "language": "lua",
+      "children": [
+        {
+          "tag": "span",
+          "children": ["math"],
+          "props": { "className": "hljs-built_in" }
+        },
+        ".",
+        {
+          "tag": "span",
+          "children": ["rad"],
+          "props": { "className": "hljs-built_in" }
+        },
+        "(x) -> number"
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Доступность:"] },
+        " ui при загрузке исходника, on_load/on_event, модуль, мини-игра; restore допустим. В game отсутствует."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Аргументы и ошибки:"] },
+        " Ровно одно конечное number; строки/nil запрещены. Результат должен оставаться конечным."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Возврат:"] },
+        " Конечное number. Недопустимая область или переполнение .NET Math → ошибка Lua вместо NaN/Infinity."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Эффект и ограничения:"] },
+        " Немедленно; 1 единица общего бюджета работы. Нет команды/host-эффекта. Общие ",
+        {
+          "tag": "a",
+          "children": ["квоты"],
+          "props": { "href": "/projects/novellmaker/docs/lua/limits" }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["атомарность"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#batch"
+          }
+        },
+        " и ",
+        {
+          "tag": "a",
+          "children": ["lifecycle/сохранение"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        " применяются, если здесь не указано исключение."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Пример"] },
+        " (предусловия refs/ресурсов приведены в начале страницы; это фрагмент соответствующего обработчика, если не показан полный return):"
+      ]
+    },
+    {
+      "tag": "pre",
+      "text": "local n = math.rad(180) -- math.pi",
+      "language": "lua",
+      "children": [
+        {
+          "tag": "span",
+          "children": ["local"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " n = ",
+        {
+          "tag": "span",
+          "children": ["math"],
+          "props": { "className": "hljs-built_in" }
+        },
+        ".",
+        {
+          "tag": "span",
+          "children": ["rad"],
+          "props": { "className": "hljs-built_in" }
+        },
+        "(",
+        {
+          "tag": "span",
+          "children": ["180"],
+          "props": { "className": "hljs-number" }
+        },
+        ") ",
+        {
+          "tag": "span",
+          "children": ["-- math.pi"],
+          "props": { "className": "hljs-comment" }
+        }
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Связи:"] },
+        " ",
+        { "tag": "code", "children": ["math.pi"] },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["math.atan2"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/standard-library#math-atan2"
+          }
+        },
+        ". ",
+        {
+          "tag": "a",
+          "children": ["Регистрация и аргументы"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Scripting/LuaStandardLibrary.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["тесты"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Screens/LuaStandardLibraryTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "span", "children": [], "props": { "id": "math-atan2" } }
+      ]
+    },
+    { "tag": "h2", "children": ["math.atan2"], "props": { "id": "mathatan2" } },
+    {
+      "tag": "p",
+      "children": ["Арктангенс с учётом квадранта, результат в радианах."]
+    },
+    {
+      "tag": "pre",
+      "text": "math.atan2(y, x) -> number",
+      "language": "lua",
+      "children": [
+        {
+          "tag": "span",
+          "children": ["math"],
+          "props": { "className": "hljs-built_in" }
+        },
+        ".",
+        {
+          "tag": "span",
+          "children": ["atan2"],
+          "props": { "className": "hljs-built_in" }
+        },
+        "(y, x) -> number"
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Доступность:"] },
+        " ui при загрузке исходника, on_load/on_event, модуль, мини-игра; restore допустим. В game отсутствует."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Аргументы и ошибки:"] },
+        " Ровно два конечных числа y,x; (0,0) принимается .NET Math.Atan2."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Возврат:"] },
+        " Конечное number."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Эффект и ограничения:"] },
+        " Немедленно; 1 единица работы, без host-эффекта. Общие ",
+        {
+          "tag": "a",
+          "children": ["квоты"],
+          "props": { "href": "/projects/novellmaker/docs/lua/limits" }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["атомарность"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#batch"
+          }
+        },
+        " и ",
+        {
+          "tag": "a",
+          "children": ["lifecycle/сохранение"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        " применяются, если здесь не указано исключение."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Пример"] },
+        " (предусловия refs/ресурсов приведены в начале страницы; это фрагмент соответствующего обработчика, если не показан полный return):"
+      ]
+    },
+    {
+      "tag": "pre",
+      "text": "local n = math.atan2(0,1) -- 0",
+      "language": "lua",
+      "children": [
+        {
+          "tag": "span",
+          "children": ["local"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " n = ",
+        {
+          "tag": "span",
+          "children": ["math"],
+          "props": { "className": "hljs-built_in" }
+        },
+        ".",
+        {
+          "tag": "span",
+          "children": ["atan2"],
+          "props": { "className": "hljs-built_in" }
+        },
+        "(",
+        {
+          "tag": "span",
+          "children": ["0"],
+          "props": { "className": "hljs-number" }
+        },
+        ",",
+        {
+          "tag": "span",
+          "children": ["1"],
+          "props": { "className": "hljs-number" }
+        },
+        ") ",
+        {
+          "tag": "span",
+          "children": ["-- 0"],
+          "props": { "className": "hljs-comment" }
+        }
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Связи:"] },
+        " ",
+        {
+          "tag": "a",
+          "children": ["math.modf"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/standard-library#math-modf"
+          }
+        },
+        ". ",
+        {
+          "tag": "a",
+          "children": ["Регистрация и аргументы"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Scripting/LuaStandardLibrary.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["тесты"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Screens/LuaStandardLibraryTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "span", "children": [], "props": { "id": "math-pow" } }
+      ]
+    },
+    { "tag": "h2", "children": ["math.pow"], "props": { "id": "mathpow" } },
+    { "tag": "p", "children": ["Возведение x в степень y."] },
+    {
+      "tag": "pre",
+      "text": "math.pow(x, y) -> number",
+      "language": "lua",
+      "children": [
+        {
+          "tag": "span",
+          "children": ["math"],
+          "props": { "className": "hljs-built_in" }
+        },
+        ".",
+        {
+          "tag": "span",
+          "children": ["pow"],
+          "props": { "className": "hljs-built_in" }
+        },
+        "(x, y) -> number"
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Доступность:"] },
+        " ui при загрузке исходника, on_load/on_event, модуль, мини-игра; restore допустим. В game отсутствует."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Аргументы и ошибки:"] },
+        " Ровно два конечных числа. Недействительная вещественная степень и переполнение — ошибка."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Возврат:"] },
+        " Конечное number."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Эффект и ограничения:"] },
+        " Немедленно; 1 единица работы, без host-эффекта. Общие ",
+        {
+          "tag": "a",
+          "children": ["квоты"],
+          "props": { "href": "/projects/novellmaker/docs/lua/limits" }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["атомарность"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#batch"
+          }
+        },
+        " и ",
+        {
+          "tag": "a",
+          "children": ["lifecycle/сохранение"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        " применяются, если здесь не указано исключение."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Пример"] },
+        " (предусловия refs/ресурсов приведены в начале страницы; это фрагмент соответствующего обработчика, если не показан полный return):"
+      ]
+    },
+    {
+      "tag": "pre",
+      "text": "local n = math.pow(2,3) -- 8",
+      "language": "lua",
+      "children": [
+        {
+          "tag": "span",
+          "children": ["local"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " n = ",
+        {
+          "tag": "span",
+          "children": ["math"],
+          "props": { "className": "hljs-built_in" }
+        },
+        ".",
+        {
+          "tag": "span",
+          "children": ["pow"],
+          "props": { "className": "hljs-built_in" }
+        },
+        "(",
+        {
+          "tag": "span",
+          "children": ["2"],
+          "props": { "className": "hljs-number" }
+        },
+        ",",
+        {
+          "tag": "span",
+          "children": ["3"],
+          "props": { "className": "hljs-number" }
+        },
+        ") ",
+        {
+          "tag": "span",
+          "children": ["-- 8"],
+          "props": { "className": "hljs-comment" }
+        }
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Связи:"] },
+        " ",
+        {
+          "tag": "a",
+          "children": ["math.modf"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/standard-library#math-modf"
+          }
+        },
+        ". ",
+        {
+          "tag": "a",
+          "children": ["Регистрация и аргументы"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Scripting/LuaStandardLibrary.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["тесты"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Screens/LuaStandardLibraryTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "span", "children": [], "props": { "id": "math-fmod" } }
+      ]
+    },
+    { "tag": "h2", "children": ["math.fmod"], "props": { "id": "mathfmod" } },
+    { "tag": "p", "children": ["Остаток от деления со знаком делимого."] },
+    {
+      "tag": "pre",
+      "text": "math.fmod(x, y) -> number",
+      "language": "lua",
+      "children": [
+        {
+          "tag": "span",
+          "children": ["math"],
+          "props": { "className": "hljs-built_in" }
+        },
+        ".",
+        {
+          "tag": "span",
+          "children": ["fmod"],
+          "props": { "className": "hljs-built_in" }
+        },
+        "(x, y) -> number"
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Доступность:"] },
+        " ui при загрузке исходника, on_load/on_event, модуль, мини-игра; restore допустим. В game отсутствует."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Аргументы и ошибки:"] },
+        " Ровно два конечных числа; y=0 даёт ошибку конечности результата. В отличие от оператора Lua %, отрицательный x даёт отрицательный остаток."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Возврат:"] },
+        " Конечное number."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Эффект и ограничения:"] },
+        " Немедленно; 1 единица работы, без host-эффекта. Общие ",
+        {
+          "tag": "a",
+          "children": ["квоты"],
+          "props": { "href": "/projects/novellmaker/docs/lua/limits" }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["атомарность"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#batch"
+          }
+        },
+        " и ",
+        {
+          "tag": "a",
+          "children": ["lifecycle/сохранение"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        " применяются, если здесь не указано исключение."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Пример"] },
+        " (предусловия refs/ресурсов приведены в начале страницы; это фрагмент соответствующего обработчика, если не показан полный return):"
+      ]
+    },
+    {
+      "tag": "pre",
+      "text": "local n = math.fmod(-7,3) -- -1",
+      "language": "lua",
+      "children": [
+        {
+          "tag": "span",
+          "children": ["local"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " n = ",
+        {
+          "tag": "span",
+          "children": ["math"],
+          "props": { "className": "hljs-built_in" }
+        },
+        ".",
+        {
+          "tag": "span",
+          "children": ["fmod"],
+          "props": { "className": "hljs-built_in" }
+        },
+        "(",
+        {
+          "tag": "span",
+          "children": ["-7"],
+          "props": { "className": "hljs-number" }
+        },
+        ",",
+        {
+          "tag": "span",
+          "children": ["3"],
+          "props": { "className": "hljs-number" }
+        },
+        ") ",
+        {
+          "tag": "span",
+          "children": ["-- -1"],
+          "props": { "className": "hljs-comment" }
+        }
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Связи:"] },
+        " ",
+        {
+          "tag": "a",
+          "children": ["math.modf"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/standard-library#math-modf"
+          }
+        },
+        ". ",
+        {
+          "tag": "a",
+          "children": ["Регистрация и аргументы"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Scripting/LuaStandardLibrary.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["тесты"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Screens/LuaStandardLibraryTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "span", "children": [], "props": { "id": "math-log" } }
+      ]
+    },
+    { "tag": "h2", "children": ["math.log"], "props": { "id": "mathlog" } },
+    { "tag": "p", "children": ["Логарифм натуральный либо по основанию."] },
+    {
+      "tag": "pre",
+      "text": "math.log(x) -> number\nmath.log(x, base) -> number",
+      "language": "lua",
+      "children": [
+        {
+          "tag": "span",
+          "children": ["math"],
+          "props": { "className": "hljs-built_in" }
+        },
+        ".",
+        {
+          "tag": "span",
+          "children": ["log"],
+          "props": { "className": "hljs-built_in" }
+        },
+        "(x) -> number\n",
+        {
+          "tag": "span",
+          "children": ["math"],
+          "props": { "className": "hljs-built_in" }
+        },
+        ".",
+        {
+          "tag": "span",
+          "children": ["log"],
+          "props": { "className": "hljs-built_in" }
+        },
+        "(x, base) -> number"
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Доступность:"] },
+        " ui при загрузке исходника, on_load/on_event, модуль, мини-игра; restore допустим. В game отсутствует."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Аргументы и ошибки:"] },
+        " Ровно 1..2 конечных числа. По умолчанию e лишь при отсутствии base; явный nil — ошибка. x>0; основания/результаты проверяются фактической конечностью Math.Log, не отдельной Lua-таблицей диапазонов."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Возврат:"] },
+        " Конечное число; log(0), log(2,1), NaN/Infinity — ошибка."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Эффект и ограничения:"] },
+        " Немедленно; 1 единица работы. Общие ",
+        {
+          "tag": "a",
+          "children": ["квоты"],
+          "props": { "href": "/projects/novellmaker/docs/lua/limits" }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["атомарность"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#batch"
+          }
+        },
+        " и ",
+        {
+          "tag": "a",
+          "children": ["lifecycle/сохранение"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        " применяются, если здесь не указано исключение."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Пример"] },
+        " (предусловия refs/ресурсов приведены в начале страницы; это фрагмент соответствующего обработчика, если не показан полный return):"
+      ]
+    },
+    {
+      "tag": "pre",
+      "text": "local n = math.log(8,2) -- 3",
+      "language": "lua",
+      "children": [
+        {
+          "tag": "span",
+          "children": ["local"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " n = ",
+        {
+          "tag": "span",
+          "children": ["math"],
+          "props": { "className": "hljs-built_in" }
+        },
+        ".",
+        {
+          "tag": "span",
+          "children": ["log"],
+          "props": { "className": "hljs-built_in" }
+        },
+        "(",
+        {
+          "tag": "span",
+          "children": ["8"],
+          "props": { "className": "hljs-number" }
+        },
+        ",",
+        {
+          "tag": "span",
+          "children": ["2"],
+          "props": { "className": "hljs-number" }
+        },
+        ") ",
+        {
+          "tag": "span",
+          "children": ["-- 3"],
+          "props": { "className": "hljs-comment" }
+        }
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Связи:"] },
+        " ",
+        {
+          "tag": "a",
+          "children": ["math.exp"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/standard-library#math-exp"
+          }
+        },
+        ". ",
+        {
+          "tag": "a",
+          "children": ["Регистрация и аргументы"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Scripting/LuaStandardLibrary.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["тесты"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Screens/LuaStandardLibraryTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "span", "children": [], "props": { "id": "math-modf" } }
+      ]
+    },
+    { "tag": "h2", "children": ["math.modf"], "props": { "id": "mathmodf" } },
+    { "tag": "p", "children": ["Разделить число на целую и дробную части."] },
+    {
+      "tag": "pre",
+      "text": "math.modf(x) -> integerPart, fractionPart",
+      "language": "lua",
+      "children": [
+        {
+          "tag": "span",
+          "children": ["math"],
+          "props": { "className": "hljs-built_in" }
+        },
+        ".",
+        {
+          "tag": "span",
+          "children": ["modf"],
+          "props": { "className": "hljs-built_in" }
+        },
+        "(x) -> integerPart, fractionPart"
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Доступность:"] },
+        " ui при загрузке исходника, on_load/on_event, модуль, мини-игра; restore допустим. В game отсутствует."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Аргументы и ошибки:"] },
+        " Ровно одно конечное число; целая часть — усечение к нулю, не floor."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Возврат:"] },
+        " Два number; дробная часть сохраняет знак."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Эффект и ограничения:"] },
+        " Немедленно; 1 единица работы. integerPart по смыслу целое, но не ограничено int32. Общие ",
+        {
+          "tag": "a",
+          "children": ["квоты"],
+          "props": { "href": "/projects/novellmaker/docs/lua/limits" }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["атомарность"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#batch"
+          }
+        },
+        " и ",
+        {
+          "tag": "a",
+          "children": ["lifecycle/сохранение"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        " применяются, если здесь не указано исключение."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Пример"] },
+        " (предусловия refs/ресурсов приведены в начале страницы; это фрагмент соответствующего обработчика, если не показан полный return):"
+      ]
+    },
+    {
+      "tag": "pre",
+      "text": "local a,b = math.modf(-1.25) -- -1, -0.25",
+      "language": "lua",
+      "children": [
+        {
+          "tag": "span",
+          "children": ["local"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " a,b = ",
+        {
+          "tag": "span",
+          "children": ["math"],
+          "props": { "className": "hljs-built_in" }
+        },
+        ".",
+        {
+          "tag": "span",
+          "children": ["modf"],
+          "props": { "className": "hljs-built_in" }
+        },
+        "(",
+        {
+          "tag": "span",
+          "children": ["-1.25"],
+          "props": { "className": "hljs-number" }
+        },
+        ") ",
+        {
+          "tag": "span",
+          "children": ["-- -1, -0.25"],
+          "props": { "className": "hljs-comment" }
+        }
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Связи:"] },
+        " ",
+        {
+          "tag": "a",
+          "children": ["math.floor"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/standard-library#math-floor"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["math.fmod"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/standard-library#math-fmod"
+          }
+        },
+        ". ",
+        {
+          "tag": "a",
+          "children": ["Регистрация и аргументы"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Scripting/LuaStandardLibrary.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["тесты"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Screens/LuaStandardLibraryTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "span", "children": [], "props": { "id": "math-min" } }
+      ]
+    },
+    { "tag": "h2", "children": ["math.min"], "props": { "id": "mathmin" } },
+    { "tag": "p", "children": ["Минимум конечных чисел."] },
+    {
+      "tag": "pre",
+      "text": "math.min(x, ...) -> number",
+      "language": "lua",
+      "children": [
+        {
+          "tag": "span",
+          "children": ["math"],
+          "props": { "className": "hljs-built_in" }
+        },
+        ".",
+        {
+          "tag": "span",
+          "children": ["min"],
+          "props": { "className": "hljs-built_in" }
+        },
+        "(x, ...) -> number"
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Доступность:"] },
+        " ui при загрузке исходника, on_load/on_event, модуль, мини-игра; restore допустим. В game отсутствует."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Аргументы и ошибки:"] },
+        " Ровно 1..64 числовых аргумента; nil, строки, пустой вызов запрещены."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Возврат:"] },
+        " Одно конечное число."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Эффект и ограничения:"] },
+        " Немедленно; 1 + число аргументов единиц работы. Общие ",
+        {
+          "tag": "a",
+          "children": ["квоты"],
+          "props": { "href": "/projects/novellmaker/docs/lua/limits" }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["атомарность"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#batch"
+          }
+        },
+        " и ",
+        {
+          "tag": "a",
+          "children": ["lifecycle/сохранение"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        " применяются, если здесь не указано исключение."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Пример"] },
+        " (предусловия refs/ресурсов приведены в начале страницы; это фрагмент соответствующего обработчика, если не показан полный return):"
+      ]
+    },
+    {
+      "tag": "pre",
+      "text": "local n = math.min(4,-1,2) -- -1",
+      "language": "lua",
+      "children": [
+        {
+          "tag": "span",
+          "children": ["local"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " n = ",
+        {
+          "tag": "span",
+          "children": ["math"],
+          "props": { "className": "hljs-built_in" }
+        },
+        ".",
+        {
+          "tag": "span",
+          "children": ["min"],
+          "props": { "className": "hljs-built_in" }
+        },
+        "(",
+        {
+          "tag": "span",
+          "children": ["4"],
+          "props": { "className": "hljs-number" }
+        },
+        ",",
+        {
+          "tag": "span",
+          "children": ["-1"],
+          "props": { "className": "hljs-number" }
+        },
+        ",",
+        {
+          "tag": "span",
+          "children": ["2"],
+          "props": { "className": "hljs-number" }
+        },
+        ") ",
+        {
+          "tag": "span",
+          "children": ["-- -1"],
+          "props": { "className": "hljs-comment" }
+        }
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Связи:"] },
+        " ",
+        {
+          "tag": "a",
+          "children": ["math.abs"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/standard-library#math-abs"
+          }
+        },
+        ". ",
+        {
+          "tag": "a",
+          "children": ["Регистрация и аргументы"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Scripting/LuaStandardLibrary.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["тесты"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Screens/LuaStandardLibraryTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "span", "children": [], "props": { "id": "math-max" } }
+      ]
+    },
+    { "tag": "h2", "children": ["math.max"], "props": { "id": "mathmax" } },
+    { "tag": "p", "children": ["Максимум конечных чисел."] },
+    {
+      "tag": "pre",
+      "text": "math.max(x, ...) -> number",
+      "language": "lua",
+      "children": [
+        {
+          "tag": "span",
+          "children": ["math"],
+          "props": { "className": "hljs-built_in" }
+        },
+        ".",
+        {
+          "tag": "span",
+          "children": ["max"],
+          "props": { "className": "hljs-built_in" }
+        },
+        "(x, ...) -> number"
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Доступность:"] },
+        " ui при загрузке исходника, on_load/on_event, модуль, мини-игра; restore допустим. В game отсутствует."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Аргументы и ошибки:"] },
+        " Ровно 1..64 числовых аргумента; nil, строки, пустой вызов запрещены."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Возврат:"] },
+        " Одно конечное число."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Эффект и ограничения:"] },
+        " Немедленно; 1 + число аргументов единиц работы. Общие ",
+        {
+          "tag": "a",
+          "children": ["квоты"],
+          "props": { "href": "/projects/novellmaker/docs/lua/limits" }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["атомарность"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#batch"
+          }
+        },
+        " и ",
+        {
+          "tag": "a",
+          "children": ["lifecycle/сохранение"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        " применяются, если здесь не указано исключение."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Пример"] },
+        " (предусловия refs/ресурсов приведены в начале страницы; это фрагмент соответствующего обработчика, если не показан полный return):"
+      ]
+    },
+    {
+      "tag": "pre",
+      "text": "local n = math.max(4,-1,2) -- 4",
+      "language": "lua",
+      "children": [
+        {
+          "tag": "span",
+          "children": ["local"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " n = ",
+        {
+          "tag": "span",
+          "children": ["math"],
+          "props": { "className": "hljs-built_in" }
+        },
+        ".",
+        {
+          "tag": "span",
+          "children": ["max"],
+          "props": { "className": "hljs-built_in" }
+        },
+        "(",
+        {
+          "tag": "span",
+          "children": ["4"],
+          "props": { "className": "hljs-number" }
+        },
+        ",",
+        {
+          "tag": "span",
+          "children": ["-1"],
+          "props": { "className": "hljs-number" }
+        },
+        ",",
+        {
+          "tag": "span",
+          "children": ["2"],
+          "props": { "className": "hljs-number" }
+        },
+        ") ",
+        {
+          "tag": "span",
+          "children": ["-- 4"],
+          "props": { "className": "hljs-comment" }
+        }
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Связи:"] },
+        " ",
+        {
+          "tag": "a",
+          "children": ["math.abs"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/standard-library#math-abs"
+          }
+        },
+        ". ",
+        {
+          "tag": "a",
+          "children": ["Регистрация и аргументы"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Scripting/LuaStandardLibrary.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["тесты"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Screens/LuaStandardLibraryTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "span", "children": [], "props": { "id": "string-len" } }
+      ]
+    },
+    { "tag": "h2", "children": ["string.len"], "props": { "id": "stringlen" } },
+    { "tag": "p", "children": ["Длина строки в единицах UTF-16."] },
+    {
+      "tag": "pre",
+      "text": "string.len(text) -> integer",
+      "language": "lua",
+      "children": [
+        {
+          "tag": "span",
+          "children": ["string"],
+          "props": { "className": "hljs-built_in" }
+        },
+        ".",
+        {
+          "tag": "span",
+          "children": ["len"],
+          "props": { "className": "hljs-built_in" }
+        },
+        "(text) -> integer"
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Доступность:"] },
+        " ui при загрузке исходника, on_load/on_event, модуль, мини-игра; restore допустим. В game отсутствует."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Аргументы и ошибки:"] },
+        " Ровно одна точная строка <=8192; числа не приводятся."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Возврат:"] },
+        " Длина UTF-16, не UTF-8 байты, не графемы и не число Unicode scalar values."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Эффект и ограничения:"] },
+        " Немедленно; 1 единица работы; строковый результат не создаётся. Общие ",
+        {
+          "tag": "a",
+          "children": ["квоты"],
+          "props": { "href": "/projects/novellmaker/docs/lua/limits" }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["атомарность"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#batch"
+          }
+        },
+        " и ",
+        {
+          "tag": "a",
+          "children": ["lifecycle/сохранение"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        " применяются, если здесь не указано исключение."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Пример"] },
+        " (предусловия refs/ресурсов приведены в начале страницы; это фрагмент соответствующего обработчика, если не показан полный return):"
+      ]
+    },
+    {
+      "tag": "pre",
+      "text": "local n = string.len(\"абв\") -- 3",
+      "language": "lua",
+      "children": [
+        {
+          "tag": "span",
+          "children": ["local"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " n = ",
+        {
+          "tag": "span",
+          "children": ["string"],
+          "props": { "className": "hljs-built_in" }
+        },
+        ".",
+        {
+          "tag": "span",
+          "children": ["len"],
+          "props": { "className": "hljs-built_in" }
+        },
+        "(",
+        {
+          "tag": "span",
+          "children": ["\"абв\""],
+          "props": { "className": "hljs-string" }
+        },
+        ") ",
+        {
+          "tag": "span",
+          "children": ["-- 3"],
+          "props": { "className": "hljs-comment" }
+        }
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Связи:"] },
+        " ",
+        {
+          "tag": "a",
+          "children": ["string.sub"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/standard-library#string-sub"
+          }
+        },
+        ". ",
+        {
+          "tag": "a",
+          "children": ["Регистрация и аргументы"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Scripting/LuaStandardLibrary.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["тесты"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Screens/LuaStandardLibraryTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "span", "children": [], "props": { "id": "string-sub" } }
+      ]
+    },
+    { "tag": "h2", "children": ["string.sub"], "props": { "id": "stringsub" } },
+    {
+      "tag": "p",
+      "children": ["Выделить подстроку по включительным индексам."]
+    },
+    {
+      "tag": "pre",
+      "text": "string.sub(text, first) -> string\nstring.sub(text, first, last) -> string",
+      "language": "lua",
+      "children": [
+        {
+          "tag": "span",
+          "children": ["string"],
+          "props": { "className": "hljs-built_in" }
+        },
+        ".",
+        {
+          "tag": "span",
+          "children": ["sub"],
+          "props": { "className": "hljs-built_in" }
+        },
+        "(text, first) -> ",
+        {
+          "tag": "span",
+          "children": ["string"],
+          "props": { "className": "hljs-built_in" }
+        },
+        "\n",
+        {
+          "tag": "span",
+          "children": ["string"],
+          "props": { "className": "hljs-built_in" }
+        },
+        ".",
+        {
+          "tag": "span",
+          "children": ["sub"],
+          "props": { "className": "hljs-built_in" }
+        },
+        "(text, first, last) -> ",
+        {
+          "tag": "span",
+          "children": ["string"],
+          "props": { "className": "hljs-built_in" }
+        }
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Доступность:"] },
+        " ui при загрузке исходника, on_load/on_event, модуль, мини-игра; restore допустим. В game отсутствует."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Аргументы и ошибки:"] },
+        " text<=8192; first/last — int32. Индекс с 1; отрицательный от конца. first снизу ограничивается 1, last сверху длиной. last отсутствует → длина; явный nil — ошибка."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Возврат:"] },
+        " Строка; обратный/пустой диапазон → \"\"."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Эффект и ограничения:"] },
+        " Немедленно; 1 + длина результата единиц работы и длина результата в общий бюджет текста. Работает по UTF-16 и может разрезать суррогатную пару. Общие ",
+        {
+          "tag": "a",
+          "children": ["квоты"],
+          "props": { "href": "/projects/novellmaker/docs/lua/limits" }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["атомарность"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#batch"
+          }
+        },
+        " и ",
+        {
+          "tag": "a",
+          "children": ["lifecycle/сохранение"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        " применяются, если здесь не указано исключение."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Пример"] },
+        " (предусловия refs/ресурсов приведены в начале страницы; это фрагмент соответствующего обработчика, если не показан полный return):"
+      ]
+    },
+    {
+      "tag": "pre",
+      "text": "local s = string.sub(\"abcdef\",2,-2) -- \"bcde\"",
+      "language": "lua",
+      "children": [
+        {
+          "tag": "span",
+          "children": ["local"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " s = ",
+        {
+          "tag": "span",
+          "children": ["string"],
+          "props": { "className": "hljs-built_in" }
+        },
+        ".",
+        {
+          "tag": "span",
+          "children": ["sub"],
+          "props": { "className": "hljs-built_in" }
+        },
+        "(",
+        {
+          "tag": "span",
+          "children": ["\"abcdef\""],
+          "props": { "className": "hljs-string" }
+        },
+        ",",
+        {
+          "tag": "span",
+          "children": ["2"],
+          "props": { "className": "hljs-number" }
+        },
+        ",",
+        {
+          "tag": "span",
+          "children": ["-2"],
+          "props": { "className": "hljs-number" }
+        },
+        ") ",
+        {
+          "tag": "span",
+          "children": ["-- \"bcde\""],
+          "props": { "className": "hljs-comment" }
+        }
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Связи:"] },
+        " ",
+        {
+          "tag": "a",
+          "children": ["string.len"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/standard-library#string-len"
+          }
+        },
+        ". ",
+        {
+          "tag": "a",
+          "children": ["Регистрация и аргументы"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Scripting/LuaStandardLibrary.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["тесты"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Screens/LuaStandardLibraryTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "span", "children": [], "props": { "id": "string-lower" } }
+      ]
+    },
+    {
+      "tag": "h2",
+      "children": ["string.lower"],
+      "props": { "id": "stringlower" }
+    },
+    { "tag": "p", "children": ["Перевести регистр в нижний."] },
+    {
+      "tag": "pre",
+      "text": "string.lower(text) -> string",
+      "language": "lua",
+      "children": [
+        {
+          "tag": "span",
+          "children": ["string"],
+          "props": { "className": "hljs-built_in" }
+        },
+        ".",
+        {
+          "tag": "span",
+          "children": ["lower"],
+          "props": { "className": "hljs-built_in" }
+        },
+        "(text) -> ",
+        {
+          "tag": "span",
+          "children": ["string"],
+          "props": { "className": "hljs-built_in" }
+        }
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Доступность:"] },
+        " ui при загрузке исходника, on_load/on_event, модуль, мини-игра; restore допустим. В game отсутствует."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Аргументы и ошибки:"] },
+        " Ровно одна точная строка <=8192; nil — ошибка."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Возврат:"] },
+        " Новая строка той же длины; регистр invariant .NET, reverse не сохраняет целостность emoji/суррогатных пар."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Эффект и ограничения:"] },
+        " Немедленно; 1 + длина строки единиц работы и эта длина в текстовый бюджет. Общие ",
+        {
+          "tag": "a",
+          "children": ["квоты"],
+          "props": { "href": "/projects/novellmaker/docs/lua/limits" }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["атомарность"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#batch"
+          }
+        },
+        " и ",
+        {
+          "tag": "a",
+          "children": ["lifecycle/сохранение"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        " применяются, если здесь не указано исключение."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Пример"] },
+        " (предусловия refs/ресурсов приведены в начале страницы; это фрагмент соответствующего обработчика, если не показан полный return):"
+      ]
+    },
+    {
+      "tag": "pre",
+      "text": "local s = string.lower(\"ПРИВЕТ\")",
+      "language": "lua",
+      "children": [
+        {
+          "tag": "span",
+          "children": ["local"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " s = ",
+        {
+          "tag": "span",
+          "children": ["string"],
+          "props": { "className": "hljs-built_in" }
+        },
+        ".",
+        {
+          "tag": "span",
+          "children": ["lower"],
+          "props": { "className": "hljs-built_in" }
+        },
+        "(",
+        {
+          "tag": "span",
+          "children": ["\"ПРИВЕТ\""],
+          "props": { "className": "hljs-string" }
+        },
+        ")"
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Связи:"] },
+        " ",
+        {
+          "tag": "a",
+          "children": ["string.sub"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/standard-library#string-sub"
+          }
+        },
+        ". ",
+        {
+          "tag": "a",
+          "children": ["Регистрация и аргументы"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Scripting/LuaStandardLibrary.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["тесты"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Screens/LuaStandardLibraryTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "span", "children": [], "props": { "id": "string-upper" } }
+      ]
+    },
+    {
+      "tag": "h2",
+      "children": ["string.upper"],
+      "props": { "id": "stringupper" }
+    },
+    { "tag": "p", "children": ["Перевести регистр в верхний."] },
+    {
+      "tag": "pre",
+      "text": "string.upper(text) -> string",
+      "language": "lua",
+      "children": [
+        {
+          "tag": "span",
+          "children": ["string"],
+          "props": { "className": "hljs-built_in" }
+        },
+        ".",
+        {
+          "tag": "span",
+          "children": ["upper"],
+          "props": { "className": "hljs-built_in" }
+        },
+        "(text) -> ",
+        {
+          "tag": "span",
+          "children": ["string"],
+          "props": { "className": "hljs-built_in" }
+        }
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Доступность:"] },
+        " ui при загрузке исходника, on_load/on_event, модуль, мини-игра; restore допустим. В game отсутствует."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Аргументы и ошибки:"] },
+        " Ровно одна точная строка <=8192; nil — ошибка."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Возврат:"] },
+        " Новая строка той же длины; регистр invariant .NET, reverse не сохраняет целостность emoji/суррогатных пар."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Эффект и ограничения:"] },
+        " Немедленно; 1 + длина строки единиц работы и эта длина в текстовый бюджет. Общие ",
+        {
+          "tag": "a",
+          "children": ["квоты"],
+          "props": { "href": "/projects/novellmaker/docs/lua/limits" }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["атомарность"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#batch"
+          }
+        },
+        " и ",
+        {
+          "tag": "a",
+          "children": ["lifecycle/сохранение"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        " применяются, если здесь не указано исключение."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Пример"] },
+        " (предусловия refs/ресурсов приведены в начале страницы; это фрагмент соответствующего обработчика, если не показан полный return):"
+      ]
+    },
+    {
+      "tag": "pre",
+      "text": "local s = string.upper(\"привет\")",
+      "language": "lua",
+      "children": [
+        {
+          "tag": "span",
+          "children": ["local"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " s = ",
+        {
+          "tag": "span",
+          "children": ["string"],
+          "props": { "className": "hljs-built_in" }
+        },
+        ".",
+        {
+          "tag": "span",
+          "children": ["upper"],
+          "props": { "className": "hljs-built_in" }
+        },
+        "(",
+        {
+          "tag": "span",
+          "children": ["\"привет\""],
+          "props": { "className": "hljs-string" }
+        },
+        ")"
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Связи:"] },
+        " ",
+        {
+          "tag": "a",
+          "children": ["string.sub"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/standard-library#string-sub"
+          }
+        },
+        ". ",
+        {
+          "tag": "a",
+          "children": ["Регистрация и аргументы"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Scripting/LuaStandardLibrary.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["тесты"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Screens/LuaStandardLibraryTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "span", "children": [], "props": { "id": "string-reverse" } }
+      ]
+    },
+    {
+      "tag": "h2",
+      "children": ["string.reverse"],
+      "props": { "id": "stringreverse" }
+    },
+    { "tag": "p", "children": ["Развернуть порядок единиц UTF-16."] },
+    {
+      "tag": "pre",
+      "text": "string.reverse(text) -> string",
+      "language": "lua",
+      "children": [
+        {
+          "tag": "span",
+          "children": ["string"],
+          "props": { "className": "hljs-built_in" }
+        },
+        ".",
+        {
+          "tag": "span",
+          "children": ["reverse"],
+          "props": { "className": "hljs-built_in" }
+        },
+        "(text) -> ",
+        {
+          "tag": "span",
+          "children": ["string"],
+          "props": { "className": "hljs-built_in" }
+        }
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Доступность:"] },
+        " ui при загрузке исходника, on_load/on_event, модуль, мини-игра; restore допустим. В game отсутствует."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Аргументы и ошибки:"] },
+        " Ровно одна точная строка <=8192; nil — ошибка."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Возврат:"] },
+        " Новая строка той же длины; регистр invariant .NET, reverse не сохраняет целостность emoji/суррогатных пар."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Эффект и ограничения:"] },
+        " Немедленно; 1 + длина строки единиц работы и эта длина в текстовый бюджет. Общие ",
+        {
+          "tag": "a",
+          "children": ["квоты"],
+          "props": { "href": "/projects/novellmaker/docs/lua/limits" }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["атомарность"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#batch"
+          }
+        },
+        " и ",
+        {
+          "tag": "a",
+          "children": ["lifecycle/сохранение"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        " применяются, если здесь не указано исключение."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Пример"] },
+        " (предусловия refs/ресурсов приведены в начале страницы; это фрагмент соответствующего обработчика, если не показан полный return):"
+      ]
+    },
+    {
+      "tag": "pre",
+      "text": "local s = string.reverse(\"абв\")",
+      "language": "lua",
+      "children": [
+        {
+          "tag": "span",
+          "children": ["local"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " s = ",
+        {
+          "tag": "span",
+          "children": ["string"],
+          "props": { "className": "hljs-built_in" }
+        },
+        ".",
+        {
+          "tag": "span",
+          "children": ["reverse"],
+          "props": { "className": "hljs-built_in" }
+        },
+        "(",
+        {
+          "tag": "span",
+          "children": ["\"абв\""],
+          "props": { "className": "hljs-string" }
+        },
+        ")"
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Связи:"] },
+        " ",
+        {
+          "tag": "a",
+          "children": ["string.sub"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/standard-library#string-sub"
+          }
+        },
+        ". ",
+        {
+          "tag": "a",
+          "children": ["Регистрация и аргументы"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Scripting/LuaStandardLibrary.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["тесты"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Screens/LuaStandardLibraryTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "span", "children": [], "props": { "id": "string-rep" } }
+      ]
+    },
+    { "tag": "h2", "children": ["string.rep"], "props": { "id": "stringrep" } },
+    { "tag": "p", "children": ["Повторить строку с разделителем."] },
+    {
+      "tag": "pre",
+      "text": "string.rep(text, count) -> string\nstring.rep(text, count, separator) -> string",
+      "language": "lua",
+      "children": [
+        {
+          "tag": "span",
+          "children": ["string"],
+          "props": { "className": "hljs-built_in" }
+        },
+        ".",
+        {
+          "tag": "span",
+          "children": ["rep"],
+          "props": { "className": "hljs-built_in" }
+        },
+        "(text, count) -> ",
+        {
+          "tag": "span",
+          "children": ["string"],
+          "props": { "className": "hljs-built_in" }
+        },
+        "\n",
+        {
+          "tag": "span",
+          "children": ["string"],
+          "props": { "className": "hljs-built_in" }
+        },
+        ".",
+        {
+          "tag": "span",
+          "children": ["rep"],
+          "props": { "className": "hljs-built_in" }
+        },
+        "(text, count, separator) -> ",
+        {
+          "tag": "span",
+          "children": ["string"],
+          "props": { "className": "hljs-built_in" }
+        }
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Доступность:"] },
+        " ui при загрузке исходника, on_load/on_event, модуль, мини-игра; restore допустим. В game отсутствует."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Аргументы и ошибки:"] },
+        " text/ separator: точные строки <=8192; count: int32 [0,8192]. separator отсутствует → \"\"; nil — ошибка."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Возврат:"] },
+        " Строка длиной len(text)*count+len(separator)*max(0,count-1), не более 8192; count=0 → \"\"."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Эффект и ограничения:"] },
+        " Проверка до выделения результата; стоимость 1 + count + длина результата, текстовый бюджет — длина результата. Общие ",
+        {
+          "tag": "a",
+          "children": ["квоты"],
+          "props": { "href": "/projects/novellmaker/docs/lua/limits" }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["атомарность"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#batch"
+          }
+        },
+        " и ",
+        {
+          "tag": "a",
+          "children": ["lifecycle/сохранение"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        " применяются, если здесь не указано исключение."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Пример"] },
+        " (предусловия refs/ресурсов приведены в начале страницы; это фрагмент соответствующего обработчика, если не показан полный return):"
+      ]
+    },
+    {
+      "tag": "pre",
+      "text": "local s = string.rep(\"ab\",3,\":\") -- \"ab:ab:ab\"",
+      "language": "lua",
+      "children": [
+        {
+          "tag": "span",
+          "children": ["local"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " s = ",
+        {
+          "tag": "span",
+          "children": ["string"],
+          "props": { "className": "hljs-built_in" }
+        },
+        ".",
+        {
+          "tag": "span",
+          "children": ["rep"],
+          "props": { "className": "hljs-built_in" }
+        },
+        "(",
+        {
+          "tag": "span",
+          "children": ["\"ab\""],
+          "props": { "className": "hljs-string" }
+        },
+        ",",
+        {
+          "tag": "span",
+          "children": ["3"],
+          "props": { "className": "hljs-number" }
+        },
+        ",",
+        {
+          "tag": "span",
+          "children": ["\":\""],
+          "props": { "className": "hljs-string" }
+        },
+        ") ",
+        {
+          "tag": "span",
+          "children": ["-- \"ab:ab:ab\""],
+          "props": { "className": "hljs-comment" }
+        }
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Связи:"] },
+        " ",
+        {
+          "tag": "a",
+          "children": ["table.concat"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/standard-library#table-concat"
+          }
+        },
+        ". ",
+        {
+          "tag": "a",
+          "children": ["Регистрация и аргументы"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Scripting/LuaStandardLibrary.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["тесты"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Screens/LuaStandardLibraryTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "span", "children": [], "props": { "id": "string-find" } }
+      ]
+    },
+    {
+      "tag": "h2",
+      "children": ["string.find"],
+      "props": { "id": "stringfind" }
+    },
+    {
+      "tag": "p",
+      "children": ["Найти буквальную подстроку без Lua patterns."]
+    },
+    {
+      "tag": "pre",
+      "text": "string.find(text, needle) -> first, last | nil\nstring.find(text, needle, first) -> first, last | nil\nstring.find(text, needle, first, true) -> first, last | nil",
+      "language": "lua",
+      "children": [
+        {
+          "tag": "span",
+          "children": ["string"],
+          "props": { "className": "hljs-built_in" }
+        },
+        ".",
+        {
+          "tag": "span",
+          "children": ["find"],
+          "props": { "className": "hljs-built_in" }
+        },
+        "(text, needle) -> first, last | ",
+        {
+          "tag": "span",
+          "children": ["nil"],
+          "props": { "className": "hljs-literal" }
+        },
+        "\n",
+        {
+          "tag": "span",
+          "children": ["string"],
+          "props": { "className": "hljs-built_in" }
+        },
+        ".",
+        {
+          "tag": "span",
+          "children": ["find"],
+          "props": { "className": "hljs-built_in" }
+        },
+        "(text, needle, first) -> first, last | ",
+        {
+          "tag": "span",
+          "children": ["nil"],
+          "props": { "className": "hljs-literal" }
+        },
+        "\n",
+        {
+          "tag": "span",
+          "children": ["string"],
+          "props": { "className": "hljs-built_in" }
+        },
+        ".",
+        {
+          "tag": "span",
+          "children": ["find"],
+          "props": { "className": "hljs-built_in" }
+        },
+        "(text, needle, first, ",
+        {
+          "tag": "span",
+          "children": ["true"],
+          "props": { "className": "hljs-literal" }
+        },
+        ") -> first, last | ",
+        {
+          "tag": "span",
+          "children": ["nil"],
+          "props": { "className": "hljs-literal" }
+        }
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Доступность:"] },
+        " ui при загрузке исходника, on_load/on_event, модуль, мини-игра; restore допустим. В game отсутствует."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Аргументы и ошибки:"] },
+        " Ровно 2..4 аргумента. Обе строки <=8192; first int32, default 1 только при отсутствии; отрицательный от конца, снизу ограничивается 1. Четвёртый аргумент при наличии обязан быть true; false/nil — ошибка."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Возврат:"] },
+        " Индексы UTF-16 с 1, конец включительно, либо один nil. Пустой needle на позиции length+1 даёт length+1,length."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Эффект и ограничения:"] },
+        " Ordinal поиск .NET; стоимость 1+len(text)*max(1,len(needle)) даже при быстром совпадении/неуспехе. Большой поиск может превысить 65536, хотя обе строки короче 8192. Общие ",
+        {
+          "tag": "a",
+          "children": ["квоты"],
+          "props": { "href": "/projects/novellmaker/docs/lua/limits" }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["атомарность"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#batch"
+          }
+        },
+        " и ",
+        {
+          "tag": "a",
+          "children": ["lifecycle/сохранение"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        " применяются, если здесь не указано исключение."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Пример"] },
+        " (предусловия refs/ресурсов приведены в начале страницы; это фрагмент соответствующего обработчика, если не показан полный return):"
+      ]
+    },
+    {
+      "tag": "pre",
+      "text": "local a,b = string.find(\"a.b.c\", \".\", 2, true) -- 2,2",
+      "language": "lua",
+      "children": [
+        {
+          "tag": "span",
+          "children": ["local"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " a,b = ",
+        {
+          "tag": "span",
+          "children": ["string"],
+          "props": { "className": "hljs-built_in" }
+        },
+        ".",
+        {
+          "tag": "span",
+          "children": ["find"],
+          "props": { "className": "hljs-built_in" }
+        },
+        "(",
+        {
+          "tag": "span",
+          "children": ["\"a.b.c\""],
+          "props": { "className": "hljs-string" }
+        },
+        ", ",
+        {
+          "tag": "span",
+          "children": ["\".\""],
+          "props": { "className": "hljs-string" }
+        },
+        ", ",
+        {
+          "tag": "span",
+          "children": ["2"],
+          "props": { "className": "hljs-number" }
+        },
+        ", ",
+        {
+          "tag": "span",
+          "children": ["true"],
+          "props": { "className": "hljs-literal" }
+        },
+        ") ",
+        {
+          "tag": "span",
+          "children": ["-- 2,2"],
+          "props": { "className": "hljs-comment" }
+        }
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Связи:"] },
+        " ",
+        {
+          "tag": "a",
+          "children": ["string.sub"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/standard-library#string-sub"
+          }
+        },
+        ". ",
+        {
+          "tag": "a",
+          "children": ["Регистрация и аргументы"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Scripting/LuaStandardLibrary.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["тесты"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Screens/LuaStandardLibraryTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "span", "children": [], "props": { "id": "table-insert" } }
+      ]
+    },
+    {
+      "tag": "h2",
+      "children": ["table.insert"],
+      "props": { "id": "tableinsert" }
+    },
+    {
+      "tag": "p",
+      "children": ["Вставить непустое значение в плотный список."]
+    },
+    {
+      "tag": "pre",
+      "text": "table.insert(list, value) -> nil\ntable.insert(list, position, value) -> nil",
+      "language": "lua",
+      "children": [
+        {
+          "tag": "span",
+          "children": ["table"],
+          "props": { "className": "hljs-built_in" }
+        },
+        ".",
+        {
+          "tag": "span",
+          "children": ["insert"],
+          "props": { "className": "hljs-built_in" }
+        },
+        "(list, value) -> ",
+        {
+          "tag": "span",
+          "children": ["nil"],
+          "props": { "className": "hljs-literal" }
+        },
+        "\n",
+        {
+          "tag": "span",
+          "children": ["table"],
+          "props": { "className": "hljs-built_in" }
+        },
+        ".",
+        {
+          "tag": "span",
+          "children": ["insert"],
+          "props": { "className": "hljs-built_in" }
+        },
+        "(list, position, value) -> ",
+        {
+          "tag": "span",
+          "children": ["nil"],
+          "props": { "className": "hljs-literal" }
+        }
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Доступность:"] },
+        " ui при загрузке исходника, on_load/on_event, модуль, мини-игра; restore допустим. В game отсутствует."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Аргументы и ошибки:"] },
+        " Ровно 2..3 аргумента. Таблица без метатаблицы, все живые ключи 1..N, физические записи <=1024. position int32 [1,N+1], default N+1. value любое кроме nil; N<1024."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Возврат:"] },
+        " nil; исходная Lua-таблица изменяется со сдвигом элементов."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Эффект и ограничения:"] },
+        " Немедленная локальная мутация, не запись host state. Сначала бюджет 1 + физические записи + N+1, затем изменение; для публикации используйте set_state. Общие ",
+        {
+          "tag": "a",
+          "children": ["квоты"],
+          "props": { "href": "/projects/novellmaker/docs/lua/limits" }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["атомарность"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#batch"
+          }
+        },
+        " и ",
+        {
+          "tag": "a",
+          "children": ["lifecycle/сохранение"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        " применяются, если здесь не указано исключение."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Пример"] },
+        " (предусловия refs/ресурсов приведены в начале страницы; это фрагмент соответствующего обработчика, если не показан полный return):"
+      ]
+    },
+    {
+      "tag": "pre",
+      "text": "local t={\"b\"}\ntable.insert(t,1,\"a\") -- {\"a\",\"b\"}",
+      "language": "lua",
+      "children": [
+        {
+          "tag": "span",
+          "children": ["local"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " t={",
+        {
+          "tag": "span",
+          "children": ["\"b\""],
+          "props": { "className": "hljs-string" }
+        },
+        "}\n",
+        {
+          "tag": "span",
+          "children": ["table"],
+          "props": { "className": "hljs-built_in" }
+        },
+        ".",
+        {
+          "tag": "span",
+          "children": ["insert"],
+          "props": { "className": "hljs-built_in" }
+        },
+        "(t,",
+        {
+          "tag": "span",
+          "children": ["1"],
+          "props": { "className": "hljs-number" }
+        },
+        ",",
+        {
+          "tag": "span",
+          "children": ["\"a\""],
+          "props": { "className": "hljs-string" }
+        },
+        ") ",
+        {
+          "tag": "span",
+          "children": ["-- {\"a\",\"b\"}"],
+          "props": { "className": "hljs-comment" }
+        }
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Связи:"] },
+        " ",
+        {
+          "tag": "a",
+          "children": ["table.remove"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/standard-library#table-remove"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["ui.set_state"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/state-and-random#ui-set-state"
+          }
+        },
+        ". ",
+        {
+          "tag": "a",
+          "children": ["Регистрация и аргументы"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Scripting/LuaStandardLibrary.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["тесты"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Screens/LuaStandardLibraryTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "span", "children": [], "props": { "id": "table-remove" } }
+      ]
+    },
+    {
+      "tag": "h2",
+      "children": ["table.remove"],
+      "props": { "id": "tableremove" }
+    },
+    { "tag": "p", "children": ["Удалить элемент плотного списка."] },
+    {
+      "tag": "pre",
+      "text": "table.remove(list) -> any | nil\ntable.remove(list, position) -> any",
+      "language": "lua",
+      "children": [
+        {
+          "tag": "span",
+          "children": ["table"],
+          "props": { "className": "hljs-built_in" }
+        },
+        ".",
+        {
+          "tag": "span",
+          "children": ["remove"],
+          "props": { "className": "hljs-built_in" }
+        },
+        "(list) -> any | ",
+        {
+          "tag": "span",
+          "children": ["nil"],
+          "props": { "className": "hljs-literal" }
+        },
+        "\n",
+        {
+          "tag": "span",
+          "children": ["table"],
+          "props": { "className": "hljs-built_in" }
+        },
+        ".",
+        {
+          "tag": "span",
+          "children": ["remove"],
+          "props": { "className": "hljs-built_in" }
+        },
+        "(list, position) -> any"
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Доступность:"] },
+        " ui при загрузке исходника, on_load/on_event, модуль, мини-игра; restore допустим. В game отсутствует."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Аргументы и ошибки:"] },
+        " Ровно 1..2 аргумента; таблица как insert. position int32 [1,N], default N. nil вместо position — ошибка. Пустой список без position допускается."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Возврат:"] },
+        " Удалённое значение; для пустого списка без position — nil. Сдвигает хвост в исходной таблице."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Эффект и ограничения:"] },
+        " Немедленно; стоимость 1 + физические записи + N (для пустого default только 1+сканирование). Tombstones могут оставаться и учитываться следующими библиотечными вызовами. Общие ",
+        {
+          "tag": "a",
+          "children": ["квоты"],
+          "props": { "href": "/projects/novellmaker/docs/lua/limits" }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["атомарность"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#batch"
+          }
+        },
+        " и ",
+        {
+          "tag": "a",
+          "children": ["lifecycle/сохранение"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        " применяются, если здесь не указано исключение."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Пример"] },
+        " (предусловия refs/ресурсов приведены в начале страницы; это фрагмент соответствующего обработчика, если не показан полный return):"
+      ]
+    },
+    {
+      "tag": "pre",
+      "text": "local t={\"a\",\"b\"}\nlocal last=table.remove(t) -- \"b\"",
+      "language": "lua",
+      "children": [
+        {
+          "tag": "span",
+          "children": ["local"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " t={",
+        {
+          "tag": "span",
+          "children": ["\"a\""],
+          "props": { "className": "hljs-string" }
+        },
+        ",",
+        {
+          "tag": "span",
+          "children": ["\"b\""],
+          "props": { "className": "hljs-string" }
+        },
+        "}\n",
+        {
+          "tag": "span",
+          "children": ["local"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " last=",
+        {
+          "tag": "span",
+          "children": ["table"],
+          "props": { "className": "hljs-built_in" }
+        },
+        ".",
+        {
+          "tag": "span",
+          "children": ["remove"],
+          "props": { "className": "hljs-built_in" }
+        },
+        "(t) ",
+        {
+          "tag": "span",
+          "children": ["-- \"b\""],
+          "props": { "className": "hljs-comment" }
+        }
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Связи:"] },
+        " ",
+        {
+          "tag": "a",
+          "children": ["table.insert"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/standard-library#table-insert"
+          }
+        },
+        ". ",
+        {
+          "tag": "a",
+          "children": ["Регистрация и аргументы"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Scripting/LuaStandardLibrary.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["тесты"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Screens/LuaStandardLibraryTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "span", "children": [], "props": { "id": "table-concat" } }
+      ]
+    },
+    {
+      "tag": "h2",
+      "children": ["table.concat"],
+      "props": { "id": "tableconcat" }
+    },
+    {
+      "tag": "p",
+      "children": ["Соединить диапазон плотного списка в строку."]
+    },
+    {
+      "tag": "pre",
+      "text": "table.concat(list) -> string\ntable.concat(list, separator) -> string\ntable.concat(list, separator, first) -> string\ntable.concat(list, separator, first, last) -> string",
+      "language": "lua",
+      "children": [
+        {
+          "tag": "span",
+          "children": ["table"],
+          "props": { "className": "hljs-built_in" }
+        },
+        ".",
+        {
+          "tag": "span",
+          "children": ["concat"],
+          "props": { "className": "hljs-built_in" }
+        },
+        "(list) -> ",
+        {
+          "tag": "span",
+          "children": ["string"],
+          "props": { "className": "hljs-built_in" }
+        },
+        "\n",
+        {
+          "tag": "span",
+          "children": ["table"],
+          "props": { "className": "hljs-built_in" }
+        },
+        ".",
+        {
+          "tag": "span",
+          "children": ["concat"],
+          "props": { "className": "hljs-built_in" }
+        },
+        "(list, separator) -> ",
+        {
+          "tag": "span",
+          "children": ["string"],
+          "props": { "className": "hljs-built_in" }
+        },
+        "\n",
+        {
+          "tag": "span",
+          "children": ["table"],
+          "props": { "className": "hljs-built_in" }
+        },
+        ".",
+        {
+          "tag": "span",
+          "children": ["concat"],
+          "props": { "className": "hljs-built_in" }
+        },
+        "(list, separator, first) -> ",
+        {
+          "tag": "span",
+          "children": ["string"],
+          "props": { "className": "hljs-built_in" }
+        },
+        "\n",
+        {
+          "tag": "span",
+          "children": ["table"],
+          "props": { "className": "hljs-built_in" }
+        },
+        ".",
+        {
+          "tag": "span",
+          "children": ["concat"],
+          "props": { "className": "hljs-built_in" }
+        },
+        "(list, separator, first, last) -> ",
+        {
+          "tag": "span",
+          "children": ["string"],
+          "props": { "className": "hljs-built_in" }
+        }
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Доступность:"] },
+        " ui при загрузке исходника, on_load/on_event, модуль, мини-игра; restore допустим. В game отсутствует."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Аргументы и ошибки:"] },
+        " list: таблица как insert; separator точная строка, default \"\"; first int32 [1,N+1], default 1; last int32 [0,N], default N. Default только при отсутствии, nil — ошибка. Выбранные элементы string/конечные number."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Возврат:"] },
+        " Строка <=8192, пустой диапазон → \"\". Числа invariant G."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Эффект и ограничения:"] },
+        " Немедленно; 1+физические записи+длина результата единиц работы, длина результата в текстовый бюджет; не меняет таблицу. Общие ",
+        {
+          "tag": "a",
+          "children": ["квоты"],
+          "props": { "href": "/projects/novellmaker/docs/lua/limits" }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["атомарность"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#batch"
+          }
+        },
+        " и ",
+        {
+          "tag": "a",
+          "children": ["lifecycle/сохранение"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        " применяются, если здесь не указано исключение."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Пример"] },
+        " (предусловия refs/ресурсов приведены в начале страницы; это фрагмент соответствующего обработчика, если не показан полный return):"
+      ]
+    },
+    {
+      "tag": "pre",
+      "text": "local s=table.concat({\"a\",2,\"c\"},\"-\",2,3) -- \"2-c\"",
+      "language": "lua",
+      "children": [
+        {
+          "tag": "span",
+          "children": ["local"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " s=",
+        {
+          "tag": "span",
+          "children": ["table"],
+          "props": { "className": "hljs-built_in" }
+        },
+        ".",
+        {
+          "tag": "span",
+          "children": ["concat"],
+          "props": { "className": "hljs-built_in" }
+        },
+        "({",
+        {
+          "tag": "span",
+          "children": ["\"a\""],
+          "props": { "className": "hljs-string" }
+        },
+        ",",
+        {
+          "tag": "span",
+          "children": ["2"],
+          "props": { "className": "hljs-number" }
+        },
+        ",",
+        {
+          "tag": "span",
+          "children": ["\"c\""],
+          "props": { "className": "hljs-string" }
+        },
+        "},",
+        {
+          "tag": "span",
+          "children": ["\"-\""],
+          "props": { "className": "hljs-string" }
+        },
+        ",",
+        {
+          "tag": "span",
+          "children": ["2"],
+          "props": { "className": "hljs-number" }
+        },
+        ",",
+        {
+          "tag": "span",
+          "children": ["3"],
+          "props": { "className": "hljs-number" }
+        },
+        ") ",
+        {
+          "tag": "span",
+          "children": ["-- \"2-c\""],
+          "props": { "className": "hljs-comment" }
+        }
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Связи:"] },
+        " ",
+        {
+          "tag": "a",
+          "children": ["tostring"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/standard-library#tostring"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["string.rep"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/standard-library#string-rep"
+          }
+        },
+        ". ",
+        {
+          "tag": "a",
+          "children": ["Регистрация и аргументы"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Scripting/LuaStandardLibrary.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["тесты"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Screens/LuaStandardLibraryTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    }
+  ]
+}

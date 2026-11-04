@@ -1,0 +1,1092 @@
+[
+  {
+    "title": "Анимации компонентов",
+    "href": "/projects/novellmaker/docs/lua/animations",
+    "description": "Документ NovellMaker"
+  },
+  {
+    "title": "ui.tween",
+    "href": "/projects/novellmaker/docs/lua/animations#ui-tween",
+    "description": "\nОписать интерполяцию свойств собственного узла."
+  },
+  {
+    "title": "ui.sequence",
+    "href": "/projects/novellmaker/docs/lua/animations#ui-sequence",
+    "description": "\nСоединить описания последовательно."
+  },
+  {
+    "title": "ui.parallel",
+    "href": "/projects/novellmaker/docs/lua/animations#ui-parallel",
+    "description": "\nСоединить описания параллельно."
+  },
+  {
+    "title": "ui.animate",
+    "href": "/projects/novellmaker/docs/lua/animations#ui-animate",
+    "description": "\nЗапустить описанную анимационную группу."
+  },
+  {
+    "title": "ui.cancel_animation",
+    "href": "/projects/novellmaker/docs/lua/animations#ui-cancel-animation",
+    "description": "\nОстановить свою анимационную группу на текущем значении."
+  },
+  {
+    "title": "Звук Lua",
+    "href": "/projects/novellmaker/docs/lua/audio",
+    "description": "Документ NovellMaker"
+  },
+  {
+    "title": "ui.play_audio",
+    "href": "/projects/novellmaker/docs/lua/audio#ui-play-audio",
+    "description": "\nЗапустить собственный зарегистрированный WAV."
+  },
+  {
+    "title": "ui.stop_audio",
+    "href": "/projects/novellmaker/docs/lua/audio#ui-stop-audio",
+    "description": "\nОстановить свой источник звука."
+  },
+  {
+    "title": "ui.set_audio_volume",
+    "href": "/projects/novellmaker/docs/lua/audio#ui-set-audio-volume",
+    "description": "\nИзменить усиление собственного источника."
+  },
+  {
+    "title": "Персонажи, части и клипы",
+    "href": "/projects/novellmaker/docs/lua/characters",
+    "description": "Документ NovellMaker"
+  },
+  {
+    "title": "Быстрый пример",
+    "href": "/projects/novellmaker/docs/lua/characters#быстрый-пример",
+    "description": "\nОткройте [example.novell](../../examples/character-animation/example.novell) либо библиотеку «Персонажи» своего проекта и нажмите «Добавить готовый пример». Для нового проекта сначала выберите место "
+  },
+  {
+    "title": "Работа в GUI",
+    "href": "/projects/novellmaker/docs/lua/characters#работа-в-gui",
+    "description": "\n1. Импортируйте PNG/JPEG частей в библиотеку изображений. Создайте персонажа и состояние. «Создать из изображения» превращает состояние в холст с одной частью; «+ Часть» добавляет следующие. Выберите"
+  },
+  {
+    "title": "Координаты и семплирование",
+    "href": "/projects/novellmaker/docs/lua/characters#координаты-и-семплирование",
+    "description": "\nХолст имеет размер в пикселях, независимо от размеров отдельных PNG. Его нижний центр размещается на сцене теми же правилами, что статический персонаж: вписывание в 360 × 560, затем авторский scale и"
+  },
+  {
+    "title": "Покадровые клипы и GIF",
+    "href": "/projects/novellmaker/docs/lua/characters#покадровые-клипы-и-gif",
+    "description": "\nПокадровый клип содержит упорядоченный список изображений с отдельными длительностями. В пустом клипе выберите изображение и длительность, нажмите «+ Кадр». Доступны замена изображения/длительности в"
+  },
+  {
+    "title": "Форматы и восстановление",
+    "href": "/projects/novellmaker/docs/lua/characters#форматы-и-восстановление",
+    "description": "\nДанные визуала и characterClip требуют проект v22. Старые статические состояния остаются обычными CharacterState без Visual; v1–v21 мигрируют в памяти. ImageId состояния остаётся изображением обложки"
+  },
+  {
+    "title": "Компоненты, геометрия и иерархия",
+    "href": "/projects/novellmaker/docs/lua/components",
+    "description": "Документ NovellMaker"
+  },
+  {
+    "title": "Геометрия",
+    "href": "/projects/novellmaker/docs/lua/components#геометрия",
+    "description": "\nВсе числовые значения конечны. Логический viewport 1280×720; x/y ребёнка локальны родителю, а e.x/e.y — координаты viewport. Итоговая матрица учитывает anchor, pivot, scale и rotation."
+  },
+  {
+    "title": "ui.find",
+    "href": "/projects/novellmaker/docs/lua/components#ui-find",
+    "description": "\nПолучить узел по авторскому имени ссылки."
+  },
+  {
+    "title": "ui.set_text",
+    "href": "/projects/novellmaker/docs/lua/components#ui-set-text",
+    "description": "\nЗаменить текст компонента."
+  },
+  {
+    "title": "ui.set_visible",
+    "href": "/projects/novellmaker/docs/lua/components#ui-set-visible",
+    "description": "\nИзменить показ компонента."
+  },
+  {
+    "title": "ui.set_enabled",
+    "href": "/projects/novellmaker/docs/lua/components#ui-set-enabled",
+    "description": "\nИзменить доступность ввода компонента."
+  },
+  {
+    "title": "ui.set_geometry",
+    "href": "/projects/novellmaker/docs/lua/components#ui-set-geometry",
+    "description": "\nИзменить перечисленные свойства геометрии узла."
+  },
+  {
+    "title": "ui.set_parent",
+    "href": "/projects/novellmaker/docs/lua/components#ui-set-parent",
+    "description": "\nПереместить поддерево под другого родителя."
+  },
+  {
+    "title": "ui.remove",
+    "href": "/projects/novellmaker/docs/lua/components#ui-remove",
+    "description": "\nУдалить узел и всех его потомков."
+  },
+  {
+    "title": "ui.create",
+    "href": "/projects/novellmaker/docs/lua/components#ui-create",
+    "description": "\nКопировать существующее поддерево."
+  },
+  {
+    "title": "ui.close",
+    "href": "/projects/novellmaker/docs/lua/components#ui-close",
+    "description": "\nЗакрыть собственный экземпляр холста."
+  },
+  {
+    "title": "ui.strict_arguments",
+    "href": "/projects/novellmaker/docs/lua/components#ui-strict-arguments",
+    "description": "\nВключить или выключить строгую проверку аргументов текущего экземпляра холста."
+  },
+  {
+    "title": "Диагностика",
+    "href": "/projects/novellmaker/docs/lua/diagnostics",
+    "description": "Документ NovellMaker"
+  },
+  {
+    "title": "ui.log",
+    "href": "/projects/novellmaker/docs/lua/diagnostics#ui-log",
+    "description": "\nДобавить сообщение в диагностический журнал Lua."
+  },
+  {
+    "title": "Руководство движка для автора",
+    "href": "/projects/novellmaker/docs/engine-guide",
+    "description": "Документ NovellMaker"
+  },
+  {
+    "title": "Проект и рабочее пространство",
+    "href": "/projects/novellmaker/docs/engine-guide#проект-и-рабочее-пространство",
+    "description": "\nСоздайте проект, задайте название и основной язык, сохраните .novell в отдельную папку. ID проекта остаётся при переименовании и определяет профиль/слоты игрока. Формат — строгий JSON v23; миграции v"
+  },
+  {
+    "title": "Персонажи и анимация",
+    "href": "/projects/novellmaker/docs/engine-guide#персонажи-и-анимация",
+    "description": "\nСтатические позы, персонажи из частей и покадровые клипы настраиваются в библиотеке «Персонажи». Раздел «Части и анимация» позволяет задать слои, родителя и pivot, изображения частей, клипы и ключи X"
+  },
+  {
+    "title": "Автосохранение и восстановление редактора",
+    "href": "/projects/novellmaker/docs/engine-guide#автосохранение-и-восстановление-редактора",
+    "description": "\nКаждые 5 секунд, когда редактор не занят другой операцией, несохранённые данные записываются в отдельный восстановительный снимок в LocalApplicationData/NovellMaker/Recovery. Строка состояния показыв"
+  },
+  {
+    "title": "Панели и обозреватель",
+    "href": "/projects/novellmaker/docs/engine-guide#панели-и-обозреватель",
+    "description": "\nПанели обозревателя, документов, экрана сцены, сведений/свойств и сообщений можно скрывать, изменять разделителями и закреплять перетаскиванием заголовка к краю другой панели; Escape отменяет перенос"
+  },
+  {
+    "title": "Ресурсы и перенос проекта",
+    "href": "/projects/novellmaker/docs/engine-guide#ресурсы-и-перенос-проекта",
+    "description": "\nИмпорт PNG/JPEG копирует зарегистрированный файл в Assets/Images/<id>.png|jpg; исходник после импорта не нужен. До 64 МиБ сжатого файла, сторона 1..8192 пикселей, до 32 000 000 пикселей. Имя ресурса "
+  },
+  {
+    "title": "Озвучка, fades и ducking",
+    "href": "/projects/novellmaker/docs/engine-guide#озвучка-fades-и-ducking",
+    "description": "\nВ F6 и автономной игре переключатели «Показывать прогресс озвучки» и «Показывать паузу и продолжение озвучки» управляют полосой/временем и кнопкой в нижней панели. Кнопка останавливает только voice т"
+  },
+  {
+    "title": "Фразы, персонажи и сценарий",
+    "href": "/projects/novellmaker/docs/engine-guide#фразы-персонажи-и-сценарий",
+    "description": "\nСоздайте сцену, добавьте фразы, заполните текст и говорящего. У фразы сохраняются независимые переводы; переключение языка редактирует выбранный перевод. При отсутствии текста игрового языка использу"
+  },
+  {
+    "title": "Холст, диалог и интерфейс",
+    "href": "/projects/novellmaker/docs/engine-guide#холст-диалог-и-интерфейс",
+    "description": "\nУ каждой сцены свой холст с узлами Container/Panel/Text/Button/Image/Area. Один корень, дочерними контейнерами служат Container/Panel. Используйте дерево и свойства, выделение на холсте, перемещение/"
+  },
+  {
+    "title": "Действия кнопок, клавиши и меню",
+    "href": "/projects/novellmaker/docs/engine-guide#действия-кнопок-клавиши-и-меню",
+    "description": "\nКнопке/Area назначается одно действие. Штатное действие не дублируется click в Lua:"
+  },
+  {
+    "title": "Чтение новеллы",
+    "href": "/projects/novellmaker/docs/engine-guide#чтение-новеллы",
+    "description": "\nВ параметрах холста нажмите «Добавить кнопки чтения к сцене»: появятся редактируемые кнопки «История», «Авто», «Пропуск», «Чтение». Повторное добавление не дублирует назначенные действия. Их можно пе"
+  },
+  {
+    "title": "F6, слоты, настройки и диагностика",
+    "href": "/projects/novellmaker/docs/engine-guide#f6-слоты-настройки-и-диагностика",
+    "description": "\nF6 запускает отдельное нативное MonoGame-окно со снимком несохранённого проекта, не сохраняет исходник автоматически. Повторный F6 заменяет собственный процесс предпросмотра. Изменения файлов обновля"
+  },
+  {
+    "title": "Экспорт папки и установщика Windows x64",
+    "href": "/projects/novellmaker/docs/engine-guide#экспорт-папки-и-установщика-windows-x64",
+    "description": "\n«Сборка → Экспорт игры для Windows x64…»: выберите сюжетную стартовую сцену и новую папку результата. Экспорт берёт текущий снимок с актуальными Lua-файлами, проверяет проект/ссылки/CSS/модули/зареги"
+  },
+  {
+    "title": "Для сборки редактора из репозитория",
+    "href": "/projects/novellmaker/docs/engine-guide#для-сборки-редактора-из-репозитория",
+    "description": "\nНужен SDK, закреплённый в [global.json](../../global.json), и доступные NuGet-пакеты; текущая база SDK 10.0.204. Core/Editor/Runtime написаны на C, UI редактора Avalonia, runtime MonoGame. Зависимост"
+  },
+  {
+    "title": "Текущие границы",
+    "href": "/projects/novellmaker/docs/engine-guide#текущие-границы",
+    "description": "\nНет файлового require/общего сцено-Lua с обратимым преобразованием карточек, постоянной сценарной VM/возобновления произвольного стека, произвольного rollback, автоматического сохранения редактора, п"
+  },
+  {
+    "title": "События и структуры результатов",
+    "href": "/projects/novellmaker/docs/lua/events",
+    "description": "Документ NovellMaker"
+  },
+  {
+    "title": "Общая структура и доставка",
+    "href": "/projects/novellmaker/docs/lua/events#общая-структура-и-доставка",
+    "description": "\nДля каждого on_event обязательны:"
+  },
+  {
+    "title": "Ввод: все kind",
+    "href": "/projects/novellmaker/docs/lua/events#ввод-все-kind",
+    "description": "\nНиже поля дополняют общую структуру. В событиях с узлом node — handle исходного экземпляра; он может уже быть удалён только у оговорённых уведомлений очистки. Это не разрешает снова изменять его чере"
+  },
+  {
+    "title": "Обработчик каждого вида ввода",
+    "href": "/projects/novellmaker/docs/lua/events#обработчик-каждого-вида-ввода",
+    "description": "\nПолный диагностический обработчик ниже показывает реакцию на каждое имя из таблицы. Нужны неизменяемый Text refs.label и хотя бы одна доступная кнопка/Area с действием Lua. Обработчик не хранит игров"
+  },
+  {
+    "title": "update",
+    "href": "/projects/novellmaker/docs/lua/events#update",
+    "description": "\n{kind=\"update\", seconds:number, x=0, y=0}, node отсутствует. В runtime источник — Running мини-игра с UpdatesPerSecond 1..20, default 5. Накопленная дельта ограничивается 1 секундой. Пока обработчик "
+  },
+  {
+    "title": "trigger",
+    "href": "/projects/novellmaker/docs/lua/events#trigger",
+    "description": "\n{kind=\"trigger\",trigger_id:string,trigger_data?:string,x=0,y=0,seconds=0}. trigger_id — обязательный AuthorKey; trigger_data отсутствует для nil или строка <=1024 (пустая отличается от nil). node отс"
+  },
+  {
+    "title": "animation_result",
+    "href": "/projects/novellmaker/docs/lua/events#animation-result",
+    "description": "\nОбязательные поля: kind=\"animation_result\", animation_id:string GUID N из ui.animate, status:string, reason:string, x=y=seconds=0. node отсутствует. Один результат на принятую группу при живом владел"
+  },
+  {
+    "title": "audio_result",
+    "href": "/projects/novellmaker/docs/lua/events#audio-result",
+    "description": "\nОбязательные поля: kind=\"audio_result\", audio_id:string GUID N из play_audio, status:string, message:string <=1024, x=y=seconds=0. node отсутствует. status только completed, stopped, failed; cancelle"
+  },
+  {
+    "title": "service_result",
+    "href": "/projects/novellmaker/docs/lua/events#service-result",
+    "description": "\nОбязательные поля каждого сервисного ответа:"
+  },
+  {
+    "title": "Элемент slots",
+    "href": "/projects/novellmaker/docs/lua/events#элемент-slots",
+    "description": "\nВсегда: id:string, status:string, compatible:boolean (status==Compatible), legacy:boolean. diagnostic?:string <=1024 — пояснение, если есть. status — Compatible, ForeignProject, IncompatibleRevision,"
+  },
+  {
+    "title": "settings и persisted",
+    "href": "/projects/novellmaker/docs/lua/events#settings-и-persisted",
+    "description": "\nsettings — таблица ровно с доступными полями: master_volume, sound_volume, effect_volume, voice_volume — number [0,1]; master_muted, sound_muted, effect_muted, voice_muted, fullscreen, auto_wait_voic"
+  },
+  {
+    "title": "CheckGameRelease: расширение service_result",
+    "href": "/projects/novellmaker/docs/lua/events#release-result",
+    "description": "\nДополнительно всегда provider=\"github_releases_v1\", code:string из таблицы; success=true только для Ok. retry_after_seconds:integer>0 есть только при RateLimited; это подсказка для следующего разрешё"
+  },
+  {
+    "title": "Результат мини-игры в сценарии",
+    "href": "/projects/novellmaker/docs/lua/events#результат-мини-игры-в-сценарии",
+    "description": "\nЭто не ui-событие: следующая game-VM читает game.minigame_result() -> {status,data}|nil. status: completed, cancelled, failed. При completed data соответствует ResultSchema, при двух других — Lua nil"
+  },
+  {
+    "title": "Законченные небольшие примеры",
+    "href": "/projects/novellmaker/docs/lua/examples",
+    "description": "Документ NovellMaker"
+  },
+  {
+    "title": "Очередь сценария и следующий блок",
+    "href": "/projects/novellmaker/docs/lua/examples#queue",
+    "description": "\nРесурсы и refs не нужны. Поместите в «Начало сцены» Lua-блок:"
+  },
+  {
+    "title": "Обработчик счётчика",
+    "href": "/projects/novellmaker/docs/lua/examples#обработчик-счётчика",
+    "description": "\nНа холсте Text label и Button add; назначьте эти aliases в ссылках холста. Схема мини-игры не нужна, это обычный экран. Он начинает с нуля при новом открытии, а не хранит счётчик в игровом слоте."
+  },
+  {
+    "title": "Импорт модуля",
+    "href": "/projects/novellmaker/docs/lua/examples#импорт-модуля",
+    "description": "\nСоздайте Lua-ресурс counter-helper. В его References ничего не требуется:"
+  },
+  {
+    "title": "Воспроизводимая случайность",
+    "href": "/projects/novellmaker/docs/lua/examples#воспроизводимая-случайность",
+    "description": "\nНужен Text refs.label; это обычный экран, сохранение в слот не подразумевается:"
+  },
+  {
+    "title": "Сохраняемая мини-игра с результатом",
+    "href": "/projects/novellmaker/docs/lua/examples#minigame",
+    "description": "\nСоздайте сцену puzzle с Text refs.label и Button refs.add, включите мини-игру. Параметры:"
+  },
+  {
+    "title": "Постоянная отметка с подтверждением диска",
+    "href": "/projects/novellmaker/docs/lua/examples#постоянная-отметка-с-подтверждением-диска",
+    "description": "\nНужны Button refs.mark и Text refs.label. Ни внешний сервис, ни schema не требуются. Профиль принадлежит проекту, чтение не означает подтверждение записи:"
+  },
+  {
+    "title": "Анимация без цикла Lua",
+    "href": "/projects/novellmaker/docs/lua/examples#анимация-без-цикла-lua",
+    "description": "\nText refs.label должен быть видимым, его конечное x=200 допустимо геометрией. Обычный экран не нуждается в update:"
+  },
+  {
+    "title": "Свой WAV и обработка ошибки",
+    "href": "/projects/novellmaker/docs/lua/examples#свой-wav-и-обработка-ошибки",
+    "description": "\nИмпортируйте PCM WAV, добавьте в References корневого Lua-ресурса alias click. На холсте Text refs.label. Профильные громкости перемножаются с 0.7:"
+  },
+  {
+    "title": "Проверка версии с отменой",
+    "href": "/projects/novellmaker/docs/lua/examples#проверка-версии-с-отменой",
+    "description": "\nВ параметрах проекта задайте GitHub Releases: публичные Owner/Repository и CurrentVersion. Кнопки refs.check/refs.cancel и Text refs.label; при отсутствии декларации запрос безопасно вернёт Disabled."
+  },
+  {
+    "title": "Модель исполнения",
+    "href": "/projects/novellmaker/docs/lua/execution-model",
+    "description": "Документ NovellMaker"
+  },
+  {
+    "title": "Режим проверки аргументов",
+    "href": "/projects/novellmaker/docs/lua/execution-model#режим-проверки-аргументов",
+    "description": "\nПроверка аргументов по умолчанию совместима с прежними скриптами. Для строгого контракта включите [game.strict_arguments(true)](scenario.mdgame-strict-arguments) в каждом сценарном исходнике или [ui."
+  },
+  {
+    "title": "Сценарий: вычисление Lua и исполнение очереди",
+    "href": "/projects/novellmaker/docs/lua/execution-model#scenario",
+    "description": "\nПорядок авторских фраз определяет сцену. Компилятор добавляет вход фразы, её персонажей/размещение, блоки «До», показ текста, блоки «Во время», неявное ожидание продолжения и блоки «После продолжения"
+  },
+  {
+    "title": "Интерфейс: обработчик экземпляра",
+    "href": "/projects/novellmaker/docs/lua/execution-model#интерфейс-обработчик-экземпляра",
+    "description": "\nLua-ресурс обработчика холста возвращает таблицу:"
+  },
+  {
+    "title": "Пакет, ошибки и пределы отката",
+    "href": "/projects/novellmaker/docs/lua/execution-model#batch",
+    "description": "\nИзменяющие ui-вызовы подготавливают один пакет обработчика, максимум 256 команд. Worker последовательно проверяет промежуточные деревья и весь пакет, затем host повторно проверяет типы протокола, вла"
+  },
+  {
+    "title": "Пространства имён, ID и специальные значения",
+    "href": "/projects/novellmaker/docs/lua/execution-model#namespaces",
+    "description": "\n| Значение | Сценарий game | Корневой ui-ресурс | ui-модуль |\n| --- | --- | --- | --- |\n| refs | имена → стабильные GUID из References блока/ресурса | имена холста → handles собственных узлов | пуста"
+  },
+  {
+    "title": "Пауза, закрытие, сцены, сеансы и сохранения",
+    "href": "/projects/novellmaker/docs/lua/execution-model#lifetime",
+    "description": "\nКорневой холст сцены живёт вместе с ней. Слой имеет параметры модальности и паузы, заданные автором. Нет встроенных обязательных меню, P/F9/F-клавиш для проекта: действия назначаются в GUI. Во время "
+  },
+  {
+    "title": "Восстанавливающий on_load мини-игры",
+    "href": "/projects/novellmaker/docs/lua/execution-model#restore",
+    "description": "\nПосле загрузки сохранённой мини-игры создаётся новая VM и вызывается on_load с сохранёнными state/RNG/parameters и ui.is_restoring()==true. on_load получает пустую таблицу e, не событие с полем resto"
+  },
+  {
+    "title": "Исходники, F6 и изоляция",
+    "href": "/projects/novellmaker/docs/lua/execution-model#исходники-f6-и-изоляция",
+    "description": "\nФайлы Lua отслеживаются с debounce; диагностический разбор отменяется и проверяет актуальность текста. Изменение файла не подменяет код живой ui-VM. Следующий F6/экспорт захватывает новые исходники; "
+  },
+  {
+    "title": "Чтение и загрузка",
+    "href": "/projects/novellmaker/docs/lua/execution-model#чтение-и-загрузка",
+    "description": "\nИстория принадлежит сюжетному состоянию, отметки полного прочтения — профилю игрока. Авто/пропуск и прогресс печати принадлежат текущему представлению и не являются Lua-состоянием. Успешный Load пока"
+  },
+  {
+    "title": "Время клипов персонажей",
+    "href": "/projects/novellmaker/docs/lua/execution-model#время-клипов-персонажей",
+    "description": "\nПроект v22 содержит CharacterState.Visual: холст, части, клипы и ID клипа по умолчанию. Общий CharacterVisual.Sample выдаёт матрицы частей и opacity. В F6 и экспортированной игре ScenarioPlayer.Frame"
+  },
+  {
+    "title": "Внешний сервис проверки выпуска",
+    "href": "/projects/novellmaker/docs/lua/external-services",
+    "description": "Документ NovellMaker"
+  },
+  {
+    "title": "ui.check_game_release",
+    "href": "/projects/novellmaker/docs/lua/external-services#ui-check-game-release",
+    "description": "\nПроверить последний публичный полный выпуск игры на GitHub."
+  },
+  {
+    "title": "ui.cancel_release_check",
+    "href": "/projects/novellmaker/docs/lua/external-services#ui-cancel-release-check",
+    "description": "\nОтменить свой запрос проверки выпуска."
+  },
+  {
+    "title": "Авторские окна истории и чтения",
+    "href": "/projects/novellmaker/docs/lua/history",
+    "description": "Документ NovellMaker"
+  },
+  {
+    "title": "ui.get_history",
+    "href": "/projects/novellmaker/docs/lua/history#ui-get-history",
+    "description": "\nПрочитать ограниченную страницу одного посещения из истории текущего игрового состояния."
+  },
+  {
+    "title": "ui.replay_history_voice",
+    "href": "/projects/novellmaker/docs/lua/history#ui-replay-history-voice",
+    "description": "\nПовторить озвучку сохранённого посещения без повторного исполнения реплики."
+  },
+  {
+    "title": "Lua-справочник NovellMaker",
+    "href": "/projects/novellmaker/docs/lua",
+    "description": "Документ NovellMaker"
+  },
+  {
+    "title": "Категории",
+    "href": "/projects/novellmaker/docs/lua#категории",
+    "description": "\n- [Сценарный API game.](scenario.md)\n- [Компоненты, геометрия и иерархия](components.md)\n- [Состояние компонентов и управляемый RNG](state-and-random.md)\n- [Lua-ресурсы и модули](modules.md)\n- [Ввод "
+  },
+  {
+    "title": "Пространства имён и данные",
+    "href": "/projects/novellmaker/docs/lua#пространства-имён-и-данные",
+    "description": "\nrefs, modules, audio, ui.null, math.pi, таблицы handlers и событий, строки ID и handles не функции. Их контексты/сроки жизни описаны в [модели исполнения](execution-model.mdnamespaces). Авторские фун"
+  },
+  {
+    "title": "Полный алфавитный указатель",
+    "href": "/projects/novellmaker/docs/lua#полный-алфавитный-указатель",
+    "description": "\n- [game.auto](scenario.mdgame-auto)\n- [game.choice](scenario.mdgame-choice)\n- [game.finish](scenario.mdgame-finish)\n- [game.get](scenario.mdgame-get)\n- [game.hide](scenario.mdgame-hide)\n- [game.hotsp"
+  },
+  {
+    "title": "Ввод и авторские триггеры",
+    "href": "/projects/novellmaker/docs/lua/input-and-triggers",
+    "description": "Документ NovellMaker"
+  },
+  {
+    "title": "ui.capture_pointer",
+    "href": "/projects/novellmaker/docs/lua/input-and-triggers#ui-capture-pointer",
+    "description": "\nПеренаправить текущую последовательность указателя своему узлу."
+  },
+  {
+    "title": "ui.release_pointer",
+    "href": "/projects/novellmaker/docs/lua/input-and-triggers#ui-release-pointer",
+    "description": "\nОтменить собственную текущую последовательность указателя."
+  },
+  {
+    "title": "ui.focus",
+    "href": "/projects/novellmaker/docs/lua/input-and-triggers#ui-focus",
+    "description": "\nПередать клавиатурный фокус своему узлу."
+  },
+  {
+    "title": "ui.trigger",
+    "href": "/projects/novellmaker/docs/lua/input-and-triggers#ui-trigger",
+    "description": "\nПоставить собственное именованное событие в очередь."
+  },
+  {
+    "title": "Квоты и область действия",
+    "href": "/projects/novellmaker/docs/lua/limits",
+    "description": "Документ NovellMaker"
+  },
+  {
+    "title": "Исходник, VM и транспорт",
+    "href": "/projects/novellmaker/docs/lua/limits#исходник-vm-и-транспорт",
+    "description": "\nИстория: до 500 посещений. ui.get_history возвращает одно посещение и одну страницу: page_size 1..2048 Unicode scalars (по умолчанию 700), не более 8 LF и 4096 UTF-16 текста, язык до 64 UTF-16, говор"
+  },
+  {
+    "title": "Сценарий",
+    "href": "/projects/novellmaker/docs/lua/limits#scenario",
+    "description": "\n| Область | Предел |\n| --- | --- |\n| Результат одного Lua-блока | 256 команд |\n| Вся ожидающая сценарная очередь | 4096 команд, 524288 символов учитываемых данных; параметры мини-игры учитываются JSO"
+  },
+  {
+    "title": "Компоненты",
+    "href": "/projects/novellmaker/docs/lua/limits#components",
+    "description": "\n| Область | Предел |\n| --- | --- |\n| Один ui-пакет | 256 команд, включая одну добавляемую метадату RNG |\n| Один холст | 1 корень; 1024 узла; depth 32 |\n| Legacy migration exception | при распознанной"
+  },
+  {
+    "title": "Value, state, RNG и мини-игра",
+    "href": "/projects/novellmaker/docs/lua/limits#values",
+    "description": "\n| Область | Предел |\n| --- | --- |\n| Одно сериализуемое Value | контейнеры depth<=16; значений с корнем/контейнерами <=1024 |\n| Строки/ключи Value | строка<=8192, ключ<=128, сумма<=32768; корректный "
+  },
+  {
+    "title": "Модули",
+    "href": "/projects/novellmaker/docs/lua/limits#modules",
+    "description": "\n| Область | Предел |\n| --- | --- |\n| Достижимый граф с корневым обработчиком | 32 ресурса, depth 16 |\n| Код всего графа | 65536 символов; каждый файл также <=32768 и проходит preflight |\n| Импорты | "
+  },
+  {
+    "title": "События и триггеры",
+    "href": "/projects/novellmaker/docs/lua/limits#events",
+    "description": "\n| Область | Предел |\n| --- | --- |\n| Очередь ScreenLuaSession | 128 с резервами сервисов/анимаций/звука |\n| Причинная цепь | 32 поколения, сервисные продолжения не обнуляют |\n| Триггеры пакета | 16 |"
+  },
+  {
+    "title": "Анимации",
+    "href": "/projects/novellmaker/docs/lua/limits#animations",
+    "description": "\n| Область | Предел |\n| --- | --- |\n| Описания за обработчик | 128 вместе с tween и составными группами |\n| Треков описания/запущенной группы | 64 |\n| Дочерних описаний в sequence/parallel | 1..64, пл"
+  },
+  {
+    "title": "Звук",
+    "href": "/projects/novellmaker/docs/lua/limits#audio",
+    "description": "\n| Область | Предел |\n| --- | --- |\n| AudioService | 32 одновременно играющих источника, общий с сюжетом |\n| PCM WAV | signed 16-bit, mono/stereo, 8000..48000 Гц |\n| Импорт WAV | файл <=2 ГиБ; RIFF <="
+  },
+  {
+    "title": "Слоты и профиль",
+    "href": "/projects/novellmaker/docs/lua/limits#storage",
+    "description": "\n| Область | Предел |\n| --- | --- |\n| Слоты | 128 с quickslot; до 16 МиБ/файл |\n| ID слота | 1..64 ASCII a-z0-9_- без Windows device names |\n| Metadata | title<=128, scene<=256, phrase<=512, revision<"
+  },
+  {
+    "title": "Проверка выпуска",
+    "href": "/projects/novellmaker/docs/lua/limits#external",
+    "description": "\n| Область | Предел |\n| --- | --- |\n| ReleaseCheckService | 1 активный HTTP +4 ожидающих |\n| Запрос | 10 секунд с момента принятия, включая очередь |\n| Повторный HTTP | >=60 секунд, Retry-After может "
+  },
+  {
+    "title": "Ограниченная библиотека",
+    "href": "/projects/novellmaker/docs/lua/limits#standard",
+    "description": "\n| Область | Предел |\n| --- | --- |\n| Один load / обработчик со всеми модулями | 65536 native единиц работы, отдельно от 20000 Lua-инструкций |\n| Строка на входе/выходе | 8192 UTF-16 |\n| Все строковые"
+  },
+  {
+    "title": "Диагностика",
+    "href": "/projects/novellmaker/docs/lua/limits#diagnostics",
+    "description": "\n| Область | Предел |\n| --- | --- |\n| ui.log одно message | 1024 UTF-16, только info/warning/error |\n| Один load / обработчик вместе с модулями | 32 записи, 8192 символов сообщений; лишние корректные "
+  },
+  {
+    "title": "Мини-игры и возврат результата",
+    "href": "/projects/novellmaker/docs/lua/minigames",
+    "description": "Документ NovellMaker"
+  },
+  {
+    "title": "Сохранение и восстановление",
+    "href": "/projects/novellmaker/docs/lua/minigames#сохранение-и-восстановление",
+    "description": "\nCanSave по умолчанию true. При false используется авторская SaveDisabledReason (непустая строка <=256). Сохранение запрещено до InitialState/on_load commit, при pending обработчика, удержании указате"
+  },
+  {
+    "title": "ui.minigame_parameters",
+    "href": "/projects/novellmaker/docs/lua/minigames#ui-minigame-parameters",
+    "description": "\nПрочитать параметры текущего запуска мини-игры."
+  },
+  {
+    "title": "ui.is_restoring",
+    "href": "/projects/novellmaker/docs/lua/minigames#ui-is-restoring",
+    "description": "\nУзнать, восстанавливается ли мини-игра из слота."
+  },
+  {
+    "title": "ui.complete_minigame",
+    "href": "/projects/novellmaker/docs/lua/minigames#ui-complete-minigame",
+    "description": "\nЗавершить мини-игру структурированным результатом."
+  },
+  {
+    "title": "ui.cancel_minigame",
+    "href": "/projects/novellmaker/docs/lua/minigames#ui-cancel-minigame",
+    "description": "\nЗавершить мини-игру без результата автора."
+  },
+  {
+    "title": "Lua-ресурсы и модули",
+    "href": "/projects/novellmaker/docs/lua/modules",
+    "description": "Документ NovellMaker"
+  },
+  {
+    "title": "ui.import",
+    "href": "/projects/novellmaker/docs/lua/modules#ui-import",
+    "description": "\nИмпортировать объявленный Lua-модуль и получить его экспорты."
+  },
+  {
+    "title": "Сценарный API game.",
+    "href": "/projects/novellmaker/docs/lua/scenario",
+    "description": "Документ NovellMaker"
+  },
+  {
+    "title": "game.get",
+    "href": "/projects/novellmaker/docs/lua/scenario#game-get",
+    "description": "\nПрочитать строковую переменную сюжета."
+  },
+  {
+    "title": "game.set",
+    "href": "/projects/novellmaker/docs/lua/scenario#game-set",
+    "description": "\nЗадать строковую переменную сюжета."
+  },
+  {
+    "title": "game.time",
+    "href": "/projects/novellmaker/docs/lua/scenario#game-time",
+    "description": "\nПрочитать игровое время сценария в секундах."
+  },
+  {
+    "title": "game.visible",
+    "href": "/projects/novellmaker/docs/lua/scenario#game-visible",
+    "description": "\nУзнать, показан ли персонаж."
+  },
+  {
+    "title": "game.object",
+    "href": "/projects/novellmaker/docs/lua/scenario#game-object",
+    "description": "\nПрочитать показ, состояние и ручное размещение персонажа."
+  },
+  {
+    "title": "game.show",
+    "href": "/projects/novellmaker/docs/lua/scenario#game-show",
+    "description": "\nПоказать персонажа с запомненным либо начальным состоянием."
+  },
+  {
+    "title": "game.hide",
+    "href": "/projects/novellmaker/docs/lua/scenario#game-hide",
+    "description": "\nСкрыть персонажа."
+  },
+  {
+    "title": "game.state",
+    "href": "/projects/novellmaker/docs/lua/scenario#game-state",
+    "description": "\nВыбрать состояние персонажа."
+  },
+  {
+    "title": "game.text",
+    "href": "/projects/novellmaker/docs/lua/scenario#game-text",
+    "description": "\nПоказать текст существующей фразы текущей сцены."
+  },
+  {
+    "title": "game.place",
+    "href": "/projects/novellmaker/docs/lua/scenario#game-place",
+    "description": "\nЗадать ручное размещение персонажа."
+  },
+  {
+    "title": "game.auto",
+    "href": "/projects/novellmaker/docs/lua/scenario#game-auto",
+    "description": "\nВернуть автоматическое размещение персонажа."
+  },
+  {
+    "title": "game.move",
+    "href": "/projects/novellmaker/docs/lua/scenario#game-move",
+    "description": "\nЗапустить движение персонажа к размещению."
+  },
+  {
+    "title": "game.wait",
+    "href": "/projects/novellmaker/docs/lua/scenario#game-wait",
+    "description": "\nЗадержать сценарную очередь на игровое время."
+  },
+  {
+    "title": "game.wait_input",
+    "href": "/projects/novellmaker/docs/lua/scenario#game-wait-input",
+    "description": "\nОжидать продолжения игроком."
+  },
+  {
+    "title": "game.wait_actions",
+    "href": "/projects/novellmaker/docs/lua/scenario#game-wait-actions",
+    "description": "\nОжидать окончания движений сценария."
+  },
+  {
+    "title": "game.wait_click",
+    "href": "/projects/novellmaker/docs/lua/scenario#game-wait-click",
+    "description": "\nОжидать щелчка по сценарной активной области."
+  },
+  {
+    "title": "game.hotspot",
+    "href": "/projects/novellmaker/docs/lua/scenario#game-hotspot",
+    "description": "\nСоздать сценарную прямоугольную активную область."
+  },
+  {
+    "title": "game.finish",
+    "href": "/projects/novellmaker/docs/lua/scenario#game-finish",
+    "description": "\nЗаписать старое строковое поле результата."
+  },
+  {
+    "title": "game.run",
+    "href": "/projects/novellmaker/docs/lua/scenario#game-run",
+    "description": "\nПоставить выполнение Lua-ресурса в очередь сценария."
+  },
+  {
+    "title": "game.jump",
+    "href": "/projects/novellmaker/docs/lua/scenario#game-jump",
+    "description": "\nПерейти к низкоуровневой команде сцены."
+  },
+  {
+    "title": "game.jump_line",
+    "href": "/projects/novellmaker/docs/lua/scenario#game-jump-line",
+    "description": "\nПерейти к началу авторской фразы."
+  },
+  {
+    "title": "game.choice",
+    "href": "/projects/novellmaker/docs/lua/scenario#game-choice",
+    "description": "\nОстановить сценарий на выборе игрока."
+  },
+  {
+    "title": "game.start_minigame",
+    "href": "/projects/novellmaker/docs/lua/scenario#game-start-minigame",
+    "description": "\nЗапустить авторскую сцену как мини-игру с барьером сюжета."
+  },
+  {
+    "title": "game.minigame_result",
+    "href": "/projects/novellmaker/docs/lua/scenario#game-minigame-result",
+    "description": "\nПрочитать последний структурированный итог мини-игры."
+  },
+  {
+    "title": "game.strict_arguments",
+    "href": "/projects/novellmaker/docs/lua/scenario#game-strict-arguments",
+    "description": "\nВключить или выключить строгую проверку аргументов текущей сценарной VM."
+  },
+  {
+    "title": "Игровой сеанс, слоты, настройки и профиль",
+    "href": "/projects/novellmaker/docs/lua/session-and-storage",
+    "description": "Документ NovellMaker"
+  },
+  {
+    "title": "Слоты",
+    "href": "/projects/novellmaker/docs/lua/session-and-storage#слоты",
+    "description": "\nID: 1..64 ASCII из a-z0-9_-; Windows-имена con/prn/aux/nul/com0..com9/lpt0..lpt9 запрещены. quicksave — быстрый слот, отдельный путь. Не AuthorKey: точки не разрешены, первый символ может быть цифрой"
+  },
+  {
+    "title": "Профиль",
+    "href": "/projects/novellmaker/docs/lua/session-and-storage#профиль",
+    "description": "\nТекущий профиль v4 принадлежит ProjectId, переживает редакцию проекта, Load/NewGame/MainMenu и не входит в слот/экспорт. Настройки, Data и отметки прочитанного пишутся общим снимком; пути: Games/<pro"
+  },
+  {
+    "title": "ui.new_game",
+    "href": "/projects/novellmaker/docs/lua/session-and-storage#ui-new-game",
+    "description": "\nНачать новое прохождение из меню."
+  },
+  {
+    "title": "ui.main_menu",
+    "href": "/projects/novellmaker/docs/lua/session-and-storage#ui-main-menu",
+    "description": "\nВернуться в назначенное стартовое меню проекта."
+  },
+  {
+    "title": "ui.end_session",
+    "href": "/projects/novellmaker/docs/lua/session-and-storage#ui-end-session",
+    "description": "\nЗавершить сеанс игры и закрыть окно runtime."
+  },
+  {
+    "title": "ui.continue_game",
+    "href": "/projects/novellmaker/docs/lua/session-and-storage#ui-continue-game",
+    "description": "\nЗагрузить самый поздний совместимый слот."
+  },
+  {
+    "title": "ui.list_slots",
+    "href": "/projects/novellmaker/docs/lua/session-and-storage#ui-list-slots",
+    "description": "\nЗапросить список слотов и их совместимость."
+  },
+  {
+    "title": "ui.save_slot",
+    "href": "/projects/novellmaker/docs/lua/session-and-storage#ui-save-slot",
+    "description": "\nСохранить текущий согласованный снимок прохождения."
+  },
+  {
+    "title": "ui.load_slot",
+    "href": "/projects/novellmaker/docs/lua/session-and-storage#ui-load-slot",
+    "description": "\nЗагрузить явно выбранный слот."
+  },
+  {
+    "title": "ui.delete_slot",
+    "href": "/projects/novellmaker/docs/lua/session-and-storage#ui-delete-slot",
+    "description": "\nУдалить файл слота по ID."
+  },
+  {
+    "title": "ui.get_settings",
+    "href": "/projects/novellmaker/docs/lua/session-and-storage#ui-get-settings",
+    "description": "\nПрочитать текущие настройки игрока."
+  },
+  {
+    "title": "ui.set_setting",
+    "href": "/projects/novellmaker/docs/lua/session-and-storage#ui-set-setting",
+    "description": "\nИзменить звук, режим окна или параметры чтения игрока."
+  },
+  {
+    "title": "ui.get_persistent",
+    "href": "/projects/novellmaker/docs/lua/session-and-storage#ui-get-persistent",
+    "description": "\nПрочитать постоянную строку проекта из профиля."
+  },
+  {
+    "title": "ui.set_persistent",
+    "href": "/projects/novellmaker/docs/lua/session-and-storage#ui-set-persistent",
+    "description": "\nЗаписать или удалить постоянную строку проекта."
+  },
+  {
+    "title": "Ограниченная стандартная библиотека",
+    "href": "/projects/novellmaker/docs/lua/standard-library",
+    "description": "Документ NovellMaker"
+  },
+  {
+    "title": "Данные и недоступные возможности",
+    "href": "/projects/novellmaker/docs/lua/standard-library#данные-и-недоступные-возможности",
+    "description": "\nmath.pi — единственная числовая константа math, около 3.141592653589793; не функция. Строковый синтаксис s:sub(...) не следует считать подключённым стандартным string metatable: вызывайте string.sub("
+  },
+  {
+    "title": "type",
+    "href": "/projects/novellmaker/docs/lua/standard-library#type",
+    "description": "\nУзнать тип Lua-значения."
+  },
+  {
+    "title": "tostring",
+    "href": "/projects/novellmaker/docs/lua/standard-library#tostring",
+    "description": "\nПреобразовать скаляр в текст."
+  },
+  {
+    "title": "tonumber",
+    "href": "/projects/novellmaker/docs/lua/standard-library#tonumber",
+    "description": "\nПрочитать десятичное число из строки."
+  },
+  {
+    "title": "pairs",
+    "href": "/projects/novellmaker/docs/lua/standard-library#pairs",
+    "description": "\nПеребирать снимок пар таблицы."
+  },
+  {
+    "title": "ipairs",
+    "href": "/projects/novellmaker/docs/lua/standard-library#ipairs",
+    "description": "\nПеребирать снимок плотного списка."
+  },
+  {
+    "title": "math.abs",
+    "href": "/projects/novellmaker/docs/lua/standard-library#math-abs",
+    "description": "\nМодуль числа."
+  },
+  {
+    "title": "math.ceil",
+    "href": "/projects/novellmaker/docs/lua/standard-library#math-ceil",
+    "description": "\nОкругление вверх."
+  },
+  {
+    "title": "math.floor",
+    "href": "/projects/novellmaker/docs/lua/standard-library#math-floor",
+    "description": "\nОкругление вниз."
+  },
+  {
+    "title": "math.sqrt",
+    "href": "/projects/novellmaker/docs/lua/standard-library#math-sqrt",
+    "description": "\nКвадратный корень."
+  },
+  {
+    "title": "math.sin",
+    "href": "/projects/novellmaker/docs/lua/standard-library#math-sin",
+    "description": "\nСинус угла в радианах."
+  },
+  {
+    "title": "math.cos",
+    "href": "/projects/novellmaker/docs/lua/standard-library#math-cos",
+    "description": "\nКосинус угла в радианах."
+  },
+  {
+    "title": "math.tan",
+    "href": "/projects/novellmaker/docs/lua/standard-library#math-tan",
+    "description": "\nТангенс угла в радианах."
+  },
+  {
+    "title": "math.asin",
+    "href": "/projects/novellmaker/docs/lua/standard-library#math-asin",
+    "description": "\nАрксинус в радианах."
+  },
+  {
+    "title": "math.acos",
+    "href": "/projects/novellmaker/docs/lua/standard-library#math-acos",
+    "description": "\nАрккосинус в радианах."
+  },
+  {
+    "title": "math.atan",
+    "href": "/projects/novellmaker/docs/lua/standard-library#math-atan",
+    "description": "\nАрктангенс в радианах."
+  },
+  {
+    "title": "math.exp",
+    "href": "/projects/novellmaker/docs/lua/standard-library#math-exp",
+    "description": "\nЭкспонента e^x."
+  },
+  {
+    "title": "math.deg",
+    "href": "/projects/novellmaker/docs/lua/standard-library#math-deg",
+    "description": "\nПеревод радиан в градусы."
+  },
+  {
+    "title": "math.rad",
+    "href": "/projects/novellmaker/docs/lua/standard-library#math-rad",
+    "description": "\nПеревод градусов в радианы."
+  },
+  {
+    "title": "math.atan2",
+    "href": "/projects/novellmaker/docs/lua/standard-library#math-atan2",
+    "description": "\nАрктангенс с учётом квадранта, результат в радианах."
+  },
+  {
+    "title": "math.pow",
+    "href": "/projects/novellmaker/docs/lua/standard-library#math-pow",
+    "description": "\nВозведение x в степень y."
+  },
+  {
+    "title": "math.fmod",
+    "href": "/projects/novellmaker/docs/lua/standard-library#math-fmod",
+    "description": "\nОстаток от деления со знаком делимого."
+  },
+  {
+    "title": "math.log",
+    "href": "/projects/novellmaker/docs/lua/standard-library#math-log",
+    "description": "\nЛогарифм натуральный либо по основанию."
+  },
+  {
+    "title": "math.modf",
+    "href": "/projects/novellmaker/docs/lua/standard-library#math-modf",
+    "description": "\nРазделить число на целую и дробную части."
+  },
+  {
+    "title": "math.min",
+    "href": "/projects/novellmaker/docs/lua/standard-library#math-min",
+    "description": "\nМинимум конечных чисел."
+  },
+  {
+    "title": "math.max",
+    "href": "/projects/novellmaker/docs/lua/standard-library#math-max",
+    "description": "\nМаксимум конечных чисел."
+  },
+  {
+    "title": "string.len",
+    "href": "/projects/novellmaker/docs/lua/standard-library#string-len",
+    "description": "\nДлина строки в единицах UTF-16."
+  },
+  {
+    "title": "string.sub",
+    "href": "/projects/novellmaker/docs/lua/standard-library#string-sub",
+    "description": "\nВыделить подстроку по включительным индексам."
+  },
+  {
+    "title": "string.lower",
+    "href": "/projects/novellmaker/docs/lua/standard-library#string-lower",
+    "description": "\nПеревести регистр в нижний."
+  },
+  {
+    "title": "string.upper",
+    "href": "/projects/novellmaker/docs/lua/standard-library#string-upper",
+    "description": "\nПеревести регистр в верхний."
+  },
+  {
+    "title": "string.reverse",
+    "href": "/projects/novellmaker/docs/lua/standard-library#string-reverse",
+    "description": "\nРазвернуть порядок единиц UTF-16."
+  },
+  {
+    "title": "string.rep",
+    "href": "/projects/novellmaker/docs/lua/standard-library#string-rep",
+    "description": "\nПовторить строку с разделителем."
+  },
+  {
+    "title": "string.find",
+    "href": "/projects/novellmaker/docs/lua/standard-library#string-find",
+    "description": "\nНайти буквальную подстроку без Lua patterns."
+  },
+  {
+    "title": "table.insert",
+    "href": "/projects/novellmaker/docs/lua/standard-library#table-insert",
+    "description": "\nВставить непустое значение в плотный список."
+  },
+  {
+    "title": "table.remove",
+    "href": "/projects/novellmaker/docs/lua/standard-library#table-remove",
+    "description": "\nУдалить элемент плотного списка."
+  },
+  {
+    "title": "table.concat",
+    "href": "/projects/novellmaker/docs/lua/standard-library#table-concat",
+    "description": "\nСоединить диапазон плотного списка в строку."
+  },
+  {
+    "title": "Состояние компонентов и управляемый RNG",
+    "href": "/projects/novellmaker/docs/lua/state-and-random",
+    "description": "Документ NovellMaker"
+  },
+  {
+    "title": "Данные Value",
+    "href": "/projects/novellmaker/docs/lua/state-and-random#данные-value",
+    "description": "\nПоддерживаются null, boolean, конечное number (double), строка, плотный список 1..N и словарь строковых ключей. Lua nil в позиции Value означает null. В [строгом режиме](components.mdui-strict-argume"
+  },
+  {
+    "title": "ui.get",
+    "href": "/projects/novellmaker/docs/lua/state-and-random#ui-get",
+    "description": "\nПрочитать переменную сюжета из снимка события."
+  },
+  {
+    "title": "ui.get_state",
+    "href": "/projects/novellmaker/docs/lua/state-and-random#ui-get-state",
+    "description": "\nПрочитать отдельную копию состояния экземпляра."
+  },
+  {
+    "title": "ui.set_state",
+    "href": "/projects/novellmaker/docs/lua/state-and-random#ui-set-state",
+    "description": "\nПодготовить новое явное состояние экземпляра."
+  },
+  {
+    "title": "ui.list",
+    "href": "/projects/novellmaker/docs/lua/state-and-random#ui-list",
+    "description": "\nПометить Lua-таблицу как список сериализуемых данных."
+  },
+  {
+    "title": "ui.object",
+    "href": "/projects/novellmaker/docs/lua/state-and-random#ui-object",
+    "description": "\nПометить Lua-таблицу как словарь сериализуемых данных."
+  },
+  {
+    "title": "ui.random",
+    "href": "/projects/novellmaker/docs/lua/state-and-random#ui-random",
+    "description": "\nПолучить управляемое случайное число."
+  },
+  {
+    "title": "ui.seed_random",
+    "href": "/projects/novellmaker/docs/lua/state-and-random#ui-seed-random",
+    "description": "\nИнициализировать поток RNG воспроизводимым seed."
+  },
+  {
+    "title": "ui.get_random_state",
+    "href": "/projects/novellmaker/docs/lua/state-and-random#ui-get-random-state",
+    "description": "\nПолучить точный снимок RNG без потери разрядов."
+  },
+  {
+    "title": "ui.set_random_state",
+    "href": "/projects/novellmaker/docs/lua/state-and-random#ui-set-random-state",
+    "description": "\nВосстановить точный поток RNG из строки."
+  },
+  {
+    "title": "Проверка полноты и границы достоверности",
+    "href": "/projects/novellmaker/docs/lua/verification",
+    "description": "Документ NovellMaker"
+  },
+  {
+    "title": "Авторские окна чтения — 3 ноября 2026",
+    "href": "/projects/novellmaker/docs/lua/verification#авторские-окна-чтения--3-ноября-2026",
+    "description": "\nПроект v23 и screen wire v20 заменяют runtime-конструктор истории/параметров чтения обычными сценами и Lua-ресурсами проекта. [HistoryLuaTests](../../tests/NovellMaker.Core.Tests/Screens/HistoryLuaTe"
+  },
+  {
+    "title": "Выпускной допуск Windows x64",
+    "href": "/projects/novellmaker/docs/lua/verification#выпускной-допуск-windows-x64",
+    "description": "\n[Release delivery gate](../../.github/workflows/release.yml) отделён от обычного CI. Он требует успешной матрицы Windows/Linux/macOS и нативного Windows Delivery перед созданием черновика выпуска. [С"
+  },
+  {
+    "title": "Проверка базового чтения",
+    "href": "/projects/novellmaker/docs/lua/verification#проверка-базового-чтения",
+    "description": "\nВ рамках задачи чтения добавлены [ReadingPlayback](../../src/NovellMaker.Core/Execution/ReadingPlayback.cs), история GameSave v3, профиль v4 с отдельными отметками прочитанного, четыре действия холст"
+  },
+  {
+    "title": "Инвентаризация",
+    "href": "/projects/novellmaker/docs/lua/verification#инвентаризация",
+    "description": "\nАвтосохранение редактора дополнено отдельными восстановительными снимками и предложением восстановления при запуске. [EditorRecoveryTests](../../tests/NovellMaker.Editor.Tests/EditorRecoveryTests.cs)"
+  },
+  {
+    "title": "Воспроизводимая статическая проверка",
+    "href": "/projects/novellmaker/docs/lua/verification#воспроизводимая-статическая-проверка",
+    "description": "\npowershell\npython scripts/check-lua-reference.py\n"
+  },
+  {
+    "title": "Сверка по цепочке VM → протокол → host → тест",
+    "href": "/projects/novellmaker/docs/lua/verification#сверка-по-цепочке-vm--протокол--host--тест",
+    "description": "\n| Категория | Регистрация и аргументы | Проверка/применение | Основные тесты |\n| --- | --- | --- | --- |\n| game | [LuaActionScript](../../src/NovellMaker.Core/Execution/LuaActionScript.cs) | [каталог"
+  },
+  {
+    "title": "LuaCATS и прежняя документация: расхождения",
+    "href": "/projects/novellmaker/docs/lua/verification#luacats-и-прежняя-документация-расхождения",
+    "description": "\nВсе 111 имён есть в текущих LuaCATS, отсутствующих/устаревших имён функций не найдено. При этом полноты имён недостаточно для справочника:"
+  },
+  {
+    "title": "Особенности и неоднозначности кода, оставленные без исправления",
+    "href": "/projects/novellmaker/docs/lua/verification#особенности-и-неоднозначности-кода-оставленные-без-исправления",
+    "description": "\n- hover принимается протоколом, но текущий runtime его не генерирует. Нельзя строить логику на ожидании этого kind; используйте hover_enter/leave. [ValidateEvent](../../src/NovellMaker.Core/Screens/L"
+  },
+  {
+    "title": "Уточнение Lua-контракта — 2 ноября 2026",
+    "href": "/projects/novellmaker/docs/lua/verification#уточнение-lua-контракта--2-ноября-2026",
+    "description": "\n- game.finish(result) использует ту же запись переменных и квоты, что game.set(\"minigame.result\",result). В том же вычислении game.get сразу видит строку; host меняется только при исполнении очереди."
+  },
+  {
+    "title": "Исходный прогон справочника",
+    "href": "/projects/novellmaker/docs/lua/verification#исходный-прогон-справочника",
+    "description": "\nСреда: Windows x64, .NET SDK 10.0.204. Выполнен dotnet restore NovellMaker.slnx --locked-mode, затем Release-тесты всей solution. Первый no-restore запуск в sandbox не нашёл MoonSharp в кэше пользова"
+  },
+  {
+    "title": "Границы исходного прогона справочника",
+    "href": "/projects/novellmaker/docs/lua/verification#границы-исходного-прогона-справочника",
+    "description": "\nНативные MonoGame/UI/export/installer smoke без флагов пропускаются; live GitHub-запрос не включался. Пропуски также включают необязательные измерения, проверки ссылок без нужных прав и Unix-имя на W"
+  },
+  {
+    "title": "Озвучка и микшер: проверка 31 октября 2026",
+    "href": "/projects/novellmaker/docs/lua/verification#озвучка-и-микшер-проверка-31-октября-2026",
+    "description": "\n[AudioPlaybackTests](../../tests/NovellMaker.Core.Tests/Audio/AudioPlaybackTests.cs) проверяет реальные значения курсора от backend (ход часов сам прогресс не меняет), ручную/общую/owner-паузу, оконч"
+  },
+  {
+    "title": "Персонажи из частей и покадровые клипы — 1 ноября 2026",
+    "href": "/projects/novellmaker/docs/lua/verification#персонажи-из-частей-и-покадровые-клипы--1-ноября-2026",
+    "description": "\nПроект v22 добавляет CharacterState.Visual, стабильные ID частей/клипов, родительскую иерархию, pivot, слои, ключи преобразования/opacity/замены изображения, линейную и ступенчатую интерполяцию, пока"
+  }
+]

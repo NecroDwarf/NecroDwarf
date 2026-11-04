@@ -1,0 +1,708 @@
+{
+  "title": "Мини-игры и возврат результата",
+  "headings": [
+    {
+      "title": "Мини-игры и возврат результата",
+      "id": "мини-игры-и-возврат-результата",
+      "level": 1
+    },
+    {
+      "title": "Сохранение и восстановление",
+      "id": "сохранение-и-восстановление",
+      "level": 3
+    },
+    {
+      "title": "ui.minigame_parameters",
+      "id": "ui-minigame-parameters",
+      "level": 2
+    },
+    { "title": "ui.is_restoring", "id": "ui-is-restoring", "level": 2 },
+    {
+      "title": "ui.complete_minigame",
+      "id": "ui-complete-minigame",
+      "level": 2
+    },
+    { "title": "ui.cancel_minigame", "id": "ui-cancel-minigame", "level": 2 }
+  ],
+  "nodes": [
+    {
+      "tag": "h1",
+      "children": ["Мини-игры и возврат результата"],
+      "props": { "id": "мини-игры-и-возврат-результата" }
+    },
+    {
+      "tag": "p",
+      "children": [
+        {
+          "tag": "a",
+          "children": ["Оглавление"],
+          "props": { "href": "/projects/novellmaker/docs/lua" }
+        },
+        " · ",
+        {
+          "tag": "a",
+          "children": ["Модель исполнения"],
+          "props": { "href": "/projects/novellmaker/docs/lua/execution-model" }
+        },
+        " · ",
+        {
+          "tag": "a",
+          "children": ["События"],
+          "props": { "href": "/projects/novellmaker/docs/lua/events" }
+        },
+        " · ",
+        {
+          "tag": "a",
+          "children": ["Квоты"],
+          "props": { "href": "/projects/novellmaker/docs/lua/limits" }
+        }
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        "В ",
+        {
+          "tag": "a",
+          "children": ["строгом режиме"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/components#ui-strict-arguments"
+          }
+        },
+        " число аргументов точно соответствует сигнатурам; complete_minigame(nil) передаёт null по схеме, complete_minigame() без аргумента запрещён."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Мини-игра — обычная авторская сцена с холстом, обработчиком и включённым ресурсом мини-игры. Она запускается только сценарием ",
+        {
+          "tag": "code",
+          "children": ["game.start_minigame(sceneId[,parameters])"]
+        },
+        "; четыре функции ui этой страницы доступны ",
+        {
+          "tag": "strong",
+          "children": [
+            "только активному обработчику этого экземпляра мини-игры"
+          ]
+        },
+        ", включая вызываемый модуль. В обычном ui-экране они существуют, но дают ошибку контекста. ",
+        { "tag": "code", "children": ["game.finish"] },
+        " всего лишь записывает старую строковую переменную и lifecycle не завершает."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Настройте ParametersSchema, StateSchema, ResultSchema, DefaultParameters, InitialState, CanSave и UpdatesPerSecond в свойствах сцены. Kind: Null/Boolean/Number/String/List/Object. У Object Fields при непустом словаре задаёт точный набор обязательных полей и их непосредственных типов; до 64 полей, ключи непустые/непробельные <=128. Пустой Fields не ограничивает набор полей; вложенные подробные JSON schemas не поддерживаются. GUI редактирует поля объектных схем и сохраняет уже заданный тип корня; остальные типы схем доступны в формате проекта. Все значения также проходят ",
+        {
+          "tag": "a",
+          "children": ["Value-квоты"],
+          "props": { "href": "/projects/novellmaker/docs/lua/state-and-random" }
+        },
+        ". Частота update — [1,20] Гц, по умолчанию ",
+        { "tag": "strong", "children": ["5"] },
+        ". Одновременно активна одна мини-игра сюжетного сеанса."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Общие правила каждой функции: ",
+        {
+          "tag": "a",
+          "children": ["атомарность"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#batch"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["restore"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#restore"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["сроки жизни"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["квоты"],
+          "props": { "href": "/projects/novellmaker/docs/lua/limits#values" }
+        },
+        ". Новая игра получает InitialState и фиксированный начальный RNG; параметры отделены от state. Прикрытие любым верхним слоем или неактивность host ставит мини-игру на паузу; результаты held до снятия. После completed/cancelled/failed сюжет продолжает очередь и читает итог ",
+        { "tag": "strong", "children": ["новой VM"] },
+        ". Ошибка обработчика даёт failed с data=null, закрытие экрана — cancelled; Message виден host, но game.minigame_result его не проецирует."
+      ]
+    },
+    {
+      "tag": "h3",
+      "children": ["Сохранение и восстановление"],
+      "props": { "id": "сохранение-и-восстановление" }
+    },
+    {
+      "tag": "p",
+      "children": [
+        "CanSave по умолчанию true. При false используется авторская SaveDisabledReason (непустая строка <=256). Сохранение запрещено до InitialState/on_load commit, при pending обработчика, удержании указателя/клавиш, живой анимации/звуке и их результатах, проверке выпуска и её результате. При допустимой точке слот хранит параметры, state, RNG, ID сцены/действия/запуска и признак Initialized; не дерево, Lua-стек, locals, closures, input, таймлайны или источники звука."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Восстанавливающий on_load строит вид из ui.get_state и ui.minigame_parameters. Можно менять текст/геометрию/показ/иерархию, логировать, импортировать модули. Нельзя менять подтверждённые state/RNG, делать сервисы/триггеры/ввод, запускать/отменять анимации/звук, close или завершать мини-игру. Повторный set_state того же канонического значения допускается, но проще его не делать. Флаг is_restoring остаётся true у всего восстановленного экземпляра: проверяйте его ",
+        { "tag": "strong", "children": ["в on_load"] },
+        ", а не отключайте по нему все события."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        "В примерах result/state schema Object с полем score:Number; для Parameters target:Number, InitialState={score=0}, DefaultParameters={target=3}. Полный восстанавливаемый пример — ",
+        {
+          "tag": "a",
+          "children": ["примеры"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/examples#minigame"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        {
+          "tag": "span",
+          "children": [],
+          "props": { "id": "ui-minigame-parameters" }
+        }
+      ]
+    },
+    {
+      "tag": "h2",
+      "children": ["ui.minigame_parameters"],
+      "props": { "id": "uiminigame_parameters" }
+    },
+    {
+      "tag": "p",
+      "children": ["Прочитать параметры текущего запуска мини-игры."]
+    },
+    {
+      "tag": "pre",
+      "text": "ui.minigame_parameters() -> Value",
+      "language": "lua",
+      "children": ["ui.minigame_parameters() -> Value"]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Доступность:"] },
+        " Только ui on_load/on_event мини-игры и вызванный модуль; restore — по исключению ниже. В сценарии и обычном ui-контексте не вызывается."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Аргументы и ошибки:"] },
+        " Нет аргументов; по умолчанию лишние игнорируются, в строгом режиме запрещены."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Возврат:"] },
+        " Отделённая копия Parameters; null представлен ui.null."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Эффект и ограничения:"] },
+        " Только в обработчике мини-игры; в обычном экране ошибка. В restore читает сохранённые параметры. Изменение таблицы не меняет параметры. Общие ",
+        {
+          "tag": "a",
+          "children": ["квоты"],
+          "props": { "href": "/projects/novellmaker/docs/lua/limits" }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["атомарность"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#batch"
+          }
+        },
+        " и ",
+        {
+          "tag": "a",
+          "children": ["lifecycle/сохранение"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        " применяются, если здесь не указано исключение."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Пример"] },
+        " (предусловия refs/ресурсов приведены в начале страницы; это фрагмент соответствующего обработчика, если не показан полный return):"
+      ]
+    },
+    {
+      "tag": "pre",
+      "text": "local p = ui.minigame_parameters()",
+      "language": "lua",
+      "children": [
+        {
+          "tag": "span",
+          "children": ["local"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " p = ui.minigame_parameters()"
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Связи:"] },
+        " ",
+        {
+          "tag": "a",
+          "children": ["game.start_minigame"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/scenario#game-start-minigame"
+          }
+        },
+        ". ",
+        {
+          "tag": "a",
+          "children": ["Регистрация и аргументы"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Screens/Lua/ScreenLuaWorker.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["тесты"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Screens/MinigameLuaTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "span", "children": [], "props": { "id": "ui-is-restoring" } }
+      ]
+    },
+    {
+      "tag": "h2",
+      "children": ["ui.is_restoring"],
+      "props": { "id": "uiis_restoring" }
+    },
+    {
+      "tag": "p",
+      "children": ["Узнать, восстанавливается ли мини-игра из слота."]
+    },
+    {
+      "tag": "pre",
+      "text": "ui.is_restoring() -> boolean",
+      "language": "lua",
+      "children": ["ui.is_restoring() -> boolean"]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Доступность:"] },
+        " Только ui on_load/on_event мини-игры и вызванный модуль; restore — по исключению ниже. В сценарии и обычном ui-контексте не вызывается."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Аргументы и ошибки:"] },
+        " Нет аргументов; по умолчанию лишние игнорируются, в строгом режиме запрещены."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Возврат:"] },
+        " boolean, флаг всего данного экземпляра, а не только первого on_load."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Эффект и ограничения:"] },
+        " Только в обработчике мини-игры; в обычном экране ошибка. Не используйте флаг для отключения обычных on_event восстановленной игры. Общие ",
+        {
+          "tag": "a",
+          "children": ["квоты"],
+          "props": { "href": "/projects/novellmaker/docs/lua/limits" }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["атомарность"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#batch"
+          }
+        },
+        " и ",
+        {
+          "tag": "a",
+          "children": ["lifecycle/сохранение"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        " применяются, если здесь не указано исключение."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Пример"] },
+        " (предусловия refs/ресурсов приведены в начале страницы; это фрагмент соответствующего обработчика, если не показан полный return):"
+      ]
+    },
+    {
+      "tag": "pre",
+      "text": "local restored = ui.is_restoring()",
+      "language": "lua",
+      "children": [
+        {
+          "tag": "span",
+          "children": ["local"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " restored = ui.is_restoring()"
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Связи:"] },
+        " ",
+        {
+          "tag": "a",
+          "children": ["ui.get_state"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/state-and-random#ui-get-state"
+          }
+        },
+        ". ",
+        {
+          "tag": "a",
+          "children": ["Регистрация и аргументы"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Screens/Lua/ScreenLuaWorker.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["тесты"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Screens/MinigameLuaTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        {
+          "tag": "span",
+          "children": [],
+          "props": { "id": "ui-complete-minigame" }
+        }
+      ]
+    },
+    {
+      "tag": "h2",
+      "children": ["ui.complete_minigame"],
+      "props": { "id": "uicomplete_minigame" }
+    },
+    {
+      "tag": "p",
+      "children": ["Завершить мини-игру структурированным результатом."]
+    },
+    {
+      "tag": "pre",
+      "text": "ui.complete_minigame(result) -> nil\nui.complete_minigame() -> nil",
+      "language": "lua",
+      "children": [
+        "ui.complete_minigame(result) -> ",
+        {
+          "tag": "span",
+          "children": ["nil"],
+          "props": { "className": "hljs-literal" }
+        },
+        "\nui.complete_minigame() -> ",
+        {
+          "tag": "span",
+          "children": ["nil"],
+          "props": { "className": "hljs-literal" }
+        }
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Доступность:"] },
+        " Только ui on_load/on_event мини-игры и вызванный модуль; restore — по исключению ниже. В сценарии и обычном ui-контексте не вызывается."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Аргументы и ошибки:"] },
+        " result: Value, проверяемое ResultSchema. Отсутствие/nil — null, допустимо лишь для схемы Null."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Возврат:"] },
+        " nil; следующий сценарный Lua читает completed и data."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Эффект и ограничения:"] },
+        " Последняя команда пакета, только активная мини-игра. Несовместима с close/сервисом/триггером. После commit очищает владельца и снимает барьер сюжета. Restore on_load запрещено. Общие ",
+        {
+          "tag": "a",
+          "children": ["квоты"],
+          "props": { "href": "/projects/novellmaker/docs/lua/limits" }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["атомарность"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#batch"
+          }
+        },
+        " и ",
+        {
+          "tag": "a",
+          "children": ["lifecycle/сохранение"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        " применяются, если здесь не указано исключение."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Пример"] },
+        " (предусловия refs/ресурсов приведены в начале страницы; это фрагмент соответствующего обработчика, если не показан полный return):"
+      ]
+    },
+    {
+      "tag": "pre",
+      "text": "ui.complete_minigame({score=3})",
+      "language": "lua",
+      "children": [
+        "ui.complete_minigame({score=",
+        {
+          "tag": "span",
+          "children": ["3"],
+          "props": { "className": "hljs-number" }
+        },
+        "})"
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Связи:"] },
+        " ",
+        {
+          "tag": "a",
+          "children": ["game.minigame_result"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/scenario#game-minigame-result"
+          }
+        },
+        ". ",
+        {
+          "tag": "a",
+          "children": ["Регистрация и аргументы"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Screens/Lua/ScreenLuaWorker.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["тесты"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Screens/MinigameLuaTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        {
+          "tag": "span",
+          "children": [],
+          "props": { "id": "ui-cancel-minigame" }
+        }
+      ]
+    },
+    {
+      "tag": "h2",
+      "children": ["ui.cancel_minigame"],
+      "props": { "id": "uicancel_minigame" }
+    },
+    { "tag": "p", "children": ["Завершить мини-игру без результата автора."] },
+    {
+      "tag": "pre",
+      "text": "ui.cancel_minigame() -> nil",
+      "language": "lua",
+      "children": [
+        "ui.cancel_minigame() -> ",
+        {
+          "tag": "span",
+          "children": ["nil"],
+          "props": { "className": "hljs-literal" }
+        }
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Доступность:"] },
+        " Только ui on_load/on_event мини-игры и вызванный модуль; restore — по исключению ниже. В сценарии и обычном ui-контексте не вызывается."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Аргументы и ошибки:"] },
+        " Нет аргументов; по умолчанию лишние игнорируются, в строгом режиме запрещены."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Возврат:"] },
+        " nil; сценарный итог status=cancelled,data=null."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Эффект и ограничения:"] },
+        " Те же правила последней команды и несовместимости, что у complete_minigame. Message host: «Отменено автором.». Не исключение Lua. Restore on_load запрещено. Общие ",
+        {
+          "tag": "a",
+          "children": ["квоты"],
+          "props": { "href": "/projects/novellmaker/docs/lua/limits" }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["атомарность"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#batch"
+          }
+        },
+        " и ",
+        {
+          "tag": "a",
+          "children": ["lifecycle/сохранение"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        " применяются, если здесь не указано исключение."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Пример"] },
+        " (предусловия refs/ресурсов приведены в начале страницы; это фрагмент соответствующего обработчика, если не показан полный return):"
+      ]
+    },
+    {
+      "tag": "pre",
+      "text": "ui.cancel_minigame()",
+      "language": "lua",
+      "children": ["ui.cancel_minigame()"]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Связи:"] },
+        " ",
+        {
+          "tag": "a",
+          "children": ["ui.complete_minigame"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/minigames#ui-complete-minigame"
+          }
+        },
+        ". ",
+        {
+          "tag": "a",
+          "children": ["Регистрация и аргументы"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Screens/Lua/ScreenLuaWorker.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["тесты"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Screens/MinigameLuaTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    }
+  ]
+}

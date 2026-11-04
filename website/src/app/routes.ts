@@ -2,6 +2,7 @@ import { routePage } from "./shared/lib/route-page";
 import { projects } from "./projects/registry";
 import { maniacChangelogRoutes } from "./projects/maniac/changelogs/routes";
 import { maniacWikiRoutes } from "./projects/maniac/wiki/routes";
+import { novellmakerDocsRoutes } from "./projects/novellmaker/docs/routes";
 const projectPages = {
   maniac: routePage(() =>
     import("./projects/maniac/pages/ManiacPage").then((m) => m.ManiacPage),
@@ -62,6 +63,7 @@ export const routes = [
   })),
   ...maniacChangelogRoutes,
   ...maniacWikiRoutes,
+  ...novellmakerDocsRoutes,
 ];
 const notFoundPage = routePage(() =>
   import("./pages/NotFoundPage").then((m) => m.NotFoundPage),

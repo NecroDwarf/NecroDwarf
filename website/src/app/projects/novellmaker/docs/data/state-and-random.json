@@ -1,0 +1,1608 @@
+{
+  "title": "Состояние компонентов и управляемый RNG",
+  "headings": [
+    {
+      "title": "Состояние компонентов и управляемый RNG",
+      "id": "состояние-компонентов-и-управляемый-rng",
+      "level": 1
+    },
+    { "title": "Данные Value", "id": "данные-value", "level": 3 },
+    { "title": "ui.get", "id": "ui-get", "level": 2 },
+    { "title": "ui.get_state", "id": "ui-get-state", "level": 2 },
+    { "title": "ui.set_state", "id": "ui-set-state", "level": 2 },
+    { "title": "ui.list", "id": "ui-list", "level": 2 },
+    { "title": "ui.object", "id": "ui-object", "level": 2 },
+    { "title": "ui.random", "id": "ui-random", "level": 2 },
+    { "title": "ui.seed_random", "id": "ui-seed-random", "level": 2 },
+    { "title": "ui.get_random_state", "id": "ui-get-random-state", "level": 2 },
+    { "title": "ui.set_random_state", "id": "ui-set-random-state", "level": 2 }
+  ],
+  "nodes": [
+    {
+      "tag": "h1",
+      "children": ["Состояние компонентов и управляемый RNG"],
+      "props": { "id": "состояние-компонентов-и-управляемый-rng" }
+    },
+    {
+      "tag": "p",
+      "children": [
+        {
+          "tag": "a",
+          "children": ["Оглавление"],
+          "props": { "href": "/projects/novellmaker/docs/lua" }
+        },
+        " · ",
+        {
+          "tag": "a",
+          "children": ["Модель исполнения"],
+          "props": { "href": "/projects/novellmaker/docs/lua/execution-model" }
+        },
+        " · ",
+        {
+          "tag": "a",
+          "children": ["События"],
+          "props": { "href": "/projects/novellmaker/docs/lua/events" }
+        },
+        " · ",
+        {
+          "tag": "a",
+          "children": ["Квоты"],
+          "props": { "href": "/projects/novellmaker/docs/lua/limits" }
+        }
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Контекст: ",
+        { "tag": "code", "children": ["ui"] },
+        "-обработчики и вызываемые ими модули; сценарным ",
+        { "tag": "code", "children": ["game"] },
+        " эти функции недоступны. Правила каждой записи: ",
+        {
+          "tag": "a",
+          "children": ["пакет"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#batch"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["lifetime/слоты"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["restore"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#restore"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["квоты Value и RNG"],
+          "props": { "href": "/projects/novellmaker/docs/lua/limits#values" }
+        },
+        ". ",
+        { "tag": "code", "children": ["get"] },
+        "/",
+        { "tag": "code", "children": ["list"] },
+        "/",
+        { "tag": "code", "children": ["object"] },
+        " допускаются также при вычислении исходника; ",
+        { "tag": "code", "children": ["get_state"] },
+        ", ",
+        { "tag": "code", "children": ["set_state"] },
+        " и RNG требуют активного on_load/on_event."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        "RNG — отдельный поток ",
+        { "tag": "strong", "children": ["pcg32-v1"] },
+        " на экземпляр, общий для всех его модулей. Начальное состояние фиксированное, не от системных часов. Независимые экземпляры не расходуют поток друг друга. Состояние RNG и явные данные публикуются только с целым успешным пакетом; локальные переменные/замыкания в слоты не попадают. Сохраняемая мини-игра восстанавливает обе части. Обычный закрытый экран теряет их; повторное открытие начинается заново."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Во фрагментах refs.label — обычный Text собственного холста, не привязанный к диалогу. Пример изменения count предполагает предварительное ",
+        { "tag": "code", "children": ["ui.set_state({count=0})"] },
+        " в обычном on_load."
+      ]
+    },
+    {
+      "tag": "h3",
+      "children": ["Данные Value"],
+      "props": { "id": "данные-value" }
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Поддерживаются null, boolean, конечное number (double), строка, плотный список 1..N и словарь строковых ключей. Lua nil в позиции Value означает null. В ",
+        {
+          "tag": "a",
+          "children": ["строгом режиме"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/components#ui-strict-arguments"
+          }
+        },
+        " set_state требует один явный аргумент: set_state(nil) сохраняет null, set_state() запрещён. В таблице nil удаляет поле: для сохраняемого null используйте ",
+        { "tag": "strong", "children": ["ui.null"] },
+        ", непрозрачный неизменяемый userdata. Чтение его поля даёт nil, запись (в том числе nil) — ошибку. ",
+        { "tag": "code", "children": ["type(ui.null)==\"userdata\""] },
+        ", ",
+        { "tag": "code", "children": ["tostring(ui.null)"] },
+        " запрещён. Сравнивайте с ",
+        { "tag": "code", "children": ["ui.null"] },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Обычная пустая таблица — Object; ",
+        { "tag": "code", "children": ["ui.list({})"] },
+        " — List. Форма помеченных/прочитанных таблиц сохраняется. Смешанные ключи, пропуски списка, циклы, метатаблицы, функции, потоки, прочие userdata, NaN/Infinity и непарные UTF-16 суррогаты отвергаются. Повторная ациклическая ссылка копируется и расходует бюджет повторно. Порядок словаря в каноническом JSON — ordinal."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Каждое значение: 16 уровней контейнеров, 1024 значений с корнем/контейнерами, строка 8192, ключ 128, сумма ключей/строк 32768 UTF-16, канонический JSON 65536 байт. Все set_state одного пакета в сумме также <=65536 байт. Это данные, а не произвольный Lua JSON encoder. Пример с count требует начального ",
+        { "tag": "code", "children": ["ui.set_state({count=0})"] },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "span", "children": [], "props": { "id": "ui-get" } }
+      ]
+    },
+    { "tag": "h2", "children": ["ui.get"], "props": { "id": "uiget" } },
+    {
+      "tag": "p",
+      "children": ["Прочитать переменную сюжета из снимка события."]
+    },
+    {
+      "tag": "pre",
+      "text": "ui.get(key) -> string | nil",
+      "language": "lua",
+      "children": [
+        "ui.get(key) -> ",
+        {
+          "tag": "span",
+          "children": ["string"],
+          "props": { "className": "hljs-built_in" }
+        },
+        " | ",
+        {
+          "tag": "span",
+          "children": ["nil"],
+          "props": { "className": "hljs-literal" }
+        }
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Доступность:"] },
+        " ui on_load/on_event, модуль, мини-игра и вычисление исходника; в restore допустима. До события snapshot ещё пустой."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Аргументы и ошибки:"] },
+        " key: обязательная строка, без дополнительной проверки формата при чтении."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Возврат:"] },
+        " Строка либо nil; не state компонента и не профиль."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Эффект и ограничения:"] },
+        " Немедленное чтение снимка, захваченного при принятии события. В Menu снимок пустой. Не даёт изменять сюжетные переменные. Общие ",
+        {
+          "tag": "a",
+          "children": ["квоты"],
+          "props": { "href": "/projects/novellmaker/docs/lua/limits" }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["атомарность"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#batch"
+          }
+        },
+        " и ",
+        {
+          "tag": "a",
+          "children": ["lifecycle/сохранение"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        " применяются, если здесь не указано исключение."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Пример"] },
+        " (предусловия refs/ресурсов приведены в начале страницы; это фрагмент соответствующего обработчика, если не показан полный return):"
+      ]
+    },
+    {
+      "tag": "pre",
+      "text": "ui.set_text(refs.label, ui.get(\"chapter\") or \"Начало\")",
+      "language": "lua",
+      "children": [
+        "ui.set_text(refs.label, ui.get(",
+        {
+          "tag": "span",
+          "children": ["\"chapter\""],
+          "props": { "className": "hljs-string" }
+        },
+        ") ",
+        {
+          "tag": "span",
+          "children": ["or"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " ",
+        {
+          "tag": "span",
+          "children": ["\"Начало\""],
+          "props": { "className": "hljs-string" }
+        },
+        ")"
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Связи:"] },
+        " ",
+        {
+          "tag": "a",
+          "children": ["game.get"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/scenario#game-get"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["ui.get_state"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/state-and-random#ui-get-state"
+          }
+        },
+        ". ",
+        {
+          "tag": "a",
+          "children": ["Регистрация и аргументы"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Screens/Lua/ScreenLuaWorker.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["тесты"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Screens/ScreenLuaWorkerTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "span", "children": [], "props": { "id": "ui-get-state" } }
+      ]
+    },
+    {
+      "tag": "h2",
+      "children": ["ui.get_state"],
+      "props": { "id": "uiget_state" }
+    },
+    {
+      "tag": "p",
+      "children": ["Прочитать отдельную копию состояния экземпляра."]
+    },
+    {
+      "tag": "pre",
+      "text": "ui.get_state() -> Value",
+      "language": "lua",
+      "children": ["ui.get_state() -> Value"]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Доступность:"] },
+        " on_load/on_event ui, вызванный ими модуль, мини-игра; при restore — ограничения этой записи и ",
+        {
+          "tag": "a",
+          "children": ["restore"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#restore"
+          }
+        },
+        ". Вычисление исходника вне обработчика не предназначено для команд."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Аргументы и ошибки:"] },
+        " Нет аргументов; по умолчанию лишние игнорируются, в строгом режиме запрещены."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Возврат:"] },
+        " Сериализуемое значение; начальное обычного экрана — ui.null, мини-игры — InitialState. Таблицы каждый раз отделены."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Эффект и ограничения:"] },
+        " Чтение в обработчике; видит предшествующий set_state того же пакета. Изменение таблицы без set_state ничего не публикует. Общие ",
+        {
+          "tag": "a",
+          "children": ["квоты"],
+          "props": { "href": "/projects/novellmaker/docs/lua/limits" }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["атомарность"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#batch"
+          }
+        },
+        " и ",
+        {
+          "tag": "a",
+          "children": ["lifecycle/сохранение"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        " применяются, если здесь не указано исключение."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Пример"] },
+        " (предусловия refs/ресурсов приведены в начале страницы; это фрагмент соответствующего обработчика, если не показан полный return):"
+      ]
+    },
+    {
+      "tag": "pre",
+      "text": "local s = ui.get_state()\nif s ~= ui.null then ui.set_text(refs.label, tostring(s.count)) end",
+      "language": "lua",
+      "children": [
+        {
+          "tag": "span",
+          "children": ["local"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " s = ui.get_state()\n",
+        {
+          "tag": "span",
+          "children": ["if"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " s ~= ui.null ",
+        {
+          "tag": "span",
+          "children": ["then"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " ui.set_text(refs.label, ",
+        {
+          "tag": "span",
+          "children": ["tostring"],
+          "props": { "className": "hljs-built_in" }
+        },
+        "(s.count)) ",
+        {
+          "tag": "span",
+          "children": ["end"],
+          "props": { "className": "hljs-keyword" }
+        }
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Связи:"] },
+        " ",
+        {
+          "tag": "a",
+          "children": ["ui.set_state"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/state-and-random#ui-set-state"
+          }
+        },
+        ". ",
+        {
+          "tag": "a",
+          "children": ["Регистрация и аргументы"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Screens/Lua/ScreenLuaWorker.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["тесты"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Screens/ScreenLuaWorkerTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "span", "children": [], "props": { "id": "ui-set-state" } }
+      ]
+    },
+    {
+      "tag": "h2",
+      "children": ["ui.set_state"],
+      "props": { "id": "uiset_state" }
+    },
+    {
+      "tag": "p",
+      "children": ["Подготовить новое явное состояние экземпляра."]
+    },
+    {
+      "tag": "pre",
+      "text": "ui.set_state(value) -> nil\nui.set_state() -> nil",
+      "language": "lua",
+      "children": [
+        "ui.set_state(value) -> ",
+        {
+          "tag": "span",
+          "children": ["nil"],
+          "props": { "className": "hljs-literal" }
+        },
+        "\nui.set_state() -> ",
+        {
+          "tag": "span",
+          "children": ["nil"],
+          "props": { "className": "hljs-literal" }
+        }
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Доступность:"] },
+        " on_load/on_event ui, вызванный ими модуль, мини-игра; при restore — ограничения этой записи и ",
+        {
+          "tag": "a",
+          "children": ["restore"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#restore"
+          }
+        },
+        ". Вычисление исходника вне обработчика не предназначено для команд."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Аргументы и ошибки:"] },
+        " value: Value из таблицы данных ниже. nil и отсутствие аргумента дают null. Сумма канонических JSON всех записей пакета <=65536 байт. У мини-игры также проверяется StateSchema."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [{ "tag": "strong", "children": ["Возврат:"] }, " nil."]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Эффект и ограничения:"] },
+        " Рабочее состояние меняется немедленно, host — только при commit полного пакета. Последняя запись побеждает, но бюджет расходуют все. В восстанавливающем on_load мини-игры допустимо только точно то же каноническое значение. Общие ",
+        {
+          "tag": "a",
+          "children": ["квоты"],
+          "props": { "href": "/projects/novellmaker/docs/lua/limits" }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["атомарность"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#batch"
+          }
+        },
+        " и ",
+        {
+          "tag": "a",
+          "children": ["lifecycle/сохранение"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        " применяются, если здесь не указано исключение."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Пример"] },
+        " (предусловия refs/ресурсов приведены в начале страницы; это фрагмент соответствующего обработчика, если не показан полный return):"
+      ]
+    },
+    {
+      "tag": "pre",
+      "text": "local s = ui.get_state()\ns.count = s.count + 1\nui.set_state(s)",
+      "language": "lua",
+      "children": [
+        {
+          "tag": "span",
+          "children": ["local"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " s = ui.get_state()\ns.count = s.count + ",
+        {
+          "tag": "span",
+          "children": ["1"],
+          "props": { "className": "hljs-number" }
+        },
+        "\nui.set_state(s)"
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Связи:"] },
+        " ",
+        {
+          "tag": "a",
+          "children": ["ui.get_state"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/state-and-random#ui-get-state"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["ui.list"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/state-and-random#ui-list"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["ui.object"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/state-and-random#ui-object"
+          }
+        },
+        ". ",
+        {
+          "tag": "a",
+          "children": ["Регистрация и аргументы"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Screens/Lua/ScreenLuaWorker.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["тесты"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Screens/ComponentStateTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "span", "children": [], "props": { "id": "ui-list" } }
+      ]
+    },
+    { "tag": "h2", "children": ["ui.list"], "props": { "id": "uilist" } },
+    {
+      "tag": "p",
+      "children": ["Пометить Lua-таблицу как список сериализуемых данных."]
+    },
+    {
+      "tag": "pre",
+      "text": "ui.list(value) -> table",
+      "language": "lua",
+      "children": [
+        "ui.list(value) -> ",
+        {
+          "tag": "span",
+          "children": ["table"],
+          "props": { "className": "hljs-built_in" }
+        }
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Доступность:"] },
+        " ui on_load/on_event, модуль, мини-игра и вычисление исходника; в restore допустима."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Аргументы и ошибки:"] },
+        " value: обязательная таблица. Сам вызов только помечает форму; содержимое проверяется при переводе в Value. nil — ошибка."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Возврат:"] },
+        " Та же таблица, не копия."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Эффект и ограничения:"] },
+        " Немедленная метка в VM; не команда. Особенно нужна для пустого списка; обычная пустая таблица — словарь. Общие ",
+        {
+          "tag": "a",
+          "children": ["квоты"],
+          "props": { "href": "/projects/novellmaker/docs/lua/limits" }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["атомарность"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#batch"
+          }
+        },
+        " и ",
+        {
+          "tag": "a",
+          "children": ["lifecycle/сохранение"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        " применяются, если здесь не указано исключение."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Пример"] },
+        " (предусловия refs/ресурсов приведены в начале страницы; это фрагмент соответствующего обработчика, если не показан полный return):"
+      ]
+    },
+    {
+      "tag": "pre",
+      "text": "local data = ui.list({})",
+      "language": "lua",
+      "children": [
+        {
+          "tag": "span",
+          "children": ["local"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " data = ui.list({})"
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Связи:"] },
+        " ",
+        {
+          "tag": "a",
+          "children": ["ui.set_state"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/state-and-random#ui-set-state"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["game.start_minigame"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/scenario#game-start-minigame"
+          }
+        },
+        ". ",
+        {
+          "tag": "a",
+          "children": ["Регистрация и аргументы"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Screens/Lua/ScreenLuaWorker.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["тесты"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Screens/ScreenLuaWorkerTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "span", "children": [], "props": { "id": "ui-object" } }
+      ]
+    },
+    { "tag": "h2", "children": ["ui.object"], "props": { "id": "uiobject" } },
+    {
+      "tag": "p",
+      "children": ["Пометить Lua-таблицу как словарь сериализуемых данных."]
+    },
+    {
+      "tag": "pre",
+      "text": "ui.object(value) -> table",
+      "language": "lua",
+      "children": [
+        "ui.object(value) -> ",
+        {
+          "tag": "span",
+          "children": ["table"],
+          "props": { "className": "hljs-built_in" }
+        }
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Доступность:"] },
+        " ui on_load/on_event, модуль, мини-игра и вычисление исходника; в restore допустима."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Аргументы и ошибки:"] },
+        " value: обязательная таблица. Сам вызов только помечает форму; содержимое проверяется при переводе в Value. nil — ошибка."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Возврат:"] },
+        " Та же таблица, не копия."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Эффект и ограничения:"] },
+        " Немедленная метка в VM; не команда. Особенно нужна для пустого списка; обычная пустая таблица — словарь. Общие ",
+        {
+          "tag": "a",
+          "children": ["квоты"],
+          "props": { "href": "/projects/novellmaker/docs/lua/limits" }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["атомарность"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#batch"
+          }
+        },
+        " и ",
+        {
+          "tag": "a",
+          "children": ["lifecycle/сохранение"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        " применяются, если здесь не указано исключение."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Пример"] },
+        " (предусловия refs/ресурсов приведены в начале страницы; это фрагмент соответствующего обработчика, если не показан полный return):"
+      ]
+    },
+    {
+      "tag": "pre",
+      "text": "local data = ui.object({})",
+      "language": "lua",
+      "children": [
+        {
+          "tag": "span",
+          "children": ["local"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " data = ui.object({})"
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Связи:"] },
+        " ",
+        {
+          "tag": "a",
+          "children": ["ui.set_state"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/state-and-random#ui-set-state"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["game.start_minigame"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/scenario#game-start-minigame"
+          }
+        },
+        ". ",
+        {
+          "tag": "a",
+          "children": ["Регистрация и аргументы"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Screens/Lua/ScreenLuaWorker.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["тесты"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Screens/ScreenLuaWorkerTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "span", "children": [], "props": { "id": "ui-random" } }
+      ]
+    },
+    { "tag": "h2", "children": ["ui.random"], "props": { "id": "uirandom" } },
+    { "tag": "p", "children": ["Получить управляемое случайное число."] },
+    {
+      "tag": "pre",
+      "text": "ui.random() -> number\nui.random(upper) -> integer\nui.random(lower, upper) -> integer",
+      "language": "lua",
+      "children": [
+        "ui.",
+        {
+          "tag": "span",
+          "children": ["random"],
+          "props": { "className": "hljs-built_in" }
+        },
+        "() -> number\nui.",
+        {
+          "tag": "span",
+          "children": ["random"],
+          "props": { "className": "hljs-built_in" }
+        },
+        "(",
+        {
+          "tag": "span",
+          "children": ["upper"],
+          "props": { "className": "hljs-built_in" }
+        },
+        ") -> integer\nui.",
+        {
+          "tag": "span",
+          "children": ["random"],
+          "props": { "className": "hljs-built_in" }
+        },
+        "(",
+        {
+          "tag": "span",
+          "children": ["lower"],
+          "props": { "className": "hljs-built_in" }
+        },
+        ", ",
+        {
+          "tag": "span",
+          "children": ["upper"],
+          "props": { "className": "hljs-built_in" }
+        },
+        ") -> integer"
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Доступность:"] },
+        " on_load/on_event ui, вызванный ими модуль, мини-игра; при restore — ограничения этой записи и ",
+        {
+          "tag": "a",
+          "children": ["restore"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#restore"
+          }
+        },
+        ". Вычисление исходника вне обработчика не предназначено для команд."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Аргументы и ошибки:"] },
+        " 0..2 аргумента точно. Без аргументов — [0,1), кратные 2^-32. С одной границей lower=1. Границы — точные int32, включительно, lower<=upper. nil, дробь, строка — ошибка."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Возврат:"] },
+        " Число; целый диапазон выбирается без modulo bias."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Эффект и ограничения:"] },
+        " Меняет рабочий PCG32 и публикует один снимок RNG вместе с пакетом. До 1024 сырых выборок за обработчик, rejection sampling может расходовать больше одной на вызов. Восстанавливающий on_load не должен менять поток. Общие ",
+        {
+          "tag": "a",
+          "children": ["квоты"],
+          "props": { "href": "/projects/novellmaker/docs/lua/limits" }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["атомарность"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#batch"
+          }
+        },
+        " и ",
+        {
+          "tag": "a",
+          "children": ["lifecycle/сохранение"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        " применяются, если здесь не указано исключение."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Пример"] },
+        " (предусловия refs/ресурсов приведены в начале страницы; это фрагмент соответствующего обработчика, если не показан полный return):"
+      ]
+    },
+    {
+      "tag": "pre",
+      "text": "local die = ui.random(1, 6)\nui.set_text(refs.label, tostring(die))",
+      "language": "lua",
+      "children": [
+        {
+          "tag": "span",
+          "children": ["local"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " die = ui.",
+        {
+          "tag": "span",
+          "children": ["random"],
+          "props": { "className": "hljs-built_in" }
+        },
+        "(",
+        {
+          "tag": "span",
+          "children": ["1"],
+          "props": { "className": "hljs-number" }
+        },
+        ", ",
+        {
+          "tag": "span",
+          "children": ["6"],
+          "props": { "className": "hljs-number" }
+        },
+        ")\nui.set_text(refs.label, ",
+        {
+          "tag": "span",
+          "children": ["tostring"],
+          "props": { "className": "hljs-built_in" }
+        },
+        "(die))"
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Связи:"] },
+        " ",
+        {
+          "tag": "a",
+          "children": ["ui.seed_random"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/state-and-random#ui-seed-random"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["ui.get_random_state"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/state-and-random#ui-get-random-state"
+          }
+        },
+        ". ",
+        {
+          "tag": "a",
+          "children": ["Регистрация и аргументы"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Scripting/LuaRandomApi.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["тесты"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Screens/LuaRandomTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "span", "children": [], "props": { "id": "ui-seed-random" } }
+      ]
+    },
+    {
+      "tag": "h2",
+      "children": ["ui.seed_random"],
+      "props": { "id": "uiseed_random" }
+    },
+    {
+      "tag": "p",
+      "children": ["Инициализировать поток RNG воспроизводимым seed."]
+    },
+    {
+      "tag": "pre",
+      "text": "ui.seed_random(seed) -> nil",
+      "language": "lua",
+      "children": [
+        "ui.seed_random(seed) -> ",
+        {
+          "tag": "span",
+          "children": ["nil"],
+          "props": { "className": "hljs-literal" }
+        }
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Доступность:"] },
+        " on_load/on_event ui, вызванный ими модуль, мини-игра; при restore — ограничения этой записи и ",
+        {
+          "tag": "a",
+          "children": ["restore"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#restore"
+          }
+        },
+        ". Вычисление исходника вне обработчика не предназначено для команд."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Аргументы и ошибки:"] },
+        " Ровно один числовой целый аргумент [0,4294967295]; nil — ошибка."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [{ "tag": "strong", "children": ["Возврат:"] }, " nil."]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Эффект и ограничения:"] },
+        " Расходует 2 сырых выборки и 2 единицы работы плюс стоимость вызова; не сбрасывает квоту обработчика. Host принимает состояние только с успешным пакетом. Общие ",
+        {
+          "tag": "a",
+          "children": ["квоты"],
+          "props": { "href": "/projects/novellmaker/docs/lua/limits" }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["атомарность"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#batch"
+          }
+        },
+        " и ",
+        {
+          "tag": "a",
+          "children": ["lifecycle/сохранение"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        " применяются, если здесь не указано исключение."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Пример"] },
+        " (предусловия refs/ресурсов приведены в начале страницы; это фрагмент соответствующего обработчика, если не показан полный return):"
+      ]
+    },
+    {
+      "tag": "pre",
+      "text": "ui.seed_random(42)\nui.set_text(refs.label, tostring(ui.random(6)))",
+      "language": "lua",
+      "children": [
+        "ui.seed_random(",
+        {
+          "tag": "span",
+          "children": ["42"],
+          "props": { "className": "hljs-number" }
+        },
+        ")\nui.set_text(refs.label, ",
+        {
+          "tag": "span",
+          "children": ["tostring"],
+          "props": { "className": "hljs-built_in" }
+        },
+        "(ui.",
+        {
+          "tag": "span",
+          "children": ["random"],
+          "props": { "className": "hljs-built_in" }
+        },
+        "(",
+        {
+          "tag": "span",
+          "children": ["6"],
+          "props": { "className": "hljs-number" }
+        },
+        ")))"
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Связи:"] },
+        " ",
+        {
+          "tag": "a",
+          "children": ["ui.random"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/state-and-random#ui-random"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["ui.set_random_state"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/state-and-random#ui-set-random-state"
+          }
+        },
+        ". ",
+        {
+          "tag": "a",
+          "children": ["Регистрация и аргументы"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Scripting/LuaRandomApi.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["тесты"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Screens/LuaRandomTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        {
+          "tag": "span",
+          "children": [],
+          "props": { "id": "ui-get-random-state" }
+        }
+      ]
+    },
+    {
+      "tag": "h2",
+      "children": ["ui.get_random_state"],
+      "props": { "id": "uiget_random_state" }
+    },
+    {
+      "tag": "p",
+      "children": ["Получить точный снимок RNG без потери разрядов."]
+    },
+    {
+      "tag": "pre",
+      "text": "ui.get_random_state() -> string",
+      "language": "lua",
+      "children": [
+        "ui.get_random_state() -> ",
+        {
+          "tag": "span",
+          "children": ["string"],
+          "props": { "className": "hljs-built_in" }
+        }
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Доступность:"] },
+        " on_load/on_event ui, вызванный ими модуль, мини-игра; при restore — ограничения этой записи и ",
+        {
+          "tag": "a",
+          "children": ["restore"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#restore"
+          }
+        },
+        ". Вычисление исходника вне обработчика не предназначено для команд."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Аргументы и ошибки:"] },
+        " Ровно ноль аргументов."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Возврат:"] },
+        " Строка из 25 символов: pcg32-v1: и 16 строчных hex-цифр."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Эффект и ограничения:"] },
+        " Чтение рабочего потока, выборок не делает; 25 символов результата расходуют общий строковый бюджет библиотеки. Можно вызвать в восстанавливающем on_load. Общие ",
+        {
+          "tag": "a",
+          "children": ["квоты"],
+          "props": { "href": "/projects/novellmaker/docs/lua/limits" }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["атомарность"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#batch"
+          }
+        },
+        " и ",
+        {
+          "tag": "a",
+          "children": ["lifecycle/сохранение"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        " применяются, если здесь не указано исключение."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Пример"] },
+        " (предусловия refs/ресурсов приведены в начале страницы; это фрагмент соответствующего обработчика, если не показан полный return):"
+      ]
+    },
+    {
+      "tag": "pre",
+      "text": "local snapshot = ui.get_random_state()",
+      "language": "lua",
+      "children": [
+        {
+          "tag": "span",
+          "children": ["local"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " snapshot = ui.get_random_state()"
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Связи:"] },
+        " ",
+        {
+          "tag": "a",
+          "children": ["ui.set_random_state"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/state-and-random#ui-set-random-state"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["ui.random"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/state-and-random#ui-random"
+          }
+        },
+        ". ",
+        {
+          "tag": "a",
+          "children": ["Регистрация и аргументы"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Scripting/LuaRandomApi.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["тесты"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Screens/LuaRandomTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        {
+          "tag": "span",
+          "children": [],
+          "props": { "id": "ui-set-random-state" }
+        }
+      ]
+    },
+    {
+      "tag": "h2",
+      "children": ["ui.set_random_state"],
+      "props": { "id": "uiset_random_state" }
+    },
+    { "tag": "p", "children": ["Восстановить точный поток RNG из строки."] },
+    {
+      "tag": "pre",
+      "text": "ui.set_random_state(snapshot) -> nil",
+      "language": "lua",
+      "children": [
+        "ui.set_random_state(snapshot) -> ",
+        {
+          "tag": "span",
+          "children": ["nil"],
+          "props": { "className": "hljs-literal" }
+        }
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Доступность:"] },
+        " on_load/on_event ui, вызванный ими модуль, мини-игра; при restore — ограничения этой записи и ",
+        {
+          "tag": "a",
+          "children": ["restore"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#restore"
+          }
+        },
+        ". Вычисление исходника вне обработчика не предназначено для команд."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Аргументы и ошибки:"] },
+        " Ровно одна строка точного формата pcg32-v1:xxxxxxxxxxxxxxxx (lowercase hex); произвольное число вместо строки запрещено."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [{ "tag": "strong", "children": ["Возврат:"] }, " nil."]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Эффект и ограничения:"] },
+        " Меняет рабочий поток, не восполняет квоту сырых выборок. В restore on_load итог должен совпасть с переданным host состоянием. Общие ",
+        {
+          "tag": "a",
+          "children": ["квоты"],
+          "props": { "href": "/projects/novellmaker/docs/lua/limits" }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["атомарность"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#batch"
+          }
+        },
+        " и ",
+        {
+          "tag": "a",
+          "children": ["lifecycle/сохранение"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        " применяются, если здесь не указано исключение."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Пример"] },
+        " (предусловия refs/ресурсов приведены в начале страницы; это фрагмент соответствующего обработчика, если не показан полный return):"
+      ]
+    },
+    {
+      "tag": "pre",
+      "text": "local saved = ui.get_random_state()\nlocal a = ui.random()\nui.set_random_state(saved)\nlocal b = ui.random() -- a == b",
+      "language": "lua",
+      "children": [
+        {
+          "tag": "span",
+          "children": ["local"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " saved = ui.get_random_state()\n",
+        {
+          "tag": "span",
+          "children": ["local"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " a = ui.",
+        {
+          "tag": "span",
+          "children": ["random"],
+          "props": { "className": "hljs-built_in" }
+        },
+        "()\nui.set_random_state(saved)\n",
+        {
+          "tag": "span",
+          "children": ["local"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " b = ui.",
+        {
+          "tag": "span",
+          "children": ["random"],
+          "props": { "className": "hljs-built_in" }
+        },
+        "() ",
+        {
+          "tag": "span",
+          "children": ["-- a == b"],
+          "props": { "className": "hljs-comment" }
+        }
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Связи:"] },
+        " ",
+        {
+          "tag": "a",
+          "children": ["ui.get_random_state"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/state-and-random#ui-get-random-state"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["ui.seed_random"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/state-and-random#ui-seed-random"
+          }
+        },
+        ". ",
+        {
+          "tag": "a",
+          "children": ["Регистрация и аргументы"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Scripting/LuaRandomApi.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["тесты"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Screens/LuaRandomTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    }
+  ]
+}

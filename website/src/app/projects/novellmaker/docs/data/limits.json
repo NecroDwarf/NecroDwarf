@@ -1,0 +1,2572 @@
+{
+  "title": "Квоты и область действия",
+  "headings": [
+    {
+      "title": "Квоты и область действия",
+      "id": "квоты-и-область-действия",
+      "level": 1
+    },
+    {
+      "title": "Исходник, VM и транспорт",
+      "id": "исходник-vm-и-транспорт",
+      "level": 2
+    },
+    { "title": "Сценарий", "id": "scenario", "level": 2 },
+    { "title": "Компоненты", "id": "components", "level": 2 },
+    { "title": "Value, state, RNG и мини-игра", "id": "values", "level": 2 },
+    { "title": "Модули", "id": "modules", "level": 2 },
+    { "title": "События и триггеры", "id": "events", "level": 2 },
+    { "title": "Анимации", "id": "animations", "level": 2 },
+    { "title": "Звук", "id": "audio", "level": 2 },
+    { "title": "Слоты и профиль", "id": "storage", "level": 2 },
+    { "title": "Проверка выпуска", "id": "external", "level": 2 },
+    { "title": "Ограниченная библиотека", "id": "standard", "level": 2 },
+    { "title": "Диагностика", "id": "diagnostics", "level": 2 }
+  ],
+  "nodes": [
+    {
+      "tag": "h1",
+      "children": ["Квоты и область действия"],
+      "props": { "id": "квоты-и-область-действия" }
+    },
+    {
+      "tag": "p",
+      "children": [
+        {
+          "tag": "a",
+          "children": ["Оглавление"],
+          "props": { "href": "/projects/novellmaker/docs/lua" }
+        },
+        " · ",
+        {
+          "tag": "a",
+          "children": ["Модель исполнения"],
+          "props": { "href": "/projects/novellmaker/docs/lua/execution-model" }
+        }
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Числа ниже взяты из текущих констант/проверок. «Символы» — единицы UTF-16 C#, если явно не указаны байты. Это разные бюджеты: прохождение preflight или syntax не гарантирует, что хватит инструкций, native работы, данных или очереди. Ошибка квоты обычно отклоняет пакет; конкретные отказы сервиса/доставка — у функций и в ",
+        {
+          "tag": "a",
+          "children": ["событиях"],
+          "props": { "href": "/projects/novellmaker/docs/lua/events" }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        {
+          "tag": "a",
+          "children": ["Переключатели строгих аргументов"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/scenario#game-strict-arguments"
+          }
+        },
+        " не меняют квоты и не добавляют команды или события. game.finish проверяет тот же бюджет переменных, что game.set, и сразу обновляет локальный снимок."
+      ]
+    },
+    {
+      "tag": "h2",
+      "children": ["Исходник, VM и транспорт"],
+      "props": { "id": "исходник-vm-и-транспорт" }
+    },
+    {
+      "tag": "p",
+      "children": [
+        "История: до 500 посещений. ",
+        { "tag": "code", "children": ["ui.get_history"] },
+        " возвращает одно посещение и одну страницу: page_size 1..2048 Unicode scalars (по умолчанию 700), не более 8 LF и 4096 UTF-16 текста, язык до 64 UTF-16, говорящий до 256 UTF-16. Индекс 0..500, страница 1..1000000 с ограничением фактическим диапазоном. Одна сервисная команда на пакет и обычная резервация ответа. ",
+        {
+          "tag": "a",
+          "children": ["Полный контракт"],
+          "props": { "href": "/projects/novellmaker/docs/lua/history" }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["проверки"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Execution/HistoryPage.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "div",
+      "children": [
+        {
+          "tag": "table",
+          "children": [
+            {
+              "tag": "thead",
+              "children": [
+                {
+                  "tag": "tr",
+                  "children": [
+                    {
+                      "tag": "th",
+                      "children": ["Область"],
+                      "props": { "scope": "col" }
+                    },
+                    {
+                      "tag": "th",
+                      "children": ["Предел"],
+                      "props": { "scope": "col" }
+                    },
+                    {
+                      "tag": "th",
+                      "children": ["Источник"],
+                      "props": { "scope": "col" }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "tbody",
+              "children": [
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["Один Lua-исходник"] },
+                    { "tag": "td", "children": ["32768 символов"] },
+                    {
+                      "tag": "td",
+                      "children": ["LuaActionScript.MaximumSourceLength"]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["Preflight одного файла"] },
+                    {
+                      "tag": "td",
+                      "children": [
+                        "4096 лексических единиц, 64 суммарных уровня скобок/блоков, 128 конструкций, 256 операторных символов/слов"
+                      ]
+                    },
+                    {
+                      "tag": "td",
+                      "children": [
+                        "LuaLimits.CheckSource; строки/комментарии исключены, это консервативный фильтр, не точный AST parser"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    {
+                      "tag": "td",
+                      "children": [
+                        "Одно вычисление исходника / один обработчик"
+                      ]
+                    },
+                    { "tag": "td", "children": ["20000 Lua-инструкций"] },
+                    {
+                      "tag": "td",
+                      "children": [
+                        "AutoYieldCounter; yield трактуется как превышение, не продолжение"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    {
+                      "tag": "td",
+                      "children": ["Все Lua-worker host-процесса"]
+                    },
+                    {
+                      "tag": "td",
+                      "children": [
+                        "максимум 2 процесса и 34 занятых admission-места суммарно (2+32); сценарный deadline 5000 мс"
+                      ]
+                    },
+                    {
+                      "tag": "td",
+                      "children": ["LuaWorkerClient/Slots/Transport"]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    {
+                      "tag": "td",
+                      "children": ["Постоянная ui-беседа host-процесса"]
+                    },
+                    {
+                      "tag": "td",
+                      "children": [
+                        "максимум 1, удерживает одно общее process/admission-место на свой lifetime; сценарный worker может работать рядом"
+                      ]
+                    },
+                    {
+                      "tag": "td",
+                      "children": [
+                        "LuaWorkerSlots.ScreenSessions, ScreenLuaConnection"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["Сценарный RPC, размер"] },
+                    {
+                      "tag": "td",
+                      "children": ["запрос <=16 МиБ, ответ <=1 МиБ"]
+                    },
+                    { "tag": "td", "children": ["LuaWorkerClient"] }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["ui IPC"] },
+                    {
+                      "tag": "td",
+                      "children": [
+                        "один кадр <=1 МиБ в каждом направлении; общий срок события 5 секунд с очередью/подготовкой"
+                      ]
+                    },
+                    { "tag": "td", "children": ["ScreenLuaProtocol/Session"] }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["Память worker"] },
+                    {
+                      "tag": "td",
+                      "children": [
+                        "managed heap 64 МиБ; на Windows committed memory процесса 256 МиБ"
+                      ]
+                    },
+                    {
+                      "tag": "td",
+                      "children": ["LuaWorkerProcess, LuaWorkerJob"]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["Очистка ui connection"] },
+                    {
+                      "tag": "td",
+                      "children": [
+                        "ограниченная, ожидание до 3 секунд вне кадра"
+                      ]
+                    },
+                    {
+                      "tag": "td",
+                      "children": ["ScreenLuaSession.Retire/DisposeAsync"]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    {
+                      "tag": "td",
+                      "children": [
+                        "Ожидание очистки сценарных pending при DisposeAsync"
+                      ]
+                    },
+                    { "tag": "td", "children": ["до 2 секунд"] },
+                    { "tag": "td", "children": ["ScenarioPlayer.Lua"] }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "props": {
+        "className": "nm-table",
+        "tabIndex": 0,
+        "role": "region",
+        "aria-label": "Таблица, прокрутка по горизонтали"
+      }
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Источники: ",
+        {
+          "tag": "a",
+          "children": ["LuaLimits"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Execution/LuaLimits.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["VM"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Execution/LuaActionScript.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["client"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Execution/LuaWorkerClient.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["process"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Execution/LuaWorkerProcess.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["connection"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Screens/Lua/ScreenLuaConnection.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ". Тесты: ",
+        {
+          "tag": "a",
+          "children": ["границы"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Execution/LuaLimitBoundaryTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["транспорт"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Execution/LuaWorkerTransportTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "span", "children": [], "props": { "id": "scenario" } }
+      ]
+    },
+    { "tag": "h2", "children": ["Сценарий"], "props": { "id": "сценарий" } },
+    {
+      "tag": "div",
+      "children": [
+        {
+          "tag": "table",
+          "children": [
+            {
+              "tag": "thead",
+              "children": [
+                {
+                  "tag": "tr",
+                  "children": [
+                    {
+                      "tag": "th",
+                      "children": ["Область"],
+                      "props": { "scope": "col" }
+                    },
+                    {
+                      "tag": "th",
+                      "children": ["Предел"],
+                      "props": { "scope": "col" }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "tbody",
+              "children": [
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["Результат одного Lua-блока"] },
+                    { "tag": "td", "children": ["256 команд"] }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    {
+                      "tag": "td",
+                      "children": ["Вся ожидающая сценарная очередь"]
+                    },
+                    {
+                      "tag": "td",
+                      "children": [
+                        "4096 команд, 524288 символов учитываемых данных; параметры мини-игры учитываются JSON-байтами"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    {
+                      "tag": "td",
+                      "children": ["Проход без игрового ожидания"]
+                    },
+                    {
+                      "tag": "td",
+                      "children": [
+                        "2048 действий; до 32 Lua-вызовов /5 секунд активного прохода"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    {
+                      "tag": "td",
+                      "children": ["Tick с разбивкой по ожиданиям"]
+                    },
+                    { "tag": "td", "children": ["до 2048 шагов"] }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["Переменные сюжета"] },
+                    {
+                      "tag": "td",
+                      "children": [
+                        "256; имя непустое/непробельное <=128, значение <=8192; ключи+значения <=131072"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["Ссылки блока/ресурса"] },
+                    { "tag": "td", "children": ["256, имя <=128; GUID непуст"] }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["Выбор"] },
+                    {
+                      "tag": "td",
+                      "children": [
+                        "1..8 вариантов; текст непустой/непробельный <=8192, ID уникальны"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    {
+                      "tag": "td",
+                      "children": ["Продолжительность wait/move"]
+                    },
+                    { "tag": "td", "children": ["конечные секунды [0,86400]"] }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["Placement"] },
+                    {
+                      "tag": "td",
+                      "children": [
+                        "x/y [-1,2], scale [0.05,5], integer layer [-1000,1000]"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["Hotspot"] },
+                    {
+                      "tag": "td",
+                      "children": [
+                        "x/y>=0, width/height>0, x+width<=1, y+height<=1; label<=8192"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "props": {
+        "className": "nm-table",
+        "tabIndex": 0,
+        "role": "region",
+        "aria-label": "Таблица, прокрутка по горизонтали"
+      }
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Источники: ",
+        {
+          "tag": "a",
+          "children": ["ScenarioProgram"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Execution/ScenarioProgram.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["ScenarioPlayer"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Execution/ScenarioPlayer.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["LuaLimits"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Execution/LuaLimits.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ". Тесты: ",
+        {
+          "tag": "a",
+          "children": ["сценарий"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Execution/ScenarioPlayerTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["placement"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Execution/PlacementTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "span", "children": [], "props": { "id": "components" } }
+      ]
+    },
+    {
+      "tag": "h2",
+      "children": ["Компоненты"],
+      "props": { "id": "компоненты" }
+    },
+    {
+      "tag": "div",
+      "children": [
+        {
+          "tag": "table",
+          "children": [
+            {
+              "tag": "thead",
+              "children": [
+                {
+                  "tag": "tr",
+                  "children": [
+                    {
+                      "tag": "th",
+                      "children": ["Область"],
+                      "props": { "scope": "col" }
+                    },
+                    {
+                      "tag": "th",
+                      "children": ["Предел"],
+                      "props": { "scope": "col" }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "tbody",
+              "children": [
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["Один ui-пакет"] },
+                    {
+                      "tag": "td",
+                      "children": [
+                        "256 команд, включая одну добавляемую метадату RNG"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["Один холст"] },
+                    {
+                      "tag": "td",
+                      "children": ["1 корень; 1024 узла; depth 32"]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["Legacy migration exception"] },
+                    {
+                      "tag": "td",
+                      "children": [
+                        "при распознанной тройке старых CSSPanel/Speaker/Text до 4 дополнительных узлов и +1 depth; не общий новый авторский лимит"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["ID узлов одного экземпляра"] },
+                    {
+                      "tag": "td",
+                      "children": [
+                        "живые + retired <=4096, удалённые не переиспользуются"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["Стек"] },
+                    {
+                      "tag": "td",
+                      "children": ["32 экземпляра, 4096 живых узлов сеанса"]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["Текст одного узла/set_text"] },
+                    { "tag": "td", "children": ["8192"] }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    {
+                      "tag": "td",
+                      "children": [
+                        "Текст дерева / сумма текстов set_text пакета"
+                      ]
+                    },
+                    { "tag": "td", "children": ["каждый <=131072"] }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["Имя узла"] },
+                    { "tag": "td", "children": ["<=128"] }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["Geometry"] },
+                    {
+                      "tag": "td",
+                      "children": [
+                        {
+                          "tag": "a",
+                          "children": ["полная таблица диапазонов"],
+                          "props": {
+                            "href": "/projects/novellmaker/docs/lua/components"
+                          }
+                        },
+                        "; мировые углы <=1e8 по модулю, модуль determinant>=1e-12"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["Ссылки refs/audio"] },
+                    {
+                      "tag": "td",
+                      "children": ["каждая таблица <=256, имена <=128"]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    {
+                      "tag": "td",
+                      "children": ["Растер обычного Text/Button"]
+                    },
+                    {
+                      "tag": "td",
+                      "children": [
+                        "видимая локальная область: сторона <=2048 и площадь <=262144 пикселей; привязанный диалог может разбиваться на полосы <=262144"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    {
+                      "tag": "td",
+                      "children": ["Кеш растров текста всех слоёв"]
+                    },
+                    {
+                      "tag": "td",
+                      "children": [
+                        "4194304 пикселя; до 4 новых текстур/262144 пикселей подготовки за кадр"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["Кеш изображений runtime"] },
+                    {
+                      "tag": "td",
+                      "children": [
+                        "128 МиБ/256 ресурсов; prefetch <=64 МиБ/16 hints; upload <=1 МиБ за кадр"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "props": {
+        "className": "nm-table",
+        "tabIndex": 0,
+        "role": "region",
+        "aria-label": "Таблица, прокрутка по горизонтали"
+      }
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Геометрически допустимый очень большой Text/Button может превысить бюджет растеризации: это диагностика отображения, а не отказ Lua-пакета. Кнопка сохраняет заливку и hit-test без подписи. Скрытые/обрезанные области отсекаются до растра; deferred подготовка не означает нарушение порядка команд."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Источники: ",
+        {
+          "tag": "a",
+          "children": ["definition"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Screens/ScreenDefinition.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["tree"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Screens/ScreenTree.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["stack"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Screens/ScreenStack.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["protocol"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Screens/Lua/ScreenLuaProtocol.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["растры"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Runtime/ScreenTextureCache.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["image cache"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Runtime/RuntimeImageCache.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ". Тесты: ",
+        {
+          "tag": "a",
+          "children": ["ScreenTreeTests"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Screens/ScreenTreeTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["VisualScreenTests"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Screens/VisualScreenTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["ScreenTextureCacheTests"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Runtime.Tests/ScreenTextureCacheTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "span", "children": [], "props": { "id": "values" } }
+      ]
+    },
+    {
+      "tag": "h2",
+      "children": ["Value, state, RNG и мини-игра"],
+      "props": { "id": "value-state-rng-и-мини-игра" }
+    },
+    {
+      "tag": "div",
+      "children": [
+        {
+          "tag": "table",
+          "children": [
+            {
+              "tag": "thead",
+              "children": [
+                {
+                  "tag": "tr",
+                  "children": [
+                    {
+                      "tag": "th",
+                      "children": ["Область"],
+                      "props": { "scope": "col" }
+                    },
+                    {
+                      "tag": "th",
+                      "children": ["Предел"],
+                      "props": { "scope": "col" }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "tbody",
+              "children": [
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["Одно сериализуемое Value"] },
+                    {
+                      "tag": "td",
+                      "children": [
+                        "контейнеры depth<=16; значений с корнем/контейнерами <=1024"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["Строки/ключи Value"] },
+                    {
+                      "tag": "td",
+                      "children": [
+                        "строка<=8192, ключ<=128, сумма<=32768; корректный Unicode"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    {
+                      "tag": "td",
+                      "children": ["Канонический JSON одного Value"]
+                    },
+                    {
+                      "tag": "td",
+                      "children": ["<=65536 UTF-8 байт с escaping"]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    {
+                      "tag": "td",
+                      "children": ["Все set_state одного пакета"]
+                    },
+                    {
+                      "tag": "td",
+                      "children": [
+                        "сумма JSON<=65536 байт, даже если последняя запись заменила предыдущую"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["Один обработчик RNG"] },
+                    {
+                      "tag": "td",
+                      "children": [
+                        "<=1024 сырых uint32 выборок; seed расходует 2 и не сбрасывает счётчик"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["Границы random"] },
+                    {
+                      "tag": "td",
+                      "children": ["int32 включительно; seed uint32"]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["RNG snapshot"] },
+                    {
+                      "tag": "td",
+                      "children": ["pcg32-v1: +16 lowercase hex, 25 символов"]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["Схема мини-игры"] },
+                    {
+                      "tag": "td",
+                      "children": [
+                        "<=64 полей Object, непустые/непробельные ключи<=128; типы непосредственных полей"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["UpdatesPerSecond"] },
+                    {
+                      "tag": "td",
+                      "children": [
+                        "[1,20], default 5; накопленная дельта<=1 секунда"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["SaveDisabledReason"] },
+                    { "tag": "td", "children": ["непустая/непробельная <=256"] }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["Message итога мини-игры"] },
+                    { "tag": "td", "children": ["<=1024"] }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "props": {
+        "className": "nm-table",
+        "tabIndex": 0,
+        "role": "region",
+        "aria-label": "Таблица, прокрутка по горизонтали"
+      }
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Источники: ",
+        {
+          "tag": "a",
+          "children": ["Value"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Scripting/LuaValue.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["projection"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Scripting/LuaValueProjection.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["RNG"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Scripting/LuaRandomApi.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["schema"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Minigames/MinigameDefinition.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ". Тесты: ",
+        {
+          "tag": "a",
+          "children": ["state"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Screens/PersistentDataLuaTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["RNG"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Screens/LuaRandomTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["minigame"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Screens/MinigameLuaTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "span", "children": [], "props": { "id": "modules" } }
+      ]
+    },
+    { "tag": "h2", "children": ["Модули"], "props": { "id": "модули" } },
+    {
+      "tag": "div",
+      "children": [
+        {
+          "tag": "table",
+          "children": [
+            {
+              "tag": "thead",
+              "children": [
+                {
+                  "tag": "tr",
+                  "children": [
+                    {
+                      "tag": "th",
+                      "children": ["Область"],
+                      "props": { "scope": "col" }
+                    },
+                    {
+                      "tag": "th",
+                      "children": ["Предел"],
+                      "props": { "scope": "col" }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "tbody",
+              "children": [
+                {
+                  "tag": "tr",
+                  "children": [
+                    {
+                      "tag": "td",
+                      "children": ["Достижимый граф с корневым обработчиком"]
+                    },
+                    { "tag": "td", "children": ["32 ресурса, depth 16"] }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["Код всего графа"] },
+                    {
+                      "tag": "td",
+                      "children": [
+                        "65536 символов; каждый файл также <=32768 и проходит preflight"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["Импорты"] },
+                    {
+                      "tag": "td",
+                      "children": [
+                        "<=32 aliases одного файла, <=256 связей графа"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["Вычисление импорта"] },
+                    {
+                      "tag": "td",
+                      "children": [
+                        "общий бюджет инструкций/библиотеки вызывающего load/обработчика, не новый бюджет"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "props": {
+        "className": "nm-table",
+        "tabIndex": 0,
+        "role": "region",
+        "aria-label": "Таблица, прокрутка по горизонтали"
+      }
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Циклы отвергаются даже до фактического импорта. Кеш на экземпляр VM, не процесс/проект. Источник: ",
+        {
+          "tag": "a",
+          "children": ["LuaModuleLibrary"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Scripting/LuaModuleLibrary.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ". Тесты: ",
+        {
+          "tag": "a",
+          "children": ["LuaModuleTests"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Screens/LuaModuleTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "span", "children": [], "props": { "id": "events" } }
+      ]
+    },
+    {
+      "tag": "h2",
+      "children": ["События и триггеры"],
+      "props": { "id": "события-и-триггеры" }
+    },
+    {
+      "tag": "div",
+      "children": [
+        {
+          "tag": "table",
+          "children": [
+            {
+              "tag": "thead",
+              "children": [
+                {
+                  "tag": "tr",
+                  "children": [
+                    {
+                      "tag": "th",
+                      "children": ["Область"],
+                      "props": { "scope": "col" }
+                    },
+                    {
+                      "tag": "th",
+                      "children": ["Предел"],
+                      "props": { "scope": "col" }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "tbody",
+              "children": [
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["Очередь ScreenLuaSession"] },
+                    {
+                      "tag": "td",
+                      "children": ["128 с резервами сервисов/анимаций/звука"]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["Причинная цепь"] },
+                    {
+                      "tag": "td",
+                      "children": [
+                        "32 поколения, сервисные продолжения не обнуляют"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["Триггеры пакета"] },
+                    { "tag": "td", "children": ["16"] }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["AuthorKey"] },
+                    { "tag": "td", "children": ["[a-z][a-z0-9_.-]{0,63}"] }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["Trigger data"] },
+                    {
+                      "tag": "td",
+                      "children": ["<=1024, optional/nil допустим"]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["Сервис пакета"] },
+                    {
+                      "tag": "td",
+                      "children": [
+                        "один, несовместим с trigger/close/minigame completion"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["Координаты события"] },
+                    { "tag": "td", "children": ["конечные,"] }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["seconds"] },
+                    { "tag": "td", "children": ["[0,1]"] }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    {
+                      "tag": "td",
+                      "children": ["Message сервиса / Diagnostic строки слота"]
+                    },
+                    { "tag": "td", "children": ["<=1024"] }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "props": {
+        "className": "nm-table",
+        "tabIndex": 0,
+        "role": "region",
+        "aria-label": "Таблица, прокрутка по горизонтали"
+      }
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Источники: ",
+        {
+          "tag": "a",
+          "children": ["AuthorTrigger"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Triggers/AuthorTrigger.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["session"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Screens/Lua/ScreenLuaSession.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["protocol"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Screens/Lua/ScreenLuaProtocol.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ". Тесты: ",
+        {
+          "tag": "a",
+          "children": ["session"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Screens/ScreenLuaSessionTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "span", "children": [], "props": { "id": "animations" } }
+      ]
+    },
+    { "tag": "h2", "children": ["Анимации"], "props": { "id": "анимации" } },
+    {
+      "tag": "div",
+      "children": [
+        {
+          "tag": "table",
+          "children": [
+            {
+              "tag": "thead",
+              "children": [
+                {
+                  "tag": "tr",
+                  "children": [
+                    {
+                      "tag": "th",
+                      "children": ["Область"],
+                      "props": { "scope": "col" }
+                    },
+                    {
+                      "tag": "th",
+                      "children": ["Предел"],
+                      "props": { "scope": "col" }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "tbody",
+              "children": [
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["Описания за обработчик"] },
+                    {
+                      "tag": "td",
+                      "children": ["128 вместе с tween и составными группами"]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    {
+                      "tag": "td",
+                      "children": ["Треков описания/запущенной группы"]
+                    },
+                    { "tag": "td", "children": ["64"] }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    {
+                      "tag": "td",
+                      "children": ["Дочерних описаний в sequence/parallel"]
+                    },
+                    { "tag": "td", "children": ["1..64, плотный список"] }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["Длительность плана"] },
+                    {
+                      "tag": "td",
+                      "children": [
+                        ">0, <=3600 секунд; каждый трек start>=0, seconds>0"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["Живых групп экземпляра"] },
+                    { "tag": "td", "children": ["16"] }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["Живых треков экземпляра"] },
+                    { "tag": "td", "children": ["256"] }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    {
+                      "tag": "td",
+                      "children": ["Active+готовые результаты аниматора"]
+                    },
+                    {
+                      "tag": "td",
+                      "children": ["<=128, также общий бюджет очереди сеанса"]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["Easing"] },
+                    {
+                      "tag": "td",
+                      "children": [
+                        "7 перечисленных имён, overshoot-эффектов нет"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["reason события"] },
+                    {
+                      "tag": "td",
+                      "children": ["<=128, полный набор производителя в events"]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "props": {
+        "className": "nm-table",
+        "tabIndex": 0,
+        "role": "region",
+        "aria-label": "Таблица, прокрутка по горизонтали"
+      }
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Источник: ",
+        {
+          "tag": "a",
+          "children": ["аниматор"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Screens/Animations/ScreenAnimation.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["Lua API"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Screens/Lua/LuaAnimationApi.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ". Тесты: ",
+        {
+          "tag": "a",
+          "children": ["AnimationTests"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Screens/AnimationTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "span", "children": [], "props": { "id": "audio" } }
+      ]
+    },
+    { "tag": "h2", "children": ["Звук"], "props": { "id": "звук" } },
+    {
+      "tag": "div",
+      "children": [
+        {
+          "tag": "table",
+          "children": [
+            {
+              "tag": "thead",
+              "children": [
+                {
+                  "tag": "tr",
+                  "children": [
+                    {
+                      "tag": "th",
+                      "children": ["Область"],
+                      "props": { "scope": "col" }
+                    },
+                    {
+                      "tag": "th",
+                      "children": ["Предел"],
+                      "props": { "scope": "col" }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "tbody",
+              "children": [
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["AudioService"] },
+                    {
+                      "tag": "td",
+                      "children": [
+                        "32 одновременно играющих источника, общий с сюжетом"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["PCM WAV"] },
+                    {
+                      "tag": "td",
+                      "children": ["signed 16-bit, mono/stereo, 8000..48000 Гц"]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["Импорт WAV"] },
+                    {
+                      "tag": "td",
+                      "children": [
+                        "файл <=2 ГиБ; RIFF <=1024 chunks, размер каждого chunk<=int32 max, data непустой/кратный размеру sample frame"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    {
+                      "tag": "td",
+                      "children": ["Усиление источника/группы/Master"]
+                    },
+                    { "tag": "td", "children": ["конечное [0,1]"] }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["Источники Lua"] },
+                    {
+                      "tag": "td",
+                      "children": [
+                        "каждый резервирует один audio_result в общем лимите 128"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["Message audio_result"] },
+                    { "tag": "td", "children": ["<=1024"] }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "props": {
+        "className": "nm-table",
+        "tabIndex": 0,
+        "role": "region",
+        "aria-label": "Таблица, прокрутка по горизонтали"
+      }
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Источник: ",
+        {
+          "tag": "a",
+          "children": ["AudioService"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Audio/AudioService.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["PcmWave"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Audio/PcmWave.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["tickets"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Screens/Lua/ScreenLuaSession.Audio.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ". Тесты: ",
+        {
+          "tag": "a",
+          "children": ["ScriptAudioLuaTests"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Screens/ScriptAudioLuaTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "span", "children": [], "props": { "id": "storage" } }
+      ]
+    },
+    {
+      "tag": "h2",
+      "children": ["Слоты и профиль"],
+      "props": { "id": "слоты-и-профиль" }
+    },
+    {
+      "tag": "div",
+      "children": [
+        {
+          "tag": "table",
+          "children": [
+            {
+              "tag": "thead",
+              "children": [
+                {
+                  "tag": "tr",
+                  "children": [
+                    {
+                      "tag": "th",
+                      "children": ["Область"],
+                      "props": { "scope": "col" }
+                    },
+                    {
+                      "tag": "th",
+                      "children": ["Предел"],
+                      "props": { "scope": "col" }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "tbody",
+              "children": [
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["Слоты"] },
+                    {
+                      "tag": "td",
+                      "children": ["128 с quickslot; до 16 МиБ/файл"]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["ID слота"] },
+                    {
+                      "tag": "td",
+                      "children": [
+                        "1..64 ASCII a-z0-9_- без Windows device names"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["Metadata"] },
+                    {
+                      "tag": "td",
+                      "children": [
+                        "title<=128, scene<=256, phrase<=512, revision<=128"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["Операции slot host"] },
+                    {
+                      "tag": "td",
+                      "children": [
+                        "одна активная; хранилище одна +32 ожидающих"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    {
+                      "tag": "td",
+                      "children": ["Подготовка сохранений на процесс"]
+                    },
+                    { "tag": "td", "children": ["2 активные +32 ожидающих"] }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["Профиль v4"] },
+                    {
+                      "tag": "td",
+                      "children": ["<=2 МиБ; старые v1/v2 <=16 КиБ"]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["Отметки прочитанного"] },
+                    {
+                      "tag": "td",
+                      "children": [
+                        "до 10000 SHA-256 ключей, FIFO при заполнении"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["История GameSave v3"] },
+                    {
+                      "tag": "td",
+                      "children": ["последние 500 посещений реплик"]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["Чтение"] },
+                    {
+                      "tag": "td",
+                      "children": [
+                        "text_speed 0–200 знаков/с (0 мгновенно), auto_delay 0–30 с, auto_wait_voice boolean"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["Persistent Data"] },
+                    {
+                      "tag": "td",
+                      "children": [
+                        "256 строк, key AuthorKey<=64, value<=1024, сумма<=16384"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    {
+                      "tag": "td",
+                      "children": ["Профильные mutation-команды runtime"]
+                    },
+                    {
+                      "tag": "td",
+                      "children": [
+                        "одна ожидающая подтверждения записи; чтения разрешены параллельно записи"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["Очередь записи профиля"] },
+                    {
+                      "tag": "td",
+                      "children": [
+                        "одна активная +последний объединённый снимок"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["Громкость настройки"] },
+                    {
+                      "tag": "td",
+                      "children": ["[0,1]; mute/fullscreen boolean"]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "props": {
+        "className": "nm-table",
+        "tabIndex": 0,
+        "role": "region",
+        "aria-label": "Таблица, прокрутка по горизонтали"
+      }
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Источник: ",
+        {
+          "tag": "a",
+          "children": ["slot store"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Execution/GameSlotStore.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["save"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Execution/GameSave.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["profile"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Profiles/PlayerProfileStore.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["Data"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Profiles/PlayerProfileData.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ". Тесты: ",
+        {
+          "tag": "a",
+          "children": ["слоты"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Execution/GameSlotTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["профиль"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Profiles/PersistentDataTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "span", "children": [], "props": { "id": "external" } }
+      ]
+    },
+    {
+      "tag": "h2",
+      "children": ["Проверка выпуска"],
+      "props": { "id": "проверка-выпуска" }
+    },
+    {
+      "tag": "div",
+      "children": [
+        {
+          "tag": "table",
+          "children": [
+            {
+              "tag": "thead",
+              "children": [
+                {
+                  "tag": "tr",
+                  "children": [
+                    {
+                      "tag": "th",
+                      "children": ["Область"],
+                      "props": { "scope": "col" }
+                    },
+                    {
+                      "tag": "th",
+                      "children": ["Предел"],
+                      "props": { "scope": "col" }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "tbody",
+              "children": [
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["ReleaseCheckService"] },
+                    {
+                      "tag": "td",
+                      "children": ["1 активный HTTP +4 ожидающих"]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["Запрос"] },
+                    {
+                      "tag": "td",
+                      "children": [
+                        "10 секунд с момента принятия, включая очередь"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["Повторный HTTP"] },
+                    {
+                      "tag": "td",
+                      "children": [">=60 секунд, Retry-After может увеличить"]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["Кеш успеха"] },
+                    { "tag": "td", "children": ["15 минут в памяти сервиса"] }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["Владельцы"] },
+                    { "tag": "td", "children": ["64 на сервис"] }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["Учтённые запросы владельца"] },
+                    {
+                      "tag": "td",
+                      "children": [
+                        "128 за его lifetime, даже подтверждённые ID остаются"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["Резервы результатов"] },
+                    {
+                      "tag": "td",
+                      "children": [
+                        "128 на сервис, дополнительно общий бюджет ScreenLuaSession"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["HTTP"] },
+                    {
+                      "tag": "td",
+                      "children": [
+                        "заголовки<=16 КиБ, распакованное тело<=256 КиБ, JSON depth<=16"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["Release projection"] },
+                    {
+                      "tag": "td",
+                      "children": ["<=8192 JSON байт, page_url<=512"]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["Конфигурация"] },
+                    {
+                      "tag": "td",
+                      "children": [
+                        "Owner<=39, Repository<=100; версия 3..4 чисел 0..65535"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["retry_after_seconds"] },
+                    { "tag": "td", "children": ["целое >0, до int32 max"] }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "props": {
+        "className": "nm-table",
+        "tabIndex": 0,
+        "role": "region",
+        "aria-label": "Таблица, прокрутка по горизонтали"
+      }
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Источник: ",
+        {
+          "tag": "a",
+          "children": ["service"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/ExternalServices/ReleaseCheckService.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["конфигурация"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/ExternalServices/ReleaseCheck.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["HTTP"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Runtime/ExternalServices/GitHubReleaseProvider.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ". Тесты: ",
+        {
+          "tag": "a",
+          "children": ["Lua"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Screens/ReleaseCheckLuaTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "span", "children": [], "props": { "id": "standard" } }
+      ]
+    },
+    {
+      "tag": "h2",
+      "children": ["Ограниченная библиотека"],
+      "props": { "id": "ограниченная-библиотека" }
+    },
+    {
+      "tag": "div",
+      "children": [
+        {
+          "tag": "table",
+          "children": [
+            {
+              "tag": "thead",
+              "children": [
+                {
+                  "tag": "tr",
+                  "children": [
+                    {
+                      "tag": "th",
+                      "children": ["Область"],
+                      "props": { "scope": "col" }
+                    },
+                    {
+                      "tag": "th",
+                      "children": ["Предел"],
+                      "props": { "scope": "col" }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "tbody",
+              "children": [
+                {
+                  "tag": "tr",
+                  "children": [
+                    {
+                      "tag": "td",
+                      "children": ["Один load / обработчик со всеми модулями"]
+                    },
+                    {
+                      "tag": "td",
+                      "children": [
+                        "65536 native единиц работы, отдельно от 20000 Lua-инструкций"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["Строка на входе/выходе"] },
+                    { "tag": "td", "children": ["8192 UTF-16"] }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    {
+                      "tag": "td",
+                      "children": ["Все строковые результаты вызова"]
+                    },
+                    { "tag": "td", "children": ["32768 UTF-16"] }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    {
+                      "tag": "td",
+                      "children": ["Таблица библиотечной функции"]
+                    },
+                    {
+                      "tag": "td",
+                      "children": [
+                        "1024 физических записей, включая tombstones"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["math.min/max"] },
+                    { "tag": "td", "children": ["1..64 чисел"] }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["string.rep count"] },
+                    {
+                      "tag": "td",
+                      "children": ["integer [0,8192], включая пустую строку"]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["Индексы/позиции"] },
+                    {
+                      "tag": "td",
+                      "children": ["int32; отдельные диапазоны у функции"]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["string.find work"] },
+                    {
+                      "tag": "td",
+                      "children": [
+                        "1+len(text)*max(1,len(needle)), даже при коротком фактическом поиске"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "props": {
+        "className": "nm-table",
+        "tabIndex": 0,
+        "role": "region",
+        "aria-label": "Таблица, прокрутка по горизонтали"
+      }
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Стоимость остальных функций и nil/default — в ",
+        {
+          "tag": "a",
+          "children": ["индивидуальных описаниях"],
+          "props": { "href": "/projects/novellmaker/docs/lua/standard-library" }
+        },
+        ". Источник: ",
+        {
+          "tag": "a",
+          "children": ["LuaStandardLibrary"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Scripting/LuaStandardLibrary.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ". Тесты: ",
+        {
+          "tag": "a",
+          "children": ["LuaStandardLibraryTests"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Screens/LuaStandardLibraryTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "span", "children": [], "props": { "id": "diagnostics" } }
+      ]
+    },
+    {
+      "tag": "h2",
+      "children": ["Диагностика"],
+      "props": { "id": "диагностика" }
+    },
+    {
+      "tag": "div",
+      "children": [
+        {
+          "tag": "table",
+          "children": [
+            {
+              "tag": "thead",
+              "children": [
+                {
+                  "tag": "tr",
+                  "children": [
+                    {
+                      "tag": "th",
+                      "children": ["Область"],
+                      "props": { "scope": "col" }
+                    },
+                    {
+                      "tag": "th",
+                      "children": ["Предел"],
+                      "props": { "scope": "col" }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "tbody",
+              "children": [
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["ui.log одно message"] },
+                    {
+                      "tag": "td",
+                      "children": ["1024 UTF-16, только info/warning/error"]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    {
+                      "tag": "td",
+                      "children": ["Один load / обработчик вместе с модулями"]
+                    },
+                    {
+                      "tag": "td",
+                      "children": [
+                        "32 записи, 8192 символов сообщений; лишние корректные отбрасываются"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["Кольцо host"] },
+                    {
+                      "tag": "td",
+                      "children": ["256 записей, старые вытесняются"]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    {
+                      "tag": "td",
+                      "children": ["Короткие diagnostics/issues сеанса"]
+                    },
+                    { "tag": "td", "children": ["по 32, сообщение<=4096"] }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["Поле Line"] },
+                    { "tag": "td", "children": ["1..32769, если определено"] }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "props": {
+        "className": "nm-table",
+        "tabIndex": 0,
+        "role": "region",
+        "aria-label": "Таблица, прокрутка по горизонтали"
+      }
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Источник: ",
+        {
+          "tag": "a",
+          "children": ["journal"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Scripting/LuaDiagnosticJournal.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["buffer"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Scripting/LuaLogBuffer.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ". Тесты: ",
+        {
+          "tag": "a",
+          "children": ["LuaDiagnosticsTests"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Screens/LuaDiagnosticsTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    }
+  ]
+}

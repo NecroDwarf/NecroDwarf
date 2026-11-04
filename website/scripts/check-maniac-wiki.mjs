@@ -76,7 +76,17 @@ try {
   ]);
   for (const version of gameVersions)
     assert.ok(releases.some((r) => r.id === version.releaseId));
-  assert.equal(routes.length, 191);
+  // Preserve the 191 existing routes and require all 22 NovellMaker docs routes.
+  assert.equal(
+    routes.filter((r) => !r.path.startsWith("/projects/novellmaker/docs"))
+      .length,
+    191,
+  );
+  assert.equal(
+    routes.filter((r) => r.path.startsWith("/projects/novellmaker/docs"))
+      .length,
+    22,
+  );
   assert.ok(
     routes.some((route) => route.path === "/projects/maniac/wiki/search"),
   );

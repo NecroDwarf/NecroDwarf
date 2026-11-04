@@ -1,0 +1,540 @@
+{
+  "title": "Авторские окна истории и чтения",
+  "headings": [
+    {
+      "title": "Авторские окна истории и чтения",
+      "id": "авторские-окна-истории-и-чтения",
+      "level": 1
+    },
+    { "title": "ui.get_history", "id": "ui-get-history", "level": 2 },
+    {
+      "title": "ui.replay_history_voice",
+      "id": "ui-replay-history-voice",
+      "level": 2
+    }
+  ],
+  "nodes": [
+    {
+      "tag": "h1",
+      "children": ["Авторские окна истории и чтения"],
+      "props": { "id": "авторские-окна-истории-и-чтения" }
+    },
+    {
+      "tag": "p",
+      "children": [
+        {
+          "tag": "a",
+          "children": ["Оглавление"],
+          "props": { "href": "/projects/novellmaker/docs/lua" }
+        },
+        " · ",
+        {
+          "tag": "a",
+          "children": ["Игровые сервисы"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/session-and-storage"
+          }
+        },
+        " · ",
+        {
+          "tag": "a",
+          "children": ["События"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/events#service_result"
+          }
+        }
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        "«Добавить кнопки чтения к сцене» создаёт обычные сцены «История реплик» и «Настройки чтения», их компоненты, refs и Lua-ресурсы. Откройте эти сцены и редактируйте текст, положение, размеры, цвет, изображения, иерархию и кнопки теми же средствами, что другие меню. Подписи ошибок и состояний тоже являются Text-компонентами: для перевода не требуется менять C#. Служебные имена refs связывают шаблон с обработчиком; переименование/удаление ref требует соответствующей правки Lua."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        "У кнопок ",
+        { "tag": "strong", "children": ["History"] },
+        " и ",
+        { "tag": "strong", "children": ["ReadingSettings"] },
+        " выбирается целевая сцена. Назначение клавиши с таким действием открывает выбранную в инспекторе сцену. Повторный вызов закрывает её, если она сверху. Можно назначить другой авторский экран или использовать обычные Open/Toggle. Пауза и блокировка нижнего слоя задаются политиками сцены; шаблоны по умолчанию модальны и приостанавливают сюжет. Close/Back закрывают экземпляр."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Настройки чтения используют ",
+        {
+          "tag": "a",
+          "children": ["ui.get_settings"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/session-and-storage#ui-get-settings"
+          }
+        },
+        " и ",
+        {
+          "tag": "a",
+          "children": ["ui.set_setting"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/session-and-storage#ui-set-setting"
+          }
+        },
+        ": ",
+        { "tag": "code", "children": ["text_speed"] },
+        ", ",
+        { "tag": "code", "children": ["auto_delay"] },
+        ", ",
+        { "tag": "code", "children": ["auto_wait_voice"] },
+        ". Шаблон выводит числа отдельно от подписей и переключает видимость авторских текстов «да»/«нет». Текст host.message не используется для пользовательских подписей; ошибка показывается собственным компонентом. Настройки остаются в профиле игрока, отдельно от проекта и слотов."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Проект v23 хранит цели этих действий. При открытии v21/v22 с прежними действиями без цели детерминированно создаются шаблоны и привязки; исходный файл меняется только при сохранении. v23 с отсутствующей или неверной целью отвергается. Проекты без этих действий не получают меню автоматически. Миграция меняет ревизию проекта; старые слоты другой точной ревизии не становятся совместимыми автоматически."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "span", "children": [], "props": { "id": "ui-get-history" } }
+      ]
+    },
+    {
+      "tag": "h2",
+      "children": ["ui.get_history"],
+      "props": { "id": "uiget_history" }
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Прочитать ограниченную страницу одного посещения из истории текущего игрового состояния."
+      ]
+    },
+    {
+      "tag": "pre",
+      "text": "ui.get_history(index?, page?, page_size?) -> request_id",
+      "language": "lua",
+      "children": ["ui.get_history(index?, page?, page_size?) -> request_id"]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Доступность:"] },
+        " ui on_load/on_event, в том числе модули и мини-игры; в restore on_load сервисные эффекты запрещены. Источник — живой экземпляр холста текущего поколения; сценарный game API эту функцию не предоставляет."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Аргументы и ошибки:"] },
+        " От 0 до 3 аргументов, лишние запрещены и без strict_arguments. Все переданные значения — конечные целые числа. ",
+        { "tag": "code", "children": ["index"] },
+        ": 0..500, по умолчанию 0 (последнее посещение); остальные индексы однобазные, от старого к новому. ",
+        { "tag": "code", "children": ["page"] },
+        ": 1..1000000, по умолчанию 1. ",
+        { "tag": "code", "children": ["page_size"] },
+        ": 1..2048 Unicode scalar values, по умолчанию 700. Явный nil, строки, дроби и выход за диапазон — ошибка пакета. Допустимые индекс и страница при чтении ограничиваются фактически существующим диапазоном."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Возврат:"] },
+        " Сразу GUID N ",
+        { "tag": "code", "children": ["request_id"] },
+        "; позднее ",
+        { "tag": "code", "children": ["service_result"] },
+        ", ",
+        { "tag": "code", "children": ["operation=\"GetHistory\""] },
+        ", ",
+        { "tag": "code", "children": ["history"] },
+        " с полями ",
+        { "tag": "code", "children": ["count"] },
+        ", ",
+        { "tag": "code", "children": ["index"] },
+        ", ",
+        { "tag": "code", "children": ["page"] },
+        ", ",
+        { "tag": "code", "children": ["pages"] },
+        ", ",
+        { "tag": "code", "children": ["visit_id"] },
+        ", ",
+        { "tag": "code", "children": ["scene_id"] },
+        ", ",
+        { "tag": "code", "children": ["line_id"] },
+        ", ",
+        { "tag": "code", "children": ["language"] },
+        ", ",
+        { "tag": "code", "children": ["speaker"] },
+        ", ",
+        { "tag": "code", "children": ["text"] },
+        ", ",
+        { "tag": "code", "children": ["can_replay"] },
+        ". Числа индекса и страницы однобазные. При пустой истории первые четыре поля равны 0, ID отсутствуют, строки пустые, can_replay=false. При успехе message=\"ok\"; настройки, slots и persisted к истории не относятся."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Эффект и ограничения:"] },
+        " Только чтение, без выполнения Lua/команд сюжета, изменения времени, отметок прочитанного или позиции. До 500 посещений, включая повторы. Текст разрешается по языку посещения с fallback на основной язык проекта; цветовые метки удаляются. Страница содержит не более page_size scalars и 8 переводов строки; CR/CRLF нормализуются в LF. Суррогатные пары не разрываются; граница страницы может разделять составной графемный кластер. ",
+        { "tag": "code", "children": ["language"] },
+        " ограничен 64 UTF-16, ",
+        { "tag": "code", "children": ["speaker"] },
+        " — 256 UTF-16, сокращение сохраняет пары суррогатов. Это данные текущей ревизии проекта. ",
+        { "tag": "code", "children": ["can_replay"] },
+        " проверяет привязку голоса именно языка посещения; наличие привязки не гарантирует успешного открытия файла. Подберите page_size и размеры Text-компонента вместе: API не измеряет авторский макет. В шаблоне page_size=500, Text переносится по ширине и выводится частями в пределах общих графических бюджетов."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Пример"] },
+        " (нужен Text refs.body в авторском холсте):"
+      ]
+    },
+    {
+      "tag": "pre",
+      "text": "local request\nreturn {\n  on_load=function() request=ui.get_history(0,1,500) end,\n  on_event=function(e)\n    if e.kind=='service_result' and e.request_id==request and e.history then\n      request=nil\n      ui.set_text(refs.body,e.history.text)\n    end\n  end\n}",
+      "language": "lua",
+      "children": [
+        {
+          "tag": "span",
+          "children": ["local"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " request\n",
+        {
+          "tag": "span",
+          "children": ["return"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " {\n  on_load=",
+        {
+          "tag": "span",
+          "children": [
+            {
+              "tag": "span",
+              "children": ["function"],
+              "props": { "className": "hljs-keyword" }
+            },
+            {
+              "tag": "span",
+              "children": ["()"],
+              "props": { "className": "hljs-params" }
+            }
+          ],
+          "props": { "className": "hljs-function" }
+        },
+        " request=ui.get_history(",
+        {
+          "tag": "span",
+          "children": ["0"],
+          "props": { "className": "hljs-number" }
+        },
+        ",",
+        {
+          "tag": "span",
+          "children": ["1"],
+          "props": { "className": "hljs-number" }
+        },
+        ",",
+        {
+          "tag": "span",
+          "children": ["500"],
+          "props": { "className": "hljs-number" }
+        },
+        ") ",
+        {
+          "tag": "span",
+          "children": ["end"],
+          "props": { "className": "hljs-keyword" }
+        },
+        ",\n  on_event=",
+        {
+          "tag": "span",
+          "children": [
+            {
+              "tag": "span",
+              "children": ["function"],
+              "props": { "className": "hljs-keyword" }
+            },
+            {
+              "tag": "span",
+              "children": ["(e)"],
+              "props": { "className": "hljs-params" }
+            }
+          ],
+          "props": { "className": "hljs-function" }
+        },
+        "\n    ",
+        {
+          "tag": "span",
+          "children": ["if"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " e.kind==",
+        {
+          "tag": "span",
+          "children": ["'service_result'"],
+          "props": { "className": "hljs-string" }
+        },
+        " ",
+        {
+          "tag": "span",
+          "children": ["and"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " e.request_id==request ",
+        {
+          "tag": "span",
+          "children": ["and"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " e.history ",
+        {
+          "tag": "span",
+          "children": ["then"],
+          "props": { "className": "hljs-keyword" }
+        },
+        "\n      request=",
+        {
+          "tag": "span",
+          "children": ["nil"],
+          "props": { "className": "hljs-literal" }
+        },
+        "\n      ui.set_text(refs.body,e.history.text)\n    ",
+        {
+          "tag": "span",
+          "children": ["end"],
+          "props": { "className": "hljs-keyword" }
+        },
+        "\n  ",
+        {
+          "tag": "span",
+          "children": ["end"],
+          "props": { "className": "hljs-keyword" }
+        },
+        "\n}"
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Одна сервисная команда на пакет; ответ требует живого источника/поколения и зарезервированного места. После закрытия, Load и смены сеанса устаревшие ответы не доставляются. В неприостанавливающем слое история может пополняться/вытеснять записи между запросами."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Связи:"] },
+        " ",
+        {
+          "tag": "a",
+          "children": ["ui.replay_history_voice"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/history#ui-replay-history-voice"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["квоты"],
+          "props": { "href": "/projects/novellmaker/docs/lua/limits" }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["проекция"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Execution/HistoryPage.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["регистрация"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Screens/Lua/ScreenLuaWorker.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["тесты"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Screens/HistoryLuaTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        {
+          "tag": "span",
+          "children": [],
+          "props": { "id": "ui-replay-history-voice" }
+        }
+      ]
+    },
+    {
+      "tag": "h2",
+      "children": ["ui.replay_history_voice"],
+      "props": { "id": "uireplay_history_voice" }
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Повторить озвучку сохранённого посещения без повторного исполнения реплики."
+      ]
+    },
+    {
+      "tag": "pre",
+      "text": "ui.replay_history_voice(visit_id) -> request_id",
+      "language": "lua",
+      "children": ["ui.replay_history_voice(visit_id) -> request_id"]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Доступность:"] },
+        " ui on_load/on_event текущего живого холста. Воспроизведение разрешено только в фазе Playing; в restore on_load сервисные эффекты запрещены."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Аргументы и ошибки:"] },
+        " Ровно одна строка GUID N из history.visit_id. Пустой/нулевой GUID, чужой тип и лишние аргументы — ошибка пакета. Корректный ID, отсутствующий в текущей истории (включая вытесненное посещение или другую загрузку), возвращает отказ сервиса."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Возврат:"] },
+        " GUID N запроса; позднее service_result с operation=\"ReplayHistoryVoice\", success и message-кодом: ",
+        { "tag": "code", "children": ["ok"] },
+        ", ",
+        { "tag": "code", "children": ["history_unavailable"] },
+        ", ",
+        { "tag": "code", "children": ["voice_unavailable"] },
+        ". Произвольные ID реплик/аудиоресурсов не принимаются. Коды предназначены для выбора авторского локализованного текста, не для показа игроку напрямую. ",
+        { "tag": "code", "children": ["ok"] },
+        " означает открытый источник, не обещает прослушивание до конца; отдельного события окончания эта функция не создаёт."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Эффект и ограничения:"] },
+        " Использует озвучку языка посещения без fallback. Отдельный канал, громкость Master/voice, без эффектов реплики, возобновления музыки, Lua и сценарных команд. Новый успешный повтор заменяет предыдущий. Закрытие или замена исходного экземпляра, Load/новая игра прекращают повтор; потеря активности/покрытие другим холстом ставят его на паузу. Повтор привязан к конкретному экземпляру, а не имени/ID сцены. Применяются общие лимиты сервисного пакета и доставки."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Пример"] },
+        " (фрагмент click-обработчика, row — ранее полученная e.history):"
+      ]
+    },
+    {
+      "tag": "pre",
+      "text": "if row and row.can_replay and row.visit_id then\n  request=ui.replay_history_voice(row.visit_id)\nend",
+      "language": "lua",
+      "children": [
+        {
+          "tag": "span",
+          "children": ["if"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " row ",
+        {
+          "tag": "span",
+          "children": ["and"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " row.can_replay ",
+        {
+          "tag": "span",
+          "children": ["and"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " row.visit_id ",
+        {
+          "tag": "span",
+          "children": ["then"],
+          "props": { "className": "hljs-keyword" }
+        },
+        "\n  request=ui.replay_history_voice(row.visit_id)\n",
+        {
+          "tag": "span",
+          "children": ["end"],
+          "props": { "className": "hljs-keyword" }
+        }
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Связи:"] },
+        " ",
+        {
+          "tag": "a",
+          "children": ["ui.get_history"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/history#ui-get-history"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["события"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/events#service_result"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["host"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Runtime/RuntimeHistoryServices.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["регистрация"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Screens/Lua/ScreenLuaWorker.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["проверки lifetime"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Runtime.Tests/RuntimeHistoryServicesTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    }
+  ]
+}

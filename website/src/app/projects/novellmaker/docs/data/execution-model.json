@@ -1,0 +1,1344 @@
+{
+  "title": "Модель исполнения",
+  "headings": [
+    { "title": "Модель исполнения", "id": "модель-исполнения", "level": 1 },
+    {
+      "title": "Режим проверки аргументов",
+      "id": "режим-проверки-аргументов",
+      "level": 2
+    },
+    {
+      "title": "Сценарий: вычисление Lua и исполнение очереди",
+      "id": "scenario",
+      "level": 2
+    },
+    {
+      "title": "Интерфейс: обработчик экземпляра",
+      "id": "интерфейс-обработчик-экземпляра",
+      "level": 2
+    },
+    { "title": "Пакет, ошибки и пределы отката", "id": "batch", "level": 2 },
+    {
+      "title": "Пространства имён, ID и специальные значения",
+      "id": "namespaces",
+      "level": 2
+    },
+    {
+      "title": "Пауза, закрытие, сцены, сеансы и сохранения",
+      "id": "lifetime",
+      "level": 2
+    },
+    {
+      "title": "Восстанавливающий on_load мини-игры",
+      "id": "restore",
+      "level": 2
+    },
+    {
+      "title": "Исходники, F6 и изоляция",
+      "id": "исходники-f6-и-изоляция",
+      "level": 2
+    },
+    { "title": "Чтение и загрузка", "id": "чтение-и-загрузка", "level": 2 },
+    {
+      "title": "Время клипов персонажей",
+      "id": "время-клипов-персонажей",
+      "level": 2
+    }
+  ],
+  "nodes": [
+    {
+      "tag": "h1",
+      "children": ["Модель исполнения"],
+      "props": { "id": "модель-исполнения" }
+    },
+    {
+      "tag": "p",
+      "children": [
+        {
+          "tag": "a",
+          "children": ["Оглавление"],
+          "props": { "href": "/projects/novellmaker/docs/lua" }
+        },
+        " · ",
+        {
+          "tag": "a",
+          "children": ["Примеры"],
+          "props": { "href": "/projects/novellmaker/docs/lua/examples" }
+        },
+        " · ",
+        {
+          "tag": "a",
+          "children": ["Квоты"],
+          "props": { "href": "/projects/novellmaker/docs/lua/limits" }
+        }
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Окна истории/параметров чтения в v23 — обычные сцены проекта с refs и обработчиками, открываемые слоями через целевые привязки History/ReadingSettings. Runtime не конструирует их компоненты. ",
+        { "tag": "code", "children": ["ui.get_history"] },
+        " передаёт ограниченную проекцию сохранённых посещений; ",
+        { "tag": "code", "children": ["ui.replay_history_voice"] },
+        " разрешает только visit_id текущей истории и связывает источник с lifetime вызывающего экземпляра. Закрытие/замена/Load прекращают повтор, покрытие/потеря активности приостанавливают его. Ни чтение истории, ни повтор не исполняют сценарные команды. Настройки читаются/изменяются существующими сервисами профиля. ",
+        {
+          "tag": "a",
+          "children": ["Полный контракт, миграция и локализация"],
+          "props": { "href": "/projects/novellmaker/docs/lua/history" }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "h2",
+      "children": ["Режим проверки аргументов"],
+      "props": { "id": "режим-проверки-аргументов" }
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Проверка аргументов по умолчанию совместима с прежними скриптами. Для строгого контракта включите ",
+        {
+          "tag": "a",
+          "children": ["game.strict_arguments(true)"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/scenario#game-strict-arguments"
+          }
+        },
+        " в каждом сценарном исходнике или ",
+        {
+          "tag": "a",
+          "children": ["ui.strict_arguments(true)"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/components#ui-strict-arguments"
+          }
+        },
+        " при вычислении исходника экземпляра холста. В ui режим общий с модулями и живёт до закрытия VM; в game каждый вызов начинает с false. Переключатель не является командой, не меняет wire/формат слота и не расходует командную квоту."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "span", "children": [], "props": { "id": "scenario" } }
+      ]
+    },
+    {
+      "tag": "h2",
+      "children": ["Сценарий: вычисление Lua и исполнение очереди"],
+      "props": { "id": "сценарий-вычисление-lua-и-исполнение-очереди" }
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Порядок авторских фраз определяет сцену. Компилятор добавляет вход фразы, её персонажей/размещение, блоки «До», показ текста, блоки «Во время», неявное ожидание продолжения и блоки «После продолжения». Ещё есть начало/конец сцены. Блоки привязаны к стабильному ID фразы; перестановка/копирование/удаление в редакторе сохраняет или осмысленно заменяет связи. Импортированный старый произвольный поток не смешивается с этой моделью автоматически."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Сценарный блок или ресурс ",
+        { "tag": "code", "children": ["game.run"] },
+        " каждый раз получает ",
+        { "tag": "strong", "children": ["новую VM"] },
+        " с ",
+        { "tag": "code", "children": ["game"] },
+        " и своими ",
+        { "tag": "code", "children": ["refs"] },
+        ". Сначала Lua вычисляет весь блок и формирует список команд. Потом host проверяет весь результат и вставляет его перед оставшейся очередью. Только затем команды исполняются по порядку. ",
+        { "tag": "code", "children": ["return"] },
+        " ресурса не возвращает данные другому ресурсу; функция ",
+        { "tag": "code", "children": ["game.run"] },
+        " возвращает nil и ставит команду будущего вызова."
+      ]
+    },
+    {
+      "tag": "pre",
+      "text": "game.wait(1)\ngame.set(\"ready\", \"true\")\nlocal value = game.get(\"ready\") -- уже \"true\" в рабочей копии VM",
+      "language": "lua",
+      "children": [
+        "game.wait(",
+        {
+          "tag": "span",
+          "children": ["1"],
+          "props": { "className": "hljs-number" }
+        },
+        ")\ngame.set(",
+        {
+          "tag": "span",
+          "children": ["\"ready\""],
+          "props": { "className": "hljs-string" }
+        },
+        ", ",
+        {
+          "tag": "span",
+          "children": ["\"true\""],
+          "props": { "className": "hljs-string" }
+        },
+        ")\n",
+        {
+          "tag": "span",
+          "children": ["local"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " value = game.get(",
+        {
+          "tag": "span",
+          "children": ["\"ready\""],
+          "props": { "className": "hljs-string" }
+        },
+        ") ",
+        {
+          "tag": "span",
+          "children": ["-- уже \"true\" в рабочей копии VM"],
+          "props": { "className": "hljs-comment" }
+        }
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Lua вычислит все три строки сразу. Игрок увидит изменение переменной лишь после исполнения секундного ожидания очереди. В отличие от set/finish/get, ",
+        { "tag": "code", "children": ["game.object"] },
+        ", ",
+        { "tag": "code", "children": ["game.visible"] },
+        ", ",
+        { "tag": "code", "children": ["game.time"] },
+        ", ",
+        { "tag": "code", "children": ["game.minigame_result"] },
+        " читают исходный снимок и не симулируют подготовленные команды. ",
+        { "tag": "code", "children": ["game.wait_input"] },
+        " также не приостанавливает Lua-стек. Поэтому цикл Lua с wait не является игровым циклом и обычно упрётся в квоты."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Чтобы обработать результат ожидания/мини-игры, поместите код ",
+        {
+          "tag": "strong",
+          "children": ["в следующий исполняемый блок или вызванный ресурс"]
+        },
+        ". Запись ",
+        {
+          "tag": "code",
+          "children": [
+            "game.start_minigame(...); local r=game.minigame_result()"
+          ]
+        },
+        " читает прежний снимок. Правильно: поставить запуск, затем ",
+        { "tag": "code", "children": ["game.run(refs.after)"] },
+        "; ресурс after исполнится после барьера и получит новый снимок. У ",
+        { "tag": "code", "children": ["game.run"] },
+        " самого отложенного возвращаемого значения нет: связь — переменные и очереди."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Во время pending сценарного Lua позиция остаётся перед действием. Host продолжает рисовать кадры, но время/движения/сценарный звук удерживаются; сохранить busy-прохождение нельзя. Готовый ответ применяется только на потоке host и только при совпадении поколения/снимка. Пауза удерживает и готовый ответ. Неудачный Load не отменяет действительную старую работу; успешный Load/NewGame/переход с отменой/закрытие её инвалидирует."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Источники: ",
+        {
+          "tag": "a",
+          "children": ["компиляция"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Execution/ScenarioProgram.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["VM"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Execution/LuaActionScript.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["pending"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Execution/ScenarioPlayer.Lua.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ". Тесты: ",
+        {
+          "tag": "a",
+          "children": ["контракт"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Execution/ExecutionContractTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["pending"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Execution/PendingLuaTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["фразы"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Execution/PhraseScriptTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "h2",
+      "children": ["Интерфейс: обработчик экземпляра"],
+      "props": { "id": "интерфейс-обработчик-экземпляра" }
+    },
+    {
+      "tag": "p",
+      "children": ["Lua-ресурс обработчика холста возвращает таблицу:"]
+    },
+    {
+      "tag": "pre",
+      "text": "return {\n  input_events = true, -- необязательно, по умолчанию false\n  on_load = function(e) -- необязательно; e — пустая таблица\n    ui.set_text(refs.label, \"Привет\")\n  end,\n  on_event = function(e) -- обязательно, именно Lua function\n    if e.kind == \"click\" and e.node == refs.button then\n      ui.set_text(refs.label, \"Нажато\")\n    end\n  end\n}",
+      "language": "lua",
+      "children": [
+        {
+          "tag": "span",
+          "children": ["return"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " {\n  input_events = ",
+        {
+          "tag": "span",
+          "children": ["true"],
+          "props": { "className": "hljs-literal" }
+        },
+        ", ",
+        {
+          "tag": "span",
+          "children": ["-- необязательно, по умолчанию false"],
+          "props": { "className": "hljs-comment" }
+        },
+        "\n  on_load = ",
+        {
+          "tag": "span",
+          "children": [
+            {
+              "tag": "span",
+              "children": ["function"],
+              "props": { "className": "hljs-keyword" }
+            },
+            {
+              "tag": "span",
+              "children": ["(e)"],
+              "props": { "className": "hljs-params" }
+            }
+          ],
+          "props": { "className": "hljs-function" }
+        },
+        " ",
+        {
+          "tag": "span",
+          "children": ["-- необязательно; e — пустая таблица"],
+          "props": { "className": "hljs-comment" }
+        },
+        "\n    ui.set_text(refs.label, ",
+        {
+          "tag": "span",
+          "children": ["\"Привет\""],
+          "props": { "className": "hljs-string" }
+        },
+        ")\n  ",
+        {
+          "tag": "span",
+          "children": ["end"],
+          "props": { "className": "hljs-keyword" }
+        },
+        ",\n  on_event = ",
+        {
+          "tag": "span",
+          "children": [
+            {
+              "tag": "span",
+              "children": ["function"],
+              "props": { "className": "hljs-keyword" }
+            },
+            {
+              "tag": "span",
+              "children": ["(e)"],
+              "props": { "className": "hljs-params" }
+            }
+          ],
+          "props": { "className": "hljs-function" }
+        },
+        " ",
+        {
+          "tag": "span",
+          "children": ["-- обязательно, именно Lua function"],
+          "props": { "className": "hljs-comment" }
+        },
+        "\n    ",
+        {
+          "tag": "span",
+          "children": ["if"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " e.kind == ",
+        {
+          "tag": "span",
+          "children": ["\"click\""],
+          "props": { "className": "hljs-string" }
+        },
+        " ",
+        {
+          "tag": "span",
+          "children": ["and"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " e.node == refs.button ",
+        {
+          "tag": "span",
+          "children": ["then"],
+          "props": { "className": "hljs-keyword" }
+        },
+        "\n      ui.set_text(refs.label, ",
+        {
+          "tag": "span",
+          "children": ["\"Нажато\""],
+          "props": { "className": "hljs-string" }
+        },
+        ")\n    ",
+        {
+          "tag": "span",
+          "children": ["end"],
+          "props": { "className": "hljs-keyword" }
+        },
+        "\n  ",
+        {
+          "tag": "span",
+          "children": ["end"],
+          "props": { "className": "hljs-keyword" }
+        },
+        "\n}"
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Назначьте ресурс обработчиком сцены; label/button — именованные ссылки холста. Действие кнопки для click — Lua. У корневой сцены и каждого открытого слоя/мини-игры отдельный экземпляр с собственной VM. Вычисление исходника и on_load — разные этапы. При вычислении можно объявлять функции, импортировать модули, пользоваться ограниченной библиотекой и логировать. Выдавать команды вида/сервисов до возврата handlers нельзя. Состояние, RNG, анимации, звук и ввод дополнительно требуют активного обработчика."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        "VM интерфейса ",
+        { "tag": "strong", "children": ["сохраняется между событиями"] },
+        ", поэтому locals/замыкания/кеш модулей действительно живут. Но host не сериализует их и не откатывает как данные; после ошибки обработчик перестаёт принимать события. Долгоживущую игровую логику храните через ",
+        { "tag": "code", "children": ["ui.set_state"] },
+        ", RNG — через управляемый поток, постоянные данные — через профиль. Не считайте local счётчик частью слота."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Разные VM интерфейса размещаются в ",
+        { "tag": "strong", "children": ["одном постоянном ui-worker"] },
+        " host-процесса, а не в отдельном процессе на экран. Он занимает одно из двух общих process-мест и одно из 34 admission-мест; рядом может работать сценарный worker. Изоляция глобальных таблиц не даёт каждому экрану отдельную квоту памяти/задержек: авария общей беседы может отключить всех её обработчиков."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "code", "children": ["on_event"] },
+        " вызывается с одной таблицей ",
+        {
+          "tag": "a",
+          "children": ["события"],
+          "props": { "href": "/projects/novellmaker/docs/lua/events" }
+        },
+        ". Прямого API подписки, таймера, sleep, coroutine или произвольной callback-функции для host нет. В актуальном runtime периодический ",
+        { "tag": "code", "children": ["update"] },
+        " создаётся ",
+        { "tag": "strong", "children": ["для активной мини-игры"] },
+        ", с заданной частотой; обычный экран не получает гарантированный update-цикл. Его анимации исполняет host, а реакции приходят вводом, триггерами и результатами."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Все модули экземпляра используют те же ui-callbacks/рабочий state/RNG, но собственные globals и таблицы библиотеки. ",
+        { "tag": "code", "children": ["game"] },
+        " в этом окружении отсутствует. См. ",
+        {
+          "tag": "a",
+          "children": ["ресурсы и модули"],
+          "props": { "href": "/projects/novellmaker/docs/lua/modules" }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "span", "children": [], "props": { "id": "batch" } }
+      ]
+    },
+    {
+      "tag": "h2",
+      "children": ["Пакет, ошибки и пределы отката"],
+      "props": { "id": "пакет-ошибки-и-пределы-отката" }
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Изменяющие ui-вызовы подготавливают один пакет обработчика, максимум 256 команд. Worker последовательно проверяет промежуточные деревья и весь пакет, затем host повторно проверяет типы протокола, владельца/версию, состояние/схемы, бюджет очереди и резервы результатов. Публикация вида/state/RNG и старт операций происходят только в host Poll после полного принятия. Следующая команда в этом же обработчике может использовать скопированный узел или прочитать подготовленное set_state; это ещё не подтверждение host."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Ошибка аргумента, handle, Value, квоты или запрещённого сочетания отклоняет ",
+        { "tag": "strong", "children": ["весь пакет"] },
+        ". Прежние подтверждённые вид/state/RNG остаются. Ошибочный обработчик отключается, его работа/собственные источники очищаются. Ошибка общей IPC-беседы отключает все VM этой беседы; исправленный код требует нового запуска/экземпляра. ",
+        { "tag": "code", "children": ["pcall"] },
+        "/",
+        { "tag": "code", "children": ["xpcall"] },
+        " не установлены."
+      ]
+    },
+    { "tag": "p", "children": ["Правила сочетаний:"] },
+    {
+      "tag": "ul",
+      "children": [
+        {
+          "tag": "li",
+          "children": [
+            "Не более одного сервиса в пакете, включая чтение профиля и отмену проверки выпуска."
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            "Триггеры нельзя сочетать с сервисом, close или завершением мини-игры."
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            { "tag": "code", "children": ["ui.close"] },
+            " — последняя команда; несовместим с сервисом/завершением."
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            "Завершение мини-игры — единственное и последнее; несовместимо с сервисом/триггером/close."
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            "Изменение RNG добавляет одну служебную команду в начало: остаётся не более 255 других команд."
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            "Чистые чтения/описания и логирование после последней команды сами команду не создают; это не отменяет общий бюджет вычисления."
+          ]
+        }
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Атомарность пакета не означает транзакцию внешнего мира. После commit WAV может не открыться — придёт ",
+        { "tag": "code", "children": ["audio_result/failed"] },
+        "; диск может отказать — ",
+        { "tag": "code", "children": ["service_result/success=false"] },
+        ". Принятый вид и уже изменённая память профиля из-за такого отказа не откатываются. Уже опубликованный целый файл слота не удаляется поздней отменой. Диагностические логи намеренно независимы от игрового commit. Ранее успешно выполненные сценарные команды не откатываются при сбое следующего блока."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Источник: ",
+        {
+          "tag": "a",
+          "children": ["протокол и Prepare"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Screens/Lua/ScreenLuaProtocol.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["host commit"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Screens/Lua/ScreenLuaSession.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["профиль"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Runtime/RuntimeSettingsServices.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ". Тесты: ",
+        {
+          "tag": "a",
+          "children": ["протокол"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Screens/ScreenLuaProtocolTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["сеанс"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Screens/ScreenLuaSessionTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["мини-игры"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Screens/MinigameLuaTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "span", "children": [], "props": { "id": "namespaces" } }
+      ]
+    },
+    {
+      "tag": "h2",
+      "children": ["Пространства имён, ID и специальные значения"],
+      "props": { "id": "пространства-имён-id-и-специальные-значения" }
+    },
+    {
+      "tag": "div",
+      "children": [
+        {
+          "tag": "table",
+          "children": [
+            {
+              "tag": "thead",
+              "children": [
+                {
+                  "tag": "tr",
+                  "children": [
+                    {
+                      "tag": "th",
+                      "children": ["Значение"],
+                      "props": { "scope": "col" }
+                    },
+                    {
+                      "tag": "th",
+                      "children": ["Сценарий game"],
+                      "props": { "scope": "col" }
+                    },
+                    {
+                      "tag": "th",
+                      "children": ["Корневой ui-ресурс"],
+                      "props": { "scope": "col" }
+                    },
+                    {
+                      "tag": "th",
+                      "children": ["ui-модуль"],
+                      "props": { "scope": "col" }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "tbody",
+              "children": [
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["refs"] },
+                    {
+                      "tag": "td",
+                      "children": [
+                        "имена → стабильные GUID из References блока/ресурса"
+                      ]
+                    },
+                    {
+                      "tag": "td",
+                      "children": ["имена холста → handles собственных узлов"]
+                    },
+                    {
+                      "tag": "td",
+                      "children": [
+                        "пустая таблица; передавайте handles аргументами"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["modules"] },
+                    { "tag": "td", "children": ["отсутствует"] },
+                    {
+                      "tag": "td",
+                      "children": [
+                        "имена → GUID N объявленных Lua-импортов этого файла"
+                      ]
+                    },
+                    { "tag": "td", "children": ["собственные импорты файла"] }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["audio"] },
+                    { "tag": "td", "children": ["отсутствует"] },
+                    {
+                      "tag": "td",
+                      "children": [
+                        "имена → GUID N WAV из References корневого Lua-ресурса"
+                      ]
+                    },
+                    {
+                      "tag": "td",
+                      "children": ["отсутствует; передавайте ID аргументами"]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["ui.null"] },
+                    {
+                      "tag": "td",
+                      "children": [
+                        "отсутствует глобальная ui; data=null верхнего уровня в game-результате становится nil; вложенный null остаётся маркером"
+                      ]
+                    },
+                    {
+                      "tag": "td",
+                      "children": ["неизменяемый userdata сериализуемого null"]
+                    },
+                    { "tag": "td", "children": ["тот же маркер через ui"] }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["math.pi"] },
+                    { "tag": "td", "children": ["отсутствует"] },
+                    { "tag": "td", "children": ["константа числа π"] },
+                    { "tag": "td", "children": ["отдельная таблица math с π"] }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["handlers"] },
+                    { "tag": "td", "children": ["не используется"] },
+                    {
+                      "tag": "td",
+                      "children": [
+                        "возвращаемая таблица on_event/on_load/input_events"
+                      ]
+                    },
+                    {
+                      "tag": "td",
+                      "children": [
+                        "модуль вместо handlers возвращает свою таблицу экспортов"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "props": {
+        "className": "nm-table",
+        "tabIndex": 0,
+        "role": "region",
+        "aria-label": "Таблица, прокрутка по горизонтали"
+      }
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Имена refs/scripts: до 256 ссылок, длина имени <=128, идентификатор ",
+        { "tag": "code", "children": ["[A-Za-z_][A-Za-z0-9_]*"] },
+        "; для графа модулей есть более строгие отдельные квоты. Переименование объекта не меняет его ID. Нельзя подставлять имя сцены/ресурса или путь вместо GUID. Имена примеров ",
+        { "tag": "code", "children": ["helper.caption"] },
+        ", ",
+        { "tag": "code", "children": ["puzzle.draw"] },
+        " и прочие авторские экспорты — не API движка."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Handle узла — непрозрачная строка с resource/instance/node, а не стабильный GUID проекта. Действителен только в живом экземпляре своего холста. Копия получает новые ID, удалённые ID не используются повторно до закрытия экземпляра. Одинаковый ресурс, открытый дважды, имеет несовместимые handles. Сохранить строку в state технически можно, но после восстановления она устарела: реконструируйте соответствие по refs/данным."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        "ID анимационного ",
+        { "tag": "strong", "children": ["описания"] },
+        " живёт один вызов обработчика. ID анимации/звука/сервисного запроса — корреляция операции своего владельца; не заменяет handle узла. ",
+        { "tag": "code", "children": ["cancel_animation"] },
+        " для неизвестного корректного GUID — no-op; stop/volume звука для неизвестного ticket — ошибка; cancel_release_check чужого ID — ошибка. Нельзя переносить их между экземплярами/сеансами. Детали у каждой функции."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        "AuthorKey для trigger/persistent: ",
+        { "tag": "code", "children": ["[a-z][a-z0-9_.-]{0,63}"] },
+        "; ID слота — другой формат, см. ",
+        {
+          "tag": "a",
+          "children": ["хранилище"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/session-and-storage"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "span", "children": [], "props": { "id": "lifetime" } }
+      ]
+    },
+    {
+      "tag": "h2",
+      "children": ["Пауза, закрытие, сцены, сеансы и сохранения"],
+      "props": { "id": "пауза-закрытие-сцены-сеансы-и-сохранения" }
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Корневой холст сцены живёт вместе с ней. Слой имеет параметры модальности и паузы, заданные автором. Нет встроенных обязательных меню, P/F9/F-клавиш для проекта: действия назначаются в GUI. Во время паузы игровое время, сюжетные движения, анимации и группы звука удерживаются; уже готовый ui-пакет приостановленного владельца ждёт. Меню над ним может использовать другую VM той же беседы. Мини-игра приостановлена при любом верхнем слое; обычный экземпляр — при блокирующей паузе сверху/неактивном host."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Анимации стоят также при незавершённом пакете/очереди своего экземпляра. Для звука есть исключение: pending обычного update не останавливает уже проигрываемый поток; pending ввода/результата/load удерживает его. HTTP-проверка выпуска и её wall-clock deadline продолжаются в паузе, доставка ответа ждёт."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Смена сцены очищает её UI-экземпляры и связанные handles/state/RNG/input/операции. Сценарный низкоуровневый jump сохраняет переменные, время, состояния/размещения/показ персонажей и движения; очищает оставшуюся очередь и hotspots. Авторский вход фразы может затем изменить персонажей своими командами. GUI-команда входа в сцену использует отдельный reset сценарного состояния с сохранением переменных/времени. Не путайте эти пути."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        "NewGame, MainMenu, успешный Load и завершение сеанса инвалидируют прежних владельцев и pending-ответы. Ошибочный Load сохраняет прежний сеанс. Успешный Load атомарно принимает проверенный снимок без replay команд, Lua и продвижения времени; звук прежнего прохода остановлен, возобновляется фон сохранённой сцены, voice/effect фразы не повторяются. Обычный корневой ui-обработчик после Load прикрепляется отложенно при первом взаимодействии; произвольные экраны и их VM не восстанавливаются автоматически."
+      ]
+    },
+    {
+      "tag": "div",
+      "children": [
+        {
+          "tag": "table",
+          "children": [
+            {
+              "tag": "thead",
+              "children": [
+                {
+                  "tag": "tr",
+                  "children": [
+                    {
+                      "tag": "th",
+                      "children": ["Данные"],
+                      "props": { "scope": "col" }
+                    },
+                    {
+                      "tag": "th",
+                      "children": ["Между ui-событиями"],
+                      "props": { "scope": "col" }
+                    },
+                    {
+                      "tag": "th",
+                      "children": ["Обычный игровой слот"],
+                      "props": { "scope": "col" }
+                    },
+                    {
+                      "tag": "th",
+                      "children": ["Профиль"],
+                      "props": { "scope": "col" }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "tbody",
+              "children": [
+                {
+                  "tag": "tr",
+                  "children": [
+                    {
+                      "tag": "td",
+                      "children": ["locals/замыкания/глобалы/кеш модулей"]
+                    },
+                    { "tag": "td", "children": ["да, в живой VM"] },
+                    { "tag": "td", "children": ["нет"] },
+                    { "tag": "td", "children": ["нет"] }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    {
+                      "tag": "td",
+                      "children": [
+                        "game.set переменные, позиция, время, сценарные ожидания/очередь/движения"
+                      ]
+                    },
+                    { "tag": "td", "children": ["в сюжетном состоянии"] },
+                    { "tag": "td", "children": ["да, с полной валидацией"] },
+                    { "tag": "td", "children": ["нет"] }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    {
+                      "tag": "td",
+                      "children": ["ui state/RNG обычного экрана"]
+                    },
+                    { "tag": "td", "children": ["да, до закрытия"] },
+                    { "tag": "td", "children": ["нет"] },
+                    { "tag": "td", "children": ["нет"] }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    {
+                      "tag": "td",
+                      "children": [
+                        "state/RNG/parameters активной разрешённой мини-игры, последний итог"
+                      ]
+                    },
+                    { "tag": "td", "children": ["да"] },
+                    { "tag": "td", "children": ["да при барьерах"] },
+                    { "tag": "td", "children": ["нет"] }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    {
+                      "tag": "td",
+                      "children": [
+                        "дерево UI, capture/focus/keys, анимации, источники/позиции звука, сетевые операции/очередь UI"
+                      ]
+                    },
+                    { "tag": "td", "children": ["пока живы"] },
+                    { "tag": "td", "children": ["нет"] },
+                    { "tag": "td", "children": ["нет"] }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["история посещений реплик"] },
+                    { "tag": "td", "children": ["последние 500"] },
+                    { "tag": "td", "children": ["да, GameSave v3"] },
+                    { "tag": "td", "children": ["нет"] }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    {
+                      "tag": "td",
+                      "children": [
+                        "настройки, прочитанные реплики и persistent строки"
+                      ]
+                    },
+                    { "tag": "td", "children": ["независимо от экранов"] },
+                    { "tag": "td", "children": ["нет"] },
+                    { "tag": "td", "children": ["да, по результату записи"] }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["журнал и HTTP-кеш"] },
+                    {
+                      "tag": "td",
+                      "children": ["в памяти host в своих пределах"]
+                    },
+                    { "tag": "td", "children": ["нет"] },
+                    {
+                      "tag": "td",
+                      "children": [
+                        "не данные profile.json; журнал может писаться отдельным файлом"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "props": {
+        "className": "nm-table",
+        "tabIndex": 0,
+        "role": "region",
+        "aria-label": "Таблица, прокрутка по горизонтали"
+      }
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Не переносите locals/handles через слот. Для восстановления мини-игры храните только явные данные. Перезапуск F6 создаёт новое окружение; Load не является возвратом к старому Lua-стеку. Произвольного rollback нет."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "span", "children": [], "props": { "id": "restore" } }
+      ]
+    },
+    {
+      "tag": "h2",
+      "children": ["Восстанавливающий on_load мини-игры"],
+      "props": { "id": "восстанавливающий-on_load-мини-игры" }
+    },
+    {
+      "tag": "p",
+      "children": [
+        "После загрузки сохранённой мини-игры создаётся новая VM и вызывается on_load с сохранёнными state/RNG/parameters и ",
+        { "tag": "code", "children": ["ui.is_restoring()==true"] },
+        ". ",
+        { "tag": "code", "children": ["on_load"] },
+        " получает ",
+        { "tag": "strong", "children": ["пустую"] },
+        " таблицу e, не событие с полем restoring. Восстановление должно только построить представление из данных."
+      ]
+    },
+    {
+      "tag": "div",
+      "children": [
+        {
+          "tag": "table",
+          "children": [
+            {
+              "tag": "thead",
+              "children": [
+                {
+                  "tag": "tr",
+                  "children": [
+                    {
+                      "tag": "th",
+                      "children": ["Разрешено"],
+                      "props": { "scope": "col" }
+                    },
+                    {
+                      "tag": "th",
+                      "children": ["Запрещено"],
+                      "props": { "scope": "col" }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "tbody",
+              "children": [
+                {
+                  "tag": "tr",
+                  "children": [
+                    {
+                      "tag": "td",
+                      "children": [
+                        "get/get_state/minigame_parameters/is_restoring, find, стандартная библиотека, import, log"
+                      ]
+                    },
+                    {
+                      "tag": "td",
+                      "children": [
+                        "любые сервисы, trigger, close, complete/cancel_minigame"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    {
+                      "tag": "td",
+                      "children": [
+                        "set_text/visible/enabled/geometry, create/remove/set_parent"
+                      ]
+                    },
+                    {
+                      "tag": "td",
+                      "children": [
+                        "capture/release/focus, play/stop/volume аудио"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    {
+                      "tag": "td",
+                      "children": [
+                        "подготовка tween/sequence/parallel без запуска"
+                      ]
+                    },
+                    { "tag": "td", "children": ["animate/cancel_animation"] }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    {
+                      "tag": "td",
+                      "children": [
+                        "set_state того же канонического значения; RNG без изменения итогового снимка"
+                      ]
+                    },
+                    {
+                      "tag": "td",
+                      "children": [
+                        "изменить сохранённый state или итоговый RNG"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "props": {
+        "className": "nm-table",
+        "tabIndex": 0,
+        "role": "region",
+        "aria-label": "Таблица, прокрутка по горизонтали"
+      }
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Проверка сравнивает итоговое явное состояние и RNG, а не запрещает каждое чтение/вычисление по имени. Поэтому случайное число с точным восстановлением потока технически может пройти; авторский код должен просто отрисовать сохранённый результат и не делать новых выборок. Ограничения относятся именно к восстанавливающему load-пакету; последующие on_event восстановленного экземпляра работают нормально, хотя is_restoring остаётся true."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Источник и негативные тесты: ",
+        {
+          "tag": "a",
+          "children": ["PrepareAsync"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Screens/Lua/ScreenLuaSession.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["RestoreCannotChangeStateRngOrProduceEffects"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Screens/MinigameLuaTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "h2",
+      "children": ["Исходники, F6 и изоляция"],
+      "props": { "id": "исходники-f6-и-изоляция" }
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Файлы Lua отслеживаются с debounce; диагностический разбор отменяется и проверяет актуальность текста. Изменение файла не подменяет код живой ui-VM. Следующий F6/экспорт захватывает новые исходники; F6 начинает новый сеанс. Сценарий с блоками запускается с начала, статический выбор фразы не исполняет Lua. Проверка синтаксиса не запускает обработчики, не проверяет их эффекты и не доказывает корректность поведения."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Парсер/VM работают в поставляемом runtime-worker до инициализации MonoGame. При отсутствии worker запуск запрещён; установленный SDK игроку не нужен. Preflight ограничивает код, coroutine-счётчик — Lua-инструкции, callbacks — отдельную работу, IPC — размер данных, host — число операций. GC heap worker ограничен 64 МиБ; Windows Job Object ограничивает committed memory процесса 256 МиБ и завершает его при закрытии job. Это ",
+        { "tag": "strong", "children": ["не полная ОС-песочница"] },
+        ". Аналога общей ОС-квоты памяти на Linux/macOS нет; подтверждённый нативный путь — Windows x64. Кроссплатформенность Core и тесты данных не означают проверенный нативный экспорт остальных ОС."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Источник: ",
+        {
+          "tag": "a",
+          "children": ["процесс"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Execution/LuaWorkerProcess.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["Job"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Execution/LuaWorkerJob.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["транспорт"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Execution/LuaWorkerTransport.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["ui connection"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Screens/Lua/ScreenLuaConnection.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ". Тесты: ",
+        {
+          "tag": "a",
+          "children": ["изоляция"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Execution/LuaIsolationTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["транспорт"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Execution/LuaWorkerTransportTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "h2",
+      "children": ["Чтение и загрузка"],
+      "props": { "id": "чтение-и-загрузка" }
+    },
+    {
+      "tag": "p",
+      "children": [
+        "История принадлежит сюжетному состоянию, отметки полного прочтения — профилю игрока. Авто/пропуск и прогресс печати принадлежат текущему представлению и не являются Lua-состоянием. Успешный Load показывает текущий текст полностью и выключает автоматическое продолжение; команды и озвучка реплики не переигрываются. Неудачный Load сохраняет состояние и режим. Часы печати/авто останавливаются вместе с активностью окна и pending Lua, пользовательские барьеры выключают режим. Подробные ",
+        {
+          "tag": "a",
+          "children": ["правила чтения"],
+          "props": {
+            "href": "/projects/novellmaker/docs/engine-guide#чтение-новеллы"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "h2",
+      "children": ["Время клипов персонажей"],
+      "props": { "id": "время-клипов-персонажей" }
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Проект v22 содержит ",
+        { "tag": "code", "children": ["CharacterState.Visual"] },
+        ": холст, части, клипы и ID клипа по умолчанию. Общий ",
+        { "tag": "code", "children": ["CharacterVisual.Sample"] },
+        " выдаёт матрицы частей и opacity. В F6 и экспортированной игре ",
+        { "tag": "code", "children": ["ScenarioPlayer.Frame"] },
+        " семплирует визуал по ",
+        {
+          "tag": "code",
+          "children": ["GameState.Time - CharacterStartedAt[characterId]"]
+        },
+        ". ",
+        { "tag": "code", "children": ["CharacterClips"] },
+        " хранит явный выбор сценарного ",
+        { "tag": "code", "children": ["PlayCharacterClipAction"] },
+        "; назначение позы очищает его и перезапускает время. Показ уже видимого персонажа не перезапускает клип; скрытие и последующий показ начинают его заново. Сценарный jump сохраняет эти данные, GUI-вход в новую сцену очищает вместе с прочим составом сцены."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        "GameSave v4 содержит обе таблицы времени/клипов; проверяются ID, принадлежность клипа позе, конечность времени и все изображения визуала. Читаются v1–v3 с пустыми таблицами; проверка точной редакции проекта остаётся обязательной. Load атомарно заменяет состояние, не исполняет команды и не запускает Lua, поэтому восстанавливается текущая фаза и будущая траектория. Пауза сценария/неактивное окно/pending Lua/загрузка нужной текстуры/мини-игра удерживают сценарные часы и эти клипы. UI-анимации остаются отдельной системой. ",
+        { "tag": "code", "children": ["wait('actions')"] },
+        " продолжает ждать сценарные движения; завершение конечного клипа не снимает это ожидание."
+      ]
+    }
+  ]
+}

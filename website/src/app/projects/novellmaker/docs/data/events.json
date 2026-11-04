@@ -1,0 +1,3548 @@
+{
+  "title": "События и структуры результатов",
+  "headings": [
+    {
+      "title": "События и структуры результатов",
+      "id": "события-и-структуры-результатов",
+      "level": 1
+    },
+    {
+      "title": "Общая структура и доставка",
+      "id": "общая-структура-и-доставка",
+      "level": 2
+    },
+    { "title": "Ввод: все kind", "id": "ввод-все-kind", "level": 2 },
+    {
+      "title": "Обработчик каждого вида ввода",
+      "id": "обработчик-каждого-вида-ввода",
+      "level": 3
+    },
+    { "title": "update", "id": "update", "level": 2 },
+    { "title": "trigger", "id": "trigger", "level": 2 },
+    { "title": "animation_result", "id": "animation-result", "level": 2 },
+    { "title": "audio_result", "id": "audio-result", "level": 2 },
+    { "title": "service_result", "id": "service-result", "level": 2 },
+    { "title": "Элемент slots", "id": "элемент-slots", "level": 3 },
+    {
+      "title": "settings и persisted",
+      "id": "settings-и-persisted",
+      "level": 3
+    },
+    {
+      "title": "CheckGameRelease: расширение service_result",
+      "id": "release-result",
+      "level": 2
+    },
+    {
+      "title": "Результат мини-игры в сценарии",
+      "id": "результат-мини-игры-в-сценарии",
+      "level": 2
+    }
+  ],
+  "nodes": [
+    {
+      "tag": "h1",
+      "children": ["События и структуры результатов"],
+      "props": { "id": "события-и-структуры-результатов" }
+    },
+    {
+      "tag": "p",
+      "children": [
+        {
+          "tag": "a",
+          "children": ["Оглавление"],
+          "props": { "href": "/projects/novellmaker/docs/lua" }
+        },
+        " · ",
+        {
+          "tag": "a",
+          "children": ["Модель исполнения"],
+          "props": { "href": "/projects/novellmaker/docs/lua/execution-model" }
+        },
+        " · ",
+        {
+          "tag": "a",
+          "children": ["Ввод"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/input-and-triggers"
+          }
+        }
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        "События получает ",
+        { "tag": "code", "children": ["on_event(e)"] },
+        " обработчика ",
+        { "tag": "strong", "children": ["ui"] },
+        " или авторская функция модуля, которой обработчик передал e. Сценарная VM не получает эту таблицу. on_load получает ",
+        { "tag": "code", "children": ["{}"] },
+        "; ",
+        { "tag": "code", "children": ["kind=\"load\""] },
+        " не существует. Нет произвольных подписок/callbacks хоста: поле ",
+        { "tag": "code", "children": ["on_event"] },
+        " обязательно, ",
+        { "tag": "code", "children": ["on_load"] },
+        " необязательно, обе — Lua function."
+      ]
+    },
+    {
+      "tag": "h2",
+      "children": ["Общая структура и доставка"],
+      "props": { "id": "общая-структура-и-доставка" }
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Для ",
+        { "tag": "strong", "children": ["каждого"] },
+        " on_event обязательны:"
+      ]
+    },
+    {
+      "tag": "div",
+      "children": [
+        {
+          "tag": "table",
+          "children": [
+            {
+              "tag": "thead",
+              "children": [
+                {
+                  "tag": "tr",
+                  "children": [
+                    {
+                      "tag": "th",
+                      "children": ["Поле"],
+                      "props": { "scope": "col" }
+                    },
+                    {
+                      "tag": "th",
+                      "children": ["Тип"],
+                      "props": { "scope": "col" }
+                    },
+                    {
+                      "tag": "th",
+                      "children": ["Смысл"],
+                      "props": { "scope": "col" }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "tbody",
+              "children": [
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["kind"] },
+                    { "tag": "td", "children": ["string"] },
+                    { "tag": "td", "children": ["одно из значений ниже"] }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["x, y"] },
+                    { "tag": "td", "children": ["number"] },
+                    {
+                      "tag": "td",
+                      "children": [
+                        "логические пиксели viewport 1280×720; для некоординатного события 0"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["seconds"] },
+                    { "tag": "td", "children": ["number"] },
+                    {
+                      "tag": "td",
+                      "children": [
+                        "игровая дельта [0,1]; обычно 0, у update — накопленная дельта"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["node"] },
+                    { "tag": "td", "children": ["handle или nil"] },
+                    {
+                      "tag": "td",
+                      "children": [
+                        "цель ввода; у служебных результатов/trigger/update отсутствует"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "props": {
+        "className": "nm-table",
+        "tabIndex": 0,
+        "role": "region",
+        "aria-label": "Таблица, прокрутка по горизонтали"
+      }
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Отсутствующее поле Lua читается как nil, это не ",
+        { "tag": "code", "children": ["ui.null"] },
+        ". Координаты протокола конечны и ограничены модулем 100000. Shift/control/alt существуют только у key_down/key_up; статус/ID/сообщения — только у соответствующего результата. Внутренние epoch/sequence/origin/generation/depth в Lua не проецируются."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Очередь одна на ScreenLuaSession, до 128 событий ",
+        { "tag": "strong", "children": ["вместе с резервами"] },
+        " ответов сервисов, групп анимаций и звуков. Исполнение последовательно; событие содержит снимок сюжетных переменных на момент принятия, который читает ui.get. У ui.get_state/RNG — последнее подтверждённое состояние экземпляра перед исполнением. Загрузка обработчика обязана предшествовать его событиям."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Порядок обычной очереди FIFO. Только соседние ",
+        { "tag": "code", "children": ["move"] },
+        ", ",
+        { "tag": "code", "children": ["hover"] },
+        " или ",
+        { "tag": "code", "children": ["drag"] },
+        " ",
+        { "tag": "strong", "children": ["одного kind/экземпляра/node"] },
+        " объединяются заменой последним; через click/другое значимое событие не переставляются. Завершённые сервисные ответы вставляются перед обычным вводом в порядке принятия ответов, после обязательных load. Анимационные/звуковые результаты и триггеры добавляются в хвост с заранее учтёнными резервами/лимитами; для них отдельного глобального приоритета нет. Управляющее закрытие VM обрабатывается раньше обычной очереди."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Порождённые trigger/service/animation/audio/input-цепочки ограничены 32 поколениями; продолжение сервиса не обнуляет глубину. Переполнение квоты при подготовке отклоняет пакет без частичного эффекта. Переполненный физический ввод останавливает соответствующий обработчик с диагностикой. Устаревшие click/события другой эпохи могут быть пропущены, а не переадресованы новому экрану."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Общий срок события — 5 секунд от принятия, включая очередь/подготовку/IPC. При приостановке владельца его очередь не исполняется; срок ожидающих событий сдвигается на паузу. Готовые ответы удерживаются и не блокируют работу меню. Уже отправленная работа не получает бесконечного продления native deadline. Истечение до отправки обычного события даёт диагностику; истечение load/физического input/сервисного/анимационного/звукового результата отключает обработчик, чтобы не оставлять вечный busy. Сбой IPC может отключить всю беседу. Закрытие/Reset/успешный Load удаляют старые события и резервы; поздние ответы не попадают в новый экземпляр."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Источник: ",
+        {
+          "tag": "a",
+          "children": ["проверка и проекция"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Screens/Lua/ScreenLuaProtocol.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["Lua-поля"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Screens/Lua/ScreenLuaWorker.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["очередь"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Screens/Lua/ScreenLuaSession.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ". Тесты: ",
+        {
+          "tag": "a",
+          "children": ["протокол"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Screens/ScreenLuaProtocolTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["порядок/пауза/сроки"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Screens/ScreenLuaSessionTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "h2",
+      "children": ["Ввод: все kind"],
+      "props": { "id": "ввод-все-kind" }
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Ниже поля дополняют общую структуру. В событиях с узлом ",
+        { "tag": "code", "children": ["node"] },
+        " — handle исходного экземпляра; он может уже быть удалён только у оговорённых уведомлений очистки. Это не разрешает снова изменять его через ui."
+      ]
+    },
+    {
+      "tag": "div",
+      "children": [
+        {
+          "tag": "table",
+          "children": [
+            {
+              "tag": "thead",
+              "children": [
+                {
+                  "tag": "tr",
+                  "children": [
+                    {
+                      "tag": "th",
+                      "children": ["kind"],
+                      "props": { "scope": "col" }
+                    },
+                    {
+                      "tag": "th",
+                      "children": ["Источник и обязательные/условные поля"],
+                      "props": { "scope": "col" }
+                    },
+                    {
+                      "tag": "th",
+                      "children": ["Порядок и условия"],
+                      "props": { "scope": "col" }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "tbody",
+              "children": [
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["click"] },
+                    {
+                      "tag": "td",
+                      "children": [
+                        "успешная активация Button/Area; node обязателен, x=y=seconds=0 в текущем runtime"
+                      ]
+                    },
+                    {
+                      "tag": "td",
+                      "children": [
+                        "мышь отпущена над исходной целью без drag либо Activate с клавиатуры; действие кнопки должно быть Lua; без input_events тоже доступен"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["move"] },
+                    {
+                      "tag": "td",
+                      "children": [
+                        "PointerMove; node — текущая цель/capture, x/y — координаты указателя"
+                      ]
+                    },
+                    {
+                      "tag": "td",
+                      "children": [
+                        "при реальном изменении позиции; соседние объединяются; физическая доставка требует input_events=true"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["hover"] },
+                    {
+                      "tag": "td",
+                      "children": [
+                        "протокол допускает координатное уведомление, node необязателен"
+                      ]
+                    },
+                    {
+                      "tag": "td",
+                      "children": [
+                        "текущий RuntimeScreens самостоятельно его не создаёт; не используйте как обязательное событие hover-цикла, используйте enter/leave"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["pointer_down"] },
+                    {
+                      "tag": "td",
+                      "children": [
+                        "нажатие по доступному Button/Area; node,x,y"
+                      ]
+                    },
+                    {
+                      "tag": "td",
+                      "children": [
+                        "сначала смена focus (blur/focus), затем pointer_down; автоматический исходный capture"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["pointer_up"] },
+                    {
+                      "tag": "td",
+                      "children": [
+                        "отпускание захваченной последовательности; node,x,y"
+                      ]
+                    },
+                    {
+                      "tag": "td",
+                      "children": [
+                        "сначала pointer_up, затем drag_end при drag, затем click при допустимой активации без drag"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["pointer_cancel"] },
+                    {
+                      "tag": "td",
+                      "children": ["очистка capture; node, x/y обычно 0"]
+                    },
+                    {
+                      "tag": "td",
+                      "children": [
+                        "release_pointer, смена модальности/фокуса/доступности; synthetic click не создаёт; node может быть retired"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["drag_start"] },
+                    {
+                      "tag": "td",
+                      "children": ["движение при capture, node,x,y"]
+                    },
+                    {
+                      "tag": "td",
+                      "children": [
+                        "при Manhattan distance от исходного нажатия >=4 логических пикселя; непосредственно перед первым drag"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["drag"] },
+                    {
+                      "tag": "td",
+                      "children": ["движение при активном drag; node,x,y"]
+                    },
+                    {
+                      "tag": "td",
+                      "children": [
+                        "может выходить за viewport при capture; соседние объединяются"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["drag_end"] },
+                    {
+                      "tag": "td",
+                      "children": ["отпускание в drag; node,x,y"]
+                    },
+                    {
+                      "tag": "td",
+                      "children": [
+                        "после pointer_up; click этой последовательности не создаётся"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["hover_enter"] },
+                    {
+                      "tag": "td",
+                      "children": ["смена hover на доступную цель; node,x,y"]
+                    },
+                    {
+                      "tag": "td",
+                      "children": [
+                        "старой цели сначала hover_leave, новой — hover_enter, затем move"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["hover_leave"] },
+                    {
+                      "tag": "td",
+                      "children": ["уход/очистка hover; node,x,y"]
+                    },
+                    {
+                      "tag": "td",
+                      "children": [
+                        "node может быть retired; при очистке координаты могут быть 0"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["focus"] },
+                    {
+                      "tag": "td",
+                      "children": ["новый клавиатурный фокус; node, x=y=0"]
+                    },
+                    {
+                      "tag": "td",
+                      "children": [
+                        "после blur старого; только при изменении цели"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["blur"] },
+                    { "tag": "td", "children": ["потеря фокуса; node, x=y=0"] },
+                    {
+                      "tag": "td",
+                      "children": ["старый node может быть retired"]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["key_down"] },
+                    {
+                      "tag": "td",
+                      "children": [
+                        "физическая клавиша; node,key:string,shift/control/alt:boolean"
+                      ]
+                    },
+                    {
+                      "tag": "td",
+                      "children": [
+                        "цель — focus либо корень верхнего слоя; повторы удерживаемой клавиши подавлены"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["key_up"] },
+                    {
+                      "tag": "td",
+                      "children": [
+                        "отпускание принятой клавиши; те же key/modifiers"
+                      ]
+                    },
+                    {
+                      "tag": "td",
+                      "children": [
+                        "принадлежит исходной цели нажатия; без принятого down не доставляется"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["input_reset"] },
+                    {
+                      "tag": "td",
+                      "children": [
+                        "сброс удерживаемых клавиш; node — корень владельца, x=y=0"
+                      ]
+                    },
+                    {
+                      "tag": "td",
+                      "children": [
+                        "при очистке/потере фокуса/удалении цели; key и modifiers отсутствуют, очистите собственные held-флаги"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "props": {
+        "className": "nm-table",
+        "tabIndex": 0,
+        "role": "region",
+        "aria-label": "Таблица, прокрутка по горизонтали"
+      }
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Все физические события, кроме совместимого click, требуют ",
+        { "tag": "code", "children": ["input_events=true"] },
+        ". Протокол допускает ",
+        { "tag": "code", "children": ["move/hover"] },
+        " без node, но текущая маршрутизация move направляет его живой цели. Никакого ",
+        { "tag": "code", "children": ["button"] },
+        ", ",
+        { "tag": "code", "children": ["local_x"] },
+        ", ",
+        { "tag": "code", "children": ["local_y"] },
+        ", ",
+        { "tag": "code", "children": ["wheel"] },
+        ", ",
+        { "tag": "code", "children": ["text"] },
+        ", ",
+        { "tag": "code", "children": ["repeat"] },
+        ", ",
+        { "tag": "code", "children": ["pointer_id"] },
+        " в проекции нет. Мышь не получает выдуманный key. Ввод не всплывает авторской цепочкой по родителям."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Допустимые key: ",
+        { "tag": "code", "children": ["A"] },
+        "..",
+        { "tag": "code", "children": ["Z"] },
+        ", ",
+        { "tag": "code", "children": ["F1"] },
+        "..",
+        { "tag": "code", "children": ["F12"] },
+        ", ",
+        { "tag": "code", "children": ["D0"] },
+        "..",
+        { "tag": "code", "children": ["D9"] },
+        ", ",
+        { "tag": "code", "children": ["Escape"] },
+        ", ",
+        { "tag": "code", "children": ["Enter"] },
+        ", ",
+        { "tag": "code", "children": ["Space"] },
+        ", ",
+        { "tag": "code", "children": ["Tab"] },
+        ", ",
+        { "tag": "code", "children": ["Left"] },
+        ", ",
+        { "tag": "code", "children": ["Right"] },
+        ", ",
+        { "tag": "code", "children": ["Up"] },
+        ", ",
+        { "tag": "code", "children": ["Down"] },
+        ", ",
+        { "tag": "code", "children": ["Back"] },
+        ", ",
+        { "tag": "code", "children": ["Delete"] },
+        ", ",
+        { "tag": "code", "children": ["Home"] },
+        ", ",
+        { "tag": "code", "children": ["End"] },
+        ", ",
+        { "tag": "code", "children": ["PageUp"] },
+        ", ",
+        { "tag": "code", "children": ["PageDown"] },
+        ", ",
+        { "tag": "code", "children": ["LeftShift"] },
+        ", ",
+        { "tag": "code", "children": ["RightShift"] },
+        ", ",
+        { "tag": "code", "children": ["LeftControl"] },
+        ", ",
+        { "tag": "code", "children": ["RightControl"] },
+        ", ",
+        { "tag": "code", "children": ["LeftAlt"] },
+        ", ",
+        { "tag": "code", "children": ["RightAlt"] },
+        ". Это перечень протокола; событие получит только клавиша, которую host передал маршрутизатору. Назначения действий проекта имеют более узкий набор (без D0..D9 и дополнительных служебных клавиш)."
+      ]
+    },
+    {
+      "tag": "pre",
+      "text": "return {input_events=true, on_event=function(e)\n  if e.kind == \"key_down\" and e.key == \"Space\" then\n    ui.set_text(refs.label, e.shift and \"Shift+Space\" or \"Space\")\n  elseif e.kind == \"input_reset\" then\n    ui.set_text(refs.label, \"Клавиши отпущены\")\n  end\nend}",
+      "language": "lua",
+      "children": [
+        {
+          "tag": "span",
+          "children": ["return"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " {input_events=",
+        {
+          "tag": "span",
+          "children": ["true"],
+          "props": { "className": "hljs-literal" }
+        },
+        ", on_event=",
+        {
+          "tag": "span",
+          "children": [
+            {
+              "tag": "span",
+              "children": ["function"],
+              "props": { "className": "hljs-keyword" }
+            },
+            {
+              "tag": "span",
+              "children": ["(e)"],
+              "props": { "className": "hljs-params" }
+            }
+          ],
+          "props": { "className": "hljs-function" }
+        },
+        "\n  ",
+        {
+          "tag": "span",
+          "children": ["if"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " e.kind == ",
+        {
+          "tag": "span",
+          "children": ["\"key_down\""],
+          "props": { "className": "hljs-string" }
+        },
+        " ",
+        {
+          "tag": "span",
+          "children": ["and"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " e.key == ",
+        {
+          "tag": "span",
+          "children": ["\"Space\""],
+          "props": { "className": "hljs-string" }
+        },
+        " ",
+        {
+          "tag": "span",
+          "children": ["then"],
+          "props": { "className": "hljs-keyword" }
+        },
+        "\n    ui.set_text(refs.label, e.shift ",
+        {
+          "tag": "span",
+          "children": ["and"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " ",
+        {
+          "tag": "span",
+          "children": ["\"Shift+Space\""],
+          "props": { "className": "hljs-string" }
+        },
+        " ",
+        {
+          "tag": "span",
+          "children": ["or"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " ",
+        {
+          "tag": "span",
+          "children": ["\"Space\""],
+          "props": { "className": "hljs-string" }
+        },
+        ")\n  ",
+        {
+          "tag": "span",
+          "children": ["elseif"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " e.kind == ",
+        {
+          "tag": "span",
+          "children": ["\"input_reset\""],
+          "props": { "className": "hljs-string" }
+        },
+        " ",
+        {
+          "tag": "span",
+          "children": ["then"],
+          "props": { "className": "hljs-keyword" }
+        },
+        "\n    ui.set_text(refs.label, ",
+        {
+          "tag": "span",
+          "children": ["\"Клавиши отпущены\""],
+          "props": { "className": "hljs-string" }
+        },
+        ")\n  ",
+        {
+          "tag": "span",
+          "children": ["end"],
+          "props": { "className": "hljs-keyword" }
+        },
+        "\n",
+        {
+          "tag": "span",
+          "children": ["end"],
+          "props": { "className": "hljs-keyword" }
+        },
+        "}"
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Нужен Text refs.label и активный экземпляр. Пример показывает физическую клавишу, не текстовый ввод. Для drag используйте сохранённые координаты/состояние и осторожно преобразуйте viewport в локальную систему; API обратной матрицы в Lua нет. Нельзя считать e.x/e.y локальными координатами вложенного/повёрнутого узла."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Источник: ",
+        {
+          "tag": "a",
+          "children": ["маршрутизатор"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Screens/ScreenStack.Input.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["stack"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Screens/ScreenStack.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["runtime dispatch"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Runtime/RuntimeScreens.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["keys"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Screens/ProjectInputBinding.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ". Тесты: ",
+        {
+          "tag": "a",
+          "children": ["ввод"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Screens/ExtendedInputTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["runtime"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Runtime.Tests/ExtendedInputRuntimeTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "h3",
+      "children": ["Обработчик каждого вида ввода"],
+      "props": { "id": "обработчик-каждого-вида-ввода" }
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Полный диагностический обработчик ниже показывает реакцию на каждое имя из таблицы. Нужны неизменяемый Text refs.label и хотя бы одна доступная кнопка/Area с действием Lua. Обработчик не хранит игровой input-state; для своей механики отдельно очищайте held-флаги при cancel/reset. hover включён для полноты протокола, текущий runtime его не порождает."
+      ]
+    },
+    {
+      "tag": "pre",
+      "text": "local function show(text) ui.set_text(refs.label, text) end\nlocal function position(e) return e.kind..\":\"..e.x..\",\"..e.y end\nlocal dispatch={\n  click=function(e) show(\"click\") end,\n  move=function(e) show(position(e)) end,\n  hover=function(e) show(position(e)) end,\n  pointer_down=function(e)\n    ui.capture_pointer(e.node)\n    show(position(e))\n  end,\n  pointer_up=function(e) show(position(e)) end,\n  pointer_cancel=function(e) show(\"pointer_cancel\") end,\n  drag_start=function(e) show(position(e)) end,\n  drag=function(e) show(position(e)) end,\n  drag_end=function(e) show(position(e)) end,\n  hover_enter=function(e) show(position(e)) end,\n  hover_leave=function(e) show(position(e)) end,\n  focus=function(e) show(\"focus\") end,\n  blur=function(e) show(\"blur\") end,\n  key_down=function(e) show(\"down:\"..e.key) end,\n  key_up=function(e) show(\"up:\"..e.key) end,\n  input_reset=function(e) show(\"input_reset\") end\n}\nreturn {input_events=true, on_event=function(e)\n  local handler=dispatch[e.kind]\n  if handler then handler(e) end\nend}",
+      "language": "lua",
+      "children": [
+        {
+          "tag": "span",
+          "children": ["local"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " ",
+        {
+          "tag": "span",
+          "children": [
+            {
+              "tag": "span",
+              "children": ["function"],
+              "props": { "className": "hljs-keyword" }
+            },
+            " ",
+            {
+              "tag": "span",
+              "children": ["show"],
+              "props": { "className": "hljs-title" }
+            },
+            {
+              "tag": "span",
+              "children": ["(text)"],
+              "props": { "className": "hljs-params" }
+            }
+          ],
+          "props": { "className": "hljs-function" }
+        },
+        " ui.set_text(refs.label, text) ",
+        {
+          "tag": "span",
+          "children": ["end"],
+          "props": { "className": "hljs-keyword" }
+        },
+        "\n",
+        {
+          "tag": "span",
+          "children": ["local"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " ",
+        {
+          "tag": "span",
+          "children": [
+            {
+              "tag": "span",
+              "children": ["function"],
+              "props": { "className": "hljs-keyword" }
+            },
+            " ",
+            {
+              "tag": "span",
+              "children": ["position"],
+              "props": { "className": "hljs-title" }
+            },
+            {
+              "tag": "span",
+              "children": ["(e)"],
+              "props": { "className": "hljs-params" }
+            }
+          ],
+          "props": { "className": "hljs-function" }
+        },
+        " ",
+        {
+          "tag": "span",
+          "children": ["return"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " e.kind..",
+        {
+          "tag": "span",
+          "children": ["\":\""],
+          "props": { "className": "hljs-string" }
+        },
+        "..e.x..",
+        {
+          "tag": "span",
+          "children": ["\",\""],
+          "props": { "className": "hljs-string" }
+        },
+        "..e.y ",
+        {
+          "tag": "span",
+          "children": ["end"],
+          "props": { "className": "hljs-keyword" }
+        },
+        "\n",
+        {
+          "tag": "span",
+          "children": ["local"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " dispatch={\n  click=",
+        {
+          "tag": "span",
+          "children": [
+            {
+              "tag": "span",
+              "children": ["function"],
+              "props": { "className": "hljs-keyword" }
+            },
+            {
+              "tag": "span",
+              "children": ["(e)"],
+              "props": { "className": "hljs-params" }
+            }
+          ],
+          "props": { "className": "hljs-function" }
+        },
+        " show(",
+        {
+          "tag": "span",
+          "children": ["\"click\""],
+          "props": { "className": "hljs-string" }
+        },
+        ") ",
+        {
+          "tag": "span",
+          "children": ["end"],
+          "props": { "className": "hljs-keyword" }
+        },
+        ",\n  move=",
+        {
+          "tag": "span",
+          "children": [
+            {
+              "tag": "span",
+              "children": ["function"],
+              "props": { "className": "hljs-keyword" }
+            },
+            {
+              "tag": "span",
+              "children": ["(e)"],
+              "props": { "className": "hljs-params" }
+            }
+          ],
+          "props": { "className": "hljs-function" }
+        },
+        " show(position(e)) ",
+        {
+          "tag": "span",
+          "children": ["end"],
+          "props": { "className": "hljs-keyword" }
+        },
+        ",\n  hover=",
+        {
+          "tag": "span",
+          "children": [
+            {
+              "tag": "span",
+              "children": ["function"],
+              "props": { "className": "hljs-keyword" }
+            },
+            {
+              "tag": "span",
+              "children": ["(e)"],
+              "props": { "className": "hljs-params" }
+            }
+          ],
+          "props": { "className": "hljs-function" }
+        },
+        " show(position(e)) ",
+        {
+          "tag": "span",
+          "children": ["end"],
+          "props": { "className": "hljs-keyword" }
+        },
+        ",\n  pointer_down=",
+        {
+          "tag": "span",
+          "children": [
+            {
+              "tag": "span",
+              "children": ["function"],
+              "props": { "className": "hljs-keyword" }
+            },
+            {
+              "tag": "span",
+              "children": ["(e)"],
+              "props": { "className": "hljs-params" }
+            }
+          ],
+          "props": { "className": "hljs-function" }
+        },
+        "\n    ui.capture_pointer(e.node)\n    show(position(e))\n  ",
+        {
+          "tag": "span",
+          "children": ["end"],
+          "props": { "className": "hljs-keyword" }
+        },
+        ",\n  pointer_up=",
+        {
+          "tag": "span",
+          "children": [
+            {
+              "tag": "span",
+              "children": ["function"],
+              "props": { "className": "hljs-keyword" }
+            },
+            {
+              "tag": "span",
+              "children": ["(e)"],
+              "props": { "className": "hljs-params" }
+            }
+          ],
+          "props": { "className": "hljs-function" }
+        },
+        " show(position(e)) ",
+        {
+          "tag": "span",
+          "children": ["end"],
+          "props": { "className": "hljs-keyword" }
+        },
+        ",\n  pointer_cancel=",
+        {
+          "tag": "span",
+          "children": [
+            {
+              "tag": "span",
+              "children": ["function"],
+              "props": { "className": "hljs-keyword" }
+            },
+            {
+              "tag": "span",
+              "children": ["(e)"],
+              "props": { "className": "hljs-params" }
+            }
+          ],
+          "props": { "className": "hljs-function" }
+        },
+        " show(",
+        {
+          "tag": "span",
+          "children": ["\"pointer_cancel\""],
+          "props": { "className": "hljs-string" }
+        },
+        ") ",
+        {
+          "tag": "span",
+          "children": ["end"],
+          "props": { "className": "hljs-keyword" }
+        },
+        ",\n  drag_start=",
+        {
+          "tag": "span",
+          "children": [
+            {
+              "tag": "span",
+              "children": ["function"],
+              "props": { "className": "hljs-keyword" }
+            },
+            {
+              "tag": "span",
+              "children": ["(e)"],
+              "props": { "className": "hljs-params" }
+            }
+          ],
+          "props": { "className": "hljs-function" }
+        },
+        " show(position(e)) ",
+        {
+          "tag": "span",
+          "children": ["end"],
+          "props": { "className": "hljs-keyword" }
+        },
+        ",\n  drag=",
+        {
+          "tag": "span",
+          "children": [
+            {
+              "tag": "span",
+              "children": ["function"],
+              "props": { "className": "hljs-keyword" }
+            },
+            {
+              "tag": "span",
+              "children": ["(e)"],
+              "props": { "className": "hljs-params" }
+            }
+          ],
+          "props": { "className": "hljs-function" }
+        },
+        " show(position(e)) ",
+        {
+          "tag": "span",
+          "children": ["end"],
+          "props": { "className": "hljs-keyword" }
+        },
+        ",\n  drag_end=",
+        {
+          "tag": "span",
+          "children": [
+            {
+              "tag": "span",
+              "children": ["function"],
+              "props": { "className": "hljs-keyword" }
+            },
+            {
+              "tag": "span",
+              "children": ["(e)"],
+              "props": { "className": "hljs-params" }
+            }
+          ],
+          "props": { "className": "hljs-function" }
+        },
+        " show(position(e)) ",
+        {
+          "tag": "span",
+          "children": ["end"],
+          "props": { "className": "hljs-keyword" }
+        },
+        ",\n  hover_enter=",
+        {
+          "tag": "span",
+          "children": [
+            {
+              "tag": "span",
+              "children": ["function"],
+              "props": { "className": "hljs-keyword" }
+            },
+            {
+              "tag": "span",
+              "children": ["(e)"],
+              "props": { "className": "hljs-params" }
+            }
+          ],
+          "props": { "className": "hljs-function" }
+        },
+        " show(position(e)) ",
+        {
+          "tag": "span",
+          "children": ["end"],
+          "props": { "className": "hljs-keyword" }
+        },
+        ",\n  hover_leave=",
+        {
+          "tag": "span",
+          "children": [
+            {
+              "tag": "span",
+              "children": ["function"],
+              "props": { "className": "hljs-keyword" }
+            },
+            {
+              "tag": "span",
+              "children": ["(e)"],
+              "props": { "className": "hljs-params" }
+            }
+          ],
+          "props": { "className": "hljs-function" }
+        },
+        " show(position(e)) ",
+        {
+          "tag": "span",
+          "children": ["end"],
+          "props": { "className": "hljs-keyword" }
+        },
+        ",\n  focus=",
+        {
+          "tag": "span",
+          "children": [
+            {
+              "tag": "span",
+              "children": ["function"],
+              "props": { "className": "hljs-keyword" }
+            },
+            {
+              "tag": "span",
+              "children": ["(e)"],
+              "props": { "className": "hljs-params" }
+            }
+          ],
+          "props": { "className": "hljs-function" }
+        },
+        " show(",
+        {
+          "tag": "span",
+          "children": ["\"focus\""],
+          "props": { "className": "hljs-string" }
+        },
+        ") ",
+        {
+          "tag": "span",
+          "children": ["end"],
+          "props": { "className": "hljs-keyword" }
+        },
+        ",\n  blur=",
+        {
+          "tag": "span",
+          "children": [
+            {
+              "tag": "span",
+              "children": ["function"],
+              "props": { "className": "hljs-keyword" }
+            },
+            {
+              "tag": "span",
+              "children": ["(e)"],
+              "props": { "className": "hljs-params" }
+            }
+          ],
+          "props": { "className": "hljs-function" }
+        },
+        " show(",
+        {
+          "tag": "span",
+          "children": ["\"blur\""],
+          "props": { "className": "hljs-string" }
+        },
+        ") ",
+        {
+          "tag": "span",
+          "children": ["end"],
+          "props": { "className": "hljs-keyword" }
+        },
+        ",\n  key_down=",
+        {
+          "tag": "span",
+          "children": [
+            {
+              "tag": "span",
+              "children": ["function"],
+              "props": { "className": "hljs-keyword" }
+            },
+            {
+              "tag": "span",
+              "children": ["(e)"],
+              "props": { "className": "hljs-params" }
+            }
+          ],
+          "props": { "className": "hljs-function" }
+        },
+        " show(",
+        {
+          "tag": "span",
+          "children": ["\"down:\""],
+          "props": { "className": "hljs-string" }
+        },
+        "..e.key) ",
+        {
+          "tag": "span",
+          "children": ["end"],
+          "props": { "className": "hljs-keyword" }
+        },
+        ",\n  key_up=",
+        {
+          "tag": "span",
+          "children": [
+            {
+              "tag": "span",
+              "children": ["function"],
+              "props": { "className": "hljs-keyword" }
+            },
+            {
+              "tag": "span",
+              "children": ["(e)"],
+              "props": { "className": "hljs-params" }
+            }
+          ],
+          "props": { "className": "hljs-function" }
+        },
+        " show(",
+        {
+          "tag": "span",
+          "children": ["\"up:\""],
+          "props": { "className": "hljs-string" }
+        },
+        "..e.key) ",
+        {
+          "tag": "span",
+          "children": ["end"],
+          "props": { "className": "hljs-keyword" }
+        },
+        ",\n  input_reset=",
+        {
+          "tag": "span",
+          "children": [
+            {
+              "tag": "span",
+              "children": ["function"],
+              "props": { "className": "hljs-keyword" }
+            },
+            {
+              "tag": "span",
+              "children": ["(e)"],
+              "props": { "className": "hljs-params" }
+            }
+          ],
+          "props": { "className": "hljs-function" }
+        },
+        " show(",
+        {
+          "tag": "span",
+          "children": ["\"input_reset\""],
+          "props": { "className": "hljs-string" }
+        },
+        ") ",
+        {
+          "tag": "span",
+          "children": ["end"],
+          "props": { "className": "hljs-keyword" }
+        },
+        "\n}\n",
+        {
+          "tag": "span",
+          "children": ["return"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " {input_events=",
+        {
+          "tag": "span",
+          "children": ["true"],
+          "props": { "className": "hljs-literal" }
+        },
+        ", on_event=",
+        {
+          "tag": "span",
+          "children": [
+            {
+              "tag": "span",
+              "children": ["function"],
+              "props": { "className": "hljs-keyword" }
+            },
+            {
+              "tag": "span",
+              "children": ["(e)"],
+              "props": { "className": "hljs-params" }
+            }
+          ],
+          "props": { "className": "hljs-function" }
+        },
+        "\n  ",
+        {
+          "tag": "span",
+          "children": ["local"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " handler=dispatch[e.kind]\n  ",
+        {
+          "tag": "span",
+          "children": ["if"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " handler ",
+        {
+          "tag": "span",
+          "children": ["then"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " handler(e) ",
+        {
+          "tag": "span",
+          "children": ["end"],
+          "props": { "className": "hljs-keyword" }
+        },
+        "\n",
+        {
+          "tag": "span",
+          "children": ["end"],
+          "props": { "className": "hljs-keyword" }
+        },
+        "}"
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Это иллюстрация маршрутизации, не обещание появления каждого события при каждом действии. Например, drag не создаётся без press+движения, а отмена последовательности не создаёт click. Все команды примера принимаются обычными пакетами."
+      ]
+    },
+    { "tag": "h2", "children": ["update"], "props": { "id": "update" } },
+    {
+      "tag": "p",
+      "children": [
+        {
+          "tag": "code",
+          "children": ["{kind=\"update\", seconds:number, x=0, y=0}"]
+        },
+        ", node отсутствует. В runtime источник — ",
+        { "tag": "strong", "children": ["Running мини-игра"] },
+        " с UpdatesPerSecond 1..20, default 5. Накопленная дельта ограничивается 1 секундой. Пока обработчик занят, время накапливается до этого предела; когда экземпляр settled и достигнут интервал, принимается одно событие, аккумулятор сбрасывается. Это не гарантия воспроизвести каждый потерянный шаг и не системные часы."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        "При паузе мини-игра не получает игровые update; on_event не должен блокироваться в ожидании следующего. Для детерминированной логики храните прошедшее время в state, а не используйте реальные часы (они недоступны)."
+      ]
+    },
+    {
+      "tag": "pre",
+      "text": "return {on_event=function(e)\n  if e.kind == \"update\" then\n    local s=ui.get_state() -- StateSchema: {elapsed:Number}, InitialState={elapsed=0}\n    s.elapsed=s.elapsed+e.seconds\n    ui.set_state(s)\n  end\nend}",
+      "language": "lua",
+      "children": [
+        {
+          "tag": "span",
+          "children": ["return"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " {on_event=",
+        {
+          "tag": "span",
+          "children": [
+            {
+              "tag": "span",
+              "children": ["function"],
+              "props": { "className": "hljs-keyword" }
+            },
+            {
+              "tag": "span",
+              "children": ["(e)"],
+              "props": { "className": "hljs-params" }
+            }
+          ],
+          "props": { "className": "hljs-function" }
+        },
+        "\n  ",
+        {
+          "tag": "span",
+          "children": ["if"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " e.kind == ",
+        {
+          "tag": "span",
+          "children": ["\"update\""],
+          "props": { "className": "hljs-string" }
+        },
+        " ",
+        {
+          "tag": "span",
+          "children": ["then"],
+          "props": { "className": "hljs-keyword" }
+        },
+        "\n    ",
+        {
+          "tag": "span",
+          "children": ["local"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " s=ui.get_state() ",
+        {
+          "tag": "span",
+          "children": [
+            "-- StateSchema: {elapsed:Number}, InitialState={elapsed=0}"
+          ],
+          "props": { "className": "hljs-comment" }
+        },
+        "\n    s.elapsed=s.elapsed+e.seconds\n    ui.set_state(s)\n  ",
+        {
+          "tag": "span",
+          "children": ["end"],
+          "props": { "className": "hljs-keyword" }
+        },
+        "\n",
+        {
+          "tag": "span",
+          "children": ["end"],
+          "props": { "className": "hljs-keyword" }
+        },
+        "}"
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Источник: ",
+        {
+          "tag": "a",
+          "children": ["TickMinigame"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Runtime/RuntimeScreens.Minigames.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ". Тесты: ",
+        {
+          "tag": "a",
+          "children": ["runtime screens"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Runtime.Tests/RuntimeScreensTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["мини-игры"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Screens/MinigameLuaTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    },
+    { "tag": "h2", "children": ["trigger"], "props": { "id": "trigger" } },
+    {
+      "tag": "p",
+      "children": [
+        {
+          "tag": "code",
+          "children": [
+            "{kind=\"trigger\",trigger_id:string,trigger_data?:string,x=0,y=0,seconds=0}"
+          ]
+        },
+        ". trigger_id — обязательный AuthorKey; trigger_data отсутствует для nil или строка <=1024 (пустая отличается от nil). node отсутствует. Источник текущего авторского runtime — принятый ",
+        { "tag": "code", "children": ["ui.trigger"] },
+        ". Отдельного штатного действия кнопки Trigger нет: назначьте Lua и вызовите ui.trigger в обработчике click. Получатель — тот же экземпляр, не все сцены."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        "После commit отправителя события добавляются в хвост в порядке вызовов. До 16 триггеров/пакет, 128 общая очередь, глубина 32. Нет отложенного возврата в вызвавшую функцию; при закрытии/смене сеанса не сохраняются."
+      ]
+    },
+    {
+      "tag": "pre",
+      "text": "return {on_event=function(e)\n  if e.kind==\"click\" and e.node==refs.button then\n    ui.trigger(\"door.open\", \"key\")\n  elseif e.kind==\"trigger\" and e.trigger_id==\"door.open\" then\n    ui.set_text(refs.label, e.trigger_data or \"без данных\")\n  end\nend}",
+      "language": "lua",
+      "children": [
+        {
+          "tag": "span",
+          "children": ["return"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " {on_event=",
+        {
+          "tag": "span",
+          "children": [
+            {
+              "tag": "span",
+              "children": ["function"],
+              "props": { "className": "hljs-keyword" }
+            },
+            {
+              "tag": "span",
+              "children": ["(e)"],
+              "props": { "className": "hljs-params" }
+            }
+          ],
+          "props": { "className": "hljs-function" }
+        },
+        "\n  ",
+        {
+          "tag": "span",
+          "children": ["if"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " e.kind==",
+        {
+          "tag": "span",
+          "children": ["\"click\""],
+          "props": { "className": "hljs-string" }
+        },
+        " ",
+        {
+          "tag": "span",
+          "children": ["and"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " e.node==refs.button ",
+        {
+          "tag": "span",
+          "children": ["then"],
+          "props": { "className": "hljs-keyword" }
+        },
+        "\n    ui.trigger(",
+        {
+          "tag": "span",
+          "children": ["\"door.open\""],
+          "props": { "className": "hljs-string" }
+        },
+        ", ",
+        {
+          "tag": "span",
+          "children": ["\"key\""],
+          "props": { "className": "hljs-string" }
+        },
+        ")\n  ",
+        {
+          "tag": "span",
+          "children": ["elseif"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " e.kind==",
+        {
+          "tag": "span",
+          "children": ["\"trigger\""],
+          "props": { "className": "hljs-string" }
+        },
+        " ",
+        {
+          "tag": "span",
+          "children": ["and"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " e.trigger_id==",
+        {
+          "tag": "span",
+          "children": ["\"door.open\""],
+          "props": { "className": "hljs-string" }
+        },
+        " ",
+        {
+          "tag": "span",
+          "children": ["then"],
+          "props": { "className": "hljs-keyword" }
+        },
+        "\n    ui.set_text(refs.label, e.trigger_data ",
+        {
+          "tag": "span",
+          "children": ["or"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " ",
+        {
+          "tag": "span",
+          "children": ["\"без данных\""],
+          "props": { "className": "hljs-string" }
+        },
+        ")\n  ",
+        {
+          "tag": "span",
+          "children": ["end"],
+          "props": { "className": "hljs-keyword" }
+        },
+        "\n",
+        {
+          "tag": "span",
+          "children": ["end"],
+          "props": { "className": "hljs-keyword" }
+        },
+        "}"
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Источник: ",
+        {
+          "tag": "a",
+          "children": ["AuthorTrigger"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Triggers/AuthorTrigger.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["session"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Screens/Lua/ScreenLuaSession.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ". Тесты: ",
+        {
+          "tag": "a",
+          "children": ["PersistentDataLuaTests"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Screens/PersistentDataLuaTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "span", "children": [], "props": { "id": "animation-result" } }
+      ]
+    },
+    {
+      "tag": "h2",
+      "children": ["animation_result"],
+      "props": { "id": "animation_result" }
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Обязательные поля: ",
+        { "tag": "code", "children": ["kind=\"animation_result\""] },
+        ", ",
+        { "tag": "code", "children": ["animation_id:string"] },
+        " GUID N из ui.animate, ",
+        { "tag": "code", "children": ["status:string"] },
+        ", ",
+        { "tag": "code", "children": ["reason:string"] },
+        ", x=y=seconds=0. node отсутствует. Один результат на принятую группу при живом владельце; ID описания tween не используется для корреляции."
+      ]
+    },
+    {
+      "tag": "div",
+      "children": [
+        {
+          "tag": "table",
+          "children": [
+            {
+              "tag": "thead",
+              "children": [
+                {
+                  "tag": "tr",
+                  "children": [
+                    {
+                      "tag": "th",
+                      "children": ["status"],
+                      "props": { "scope": "col" }
+                    },
+                    {
+                      "tag": "th",
+                      "children": ["reason, которые создаёт host"],
+                      "props": { "scope": "col" }
+                    },
+                    {
+                      "tag": "th",
+                      "children": ["Условие"],
+                      "props": { "scope": "col" }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "tbody",
+              "children": [
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["completed"] },
+                    { "tag": "td", "children": ["finished"] },
+                    { "tag": "td", "children": ["достигнут конец timeline"] }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["cancelled"] },
+                    { "tag": "td", "children": ["requested"] },
+                    {
+                      "tag": "td",
+                      "children": ["cancel_animation своего живого ID"]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["cancelled"] },
+                    { "tag": "td", "children": ["replaced"] },
+                    {
+                      "tag": "td",
+                      "children": ["новая группа пересекается по узлу/свойству"]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["cancelled"] },
+                    { "tag": "td", "children": ["property_set"] },
+                    {
+                      "tag": "td",
+                      "children": ["set_geometry затронул анимируемое свойство"]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["cancelled"] },
+                    { "tag": "td", "children": ["removed"] },
+                    { "tag": "td", "children": ["удалён узел трека"] }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["cancelled"] },
+                    { "tag": "td", "children": ["reparented"] },
+                    { "tag": "td", "children": ["set_parent в экземпляре"] }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["failed"] },
+                    { "tag": "td", "children": ["invalid_geometry"] },
+                    {
+                      "tag": "td",
+                      "children": ["host не смог построить допустимый кадр"]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "props": {
+        "className": "nm-table",
+        "tabIndex": 0,
+        "role": "region",
+        "aria-label": "Таблица, прокрутка по горизонтали"
+      }
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Протокол ограничивает reason длиной 128, а не enum; выше полный список значений ",
+        { "tag": "strong", "children": ["производителя текущего host"] },
+        ". Результат сохраняет причинную глубину, резервируется до старта. Пауза задерживает timeline/доставку; закрытие/Reset очищает их без доставки в новый экземпляр. Неизвестный ID cancel_animation — no-op и не создаёт событие."
+      ]
+    },
+    {
+      "tag": "pre",
+      "text": "return {on_load=function()\n  ui.animate(ui.tween(refs.label, {x=200}, 1))\nend, on_event=function(e)\n  if e.kind==\"animation_result\" then\n    ui.set_text(refs.label, e.status..\":\"..e.reason)\n  end\nend}",
+      "language": "lua",
+      "children": [
+        {
+          "tag": "span",
+          "children": ["return"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " {on_load=",
+        {
+          "tag": "span",
+          "children": [
+            {
+              "tag": "span",
+              "children": ["function"],
+              "props": { "className": "hljs-keyword" }
+            },
+            {
+              "tag": "span",
+              "children": ["()"],
+              "props": { "className": "hljs-params" }
+            }
+          ],
+          "props": { "className": "hljs-function" }
+        },
+        "\n  ui.animate(ui.tween(refs.label, {x=",
+        {
+          "tag": "span",
+          "children": ["200"],
+          "props": { "className": "hljs-number" }
+        },
+        "}, ",
+        {
+          "tag": "span",
+          "children": ["1"],
+          "props": { "className": "hljs-number" }
+        },
+        "))\n",
+        {
+          "tag": "span",
+          "children": ["end"],
+          "props": { "className": "hljs-keyword" }
+        },
+        ", on_event=",
+        {
+          "tag": "span",
+          "children": [
+            {
+              "tag": "span",
+              "children": ["function"],
+              "props": { "className": "hljs-keyword" }
+            },
+            {
+              "tag": "span",
+              "children": ["(e)"],
+              "props": { "className": "hljs-params" }
+            }
+          ],
+          "props": { "className": "hljs-function" }
+        },
+        "\n  ",
+        {
+          "tag": "span",
+          "children": ["if"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " e.kind==",
+        {
+          "tag": "span",
+          "children": ["\"animation_result\""],
+          "props": { "className": "hljs-string" }
+        },
+        " ",
+        {
+          "tag": "span",
+          "children": ["then"],
+          "props": { "className": "hljs-keyword" }
+        },
+        "\n    ui.set_text(refs.label, e.",
+        {
+          "tag": "span",
+          "children": ["status"],
+          "props": { "className": "hljs-built_in" }
+        },
+        "..",
+        {
+          "tag": "span",
+          "children": ["\":\""],
+          "props": { "className": "hljs-string" }
+        },
+        "..e.reason)\n  ",
+        {
+          "tag": "span",
+          "children": ["end"],
+          "props": { "className": "hljs-keyword" }
+        },
+        "\n",
+        {
+          "tag": "span",
+          "children": ["end"],
+          "props": { "className": "hljs-keyword" }
+        },
+        "}"
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Источник: ",
+        {
+          "tag": "a",
+          "children": ["ScreenAnimator"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Screens/Animations/ScreenAnimation.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ". Тесты: ",
+        {
+          "tag": "a",
+          "children": ["AnimationTests"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Screens/AnimationTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "span", "children": [], "props": { "id": "audio-result" } }
+      ]
+    },
+    {
+      "tag": "h2",
+      "children": ["audio_result"],
+      "props": { "id": "audio_result" }
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Обязательные поля: ",
+        { "tag": "code", "children": ["kind=\"audio_result\""] },
+        ", ",
+        { "tag": "code", "children": ["audio_id:string"] },
+        " GUID N из play_audio, ",
+        { "tag": "code", "children": ["status:string"] },
+        ", ",
+        { "tag": "code", "children": ["message:string"] },
+        " <=1024, x=y=seconds=0. node отсутствует. status ",
+        { "tag": "strong", "children": ["только"] },
+        " ",
+        { "tag": "code", "children": ["completed"] },
+        ", ",
+        { "tag": "code", "children": ["stopped"] },
+        ", ",
+        { "tag": "code", "children": ["failed"] },
+        "; ",
+        { "tag": "code", "children": ["cancelled"] },
+        " для звука нет. message может быть пустой, машинного code/reason у аудио нет."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        "completed — естественный конец незацикленного звука; stopped — явная остановка; failed — ошибка открытия/формата/backend/лимита. Loop сам по себе не заканчивается. Ticket удаляется после принятия обработчика результата: не храните ID как действующий после этого. Повторный stop ещё учтённого завершённого источника не создаёт второй результат. StopOwner при закрытии очищает владельца, callback в исчезнувшую VM не обещан."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Результат получает исходный владелец, резерв очереди создаётся при play. Пауза и pending input/result удерживают аудио; pending обычного update — исключение, см. ",
+        {
+          "tag": "a",
+          "children": ["звук"],
+          "props": { "href": "/projects/novellmaker/docs/lua/audio" }
+        },
+        ". Перед сохранением мини-игры должны закончиться и звук, и обработка его результата."
+      ]
+    },
+    {
+      "tag": "pre",
+      "text": "return {on_load=function()\n  ui.play_audio(audio.click, \"effect\", false, 0.7)\nend, on_event=function(e)\n  if e.kind==\"audio_result\" then\n    ui.set_text(refs.label, e.status)\n    if e.status==\"failed\" then ui.log(\"warning\", e.message) end\n  end\nend}",
+      "language": "lua",
+      "children": [
+        {
+          "tag": "span",
+          "children": ["return"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " {on_load=",
+        {
+          "tag": "span",
+          "children": [
+            {
+              "tag": "span",
+              "children": ["function"],
+              "props": { "className": "hljs-keyword" }
+            },
+            {
+              "tag": "span",
+              "children": ["()"],
+              "props": { "className": "hljs-params" }
+            }
+          ],
+          "props": { "className": "hljs-function" }
+        },
+        "\n  ui.play_audio(audio.click, ",
+        {
+          "tag": "span",
+          "children": ["\"effect\""],
+          "props": { "className": "hljs-string" }
+        },
+        ", ",
+        {
+          "tag": "span",
+          "children": ["false"],
+          "props": { "className": "hljs-literal" }
+        },
+        ", ",
+        {
+          "tag": "span",
+          "children": ["0.7"],
+          "props": { "className": "hljs-number" }
+        },
+        ")\n",
+        {
+          "tag": "span",
+          "children": ["end"],
+          "props": { "className": "hljs-keyword" }
+        },
+        ", on_event=",
+        {
+          "tag": "span",
+          "children": [
+            {
+              "tag": "span",
+              "children": ["function"],
+              "props": { "className": "hljs-keyword" }
+            },
+            {
+              "tag": "span",
+              "children": ["(e)"],
+              "props": { "className": "hljs-params" }
+            }
+          ],
+          "props": { "className": "hljs-function" }
+        },
+        "\n  ",
+        {
+          "tag": "span",
+          "children": ["if"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " e.kind==",
+        {
+          "tag": "span",
+          "children": ["\"audio_result\""],
+          "props": { "className": "hljs-string" }
+        },
+        " ",
+        {
+          "tag": "span",
+          "children": ["then"],
+          "props": { "className": "hljs-keyword" }
+        },
+        "\n    ui.set_text(refs.label, e.",
+        {
+          "tag": "span",
+          "children": ["status"],
+          "props": { "className": "hljs-built_in" }
+        },
+        ")\n    ",
+        {
+          "tag": "span",
+          "children": ["if"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " e.",
+        {
+          "tag": "span",
+          "children": ["status"],
+          "props": { "className": "hljs-built_in" }
+        },
+        "==",
+        {
+          "tag": "span",
+          "children": ["\"failed\""],
+          "props": { "className": "hljs-string" }
+        },
+        " ",
+        {
+          "tag": "span",
+          "children": ["then"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " ui.",
+        {
+          "tag": "span",
+          "children": ["log"],
+          "props": { "className": "hljs-built_in" }
+        },
+        "(",
+        {
+          "tag": "span",
+          "children": ["\"warning\""],
+          "props": { "className": "hljs-string" }
+        },
+        ", e.message) ",
+        {
+          "tag": "span",
+          "children": ["end"],
+          "props": { "className": "hljs-keyword" }
+        },
+        "\n  ",
+        {
+          "tag": "span",
+          "children": ["end"],
+          "props": { "className": "hljs-keyword" }
+        },
+        "\n",
+        {
+          "tag": "span",
+          "children": ["end"],
+          "props": { "className": "hljs-keyword" }
+        },
+        "}"
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Нужны WAV-ссылка audio.click и Text refs.label. Источники: ",
+        {
+          "tag": "a",
+          "children": ["команды/результаты"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Audio/ScriptAudio.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["host tickets"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Screens/Lua/ScreenLuaSession.Audio.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["backend admission"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Audio/AudioService.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ". Тесты: ",
+        {
+          "tag": "a",
+          "children": ["ScriptAudioLuaTests"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Screens/ScriptAudioLuaTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "span", "children": [], "props": { "id": "service-result" } }
+      ]
+    },
+    {
+      "tag": "h2",
+      "children": ["service_result"],
+      "props": { "id": "service_result" }
+    },
+    {
+      "tag": "p",
+      "children": ["Обязательные поля каждого сервисного ответа:"]
+    },
+    {
+      "tag": "div",
+      "children": [
+        {
+          "tag": "table",
+          "children": [
+            {
+              "tag": "thead",
+              "children": [
+                {
+                  "tag": "tr",
+                  "children": [
+                    {
+                      "tag": "th",
+                      "children": ["Поле"],
+                      "props": { "scope": "col" }
+                    },
+                    {
+                      "tag": "th",
+                      "children": ["Тип"],
+                      "props": { "scope": "col" }
+                    },
+                    {
+                      "tag": "th",
+                      "children": ["Значение"],
+                      "props": { "scope": "col" }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "tbody",
+              "children": [
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["kind"] },
+                    { "tag": "td", "children": ["string"] },
+                    { "tag": "td", "children": ["service_result"] }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["request_id"] },
+                    { "tag": "td", "children": ["string"] },
+                    {
+                      "tag": "td",
+                      "children": ["GUID N, возвращённый сервисным ui-вызовом"]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["operation"] },
+                    { "tag": "td", "children": ["string"] },
+                    {
+                      "tag": "td",
+                      "children": ["точное имя операции из таблицы ниже"]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["success"] },
+                    { "tag": "td", "children": ["boolean"] },
+                    {
+                      "tag": "td",
+                      "children": ["успех операции, отдельно от persisted"]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["message"] },
+                    { "tag": "td", "children": ["string"] },
+                    {
+                      "tag": "td",
+                      "children": ["пояснение <=1024, не машинный код"]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["slots"] },
+                    { "tag": "td", "children": ["плотный список"] },
+                    {
+                      "tag": "td",
+                      "children": [
+                        "есть всегда; пуст кроме успешного ListSlots"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["x,y,seconds"] },
+                    { "tag": "td", "children": ["number"] },
+                    { "tag": "td", "children": ["0"] }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "props": {
+        "className": "nm-table",
+        "tabIndex": 0,
+        "role": "region",
+        "aria-label": "Таблица, прокрутка по горизонтали"
+      }
+    },
+    {
+      "tag": "p",
+      "children": [
+        "node отсутствует. ",
+        { "tag": "code", "children": ["slot_id"] },
+        ", ",
+        { "tag": "code", "children": ["settings"] },
+        ", ",
+        { "tag": "code", "children": ["persisted"] },
+        ", ",
+        { "tag": "code", "children": ["key"] },
+        ", ",
+        { "tag": "code", "children": ["value"] },
+        ", release-поля условны:"
+      ]
+    },
+    {
+      "tag": "div",
+      "children": [
+        {
+          "tag": "table",
+          "children": [
+            {
+              "tag": "thead",
+              "children": [
+                {
+                  "tag": "tr",
+                  "children": [
+                    {
+                      "tag": "th",
+                      "children": ["operation"],
+                      "props": { "scope": "col" }
+                    },
+                    {
+                      "tag": "th",
+                      "children": ["Дополнительные поля и доставка"],
+                      "props": { "scope": "col" }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "tbody",
+              "children": [
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["NewGame"] },
+                    {
+                      "tag": "td",
+                      "children": [
+                        "при отказе только общие; при успешной смене lifetime старому обработчику ответа нет"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["MainMenu"] },
+                    {
+                      "tag": "td",
+                      "children": [
+                        "как NewGame; требуется назначенное меню и Playing"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["EndSession"] },
+                    {
+                      "tag": "td",
+                      "children": [
+                        "при успехе окно/владелец завершены, callback нет"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["ContinueGame"] },
+                    {
+                      "tag": "td",
+                      "children": [
+                        "отказ — событие; успешный Load меняет lifetime, callback старому нет"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["ListSlots"] },
+                    {
+                      "tag": "td",
+                      "children": ["slots до 128; при ошибке пустой список"]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["SaveSlot"] },
+                    {
+                      "tag": "td",
+                      "children": [
+                        "slot_id — фактический созданный/переданный ID, если он назначен; успех после публикации"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["LoadSlot"] },
+                    {
+                      "tag": "td",
+                      "children": [
+                        "slot_id запроса; отказ приходит, успех сменяет lifetime без callback старому"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["DeleteSlot"] },
+                    {
+                      "tag": "td",
+                      "children": ["slot_id запроса, даже при отказе"]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["GetSettings"] },
+                    {
+                      "tag": "td",
+                      "children": [
+                        "settings при успехе (runtime может вернуть и при отказе), persisted всегда boolean"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["SetSetting"] },
+                    {
+                      "tag": "td",
+                      "children": [
+                        "settings текущей памяти, persisted всегда boolean, в том числе при ошибке записи"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["GetPersistent"] },
+                    {
+                      "tag": "td",
+                      "children": [
+                        "key всегда, value строка либо nil, persisted всегда boolean"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["SetPersistent"] },
+                    {
+                      "tag": "td",
+                      "children": [
+                        "как GetPersistent, value — действующая память после попытки операции"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["CheckGameRelease"] },
+                    {
+                      "tag": "td",
+                      "children": [
+                        "provider/code обязательны, retry_after_seconds/release условны; см. ниже"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["GetHistory"] },
+                    {
+                      "tag": "td",
+                      "children": [
+                        "history при успехе; count/index/page/pages, visit_id/scene_id/line_id, language/speaker/text/can_replay; ",
+                        {
+                          "tag": "a",
+                          "children": ["контракт"],
+                          "props": {
+                            "href": "/projects/novellmaker/docs/lua/history#ui-get-history"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["ReplayHistoryVoice"] },
+                    {
+                      "tag": "td",
+                      "children": [
+                        "message — код ok/history_unavailable/voice_unavailable; history/settings/persisted отсутствуют"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "props": {
+        "className": "nm-table",
+        "tabIndex": 0,
+        "role": "region",
+        "aria-label": "Таблица, прокрутка по горизонтали"
+      }
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "code", "children": ["CancelReleaseCheck"] },
+        " ",
+        { "tag": "strong", "children": ["не доставляется"] },
+        " как operation собственного ответа. Отмена завершается ответом исходного CheckGameRelease."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Результаты коррелируются одновременно по request_id, operation и исходному живому экземпляру/поколению. Повторные/чужие/устаревшие отбрасываются. Для сериализуемых вызовов одного обработчика сохраняйте ID в local или state и проверяйте его; не путайте request_id с ID слота. При успешном разрушении источника нельзя ждать положительный callback, чтобы обновить его label."
+      ]
+    },
+    {
+      "tag": "pre",
+      "text": "local pending\nreturn {on_load=function()\n  pending=ui.list_slots()\nend, on_event=function(e)\n  if e.kind==\"service_result\" and e.request_id==pending then\n    pending=nil\n    if e.success then\n      ui.set_text(refs.label, \"Слотов: \"..#e.slots)\n    else\n      ui.set_text(refs.label, e.message)\n    end\n  end\nend}",
+      "language": "lua",
+      "children": [
+        {
+          "tag": "span",
+          "children": ["local"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " pending\n",
+        {
+          "tag": "span",
+          "children": ["return"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " {on_load=",
+        {
+          "tag": "span",
+          "children": [
+            {
+              "tag": "span",
+              "children": ["function"],
+              "props": { "className": "hljs-keyword" }
+            },
+            {
+              "tag": "span",
+              "children": ["()"],
+              "props": { "className": "hljs-params" }
+            }
+          ],
+          "props": { "className": "hljs-function" }
+        },
+        "\n  pending=ui.list_slots()\n",
+        {
+          "tag": "span",
+          "children": ["end"],
+          "props": { "className": "hljs-keyword" }
+        },
+        ", on_event=",
+        {
+          "tag": "span",
+          "children": [
+            {
+              "tag": "span",
+              "children": ["function"],
+              "props": { "className": "hljs-keyword" }
+            },
+            {
+              "tag": "span",
+              "children": ["(e)"],
+              "props": { "className": "hljs-params" }
+            }
+          ],
+          "props": { "className": "hljs-function" }
+        },
+        "\n  ",
+        {
+          "tag": "span",
+          "children": ["if"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " e.kind==",
+        {
+          "tag": "span",
+          "children": ["\"service_result\""],
+          "props": { "className": "hljs-string" }
+        },
+        " ",
+        {
+          "tag": "span",
+          "children": ["and"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " e.request_id==pending ",
+        {
+          "tag": "span",
+          "children": ["then"],
+          "props": { "className": "hljs-keyword" }
+        },
+        "\n    pending=",
+        {
+          "tag": "span",
+          "children": ["nil"],
+          "props": { "className": "hljs-literal" }
+        },
+        "\n    ",
+        {
+          "tag": "span",
+          "children": ["if"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " e.success ",
+        {
+          "tag": "span",
+          "children": ["then"],
+          "props": { "className": "hljs-keyword" }
+        },
+        "\n      ui.set_text(refs.label, ",
+        {
+          "tag": "span",
+          "children": ["\"Слотов: \""],
+          "props": { "className": "hljs-string" }
+        },
+        "..#e.slots)\n    ",
+        {
+          "tag": "span",
+          "children": ["else"],
+          "props": { "className": "hljs-keyword" }
+        },
+        "\n      ui.set_text(refs.label, e.message)\n    ",
+        {
+          "tag": "span",
+          "children": ["end"],
+          "props": { "className": "hljs-keyword" }
+        },
+        "\n  ",
+        {
+          "tag": "span",
+          "children": ["end"],
+          "props": { "className": "hljs-keyword" }
+        },
+        "\n",
+        {
+          "tag": "span",
+          "children": ["end"],
+          "props": { "className": "hljs-keyword" }
+        },
+        "}"
+      ]
+    },
+    {
+      "tag": "h3",
+      "children": ["Элемент slots"],
+      "props": { "id": "элемент-slots" }
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Всегда: ",
+        { "tag": "code", "children": ["id:string"] },
+        ", ",
+        { "tag": "code", "children": ["status:string"] },
+        ", ",
+        { "tag": "code", "children": ["compatible:boolean"] },
+        " (status==Compatible), ",
+        { "tag": "code", "children": ["legacy:boolean"] },
+        ". ",
+        { "tag": "code", "children": ["diagnostic?:string"] },
+        " <=1024 — пояснение, если есть. ",
+        { "tag": "code", "children": ["status"] },
+        " — ",
+        {
+          "tag": "strong",
+          "children": [
+            "Compatible, ForeignProject, IncompatibleRevision, UnsupportedVersion, Corrupt, Unavailable"
+          ]
+        },
+        ". Строки несовместимых/повреждённых слотов не являются разрешением загрузки."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        "При наличии проверенных metadata: ",
+        { "tag": "code", "children": ["title:string"] },
+        " <=128, ",
+        { "tag": "code", "children": ["scene:string"] },
+        " — имя <=256, ",
+        { "tag": "code", "children": ["phrase:string"] },
+        " <=512, ",
+        { "tag": "code", "children": ["revision:string"] },
+        " <=128, ",
+        { "tag": "code", "children": ["saved_at:string"] },
+        " UTC ISO 8601 формата O, ",
+        { "tag": "code", "children": ["game_time:number"] },
+        " конечное >=0 секунд. Это имена/текст, не GUID сцены/фразы; отдельные sceneId/lineId в Lua не проецируются. Compatible требует metadata. При превышении бюджета IPC отображаемые title/scene/phrase/diagnostic сокращаются и message сообщает об этом; количество/ID/статусы/редакции/время не усекаются. Список отсортирован по SavedAtUtc убыванию, при равенстве по ID ordinal."
+      ]
+    },
+    {
+      "tag": "h3",
+      "children": ["settings и persisted"],
+      "props": { "id": "settings-и-persisted" }
+    },
+    {
+      "tag": "p",
+      "children": [
+        "settings — таблица ровно с доступными полями: ",
+        { "tag": "code", "children": ["master_volume"] },
+        ", ",
+        { "tag": "code", "children": ["sound_volume"] },
+        ", ",
+        { "tag": "code", "children": ["effect_volume"] },
+        ", ",
+        { "tag": "code", "children": ["voice_volume"] },
+        " — number [0,1]; ",
+        { "tag": "code", "children": ["master_muted"] },
+        ", ",
+        { "tag": "code", "children": ["sound_muted"] },
+        ", ",
+        { "tag": "code", "children": ["effect_muted"] },
+        ", ",
+        { "tag": "code", "children": ["voice_muted"] },
+        ", ",
+        { "tag": "code", "children": ["fullscreen"] },
+        ", ",
+        { "tag": "code", "children": ["auto_wait_voice"] },
+        " — boolean; ",
+        { "tag": "code", "children": ["text_speed"] },
+        " — number [0,200], ",
+        { "tag": "code", "children": ["auto_delay"] },
+        " — number [0,30]. Изменение этой таблицы само профиль не меняет."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        "persisted есть только у четырёх операций профиля. Это отсутствие неподтверждённых изменений ",
+        { "tag": "strong", "children": ["всего"] },
+        " профиля, а не «данный ключ существует» и не повтор success. После отказа диска success=false, но value/settings могут быть новыми в памяти. ",
+        { "tag": "code", "children": ["value=nil"] },
+        " — отсутствие ключа; ",
+        { "tag": "code", "children": ["value=\"\""] },
+        " — существующая пустая строка. У операций слотов/settings/проверки выпуска нет произвольных полей Data; у непрофильных операций persisted отсутствует."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Источник: ",
+        {
+          "tag": "a",
+          "children": ["команда/схема ответа"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Execution/GameServiceCommand.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["Lua-проекция"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Screens/Lua/ScreenLuaWorker.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["lifetime bridge"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Runtime/RuntimeGameServices.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["профиль"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Runtime/RuntimeSettingsServices.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["список"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Execution/GameSlotStore.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ". Тесты: ",
+        {
+          "tag": "a",
+          "children": ["сервисы"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Screens/GameServiceLuaTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["слоты"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Execution/GameSlotTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["runtime"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Runtime.Tests/RuntimeSettingsServicesTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "span", "children": [], "props": { "id": "release-result" } }
+      ]
+    },
+    {
+      "tag": "h2",
+      "children": ["CheckGameRelease: расширение service_result"],
+      "props": { "id": "checkgamerelease-расширение-service_result" }
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Дополнительно всегда ",
+        { "tag": "code", "children": ["provider=\"github_releases_v1\""] },
+        ", ",
+        { "tag": "code", "children": ["code:string"] },
+        " из таблицы; success=true ",
+        { "tag": "strong", "children": ["только"] },
+        " для Ok. ",
+        { "tag": "code", "children": ["retry_after_seconds:integer>0"] },
+        " есть ",
+        { "tag": "strong", "children": ["только"] },
+        " при RateLimited; это подсказка для следующего разрешённого запроса, не автоматический retry. ",
+        { "tag": "code", "children": ["release:table"] },
+        " есть ",
+        { "tag": "strong", "children": ["только"] },
+        " при Ok. slots пуст, slot_id/settings/persisted/key/value отсутствуют."
+      ]
+    },
+    {
+      "tag": "div",
+      "children": [
+        {
+          "tag": "table",
+          "children": [
+            {
+              "tag": "thead",
+              "children": [
+                {
+                  "tag": "tr",
+                  "children": [
+                    {
+                      "tag": "th",
+                      "children": ["code"],
+                      "props": { "scope": "col" }
+                    },
+                    {
+                      "tag": "th",
+                      "children": ["Значение"],
+                      "props": { "scope": "col" }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "tbody",
+              "children": [
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["Ok"] },
+                    {
+                      "tag": "td",
+                      "children": [
+                        "проверенные данные получены из сети или кеша"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["Disabled"] },
+                    {
+                      "tag": "td",
+                      "children": ["в проекте не настроен провайдер"]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["Busy"] },
+                    {
+                      "tag": "td",
+                      "children": ["владелец уже занят либо очередь заполнена"]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["RateLimited"] },
+                    {
+                      "tag": "td",
+                      "children": [
+                        "действует локальный интервал или ограничение провайдера"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["Cancelled"] },
+                    {
+                      "tag": "td",
+                      "children": [
+                        "исходный запрос отменён автором при живом владельце"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["Timeout"] },
+                    {
+                      "tag": "td",
+                      "children": ["истекли 10 секунд запроса с ожиданием"]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["NetworkUnavailable"] },
+                    { "tag": "td", "children": ["ошибка сети/чтения ответа"] }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["TlsFailure"] },
+                    {
+                      "tag": "td",
+                      "children": ["ошибка защищённого соединения"]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["NotFound"] },
+                    {
+                      "tag": "td",
+                      "children": [
+                        "нет публичного репозитория/полного выпуска, HTTP 404"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["AccessDenied"] },
+                    {
+                      "tag": "td",
+                      "children": ["HTTP 401/403 без признанного rate limit"]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["ProviderUnavailable"] },
+                    { "tag": "td", "children": ["HTTP 5xx"] }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["InvalidResponse"] },
+                    {
+                      "tag": "td",
+                      "children": [
+                        "неверный статус/формат/тип/повторный JSON ключ/URL/UTF-8 и т.п."
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["ResponseTooLarge"] },
+                    {
+                      "tag": "td",
+                      "children": [
+                        "заголовки/распакованное тело/данные превышают лимит"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["InvalidVersion"] },
+                    {
+                      "tag": "td",
+                      "children": ["тег версии не поддерживается"]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "props": {
+        "className": "nm-table",
+        "tabIndex": 0,
+        "role": "region",
+        "aria-label": "Таблица, прокрутка по горизонтали"
+      }
+    },
+    {
+      "tag": "p",
+      "children": [
+        "release содержит все поля: ",
+        { "tag": "code", "children": ["current_version:string"] },
+        ", ",
+        { "tag": "code", "children": ["latest_version:string"] },
+        " — канонические четыре ushort-компонента через точки; ",
+        { "tag": "code", "children": ["update_available:boolean"] },
+        " — latest>current; ",
+        { "tag": "code", "children": ["page_url:string"] },
+        " <=512 — проверенный HTTPS GitHub URL той же игры; ",
+        { "tag": "code", "children": ["checked_at:string"] },
+        " UTC ISO 8601; ",
+        { "tag": "code", "children": ["from_cache:boolean"] },
+        ". URL — данные, не открывается и не выполняется. Системная дата используется host для метаданных, не даёт Lua часы."
+      ]
+    },
+    {
+      "tag": "pre",
+      "text": "return {on_load=function() ui.check_game_release() end,\n  on_event=function(e)\n    if e.kind==\"service_result\" and e.operation==\"CheckGameRelease\" then\n      if e.code==\"Ok\" then\n        ui.set_text(refs.label, e.release.latest_version)\n      elseif e.code==\"RateLimited\" then\n        ui.set_text(refs.label, \"Повторите через \"..e.retry_after_seconds..\" с\")\n      else\n        ui.set_text(refs.label, e.message)\n      end\n    end\n  end}",
+      "language": "lua",
+      "children": [
+        {
+          "tag": "span",
+          "children": ["return"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " {on_load=",
+        {
+          "tag": "span",
+          "children": [
+            {
+              "tag": "span",
+              "children": ["function"],
+              "props": { "className": "hljs-keyword" }
+            },
+            {
+              "tag": "span",
+              "children": ["()"],
+              "props": { "className": "hljs-params" }
+            }
+          ],
+          "props": { "className": "hljs-function" }
+        },
+        " ui.check_game_release() ",
+        {
+          "tag": "span",
+          "children": ["end"],
+          "props": { "className": "hljs-keyword" }
+        },
+        ",\n  on_event=",
+        {
+          "tag": "span",
+          "children": [
+            {
+              "tag": "span",
+              "children": ["function"],
+              "props": { "className": "hljs-keyword" }
+            },
+            {
+              "tag": "span",
+              "children": ["(e)"],
+              "props": { "className": "hljs-params" }
+            }
+          ],
+          "props": { "className": "hljs-function" }
+        },
+        "\n    ",
+        {
+          "tag": "span",
+          "children": ["if"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " e.kind==",
+        {
+          "tag": "span",
+          "children": ["\"service_result\""],
+          "props": { "className": "hljs-string" }
+        },
+        " ",
+        {
+          "tag": "span",
+          "children": ["and"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " e.operation==",
+        {
+          "tag": "span",
+          "children": ["\"CheckGameRelease\""],
+          "props": { "className": "hljs-string" }
+        },
+        " ",
+        {
+          "tag": "span",
+          "children": ["then"],
+          "props": { "className": "hljs-keyword" }
+        },
+        "\n      ",
+        {
+          "tag": "span",
+          "children": ["if"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " e.code==",
+        {
+          "tag": "span",
+          "children": ["\"Ok\""],
+          "props": { "className": "hljs-string" }
+        },
+        " ",
+        {
+          "tag": "span",
+          "children": ["then"],
+          "props": { "className": "hljs-keyword" }
+        },
+        "\n        ui.set_text(refs.label, e.release.latest_version)\n      ",
+        {
+          "tag": "span",
+          "children": ["elseif"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " e.code==",
+        {
+          "tag": "span",
+          "children": ["\"RateLimited\""],
+          "props": { "className": "hljs-string" }
+        },
+        " ",
+        {
+          "tag": "span",
+          "children": ["then"],
+          "props": { "className": "hljs-keyword" }
+        },
+        "\n        ui.set_text(refs.label, ",
+        {
+          "tag": "span",
+          "children": ["\"Повторите через \""],
+          "props": { "className": "hljs-string" }
+        },
+        "..e.retry_after_seconds..",
+        {
+          "tag": "span",
+          "children": ["\" с\""],
+          "props": { "className": "hljs-string" }
+        },
+        ")\n      ",
+        {
+          "tag": "span",
+          "children": ["else"],
+          "props": { "className": "hljs-keyword" }
+        },
+        "\n        ui.set_text(refs.label, e.message)\n      ",
+        {
+          "tag": "span",
+          "children": ["end"],
+          "props": { "className": "hljs-keyword" }
+        },
+        "\n    ",
+        {
+          "tag": "span",
+          "children": ["end"],
+          "props": { "className": "hljs-keyword" }
+        },
+        "\n  ",
+        {
+          "tag": "span",
+          "children": ["end"],
+          "props": { "className": "hljs-keyword" }
+        },
+        "}"
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Требуется декларация сервиса и refs.label; при отсутствии декларации обрабатывается Disabled. Не помещайте повторный check прямо в каждый service_result: причинная цепочка ограничена 32 и интервал HTTP не позволяет polling-шторм. Закрытие/загрузка отменяет старый источник без доставки в новую VM. Пауза задерживает callback, но не сеть/deadline/кеш."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Источник: ",
+        {
+          "tag": "a",
+          "children": ["коды/результат"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/ExternalServices/ReleaseCheck.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["service"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/ExternalServices/ReleaseCheckService.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["адаптер"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Runtime/ExternalServices/GitHubReleaseProvider.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ". Тесты: ",
+        {
+          "tag": "a",
+          "children": ["Lua"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Screens/ReleaseCheckLuaTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["HTTP"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Runtime.Tests/ReleaseCheckProviderTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "h2",
+      "children": ["Результат мини-игры в сценарии"],
+      "props": { "id": "результат-мини-игры-в-сценарии" }
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Это ",
+        { "tag": "strong", "children": ["не ui-событие"] },
+        ": следующая game-VM читает ",
+        {
+          "tag": "code",
+          "children": ["game.minigame_result() -> {status,data}|nil"]
+        },
+        ". status: ",
+        { "tag": "code", "children": ["completed"] },
+        ", ",
+        { "tag": "code", "children": ["cancelled"] },
+        ", ",
+        { "tag": "code", "children": ["failed"] },
+        ". При completed data соответствует ResultSchema, при двух других — Lua nil. Completed с data=null также проецируется в nil; вложенные null остаются маркерами. Message, SceneId и RunId host сохраняет внутренне, но Lua-функция их не возвращает. ",
+        { "tag": "code", "children": ["game.start_minigame"] },
+        " очищает прошлый итог при исполнении; итог затем хранится в GameState/слоте. Старое строковое ",
+        { "tag": "code", "children": ["game.finish"] },
+        " от него независимо."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Пример: ",
+        {
+          "tag": "a",
+          "children": ["мини-игра и следующий ресурс"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/examples#minigame"
+          }
+        },
+        ". Источники: ",
+        {
+          "tag": "a",
+          "children": ["проекция"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Execution/LuaActionScript.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["lifecycle"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Execution/ScenarioPlayer.Minigames.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ". Тесты: ",
+        {
+          "tag": "a",
+          "children": ["MinigameTests"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Execution/MinigameTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    }
+  ]
+}

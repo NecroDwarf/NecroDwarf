@@ -1,0 +1,1892 @@
+{
+  "title": "Компоненты, геометрия и иерархия",
+  "headings": [
+    {
+      "title": "Компоненты, геометрия и иерархия",
+      "id": "компоненты-геометрия-и-иерархия",
+      "level": 1
+    },
+    { "title": "Геометрия", "id": "геометрия", "level": 3 },
+    { "title": "ui.find", "id": "ui-find", "level": 2 },
+    { "title": "ui.set_text", "id": "ui-set-text", "level": 2 },
+    { "title": "ui.set_visible", "id": "ui-set-visible", "level": 2 },
+    { "title": "ui.set_enabled", "id": "ui-set-enabled", "level": 2 },
+    { "title": "ui.set_geometry", "id": "ui-set-geometry", "level": 2 },
+    { "title": "ui.set_parent", "id": "ui-set-parent", "level": 2 },
+    { "title": "ui.remove", "id": "ui-remove", "level": 2 },
+    { "title": "ui.create", "id": "ui-create", "level": 2 },
+    { "title": "ui.close", "id": "ui-close", "level": 2 },
+    { "title": "ui.strict_arguments", "id": "ui-strict-arguments", "level": 2 }
+  ],
+  "nodes": [
+    {
+      "tag": "h1",
+      "children": ["Компоненты, геометрия и иерархия"],
+      "props": { "id": "компоненты-геометрия-и-иерархия" }
+    },
+    {
+      "tag": "p",
+      "children": [
+        {
+          "tag": "a",
+          "children": ["Оглавление"],
+          "props": { "href": "/projects/novellmaker/docs/lua" }
+        },
+        " · ",
+        {
+          "tag": "a",
+          "children": ["Модель исполнения"],
+          "props": { "href": "/projects/novellmaker/docs/lua/execution-model" }
+        },
+        " · ",
+        {
+          "tag": "a",
+          "children": ["События"],
+          "props": { "href": "/projects/novellmaker/docs/lua/events" }
+        },
+        " · ",
+        {
+          "tag": "a",
+          "children": ["Квоты"],
+          "props": { "href": "/projects/novellmaker/docs/lua/limits" }
+        }
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Контекст: обработчик компонентов корневой сцены, слоя или мини-игры; функции импортированного модуля могут вызываться этим обработчиком. ",
+        { "tag": "code", "children": ["game.*"] },
+        " здесь нет. Все изменения входят в ",
+        {
+          "tag": "a",
+          "children": ["атомарный пакет"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#batch"
+          }
+        },
+        "; ",
+        {
+          "tag": "a",
+          "children": ["восстанавливающий on_load"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#restore"
+          }
+        },
+        " разрешает строить вид. Исключение по применимости к lifecycle — ",
+        { "tag": "code", "children": ["ui.close"] },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Общие правила каждой функции: ",
+        {
+          "tag": "a",
+          "children": ["handles и данные"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#namespaces"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["lifetime"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["квоты дерева"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/limits#components"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["события"],
+          "props": { "href": "/projects/novellmaker/docs/lua/events" }
+        },
+        ". Сохранение обычного экрана в слот не выполняется; у мини-игры сохраняются state/RNG, а дерево заново строится из них. Worker обновляет рабочее дерево последовательно, поэтому новый handle можно использовать в следующих командах того же пакета. Изменения видны игроку только после проверки host."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Обычные Text-компоненты runtime переносят длинные строки по ширине, сохраняют явные LF и выводят многострочный текст сверху. Большие Text в пределах допустимой стороны выводятся полосами с общими лимитами текстур/кадра/кэша. Высота компонента ограничивает видимую область; автоматического скролла нет. Кнопки сохраняют однострочную подпись. Для длинной истории выбирайте размер страницы под авторский макет: ",
+        {
+          "tag": "a",
+          "children": ["шаблоны чтения"],
+          "props": { "href": "/projects/novellmaker/docs/lua/history" }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        "По умолчанию старые ui-bindings этой страницы не требуют точного числа аргументов; лишние игнорируются. Обязательный handle/text читается строковым ",
+        { "tag": "code", "children": ["AsType"] },
+        ", но практически используйте точные строки handles. В старых set_visible/set_enabled MoonSharp AsType(Boolean) также допускает преобразование по истинности Lua: например, 0 и пустая строка дают true; строгий режим требует настоящий boolean. Для точного числа аргументов и типов включите ",
+        {
+          "tag": "a",
+          "children": ["ui.strict_arguments(true)"],
+          "props": { "href": "#ui-strict-arguments" }
+        },
+        " до возврата handlers. Указания об игнорировании лишних аргументов ниже относятся к режиму по умолчанию. Ошибка чужого/удалённого handle, дерева, геометрии или общего бюджета отклоняет пакет и останавливает ошибочный обработчик. Рендер и остальные независимые экземпляры могут продолжаться; поломка общей беседы затрагивает все её VM."
+      ]
+    },
+    { "tag": "h3", "children": ["Геометрия"], "props": { "id": "геометрия" } },
+    {
+      "tag": "p",
+      "children": [
+        "Все числовые значения конечны. Логический viewport ",
+        { "tag": "strong", "children": ["1280×720"] },
+        "; x/y ребёнка локальны родителю, а e.x/e.y — координаты viewport. Итоговая матрица учитывает anchor, pivot, scale и rotation."
+      ]
+    },
+    {
+      "tag": "div",
+      "children": [
+        {
+          "tag": "table",
+          "children": [
+            {
+              "tag": "thead",
+              "children": [
+                {
+                  "tag": "tr",
+                  "children": [
+                    {
+                      "tag": "th",
+                      "children": ["Поле patch"],
+                      "props": { "scope": "col" }
+                    },
+                    {
+                      "tag": "th",
+                      "children": ["Диапазон и смысл"],
+                      "props": { "scope": "col" }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "tbody",
+              "children": [
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["x, y"] },
+                    {
+                      "tag": "td",
+                      "children": [
+                        "[-100000,100000], логические пиксели относительно anchor родителя"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["width, height"] },
+                    {
+                      "tag": "td",
+                      "children": ["(0,100000], логические пиксели"]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["anchor_x, anchor_y"] },
+                    {
+                      "tag": "td",
+                      "children": ["[0,1], доли размера родителя"]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["pivot_x, pivot_y"] },
+                    {
+                      "tag": "td",
+                      "children": ["[0,1], доли размера самого узла"]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["scale_x, scale_y"] },
+                    {
+                      "tag": "td",
+                      "children": [
+                        "модуль [0.001,1000]; отрицательный отражает; 0 запрещён"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["rotation"] },
+                    { "tag": "td", "children": ["[-360000,360000], градусы"] }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["opacity"] },
+                    {
+                      "tag": "td",
+                      "children": ["[0,1], умножается на opacity предков"]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["color"] },
+                    {
+                      "tag": "td",
+                      "children": [
+                        "точная строка #RRGGBB; умножается на tint предков"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["order"] },
+                    {
+                      "tag": "td",
+                      "children": [
+                        "целое [-100000,100000], порядок среди siblings, больший выше"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["clip_children"] },
+                    {
+                      "tag": "td",
+                      "children": [
+                        "boolean, ограничивает потомков полигоном родителя"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "props": {
+        "className": "nm-table",
+        "tabIndex": 0,
+        "role": "region",
+        "aria-label": "Таблица, прокрутка по горизонтали"
+      }
+    },
+    {
+      "tag": "p",
+      "children": [
+        "После преобразования координаты мировых углов должны оставаться в [-1e8,1e8]; матрица обратима с |determinant|>=1e-12. Проверяется всё дерево, не только локальное поле. Изображение, имя, тип и привязку диалога через Lua менять нельзя. ",
+        { "tag": "code", "children": ["ui.create"] },
+        " копирует существующий шаблон; универсального конструктора узла по таблице нет."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Во всех примерах refs.label — Text, refs.button — Button/Area, refs.panel — Panel/Container, refs.template — некорневое поддерево этого же холста; label для примера create должен быть внутри template."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "span", "children": [], "props": { "id": "ui-find" } }
+      ]
+    },
+    { "tag": "h2", "children": ["ui.find"], "props": { "id": "uifind" } },
+    { "tag": "p", "children": ["Получить узел по авторскому имени ссылки."] },
+    {
+      "tag": "pre",
+      "text": "ui.find(alias) -> handle | nil",
+      "language": "lua",
+      "children": [
+        "ui.",
+        {
+          "tag": "span",
+          "children": ["find"],
+          "props": { "className": "hljs-built_in" }
+        },
+        "(alias) -> handle | ",
+        {
+          "tag": "span",
+          "children": ["nil"],
+          "props": { "className": "hljs-literal" }
+        }
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Доступность:"] },
+        " ui on_load/on_event, модуль, мини-игра и вычисление исходника; в restore допустима. До события snapshot ещё пустой."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Аргументы и ошибки:"] },
+        " alias: обязательная строка имени refs текущего холста. Не имя компонента и не GUID."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Возврат:"] },
+        " handle текущего живого узла либо nil для неизвестного/удалённого."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Эффект и ограничения:"] },
+        " Немедленно смотрит рабочее дерево VM; после remove уже возвращает nil. Не ищет автоматически созданные копии. Общие ",
+        {
+          "tag": "a",
+          "children": ["квоты"],
+          "props": { "href": "/projects/novellmaker/docs/lua/limits" }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["атомарность"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#batch"
+          }
+        },
+        " и ",
+        {
+          "tag": "a",
+          "children": ["lifecycle/сохранение"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        " применяются, если здесь не указано исключение."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Пример"] },
+        " (предусловия refs/ресурсов приведены в начале страницы; это фрагмент соответствующего обработчика, если не показан полный return):"
+      ]
+    },
+    {
+      "tag": "pre",
+      "text": "local label = ui.find(\"label\")\nif label then ui.set_text(label, \"Привет\") end",
+      "language": "lua",
+      "children": [
+        {
+          "tag": "span",
+          "children": ["local"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " label = ui.",
+        {
+          "tag": "span",
+          "children": ["find"],
+          "props": { "className": "hljs-built_in" }
+        },
+        "(",
+        {
+          "tag": "span",
+          "children": ["\"label\""],
+          "props": { "className": "hljs-string" }
+        },
+        ")\n",
+        {
+          "tag": "span",
+          "children": ["if"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " label ",
+        {
+          "tag": "span",
+          "children": ["then"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " ui.set_text(label, ",
+        {
+          "tag": "span",
+          "children": ["\"Привет\""],
+          "props": { "className": "hljs-string" }
+        },
+        ") ",
+        {
+          "tag": "span",
+          "children": ["end"],
+          "props": { "className": "hljs-keyword" }
+        }
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Связи:"] },
+        " ",
+        {
+          "tag": "a",
+          "children": ["ui.create"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/components#ui-create"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["ui.remove"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/components#ui-remove"
+          }
+        },
+        ". ",
+        {
+          "tag": "a",
+          "children": ["Регистрация и аргументы"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Screens/Lua/ScreenLuaWorker.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["тесты"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Screens/ScreenLuaWorkerTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "span", "children": [], "props": { "id": "ui-set-text" } }
+      ]
+    },
+    {
+      "tag": "h2",
+      "children": ["ui.set_text"],
+      "props": { "id": "uiset_text" }
+    },
+    { "tag": "p", "children": ["Заменить текст компонента."] },
+    {
+      "tag": "pre",
+      "text": "ui.set_text(node, text) -> nil",
+      "language": "lua",
+      "children": [
+        "ui.set_text(node, text) -> ",
+        {
+          "tag": "span",
+          "children": ["nil"],
+          "props": { "className": "hljs-literal" }
+        }
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Доступность:"] },
+        " on_load/on_event ui, вызванный ими модуль, мини-игра; при restore — ограничения этой записи и ",
+        {
+          "tag": "a",
+          "children": ["restore"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#restore"
+          }
+        },
+        ". Вычисление исходника вне обработчика не предназначено для команд."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Аргументы и ошибки:"] },
+        " node: собственный живой handle. text: строка <=8192 UTF-16; nil запрещён. Для старого строкового чтения MoonSharp допускает число как строку."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [{ "tag": "strong", "children": ["Возврат:"] }, " nil."]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Эффект и ограничения:"] },
+        " Изменение пакета; суммарный текст всех set_text <=131072, столько же текст всего дерева. Тип узла не ограничен Text/Button, но видимость текста зависит от renderer. Привязки Dialogue Text/Speaker производятся host и могут заменить авторский текст. Геометрически допустимый текст может не попасть в бюджет растра: отдельная диагностика host, кнопка остаётся без подписи, пакет не откатывается. Общие ",
+        {
+          "tag": "a",
+          "children": ["квоты"],
+          "props": { "href": "/projects/novellmaker/docs/lua/limits" }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["атомарность"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#batch"
+          }
+        },
+        " и ",
+        {
+          "tag": "a",
+          "children": ["lifecycle/сохранение"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        " применяются, если здесь не указано исключение."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Пример"] },
+        " (предусловия refs/ресурсов приведены в начале страницы; это фрагмент соответствующего обработчика, если не показан полный return):"
+      ]
+    },
+    {
+      "tag": "pre",
+      "text": "ui.set_text(refs.label, \"Готово\")",
+      "language": "lua",
+      "children": [
+        "ui.set_text(refs.label, ",
+        {
+          "tag": "span",
+          "children": ["\"Готово\""],
+          "props": { "className": "hljs-string" }
+        },
+        ")"
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Связи:"] },
+        " ",
+        {
+          "tag": "a",
+          "children": ["ui.find"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/components#ui-find"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["ui.set_state"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/state-and-random#ui-set-state"
+          }
+        },
+        ". ",
+        {
+          "tag": "a",
+          "children": ["Регистрация и аргументы"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Screens/Lua/ScreenLuaWorker.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["тесты"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Screens/ScreenLuaWorkerTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "span", "children": [], "props": { "id": "ui-set-visible" } }
+      ]
+    },
+    {
+      "tag": "h2",
+      "children": ["ui.set_visible"],
+      "props": { "id": "uiset_visible" }
+    },
+    { "tag": "p", "children": ["Изменить показ компонента."] },
+    {
+      "tag": "pre",
+      "text": "ui.set_visible(node, value) -> nil",
+      "language": "lua",
+      "children": [
+        "ui.set_visible(node, value) -> ",
+        {
+          "tag": "span",
+          "children": ["nil"],
+          "props": { "className": "hljs-literal" }
+        }
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Доступность:"] },
+        " on_load/on_event ui, вызванный ими модуль, мини-игра; при restore — ограничения этой записи и ",
+        {
+          "tag": "a",
+          "children": ["restore"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#restore"
+          }
+        },
+        ". Вычисление исходника вне обработчика не предназначено для команд."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Аргументы и ошибки:"] },
+        " node: собственный живой handle; value: boolean. По умолчанию сохранено AsType(Boolean): числа (включая 0), строки и таблицы дают true, false даёт false. В строгом режиме требуется ровно boolean, nil/числа запрещены."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [{ "tag": "strong", "children": ["Возврат:"] }, " nil."]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Эффект и ограничения:"] },
+        " Изменение пакета. Флаги наследуются потомками. Потеря доступности активной кнопки/области сбрасывает capture/focus/hover с соответствующими событиями. enabled=false не скрывает отрисовку. Общие ",
+        {
+          "tag": "a",
+          "children": ["квоты"],
+          "props": { "href": "/projects/novellmaker/docs/lua/limits" }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["атомарность"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#batch"
+          }
+        },
+        " и ",
+        {
+          "tag": "a",
+          "children": ["lifecycle/сохранение"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        " применяются, если здесь не указано исключение."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Пример"] },
+        " (предусловия refs/ресурсов приведены в начале страницы; это фрагмент соответствующего обработчика, если не показан полный return):"
+      ]
+    },
+    {
+      "tag": "pre",
+      "text": "ui.set_visible(refs.button, false)",
+      "language": "lua",
+      "children": [
+        "ui.set_visible(refs.button, ",
+        {
+          "tag": "span",
+          "children": ["false"],
+          "props": { "className": "hljs-literal" }
+        },
+        ")"
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Связи:"] },
+        " ",
+        {
+          "tag": "a",
+          "children": ["ui.set_visible"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/components#ui-set-visible"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["ui.set_enabled"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/components#ui-set-enabled"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["ui.focus"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/input-and-triggers#ui-focus"
+          }
+        },
+        ". ",
+        {
+          "tag": "a",
+          "children": ["Регистрация и аргументы"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Screens/Lua/ScreenLuaWorker.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["тесты"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Screens/ScreenLuaWorkerTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "span", "children": [], "props": { "id": "ui-set-enabled" } }
+      ]
+    },
+    {
+      "tag": "h2",
+      "children": ["ui.set_enabled"],
+      "props": { "id": "uiset_enabled" }
+    },
+    { "tag": "p", "children": ["Изменить доступность ввода компонента."] },
+    {
+      "tag": "pre",
+      "text": "ui.set_enabled(node, value) -> nil",
+      "language": "lua",
+      "children": [
+        "ui.set_enabled(node, value) -> ",
+        {
+          "tag": "span",
+          "children": ["nil"],
+          "props": { "className": "hljs-literal" }
+        }
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Доступность:"] },
+        " on_load/on_event ui, вызванный ими модуль, мини-игра; при restore — ограничения этой записи и ",
+        {
+          "tag": "a",
+          "children": ["restore"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#restore"
+          }
+        },
+        ". Вычисление исходника вне обработчика не предназначено для команд."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Аргументы и ошибки:"] },
+        " node: собственный живой handle; value: boolean. По умолчанию сохранено AsType(Boolean): числа (включая 0), строки и таблицы дают true, false даёт false. В строгом режиме требуется ровно boolean, nil/числа запрещены."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [{ "tag": "strong", "children": ["Возврат:"] }, " nil."]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Эффект и ограничения:"] },
+        " Изменение пакета. Флаги наследуются потомками. Потеря доступности активной кнопки/области сбрасывает capture/focus/hover с соответствующими событиями. enabled=false не скрывает отрисовку. Общие ",
+        {
+          "tag": "a",
+          "children": ["квоты"],
+          "props": { "href": "/projects/novellmaker/docs/lua/limits" }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["атомарность"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#batch"
+          }
+        },
+        " и ",
+        {
+          "tag": "a",
+          "children": ["lifecycle/сохранение"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        " применяются, если здесь не указано исключение."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Пример"] },
+        " (предусловия refs/ресурсов приведены в начале страницы; это фрагмент соответствующего обработчика, если не показан полный return):"
+      ]
+    },
+    {
+      "tag": "pre",
+      "text": "ui.set_enabled(refs.button, false)",
+      "language": "lua",
+      "children": [
+        "ui.set_enabled(refs.button, ",
+        {
+          "tag": "span",
+          "children": ["false"],
+          "props": { "className": "hljs-literal" }
+        },
+        ")"
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Связи:"] },
+        " ",
+        {
+          "tag": "a",
+          "children": ["ui.set_visible"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/components#ui-set-visible"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["ui.set_enabled"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/components#ui-set-enabled"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["ui.focus"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/input-and-triggers#ui-focus"
+          }
+        },
+        ". ",
+        {
+          "tag": "a",
+          "children": ["Регистрация и аргументы"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Screens/Lua/ScreenLuaWorker.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["тесты"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Screens/ScreenLuaWorkerTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "span", "children": [], "props": { "id": "ui-set-geometry" } }
+      ]
+    },
+    {
+      "tag": "h2",
+      "children": ["ui.set_geometry"],
+      "props": { "id": "uiset_geometry" }
+    },
+    {
+      "tag": "p",
+      "children": ["Изменить перечисленные свойства геометрии узла."]
+    },
+    {
+      "tag": "pre",
+      "text": "ui.set_geometry(node, patch) -> nil",
+      "language": "lua",
+      "children": [
+        "ui.set_geometry(node, patch) -> ",
+        {
+          "tag": "span",
+          "children": ["nil"],
+          "props": { "className": "hljs-literal" }
+        }
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Доступность:"] },
+        " on_load/on_event ui, вызванный ими модуль, мини-игра; при restore — ограничения этой записи и ",
+        {
+          "tag": "a",
+          "children": ["restore"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#restore"
+          }
+        },
+        ". Вычисление исходника вне обработчика не предназначено для команд."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Аргументы и ошибки:"] },
+        " node: собственный живой handle. patch: таблица только из полей таблицы «Геометрия» ниже; пропущенное поле или nil сохраняет прежнее значение. Неизвестный ключ — ошибка. Значения не приводятся из строк."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [{ "tag": "strong", "children": ["Возврат:"] }, " nil."]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Эффект и ограничения:"] },
+        " Весь новый геометрический снимок проверяется до commit, включая мировые координаты/матрицы. Прямая запись анимируемого свойства отменяет затрагивающую его группу с reason=property_set. Общие ",
+        {
+          "tag": "a",
+          "children": ["квоты"],
+          "props": { "href": "/projects/novellmaker/docs/lua/limits" }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["атомарность"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#batch"
+          }
+        },
+        " и ",
+        {
+          "tag": "a",
+          "children": ["lifecycle/сохранение"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        " применяются, если здесь не указано исключение."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Пример"] },
+        " (предусловия refs/ресурсов приведены в начале страницы; это фрагмент соответствующего обработчика, если не показан полный return):"
+      ]
+    },
+    {
+      "tag": "pre",
+      "text": "ui.set_geometry(refs.label, {x=100, opacity=0.5, rotation=10})",
+      "language": "lua",
+      "children": [
+        "ui.set_geometry(refs.label, {x=",
+        {
+          "tag": "span",
+          "children": ["100"],
+          "props": { "className": "hljs-number" }
+        },
+        ", opacity=",
+        {
+          "tag": "span",
+          "children": ["0.5"],
+          "props": { "className": "hljs-number" }
+        },
+        ", rotation=",
+        {
+          "tag": "span",
+          "children": ["10"],
+          "props": { "className": "hljs-number" }
+        },
+        "})"
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Связи:"] },
+        " ",
+        {
+          "tag": "a",
+          "children": ["ui.tween"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/animations#ui-tween"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["ui.set_parent"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/components#ui-set-parent"
+          }
+        },
+        ". ",
+        {
+          "tag": "a",
+          "children": ["Регистрация и аргументы"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Screens/Lua/ScreenLuaWorker.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["тесты"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Screens/VisualScreenTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "span", "children": [], "props": { "id": "ui-set-parent" } }
+      ]
+    },
+    {
+      "tag": "h2",
+      "children": ["ui.set_parent"],
+      "props": { "id": "uiset_parent" }
+    },
+    { "tag": "p", "children": ["Переместить поддерево под другого родителя."] },
+    {
+      "tag": "pre",
+      "text": "ui.set_parent(node, parent) -> nil",
+      "language": "lua",
+      "children": [
+        "ui.set_parent(node, parent) -> ",
+        {
+          "tag": "span",
+          "children": ["nil"],
+          "props": { "className": "hljs-literal" }
+        }
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Доступность:"] },
+        " on_load/on_event ui, вызванный ими модуль, мини-игра; при restore — ограничения этой записи и ",
+        {
+          "tag": "a",
+          "children": ["restore"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#restore"
+          }
+        },
+        ". Вычисление исходника вне обработчика не предназначено для команд."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Аргументы и ошибки:"] },
+        " Оба handle принадлежат этому экземпляру. parent: Container или Panel. Корень перемещать нельзя; циклы, чужой/удалённый родитель и превышение глубины — ошибка."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [{ "tag": "strong", "children": ["Возврат:"] }, " nil."]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Эффект и ограничения:"] },
+        " Изменение пакета. Локальные координаты остаются прежними, мировое положение может измениться. Отменяет все живые анимационные группы экземпляра с reason=reparented. Общие ",
+        {
+          "tag": "a",
+          "children": ["квоты"],
+          "props": { "href": "/projects/novellmaker/docs/lua/limits" }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["атомарность"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#batch"
+          }
+        },
+        " и ",
+        {
+          "tag": "a",
+          "children": ["lifecycle/сохранение"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        " применяются, если здесь не указано исключение."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Пример"] },
+        " (предусловия refs/ресурсов приведены в начале страницы; это фрагмент соответствующего обработчика, если не показан полный return):"
+      ]
+    },
+    {
+      "tag": "pre",
+      "text": "ui.set_parent(refs.label, refs.panel)",
+      "language": "lua",
+      "children": ["ui.set_parent(refs.label, refs.panel)"]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Связи:"] },
+        " ",
+        {
+          "tag": "a",
+          "children": ["ui.create"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/components#ui-create"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["ui.remove"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/components#ui-remove"
+          }
+        },
+        ". ",
+        {
+          "tag": "a",
+          "children": ["Регистрация и аргументы"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Screens/Lua/ScreenLuaWorker.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["тесты"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Screens/ScreenTreeTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "span", "children": [], "props": { "id": "ui-remove" } }
+      ]
+    },
+    { "tag": "h2", "children": ["ui.remove"], "props": { "id": "uiremove" } },
+    { "tag": "p", "children": ["Удалить узел и всех его потомков."] },
+    {
+      "tag": "pre",
+      "text": "ui.remove(node) -> nil",
+      "language": "lua",
+      "children": [
+        "ui.",
+        {
+          "tag": "span",
+          "children": ["remove"],
+          "props": { "className": "hljs-built_in" }
+        },
+        "(node) -> ",
+        {
+          "tag": "span",
+          "children": ["nil"],
+          "props": { "className": "hljs-literal" }
+        }
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Доступность:"] },
+        " on_load/on_event ui, вызванный ими модуль, мини-игра; при restore — ограничения этой записи и ",
+        {
+          "tag": "a",
+          "children": ["restore"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#restore"
+          }
+        },
+        ". Вычисление исходника вне обработчика не предназначено для команд."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Аргументы и ошибки:"] },
+        " node: собственный живой некорневой handle; повторное удаление — ошибка."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [{ "tag": "strong", "children": ["Возврат:"] }, " nil."]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Эффект и ограничения:"] },
+        " Изменение пакета. Удалённые ID уходят в retired и не переиспользуются; их анимации отменяются (removed), ввод сбрасывается. refs по-прежнему содержит старую строку; ui.find вернёт nil. Общие ",
+        {
+          "tag": "a",
+          "children": ["квоты"],
+          "props": { "href": "/projects/novellmaker/docs/lua/limits" }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["атомарность"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#batch"
+          }
+        },
+        " и ",
+        {
+          "tag": "a",
+          "children": ["lifecycle/сохранение"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        " применяются, если здесь не указано исключение."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Пример"] },
+        " (предусловия refs/ресурсов приведены в начале страницы; это фрагмент соответствующего обработчика, если не показан полный return):"
+      ]
+    },
+    {
+      "tag": "pre",
+      "text": "ui.remove(refs.template)",
+      "language": "lua",
+      "children": [
+        "ui.",
+        {
+          "tag": "span",
+          "children": ["remove"],
+          "props": { "className": "hljs-built_in" }
+        },
+        "(refs.template)"
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Связи:"] },
+        " ",
+        {
+          "tag": "a",
+          "children": ["ui.find"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/components#ui-find"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["ui.create"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/components#ui-create"
+          }
+        },
+        ". ",
+        {
+          "tag": "a",
+          "children": ["Регистрация и аргументы"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Screens/Lua/ScreenLuaWorker.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["тесты"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Screens/ScreenTreeTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "span", "children": [], "props": { "id": "ui-create" } }
+      ]
+    },
+    { "tag": "h2", "children": ["ui.create"], "props": { "id": "uicreate" } },
+    { "tag": "p", "children": ["Копировать существующее поддерево."] },
+    {
+      "tag": "pre",
+      "text": "ui.create(template, parent) -> handle, table<handle,handle>",
+      "language": "lua",
+      "children": [
+        "ui.",
+        {
+          "tag": "span",
+          "children": ["create"],
+          "props": { "className": "hljs-built_in" }
+        },
+        "(template, parent) -> handle, ",
+        {
+          "tag": "span",
+          "children": ["table"],
+          "props": { "className": "hljs-built_in" }
+        },
+        "<handle,handle>"
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Доступность:"] },
+        " on_load/on_event ui, вызванный ими модуль, мини-игра; при restore — ограничения этой записи и ",
+        {
+          "tag": "a",
+          "children": ["restore"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#restore"
+          }
+        },
+        ". Вычисление исходника вне обработчика не предназначено для команд."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Аргументы и ошибки:"] },
+        " template: собственный живой узел; parent: собственный Container/Panel. Оба обязательны. Ограничения дерева/identity проверяются для полной копии."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Возврат:"] },
+        " Два немедленных результата: handle корня копии и словарь oldHandle→newHandle для всех узлов. Новые строки пригодны для следующих команд этого пакета."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Эффект и ограничения:"] },
+        " Подготавливает copy в пакете; копирует данные узлов, но не VM/состояние/анимацию/владельца звука. Новых refs и обработчиков на каждый узел не создаёт. Общие ",
+        {
+          "tag": "a",
+          "children": ["квоты"],
+          "props": { "href": "/projects/novellmaker/docs/lua/limits" }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["атомарность"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#batch"
+          }
+        },
+        " и ",
+        {
+          "tag": "a",
+          "children": ["lifecycle/сохранение"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        " применяются, если здесь не указано исключение."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Пример"] },
+        " (предусловия refs/ресурсов приведены в начале страницы; это фрагмент соответствующего обработчика, если не показан полный return):"
+      ]
+    },
+    {
+      "tag": "pre",
+      "text": "local copy, map = ui.create(refs.template, refs.panel)\nui.set_visible(copy, true)\nui.set_text(map[refs.label], \"Копия\")",
+      "language": "lua",
+      "children": [
+        {
+          "tag": "span",
+          "children": ["local"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " copy, map = ui.",
+        {
+          "tag": "span",
+          "children": ["create"],
+          "props": { "className": "hljs-built_in" }
+        },
+        "(refs.template, refs.panel)\nui.set_visible(copy, ",
+        {
+          "tag": "span",
+          "children": ["true"],
+          "props": { "className": "hljs-literal" }
+        },
+        ")\nui.set_text(map[refs.label], ",
+        {
+          "tag": "span",
+          "children": ["\"Копия\""],
+          "props": { "className": "hljs-string" }
+        },
+        ")"
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Связи:"] },
+        " ",
+        {
+          "tag": "a",
+          "children": ["ui.remove"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/components#ui-remove"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["ui.set_parent"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/components#ui-set-parent"
+          }
+        },
+        ". ",
+        {
+          "tag": "a",
+          "children": ["Регистрация и аргументы"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Screens/Lua/ScreenLuaWorker.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["тесты"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Screens/ScreenTreeTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "span", "children": [], "props": { "id": "ui-close" } }
+      ]
+    },
+    { "tag": "h2", "children": ["ui.close"], "props": { "id": "uiclose" } },
+    { "tag": "p", "children": ["Закрыть собственный экземпляр холста."] },
+    {
+      "tag": "pre",
+      "text": "ui.close() -> nil",
+      "language": "lua",
+      "children": [
+        "ui.",
+        {
+          "tag": "span",
+          "children": ["close"],
+          "props": { "className": "hljs-built_in" }
+        },
+        "() -> ",
+        {
+          "tag": "span",
+          "children": ["nil"],
+          "props": { "className": "hljs-literal" }
+        }
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Доступность:"] },
+        " on_load/on_event ui, вызванный ими модуль, мини-игра; при restore — ограничения этой записи и ",
+        {
+          "tag": "a",
+          "children": ["restore"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#restore"
+          }
+        },
+        ". Вычисление исходника вне обработчика не предназначено для команд."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Аргументы и ошибки:"] },
+        " Нет аргументов; по умолчанию лишние игнорируются, в строгом режиме запрещены."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [{ "tag": "strong", "children": ["Возврат:"] }, " nil."]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Эффект и ограничения:"] },
+        " Последняя команда пакета. Несовместима с сервисом, триггером и итогом мини-игры; команда после close отвергает весь пакет. Очищает VM, state/RNG, ввод и собственные звук/анимации/запросы; закрытие мини-игры даёт cancelled. Общие ",
+        {
+          "tag": "a",
+          "children": ["квоты"],
+          "props": { "href": "/projects/novellmaker/docs/lua/limits" }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["атомарность"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#batch"
+          }
+        },
+        " и ",
+        {
+          "tag": "a",
+          "children": ["lifecycle/сохранение"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        " применяются, если здесь не указано исключение."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Пример"] },
+        " (предусловия refs/ресурсов приведены в начале страницы; это фрагмент соответствующего обработчика, если не показан полный return):"
+      ]
+    },
+    {
+      "tag": "pre",
+      "text": "ui.set_text(refs.label, \"Закрываем\")\nui.close()",
+      "language": "lua",
+      "children": [
+        "ui.set_text(refs.label, ",
+        {
+          "tag": "span",
+          "children": ["\"Закрываем\""],
+          "props": { "className": "hljs-string" }
+        },
+        ")\nui.",
+        {
+          "tag": "span",
+          "children": ["close"],
+          "props": { "className": "hljs-built_in" }
+        },
+        "()"
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Связи:"] },
+        " ",
+        {
+          "tag": "a",
+          "children": ["ui.cancel_minigame"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/minigames#ui-cancel-minigame"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["ui.main_menu"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/session-and-storage#ui-main-menu"
+          }
+        },
+        ". ",
+        {
+          "tag": "a",
+          "children": ["Регистрация и аргументы"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Screens/Lua/ScreenLuaWorker.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["тесты"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Screens/ScreenLuaWorkerTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        {
+          "tag": "span",
+          "children": [],
+          "props": { "id": "ui-strict-arguments" }
+        }
+      ]
+    },
+    {
+      "tag": "h2",
+      "children": ["ui.strict_arguments"],
+      "props": { "id": "uistrict_arguments" }
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Включить или выключить строгую проверку аргументов текущего экземпляра холста."
+      ]
+    },
+    {
+      "tag": "pre",
+      "text": "ui.strict_arguments(enabled) -> nil",
+      "language": "lua",
+      "children": [
+        "ui.strict_arguments(enabled) -> ",
+        {
+          "tag": "span",
+          "children": ["nil"],
+          "props": { "className": "hljs-literal" }
+        }
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Доступность:"] },
+        " ui при вычислении исходника, on_load/on_event, вызываемые модули и мини-игры; при restore также допустима."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Аргументы и ошибки:"] },
+        " Ровно один boolean, даже в режиме по умолчанию. nil, строка/число, отсутствие или лишний аргумент — ошибка."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [{ "tag": "strong", "children": ["Возврат:"] }, " nil."]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Эффект и ограничения:"] },
+        " По умолчанию false. true требует показанное число аргументов и точные типы старых ui-bindings без преобразования чисел в строки и значений в boolean. ui.import также требует ровно один ID. Общая политика распространяется на этот экземпляр и все его модули, сохраняется между событиями; другие экземпляры независимы. Включение в начале корневого исходника применяется и к последующим импортам. Обычные правила контекста и квот действуют в обоих режимах. Необязательные аргументы и явно разрешённый nil сохраняются: save_slot(), save_slot(nil,nil), set_state(nil), complete_minigame(nil) допустимы; set_state()/complete_minigame() без аргумента в строгом режиме запрещены. false восстанавливает прежнюю проверку старых функций; audio/RNG/animation/standard, log и команды ввода сохраняют собственные строгие сигнатуры в обоих режимах. Переключатель не создаёт команды и не сериализуется. При повторном открытии/Load исходник вычисляется заново: включайте режим до возврата handlers, чтобы он применялся после восстановления. Квоты и события прежние."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [{ "tag": "strong", "children": ["Пример"] }, ":"]
+    },
+    {
+      "tag": "pre",
+      "text": "ui.strict_arguments(true)\nreturn {on_load=function() ui.set_text(refs.label, \"Готово\") end,\n        on_event=function(e) end}",
+      "language": "lua",
+      "children": [
+        "ui.strict_arguments(",
+        {
+          "tag": "span",
+          "children": ["true"],
+          "props": { "className": "hljs-literal" }
+        },
+        ")\n",
+        {
+          "tag": "span",
+          "children": ["return"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " {on_load=",
+        {
+          "tag": "span",
+          "children": [
+            {
+              "tag": "span",
+              "children": ["function"],
+              "props": { "className": "hljs-keyword" }
+            },
+            {
+              "tag": "span",
+              "children": ["()"],
+              "props": { "className": "hljs-params" }
+            }
+          ],
+          "props": { "className": "hljs-function" }
+        },
+        " ui.set_text(refs.label, ",
+        {
+          "tag": "span",
+          "children": ["\"Готово\""],
+          "props": { "className": "hljs-string" }
+        },
+        ") ",
+        {
+          "tag": "span",
+          "children": ["end"],
+          "props": { "className": "hljs-keyword" }
+        },
+        ",\n        on_event=",
+        {
+          "tag": "span",
+          "children": [
+            {
+              "tag": "span",
+              "children": ["function"],
+              "props": { "className": "hljs-keyword" }
+            },
+            {
+              "tag": "span",
+              "children": ["(e)"],
+              "props": { "className": "hljs-params" }
+            }
+          ],
+          "props": { "className": "hljs-function" }
+        },
+        " ",
+        {
+          "tag": "span",
+          "children": ["end"],
+          "props": { "className": "hljs-keyword" }
+        },
+        "}"
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Связи:"] },
+        " ",
+        {
+          "tag": "a",
+          "children": ["game.strict_arguments"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/scenario#game-strict-arguments"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["модули"],
+          "props": { "href": "/projects/novellmaker/docs/lua/modules" }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["квоты"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/limits#components"
+          }
+        },
+        ". ",
+        {
+          "tag": "a",
+          "children": ["Регистрация"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Screens/Lua/ScreenLuaWorker.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["общий валидатор"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Scripting/LuaApiArguments.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["тесты"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Screens/LuaApiContractTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    }
+  ]
+}

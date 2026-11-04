@@ -1,0 +1,4202 @@
+{
+  "title": "Сценарный API game.",
+  "headings": [
+    { "title": "Сценарный API game.", "id": "сценарный-api-game", "level": 1 },
+    { "title": "game.get", "id": "game-get", "level": 2 },
+    { "title": "game.set", "id": "game-set", "level": 2 },
+    { "title": "game.time", "id": "game-time", "level": 2 },
+    { "title": "game.visible", "id": "game-visible", "level": 2 },
+    { "title": "game.object", "id": "game-object", "level": 2 },
+    { "title": "game.show", "id": "game-show", "level": 2 },
+    { "title": "game.hide", "id": "game-hide", "level": 2 },
+    { "title": "game.state", "id": "game-state", "level": 2 },
+    { "title": "game.text", "id": "game-text", "level": 2 },
+    { "title": "game.place", "id": "game-place", "level": 2 },
+    { "title": "game.auto", "id": "game-auto", "level": 2 },
+    { "title": "game.move", "id": "game-move", "level": 2 },
+    { "title": "game.wait", "id": "game-wait", "level": 2 },
+    { "title": "game.wait_input", "id": "game-wait-input", "level": 2 },
+    { "title": "game.wait_actions", "id": "game-wait-actions", "level": 2 },
+    { "title": "game.wait_click", "id": "game-wait-click", "level": 2 },
+    { "title": "game.hotspot", "id": "game-hotspot", "level": 2 },
+    { "title": "game.finish", "id": "game-finish", "level": 2 },
+    { "title": "game.run", "id": "game-run", "level": 2 },
+    { "title": "game.jump", "id": "game-jump", "level": 2 },
+    { "title": "game.jump_line", "id": "game-jump-line", "level": 2 },
+    { "title": "game.choice", "id": "game-choice", "level": 2 },
+    { "title": "game.start_minigame", "id": "game-start-minigame", "level": 2 },
+    {
+      "title": "game.minigame_result",
+      "id": "game-minigame-result",
+      "level": 2
+    },
+    {
+      "title": "game.strict_arguments",
+      "id": "game-strict-arguments",
+      "level": 2
+    }
+  ],
+  "nodes": [
+    {
+      "tag": "h1",
+      "children": ["Сценарный API game.*"],
+      "props": { "id": "сценарный-api-game" }
+    },
+    {
+      "tag": "p",
+      "children": [
+        {
+          "tag": "a",
+          "children": ["Оглавление"],
+          "props": { "href": "/projects/novellmaker/docs/lua" }
+        },
+        " · ",
+        {
+          "tag": "a",
+          "children": ["Модель исполнения"],
+          "props": { "href": "/projects/novellmaker/docs/lua/execution-model" }
+        },
+        " · ",
+        {
+          "tag": "a",
+          "children": ["События"],
+          "props": { "href": "/projects/novellmaker/docs/lua/events" }
+        },
+        " · ",
+        {
+          "tag": "a",
+          "children": ["Квоты"],
+          "props": { "href": "/projects/novellmaker/docs/lua/limits" }
+        }
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Все функции этой страницы доступны ",
+        { "tag": "strong", "children": ["только"] },
+        " в сценарном блоке или ресурсе, исполняемом ",
+        { "tag": "code", "children": ["game.run"] },
+        ". Сценарный ресурс не получает ",
+        { "tag": "code", "children": ["ui"] },
+        ", ",
+        { "tag": "code", "children": ["modules"] },
+        ", ",
+        { "tag": "code", "children": ["audio"] },
+        ", ",
+        { "tag": "code", "children": ["math"] },
+        ", ",
+        { "tag": "code", "children": ["string"] },
+        ", ",
+        { "tag": "code", "children": ["table"] },
+        " или глобальные функции библиотеки. В обработчике/импортируемом модуле ",
+        { "tag": "code", "children": ["game"] },
+        " отсутствует."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Общие правила каждой записи: ",
+        {
+          "tag": "a",
+          "children": ["вычисление и очередь"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#scenario"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["сроки жизни и загрузка"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["квоты"],
+          "props": { "href": "/projects/novellmaker/docs/lua/limits#scenario" }
+        },
+        ". Команды возвращают nil, если запись не говорит иначе. Ошибка аргументов/ссылок/квот отклоняет весь вычисленный список; прежние успешно исполненные блоки не откатываются. После принятия команды очередь исполняется по порядку; последующий runtime-сбой не является транзакционным откатом всей истории."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        "По умолчанию строковые/числовые аргументы старого ",
+        { "tag": "code", "children": ["game"] },
+        " читаются MoonSharp ",
+        { "tag": "code", "children": ["AsType"] },
+        ": числа могут преобразовываться в строки и числовые строки — в числа. Boolean/nil не являются такими аргументами. Числа после чтения обязаны быть конечными. Большинство вызовов ",
+        { "tag": "strong", "children": ["не проверяет лишние аргументы"] },
+        " и игнорирует их; для ",
+        { "tag": "code", "children": ["wait_click"] },
+        "/",
+        { "tag": "code", "children": ["start_minigame"] },
+        " число аргументов определяет вариант. Все обязательные позиции без значения или с nil — ошибка, кроме явно указанных Value-позиций. Функции ",
+        { "tag": "code", "children": ["get"] },
+        ", ",
+        { "tag": "code", "children": ["time"] },
+        ", ",
+        { "tag": "code", "children": ["visible"] },
+        ", ",
+        { "tag": "code", "children": ["object"] },
+        ", ",
+        { "tag": "code", "children": ["minigame_result"] },
+        " читают снимок, а не симулируют ещё не исполненную очередь. ",
+        { "tag": "code", "children": ["set"] },
+        " и ",
+        { "tag": "code", "children": ["finish"] },
+        " обновляют локальную копию строковых переменных. Для точного числа аргументов и типов включите ",
+        {
+          "tag": "a",
+          "children": ["game.strict_arguments(true)"],
+          "props": { "href": "#game-strict-arguments" }
+        },
+        " в начале каждого сценарного блока/ресурса. Указания о преобразованиях и игнорировании лишних аргументов ниже относятся к режиму по умолчанию."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Для примеров с ",
+        { "tag": "code", "children": ["refs"] },
+        " заранее объявите в свойствах блока/ресурса соответствующие объекты: hero — персонаж, happy — его состояние, line — фраза, scene — сцена, script/after_puzzle — Lua-ресурсы, puzzle — сцена мини-игры. item — непустой GUID области, action — существующая низкоуровневая команда (не GUID фразы)."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "span", "children": [], "props": { "id": "game-get" } }
+      ]
+    },
+    { "tag": "h2", "children": ["game.get"], "props": { "id": "gameget" } },
+    { "tag": "p", "children": ["Прочитать строковую переменную сюжета."] },
+    {
+      "tag": "pre",
+      "text": "game.get(key) -> string | nil",
+      "language": "lua",
+      "children": [
+        "game.get(key) -> ",
+        {
+          "tag": "span",
+          "children": ["string"],
+          "props": { "className": "hljs-built_in" }
+        },
+        " | ",
+        {
+          "tag": "span",
+          "children": ["nil"],
+          "props": { "className": "hljs-literal" }
+        }
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Доступность:"] },
+        " Сценарный блок/сценарный ресурс; не ui и не импорт-модуль. См. ",
+        {
+          "tag": "a",
+          "children": ["общие правила страницы"],
+          "props": { "href": "/projects/novellmaker/docs/lua/scenario" }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["lifetime"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Аргументы и ошибки:"] },
+        " key: строка; чтение само не проверяет формат/длину имени. Обязателен, nil недопустим."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Возврат:"] },
+        " Строка, включая пустую, либо nil, если ключа нет. Видит предшествующие game.set и game.finish в этом вычислении."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Эффект и ограничения:"] },
+        " Немедленное чтение локального снимка переменных; команды не создаёт. Общие ",
+        {
+          "tag": "a",
+          "children": ["квоты"],
+          "props": { "href": "/projects/novellmaker/docs/lua/limits" }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["атомарность"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#batch"
+          }
+        },
+        " и ",
+        {
+          "tag": "a",
+          "children": ["lifecycle/сохранение"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        " применяются, если здесь не указано исключение."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Пример"] },
+        " (предусловия refs/ресурсов приведены в начале страницы; это фрагмент соответствующего обработчика, если не показан полный return):"
+      ]
+    },
+    {
+      "tag": "pre",
+      "text": "local flag = game.get(\"door.open\")\nif flag == \"true\" then game.wait_input() end",
+      "language": "lua",
+      "children": [
+        {
+          "tag": "span",
+          "children": ["local"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " flag = game.get(",
+        {
+          "tag": "span",
+          "children": ["\"door.open\""],
+          "props": { "className": "hljs-string" }
+        },
+        ")\n",
+        {
+          "tag": "span",
+          "children": ["if"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " flag == ",
+        {
+          "tag": "span",
+          "children": ["\"true\""],
+          "props": { "className": "hljs-string" }
+        },
+        " ",
+        {
+          "tag": "span",
+          "children": ["then"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " game.wait_input() ",
+        {
+          "tag": "span",
+          "children": ["end"],
+          "props": { "className": "hljs-keyword" }
+        }
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Связи:"] },
+        " ",
+        {
+          "tag": "a",
+          "children": ["game.set"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/scenario#game-set"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["ui.get"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/state-and-random#ui-get"
+          }
+        },
+        ". ",
+        {
+          "tag": "a",
+          "children": ["Регистрация и аргументы"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Execution/LuaActionScript.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["тесты"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Execution/ScenarioPlayerTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "span", "children": [], "props": { "id": "game-set" } }
+      ]
+    },
+    { "tag": "h2", "children": ["game.set"], "props": { "id": "gameset" } },
+    { "tag": "p", "children": ["Задать строковую переменную сюжета."] },
+    {
+      "tag": "pre",
+      "text": "game.set(key, value) -> nil",
+      "language": "lua",
+      "children": [
+        "game.set(key, value) -> ",
+        {
+          "tag": "span",
+          "children": ["nil"],
+          "props": { "className": "hljs-literal" }
+        }
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Доступность:"] },
+        " Сценарный блок/сценарный ресурс; не ui и не импорт-модуль. См. ",
+        {
+          "tag": "a",
+          "children": ["общие правила страницы"],
+          "props": { "href": "/projects/novellmaker/docs/lua/scenario" }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["lifetime"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Аргументы и ошибки:"] },
+        " key: непустая и не состоящая из пробелов строка до 128 единиц UTF-16; value: строка до 8192. Оба обязательны; nil не удаляет ключ и даёт ошибку. Числа принимаются строковым преобразованием MoonSharp, но предпочтительны явные строки."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Возврат:"] },
+        " nil. Последующий game.get в этом блоке сразу видит новое значение."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Эффект и ограничения:"] },
+        " Сначала меняет рабочую копию VM, затем создаёт SetAction. Host изменится при исполнении очереди. До 256 переменных и 131072 символов ключей+значений; переполнение отвергает весь результат Lua. Общие ",
+        {
+          "tag": "a",
+          "children": ["квоты"],
+          "props": { "href": "/projects/novellmaker/docs/lua/limits" }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["атомарность"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#batch"
+          }
+        },
+        " и ",
+        {
+          "tag": "a",
+          "children": ["lifecycle/сохранение"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        " применяются, если здесь не указано исключение."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Пример"] },
+        " (предусловия refs/ресурсов приведены в начале страницы; это фрагмент соответствующего обработчика, если не показан полный return):"
+      ]
+    },
+    {
+      "tag": "pre",
+      "text": "game.set(\"door.open\", \"true\")",
+      "language": "lua",
+      "children": [
+        "game.set(",
+        {
+          "tag": "span",
+          "children": ["\"door.open\""],
+          "props": { "className": "hljs-string" }
+        },
+        ", ",
+        {
+          "tag": "span",
+          "children": ["\"true\""],
+          "props": { "className": "hljs-string" }
+        },
+        ")"
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Связи:"] },
+        " ",
+        {
+          "tag": "a",
+          "children": ["game.get"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/scenario#game-get"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["ui.set_persistent"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/session-and-storage#ui-set-persistent"
+          }
+        },
+        ". ",
+        {
+          "tag": "a",
+          "children": ["Регистрация и аргументы"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Execution/LuaActionScript.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["тесты"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Execution/ScenarioPlayerTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "span", "children": [], "props": { "id": "game-time" } }
+      ]
+    },
+    { "tag": "h2", "children": ["game.time"], "props": { "id": "gametime" } },
+    {
+      "tag": "p",
+      "children": ["Прочитать игровое время сценария в секундах."]
+    },
+    {
+      "tag": "pre",
+      "text": "game.time() -> number",
+      "language": "lua",
+      "children": [
+        "game.",
+        {
+          "tag": "span",
+          "children": ["time"],
+          "props": { "className": "hljs-built_in" }
+        },
+        "() -> number"
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Доступность:"] },
+        " Сценарный блок/сценарный ресурс; не ui и не импорт-модуль. См. ",
+        {
+          "tag": "a",
+          "children": ["общие правила страницы"],
+          "props": { "href": "/projects/novellmaker/docs/lua/scenario" }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["lifetime"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Аргументы и ошибки:"] },
+        " Нет аргументов; по умолчанию лишние игнорируются, в строгом режиме запрещены."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Возврат:"] },
+        " Конечное число из снимка на начало вызова."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Эффект и ограничения:"] },
+        " Немедленное чтение; game.wait в этом же блоке не изменяет возвращаемое время. В паузе и при pending Lua время сюжета не идёт. Общие ",
+        {
+          "tag": "a",
+          "children": ["квоты"],
+          "props": { "href": "/projects/novellmaker/docs/lua/limits" }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["атомарность"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#batch"
+          }
+        },
+        " и ",
+        {
+          "tag": "a",
+          "children": ["lifecycle/сохранение"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        " применяются, если здесь не указано исключение."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Пример"] },
+        " (предусловия refs/ресурсов приведены в начале страницы; это фрагмент соответствующего обработчика, если не показан полный return):"
+      ]
+    },
+    {
+      "tag": "pre",
+      "text": "if game.time() > 30 then game.set(\"late\", \"true\") end",
+      "language": "lua",
+      "children": [
+        {
+          "tag": "span",
+          "children": ["if"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " game.",
+        {
+          "tag": "span",
+          "children": ["time"],
+          "props": { "className": "hljs-built_in" }
+        },
+        "() > ",
+        {
+          "tag": "span",
+          "children": ["30"],
+          "props": { "className": "hljs-number" }
+        },
+        " ",
+        {
+          "tag": "span",
+          "children": ["then"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " game.set(",
+        {
+          "tag": "span",
+          "children": ["\"late\""],
+          "props": { "className": "hljs-string" }
+        },
+        ", ",
+        {
+          "tag": "span",
+          "children": ["\"true\""],
+          "props": { "className": "hljs-string" }
+        },
+        ") ",
+        {
+          "tag": "span",
+          "children": ["end"],
+          "props": { "className": "hljs-keyword" }
+        }
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Связи:"] },
+        " ",
+        {
+          "tag": "a",
+          "children": ["game.wait"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/scenario#game-wait"
+          }
+        },
+        ". ",
+        {
+          "tag": "a",
+          "children": ["Регистрация и аргументы"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Execution/LuaActionScript.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["тесты"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Execution/ScenarioPlayerTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "span", "children": [], "props": { "id": "game-visible" } }
+      ]
+    },
+    {
+      "tag": "h2",
+      "children": ["game.visible"],
+      "props": { "id": "gamevisible" }
+    },
+    { "tag": "p", "children": ["Узнать, показан ли персонаж."] },
+    {
+      "tag": "pre",
+      "text": "game.visible(objectId) -> boolean",
+      "language": "lua",
+      "children": ["game.visible(objectId) -> boolean"]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Доступность:"] },
+        " Сценарный блок/сценарный ресурс; не ui и не импорт-модуль. См. ",
+        {
+          "tag": "a",
+          "children": ["общие правила страницы"],
+          "props": { "href": "/projects/novellmaker/docs/lua/scenario" }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["lifetime"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Аргументы и ошибки:"] },
+        " objectId: строка с непустым GUID. Существование объекта для чтения не проверяется."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Возврат:"] },
+        " true, если GUID есть в снимке VisibleObjects; иначе false."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Эффект и ограничения:"] },
+        " Немедленное чтение исходного снимка; не видит game.show/hide этого блока. Общие ",
+        {
+          "tag": "a",
+          "children": ["квоты"],
+          "props": { "href": "/projects/novellmaker/docs/lua/limits" }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["атомарность"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#batch"
+          }
+        },
+        " и ",
+        {
+          "tag": "a",
+          "children": ["lifecycle/сохранение"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        " применяются, если здесь не указано исключение."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Пример"] },
+        " (предусловия refs/ресурсов приведены в начале страницы; это фрагмент соответствующего обработчика, если не показан полный return):"
+      ]
+    },
+    {
+      "tag": "pre",
+      "text": "if not game.visible(refs.hero) then game.show(refs.hero) end",
+      "language": "lua",
+      "children": [
+        {
+          "tag": "span",
+          "children": ["if"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " ",
+        {
+          "tag": "span",
+          "children": ["not"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " game.visible(refs.hero) ",
+        {
+          "tag": "span",
+          "children": ["then"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " game.show(refs.hero) ",
+        {
+          "tag": "span",
+          "children": ["end"],
+          "props": { "className": "hljs-keyword" }
+        }
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Связи:"] },
+        " ",
+        {
+          "tag": "a",
+          "children": ["game.show"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/scenario#game-show"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["game.hide"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/scenario#game-hide"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["game.object"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/scenario#game-object"
+          }
+        },
+        ". ",
+        {
+          "tag": "a",
+          "children": ["Регистрация и аргументы"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Execution/LuaActionScript.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["тесты"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Execution/ScenarioPlayerTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "span", "children": [], "props": { "id": "game-object" } }
+      ]
+    },
+    {
+      "tag": "h2",
+      "children": ["game.object"],
+      "props": { "id": "gameobject" }
+    },
+    {
+      "tag": "p",
+      "children": ["Прочитать показ, состояние и ручное размещение персонажа."]
+    },
+    {
+      "tag": "pre",
+      "text": "game.object(objectId) -> table",
+      "language": "lua",
+      "children": [
+        "game.object(objectId) -> ",
+        {
+          "tag": "span",
+          "children": ["table"],
+          "props": { "className": "hljs-built_in" }
+        }
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Доступность:"] },
+        " Сценарный блок/сценарный ресурс; не ui и не импорт-модуль. См. ",
+        {
+          "tag": "a",
+          "children": ["общие правила страницы"],
+          "props": { "href": "/projects/novellmaker/docs/lua/scenario" }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["lifetime"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Аргументы и ошибки:"] },
+        " objectId: строка GUID; неизвестный непустой GUID допускается для чтения."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Возврат:"] },
+        " {visible:boolean, state?:string, x?:number, y?:number, scale?:number, layer?:integer}. state — GUID состояния; x/y/scale/layer есть только при ручном размещении; автоматические координаты не вычисляются."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Эффект и ограничения:"] },
+        " Отдельная таблица из исходного снимка; её изменение не меняет игру. Не видит подготовленные команды. Общие ",
+        {
+          "tag": "a",
+          "children": ["квоты"],
+          "props": { "href": "/projects/novellmaker/docs/lua/limits" }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["атомарность"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#batch"
+          }
+        },
+        " и ",
+        {
+          "tag": "a",
+          "children": ["lifecycle/сохранение"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        " применяются, если здесь не указано исключение."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Пример"] },
+        " (предусловия refs/ресурсов приведены в начале страницы; это фрагмент соответствующего обработчика, если не показан полный return):"
+      ]
+    },
+    {
+      "tag": "pre",
+      "text": "local p = game.object(refs.hero)\nif p.visible then game.hide(refs.hero) end",
+      "language": "lua",
+      "children": [
+        {
+          "tag": "span",
+          "children": ["local"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " p = game.object(refs.hero)\n",
+        {
+          "tag": "span",
+          "children": ["if"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " p.visible ",
+        {
+          "tag": "span",
+          "children": ["then"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " game.hide(refs.hero) ",
+        {
+          "tag": "span",
+          "children": ["end"],
+          "props": { "className": "hljs-keyword" }
+        }
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Связи:"] },
+        " ",
+        {
+          "tag": "a",
+          "children": ["game.visible"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/scenario#game-visible"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["game.place"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/scenario#game-place"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["game.state"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/scenario#game-state"
+          }
+        },
+        ". ",
+        {
+          "tag": "a",
+          "children": ["Регистрация и аргументы"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Execution/LuaActionScript.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["тесты"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Execution/ScenarioPlayerTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "span", "children": [], "props": { "id": "game-show" } }
+      ]
+    },
+    { "tag": "h2", "children": ["game.show"], "props": { "id": "gameshow" } },
+    {
+      "tag": "p",
+      "children": [
+        "Показать персонажа с запомненным либо начальным состоянием."
+      ]
+    },
+    {
+      "tag": "pre",
+      "text": "game.show(objectId) -> nil",
+      "language": "lua",
+      "children": [
+        "game.show(objectId) -> ",
+        {
+          "tag": "span",
+          "children": ["nil"],
+          "props": { "className": "hljs-literal" }
+        }
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Доступность:"] },
+        " Сценарный блок/сценарный ресурс; не ui и не импорт-модуль. См. ",
+        {
+          "tag": "a",
+          "children": ["общие правила страницы"],
+          "props": { "href": "/projects/novellmaker/docs/lua/scenario" }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["lifetime"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Аргументы и ошибки:"] },
+        " objectId: GUID существующего персонажа, обычно refs.hero."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [{ "tag": "strong", "children": ["Возврат:"] }, " nil."]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Эффект и ограничения:"] },
+        " Команда очереди. Повторный показ не дублирует персонажа. При отсутствующем изображении host добавляет диагностику и не показывает персонажа. Общие ",
+        {
+          "tag": "a",
+          "children": ["квоты"],
+          "props": { "href": "/projects/novellmaker/docs/lua/limits" }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["атомарность"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#batch"
+          }
+        },
+        " и ",
+        {
+          "tag": "a",
+          "children": ["lifecycle/сохранение"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        " применяются, если здесь не указано исключение."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Пример"] },
+        " (предусловия refs/ресурсов приведены в начале страницы; это фрагмент соответствующего обработчика, если не показан полный return):"
+      ]
+    },
+    {
+      "tag": "pre",
+      "text": "game.show(refs.hero)",
+      "language": "lua",
+      "children": ["game.show(refs.hero)"]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Связи:"] },
+        " ",
+        {
+          "tag": "a",
+          "children": ["game.hide"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/scenario#game-hide"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["game.state"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/scenario#game-state"
+          }
+        },
+        ". ",
+        {
+          "tag": "a",
+          "children": ["Регистрация и аргументы"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Execution/LuaActionScript.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["тесты"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Execution/ScenarioPlayerTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "span", "children": [], "props": { "id": "game-hide" } }
+      ]
+    },
+    { "tag": "h2", "children": ["game.hide"], "props": { "id": "gamehide" } },
+    { "tag": "p", "children": ["Скрыть персонажа."] },
+    {
+      "tag": "pre",
+      "text": "game.hide(objectId) -> nil",
+      "language": "lua",
+      "children": [
+        "game.hide(objectId) -> ",
+        {
+          "tag": "span",
+          "children": ["nil"],
+          "props": { "className": "hljs-literal" }
+        }
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Доступность:"] },
+        " Сценарный блок/сценарный ресурс; не ui и не импорт-модуль. См. ",
+        {
+          "tag": "a",
+          "children": ["общие правила страницы"],
+          "props": { "href": "/projects/novellmaker/docs/lua/scenario" }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["lifetime"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Аргументы и ошибки:"] },
+        " objectId: GUID существующего персонажа."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [{ "tag": "strong", "children": ["Возврат:"] }, " nil."]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Эффект и ограничения:"] },
+        " Команда очереди. Уже скрытый персонаж — no-op; состояние и размещение остаются. Общие ",
+        {
+          "tag": "a",
+          "children": ["квоты"],
+          "props": { "href": "/projects/novellmaker/docs/lua/limits" }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["атомарность"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#batch"
+          }
+        },
+        " и ",
+        {
+          "tag": "a",
+          "children": ["lifecycle/сохранение"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        " применяются, если здесь не указано исключение."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Пример"] },
+        " (предусловия refs/ресурсов приведены в начале страницы; это фрагмент соответствующего обработчика, если не показан полный return):"
+      ]
+    },
+    {
+      "tag": "pre",
+      "text": "game.hide(refs.hero)",
+      "language": "lua",
+      "children": ["game.hide(refs.hero)"]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Связи:"] },
+        " ",
+        {
+          "tag": "a",
+          "children": ["game.show"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/scenario#game-show"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["game.visible"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/scenario#game-visible"
+          }
+        },
+        ". ",
+        {
+          "tag": "a",
+          "children": ["Регистрация и аргументы"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Execution/LuaActionScript.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["тесты"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Execution/ScenarioPlayerTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "span", "children": [], "props": { "id": "game-state" } }
+      ]
+    },
+    { "tag": "h2", "children": ["game.state"], "props": { "id": "gamestate" } },
+    { "tag": "p", "children": ["Выбрать состояние персонажа."] },
+    {
+      "tag": "pre",
+      "text": "game.state(objectId, stateId) -> nil",
+      "language": "lua",
+      "children": [
+        "game.state(objectId, stateId) -> ",
+        {
+          "tag": "span",
+          "children": ["nil"],
+          "props": { "className": "hljs-literal" }
+        }
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Доступность:"] },
+        " Сценарный блок/сценарный ресурс; не ui и не импорт-модуль. См. ",
+        {
+          "tag": "a",
+          "children": ["общие правила страницы"],
+          "props": { "href": "/projects/novellmaker/docs/lua/scenario" }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["lifetime"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Аргументы и ошибки:"] },
+        " Оба аргумента — GUID; stateId должен принадлежать именно objectId."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [{ "tag": "strong", "children": ["Возврат:"] }, " nil."]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Эффект и ограничения:"] },
+        " Команда очереди. У скрытого персонажа запоминает состояние, но не показывает его. Чужое состояние отвергается при проверке всего пакета. Общие ",
+        {
+          "tag": "a",
+          "children": ["квоты"],
+          "props": { "href": "/projects/novellmaker/docs/lua/limits" }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["атомарность"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#batch"
+          }
+        },
+        " и ",
+        {
+          "tag": "a",
+          "children": ["lifecycle/сохранение"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        " применяются, если здесь не указано исключение."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Пример"] },
+        " (предусловия refs/ресурсов приведены в начале страницы; это фрагмент соответствующего обработчика, если не показан полный return):"
+      ]
+    },
+    {
+      "tag": "pre",
+      "text": "game.state(refs.hero, refs.happy)\ngame.show(refs.hero)",
+      "language": "lua",
+      "children": ["game.state(refs.hero, refs.happy)\ngame.show(refs.hero)"]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Связи:"] },
+        " ",
+        {
+          "tag": "a",
+          "children": ["game.show"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/scenario#game-show"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["game.object"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/scenario#game-object"
+          }
+        },
+        ". ",
+        {
+          "tag": "a",
+          "children": ["Регистрация и аргументы"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Execution/LuaActionScript.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["тесты"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Execution/ScenarioPlayerTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "span", "children": [], "props": { "id": "game-text" } }
+      ]
+    },
+    { "tag": "h2", "children": ["game.text"], "props": { "id": "gametext" } },
+    {
+      "tag": "p",
+      "children": ["Показать текст существующей фразы текущей сцены."]
+    },
+    {
+      "tag": "pre",
+      "text": "game.text(lineId) -> nil",
+      "language": "lua",
+      "children": [
+        "game.text(lineId) -> ",
+        {
+          "tag": "span",
+          "children": ["nil"],
+          "props": { "className": "hljs-literal" }
+        }
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Доступность:"] },
+        " Сценарный блок/сценарный ресурс; не ui и не импорт-модуль. См. ",
+        {
+          "tag": "a",
+          "children": ["общие правила страницы"],
+          "props": { "href": "/projects/novellmaker/docs/lua/scenario" }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["lifetime"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Аргументы и ошибки:"] },
+        " lineId: GUID фразы текущей сцены; не произвольный текст."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [{ "tag": "strong", "children": ["Возврат:"] }, " nil."]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Эффект и ограничения:"] },
+        " Команда очереди: меняет текущую фразу и запускает её effect/voice. Не исполняет LineEntry, размещение, блоки «До» и не добавляет ожидание ввода; обычно порядок фраз уже делает это автоматически. Общие ",
+        {
+          "tag": "a",
+          "children": ["квоты"],
+          "props": { "href": "/projects/novellmaker/docs/lua/limits" }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["атомарность"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#batch"
+          }
+        },
+        " и ",
+        {
+          "tag": "a",
+          "children": ["lifecycle/сохранение"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        " применяются, если здесь не указано исключение."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Пример"] },
+        " (предусловия refs/ресурсов приведены в начале страницы; это фрагмент соответствующего обработчика, если не показан полный return):"
+      ]
+    },
+    {
+      "tag": "pre",
+      "text": "game.text(refs.line)\ngame.wait_input()",
+      "language": "lua",
+      "children": ["game.text(refs.line)\ngame.wait_input()"]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Связи:"] },
+        " ",
+        {
+          "tag": "a",
+          "children": ["game.jump_line"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/scenario#game-jump-line"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["game.wait_input"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/scenario#game-wait-input"
+          }
+        },
+        ". ",
+        {
+          "tag": "a",
+          "children": ["Регистрация и аргументы"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Execution/LuaActionScript.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["тесты"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Execution/ScenarioPlayerTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "span", "children": [], "props": { "id": "game-place" } }
+      ]
+    },
+    { "tag": "h2", "children": ["game.place"], "props": { "id": "gameplace" } },
+    { "tag": "p", "children": ["Задать ручное размещение персонажа."] },
+    {
+      "tag": "pre",
+      "text": "game.place(objectId, x, y, scale, layer) -> nil",
+      "language": "lua",
+      "children": [
+        "game.place(objectId, x, y, scale, layer) -> ",
+        {
+          "tag": "span",
+          "children": ["nil"],
+          "props": { "className": "hljs-literal" }
+        }
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Доступность:"] },
+        " Сценарный блок/сценарный ресурс; не ui и не импорт-модуль. См. ",
+        {
+          "tag": "a",
+          "children": ["общие правила страницы"],
+          "props": { "href": "/projects/novellmaker/docs/lua/scenario" }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["lifetime"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Аргументы и ошибки:"] },
+        " objectId: GUID персонажа. x,y: конечные числа [-1,2], доли сцены, точка снизу по центру спрайта. scale: [0.05,5], относительно вписывания 360×560. layer: целое [-1000,1000], больший рисуется выше. Все аргументы обязательны, nil запрещён."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [{ "tag": "strong", "children": ["Возврат:"] }, " nil."]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Эффект и ограничения:"] },
+        " Команда очереди. Прерывает прежнее движение этого персонажа; не показывает скрытого персонажа. Общие ",
+        {
+          "tag": "a",
+          "children": ["квоты"],
+          "props": { "href": "/projects/novellmaker/docs/lua/limits" }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["атомарность"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#batch"
+          }
+        },
+        " и ",
+        {
+          "tag": "a",
+          "children": ["lifecycle/сохранение"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        " применяются, если здесь не указано исключение."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Пример"] },
+        " (предусловия refs/ресурсов приведены в начале страницы; это фрагмент соответствующего обработчика, если не показан полный return):"
+      ]
+    },
+    {
+      "tag": "pre",
+      "text": "game.place(refs.hero, 0.5, 0.95, 1, 0)",
+      "language": "lua",
+      "children": [
+        "game.place(refs.hero, ",
+        {
+          "tag": "span",
+          "children": ["0.5"],
+          "props": { "className": "hljs-number" }
+        },
+        ", ",
+        {
+          "tag": "span",
+          "children": ["0.95"],
+          "props": { "className": "hljs-number" }
+        },
+        ", ",
+        {
+          "tag": "span",
+          "children": ["1"],
+          "props": { "className": "hljs-number" }
+        },
+        ", ",
+        {
+          "tag": "span",
+          "children": ["0"],
+          "props": { "className": "hljs-number" }
+        },
+        ")"
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Связи:"] },
+        " ",
+        {
+          "tag": "a",
+          "children": ["game.auto"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/scenario#game-auto"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["game.move"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/scenario#game-move"
+          }
+        },
+        ". ",
+        {
+          "tag": "a",
+          "children": ["Регистрация и аргументы"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Execution/LuaActionScript.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["тесты"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Execution/PlacementTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "span", "children": [], "props": { "id": "game-auto" } }
+      ]
+    },
+    { "tag": "h2", "children": ["game.auto"], "props": { "id": "gameauto" } },
+    {
+      "tag": "p",
+      "children": ["Вернуть автоматическое размещение персонажа."]
+    },
+    {
+      "tag": "pre",
+      "text": "game.auto(objectId) -> nil",
+      "language": "lua",
+      "children": [
+        "game.auto(objectId) -> ",
+        {
+          "tag": "span",
+          "children": ["nil"],
+          "props": { "className": "hljs-literal" }
+        }
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Доступность:"] },
+        " Сценарный блок/сценарный ресурс; не ui и не импорт-модуль. См. ",
+        {
+          "tag": "a",
+          "children": ["общие правила страницы"],
+          "props": { "href": "/projects/novellmaker/docs/lua/scenario" }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["lifetime"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Аргументы и ошибки:"] },
+        " objectId: GUID существующего персонажа."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [{ "tag": "strong", "children": ["Возврат:"] }, " nil."]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Эффект и ограничения:"] },
+        " Удаляет ручное размещение и активное движение этого персонажа при исполнении команды. Общие ",
+        {
+          "tag": "a",
+          "children": ["квоты"],
+          "props": { "href": "/projects/novellmaker/docs/lua/limits" }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["атомарность"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#batch"
+          }
+        },
+        " и ",
+        {
+          "tag": "a",
+          "children": ["lifecycle/сохранение"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        " применяются, если здесь не указано исключение."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Пример"] },
+        " (предусловия refs/ресурсов приведены в начале страницы; это фрагмент соответствующего обработчика, если не показан полный return):"
+      ]
+    },
+    {
+      "tag": "pre",
+      "text": "game.auto(refs.hero)",
+      "language": "lua",
+      "children": ["game.auto(refs.hero)"]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Связи:"] },
+        " ",
+        {
+          "tag": "a",
+          "children": ["game.place"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/scenario#game-place"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["game.object"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/scenario#game-object"
+          }
+        },
+        ". ",
+        {
+          "tag": "a",
+          "children": ["Регистрация и аргументы"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Execution/LuaActionScript.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["тесты"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Execution/ScenarioPlayerTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "span", "children": [], "props": { "id": "game-move" } }
+      ]
+    },
+    { "tag": "h2", "children": ["game.move"], "props": { "id": "gamemove" } },
+    { "tag": "p", "children": ["Запустить движение персонажа к размещению."] },
+    {
+      "tag": "pre",
+      "text": "game.move(objectId, x, y, scale, layer, seconds) -> nil",
+      "language": "lua",
+      "children": [
+        "game.move(objectId, x, y, scale, layer, seconds) -> ",
+        {
+          "tag": "span",
+          "children": ["nil"],
+          "props": { "className": "hljs-literal" }
+        }
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Доступность:"] },
+        " Сценарный блок/сценарный ресурс; не ui и не импорт-модуль. См. ",
+        {
+          "tag": "a",
+          "children": ["общие правила страницы"],
+          "props": { "href": "/projects/novellmaker/docs/lua/scenario" }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["lifetime"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Аргументы и ошибки:"] },
+        " objectId: GUID персонажа. x,y: конечные числа [-1,2], доли сцены, точка снизу по центру спрайта. scale: [0.05,5], относительно вписывания 360×560. layer: целое [-1000,1000], больший рисуется выше. Все аргументы обязательны, nil запрещён. seconds: конечное число [0,86400] секунд; 0 устанавливает цель сразу."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [{ "tag": "strong", "children": ["Возврат:"] }, " nil."]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Эффект и ограничения:"] },
+        " Команда очереди. Новое движение заменяет прежнее этого персонажа; интерполяция выполняется host параллельно дальнейшим командам. Слой цели используется во время движения. Для барьера добавьте wait_actions. Общие ",
+        {
+          "tag": "a",
+          "children": ["квоты"],
+          "props": { "href": "/projects/novellmaker/docs/lua/limits" }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["атомарность"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#batch"
+          }
+        },
+        " и ",
+        {
+          "tag": "a",
+          "children": ["lifecycle/сохранение"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        " применяются, если здесь не указано исключение."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Пример"] },
+        " (предусловия refs/ресурсов приведены в начале страницы; это фрагмент соответствующего обработчика, если не показан полный return):"
+      ]
+    },
+    {
+      "tag": "pre",
+      "text": "game.move(refs.hero, 0.7, 0.95, 1, 1, 2)\ngame.wait_actions()",
+      "language": "lua",
+      "children": [
+        "game.move(refs.hero, ",
+        {
+          "tag": "span",
+          "children": ["0.7"],
+          "props": { "className": "hljs-number" }
+        },
+        ", ",
+        {
+          "tag": "span",
+          "children": ["0.95"],
+          "props": { "className": "hljs-number" }
+        },
+        ", ",
+        {
+          "tag": "span",
+          "children": ["1"],
+          "props": { "className": "hljs-number" }
+        },
+        ", ",
+        {
+          "tag": "span",
+          "children": ["1"],
+          "props": { "className": "hljs-number" }
+        },
+        ", ",
+        {
+          "tag": "span",
+          "children": ["2"],
+          "props": { "className": "hljs-number" }
+        },
+        ")\ngame.wait_actions()"
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Связи:"] },
+        " ",
+        {
+          "tag": "a",
+          "children": ["game.wait_actions"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/scenario#game-wait-actions"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["game.place"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/scenario#game-place"
+          }
+        },
+        ". ",
+        {
+          "tag": "a",
+          "children": ["Регистрация и аргументы"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Execution/LuaActionScript.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["тесты"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Execution/PlacementTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "span", "children": [], "props": { "id": "game-wait" } }
+      ]
+    },
+    { "tag": "h2", "children": ["game.wait"], "props": { "id": "gamewait" } },
+    {
+      "tag": "p",
+      "children": ["Задержать сценарную очередь на игровое время."]
+    },
+    {
+      "tag": "pre",
+      "text": "game.wait(seconds) -> nil",
+      "language": "lua",
+      "children": [
+        "game.wait(seconds) -> ",
+        {
+          "tag": "span",
+          "children": ["nil"],
+          "props": { "className": "hljs-literal" }
+        }
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Доступность:"] },
+        " Сценарный блок/сценарный ресурс; не ui и не импорт-модуль. См. ",
+        {
+          "tag": "a",
+          "children": ["общие правила страницы"],
+          "props": { "href": "/projects/novellmaker/docs/lua/scenario" }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["lifetime"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Аргументы и ошибки:"] },
+        " seconds: обязательное конечное число [0,86400]; nil запрещён."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Возврат:"] },
+        " nil; отложенного Lua-возврата нет."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Эффект и ограничения:"] },
+        " Команда очереди, а не yield Lua. 0 — no-op. Пауза удерживает таймер, движения и сюжетное время. Общие ",
+        {
+          "tag": "a",
+          "children": ["квоты"],
+          "props": { "href": "/projects/novellmaker/docs/lua/limits" }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["атомарность"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#batch"
+          }
+        },
+        " и ",
+        {
+          "tag": "a",
+          "children": ["lifecycle/сохранение"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        " применяются, если здесь не указано исключение."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Пример"] },
+        " (предусловия refs/ресурсов приведены в начале страницы; это фрагмент соответствующего обработчика, если не показан полный return):"
+      ]
+    },
+    {
+      "tag": "pre",
+      "text": "game.wait(1)\ngame.set(\"after.timer\", \"true\")",
+      "language": "lua",
+      "children": [
+        "game.wait(",
+        {
+          "tag": "span",
+          "children": ["1"],
+          "props": { "className": "hljs-number" }
+        },
+        ")\ngame.set(",
+        {
+          "tag": "span",
+          "children": ["\"after.timer\""],
+          "props": { "className": "hljs-string" }
+        },
+        ", ",
+        {
+          "tag": "span",
+          "children": ["\"true\""],
+          "props": { "className": "hljs-string" }
+        },
+        ")"
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Связи:"] },
+        " ",
+        {
+          "tag": "a",
+          "children": ["game.time"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/scenario#game-time"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["game.wait_input"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/scenario#game-wait-input"
+          }
+        },
+        ". ",
+        {
+          "tag": "a",
+          "children": ["Регистрация и аргументы"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Execution/LuaActionScript.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["тесты"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Execution/ScenarioPlayerTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "span", "children": [], "props": { "id": "game-wait-input" } }
+      ]
+    },
+    {
+      "tag": "h2",
+      "children": ["game.wait_input"],
+      "props": { "id": "gamewait_input" }
+    },
+    { "tag": "p", "children": ["Ожидать продолжения игроком."] },
+    {
+      "tag": "pre",
+      "text": "game.wait_input() -> nil",
+      "language": "lua",
+      "children": [
+        "game.wait_input() -> ",
+        {
+          "tag": "span",
+          "children": ["nil"],
+          "props": { "className": "hljs-literal" }
+        }
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Доступность:"] },
+        " Сценарный блок/сценарный ресурс; не ui и не импорт-модуль. См. ",
+        {
+          "tag": "a",
+          "children": ["общие правила страницы"],
+          "props": { "href": "/projects/novellmaker/docs/lua/scenario" }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["lifetime"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Аргументы и ошибки:"] },
+        " Нет аргументов; по умолчанию лишние игнорируются, в строгом режиме запрещены."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [{ "tag": "strong", "children": ["Возврат:"] }, " nil."]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Эффект и ограничения:"] },
+        " Ставит input-барьер при исполнении очереди. Только событие продолжения снимает его; завершение движения или таймера не заменяет ввод. Общие ",
+        {
+          "tag": "a",
+          "children": ["квоты"],
+          "props": { "href": "/projects/novellmaker/docs/lua/limits" }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["атомарность"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#batch"
+          }
+        },
+        " и ",
+        {
+          "tag": "a",
+          "children": ["lifecycle/сохранение"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        " применяются, если здесь не указано исключение."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Пример"] },
+        " (предусловия refs/ресурсов приведены в начале страницы; это фрагмент соответствующего обработчика, если не показан полный return):"
+      ]
+    },
+    {
+      "tag": "pre",
+      "text": "game.wait_input()",
+      "language": "lua",
+      "children": ["game.wait_input()"]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Связи:"] },
+        " ",
+        {
+          "tag": "a",
+          "children": ["game.wait"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/scenario#game-wait"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["game.text"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/scenario#game-text"
+          }
+        },
+        ". ",
+        {
+          "tag": "a",
+          "children": ["Регистрация и аргументы"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Execution/LuaActionScript.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["тесты"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Execution/ScenarioPlayerTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        {
+          "tag": "span",
+          "children": [],
+          "props": { "id": "game-wait-actions" }
+        }
+      ]
+    },
+    {
+      "tag": "h2",
+      "children": ["game.wait_actions"],
+      "props": { "id": "gamewait_actions" }
+    },
+    { "tag": "p", "children": ["Ожидать окончания движений сценария."] },
+    {
+      "tag": "pre",
+      "text": "game.wait_actions() -> nil",
+      "language": "lua",
+      "children": [
+        "game.wait_actions() -> ",
+        {
+          "tag": "span",
+          "children": ["nil"],
+          "props": { "className": "hljs-literal" }
+        }
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Доступность:"] },
+        " Сценарный блок/сценарный ресурс; не ui и не импорт-модуль. См. ",
+        {
+          "tag": "a",
+          "children": ["общие правила страницы"],
+          "props": { "href": "/projects/novellmaker/docs/lua/scenario" }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["lifetime"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Аргументы и ошибки:"] },
+        " Нет аргументов; по умолчанию лишние игнорируются, в строгом режиме запрещены."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [{ "tag": "strong", "children": ["Возврат:"] }, " nil."]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Эффект и ограничения:"] },
+        " Барьер очереди по ActiveActions. При отсутствии движений — no-op. Не ждёт анимации ui.animate, звук или сервисы. Общие ",
+        {
+          "tag": "a",
+          "children": ["квоты"],
+          "props": { "href": "/projects/novellmaker/docs/lua/limits" }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["атомарность"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#batch"
+          }
+        },
+        " и ",
+        {
+          "tag": "a",
+          "children": ["lifecycle/сохранение"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        " применяются, если здесь не указано исключение."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Пример"] },
+        " (предусловия refs/ресурсов приведены в начале страницы; это фрагмент соответствующего обработчика, если не показан полный return):"
+      ]
+    },
+    {
+      "tag": "pre",
+      "text": "game.move(refs.hero, 0.5, 0.95, 1, 0, 1)\ngame.wait_actions()",
+      "language": "lua",
+      "children": [
+        "game.move(refs.hero, ",
+        {
+          "tag": "span",
+          "children": ["0.5"],
+          "props": { "className": "hljs-number" }
+        },
+        ", ",
+        {
+          "tag": "span",
+          "children": ["0.95"],
+          "props": { "className": "hljs-number" }
+        },
+        ", ",
+        {
+          "tag": "span",
+          "children": ["1"],
+          "props": { "className": "hljs-number" }
+        },
+        ", ",
+        {
+          "tag": "span",
+          "children": ["0"],
+          "props": { "className": "hljs-number" }
+        },
+        ", ",
+        {
+          "tag": "span",
+          "children": ["1"],
+          "props": { "className": "hljs-number" }
+        },
+        ")\ngame.wait_actions()"
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Связи:"] },
+        " ",
+        {
+          "tag": "a",
+          "children": ["game.move"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/scenario#game-move"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["ui.animate"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/animations#ui-animate"
+          }
+        },
+        ". ",
+        {
+          "tag": "a",
+          "children": ["Регистрация и аргументы"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Execution/LuaActionScript.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["тесты"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Execution/ScenarioPlayerTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "span", "children": [], "props": { "id": "game-wait-click" } }
+      ]
+    },
+    {
+      "tag": "h2",
+      "children": ["game.wait_click"],
+      "props": { "id": "gamewait_click" }
+    },
+    {
+      "tag": "p",
+      "children": ["Ожидать щелчка по сценарной активной области."]
+    },
+    {
+      "tag": "pre",
+      "text": "game.wait_click() -> nil\ngame.wait_click(token) -> nil",
+      "language": "lua",
+      "children": [
+        "game.wait_click() -> ",
+        {
+          "tag": "span",
+          "children": ["nil"],
+          "props": { "className": "hljs-literal" }
+        },
+        "\ngame.wait_click(token) -> ",
+        {
+          "tag": "span",
+          "children": ["nil"],
+          "props": { "className": "hljs-literal" }
+        }
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Доступность:"] },
+        " Сценарный блок/сценарный ресурс; не ui и не импорт-модуль. См. ",
+        {
+          "tag": "a",
+          "children": ["общие правила страницы"],
+          "props": { "href": "/projects/novellmaker/docs/lua/scenario" }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["lifetime"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Аргументы и ошибки:"] },
+        " Без аргументов — любой включённый hotspot. token: GUID нужной области. Явный nil отличается от отсутствия: это ошибка GUID."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Возврат:"] },
+        " nil. Следующий Lua-блок читает game.get(\"input.object\") — GUID выбранной области."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Эффект и ограничения:"] },
+        " Барьер очереди. Если при его исполнении нет подходящего активного hotspot, сценарий завершается ошибкой. Это не событие click обработчика компонентов. Общие ",
+        {
+          "tag": "a",
+          "children": ["квоты"],
+          "props": { "href": "/projects/novellmaker/docs/lua/limits" }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["атомарность"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#batch"
+          }
+        },
+        " и ",
+        {
+          "tag": "a",
+          "children": ["lifecycle/сохранение"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        " применяются, если здесь не указано исключение."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Пример"] },
+        " (предусловия refs/ресурсов приведены в начале страницы; это фрагмент соответствующего обработчика, если не показан полный return):"
+      ]
+    },
+    {
+      "tag": "pre",
+      "text": "game.hotspot(refs.item, \"Ключ\", 0.1, 0.2, 0.1, 0.1)\ngame.wait_click(refs.item)",
+      "language": "lua",
+      "children": [
+        "game.hotspot(refs.item, ",
+        {
+          "tag": "span",
+          "children": ["\"Ключ\""],
+          "props": { "className": "hljs-string" }
+        },
+        ", ",
+        {
+          "tag": "span",
+          "children": ["0.1"],
+          "props": { "className": "hljs-number" }
+        },
+        ", ",
+        {
+          "tag": "span",
+          "children": ["0.2"],
+          "props": { "className": "hljs-number" }
+        },
+        ", ",
+        {
+          "tag": "span",
+          "children": ["0.1"],
+          "props": { "className": "hljs-number" }
+        },
+        ", ",
+        {
+          "tag": "span",
+          "children": ["0.1"],
+          "props": { "className": "hljs-number" }
+        },
+        ")\ngame.wait_click(refs.item)"
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Связи:"] },
+        " ",
+        {
+          "tag": "a",
+          "children": ["game.hotspot"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/scenario#game-hotspot"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["game.get"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/scenario#game-get"
+          }
+        },
+        ". ",
+        {
+          "tag": "a",
+          "children": ["Регистрация и аргументы"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Execution/LuaActionScript.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["тесты"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Execution/ScenarioPlayerTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "span", "children": [], "props": { "id": "game-hotspot" } }
+      ]
+    },
+    {
+      "tag": "h2",
+      "children": ["game.hotspot"],
+      "props": { "id": "gamehotspot" }
+    },
+    {
+      "tag": "p",
+      "children": ["Создать сценарную прямоугольную активную область."]
+    },
+    {
+      "tag": "pre",
+      "text": "game.hotspot(token, label, x, y, width, height) -> nil",
+      "language": "lua",
+      "children": [
+        "game.hotspot(token, label, x, y, width, height) -> ",
+        {
+          "tag": "span",
+          "children": ["nil"],
+          "props": { "className": "hljs-literal" }
+        }
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Доступность:"] },
+        " Сценарный блок/сценарный ресурс; не ui и не импорт-модуль. См. ",
+        {
+          "tag": "a",
+          "children": ["общие правила страницы"],
+          "props": { "href": "/projects/novellmaker/docs/lua/scenario" }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["lifetime"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Аргументы и ошибки:"] },
+        " token: любой непустой GUID, не обязательно ID персонажа; label: строка до 8192, пустая допустима. x,y >=0; width,height >0; x+width<=1, y+height<=1. Координаты — доли сцены. Все обязательны."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [{ "tag": "strong", "children": ["Возврат:"] }, " nil."]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Эффект и ограничения:"] },
+        " Команда очереди. Область с тем же token заменяется, не добавляется повторно. API удаления hotspot нет; переход очищает области. Общие ",
+        {
+          "tag": "a",
+          "children": ["квоты"],
+          "props": { "href": "/projects/novellmaker/docs/lua/limits" }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["атомарность"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#batch"
+          }
+        },
+        " и ",
+        {
+          "tag": "a",
+          "children": ["lifecycle/сохранение"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        " применяются, если здесь не указано исключение."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Пример"] },
+        " (предусловия refs/ресурсов приведены в начале страницы; это фрагмент соответствующего обработчика, если не показан полный return):"
+      ]
+    },
+    {
+      "tag": "pre",
+      "text": "game.hotspot(\"11111111-1111-1111-1111-111111111111\", \"Осмотреть\", 0, 0, 0.2, 0.2)",
+      "language": "lua",
+      "children": [
+        "game.hotspot(",
+        {
+          "tag": "span",
+          "children": ["\"11111111-1111-1111-1111-111111111111\""],
+          "props": { "className": "hljs-string" }
+        },
+        ", ",
+        {
+          "tag": "span",
+          "children": ["\"Осмотреть\""],
+          "props": { "className": "hljs-string" }
+        },
+        ", ",
+        {
+          "tag": "span",
+          "children": ["0"],
+          "props": { "className": "hljs-number" }
+        },
+        ", ",
+        {
+          "tag": "span",
+          "children": ["0"],
+          "props": { "className": "hljs-number" }
+        },
+        ", ",
+        {
+          "tag": "span",
+          "children": ["0.2"],
+          "props": { "className": "hljs-number" }
+        },
+        ", ",
+        {
+          "tag": "span",
+          "children": ["0.2"],
+          "props": { "className": "hljs-number" }
+        },
+        ")"
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Связи:"] },
+        " ",
+        {
+          "tag": "a",
+          "children": ["game.wait_click"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/scenario#game-wait-click"
+          }
+        },
+        ". ",
+        {
+          "tag": "a",
+          "children": ["Регистрация и аргументы"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Execution/LuaActionScript.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["тесты"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Execution/ScenarioPlayerTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "span", "children": [], "props": { "id": "game-finish" } }
+      ]
+    },
+    {
+      "tag": "h2",
+      "children": ["game.finish"],
+      "props": { "id": "gamefinish" }
+    },
+    { "tag": "p", "children": ["Записать старое строковое поле результата."] },
+    {
+      "tag": "pre",
+      "text": "game.finish(result) -> nil",
+      "language": "lua",
+      "children": [
+        "game.finish(result) -> ",
+        {
+          "tag": "span",
+          "children": ["nil"],
+          "props": { "className": "hljs-literal" }
+        }
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Доступность:"] },
+        " Сценарный блок/сценарный ресурс; не ui и не импорт-модуль. См. ",
+        {
+          "tag": "a",
+          "children": ["общие правила страницы"],
+          "props": { "href": "/projects/novellmaker/docs/lua/scenario" }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["lifetime"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Аргументы и ошибки:"] },
+        " result: обязательная строка до 8192. nil запрещён."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [{ "tag": "strong", "children": ["Возврат:"] }, " nil."]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Эффект и ограничения:"] },
+        " Создаёт SetAction для minigame.result. Не завершает активную мини-игру и не эквивалентна ui.complete_minigame. Как game.set, сразу обновляет локальные переменные: следующий game.get(\"minigame.result\") видит новую строку. Проверяется тот же бюджет переменных; host получает строку только при исполнении очереди. Общие ",
+        {
+          "tag": "a",
+          "children": ["квоты"],
+          "props": { "href": "/projects/novellmaker/docs/lua/limits" }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["атомарность"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#batch"
+          }
+        },
+        " и ",
+        {
+          "tag": "a",
+          "children": ["lifecycle/сохранение"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        " применяются, если здесь не указано исключение."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Пример"] },
+        " (предусловия refs/ресурсов приведены в начале страницы; это фрагмент соответствующего обработчика, если не показан полный return):"
+      ]
+    },
+    {
+      "tag": "pre",
+      "text": "game.finish(\"win\")",
+      "language": "lua",
+      "children": [
+        "game.finish(",
+        {
+          "tag": "span",
+          "children": ["\"win\""],
+          "props": { "className": "hljs-string" }
+        },
+        ")"
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Связи:"] },
+        " ",
+        {
+          "tag": "a",
+          "children": ["game.get"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/scenario#game-get"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["game.minigame_result"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/scenario#game-minigame-result"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["ui.complete_minigame"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/minigames#ui-complete-minigame"
+          }
+        },
+        ". ",
+        {
+          "tag": "a",
+          "children": ["Регистрация и аргументы"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Execution/LuaActionScript.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["тесты"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Execution/ScenarioPlayerTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "span", "children": [], "props": { "id": "game-run" } }
+      ]
+    },
+    { "tag": "h2", "children": ["game.run"], "props": { "id": "gamerun" } },
+    {
+      "tag": "p",
+      "children": ["Поставить выполнение Lua-ресурса в очередь сценария."]
+    },
+    {
+      "tag": "pre",
+      "text": "game.run(scriptId) -> nil",
+      "language": "lua",
+      "children": [
+        "game.run(scriptId) -> ",
+        {
+          "tag": "span",
+          "children": ["nil"],
+          "props": { "className": "hljs-literal" }
+        }
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Доступность:"] },
+        " Сценарный блок/сценарный ресурс; не ui и не импорт-модуль. См. ",
+        {
+          "tag": "a",
+          "children": ["общие правила страницы"],
+          "props": { "href": "/projects/novellmaker/docs/lua/scenario" }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["lifetime"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Аргументы и ошибки:"] },
+        " scriptId: GUID зарегистрированного Lua-ресурса, обычно refs.script; не путь."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Возврат:"] },
+        " nil; ресурс не возвращает Lua-значение вызывающему коду."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Эффект и ограничения:"] },
+        " Новая VM запускается, когда очередь доходит до команды. Использует свои refs и актуальный на этот момент снимок. Команды ресурса вставляются перед оставшейся очередью. Это не ui.import и не общий стек/локалы. Общие ",
+        {
+          "tag": "a",
+          "children": ["квоты"],
+          "props": { "href": "/projects/novellmaker/docs/lua/limits" }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["атомарность"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#batch"
+          }
+        },
+        " и ",
+        {
+          "tag": "a",
+          "children": ["lifecycle/сохранение"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        " применяются, если здесь не указано исключение."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Пример"] },
+        " (предусловия refs/ресурсов приведены в начале страницы; это фрагмент соответствующего обработчика, если не показан полный return):"
+      ]
+    },
+    {
+      "tag": "pre",
+      "text": "game.run(refs.script)",
+      "language": "lua",
+      "children": ["game.run(refs.script)"]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Связи:"] },
+        " ",
+        {
+          "tag": "a",
+          "children": ["ui.import"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/modules#ui-import"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["game.get"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/scenario#game-get"
+          }
+        },
+        ". ",
+        {
+          "tag": "a",
+          "children": ["Регистрация и аргументы"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Execution/LuaActionScript.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["тесты"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Execution/ScriptAssetTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "span", "children": [], "props": { "id": "game-jump" } }
+      ]
+    },
+    { "tag": "h2", "children": ["game.jump"], "props": { "id": "gamejump" } },
+    { "tag": "p", "children": ["Перейти к низкоуровневой команде сцены."] },
+    {
+      "tag": "pre",
+      "text": "game.jump(sceneId, actionId) -> nil",
+      "language": "lua",
+      "children": [
+        "game.jump(sceneId, actionId) -> ",
+        {
+          "tag": "span",
+          "children": ["nil"],
+          "props": { "className": "hljs-literal" }
+        }
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Доступность:"] },
+        " Сценарный блок/сценарный ресурс; не ui и не импорт-модуль. См. ",
+        {
+          "tag": "a",
+          "children": ["общие правила страницы"],
+          "props": { "href": "/projects/novellmaker/docs/lua/scenario" }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["lifetime"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Аргументы и ошибки:"] },
+        " sceneId/actionId: существующая пара GUID сцены и скомпилированной команды. GUID фразы не является actionId."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [{ "tag": "strong", "children": ["Возврат:"] }, " nil."]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Эффект и ограничения:"] },
+        " При исполнении меняет позицию, очищает остаток очереди и hotspots. Время, переменные, состояния/размещения/показ персонажей и движения сохраняются. При другой сцене LineId сбрасывается, в той же сцене остаётся до следующего text. Привязки фразы исполняются только при входе в её LineEntry. Общие ",
+        {
+          "tag": "a",
+          "children": ["квоты"],
+          "props": { "href": "/projects/novellmaker/docs/lua/limits" }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["атомарность"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#batch"
+          }
+        },
+        " и ",
+        {
+          "tag": "a",
+          "children": ["lifecycle/сохранение"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        " применяются, если здесь не указано исключение."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Пример"] },
+        " (предусловия refs/ресурсов приведены в начале страницы; это фрагмент соответствующего обработчика, если не показан полный return):"
+      ]
+    },
+    {
+      "tag": "pre",
+      "text": "game.jump(refs.scene, refs.action)",
+      "language": "lua",
+      "children": ["game.jump(refs.scene, refs.action)"]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Связи:"] },
+        " ",
+        {
+          "tag": "a",
+          "children": ["game.jump_line"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/scenario#game-jump-line"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["game.choice"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/scenario#game-choice"
+          }
+        },
+        ". ",
+        {
+          "tag": "a",
+          "children": ["Регистрация и аргументы"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Execution/LuaActionScript.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["тесты"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Execution/ScenarioPlayerTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "span", "children": [], "props": { "id": "game-jump-line" } }
+      ]
+    },
+    {
+      "tag": "h2",
+      "children": ["game.jump_line"],
+      "props": { "id": "gamejump_line" }
+    },
+    { "tag": "p", "children": ["Перейти к началу авторской фразы."] },
+    {
+      "tag": "pre",
+      "text": "game.jump_line(sceneId, lineId) -> nil",
+      "language": "lua",
+      "children": [
+        "game.jump_line(sceneId, lineId) -> ",
+        {
+          "tag": "span",
+          "children": ["nil"],
+          "props": { "className": "hljs-literal" }
+        }
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Доступность:"] },
+        " Сценарный блок/сценарный ресурс; не ui и не импорт-модуль. См. ",
+        {
+          "tag": "a",
+          "children": ["общие правила страницы"],
+          "props": { "href": "/projects/novellmaker/docs/lua/scenario" }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["lifetime"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Аргументы и ошибки:"] },
+        " sceneId/lineId: GUID сцены и принадлежащей ей фразы."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [{ "tag": "strong", "children": ["Возврат:"] }, " nil."]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Эффект и ограничения:"] },
+        " Как jump, но вычисляет стабильный LineEntryId. При входе исполняет персонажей, размещение и блоки «До фразы», затем текст и дальнейшие фазы. Общие ",
+        {
+          "tag": "a",
+          "children": ["квоты"],
+          "props": { "href": "/projects/novellmaker/docs/lua/limits" }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["атомарность"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#batch"
+          }
+        },
+        " и ",
+        {
+          "tag": "a",
+          "children": ["lifecycle/сохранение"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        " применяются, если здесь не указано исключение."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Пример"] },
+        " (предусловия refs/ресурсов приведены в начале страницы; это фрагмент соответствующего обработчика, если не показан полный return):"
+      ]
+    },
+    {
+      "tag": "pre",
+      "text": "game.jump_line(refs.scene, refs.line)",
+      "language": "lua",
+      "children": ["game.jump_line(refs.scene, refs.line)"]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Связи:"] },
+        " ",
+        {
+          "tag": "a",
+          "children": ["game.jump"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/scenario#game-jump"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["game.text"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/scenario#game-text"
+          }
+        },
+        ". ",
+        {
+          "tag": "a",
+          "children": ["Регистрация и аргументы"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Execution/LuaActionScript.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["тесты"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Execution/PhraseScriptTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "span", "children": [], "props": { "id": "game-choice" } }
+      ]
+    },
+    {
+      "tag": "h2",
+      "children": ["game.choice"],
+      "props": { "id": "gamechoice" }
+    },
+    { "tag": "p", "children": ["Остановить сценарий на выборе игрока."] },
+    {
+      "tag": "pre",
+      "text": "game.choice(options) -> nil",
+      "language": "lua",
+      "children": [
+        "game.choice(options) -> ",
+        {
+          "tag": "span",
+          "children": ["nil"],
+          "props": { "className": "hljs-literal" }
+        }
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Доступность:"] },
+        " Сценарный блок/сценарный ресурс; не ui и не импорт-модуль. См. ",
+        {
+          "tag": "a",
+          "children": ["общие правила страницы"],
+          "props": { "href": "/projects/novellmaker/docs/lua/scenario" }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["lifetime"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Аргументы и ошибки:"] },
+        " options: таблица с последовательностью 1..N, N=1..8. Каждый элемент: {id:string GUID,text:string,scene:string GUID,action:string GUID}. id уникальны и непусты; text не пуст/не пробельный и <=8192; scene/action — существующая цель. Поля обязательны, nil запрещён. Проверяется #table и эта последовательность; дополнительные поля таблицы не являются вариантами."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Возврат:"] },
+        " nil. Решение применяется host как переход, а не возвращается в текущую VM."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Эффект и ограничения:"] },
+        " Команда очереди. Использует низкоуровневые action ID, прямого варианта choice с lineId нет. Не выдумывайте ui.choice или game.line_entry_id. Общие ",
+        {
+          "tag": "a",
+          "children": ["квоты"],
+          "props": { "href": "/projects/novellmaker/docs/lua/limits" }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["атомарность"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#batch"
+          }
+        },
+        " и ",
+        {
+          "tag": "a",
+          "children": ["lifecycle/сохранение"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        " применяются, если здесь не указано исключение."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Пример"] },
+        " (предусловия refs/ресурсов приведены в начале страницы; это фрагмент соответствующего обработчика, если не показан полный return):"
+      ]
+    },
+    {
+      "tag": "pre",
+      "text": "game.choice({{id=\"22222222-2222-2222-2222-222222222222\", text=\"Войти\", scene=refs.scene, action=refs.action}})",
+      "language": "lua",
+      "children": [
+        "game.choice({{id=",
+        {
+          "tag": "span",
+          "children": ["\"22222222-2222-2222-2222-222222222222\""],
+          "props": { "className": "hljs-string" }
+        },
+        ", text=",
+        {
+          "tag": "span",
+          "children": ["\"Войти\""],
+          "props": { "className": "hljs-string" }
+        },
+        ", scene=refs.scene, action=refs.action}})"
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Связи:"] },
+        " ",
+        {
+          "tag": "a",
+          "children": ["game.jump"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/scenario#game-jump"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["game.jump_line"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/scenario#game-jump-line"
+          }
+        },
+        ". ",
+        {
+          "tag": "a",
+          "children": ["Регистрация и аргументы"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Execution/LuaActionScript.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["тесты"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Execution/ScenarioPlayerTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        {
+          "tag": "span",
+          "children": [],
+          "props": { "id": "game-start-minigame" }
+        }
+      ]
+    },
+    {
+      "tag": "h2",
+      "children": ["game.start_minigame"],
+      "props": { "id": "gamestart_minigame" }
+    },
+    {
+      "tag": "p",
+      "children": ["Запустить авторскую сцену как мини-игру с барьером сюжета."]
+    },
+    {
+      "tag": "pre",
+      "text": "game.start_minigame(sceneId) -> nil\ngame.start_minigame(sceneId, parameters) -> nil",
+      "language": "lua",
+      "children": [
+        "game.start_minigame(sceneId) -> ",
+        {
+          "tag": "span",
+          "children": ["nil"],
+          "props": { "className": "hljs-literal" }
+        },
+        "\ngame.start_minigame(sceneId, parameters) -> ",
+        {
+          "tag": "span",
+          "children": ["nil"],
+          "props": { "className": "hljs-literal" }
+        }
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Доступность:"] },
+        " Сценарный блок/сценарный ресурс; не ui и не импорт-модуль. См. ",
+        {
+          "tag": "a",
+          "children": ["общие правила страницы"],
+          "props": { "href": "/projects/novellmaker/docs/lua/scenario" }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["lifetime"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Аргументы и ошибки:"] },
+        " sceneId: GUID сцены с включённой MinigameDefinition и обработчиком. Без второго аргумента берутся DefaultParameters ресурса. Явный nil означает данные null и должен соответствовать схеме. parameters: сериализуемое значение, см. данные; ui.list/ui.object/ui.null в game-VM отсутствуют."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Возврат:"] },
+        " nil. Структурированный итог доступен следующим выполняемым блоком через game.minigame_result()."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Эффект и ограничения:"] },
+        " Команда очереди; проверяются ресурс, параметры и схема. Когда команда исполнена, сюжет ждёт completed/cancelled/failed. Состояние начинается с InitialState, RNG — начальный. Нельзя получить результат следующим выражением в этом же вычислении. Общие ",
+        {
+          "tag": "a",
+          "children": ["квоты"],
+          "props": { "href": "/projects/novellmaker/docs/lua/limits" }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["атомарность"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#batch"
+          }
+        },
+        " и ",
+        {
+          "tag": "a",
+          "children": ["lifecycle/сохранение"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        " применяются, если здесь не указано исключение."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Пример"] },
+        " (предусловия refs/ресурсов приведены в начале страницы; это фрагмент соответствующего обработчика, если не показан полный return):"
+      ]
+    },
+    {
+      "tag": "pre",
+      "text": "game.start_minigame(refs.puzzle, {target=3})\ngame.run(refs.after_puzzle)",
+      "language": "lua",
+      "children": [
+        "game.start_minigame(refs.puzzle, {target=",
+        {
+          "tag": "span",
+          "children": ["3"],
+          "props": { "className": "hljs-number" }
+        },
+        "})\ngame.run(refs.after_puzzle)"
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Связи:"] },
+        " ",
+        {
+          "tag": "a",
+          "children": ["game.minigame_result"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/scenario#game-minigame-result"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["ui.complete_minigame"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/minigames#ui-complete-minigame"
+          }
+        },
+        ". ",
+        {
+          "tag": "a",
+          "children": ["Регистрация и аргументы"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Execution/LuaActionScript.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["тесты"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Execution/MinigameTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Если параметрам нужны пустой список или вложенный null, задайте их в DefaultParameters ресурса через JSON и вызовите функцию без второго аргумента. В сценарной VM нет ui.list/ui.null: ",
+        { "tag": "code", "children": ["{}"] },
+        " передаётся как Object, а nil внутри Lua-таблицы удаляет поле. Не переносите примеры сериализации из ui-контекста в game без этой поправки."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        {
+          "tag": "span",
+          "children": [],
+          "props": { "id": "game-minigame-result" }
+        }
+      ]
+    },
+    {
+      "tag": "h2",
+      "children": ["game.minigame_result"],
+      "props": { "id": "gameminigame_result" }
+    },
+    {
+      "tag": "p",
+      "children": ["Прочитать последний структурированный итог мини-игры."]
+    },
+    {
+      "tag": "pre",
+      "text": "game.minigame_result() -> table | nil",
+      "language": "lua",
+      "children": [
+        "game.minigame_result() -> ",
+        {
+          "tag": "span",
+          "children": ["table"],
+          "props": { "className": "hljs-built_in" }
+        },
+        " | ",
+        {
+          "tag": "span",
+          "children": ["nil"],
+          "props": { "className": "hljs-literal" }
+        }
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Доступность:"] },
+        " Сценарный блок/сценарный ресурс; не ui и не импорт-модуль. См. ",
+        {
+          "tag": "a",
+          "children": ["общие правила страницы"],
+          "props": { "href": "/projects/novellmaker/docs/lua/scenario" }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["lifetime"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Аргументы и ошибки:"] },
+        " Нет аргументов; по умолчанию лишние игнорируются, в строгом режиме запрещены."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Возврат:"] },
+        " {status=\"completed\"|\"cancelled\"|\"failed\",data=Value|nil} либо nil. data — результат схемы при completed; при отмене/ошибке — nil. Результат completed с JSON-null также даёт data=nil; false, 0 и пустая строка сохраняются без преобразования. Вложенные null сохраняют прежние маркеры, чтобы не создавать пропуски в списках. Message и sceneId в Lua-проекции отсутствуют."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Эффект и ограничения:"] },
+        " Немедленный исходный снимок. Новый start_minigame очищает прошлый итог при исполнении. В game-VM нет ui.null для сравнения: проверяйте status до обращения к data. Общие ",
+        {
+          "tag": "a",
+          "children": ["квоты"],
+          "props": { "href": "/projects/novellmaker/docs/lua/limits" }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["атомарность"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#batch"
+          }
+        },
+        " и ",
+        {
+          "tag": "a",
+          "children": ["lifecycle/сохранение"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        " применяются, если здесь не указано исключение."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Пример"] },
+        " (предусловия refs/ресурсов приведены в начале страницы; это фрагмент соответствующего обработчика, если не показан полный return):"
+      ]
+    },
+    {
+      "tag": "pre",
+      "text": "local r = game.minigame_result()\nif r and r.status == \"completed\" and r.data.score >= 3 then\n  game.set(\"puzzle.won\", \"true\")\nend",
+      "language": "lua",
+      "children": [
+        {
+          "tag": "span",
+          "children": ["local"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " r = game.minigame_result()\n",
+        {
+          "tag": "span",
+          "children": ["if"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " r ",
+        {
+          "tag": "span",
+          "children": ["and"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " r.",
+        {
+          "tag": "span",
+          "children": ["status"],
+          "props": { "className": "hljs-built_in" }
+        },
+        " == ",
+        {
+          "tag": "span",
+          "children": ["\"completed\""],
+          "props": { "className": "hljs-string" }
+        },
+        " ",
+        {
+          "tag": "span",
+          "children": ["and"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " r.data.score >= ",
+        {
+          "tag": "span",
+          "children": ["3"],
+          "props": { "className": "hljs-number" }
+        },
+        " ",
+        {
+          "tag": "span",
+          "children": ["then"],
+          "props": { "className": "hljs-keyword" }
+        },
+        "\n  game.set(",
+        {
+          "tag": "span",
+          "children": ["\"puzzle.won\""],
+          "props": { "className": "hljs-string" }
+        },
+        ", ",
+        {
+          "tag": "span",
+          "children": ["\"true\""],
+          "props": { "className": "hljs-string" }
+        },
+        ")\n",
+        {
+          "tag": "span",
+          "children": ["end"],
+          "props": { "className": "hljs-keyword" }
+        }
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Связи:"] },
+        " ",
+        {
+          "tag": "a",
+          "children": ["game.start_minigame"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/scenario#game-start-minigame"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["game.finish"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/scenario#game-finish"
+          }
+        },
+        ". ",
+        {
+          "tag": "a",
+          "children": ["Регистрация и аргументы"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Execution/LuaActionScript.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["тесты"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Screens/MinigameLuaTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        {
+          "tag": "span",
+          "children": [],
+          "props": { "id": "game-strict-arguments" }
+        }
+      ]
+    },
+    {
+      "tag": "h2",
+      "children": ["game.strict_arguments"],
+      "props": { "id": "gamestrict_arguments" }
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Включить или выключить строгую проверку аргументов текущей сценарной VM."
+      ]
+    },
+    {
+      "tag": "pre",
+      "text": "game.strict_arguments(enabled) -> nil",
+      "language": "lua",
+      "children": [
+        "game.strict_arguments(enabled) -> ",
+        {
+          "tag": "span",
+          "children": ["nil"],
+          "props": { "className": "hljs-literal" }
+        }
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Доступность:"] },
+        " Сценарный блок/ресурс; допускается с первого выражения исходника."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Аргументы и ошибки:"] },
+        " Ровно один boolean, включая в режиме по умолчанию. nil, число, строка, отсутствие или лишний аргумент — ошибка."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [{ "tag": "strong", "children": ["Возврат:"] }, " nil."]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Эффект и ограничения:"] },
+        " По умолчанию false. true требует показанное число аргументов, точные строки и числа без AsType-преобразований у всех game-функций. Необязательные позиции остаются необязательными: wait_click() допустим, wait_click(nil) запрещён; start_minigame(id,nil) передаёт null, а start_minigame(id) берёт defaults. Проверки конечности, диапазонов, ссылок и квот действуют в обоих режимах. false возвращает совместимое поведение следующих вызовов. Режим действует только на последующие вызовы этой VM, не создаёт команд, не меняет квоты/события/сохранения. Каждый следующий блок и отложенный game.run создают новую VM с false; включайте режим в каждом исходнике. Ошибка по-прежнему отклоняет весь пакет, включая команды до переключения."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [{ "tag": "strong", "children": ["Пример"] }, ":"]
+    },
+    {
+      "tag": "pre",
+      "text": "game.strict_arguments(true)\ngame.set(\"door.open\", \"true\")\ngame.wait(1)",
+      "language": "lua",
+      "children": [
+        "game.strict_arguments(",
+        {
+          "tag": "span",
+          "children": ["true"],
+          "props": { "className": "hljs-literal" }
+        },
+        ")\ngame.set(",
+        {
+          "tag": "span",
+          "children": ["\"door.open\""],
+          "props": { "className": "hljs-string" }
+        },
+        ", ",
+        {
+          "tag": "span",
+          "children": ["\"true\""],
+          "props": { "className": "hljs-string" }
+        },
+        ")\ngame.wait(",
+        {
+          "tag": "span",
+          "children": ["1"],
+          "props": { "className": "hljs-number" }
+        },
+        ")"
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Связи:"] },
+        " ",
+        {
+          "tag": "a",
+          "children": ["ui.strict_arguments"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/components#ui-strict-arguments"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["квоты"],
+          "props": { "href": "/projects/novellmaker/docs/lua/limits#scenario" }
+        },
+        ". ",
+        {
+          "tag": "a",
+          "children": ["Регистрация"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Execution/LuaActionScript.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["общий валидатор"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Scripting/LuaApiArguments.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["тесты"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Screens/LuaApiContractTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    }
+  ]
+}

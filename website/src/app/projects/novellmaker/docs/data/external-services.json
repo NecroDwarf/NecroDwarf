@@ -1,0 +1,508 @@
+{
+  "title": "Внешний сервис проверки выпуска",
+  "headings": [
+    {
+      "title": "Внешний сервис проверки выпуска",
+      "id": "внешний-сервис-проверки-выпуска",
+      "level": 1
+    },
+    {
+      "title": "ui.check_game_release",
+      "id": "ui-check-game-release",
+      "level": 2
+    },
+    {
+      "title": "ui.cancel_release_check",
+      "id": "ui-cancel-release-check",
+      "level": 2
+    }
+  ],
+  "nodes": [
+    {
+      "tag": "h1",
+      "children": ["Внешний сервис проверки выпуска"],
+      "props": { "id": "внешний-сервис-проверки-выпуска" }
+    },
+    {
+      "tag": "p",
+      "children": [
+        {
+          "tag": "a",
+          "children": ["Оглавление"],
+          "props": { "href": "/projects/novellmaker/docs/lua" }
+        },
+        " · ",
+        {
+          "tag": "a",
+          "children": ["Модель исполнения"],
+          "props": { "href": "/projects/novellmaker/docs/lua/execution-model" }
+        },
+        " · ",
+        {
+          "tag": "a",
+          "children": ["События"],
+          "props": { "href": "/projects/novellmaker/docs/lua/events" }
+        },
+        " · ",
+        {
+          "tag": "a",
+          "children": ["Квоты"],
+          "props": { "href": "/projects/novellmaker/docs/lua/limits" }
+        }
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Контекст: ui-обработчик/модуль, никогда game. Сервис реализован на host, Lua не получает HTTP-клиент. Для каждой записи действуют ",
+        {
+          "tag": "a",
+          "children": ["пакет"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#batch"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["жизненный цикл"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["схема результата и все code"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/events#release-result"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["квоты"],
+          "props": { "href": "/projects/novellmaker/docs/lua/limits#external" }
+        },
+        ". В restore on_load обе операции запрещены."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        "В параметрах проекта включите ",
+        { "tag": "code", "children": ["github_releases_v1"] },
+        ", задайте публичные Owner, Repository и CurrentVersion. Owner 1..39 ASCII alnum/-, без двойного дефиса и дефиса на краях; Repository 1..100 alnum/_.-, кроме . / .. и суффикса .git; токены вместо имени запрещены. Версия: 3 или 4 десятичных компонента 0..65535 без ведущих нулей; результат канонизируется в 4 компонента. Тег выпуска допускает один начальный строчный v. Prerelease/draft не принимаются."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Запрос только к ",
+        {
+          "tag": "code",
+          "children": [
+            "https://api.github.com/repos/<Owner>/<Repository>/releases/latest"
+          ]
+        },
+        ", без credentials/cookies/redirects/автоповтора. Ответ — проверенные данные страницы GitHub того же репозитория; page_url не открывается автоматически. Нет произвольного URL, сети, установки обновлений, отправки телеметрии или секретов из Lua."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        "10 секунд от принятия запроса, включая ожидание; 1 HTTP активный+4 ожидающих на сервис. Интервал HTTP >=60 секунд, кеш успеха 15 минут (в памяти), Retry-After может увеличить запрет. Кеш/интервал переживают смену игрового сеанса того же host; не сохраняются в слот/профиль. До 128 учтённых ID на владельца, 128 резервов, 64 владельца; подтверждённые ID остаются для проверки отмены до закрытия владельца. Busy владельца удерживается до commit обработчика результата. Смена поколения/закрытие отменяет запросы и отбрасывает старые ответы. При паузе HTTP и deadline продолжаются, callback ждёт снятия паузы. Мини-игра не сохраняется при живом запросе/необработанном результате."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Host отклоняет пакет до сетевого эффекта при неправильном владельце/резерве/цепочке. Обычные provider-ошибки возвращаются событиями, а не останавливают обработчик. HTTP тело после распаковки <=256 КиБ, заголовки <=16 КиБ, JSON depth<=16; проекция release <=8192 байт, page_url<=512 символов."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        {
+          "tag": "span",
+          "children": [],
+          "props": { "id": "ui-check-game-release" }
+        }
+      ]
+    },
+    {
+      "tag": "h2",
+      "children": ["ui.check_game_release"],
+      "props": { "id": "uicheck_game_release" }
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Проверить последний публичный полный выпуск игры на GitHub."
+      ]
+    },
+    {
+      "tag": "pre",
+      "text": "ui.check_game_release() -> request_id",
+      "language": "lua",
+      "children": ["ui.check_game_release() -> request_id"]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Доступность:"] },
+        " ui on_load/on_event, модуль, мини-игра; в restore on_load запрещена. До возврата handlers сервисные команды запрещены."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Аргументы и ошибки:"] },
+        " Ровно ноль аргументов; URL, токен и версия из Lua не принимаются. Нужна настроенная декларация проекта github_releases_v1."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Возврат:"] },
+        " Сразу request_id N; затем service_result(operation=\"CheckGameRelease\", provider=\"github_releases_v1\", code=ReleaseCheckCode, release?=...)."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Эффект и ограничения:"] },
+        " Это один сервис пакета. Сеть начинается только после commit. Нет автоповтора, скачивания или открытия URL. Disabled/Busy/RateLimited/сбой провайдера — событие, а не ошибка Lua. Ошибка владения/квоты до commit отвергает весь пакет. Restore on_load запрещено. Общие ",
+        {
+          "tag": "a",
+          "children": ["квоты"],
+          "props": { "href": "/projects/novellmaker/docs/lua/limits" }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["атомарность"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#batch"
+          }
+        },
+        " и ",
+        {
+          "tag": "a",
+          "children": ["lifecycle/сохранение"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        " применяются, если здесь не указано исключение."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Пример"] },
+        " (предусловия refs/ресурсов приведены в начале страницы; это фрагмент соответствующего обработчика, если не показан полный return):"
+      ]
+    },
+    {
+      "tag": "pre",
+      "text": "local request = ui.check_game_release()",
+      "language": "lua",
+      "children": [
+        {
+          "tag": "span",
+          "children": ["local"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " request = ui.check_game_release()"
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Связи:"] },
+        " ",
+        {
+          "tag": "a",
+          "children": ["ui.cancel_release_check"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/external-services#ui-cancel-release-check"
+          }
+        },
+        ". ",
+        {
+          "tag": "a",
+          "children": ["Регистрация и аргументы"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Screens/Lua/ScreenLuaWorker.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["тесты"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Screens/ReleaseCheckLuaTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        {
+          "tag": "span",
+          "children": [],
+          "props": { "id": "ui-cancel-release-check" }
+        }
+      ]
+    },
+    {
+      "tag": "h2",
+      "children": ["ui.cancel_release_check"],
+      "props": { "id": "uicancel_release_check" }
+    },
+    { "tag": "p", "children": ["Отменить свой запрос проверки выпуска."] },
+    {
+      "tag": "pre",
+      "text": "ui.cancel_release_check(request_id) -> nil",
+      "language": "lua",
+      "children": [
+        "ui.cancel_release_check(request_id) -> ",
+        {
+          "tag": "span",
+          "children": ["nil"],
+          "props": { "className": "hljs-literal" }
+        }
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Доступность:"] },
+        " ui on_load/on_event, модуль, мини-игра; в restore on_load запрещена. До возврата handlers сервисные команды запрещены."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Аргументы и ошибки:"] },
+        " Ровно одна точная строка непустого GUID N своего запроса. Чужой/никогда не выданный ID — ошибка пакета."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Возврат:"] },
+        " nil. Отдельного service_result для CancelReleaseCheck нет. Исходный незавершённый CheckGameRelease получит code=Cancelled."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Эффект и ограничения:"] },
+        " Один сервис пакета, несовместим с другой сервисной командой. Уже завершённый/подтверждённый свой запрос — no-op. Закрытие экземпляра отменяет без callback. Restore on_load запрещено. Общие ",
+        {
+          "tag": "a",
+          "children": ["квоты"],
+          "props": { "href": "/projects/novellmaker/docs/lua/limits" }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["атомарность"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#batch"
+          }
+        },
+        " и ",
+        {
+          "tag": "a",
+          "children": ["lifecycle/сохранение"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        " применяются, если здесь не указано исключение."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Пример"] },
+        " (предусловия refs/ресурсов приведены в начале страницы; это фрагмент соответствующего обработчика, если не показан полный return):"
+      ]
+    },
+    {
+      "tag": "pre",
+      "text": "local pending\nreturn {\n  on_load=function() pending=ui.check_game_release() end,\n  on_event=function(e)\n    if e.kind==\"click\" and pending~=nil then\n      ui.cancel_release_check(pending)\n    elseif e.kind==\"service_result\" and e.request_id==pending then\n      pending=nil\n    end\n  end\n}",
+      "language": "lua",
+      "children": [
+        {
+          "tag": "span",
+          "children": ["local"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " pending\n",
+        {
+          "tag": "span",
+          "children": ["return"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " {\n  on_load=",
+        {
+          "tag": "span",
+          "children": [
+            {
+              "tag": "span",
+              "children": ["function"],
+              "props": { "className": "hljs-keyword" }
+            },
+            {
+              "tag": "span",
+              "children": ["()"],
+              "props": { "className": "hljs-params" }
+            }
+          ],
+          "props": { "className": "hljs-function" }
+        },
+        " pending=ui.check_game_release() ",
+        {
+          "tag": "span",
+          "children": ["end"],
+          "props": { "className": "hljs-keyword" }
+        },
+        ",\n  on_event=",
+        {
+          "tag": "span",
+          "children": [
+            {
+              "tag": "span",
+              "children": ["function"],
+              "props": { "className": "hljs-keyword" }
+            },
+            {
+              "tag": "span",
+              "children": ["(e)"],
+              "props": { "className": "hljs-params" }
+            }
+          ],
+          "props": { "className": "hljs-function" }
+        },
+        "\n    ",
+        {
+          "tag": "span",
+          "children": ["if"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " e.kind==",
+        {
+          "tag": "span",
+          "children": ["\"click\""],
+          "props": { "className": "hljs-string" }
+        },
+        " ",
+        {
+          "tag": "span",
+          "children": ["and"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " pending~=",
+        {
+          "tag": "span",
+          "children": ["nil"],
+          "props": { "className": "hljs-literal" }
+        },
+        " ",
+        {
+          "tag": "span",
+          "children": ["then"],
+          "props": { "className": "hljs-keyword" }
+        },
+        "\n      ui.cancel_release_check(pending)\n    ",
+        {
+          "tag": "span",
+          "children": ["elseif"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " e.kind==",
+        {
+          "tag": "span",
+          "children": ["\"service_result\""],
+          "props": { "className": "hljs-string" }
+        },
+        " ",
+        {
+          "tag": "span",
+          "children": ["and"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " e.request_id==pending ",
+        {
+          "tag": "span",
+          "children": ["then"],
+          "props": { "className": "hljs-keyword" }
+        },
+        "\n      pending=",
+        {
+          "tag": "span",
+          "children": ["nil"],
+          "props": { "className": "hljs-literal" }
+        },
+        "\n    ",
+        {
+          "tag": "span",
+          "children": ["end"],
+          "props": { "className": "hljs-keyword" }
+        },
+        "\n  ",
+        {
+          "tag": "span",
+          "children": ["end"],
+          "props": { "className": "hljs-keyword" }
+        },
+        "\n}"
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Связи:"] },
+        " ",
+        {
+          "tag": "a",
+          "children": ["ui.check_game_release"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/external-services#ui-check-game-release"
+          }
+        },
+        ". ",
+        {
+          "tag": "a",
+          "children": ["Регистрация и аргументы"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Screens/Lua/ScreenLuaWorker.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["тесты"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Screens/ReleaseCheckLuaTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    }
+  ]
+}

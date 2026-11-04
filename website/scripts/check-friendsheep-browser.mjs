@@ -242,7 +242,9 @@ await withBrowserCheck(
       .first()
       .click();
     await page.locator('main a[href="/projects/novellmaker"]').click();
-    await expect(page.locator("main h1")).toHaveText("NovellMaker");
+    await expect(page.locator("main h1")).toHaveText(
+      "Создавайте истории, которые оживают.",
+    );
     await expect(page.locator("[data-friendsheep]")).toHaveCount(0);
     assert.equal(
       await page

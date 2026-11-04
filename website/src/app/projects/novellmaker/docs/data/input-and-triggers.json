@@ -1,0 +1,700 @@
+{
+  "title": "Ввод и авторские триггеры",
+  "headings": [
+    {
+      "title": "Ввод и авторские триггеры",
+      "id": "ввод-и-авторские-триггеры",
+      "level": 1
+    },
+    { "title": "ui.capture_pointer", "id": "ui-capture-pointer", "level": 2 },
+    { "title": "ui.release_pointer", "id": "ui-release-pointer", "level": 2 },
+    { "title": "ui.focus", "id": "ui-focus", "level": 2 },
+    { "title": "ui.trigger", "id": "ui-trigger", "level": 2 }
+  ],
+  "nodes": [
+    {
+      "tag": "h1",
+      "children": ["Ввод и авторские триггеры"],
+      "props": { "id": "ввод-и-авторские-триггеры" }
+    },
+    {
+      "tag": "p",
+      "children": [
+        {
+          "tag": "a",
+          "children": ["Оглавление"],
+          "props": { "href": "/projects/novellmaker/docs/lua" }
+        },
+        " · ",
+        {
+          "tag": "a",
+          "children": ["Модель исполнения"],
+          "props": { "href": "/projects/novellmaker/docs/lua/execution-model" }
+        },
+        " · ",
+        {
+          "tag": "a",
+          "children": ["События"],
+          "props": { "href": "/projects/novellmaker/docs/lua/events" }
+        },
+        " · ",
+        {
+          "tag": "a",
+          "children": ["Квоты"],
+          "props": { "href": "/projects/novellmaker/docs/lua/limits" }
+        }
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Контекст: on_load/on_event обработчика холста/слоя/мини-игры, включая функции вызываемых модулей. Сценарного game здесь нет. ",
+        {
+          "tag": "a",
+          "children": ["Схемы событий"],
+          "props": { "href": "/projects/novellmaker/docs/lua/events" }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["правила пакета/restore"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#batch"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["lifetime"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["квоты"],
+          "props": { "href": "/projects/novellmaker/docs/lua/limits#events" }
+        },
+        " обязательны для всех записей. Восстанавливающий on_load мини-игры не может выдавать ни команды ввода, ни триггеры."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Для физического ввода верните ",
+        { "tag": "code", "children": ["input_events=true"] },
+        ". Без флага остаётся совместимый обработчик ",
+        { "tag": "code", "children": ["click"] },
+        " от назначения Lua кнопки; расширенные события не поступают. Координаты событий — логические пиксели viewport, не локальные координаты узла. Key-события — физические клавиши, не ввод Unicode-текста. Capture/focus не сохраняются в слот, сбрасываются на закрытии, модальном переключении, потере фокуса и смене сеанса. Кнопка примера должна иметь действие Lua, иначе её штатная команда обрабатывается host вместо click."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Триггер адресован только отправителю, не является глобальным broadcast или изменением переменной. Он исчезает при закрытии/Reset/Load и не восстанавливается из слота. Для хранения факта используйте state/профиль. ",
+        { "tag": "code", "children": ["refs.button"] },
+        " — доступный Button/Area собственного холста."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        {
+          "tag": "span",
+          "children": [],
+          "props": { "id": "ui-capture-pointer" }
+        }
+      ]
+    },
+    {
+      "tag": "h2",
+      "children": ["ui.capture_pointer"],
+      "props": { "id": "uicapture_pointer" }
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Перенаправить текущую последовательность указателя своему узлу."
+      ]
+    },
+    {
+      "tag": "pre",
+      "text": "ui.capture_pointer(node) -> nil",
+      "language": "lua",
+      "children": [
+        "ui.capture_pointer(node) -> ",
+        {
+          "tag": "span",
+          "children": ["nil"],
+          "props": { "className": "hljs-literal" }
+        }
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Доступность:"] },
+        " on_load/on_event ui, вызванный ими модуль, мини-игра; при restore — ограничения этой записи и ",
+        {
+          "tag": "a",
+          "children": ["restore"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#restore"
+          }
+        },
+        ". Вычисление исходника вне обработчика не предназначено для команд."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Аргументы и ошибки:"] },
+        " Ровно один собственный доступный видимый Button/Area handle. Требуется input_events=true в таблице обработчиков. nil — не handle."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [{ "tag": "strong", "children": ["Возврат:"] }, " nil."]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Эффект и ограничения:"] },
+        " Команда пакета. Capture/release действуют только на ещё живой исходный press этого экземпляра; поздний ответ после отпускания/смены эпохи — no-op. focus работает по текущей эпохе. release создаёт pointer_cancel, а не click; focus создаёт blur/focus. Restore on_load мини-игры запрещает команды ввода. Общие ",
+        {
+          "tag": "a",
+          "children": ["квоты"],
+          "props": { "href": "/projects/novellmaker/docs/lua/limits" }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["атомарность"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#batch"
+          }
+        },
+        " и ",
+        {
+          "tag": "a",
+          "children": ["lifecycle/сохранение"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        " применяются, если здесь не указано исключение."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Пример"] },
+        " (предусловия refs/ресурсов приведены в начале страницы; это фрагмент соответствующего обработчика, если не показан полный return):"
+      ]
+    },
+    {
+      "tag": "pre",
+      "text": "ui.capture_pointer(refs.button)",
+      "language": "lua",
+      "children": ["ui.capture_pointer(refs.button)"]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Связи:"] },
+        " ",
+        {
+          "tag": "a",
+          "children": ["ui.focus"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/input-and-triggers#ui-focus"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["ui.capture_pointer"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/input-and-triggers#ui-capture-pointer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["ui.release_pointer"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/input-and-triggers#ui-release-pointer"
+          }
+        },
+        ". ",
+        {
+          "tag": "a",
+          "children": ["Регистрация и аргументы"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Screens/Lua/ScreenLuaWorker.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["тесты"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Screens/ScreenLuaSessionTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        {
+          "tag": "span",
+          "children": [],
+          "props": { "id": "ui-release-pointer" }
+        }
+      ]
+    },
+    {
+      "tag": "h2",
+      "children": ["ui.release_pointer"],
+      "props": { "id": "uirelease_pointer" }
+    },
+    {
+      "tag": "p",
+      "children": ["Отменить собственную текущую последовательность указателя."]
+    },
+    {
+      "tag": "pre",
+      "text": "ui.release_pointer() -> nil",
+      "language": "lua",
+      "children": [
+        "ui.release_pointer() -> ",
+        {
+          "tag": "span",
+          "children": ["nil"],
+          "props": { "className": "hljs-literal" }
+        }
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Доступность:"] },
+        " on_load/on_event ui, вызванный ими модуль, мини-игра; при restore — ограничения этой записи и ",
+        {
+          "tag": "a",
+          "children": ["restore"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#restore"
+          }
+        },
+        ". Вычисление исходника вне обработчика не предназначено для команд."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Аргументы и ошибки:"] },
+        " Ровно ноль аргументов. Требуется input_events=true в таблице обработчиков. nil — не handle."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [{ "tag": "strong", "children": ["Возврат:"] }, " nil."]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Эффект и ограничения:"] },
+        " Команда пакета. Capture/release действуют только на ещё живой исходный press этого экземпляра; поздний ответ после отпускания/смены эпохи — no-op. focus работает по текущей эпохе. release создаёт pointer_cancel, а не click; focus создаёт blur/focus. Restore on_load мини-игры запрещает команды ввода. Общие ",
+        {
+          "tag": "a",
+          "children": ["квоты"],
+          "props": { "href": "/projects/novellmaker/docs/lua/limits" }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["атомарность"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#batch"
+          }
+        },
+        " и ",
+        {
+          "tag": "a",
+          "children": ["lifecycle/сохранение"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        " применяются, если здесь не указано исключение."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Пример"] },
+        " (предусловия refs/ресурсов приведены в начале страницы; это фрагмент соответствующего обработчика, если не показан полный return):"
+      ]
+    },
+    {
+      "tag": "pre",
+      "text": "ui.release_pointer()",
+      "language": "lua",
+      "children": ["ui.release_pointer()"]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Связи:"] },
+        " ",
+        {
+          "tag": "a",
+          "children": ["ui.focus"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/input-and-triggers#ui-focus"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["ui.capture_pointer"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/input-and-triggers#ui-capture-pointer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["ui.release_pointer"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/input-and-triggers#ui-release-pointer"
+          }
+        },
+        ". ",
+        {
+          "tag": "a",
+          "children": ["Регистрация и аргументы"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Screens/Lua/ScreenLuaWorker.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["тесты"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Screens/ScreenLuaSessionTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "span", "children": [], "props": { "id": "ui-focus" } }
+      ]
+    },
+    { "tag": "h2", "children": ["ui.focus"], "props": { "id": "uifocus" } },
+    { "tag": "p", "children": ["Передать клавиатурный фокус своему узлу."] },
+    {
+      "tag": "pre",
+      "text": "ui.focus(node) -> nil",
+      "language": "lua",
+      "children": [
+        "ui.focus(node) -> ",
+        {
+          "tag": "span",
+          "children": ["nil"],
+          "props": { "className": "hljs-literal" }
+        }
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Доступность:"] },
+        " on_load/on_event ui, вызванный ими модуль, мини-игра; при restore — ограничения этой записи и ",
+        {
+          "tag": "a",
+          "children": ["restore"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#restore"
+          }
+        },
+        ". Вычисление исходника вне обработчика не предназначено для команд."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Аргументы и ошибки:"] },
+        " Ровно один собственный доступный видимый Button/Area handle. Требуется input_events=true в таблице обработчиков. nil — не handle."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [{ "tag": "strong", "children": ["Возврат:"] }, " nil."]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Эффект и ограничения:"] },
+        " Команда пакета. Capture/release действуют только на ещё живой исходный press этого экземпляра; поздний ответ после отпускания/смены эпохи — no-op. focus работает по текущей эпохе. release создаёт pointer_cancel, а не click; focus создаёт blur/focus. Restore on_load мини-игры запрещает команды ввода. Общие ",
+        {
+          "tag": "a",
+          "children": ["квоты"],
+          "props": { "href": "/projects/novellmaker/docs/lua/limits" }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["атомарность"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#batch"
+          }
+        },
+        " и ",
+        {
+          "tag": "a",
+          "children": ["lifecycle/сохранение"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        " применяются, если здесь не указано исключение."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Пример"] },
+        " (предусловия refs/ресурсов приведены в начале страницы; это фрагмент соответствующего обработчика, если не показан полный return):"
+      ]
+    },
+    {
+      "tag": "pre",
+      "text": "ui.focus(refs.button)",
+      "language": "lua",
+      "children": ["ui.focus(refs.button)"]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Связи:"] },
+        " ",
+        {
+          "tag": "a",
+          "children": ["ui.focus"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/input-and-triggers#ui-focus"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["ui.capture_pointer"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/input-and-triggers#ui-capture-pointer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["ui.release_pointer"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/input-and-triggers#ui-release-pointer"
+          }
+        },
+        ". ",
+        {
+          "tag": "a",
+          "children": ["Регистрация и аргументы"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Screens/Lua/ScreenLuaWorker.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["тесты"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Screens/ScreenLuaSessionTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "span", "children": [], "props": { "id": "ui-trigger" } }
+      ]
+    },
+    { "tag": "h2", "children": ["ui.trigger"], "props": { "id": "uitrigger" } },
+    {
+      "tag": "p",
+      "children": ["Поставить собственное именованное событие в очередь."]
+    },
+    {
+      "tag": "pre",
+      "text": "ui.trigger(id) -> nil\nui.trigger(id, data) -> nil",
+      "language": "lua",
+      "children": [
+        "ui.trigger(id) -> ",
+        {
+          "tag": "span",
+          "children": ["nil"],
+          "props": { "className": "hljs-literal" }
+        },
+        "\nui.trigger(id, data) -> ",
+        {
+          "tag": "span",
+          "children": ["nil"],
+          "props": { "className": "hljs-literal" }
+        }
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Доступность:"] },
+        " on_load/on_event ui, вызванный ими модуль, мини-игра; при restore — ограничения этой записи и ",
+        {
+          "tag": "a",
+          "children": ["restore"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#restore"
+          }
+        },
+        ". Вычисление исходника вне обработчика не предназначено для команд."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Аргументы и ошибки:"] },
+        " id: точная строка AuthorKey: [a-z][a-z0-9_.-]{0,63}. data: отсутствует/nil либо точная строка <=1024. Числа не приводятся к строкам."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [{ "tag": "strong", "children": ["Возврат:"] }, " nil."]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Эффект и ограничения:"] },
+        " После commit придёт trigger этому же экземпляру, с trigger_id/trigger_data. До 16 за пакет; общий бюджет очереди 128, цепь 32. Нельзя сочетать с сервисом/close/итогом мини-игры. В restore on_load запрещено. Общие ",
+        {
+          "tag": "a",
+          "children": ["квоты"],
+          "props": { "href": "/projects/novellmaker/docs/lua/limits" }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["атомарность"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#batch"
+          }
+        },
+        " и ",
+        {
+          "tag": "a",
+          "children": ["lifecycle/сохранение"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        " применяются, если здесь не указано исключение."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Пример"] },
+        " (предусловия refs/ресурсов приведены в начале страницы; это фрагмент соответствующего обработчика, если не показан полный return):"
+      ]
+    },
+    {
+      "tag": "pre",
+      "text": "ui.trigger(\"door.open\", \"key\")",
+      "language": "lua",
+      "children": [
+        "ui.trigger(",
+        {
+          "tag": "span",
+          "children": ["\"door.open\""],
+          "props": { "className": "hljs-string" }
+        },
+        ", ",
+        {
+          "tag": "span",
+          "children": ["\"key\""],
+          "props": { "className": "hljs-string" }
+        },
+        ")"
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Связи:"] },
+        " ",
+        {
+          "tag": "a",
+          "children": ["ui.get_state"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/state-and-random#ui-get-state"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["ui.set_persistent"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/session-and-storage#ui-set-persistent"
+          }
+        },
+        ". ",
+        {
+          "tag": "a",
+          "children": ["Регистрация и аргументы"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Screens/Lua/ScreenLuaWorker.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["тесты"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Screens/PersistentDataLuaTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    }
+  ]
+}

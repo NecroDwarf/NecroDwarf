@@ -1,0 +1,1962 @@
+{
+  "title": "Законченные небольшие примеры",
+  "headings": [
+    {
+      "title": "Законченные небольшие примеры",
+      "id": "законченные-небольшие-примеры",
+      "level": 1
+    },
+    { "title": "Очередь сценария и следующий блок", "id": "queue", "level": 2 },
+    { "title": "Обработчик счётчика", "id": "обработчик-счётчика", "level": 2 },
+    { "title": "Импорт модуля", "id": "импорт-модуля", "level": 2 },
+    {
+      "title": "Воспроизводимая случайность",
+      "id": "воспроизводимая-случайность",
+      "level": 2
+    },
+    {
+      "title": "Сохраняемая мини-игра с результатом",
+      "id": "minigame",
+      "level": 2
+    },
+    {
+      "title": "Постоянная отметка с подтверждением диска",
+      "id": "постоянная-отметка-с-подтверждением-диска",
+      "level": 2
+    },
+    {
+      "title": "Анимация без цикла Lua",
+      "id": "анимация-без-цикла-lua",
+      "level": 2
+    },
+    {
+      "title": "Свой WAV и обработка ошибки",
+      "id": "свой-wav-и-обработка-ошибки",
+      "level": 2
+    },
+    {
+      "title": "Проверка версии с отменой",
+      "id": "проверка-версии-с-отменой",
+      "level": 2
+    }
+  ],
+  "nodes": [
+    {
+      "tag": "h1",
+      "children": ["Законченные небольшие примеры"],
+      "props": { "id": "законченные-небольшие-примеры" }
+    },
+    {
+      "tag": "p",
+      "children": [
+        {
+          "tag": "a",
+          "children": ["Оглавление"],
+          "props": { "href": "/projects/novellmaker/docs/lua" }
+        },
+        " · ",
+        {
+          "tag": "a",
+          "children": ["Модель исполнения"],
+          "props": { "href": "/projects/novellmaker/docs/lua/execution-model" }
+        }
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Каждый именованный блок ниже — полный исходник отдельного Lua-блока/ресурса. Имена файлов — авторские названия; физический путь ресурса редактор назначит по ID. Создайте ресурсы через GUI, задайте ссылки и назначьте обработчик холсту. Для click кнопка/область должна иметь действие ",
+        { "tag": "strong", "children": ["Lua"] },
+        ". Все refs — собственные узлы одного холста. Тесты читают именно эти блоки из Markdown, а не отдельные копии примеров: ",
+        {
+          "tag": "a",
+          "children": ["LuaReferenceExamplesTests"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Screens/LuaReferenceExamplesTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ". Степень проверки каждого примера указана в ",
+        {
+          "tag": "a",
+          "children": ["verification"],
+          "props": { "href": "/projects/novellmaker/docs/lua/verification" }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "span", "children": [], "props": { "id": "queue" } }
+      ]
+    },
+    {
+      "tag": "h2",
+      "children": ["Очередь сценария и следующий блок"],
+      "props": { "id": "очередь-сценария-и-следующий-блок" }
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Ресурсы и refs не нужны. Поместите в «Начало сцены» Lua-блок:"
+      ]
+    },
+    "<!-- example:scenario-queue -->\n",
+    {
+      "tag": "pre",
+      "text": "game.set(\"stage\", \"started\")\ngame.wait(1)\ngame.set(\"stage\", \"done\")\ngame.wait_input()",
+      "language": "lua",
+      "children": [
+        "game.set(",
+        {
+          "tag": "span",
+          "children": ["\"stage\""],
+          "props": { "className": "hljs-string" }
+        },
+        ", ",
+        {
+          "tag": "span",
+          "children": ["\"started\""],
+          "props": { "className": "hljs-string" }
+        },
+        ")\ngame.wait(",
+        {
+          "tag": "span",
+          "children": ["1"],
+          "props": { "className": "hljs-number" }
+        },
+        ")\ngame.set(",
+        {
+          "tag": "span",
+          "children": ["\"stage\""],
+          "props": { "className": "hljs-string" }
+        },
+        ", ",
+        {
+          "tag": "span",
+          "children": ["\"done\""],
+          "props": { "className": "hljs-string" }
+        },
+        ")\ngame.wait_input()"
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        "После принятия Lua stage равно started. Через одну ",
+        { "tag": "strong", "children": ["игровую"] },
+        " секунду станет done, затем очередь ждёт продолжения. Lua целиком вычислился до секундного ожидания; local-переменная внутри этого блока не становится возобновляемым стеком."
+      ]
+    },
+    {
+      "tag": "h2",
+      "children": ["Обработчик счётчика"],
+      "props": { "id": "обработчик-счётчика" }
+    },
+    {
+      "tag": "p",
+      "children": [
+        "На холсте Text ",
+        { "tag": "code", "children": ["label"] },
+        " и Button ",
+        { "tag": "code", "children": ["add"] },
+        "; назначьте эти aliases в ссылках холста. Схема мини-игры не нужна, это обычный экран. Он начинает с нуля при новом открытии, а не хранит счётчик в игровом слоте."
+      ]
+    },
+    "<!-- example:counter -->\n",
+    {
+      "tag": "pre",
+      "text": "local function render(s)\n  ui.set_text(refs.label, \"Нажатий: \"..s.count)\nend\nreturn {\n  on_load=function()\n    local s=ui.get_state()\n    if s==ui.null then\n      s={count=0}\n      ui.set_state(s)\n    end\n    render(s)\n  end,\n  on_event=function(e)\n    if e.kind==\"click\" and e.node==refs.add then\n      local s=ui.get_state()\n      s.count=s.count+1\n      ui.set_state(s)\n      render(s)\n    end\n  end\n}",
+      "language": "lua",
+      "children": [
+        {
+          "tag": "span",
+          "children": ["local"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " ",
+        {
+          "tag": "span",
+          "children": [
+            {
+              "tag": "span",
+              "children": ["function"],
+              "props": { "className": "hljs-keyword" }
+            },
+            " ",
+            {
+              "tag": "span",
+              "children": ["render"],
+              "props": { "className": "hljs-title" }
+            },
+            {
+              "tag": "span",
+              "children": ["(s)"],
+              "props": { "className": "hljs-params" }
+            }
+          ],
+          "props": { "className": "hljs-function" }
+        },
+        "\n  ui.set_text(refs.label, ",
+        {
+          "tag": "span",
+          "children": ["\"Нажатий: \""],
+          "props": { "className": "hljs-string" }
+        },
+        "..s.count)\n",
+        {
+          "tag": "span",
+          "children": ["end"],
+          "props": { "className": "hljs-keyword" }
+        },
+        "\n",
+        {
+          "tag": "span",
+          "children": ["return"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " {\n  on_load=",
+        {
+          "tag": "span",
+          "children": [
+            {
+              "tag": "span",
+              "children": ["function"],
+              "props": { "className": "hljs-keyword" }
+            },
+            {
+              "tag": "span",
+              "children": ["()"],
+              "props": { "className": "hljs-params" }
+            }
+          ],
+          "props": { "className": "hljs-function" }
+        },
+        "\n    ",
+        {
+          "tag": "span",
+          "children": ["local"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " s=ui.get_state()\n    ",
+        {
+          "tag": "span",
+          "children": ["if"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " s==ui.null ",
+        {
+          "tag": "span",
+          "children": ["then"],
+          "props": { "className": "hljs-keyword" }
+        },
+        "\n      s={count=",
+        {
+          "tag": "span",
+          "children": ["0"],
+          "props": { "className": "hljs-number" }
+        },
+        "}\n      ui.set_state(s)\n    ",
+        {
+          "tag": "span",
+          "children": ["end"],
+          "props": { "className": "hljs-keyword" }
+        },
+        "\n    render(s)\n  ",
+        {
+          "tag": "span",
+          "children": ["end"],
+          "props": { "className": "hljs-keyword" }
+        },
+        ",\n  on_event=",
+        {
+          "tag": "span",
+          "children": [
+            {
+              "tag": "span",
+              "children": ["function"],
+              "props": { "className": "hljs-keyword" }
+            },
+            {
+              "tag": "span",
+              "children": ["(e)"],
+              "props": { "className": "hljs-params" }
+            }
+          ],
+          "props": { "className": "hljs-function" }
+        },
+        "\n    ",
+        {
+          "tag": "span",
+          "children": ["if"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " e.kind==",
+        {
+          "tag": "span",
+          "children": ["\"click\""],
+          "props": { "className": "hljs-string" }
+        },
+        " ",
+        {
+          "tag": "span",
+          "children": ["and"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " e.node==refs.add ",
+        {
+          "tag": "span",
+          "children": ["then"],
+          "props": { "className": "hljs-keyword" }
+        },
+        "\n      ",
+        {
+          "tag": "span",
+          "children": ["local"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " s=ui.get_state()\n      s.count=s.count+",
+        {
+          "tag": "span",
+          "children": ["1"],
+          "props": { "className": "hljs-number" }
+        },
+        "\n      ui.set_state(s)\n      render(s)\n    ",
+        {
+          "tag": "span",
+          "children": ["end"],
+          "props": { "className": "hljs-keyword" }
+        },
+        "\n  ",
+        {
+          "tag": "span",
+          "children": ["end"],
+          "props": { "className": "hljs-keyword" }
+        },
+        "\n}"
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        "После каждого click и полного commit увеличиваются state.count и надпись. Изменить только ",
+        { "tag": "code", "children": ["s.count"] },
+        " без set_state недостаточно. После закрытия экран теряет это состояние."
+      ]
+    },
+    {
+      "tag": "h2",
+      "children": ["Импорт модуля"],
+      "props": { "id": "импорт-модуля" }
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Создайте Lua-ресурс ",
+        { "tag": "code", "children": ["counter-helper"] },
+        ". В его References ничего не требуется:"
+      ]
+    },
+    "<!-- example:module-helper -->\n",
+    {
+      "tag": "pre",
+      "text": "return {\n  caption=function(count)\n    return \"Счёт: \"..tostring(math.floor(count))\n  end\n}",
+      "language": "lua",
+      "children": [
+        {
+          "tag": "span",
+          "children": ["return"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " {\n  caption=",
+        {
+          "tag": "span",
+          "children": [
+            {
+              "tag": "span",
+              "children": ["function"],
+              "props": { "className": "hljs-keyword" }
+            },
+            {
+              "tag": "span",
+              "children": ["(count)"],
+              "props": { "className": "hljs-params" }
+            }
+          ],
+          "props": { "className": "hljs-function" }
+        },
+        "\n    ",
+        {
+          "tag": "span",
+          "children": ["return"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " ",
+        {
+          "tag": "span",
+          "children": ["\"Счёт: \""],
+          "props": { "className": "hljs-string" }
+        },
+        "..",
+        {
+          "tag": "span",
+          "children": ["tostring"],
+          "props": { "className": "hljs-built_in" }
+        },
+        "(",
+        {
+          "tag": "span",
+          "children": ["math"],
+          "props": { "className": "hljs-built_in" }
+        },
+        ".",
+        {
+          "tag": "span",
+          "children": ["floor"],
+          "props": { "className": "hljs-built_in" }
+        },
+        "(count))\n  ",
+        {
+          "tag": "span",
+          "children": ["end"],
+          "props": { "className": "hljs-keyword" }
+        },
+        "\n}"
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        "У корневого ресурса объявите ссылку ",
+        { "tag": "strong", "children": ["helper"] },
+        " на counter-helper; на холсте — refs.label Text. Корневой ресурс назначьте обработчиком:"
+      ]
+    },
+    "<!-- example:module-root -->\n",
+    {
+      "tag": "pre",
+      "text": "local helper=ui.import(modules.helper)\nreturn {\n  on_load=function()\n    ui.set_text(refs.label, helper.caption(2.8))\n  end,\n  on_event=function(e) end\n}",
+      "language": "lua",
+      "children": [
+        {
+          "tag": "span",
+          "children": ["local"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " helper=ui.import(modules.helper)\n",
+        {
+          "tag": "span",
+          "children": ["return"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " {\n  on_load=",
+        {
+          "tag": "span",
+          "children": [
+            {
+              "tag": "span",
+              "children": ["function"],
+              "props": { "className": "hljs-keyword" }
+            },
+            {
+              "tag": "span",
+              "children": ["()"],
+              "props": { "className": "hljs-params" }
+            }
+          ],
+          "props": { "className": "hljs-function" }
+        },
+        "\n    ui.set_text(refs.label, helper.caption(",
+        {
+          "tag": "span",
+          "children": ["2.8"],
+          "props": { "className": "hljs-number" }
+        },
+        "))\n  ",
+        {
+          "tag": "span",
+          "children": ["end"],
+          "props": { "className": "hljs-keyword" }
+        },
+        ",\n  on_event=",
+        {
+          "tag": "span",
+          "children": [
+            {
+              "tag": "span",
+              "children": ["function"],
+              "props": { "className": "hljs-keyword" }
+            },
+            {
+              "tag": "span",
+              "children": ["(e)"],
+              "props": { "className": "hljs-params" }
+            }
+          ],
+          "props": { "className": "hljs-function" }
+        },
+        " ",
+        {
+          "tag": "span",
+          "children": ["end"],
+          "props": { "className": "hljs-keyword" }
+        },
+        "\n}"
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Получится «Счёт: 2». caption — авторская функция этого модуля, не встроенный API. У модуля свои globals/библиотеки и нет refs.label. Для изменения узла внутри модуля передайте handle аргументом."
+      ]
+    },
+    {
+      "tag": "h2",
+      "children": ["Воспроизводимая случайность"],
+      "props": { "id": "воспроизводимая-случайность" }
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Нужен Text refs.label; это обычный экран, сохранение в слот не подразумевается:"
+      ]
+    },
+    "<!-- example:random-checkpoint -->\n",
+    {
+      "tag": "pre",
+      "text": "return {\n  on_load=function()\n    ui.seed_random(42)\n    local checkpoint=ui.get_random_state()\n    local first=ui.random(1,100)\n    ui.set_random_state(checkpoint)\n    local replay=ui.random(1,100)\n    ui.set_state({first=first,replay=replay})\n    ui.set_text(refs.label, first..\" / \"..replay)\n  end,\n  on_event=function(e) end\n}",
+      "language": "lua",
+      "children": [
+        {
+          "tag": "span",
+          "children": ["return"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " {\n  on_load=",
+        {
+          "tag": "span",
+          "children": [
+            {
+              "tag": "span",
+              "children": ["function"],
+              "props": { "className": "hljs-keyword" }
+            },
+            {
+              "tag": "span",
+              "children": ["()"],
+              "props": { "className": "hljs-params" }
+            }
+          ],
+          "props": { "className": "hljs-function" }
+        },
+        "\n    ui.seed_random(",
+        {
+          "tag": "span",
+          "children": ["42"],
+          "props": { "className": "hljs-number" }
+        },
+        ")\n    ",
+        {
+          "tag": "span",
+          "children": ["local"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " checkpoint=ui.get_random_state()\n    ",
+        {
+          "tag": "span",
+          "children": ["local"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " first=ui.",
+        {
+          "tag": "span",
+          "children": ["random"],
+          "props": { "className": "hljs-built_in" }
+        },
+        "(",
+        {
+          "tag": "span",
+          "children": ["1"],
+          "props": { "className": "hljs-number" }
+        },
+        ",",
+        {
+          "tag": "span",
+          "children": ["100"],
+          "props": { "className": "hljs-number" }
+        },
+        ")\n    ui.set_random_state(checkpoint)\n    ",
+        {
+          "tag": "span",
+          "children": ["local"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " replay=ui.",
+        {
+          "tag": "span",
+          "children": ["random"],
+          "props": { "className": "hljs-built_in" }
+        },
+        "(",
+        {
+          "tag": "span",
+          "children": ["1"],
+          "props": { "className": "hljs-number" }
+        },
+        ",",
+        {
+          "tag": "span",
+          "children": ["100"],
+          "props": { "className": "hljs-number" }
+        },
+        ")\n    ui.set_state({first=first,replay=replay})\n    ui.set_text(refs.label, first..",
+        {
+          "tag": "span",
+          "children": ["\" / \""],
+          "props": { "className": "hljs-string" }
+        },
+        "..replay)\n  ",
+        {
+          "tag": "span",
+          "children": ["end"],
+          "props": { "className": "hljs-keyword" }
+        },
+        ",\n  on_event=",
+        {
+          "tag": "span",
+          "children": [
+            {
+              "tag": "span",
+              "children": ["function"],
+              "props": { "className": "hljs-keyword" }
+            },
+            {
+              "tag": "span",
+              "children": ["(e)"],
+              "props": { "className": "hljs-params" }
+            }
+          ],
+          "props": { "className": "hljs-function" }
+        },
+        " ",
+        {
+          "tag": "span",
+          "children": ["end"],
+          "props": { "className": "hljs-keyword" }
+        },
+        "\n}"
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Оба числа совпадут, потому что восстановлен точный поток до выборки. Сбрасывать seed каждый update нельзя: это будет начало одного и того же потока. Для сохраняемой мини-игры RNG хранится host вместе со state; не нужно повторно seed в восстанавливающем on_load."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "span", "children": [], "props": { "id": "minigame" } }
+      ]
+    },
+    {
+      "tag": "h2",
+      "children": ["Сохраняемая мини-игра с результатом"],
+      "props": { "id": "сохраняемая-мини-игра-с-результатом" }
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Создайте сцену ",
+        { "tag": "code", "children": ["puzzle"] },
+        " с Text refs.label и Button refs.add, включите мини-игру. Параметры:"
+      ]
+    },
+    {
+      "tag": "div",
+      "children": [
+        {
+          "tag": "table",
+          "children": [
+            {
+              "tag": "thead",
+              "children": [
+                {
+                  "tag": "tr",
+                  "children": [
+                    {
+                      "tag": "th",
+                      "children": ["Настройка"],
+                      "props": { "scope": "col" }
+                    },
+                    {
+                      "tag": "th",
+                      "children": ["Значение"],
+                      "props": { "scope": "col" }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "tbody",
+              "children": [
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["ParametersSchema"] },
+                    { "tag": "td", "children": ["Object, поле target:Number"] }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["DefaultParameters"] },
+                    {
+                      "tag": "td",
+                      "children": [
+                        { "tag": "code", "children": ["{ \"target\": 3 }"] }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["StateSchema"] },
+                    { "tag": "td", "children": ["Object, поле score:Number"] }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["InitialState"] },
+                    {
+                      "tag": "td",
+                      "children": [
+                        { "tag": "code", "children": ["{ \"score\": 0 }"] }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["ResultSchema"] },
+                    { "tag": "td", "children": ["Object, поле score:Number"] }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["CanSave"] },
+                    { "tag": "td", "children": ["true"] }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["UpdatesPerSecond"] },
+                    {
+                      "tag": "td",
+                      "children": ["5; пример update не использует"]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "props": {
+        "className": "nm-table",
+        "tabIndex": 0,
+        "role": "region",
+        "aria-label": "Таблица, прокрутка по горизонтали"
+      }
+    },
+    { "tag": "p", "children": ["Назначьте обработчик:"] },
+    "<!-- example:minigame-handler -->\n",
+    {
+      "tag": "pre",
+      "text": "local function render(s)\n  ui.set_text(refs.label, \"Счёт: \"..s.score)\nend\nreturn {\n  on_load=function()\n    -- И новый, и восстановленный экземпляр получают готовые данные host.\n    -- Здесь только восстанавливается вид, без побочных операций.\n    render(ui.get_state())\n  end,\n  on_event=function(e)\n    if e.kind==\"click\" and e.node==refs.add then\n      local s=ui.get_state()\n      local p=ui.minigame_parameters()\n      s.score=s.score+1\n      ui.set_state(s)\n      render(s)\n      if s.score>=p.target then\n        ui.complete_minigame({score=s.score})\n      end\n    end\n  end\n}",
+      "language": "lua",
+      "children": [
+        {
+          "tag": "span",
+          "children": ["local"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " ",
+        {
+          "tag": "span",
+          "children": [
+            {
+              "tag": "span",
+              "children": ["function"],
+              "props": { "className": "hljs-keyword" }
+            },
+            " ",
+            {
+              "tag": "span",
+              "children": ["render"],
+              "props": { "className": "hljs-title" }
+            },
+            {
+              "tag": "span",
+              "children": ["(s)"],
+              "props": { "className": "hljs-params" }
+            }
+          ],
+          "props": { "className": "hljs-function" }
+        },
+        "\n  ui.set_text(refs.label, ",
+        {
+          "tag": "span",
+          "children": ["\"Счёт: \""],
+          "props": { "className": "hljs-string" }
+        },
+        "..s.score)\n",
+        {
+          "tag": "span",
+          "children": ["end"],
+          "props": { "className": "hljs-keyword" }
+        },
+        "\n",
+        {
+          "tag": "span",
+          "children": ["return"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " {\n  on_load=",
+        {
+          "tag": "span",
+          "children": [
+            {
+              "tag": "span",
+              "children": ["function"],
+              "props": { "className": "hljs-keyword" }
+            },
+            {
+              "tag": "span",
+              "children": ["()"],
+              "props": { "className": "hljs-params" }
+            }
+          ],
+          "props": { "className": "hljs-function" }
+        },
+        "\n    ",
+        {
+          "tag": "span",
+          "children": [
+            "-- И новый, и восстановленный экземпляр получают готовые данные host."
+          ],
+          "props": { "className": "hljs-comment" }
+        },
+        "\n    ",
+        {
+          "tag": "span",
+          "children": [
+            "-- Здесь только восстанавливается вид, без побочных операций."
+          ],
+          "props": { "className": "hljs-comment" }
+        },
+        "\n    render(ui.get_state())\n  ",
+        {
+          "tag": "span",
+          "children": ["end"],
+          "props": { "className": "hljs-keyword" }
+        },
+        ",\n  on_event=",
+        {
+          "tag": "span",
+          "children": [
+            {
+              "tag": "span",
+              "children": ["function"],
+              "props": { "className": "hljs-keyword" }
+            },
+            {
+              "tag": "span",
+              "children": ["(e)"],
+              "props": { "className": "hljs-params" }
+            }
+          ],
+          "props": { "className": "hljs-function" }
+        },
+        "\n    ",
+        {
+          "tag": "span",
+          "children": ["if"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " e.kind==",
+        {
+          "tag": "span",
+          "children": ["\"click\""],
+          "props": { "className": "hljs-string" }
+        },
+        " ",
+        {
+          "tag": "span",
+          "children": ["and"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " e.node==refs.add ",
+        {
+          "tag": "span",
+          "children": ["then"],
+          "props": { "className": "hljs-keyword" }
+        },
+        "\n      ",
+        {
+          "tag": "span",
+          "children": ["local"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " s=ui.get_state()\n      ",
+        {
+          "tag": "span",
+          "children": ["local"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " p=ui.minigame_parameters()\n      s.score=s.score+",
+        {
+          "tag": "span",
+          "children": ["1"],
+          "props": { "className": "hljs-number" }
+        },
+        "\n      ui.set_state(s)\n      render(s)\n      ",
+        {
+          "tag": "span",
+          "children": ["if"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " s.score>=p.target ",
+        {
+          "tag": "span",
+          "children": ["then"],
+          "props": { "className": "hljs-keyword" }
+        },
+        "\n        ui.complete_minigame({score=s.score})\n      ",
+        {
+          "tag": "span",
+          "children": ["end"],
+          "props": { "className": "hljs-keyword" }
+        },
+        "\n    ",
+        {
+          "tag": "span",
+          "children": ["end"],
+          "props": { "className": "hljs-keyword" }
+        },
+        "\n  ",
+        {
+          "tag": "span",
+          "children": ["end"],
+          "props": { "className": "hljs-keyword" }
+        },
+        "\n}"
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Сохраните прохождение между нажатиями, когда нет pending ввода/обработчика/операций. При восстановлении надпись строится из сохранённого score; следующий click продолжит счёт. В on_load намеренно нет нового seed/trigger/сервиса. При третьем click мини-игра закроется с completed и ",
+        { "tag": "code", "children": ["{score=3}"] },
+        ". Закрытие её экрана другим способом даст cancelled."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Создайте ",
+        { "tag": "strong", "children": ["сценарный"] },
+        " ресурс after-puzzle:"
+      ]
+    },
+    "<!-- example:minigame-after -->\n",
+    {
+      "tag": "pre",
+      "text": "local result=game.minigame_result()\nif result and result.status==\"completed\" then\n  if result.data.score>=3 then\n    game.set(\"puzzle.won\", \"true\")\n  end\nelse\n  game.set(\"puzzle.won\", \"false\")\nend",
+      "language": "lua",
+      "children": [
+        {
+          "tag": "span",
+          "children": ["local"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " result=game.minigame_result()\n",
+        {
+          "tag": "span",
+          "children": ["if"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " result ",
+        {
+          "tag": "span",
+          "children": ["and"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " result.",
+        {
+          "tag": "span",
+          "children": ["status"],
+          "props": { "className": "hljs-built_in" }
+        },
+        "==",
+        {
+          "tag": "span",
+          "children": ["\"completed\""],
+          "props": { "className": "hljs-string" }
+        },
+        " ",
+        {
+          "tag": "span",
+          "children": ["then"],
+          "props": { "className": "hljs-keyword" }
+        },
+        "\n  ",
+        {
+          "tag": "span",
+          "children": ["if"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " result.data.score>=",
+        {
+          "tag": "span",
+          "children": ["3"],
+          "props": { "className": "hljs-number" }
+        },
+        " ",
+        {
+          "tag": "span",
+          "children": ["then"],
+          "props": { "className": "hljs-keyword" }
+        },
+        "\n    game.set(",
+        {
+          "tag": "span",
+          "children": ["\"puzzle.won\""],
+          "props": { "className": "hljs-string" }
+        },
+        ", ",
+        {
+          "tag": "span",
+          "children": ["\"true\""],
+          "props": { "className": "hljs-string" }
+        },
+        ")\n  ",
+        {
+          "tag": "span",
+          "children": ["end"],
+          "props": { "className": "hljs-keyword" }
+        },
+        "\n",
+        {
+          "tag": "span",
+          "children": ["else"],
+          "props": { "className": "hljs-keyword" }
+        },
+        "\n  game.set(",
+        {
+          "tag": "span",
+          "children": ["\"puzzle.won\""],
+          "props": { "className": "hljs-string" }
+        },
+        ", ",
+        {
+          "tag": "span",
+          "children": ["\"false\""],
+          "props": { "className": "hljs-string" }
+        },
+        ")\n",
+        {
+          "tag": "span",
+          "children": ["end"],
+          "props": { "className": "hljs-keyword" }
+        }
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        "В сценарном блоке сцены объявите refs.puzzle на сцену мини-игры и refs.after на after-puzzle. Запуск:"
+      ]
+    },
+    "<!-- example:minigame-launch -->\n",
+    {
+      "tag": "pre",
+      "text": "game.start_minigame(refs.puzzle, {target=3})\ngame.run(refs.after)",
+      "language": "lua",
+      "children": [
+        "game.start_minigame(refs.puzzle, {target=",
+        {
+          "tag": "span",
+          "children": ["3"],
+          "props": { "className": "hljs-number" }
+        },
+        "})\ngame.run(refs.after)"
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        "after исполнится после завершения барьера с новым снимком, а не сразу при вычислении launch. Его ",
+        { "tag": "code", "children": ["return"] },
+        " ничего не передаёт назад. Для ветвления по puzzle.won используйте GUI-блок условия или следующий Lua-блок с jump_line к выбранным refs.scene/refs.line."
+      ]
+    },
+    {
+      "tag": "h2",
+      "children": ["Постоянная отметка с подтверждением диска"],
+      "props": { "id": "постоянная-отметка-с-подтверждением-диска" }
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Нужны Button refs.mark и Text refs.label. Ни внешний сервис, ни schema не требуются. Профиль принадлежит проекту, чтение не означает подтверждение записи:"
+      ]
+    },
+    "<!-- example:profile -->\n",
+    {
+      "tag": "pre",
+      "text": "local pending\nreturn {\n  on_load=function()\n    pending=ui.get_persistent(\"achievement.first\")\n  end,\n  on_event=function(e)\n    if e.kind==\"click\" and e.node==refs.mark and pending==nil then\n      pending=ui.set_persistent(\"achievement.first\", \"true\")\n    elseif e.kind==\"service_result\" and e.request_id==pending then\n      pending=nil\n      if not e.success then\n        ui.set_text(refs.label, \"Не записано: \"..e.message)\n      elseif e.value==\"true\" then\n        ui.set_text(refs.label, e.persisted and \"Подтверждено\" or \"Только в памяти\")\n      else\n        ui.set_text(refs.label, \"Ещё не отмечено\")\n      end\n    end\n  end\n}",
+      "language": "lua",
+      "children": [
+        {
+          "tag": "span",
+          "children": ["local"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " pending\n",
+        {
+          "tag": "span",
+          "children": ["return"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " {\n  on_load=",
+        {
+          "tag": "span",
+          "children": [
+            {
+              "tag": "span",
+              "children": ["function"],
+              "props": { "className": "hljs-keyword" }
+            },
+            {
+              "tag": "span",
+              "children": ["()"],
+              "props": { "className": "hljs-params" }
+            }
+          ],
+          "props": { "className": "hljs-function" }
+        },
+        "\n    pending=ui.get_persistent(",
+        {
+          "tag": "span",
+          "children": ["\"achievement.first\""],
+          "props": { "className": "hljs-string" }
+        },
+        ")\n  ",
+        {
+          "tag": "span",
+          "children": ["end"],
+          "props": { "className": "hljs-keyword" }
+        },
+        ",\n  on_event=",
+        {
+          "tag": "span",
+          "children": [
+            {
+              "tag": "span",
+              "children": ["function"],
+              "props": { "className": "hljs-keyword" }
+            },
+            {
+              "tag": "span",
+              "children": ["(e)"],
+              "props": { "className": "hljs-params" }
+            }
+          ],
+          "props": { "className": "hljs-function" }
+        },
+        "\n    ",
+        {
+          "tag": "span",
+          "children": ["if"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " e.kind==",
+        {
+          "tag": "span",
+          "children": ["\"click\""],
+          "props": { "className": "hljs-string" }
+        },
+        " ",
+        {
+          "tag": "span",
+          "children": ["and"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " e.node==refs.mark ",
+        {
+          "tag": "span",
+          "children": ["and"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " pending==",
+        {
+          "tag": "span",
+          "children": ["nil"],
+          "props": { "className": "hljs-literal" }
+        },
+        " ",
+        {
+          "tag": "span",
+          "children": ["then"],
+          "props": { "className": "hljs-keyword" }
+        },
+        "\n      pending=ui.set_persistent(",
+        {
+          "tag": "span",
+          "children": ["\"achievement.first\""],
+          "props": { "className": "hljs-string" }
+        },
+        ", ",
+        {
+          "tag": "span",
+          "children": ["\"true\""],
+          "props": { "className": "hljs-string" }
+        },
+        ")\n    ",
+        {
+          "tag": "span",
+          "children": ["elseif"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " e.kind==",
+        {
+          "tag": "span",
+          "children": ["\"service_result\""],
+          "props": { "className": "hljs-string" }
+        },
+        " ",
+        {
+          "tag": "span",
+          "children": ["and"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " e.request_id==pending ",
+        {
+          "tag": "span",
+          "children": ["then"],
+          "props": { "className": "hljs-keyword" }
+        },
+        "\n      pending=",
+        {
+          "tag": "span",
+          "children": ["nil"],
+          "props": { "className": "hljs-literal" }
+        },
+        "\n      ",
+        {
+          "tag": "span",
+          "children": ["if"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " ",
+        {
+          "tag": "span",
+          "children": ["not"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " e.success ",
+        {
+          "tag": "span",
+          "children": ["then"],
+          "props": { "className": "hljs-keyword" }
+        },
+        "\n        ui.set_text(refs.label, ",
+        {
+          "tag": "span",
+          "children": ["\"Не записано: \""],
+          "props": { "className": "hljs-string" }
+        },
+        "..e.message)\n      ",
+        {
+          "tag": "span",
+          "children": ["elseif"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " e.value==",
+        {
+          "tag": "span",
+          "children": ["\"true\""],
+          "props": { "className": "hljs-string" }
+        },
+        " ",
+        {
+          "tag": "span",
+          "children": ["then"],
+          "props": { "className": "hljs-keyword" }
+        },
+        "\n        ui.set_text(refs.label, e.persisted ",
+        {
+          "tag": "span",
+          "children": ["and"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " ",
+        {
+          "tag": "span",
+          "children": ["\"Подтверждено\""],
+          "props": { "className": "hljs-string" }
+        },
+        " ",
+        {
+          "tag": "span",
+          "children": ["or"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " ",
+        {
+          "tag": "span",
+          "children": ["\"Только в памяти\""],
+          "props": { "className": "hljs-string" }
+        },
+        ")\n      ",
+        {
+          "tag": "span",
+          "children": ["else"],
+          "props": { "className": "hljs-keyword" }
+        },
+        "\n        ui.set_text(refs.label, ",
+        {
+          "tag": "span",
+          "children": ["\"Ещё не отмечено\""],
+          "props": { "className": "hljs-string" }
+        },
+        ")\n      ",
+        {
+          "tag": "span",
+          "children": ["end"],
+          "props": { "className": "hljs-keyword" }
+        },
+        "\n    ",
+        {
+          "tag": "span",
+          "children": ["end"],
+          "props": { "className": "hljs-keyword" }
+        },
+        "\n  ",
+        {
+          "tag": "span",
+          "children": ["end"],
+          "props": { "className": "hljs-keyword" }
+        },
+        "\n}"
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Один сервис на пакет; обработчик результата не вызывает второй бесконечный запрос. При ошибке записи можно снова нажать mark после ответа: то же значение повторит запись. Эта отметка — ваша логика, платформенных achievements API нет."
+      ]
+    },
+    {
+      "tag": "h2",
+      "children": ["Анимация без цикла Lua"],
+      "props": { "id": "анимация-без-цикла-lua" }
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Text refs.label должен быть видимым, его конечное x=200 допустимо геометрией. Обычный экран не нуждается в update:"
+      ]
+    },
+    "<!-- example:animation -->\n",
+    {
+      "tag": "pre",
+      "text": "local animation\nreturn {\n  on_load=function()\n    animation=ui.animate(ui.sequence({\n      ui.tween(refs.label, {x=200}, 0.5, \"out_quad\"),\n      ui.tween(refs.label, {opacity=0.5}, 0.5)\n    }))\n  end,\n  on_event=function(e)\n    if e.kind==\"animation_result\" and e.animation_id==animation then\n      animation=nil\n      ui.set_text(refs.label, e.status..\":\"..e.reason)\n    end\n  end\n}",
+      "language": "lua",
+      "children": [
+        {
+          "tag": "span",
+          "children": ["local"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " animation\n",
+        {
+          "tag": "span",
+          "children": ["return"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " {\n  on_load=",
+        {
+          "tag": "span",
+          "children": [
+            {
+              "tag": "span",
+              "children": ["function"],
+              "props": { "className": "hljs-keyword" }
+            },
+            {
+              "tag": "span",
+              "children": ["()"],
+              "props": { "className": "hljs-params" }
+            }
+          ],
+          "props": { "className": "hljs-function" }
+        },
+        "\n    animation=ui.animate(ui.sequence({\n      ui.tween(refs.label, {x=",
+        {
+          "tag": "span",
+          "children": ["200"],
+          "props": { "className": "hljs-number" }
+        },
+        "}, ",
+        {
+          "tag": "span",
+          "children": ["0.5"],
+          "props": { "className": "hljs-number" }
+        },
+        ", ",
+        {
+          "tag": "span",
+          "children": ["\"out_quad\""],
+          "props": { "className": "hljs-string" }
+        },
+        "),\n      ui.tween(refs.label, {opacity=",
+        {
+          "tag": "span",
+          "children": ["0.5"],
+          "props": { "className": "hljs-number" }
+        },
+        "}, ",
+        {
+          "tag": "span",
+          "children": ["0.5"],
+          "props": { "className": "hljs-number" }
+        },
+        ")\n    }))\n  ",
+        {
+          "tag": "span",
+          "children": ["end"],
+          "props": { "className": "hljs-keyword" }
+        },
+        ",\n  on_event=",
+        {
+          "tag": "span",
+          "children": [
+            {
+              "tag": "span",
+              "children": ["function"],
+              "props": { "className": "hljs-keyword" }
+            },
+            {
+              "tag": "span",
+              "children": ["(e)"],
+              "props": { "className": "hljs-params" }
+            }
+          ],
+          "props": { "className": "hljs-function" }
+        },
+        "\n    ",
+        {
+          "tag": "span",
+          "children": ["if"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " e.kind==",
+        {
+          "tag": "span",
+          "children": ["\"animation_result\""],
+          "props": { "className": "hljs-string" }
+        },
+        " ",
+        {
+          "tag": "span",
+          "children": ["and"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " e.animation_id==animation ",
+        {
+          "tag": "span",
+          "children": ["then"],
+          "props": { "className": "hljs-keyword" }
+        },
+        "\n      animation=",
+        {
+          "tag": "span",
+          "children": ["nil"],
+          "props": { "className": "hljs-literal" }
+        },
+        "\n      ui.set_text(refs.label, e.",
+        {
+          "tag": "span",
+          "children": ["status"],
+          "props": { "className": "hljs-built_in" }
+        },
+        "..",
+        {
+          "tag": "span",
+          "children": ["\":\""],
+          "props": { "className": "hljs-string" }
+        },
+        "..e.reason)\n    ",
+        {
+          "tag": "span",
+          "children": ["end"],
+          "props": { "className": "hljs-keyword" }
+        },
+        "\n  ",
+        {
+          "tag": "span",
+          "children": ["end"],
+          "props": { "className": "hljs-keyword" }
+        },
+        "\n}"
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Через одну активную игровую секунду x=200 и opacity=0.5; надпись completed:finished. Анимация идёт на host, Lua стек между кадрами не исполняется. Покрывающая пауза останавливает timeline."
+      ]
+    },
+    {
+      "tag": "h2",
+      "children": ["Свой WAV и обработка ошибки"],
+      "props": { "id": "свой-wav-и-обработка-ошибки" }
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Импортируйте PCM WAV, добавьте в References корневого Lua-ресурса alias click. На холсте Text refs.label. Профильные громкости перемножаются с 0.7:"
+      ]
+    },
+    "<!-- example:audio -->\n",
+    {
+      "tag": "pre",
+      "text": "local source\nreturn {\n  on_load=function()\n    source=ui.play_audio(audio.click, \"effect\", false, 0.7)\n  end,\n  on_event=function(e)\n    if e.kind==\"audio_result\" and e.audio_id==source then\n      source=nil\n      ui.set_text(refs.label, e.status)\n      if e.status==\"failed\" then ui.log(\"warning\", e.message) end\n    end\n  end\n}",
+      "language": "lua",
+      "children": [
+        {
+          "tag": "span",
+          "children": ["local"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " source\n",
+        {
+          "tag": "span",
+          "children": ["return"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " {\n  on_load=",
+        {
+          "tag": "span",
+          "children": [
+            {
+              "tag": "span",
+              "children": ["function"],
+              "props": { "className": "hljs-keyword" }
+            },
+            {
+              "tag": "span",
+              "children": ["()"],
+              "props": { "className": "hljs-params" }
+            }
+          ],
+          "props": { "className": "hljs-function" }
+        },
+        "\n    source=ui.play_audio(audio.click, ",
+        {
+          "tag": "span",
+          "children": ["\"effect\""],
+          "props": { "className": "hljs-string" }
+        },
+        ", ",
+        {
+          "tag": "span",
+          "children": ["false"],
+          "props": { "className": "hljs-literal" }
+        },
+        ", ",
+        {
+          "tag": "span",
+          "children": ["0.7"],
+          "props": { "className": "hljs-number" }
+        },
+        ")\n  ",
+        {
+          "tag": "span",
+          "children": ["end"],
+          "props": { "className": "hljs-keyword" }
+        },
+        ",\n  on_event=",
+        {
+          "tag": "span",
+          "children": [
+            {
+              "tag": "span",
+              "children": ["function"],
+              "props": { "className": "hljs-keyword" }
+            },
+            {
+              "tag": "span",
+              "children": ["(e)"],
+              "props": { "className": "hljs-params" }
+            }
+          ],
+          "props": { "className": "hljs-function" }
+        },
+        "\n    ",
+        {
+          "tag": "span",
+          "children": ["if"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " e.kind==",
+        {
+          "tag": "span",
+          "children": ["\"audio_result\""],
+          "props": { "className": "hljs-string" }
+        },
+        " ",
+        {
+          "tag": "span",
+          "children": ["and"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " e.audio_id==source ",
+        {
+          "tag": "span",
+          "children": ["then"],
+          "props": { "className": "hljs-keyword" }
+        },
+        "\n      source=",
+        {
+          "tag": "span",
+          "children": ["nil"],
+          "props": { "className": "hljs-literal" }
+        },
+        "\n      ui.set_text(refs.label, e.",
+        {
+          "tag": "span",
+          "children": ["status"],
+          "props": { "className": "hljs-built_in" }
+        },
+        ")\n      ",
+        {
+          "tag": "span",
+          "children": ["if"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " e.",
+        {
+          "tag": "span",
+          "children": ["status"],
+          "props": { "className": "hljs-built_in" }
+        },
+        "==",
+        {
+          "tag": "span",
+          "children": ["\"failed\""],
+          "props": { "className": "hljs-string" }
+        },
+        " ",
+        {
+          "tag": "span",
+          "children": ["then"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " ui.",
+        {
+          "tag": "span",
+          "children": ["log"],
+          "props": { "className": "hljs-built_in" }
+        },
+        "(",
+        {
+          "tag": "span",
+          "children": ["\"warning\""],
+          "props": { "className": "hljs-string" }
+        },
+        ", e.message) ",
+        {
+          "tag": "span",
+          "children": ["end"],
+          "props": { "className": "hljs-keyword" }
+        },
+        "\n    ",
+        {
+          "tag": "span",
+          "children": ["end"],
+          "props": { "className": "hljs-keyword" }
+        },
+        "\n  ",
+        {
+          "tag": "span",
+          "children": ["end"],
+          "props": { "className": "hljs-keyword" }
+        },
+        "\n}"
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        "При естественном окончании — completed; при host-ошибке — failed и диагностическое сообщение. Повторно использовать source после его результата нельзя. Не назначайте этот on_load восстанавливаемой мини-игре: запуск звука при restore запрещён."
+      ]
+    },
+    {
+      "tag": "h2",
+      "children": ["Проверка версии с отменой"],
+      "props": { "id": "проверка-версии-с-отменой" }
+    },
+    {
+      "tag": "p",
+      "children": [
+        "В параметрах проекта задайте GitHub Releases: публичные Owner/Repository и CurrentVersion. Кнопки refs.check/refs.cancel и Text refs.label; при отсутствии декларации запрос безопасно вернёт Disabled. Ни URL, ни токен в Lua не передаются."
+      ]
+    },
+    "<!-- example:release -->\n",
+    {
+      "tag": "pre",
+      "text": "local pending\nreturn {\n  on_event=function(e)\n    if e.kind==\"click\" and e.node==refs.check and pending==nil then\n      pending=ui.check_game_release()\n      ui.set_text(refs.label, \"Проверяем...\")\n    elseif e.kind==\"click\" and e.node==refs.cancel and pending~=nil then\n      ui.cancel_release_check(pending)\n    elseif e.kind==\"service_result\" and e.operation==\"CheckGameRelease\"\n        and e.request_id==pending then\n      pending=nil\n      if e.code==\"Ok\" then\n        ui.set_text(refs.label, e.release.latest_version)\n      elseif e.code==\"RateLimited\" then\n        ui.set_text(refs.label, \"Повтор через \"..e.retry_after_seconds..\" с\")\n      else\n        ui.set_text(refs.label, e.message)\n      end\n    end\n  end\n}",
+      "language": "lua",
+      "children": [
+        {
+          "tag": "span",
+          "children": ["local"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " pending\n",
+        {
+          "tag": "span",
+          "children": ["return"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " {\n  on_event=",
+        {
+          "tag": "span",
+          "children": [
+            {
+              "tag": "span",
+              "children": ["function"],
+              "props": { "className": "hljs-keyword" }
+            },
+            {
+              "tag": "span",
+              "children": ["(e)"],
+              "props": { "className": "hljs-params" }
+            }
+          ],
+          "props": { "className": "hljs-function" }
+        },
+        "\n    ",
+        {
+          "tag": "span",
+          "children": ["if"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " e.kind==",
+        {
+          "tag": "span",
+          "children": ["\"click\""],
+          "props": { "className": "hljs-string" }
+        },
+        " ",
+        {
+          "tag": "span",
+          "children": ["and"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " e.node==refs.check ",
+        {
+          "tag": "span",
+          "children": ["and"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " pending==",
+        {
+          "tag": "span",
+          "children": ["nil"],
+          "props": { "className": "hljs-literal" }
+        },
+        " ",
+        {
+          "tag": "span",
+          "children": ["then"],
+          "props": { "className": "hljs-keyword" }
+        },
+        "\n      pending=ui.check_game_release()\n      ui.set_text(refs.label, ",
+        {
+          "tag": "span",
+          "children": ["\"Проверяем...\""],
+          "props": { "className": "hljs-string" }
+        },
+        ")\n    ",
+        {
+          "tag": "span",
+          "children": ["elseif"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " e.kind==",
+        {
+          "tag": "span",
+          "children": ["\"click\""],
+          "props": { "className": "hljs-string" }
+        },
+        " ",
+        {
+          "tag": "span",
+          "children": ["and"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " e.node==refs.cancel ",
+        {
+          "tag": "span",
+          "children": ["and"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " pending~=",
+        {
+          "tag": "span",
+          "children": ["nil"],
+          "props": { "className": "hljs-literal" }
+        },
+        " ",
+        {
+          "tag": "span",
+          "children": ["then"],
+          "props": { "className": "hljs-keyword" }
+        },
+        "\n      ui.cancel_release_check(pending)\n    ",
+        {
+          "tag": "span",
+          "children": ["elseif"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " e.kind==",
+        {
+          "tag": "span",
+          "children": ["\"service_result\""],
+          "props": { "className": "hljs-string" }
+        },
+        " ",
+        {
+          "tag": "span",
+          "children": ["and"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " e.operation==",
+        {
+          "tag": "span",
+          "children": ["\"CheckGameRelease\""],
+          "props": { "className": "hljs-string" }
+        },
+        "\n        ",
+        {
+          "tag": "span",
+          "children": ["and"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " e.request_id==pending ",
+        {
+          "tag": "span",
+          "children": ["then"],
+          "props": { "className": "hljs-keyword" }
+        },
+        "\n      pending=",
+        {
+          "tag": "span",
+          "children": ["nil"],
+          "props": { "className": "hljs-literal" }
+        },
+        "\n      ",
+        {
+          "tag": "span",
+          "children": ["if"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " e.code==",
+        {
+          "tag": "span",
+          "children": ["\"Ok\""],
+          "props": { "className": "hljs-string" }
+        },
+        " ",
+        {
+          "tag": "span",
+          "children": ["then"],
+          "props": { "className": "hljs-keyword" }
+        },
+        "\n        ui.set_text(refs.label, e.release.latest_version)\n      ",
+        {
+          "tag": "span",
+          "children": ["elseif"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " e.code==",
+        {
+          "tag": "span",
+          "children": ["\"RateLimited\""],
+          "props": { "className": "hljs-string" }
+        },
+        " ",
+        {
+          "tag": "span",
+          "children": ["then"],
+          "props": { "className": "hljs-keyword" }
+        },
+        "\n        ui.set_text(refs.label, ",
+        {
+          "tag": "span",
+          "children": ["\"Повтор через \""],
+          "props": { "className": "hljs-string" }
+        },
+        "..e.retry_after_seconds..",
+        {
+          "tag": "span",
+          "children": ["\" с\""],
+          "props": { "className": "hljs-string" }
+        },
+        ")\n      ",
+        {
+          "tag": "span",
+          "children": ["else"],
+          "props": { "className": "hljs-keyword" }
+        },
+        "\n        ui.set_text(refs.label, e.message)\n      ",
+        {
+          "tag": "span",
+          "children": ["end"],
+          "props": { "className": "hljs-keyword" }
+        },
+        "\n    ",
+        {
+          "tag": "span",
+          "children": ["end"],
+          "props": { "className": "hljs-keyword" }
+        },
+        "\n  ",
+        {
+          "tag": "span",
+          "children": ["end"],
+          "props": { "className": "hljs-keyword" }
+        },
+        "\n}"
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Нет автообновления файлов или открытия page_url. Cancel не возвращает второго request ID; результат приходит на исходный pending. Повторный check делается только по новому нажатию и ограничениям сервиса."
+      ]
+    }
+  ]
+}

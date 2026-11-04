@@ -1,0 +1,1681 @@
+{
+  "title": "Lua-справочник NovellMaker",
+  "headings": [
+    {
+      "title": "Lua-справочник NovellMaker",
+      "id": "lua-справочник-novellmaker",
+      "level": 1
+    },
+    { "title": "Категории", "id": "категории", "level": 2 },
+    {
+      "title": "Пространства имён и данные",
+      "id": "пространства-имён-и-данные",
+      "level": 2
+    },
+    {
+      "title": "Полный алфавитный указатель",
+      "id": "полный-алфавитный-указатель",
+      "level": 2
+    }
+  ],
+  "nodes": [
+    {
+      "tag": "h1",
+      "children": ["Lua-справочник NovellMaker"],
+      "props": { "id": "lua-справочник-novellmaker" }
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Практический справочник текущего кода на 3 ноября 2026 года. Проект v23, Lua 5.2/MoonSharp 2.0.0, screen protocol v20. Запланированные функции не включены. Для начала прочитайте ",
+        {
+          "tag": "a",
+          "children": ["модель исполнения"],
+          "props": { "href": "/projects/novellmaker/docs/lua/execution-model" }
+        },
+        ", затем ",
+        {
+          "tag": "a",
+          "children": ["законченные примеры"],
+          "props": { "href": "/projects/novellmaker/docs/lua/examples" }
+        },
+        ". Персонажи из частей, ключевые кадры и GIF: ",
+        {
+          "tag": "a",
+          "children": ["руководство анимации"],
+          "props": { "href": "/projects/novellmaker/docs/lua/characters" }
+        },
+        ". Возможности редактора, ресурсы и экспорт: ",
+        {
+          "tag": "a",
+          "children": ["руководство движка"],
+          "props": { "href": "/projects/novellmaker/docs/engine-guide" }
+        },
+        "."
+      ]
+    },
+    { "tag": "h2", "children": ["Категории"], "props": { "id": "категории" } },
+    {
+      "tag": "ul",
+      "children": [
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["Сценарный API game.*"],
+              "props": { "href": "/projects/novellmaker/docs/lua/scenario" }
+            }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["Компоненты, геометрия и иерархия"],
+              "props": { "href": "/projects/novellmaker/docs/lua/components" }
+            }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["Состояние компонентов и управляемый RNG"],
+              "props": {
+                "href": "/projects/novellmaker/docs/lua/state-and-random"
+              }
+            }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["Lua-ресурсы и модули"],
+              "props": { "href": "/projects/novellmaker/docs/lua/modules" }
+            }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["Ввод и авторские триггеры"],
+              "props": {
+                "href": "/projects/novellmaker/docs/lua/input-and-triggers"
+              }
+            }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["Анимации компонентов"],
+              "props": { "href": "/projects/novellmaker/docs/lua/animations" }
+            }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["Звук Lua"],
+              "props": { "href": "/projects/novellmaker/docs/lua/audio" }
+            },
+            " и ",
+            {
+              "tag": "a",
+              "children": ["озвучка/fades/ducking проекта"],
+              "props": {
+                "href": "/projects/novellmaker/docs/engine-guide#озвучка-fades-и-ducking"
+              }
+            }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["Игровой сеанс, слоты, настройки и профиль"],
+              "props": {
+                "href": "/projects/novellmaker/docs/lua/session-and-storage"
+              }
+            }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["Авторские окна истории и чтения"],
+              "props": { "href": "/projects/novellmaker/docs/lua/history" }
+            }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["Внешний сервис проверки выпуска"],
+              "props": {
+                "href": "/projects/novellmaker/docs/lua/external-services"
+              }
+            }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["Мини-игры и возврат результата"],
+              "props": { "href": "/projects/novellmaker/docs/lua/minigames" }
+            }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["Диагностика"],
+              "props": { "href": "/projects/novellmaker/docs/lua/diagnostics" }
+            }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["Ограниченная стандартная библиотека"],
+              "props": {
+                "href": "/projects/novellmaker/docs/lua/standard-library"
+              }
+            }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["События и структуры результатов"],
+              "props": { "href": "/projects/novellmaker/docs/lua/events" }
+            }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["Сводные квоты"],
+              "props": { "href": "/projects/novellmaker/docs/lua/limits" }
+            }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["Проверка полноты и выявленные расхождения"],
+              "props": { "href": "/projects/novellmaker/docs/lua/verification" }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "tag": "h2",
+      "children": ["Пространства имён и данные"],
+      "props": { "id": "пространства-имён-и-данные" }
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "code", "children": ["refs"] },
+        ", ",
+        { "tag": "code", "children": ["modules"] },
+        ", ",
+        { "tag": "code", "children": ["audio"] },
+        ", ",
+        { "tag": "code", "children": ["ui.null"] },
+        ", ",
+        { "tag": "code", "children": ["math.pi"] },
+        ", таблицы handlers и событий, строки ID и handles ",
+        { "tag": "strong", "children": ["не функции"] },
+        ". Их контексты/сроки жизни описаны в ",
+        {
+          "tag": "a",
+          "children": ["модели исполнения"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#namespaces"
+          }
+        },
+        ". Авторские функции модулей и примеров не становятся API движка. Ни весь Lua, ни вся стандартная библиотека MoonSharp не подключены."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        "По умолчанию сохранены старые преобразования аргументов. Строгий режим включается явно: ",
+        {
+          "tag": "a",
+          "children": ["game.strict_arguments"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/scenario#game-strict-arguments"
+          }
+        },
+        " или ",
+        {
+          "tag": "a",
+          "children": ["ui.strict_arguments"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/components#ui-strict-arguments"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "h2",
+      "children": ["Полный алфавитный указатель"],
+      "props": { "id": "полный-алфавитный-указатель" }
+    },
+    {
+      "tag": "ul",
+      "children": [
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["game.auto"],
+              "props": {
+                "href": "/projects/novellmaker/docs/lua/scenario#game-auto"
+              }
+            }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["game.choice"],
+              "props": {
+                "href": "/projects/novellmaker/docs/lua/scenario#game-choice"
+              }
+            }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["game.finish"],
+              "props": {
+                "href": "/projects/novellmaker/docs/lua/scenario#game-finish"
+              }
+            }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["game.get"],
+              "props": {
+                "href": "/projects/novellmaker/docs/lua/scenario#game-get"
+              }
+            }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["game.hide"],
+              "props": {
+                "href": "/projects/novellmaker/docs/lua/scenario#game-hide"
+              }
+            }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["game.hotspot"],
+              "props": {
+                "href": "/projects/novellmaker/docs/lua/scenario#game-hotspot"
+              }
+            }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["game.jump"],
+              "props": {
+                "href": "/projects/novellmaker/docs/lua/scenario#game-jump"
+              }
+            }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["game.jump_line"],
+              "props": {
+                "href": "/projects/novellmaker/docs/lua/scenario#game-jump-line"
+              }
+            }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["game.minigame_result"],
+              "props": {
+                "href": "/projects/novellmaker/docs/lua/scenario#game-minigame-result"
+              }
+            }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["game.move"],
+              "props": {
+                "href": "/projects/novellmaker/docs/lua/scenario#game-move"
+              }
+            }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["game.object"],
+              "props": {
+                "href": "/projects/novellmaker/docs/lua/scenario#game-object"
+              }
+            }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["game.place"],
+              "props": {
+                "href": "/projects/novellmaker/docs/lua/scenario#game-place"
+              }
+            }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["game.run"],
+              "props": {
+                "href": "/projects/novellmaker/docs/lua/scenario#game-run"
+              }
+            }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["game.set"],
+              "props": {
+                "href": "/projects/novellmaker/docs/lua/scenario#game-set"
+              }
+            }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["game.show"],
+              "props": {
+                "href": "/projects/novellmaker/docs/lua/scenario#game-show"
+              }
+            }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["game.start_minigame"],
+              "props": {
+                "href": "/projects/novellmaker/docs/lua/scenario#game-start-minigame"
+              }
+            }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["game.state"],
+              "props": {
+                "href": "/projects/novellmaker/docs/lua/scenario#game-state"
+              }
+            }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["game.strict_arguments"],
+              "props": {
+                "href": "/projects/novellmaker/docs/lua/scenario#game-strict-arguments"
+              }
+            }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["game.text"],
+              "props": {
+                "href": "/projects/novellmaker/docs/lua/scenario#game-text"
+              }
+            }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["game.time"],
+              "props": {
+                "href": "/projects/novellmaker/docs/lua/scenario#game-time"
+              }
+            }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["game.visible"],
+              "props": {
+                "href": "/projects/novellmaker/docs/lua/scenario#game-visible"
+              }
+            }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["game.wait"],
+              "props": {
+                "href": "/projects/novellmaker/docs/lua/scenario#game-wait"
+              }
+            }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["game.wait_actions"],
+              "props": {
+                "href": "/projects/novellmaker/docs/lua/scenario#game-wait-actions"
+              }
+            }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["game.wait_click"],
+              "props": {
+                "href": "/projects/novellmaker/docs/lua/scenario#game-wait-click"
+              }
+            }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["game.wait_input"],
+              "props": {
+                "href": "/projects/novellmaker/docs/lua/scenario#game-wait-input"
+              }
+            }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["ipairs"],
+              "props": {
+                "href": "/projects/novellmaker/docs/lua/standard-library#ipairs"
+              }
+            }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["math.abs"],
+              "props": {
+                "href": "/projects/novellmaker/docs/lua/standard-library#math-abs"
+              }
+            }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["math.acos"],
+              "props": {
+                "href": "/projects/novellmaker/docs/lua/standard-library#math-acos"
+              }
+            }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["math.asin"],
+              "props": {
+                "href": "/projects/novellmaker/docs/lua/standard-library#math-asin"
+              }
+            }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["math.atan"],
+              "props": {
+                "href": "/projects/novellmaker/docs/lua/standard-library#math-atan"
+              }
+            }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["math.atan2"],
+              "props": {
+                "href": "/projects/novellmaker/docs/lua/standard-library#math-atan2"
+              }
+            }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["math.ceil"],
+              "props": {
+                "href": "/projects/novellmaker/docs/lua/standard-library#math-ceil"
+              }
+            }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["math.cos"],
+              "props": {
+                "href": "/projects/novellmaker/docs/lua/standard-library#math-cos"
+              }
+            }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["math.deg"],
+              "props": {
+                "href": "/projects/novellmaker/docs/lua/standard-library#math-deg"
+              }
+            }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["math.exp"],
+              "props": {
+                "href": "/projects/novellmaker/docs/lua/standard-library#math-exp"
+              }
+            }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["math.floor"],
+              "props": {
+                "href": "/projects/novellmaker/docs/lua/standard-library#math-floor"
+              }
+            }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["math.fmod"],
+              "props": {
+                "href": "/projects/novellmaker/docs/lua/standard-library#math-fmod"
+              }
+            }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["math.log"],
+              "props": {
+                "href": "/projects/novellmaker/docs/lua/standard-library#math-log"
+              }
+            }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["math.max"],
+              "props": {
+                "href": "/projects/novellmaker/docs/lua/standard-library#math-max"
+              }
+            }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["math.min"],
+              "props": {
+                "href": "/projects/novellmaker/docs/lua/standard-library#math-min"
+              }
+            }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["math.modf"],
+              "props": {
+                "href": "/projects/novellmaker/docs/lua/standard-library#math-modf"
+              }
+            }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["math.pow"],
+              "props": {
+                "href": "/projects/novellmaker/docs/lua/standard-library#math-pow"
+              }
+            }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["math.rad"],
+              "props": {
+                "href": "/projects/novellmaker/docs/lua/standard-library#math-rad"
+              }
+            }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["math.sin"],
+              "props": {
+                "href": "/projects/novellmaker/docs/lua/standard-library#math-sin"
+              }
+            }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["math.sqrt"],
+              "props": {
+                "href": "/projects/novellmaker/docs/lua/standard-library#math-sqrt"
+              }
+            }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["math.tan"],
+              "props": {
+                "href": "/projects/novellmaker/docs/lua/standard-library#math-tan"
+              }
+            }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["pairs"],
+              "props": {
+                "href": "/projects/novellmaker/docs/lua/standard-library#pairs"
+              }
+            }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["string.find"],
+              "props": {
+                "href": "/projects/novellmaker/docs/lua/standard-library#string-find"
+              }
+            }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["string.len"],
+              "props": {
+                "href": "/projects/novellmaker/docs/lua/standard-library#string-len"
+              }
+            }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["string.lower"],
+              "props": {
+                "href": "/projects/novellmaker/docs/lua/standard-library#string-lower"
+              }
+            }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["string.rep"],
+              "props": {
+                "href": "/projects/novellmaker/docs/lua/standard-library#string-rep"
+              }
+            }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["string.reverse"],
+              "props": {
+                "href": "/projects/novellmaker/docs/lua/standard-library#string-reverse"
+              }
+            }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["string.sub"],
+              "props": {
+                "href": "/projects/novellmaker/docs/lua/standard-library#string-sub"
+              }
+            }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["string.upper"],
+              "props": {
+                "href": "/projects/novellmaker/docs/lua/standard-library#string-upper"
+              }
+            }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["table.concat"],
+              "props": {
+                "href": "/projects/novellmaker/docs/lua/standard-library#table-concat"
+              }
+            }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["table.insert"],
+              "props": {
+                "href": "/projects/novellmaker/docs/lua/standard-library#table-insert"
+              }
+            }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["table.remove"],
+              "props": {
+                "href": "/projects/novellmaker/docs/lua/standard-library#table-remove"
+              }
+            }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["tonumber"],
+              "props": {
+                "href": "/projects/novellmaker/docs/lua/standard-library#tonumber"
+              }
+            }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["tostring"],
+              "props": {
+                "href": "/projects/novellmaker/docs/lua/standard-library#tostring"
+              }
+            }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["type"],
+              "props": {
+                "href": "/projects/novellmaker/docs/lua/standard-library#type"
+              }
+            }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["ui.animate"],
+              "props": {
+                "href": "/projects/novellmaker/docs/lua/animations#ui-animate"
+              }
+            }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["ui.cancel_animation"],
+              "props": {
+                "href": "/projects/novellmaker/docs/lua/animations#ui-cancel-animation"
+              }
+            }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["ui.cancel_minigame"],
+              "props": {
+                "href": "/projects/novellmaker/docs/lua/minigames#ui-cancel-minigame"
+              }
+            }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["ui.cancel_release_check"],
+              "props": {
+                "href": "/projects/novellmaker/docs/lua/external-services#ui-cancel-release-check"
+              }
+            }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["ui.capture_pointer"],
+              "props": {
+                "href": "/projects/novellmaker/docs/lua/input-and-triggers#ui-capture-pointer"
+              }
+            }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["ui.check_game_release"],
+              "props": {
+                "href": "/projects/novellmaker/docs/lua/external-services#ui-check-game-release"
+              }
+            }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["ui.close"],
+              "props": {
+                "href": "/projects/novellmaker/docs/lua/components#ui-close"
+              }
+            }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["ui.complete_minigame"],
+              "props": {
+                "href": "/projects/novellmaker/docs/lua/minigames#ui-complete-minigame"
+              }
+            }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["ui.continue_game"],
+              "props": {
+                "href": "/projects/novellmaker/docs/lua/session-and-storage#ui-continue-game"
+              }
+            }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["ui.create"],
+              "props": {
+                "href": "/projects/novellmaker/docs/lua/components#ui-create"
+              }
+            }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["ui.delete_slot"],
+              "props": {
+                "href": "/projects/novellmaker/docs/lua/session-and-storage#ui-delete-slot"
+              }
+            }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["ui.end_session"],
+              "props": {
+                "href": "/projects/novellmaker/docs/lua/session-and-storage#ui-end-session"
+              }
+            }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["ui.find"],
+              "props": {
+                "href": "/projects/novellmaker/docs/lua/components#ui-find"
+              }
+            }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["ui.focus"],
+              "props": {
+                "href": "/projects/novellmaker/docs/lua/input-and-triggers#ui-focus"
+              }
+            }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["ui.get"],
+              "props": {
+                "href": "/projects/novellmaker/docs/lua/state-and-random#ui-get"
+              }
+            }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["ui.get_history"],
+              "props": {
+                "href": "/projects/novellmaker/docs/lua/history#ui-get-history"
+              }
+            }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["ui.get_persistent"],
+              "props": {
+                "href": "/projects/novellmaker/docs/lua/session-and-storage#ui-get-persistent"
+              }
+            }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["ui.get_random_state"],
+              "props": {
+                "href": "/projects/novellmaker/docs/lua/state-and-random#ui-get-random-state"
+              }
+            }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["ui.get_settings"],
+              "props": {
+                "href": "/projects/novellmaker/docs/lua/session-and-storage#ui-get-settings"
+              }
+            }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["ui.get_state"],
+              "props": {
+                "href": "/projects/novellmaker/docs/lua/state-and-random#ui-get-state"
+              }
+            }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["ui.import"],
+              "props": {
+                "href": "/projects/novellmaker/docs/lua/modules#ui-import"
+              }
+            }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["ui.is_restoring"],
+              "props": {
+                "href": "/projects/novellmaker/docs/lua/minigames#ui-is-restoring"
+              }
+            }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["ui.list"],
+              "props": {
+                "href": "/projects/novellmaker/docs/lua/state-and-random#ui-list"
+              }
+            }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["ui.list_slots"],
+              "props": {
+                "href": "/projects/novellmaker/docs/lua/session-and-storage#ui-list-slots"
+              }
+            }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["ui.load_slot"],
+              "props": {
+                "href": "/projects/novellmaker/docs/lua/session-and-storage#ui-load-slot"
+              }
+            }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["ui.log"],
+              "props": {
+                "href": "/projects/novellmaker/docs/lua/diagnostics#ui-log"
+              }
+            }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["ui.main_menu"],
+              "props": {
+                "href": "/projects/novellmaker/docs/lua/session-and-storage#ui-main-menu"
+              }
+            }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["ui.minigame_parameters"],
+              "props": {
+                "href": "/projects/novellmaker/docs/lua/minigames#ui-minigame-parameters"
+              }
+            }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["ui.new_game"],
+              "props": {
+                "href": "/projects/novellmaker/docs/lua/session-and-storage#ui-new-game"
+              }
+            }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["ui.object"],
+              "props": {
+                "href": "/projects/novellmaker/docs/lua/state-and-random#ui-object"
+              }
+            }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["ui.parallel"],
+              "props": {
+                "href": "/projects/novellmaker/docs/lua/animations#ui-parallel"
+              }
+            }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["ui.play_audio"],
+              "props": {
+                "href": "/projects/novellmaker/docs/lua/audio#ui-play-audio"
+              }
+            }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["ui.random"],
+              "props": {
+                "href": "/projects/novellmaker/docs/lua/state-and-random#ui-random"
+              }
+            }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["ui.release_pointer"],
+              "props": {
+                "href": "/projects/novellmaker/docs/lua/input-and-triggers#ui-release-pointer"
+              }
+            }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["ui.remove"],
+              "props": {
+                "href": "/projects/novellmaker/docs/lua/components#ui-remove"
+              }
+            }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["ui.replay_history_voice"],
+              "props": {
+                "href": "/projects/novellmaker/docs/lua/history#ui-replay-history-voice"
+              }
+            }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["ui.save_slot"],
+              "props": {
+                "href": "/projects/novellmaker/docs/lua/session-and-storage#ui-save-slot"
+              }
+            }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["ui.seed_random"],
+              "props": {
+                "href": "/projects/novellmaker/docs/lua/state-and-random#ui-seed-random"
+              }
+            }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["ui.sequence"],
+              "props": {
+                "href": "/projects/novellmaker/docs/lua/animations#ui-sequence"
+              }
+            }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["ui.set_audio_volume"],
+              "props": {
+                "href": "/projects/novellmaker/docs/lua/audio#ui-set-audio-volume"
+              }
+            }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["ui.set_enabled"],
+              "props": {
+                "href": "/projects/novellmaker/docs/lua/components#ui-set-enabled"
+              }
+            }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["ui.set_geometry"],
+              "props": {
+                "href": "/projects/novellmaker/docs/lua/components#ui-set-geometry"
+              }
+            }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["ui.set_parent"],
+              "props": {
+                "href": "/projects/novellmaker/docs/lua/components#ui-set-parent"
+              }
+            }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["ui.set_persistent"],
+              "props": {
+                "href": "/projects/novellmaker/docs/lua/session-and-storage#ui-set-persistent"
+              }
+            }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["ui.set_random_state"],
+              "props": {
+                "href": "/projects/novellmaker/docs/lua/state-and-random#ui-set-random-state"
+              }
+            }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["ui.set_setting"],
+              "props": {
+                "href": "/projects/novellmaker/docs/lua/session-and-storage#ui-set-setting"
+              }
+            }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["ui.set_state"],
+              "props": {
+                "href": "/projects/novellmaker/docs/lua/state-and-random#ui-set-state"
+              }
+            }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["ui.set_text"],
+              "props": {
+                "href": "/projects/novellmaker/docs/lua/components#ui-set-text"
+              }
+            }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["ui.set_visible"],
+              "props": {
+                "href": "/projects/novellmaker/docs/lua/components#ui-set-visible"
+              }
+            }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["ui.stop_audio"],
+              "props": {
+                "href": "/projects/novellmaker/docs/lua/audio#ui-stop-audio"
+              }
+            }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["ui.strict_arguments"],
+              "props": {
+                "href": "/projects/novellmaker/docs/lua/components#ui-strict-arguments"
+              }
+            }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["ui.trigger"],
+              "props": {
+                "href": "/projects/novellmaker/docs/lua/input-and-triggers#ui-trigger"
+              }
+            }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            {
+              "tag": "a",
+              "children": ["ui.tween"],
+              "props": {
+                "href": "/projects/novellmaker/docs/lua/animations#ui-tween"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Всего 113 функций:"] },
+        " game — 25, ui — 53 (включая import), ограниченная библиотека ui — 35. В модуле тот же ui и библиотека, новых встроенных экспортов нет."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Параметры появления текста, авточтение, пропуск прочитанного и история с повтором голоса: ",
+        {
+          "tag": "a",
+          "children": ["чтение новеллы"],
+          "props": {
+            "href": "/projects/novellmaker/docs/engine-guide#чтение-новеллы"
+          }
+        },
+        "."
+      ]
+    }
+  ]
+}

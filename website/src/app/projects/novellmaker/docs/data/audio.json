@@ -1,0 +1,606 @@
+{
+  "title": "Звук Lua",
+  "headings": [
+    { "title": "Звук Lua", "id": "звук-lua", "level": 1 },
+    { "title": "ui.play_audio", "id": "ui-play-audio", "level": 2 },
+    { "title": "ui.stop_audio", "id": "ui-stop-audio", "level": 2 },
+    { "title": "ui.set_audio_volume", "id": "ui-set-audio-volume", "level": 2 }
+  ],
+  "nodes": [
+    { "tag": "h1", "children": ["Звук Lua"], "props": { "id": "звук-lua" } },
+    {
+      "tag": "p",
+      "children": [
+        {
+          "tag": "a",
+          "children": ["Оглавление"],
+          "props": { "href": "/projects/novellmaker/docs/lua" }
+        },
+        " · ",
+        {
+          "tag": "a",
+          "children": ["Модель исполнения"],
+          "props": { "href": "/projects/novellmaker/docs/lua/execution-model" }
+        },
+        " · ",
+        {
+          "tag": "a",
+          "children": ["События"],
+          "props": { "href": "/projects/novellmaker/docs/lua/events" }
+        },
+        " · ",
+        {
+          "tag": "a",
+          "children": ["Квоты"],
+          "props": { "href": "/projects/novellmaker/docs/lua/limits" }
+        }
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Контекст: только активные ui-on_load/on_event и вызванные ими модули. Сценарного Lua audio API нет: фон/озвучку фразы назначают в редакторе. ",
+        {
+          "tag": "a",
+          "children": ["Пакет"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#batch"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["владение"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#namespaces"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["lifetime"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["квоты"],
+          "props": { "href": "/projects/novellmaker/docs/lua/limits#audio" }
+        },
+        " и ",
+        {
+          "tag": "a",
+          "children": ["audio_result"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/events#audio-result"
+          }
+        },
+        " применяются к каждой записи. Все три функции требуют ",
+        { "tag": "strong", "children": ["точное"] },
+        " число и типы аргументов."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Ресурс: зарегистрированный PCM WAV signed 16-bit, mono/stereo, 8000–48000 Гц. В свойствах корневого Lua-ресурса добавьте ссылку click на WAV; тогда ",
+        { "tag": "code", "children": ["audio.click"] },
+        " — ID N. Это не путь, не имя файла и не handle узла. В модуль передайте ID параметром; его собственная глобальная audio отсутствует. Проигрывание ограничено 32 одновременными источниками всего AudioService, включая сюжетный звук. Усиление source × огибающая × group × Master × ducking (для sound), mute групп также действует. Огибающие и ducking задаются в ",
+        {
+          "tag": "a",
+          "children": ["параметрах проекта"],
+          "props": {
+            "href": "/projects/novellmaker/docs/engine-guide#озвучка-fades-и-ducking"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Источник принадлежит session/generation/owner/instance: stop/volume другого экземпляра запрещены. Ticket остаётся учтённым до commit его audio_result; после этого ID устарел. Закрытие/ошибка/Reset останавливают собственные источники без возрождения callback в новом экземпляре. Pause/покрытие/потеря host-фокуса удерживают звук. Исключение: обычный pending update не останавливает уже играющий звук, pending input/result/load удерживает. Звук не содержит Lua-позиции воспроизведения и не сохраняется в слот; мини-игру можно сохранить лишь после остановки/завершения звука и обработки результата. В restore on_load все три функции запрещены."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Lua не предоставляет команды настройки fades/crossfade/ducking, чтение позиции аудио или ожидание аудио через game.wait_actions. Настройки проекта применяются к Lua-источникам: fade-in, естественный fade-out незакольцованных записей, приглушение sound при активном voice. ui.stop_audio и закрытие владельца останавливают сразу, сохраняя контракт audio_result. Crossfade относится к фоновым привязкам при смене сцен. Конец обрабатывают событием. Ошибка после принятия host-команды (например, backend) возвращается failed; визуальные изменения уже принятого пакета из-за неё не откатываются."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "span", "children": [], "props": { "id": "ui-play-audio" } }
+      ]
+    },
+    {
+      "tag": "h2",
+      "children": ["ui.play_audio"],
+      "props": { "id": "uiplay_audio" }
+    },
+    {
+      "tag": "p",
+      "children": ["Запустить собственный зарегистрированный WAV."]
+    },
+    {
+      "tag": "pre",
+      "text": "ui.play_audio(assetId, group, loop, volume) -> audio_id",
+      "language": "lua",
+      "children": ["ui.play_audio(assetId, group, loop, volume) -> audio_id"]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Доступность:"] },
+        " on_load/on_event ui, вызванный ими модуль, мини-игра; при restore — ограничения этой записи и ",
+        {
+          "tag": "a",
+          "children": ["restore"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#restore"
+          }
+        },
+        ". Вычисление исходника вне обработчика не предназначено для команд."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Аргументы и ошибки:"] },
+        " Ровно 4 аргумента. assetId: строка GUID N из audio.",
+        "<alias>",
+        " корневого обработчика; group: точно sound/effect/voice, Master недопустим. loop: boolean; volume: конечное число [0,1]. Все обязательны; nil не означает default."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Возврат:"] },
+        " Сразу ID источника N; после commit и проигрывания одно audio_result с completed/stopped/failed."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Эффект и ограничения:"] },
+        " После commit host открывает WAV. Ошибка файла/backend/лимита 32 источников на AudioService даёт failed, уже принятый визуальный пакет не откатывается. Создаётся резерв результата очереди. В restore on_load запрещено. Общие ",
+        {
+          "tag": "a",
+          "children": ["квоты"],
+          "props": { "href": "/projects/novellmaker/docs/lua/limits" }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["атомарность"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#batch"
+          }
+        },
+        " и ",
+        {
+          "tag": "a",
+          "children": ["lifecycle/сохранение"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        " применяются, если здесь не указано исключение."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Пример"] },
+        " (предусловия refs/ресурсов приведены в начале страницы; это фрагмент соответствующего обработчика, если не показан полный return):"
+      ]
+    },
+    {
+      "tag": "pre",
+      "text": "local id = ui.play_audio(audio.click, \"effect\", false, 0.7)",
+      "language": "lua",
+      "children": [
+        {
+          "tag": "span",
+          "children": ["local"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " id = ui.play_audio(audio.click, ",
+        {
+          "tag": "span",
+          "children": ["\"effect\""],
+          "props": { "className": "hljs-string" }
+        },
+        ", ",
+        {
+          "tag": "span",
+          "children": ["false"],
+          "props": { "className": "hljs-literal" }
+        },
+        ", ",
+        {
+          "tag": "span",
+          "children": ["0.7"],
+          "props": { "className": "hljs-number" }
+        },
+        ")"
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Связи:"] },
+        " ",
+        {
+          "tag": "a",
+          "children": ["ui.stop_audio"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/audio#ui-stop-audio"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["ui.set_audio_volume"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/audio#ui-set-audio-volume"
+          }
+        },
+        ". ",
+        {
+          "tag": "a",
+          "children": ["Регистрация и аргументы"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Screens/Lua/LuaAudioApi.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["тесты"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Screens/ScriptAudioLuaTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "span", "children": [], "props": { "id": "ui-stop-audio" } }
+      ]
+    },
+    {
+      "tag": "h2",
+      "children": ["ui.stop_audio"],
+      "props": { "id": "uistop_audio" }
+    },
+    { "tag": "p", "children": ["Остановить свой источник звука."] },
+    {
+      "tag": "pre",
+      "text": "ui.stop_audio(audio_id) -> nil",
+      "language": "lua",
+      "children": [
+        "ui.stop_audio(audio_id) -> ",
+        {
+          "tag": "span",
+          "children": ["nil"],
+          "props": { "className": "hljs-literal" }
+        }
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Доступность:"] },
+        " on_load/on_event ui, вызванный ими модуль, мини-игра; при restore — ограничения этой записи и ",
+        {
+          "tag": "a",
+          "children": ["restore"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#restore"
+          }
+        },
+        ". Вычисление исходника вне обработчика не предназначено для команд."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Аргументы и ошибки:"] },
+        " Ровно один GUID N, принадлежащий ещё учитываемому audio-ticket этого экземпляра. Чужой/уже удалённый ticket отвергает пакет."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Возврат:"] },
+        " nil; позднее audio_result(status=\"stopped\"), если источник ещё играл."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Эффект и ограничения:"] },
+        " Команда пакета. Повторная остановка учтённого уже завершённого источника не создаёт второй результат. Ticket удаляется после commit обработчика его результата; слоты звук не сохраняют. Restore on_load запрещено. Общие ",
+        {
+          "tag": "a",
+          "children": ["квоты"],
+          "props": { "href": "/projects/novellmaker/docs/lua/limits" }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["атомарность"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#batch"
+          }
+        },
+        " и ",
+        {
+          "tag": "a",
+          "children": ["lifecycle/сохранение"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        " применяются, если здесь не указано исключение."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Пример"] },
+        " (предусловия refs/ресурсов приведены в начале страницы; это фрагмент соответствующего обработчика, если не показан полный return):"
+      ]
+    },
+    {
+      "tag": "pre",
+      "text": "local id=ui.play_audio(audio.click, \"effect\", true, 0.7)\nui.stop_audio(id)",
+      "language": "lua",
+      "children": [
+        {
+          "tag": "span",
+          "children": ["local"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " id=ui.play_audio(audio.click, ",
+        {
+          "tag": "span",
+          "children": ["\"effect\""],
+          "props": { "className": "hljs-string" }
+        },
+        ", ",
+        {
+          "tag": "span",
+          "children": ["true"],
+          "props": { "className": "hljs-literal" }
+        },
+        ", ",
+        {
+          "tag": "span",
+          "children": ["0.7"],
+          "props": { "className": "hljs-number" }
+        },
+        ")\nui.stop_audio(id)"
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Связи:"] },
+        " ",
+        {
+          "tag": "a",
+          "children": ["ui.play_audio"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/audio#ui-play-audio"
+          }
+        },
+        ". ",
+        {
+          "tag": "a",
+          "children": ["Регистрация и аргументы"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Screens/Lua/LuaAudioApi.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["тесты"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Screens/ScriptAudioLuaTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        {
+          "tag": "span",
+          "children": [],
+          "props": { "id": "ui-set-audio-volume" }
+        }
+      ]
+    },
+    {
+      "tag": "h2",
+      "children": ["ui.set_audio_volume"],
+      "props": { "id": "uiset_audio_volume" }
+    },
+    { "tag": "p", "children": ["Изменить усиление собственного источника."] },
+    {
+      "tag": "pre",
+      "text": "ui.set_audio_volume(audio_id, volume) -> nil",
+      "language": "lua",
+      "children": [
+        "ui.set_audio_volume(audio_id, volume) -> ",
+        {
+          "tag": "span",
+          "children": ["nil"],
+          "props": { "className": "hljs-literal" }
+        }
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Доступность:"] },
+        " on_load/on_event ui, вызванный ими модуль, мини-игра; при restore — ограничения этой записи и ",
+        {
+          "tag": "a",
+          "children": ["restore"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#restore"
+          }
+        },
+        ". Вычисление исходника вне обработчика не предназначено для команд."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Аргументы и ошибки:"] },
+        " Ровно два аргумента; GUID N как stop_audio; volume: конечное число [0,1], nil запрещён."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Возврат:"] },
+        " nil; отдельного события громкости нет."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Эффект и ограничения:"] },
+        " Команда пакета. На учтённом завершённом источнике — no-op. Умножается на громкость группы/Master, профиль не пишет. Restore on_load запрещено. Общие ",
+        {
+          "tag": "a",
+          "children": ["квоты"],
+          "props": { "href": "/projects/novellmaker/docs/lua/limits" }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["атомарность"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#batch"
+          }
+        },
+        " и ",
+        {
+          "tag": "a",
+          "children": ["lifecycle/сохранение"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        " применяются, если здесь не указано исключение."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Пример"] },
+        " (предусловия refs/ресурсов приведены в начале страницы; это фрагмент соответствующего обработчика, если не показан полный return):"
+      ]
+    },
+    {
+      "tag": "pre",
+      "text": "local id=ui.play_audio(audio.click, \"effect\", true, 0.7)\nui.set_audio_volume(id, 0.2)",
+      "language": "lua",
+      "children": [
+        {
+          "tag": "span",
+          "children": ["local"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " id=ui.play_audio(audio.click, ",
+        {
+          "tag": "span",
+          "children": ["\"effect\""],
+          "props": { "className": "hljs-string" }
+        },
+        ", ",
+        {
+          "tag": "span",
+          "children": ["true"],
+          "props": { "className": "hljs-literal" }
+        },
+        ", ",
+        {
+          "tag": "span",
+          "children": ["0.7"],
+          "props": { "className": "hljs-number" }
+        },
+        ")\nui.set_audio_volume(id, ",
+        {
+          "tag": "span",
+          "children": ["0.2"],
+          "props": { "className": "hljs-number" }
+        },
+        ")"
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Связи:"] },
+        " ",
+        {
+          "tag": "a",
+          "children": ["ui.play_audio"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/audio#ui-play-audio"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["ui.set_setting"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/session-and-storage#ui-set-setting"
+          }
+        },
+        ". ",
+        {
+          "tag": "a",
+          "children": ["Регистрация и аргументы"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Screens/Lua/LuaAudioApi.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["тесты"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Screens/ScriptAudioLuaTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    }
+  ]
+}

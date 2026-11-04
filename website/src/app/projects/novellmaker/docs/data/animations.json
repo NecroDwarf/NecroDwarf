@@ -1,0 +1,956 @@
+{
+  "title": "Анимации компонентов",
+  "headings": [
+    {
+      "title": "Анимации компонентов",
+      "id": "анимации-компонентов",
+      "level": 1
+    },
+    { "title": "ui.tween", "id": "ui-tween", "level": 2 },
+    { "title": "ui.sequence", "id": "ui-sequence", "level": 2 },
+    { "title": "ui.parallel", "id": "ui-parallel", "level": 2 },
+    { "title": "ui.animate", "id": "ui-animate", "level": 2 },
+    { "title": "ui.cancel_animation", "id": "ui-cancel-animation", "level": 2 }
+  ],
+  "nodes": [
+    {
+      "tag": "h1",
+      "children": ["Анимации компонентов"],
+      "props": { "id": "анимации-компонентов" }
+    },
+    {
+      "tag": "p",
+      "children": [
+        {
+          "tag": "a",
+          "children": ["Оглавление"],
+          "props": { "href": "/projects/novellmaker/docs/lua" }
+        },
+        " · ",
+        {
+          "tag": "a",
+          "children": ["Модель исполнения"],
+          "props": { "href": "/projects/novellmaker/docs/lua/execution-model" }
+        },
+        " · ",
+        {
+          "tag": "a",
+          "children": ["События"],
+          "props": { "href": "/projects/novellmaker/docs/lua/events" }
+        },
+        " · ",
+        {
+          "tag": "a",
+          "children": ["Квоты"],
+          "props": { "href": "/projects/novellmaker/docs/lua/limits" }
+        }
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Контекст: только активный on_load/on_event ",
+        { "tag": "code", "children": ["ui"] },
+        " и функции модулей, вызванные им. ",
+        { "tag": "code", "children": ["game.move"] },
+        " — другая система. Общие правила каждой функции: ",
+        {
+          "tag": "a",
+          "children": ["пакеты"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#batch"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["lifetime"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["restore"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#restore"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["квоты"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/limits#animations"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["animation_result"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/events#animation-result"
+          }
+        },
+        ". Описания живут ",
+        { "tag": "strong", "children": ["один вызов"] },
+        ", ID запущенной группы — до её результата; ни то ни другое не хранится в слот."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Треки меняют только x/y/width/height/anchor_x/anchor_y/pivot_x/pivot_y/scale_x/scale_y/rotation/opacity в ",
+        {
+          "tag": "a",
+          "children": ["диапазонах геометрии"],
+          "props": { "href": "/projects/novellmaker/docs/lua/components" }
+        },
+        ". Цвет, текст, parent, order и clip_children не анимируются. Easing: ",
+        { "tag": "code", "children": ["linear"] },
+        ", ",
+        { "tag": "code", "children": ["in_quad"] },
+        ", ",
+        { "tag": "code", "children": ["out_quad"] },
+        ", ",
+        { "tag": "code", "children": ["in_out_quad"] },
+        ", ",
+        { "tag": "code", "children": ["in_cubic"] },
+        ", ",
+        { "tag": "code", "children": ["out_cubic"] },
+        ", ",
+        { "tag": "code", "children": ["in_out_cubic"] },
+        ". Интерполяция выполняется host без Lua каждый кадр; исходное значение захватывается в начале соответствующего трека."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Восстанавливающий on_load может вычислить чистое описание, но не запускать/отменять анимации. Пауза, закрытие/ошибка и загрузка следуют ",
+        {
+          "tag": "a",
+          "children": ["общему lifecycle"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        ". Закрытие не обязано доставлять оставшиеся результаты в исчезнувшую VM. Мини-игра не сохраняется до завершения и обработки её анимационных результатов. Примеры требуют refs.label собственного узла и его допустимой геометрии."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "span", "children": [], "props": { "id": "ui-tween" } }
+      ]
+    },
+    { "tag": "h2", "children": ["ui.tween"], "props": { "id": "uitween" } },
+    {
+      "tag": "p",
+      "children": ["Описать интерполяцию свойств собственного узла."]
+    },
+    {
+      "tag": "pre",
+      "text": "ui.tween(node, properties, seconds) -> description\nui.tween(node, properties, seconds, easing) -> description",
+      "language": "lua",
+      "children": [
+        "ui.tween(node, properties, seconds) -> description\nui.tween(node, properties, seconds, easing) -> description"
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Доступность:"] },
+        " on_load/on_event ui, вызванный ими модуль, мини-игра; при restore — ограничения этой записи и ",
+        {
+          "tag": "a",
+          "children": ["restore"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#restore"
+          }
+        },
+        ". Вычисление исходника вне обработчика не предназначено для команд."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Аргументы и ошибки:"] },
+        " Ровно 3 или 4 аргумента. properties: непустая таблица числовых целей, только анимируемые поля геометрии ниже. seconds: конечное >0 и <=3600; easing по умолчанию linear, явный nil — ошибка. Все цели должны соответствовать геометрическим диапазонам."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Возврат:"] },
+        " Непрозрачная строка description, действительная только в текущем вызове обработчика."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Эффект и ограничения:"] },
+        " Немедленно создаёт описание, не запускает движение и не расходует команду. До 128 описаний/обработчик, 64 треков/описание. Масштаб не может сменить знак через 0. Сложная мировая геометрия дополнительно проверяется при animate. Общие ",
+        {
+          "tag": "a",
+          "children": ["квоты"],
+          "props": { "href": "/projects/novellmaker/docs/lua/limits" }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["атомарность"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#batch"
+          }
+        },
+        " и ",
+        {
+          "tag": "a",
+          "children": ["lifecycle/сохранение"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        " применяются, если здесь не указано исключение."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Пример"] },
+        " (предусловия refs/ресурсов приведены в начале страницы; это фрагмент соответствующего обработчика, если не показан полный return):"
+      ]
+    },
+    {
+      "tag": "pre",
+      "text": "local t = ui.tween(refs.label, {x=200, opacity=0.5}, 1, \"out_quad\")\nui.animate(t)",
+      "language": "lua",
+      "children": [
+        {
+          "tag": "span",
+          "children": ["local"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " t = ui.tween(refs.label, {x=",
+        {
+          "tag": "span",
+          "children": ["200"],
+          "props": { "className": "hljs-number" }
+        },
+        ", opacity=",
+        {
+          "tag": "span",
+          "children": ["0.5"],
+          "props": { "className": "hljs-number" }
+        },
+        "}, ",
+        {
+          "tag": "span",
+          "children": ["1"],
+          "props": { "className": "hljs-number" }
+        },
+        ", ",
+        {
+          "tag": "span",
+          "children": ["\"out_quad\""],
+          "props": { "className": "hljs-string" }
+        },
+        ")\nui.animate(t)"
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Связи:"] },
+        " ",
+        {
+          "tag": "a",
+          "children": ["ui.animate"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/animations#ui-animate"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["ui.sequence"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/animations#ui-sequence"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["ui.parallel"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/animations#ui-parallel"
+          }
+        },
+        ". ",
+        {
+          "tag": "a",
+          "children": ["Регистрация и аргументы"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Screens/Lua/LuaAnimationApi.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["тесты"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Screens/AnimationTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "span", "children": [], "props": { "id": "ui-sequence" } }
+      ]
+    },
+    {
+      "tag": "h2",
+      "children": ["ui.sequence"],
+      "props": { "id": "uisequence" }
+    },
+    { "tag": "p", "children": ["Соединить описания последовательно."] },
+    {
+      "tag": "pre",
+      "text": "ui.sequence(children) -> description",
+      "language": "lua",
+      "children": ["ui.sequence(children) -> description"]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Доступность:"] },
+        " on_load/on_event ui, вызванный ими модуль, мини-игра; при restore — ограничения этой записи и ",
+        {
+          "tag": "a",
+          "children": ["restore"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#restore"
+          }
+        },
+        ". Вычисление исходника вне обработчика не предназначено для команд."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Аргументы и ошибки:"] },
+        " Ровно одна таблица: непустой плотный список до 64 описаний текущего обработчика; nil/старые описания/пропуски запрещены."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Возврат:"] },
+        " Новое description текущего обработчика."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Эффект и ограничения:"] },
+        " Сдвигает каждый дочерний план на суммарную длительность предыдущих. До 64 треков и <=3600 секунд всего, до 128 описаний вместе с дочерними. Команду не создаёт. Общие ",
+        {
+          "tag": "a",
+          "children": ["квоты"],
+          "props": { "href": "/projects/novellmaker/docs/lua/limits" }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["атомарность"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#batch"
+          }
+        },
+        " и ",
+        {
+          "tag": "a",
+          "children": ["lifecycle/сохранение"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        " применяются, если здесь не указано исключение."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Пример"] },
+        " (предусловия refs/ресурсов приведены в начале страницы; это фрагмент соответствующего обработчика, если не показан полный return):"
+      ]
+    },
+    {
+      "tag": "pre",
+      "text": "local a = ui.tween(refs.label, {x=200}, 1)\nlocal b = ui.tween(refs.label, {opacity=0.5}, 1)\nui.animate(ui.sequence({a,b}))",
+      "language": "lua",
+      "children": [
+        {
+          "tag": "span",
+          "children": ["local"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " a = ui.tween(refs.label, {x=",
+        {
+          "tag": "span",
+          "children": ["200"],
+          "props": { "className": "hljs-number" }
+        },
+        "}, ",
+        {
+          "tag": "span",
+          "children": ["1"],
+          "props": { "className": "hljs-number" }
+        },
+        ")\n",
+        {
+          "tag": "span",
+          "children": ["local"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " b = ui.tween(refs.label, {opacity=",
+        {
+          "tag": "span",
+          "children": ["0.5"],
+          "props": { "className": "hljs-number" }
+        },
+        "}, ",
+        {
+          "tag": "span",
+          "children": ["1"],
+          "props": { "className": "hljs-number" }
+        },
+        ")\nui.animate(ui.sequence({a,b}))"
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Связи:"] },
+        " ",
+        {
+          "tag": "a",
+          "children": ["ui.tween"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/animations#ui-tween"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["ui.animate"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/animations#ui-animate"
+          }
+        },
+        ". ",
+        {
+          "tag": "a",
+          "children": ["Регистрация и аргументы"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Screens/Lua/LuaAnimationApi.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["тесты"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Screens/AnimationTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "span", "children": [], "props": { "id": "ui-parallel" } }
+      ]
+    },
+    {
+      "tag": "h2",
+      "children": ["ui.parallel"],
+      "props": { "id": "uiparallel" }
+    },
+    { "tag": "p", "children": ["Соединить описания параллельно."] },
+    {
+      "tag": "pre",
+      "text": "ui.parallel(children) -> description",
+      "language": "lua",
+      "children": ["ui.parallel(children) -> description"]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Доступность:"] },
+        " on_load/on_event ui, вызванный ими модуль, мини-игра; при restore — ограничения этой записи и ",
+        {
+          "tag": "a",
+          "children": ["restore"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#restore"
+          }
+        },
+        ". Вычисление исходника вне обработчика не предназначено для команд."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Аргументы и ошибки:"] },
+        " Ровно одна таблица: непустой плотный список до 64 описаний текущего обработчика; nil/старые описания/пропуски запрещены."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Возврат:"] },
+        " Новое description текущего обработчика."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Эффект и ограничения:"] },
+        " Начинает все дочерние планы в 0; пересекающиеся интервалы одного свойства одного узла запрещены при проверке плана. До 64 треков и <=3600 секунд всего, до 128 описаний вместе с дочерними. Команду не создаёт. Общие ",
+        {
+          "tag": "a",
+          "children": ["квоты"],
+          "props": { "href": "/projects/novellmaker/docs/lua/limits" }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["атомарность"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#batch"
+          }
+        },
+        " и ",
+        {
+          "tag": "a",
+          "children": ["lifecycle/сохранение"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        " применяются, если здесь не указано исключение."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Пример"] },
+        " (предусловия refs/ресурсов приведены в начале страницы; это фрагмент соответствующего обработчика, если не показан полный return):"
+      ]
+    },
+    {
+      "tag": "pre",
+      "text": "local a = ui.tween(refs.label, {x=200}, 1)\nlocal b = ui.tween(refs.label, {opacity=0.5}, 1)\nui.animate(ui.parallel({a,b}))",
+      "language": "lua",
+      "children": [
+        {
+          "tag": "span",
+          "children": ["local"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " a = ui.tween(refs.label, {x=",
+        {
+          "tag": "span",
+          "children": ["200"],
+          "props": { "className": "hljs-number" }
+        },
+        "}, ",
+        {
+          "tag": "span",
+          "children": ["1"],
+          "props": { "className": "hljs-number" }
+        },
+        ")\n",
+        {
+          "tag": "span",
+          "children": ["local"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " b = ui.tween(refs.label, {opacity=",
+        {
+          "tag": "span",
+          "children": ["0.5"],
+          "props": { "className": "hljs-number" }
+        },
+        "}, ",
+        {
+          "tag": "span",
+          "children": ["1"],
+          "props": { "className": "hljs-number" }
+        },
+        ")\nui.animate(ui.parallel({a,b}))"
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Связи:"] },
+        " ",
+        {
+          "tag": "a",
+          "children": ["ui.tween"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/animations#ui-tween"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["ui.animate"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/animations#ui-animate"
+          }
+        },
+        ". ",
+        {
+          "tag": "a",
+          "children": ["Регистрация и аргументы"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Screens/Lua/LuaAnimationApi.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["тесты"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Screens/AnimationTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "span", "children": [], "props": { "id": "ui-animate" } }
+      ]
+    },
+    { "tag": "h2", "children": ["ui.animate"], "props": { "id": "uianimate" } },
+    { "tag": "p", "children": ["Запустить описанную анимационную группу."] },
+    {
+      "tag": "pre",
+      "text": "ui.animate(description) -> animation_id",
+      "language": "lua",
+      "children": ["ui.animate(description) -> animation_id"]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Доступность:"] },
+        " on_load/on_event ui, вызванный ими модуль, мини-игра; при restore — ограничения этой записи и ",
+        {
+          "tag": "a",
+          "children": ["restore"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#restore"
+          }
+        },
+        ". Вычисление исходника вне обработчика не предназначено для команд."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Аргументы и ошибки:"] },
+        " Ровно одно description текущего обработчика. nil/чужое/из прошлого вызова — ошибка."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Возврат:"] },
+        " ID операции (32 hex). Завершение — animation_result с тем же animation_id."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Эффект и ограничения:"] },
+        " Создаёт команду, запуск после полного commit. До 16 групп и 256 треков на экземпляр. Конфликтующая новая группа отменяет целиком старую (replaced). Резерв события входит в 128. В pause и при unsettled Lua этого экземпляра интерполяция стоит; слоты не хранят анимации. Restore on_load запрещает запуск. Общие ",
+        {
+          "tag": "a",
+          "children": ["квоты"],
+          "props": { "href": "/projects/novellmaker/docs/lua/limits" }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["атомарность"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#batch"
+          }
+        },
+        " и ",
+        {
+          "tag": "a",
+          "children": ["lifecycle/сохранение"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        " применяются, если здесь не указано исключение."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Пример"] },
+        " (предусловия refs/ресурсов приведены в начале страницы; это фрагмент соответствующего обработчика, если не показан полный return):"
+      ]
+    },
+    {
+      "tag": "pre",
+      "text": "local id = ui.animate(ui.tween(refs.label, {x=200}, 1))",
+      "language": "lua",
+      "children": [
+        {
+          "tag": "span",
+          "children": ["local"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " id = ui.animate(ui.tween(refs.label, {x=",
+        {
+          "tag": "span",
+          "children": ["200"],
+          "props": { "className": "hljs-number" }
+        },
+        "}, ",
+        {
+          "tag": "span",
+          "children": ["1"],
+          "props": { "className": "hljs-number" }
+        },
+        "))"
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Связи:"] },
+        " ",
+        {
+          "tag": "a",
+          "children": ["ui.cancel_animation"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/animations#ui-cancel-animation"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["ui.tween"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/animations#ui-tween"
+          }
+        },
+        ". ",
+        {
+          "tag": "a",
+          "children": ["Регистрация и аргументы"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Screens/Lua/LuaAnimationApi.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["тесты"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Screens/AnimationTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        {
+          "tag": "span",
+          "children": [],
+          "props": { "id": "ui-cancel-animation" }
+        }
+      ]
+    },
+    {
+      "tag": "h2",
+      "children": ["ui.cancel_animation"],
+      "props": { "id": "uicancel_animation" }
+    },
+    {
+      "tag": "p",
+      "children": ["Остановить свою анимационную группу на текущем значении."]
+    },
+    {
+      "tag": "pre",
+      "text": "ui.cancel_animation(animation_id) -> nil",
+      "language": "lua",
+      "children": [
+        "ui.cancel_animation(animation_id) -> ",
+        {
+          "tag": "span",
+          "children": ["nil"],
+          "props": { "className": "hljs-literal" }
+        }
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Доступность:"] },
+        " on_load/on_event ui, вызванный ими модуль, мини-игра; при restore — ограничения этой записи и ",
+        {
+          "tag": "a",
+          "children": ["restore"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#restore"
+          }
+        },
+        ". Вычисление исходника вне обработчика не предназначено для команд."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Аргументы и ошибки:"] },
+        " Ровно одна строка непустого GUID формата N (32 hex)."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Возврат:"] },
+        " nil; для живой группы — позднее animation_result, status=cancelled, reason=requested."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Эффект и ограничения:"] },
+        " Команда пакета. Отсутствующий/уже завершённый/не принадлежащий этому экземпляру корректный ID — no-op. Не откатывает геометрию. Restore on_load запрещает отмену. Общие ",
+        {
+          "tag": "a",
+          "children": ["квоты"],
+          "props": { "href": "/projects/novellmaker/docs/lua/limits" }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["атомарность"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#batch"
+          }
+        },
+        " и ",
+        {
+          "tag": "a",
+          "children": ["lifecycle/сохранение"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        " применяются, если здесь не указано исключение."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Пример"] },
+        " (предусловия refs/ресурсов приведены в начале страницы; это фрагмент соответствующего обработчика, если не показан полный return):"
+      ]
+    },
+    {
+      "tag": "pre",
+      "text": "local id=ui.animate(ui.tween(refs.label, {x=200}, 1))\nui.cancel_animation(id)",
+      "language": "lua",
+      "children": [
+        {
+          "tag": "span",
+          "children": ["local"],
+          "props": { "className": "hljs-keyword" }
+        },
+        " id=ui.animate(ui.tween(refs.label, {x=",
+        {
+          "tag": "span",
+          "children": ["200"],
+          "props": { "className": "hljs-number" }
+        },
+        "}, ",
+        {
+          "tag": "span",
+          "children": ["1"],
+          "props": { "className": "hljs-number" }
+        },
+        "))\nui.cancel_animation(id)"
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Связи:"] },
+        " ",
+        {
+          "tag": "a",
+          "children": ["ui.animate"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/animations#ui-animate"
+          }
+        },
+        ". ",
+        {
+          "tag": "a",
+          "children": ["Регистрация и аргументы"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Screens/Lua/LuaAnimationApi.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["тесты"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Screens/AnimationTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    }
+  ]
+}

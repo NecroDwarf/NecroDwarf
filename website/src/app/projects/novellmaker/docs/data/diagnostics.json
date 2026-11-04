@@ -1,0 +1,236 @@
+{
+  "title": "Диагностика",
+  "headings": [
+    { "title": "Диагностика", "id": "диагностика", "level": 1 },
+    { "title": "ui.log", "id": "ui-log", "level": 2 }
+  ],
+  "nodes": [
+    {
+      "tag": "h1",
+      "children": ["Диагностика"],
+      "props": { "id": "диагностика" }
+    },
+    {
+      "tag": "p",
+      "children": [
+        {
+          "tag": "a",
+          "children": ["Оглавление"],
+          "props": { "href": "/projects/novellmaker/docs/lua" }
+        },
+        " · ",
+        {
+          "tag": "a",
+          "children": ["Модель исполнения"],
+          "props": { "href": "/projects/novellmaker/docs/lua/execution-model" }
+        },
+        " · ",
+        {
+          "tag": "a",
+          "children": ["События"],
+          "props": { "href": "/projects/novellmaker/docs/lua/events" }
+        },
+        " · ",
+        {
+          "tag": "a",
+          "children": ["Квоты"],
+          "props": { "href": "/projects/novellmaker/docs/lua/limits" }
+        }
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Контекст: ui-обработчик и модули, ",
+        {
+          "tag": "strong",
+          "children": ["включая вычисление исходника до возврата handlers"]
+        },
+        ". В сценарном game ",
+        { "tag": "code", "children": ["ui.log"] },
+        " нет. Правила каждой записи: ",
+        {
+          "tag": "a",
+          "children": ["пакет"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#batch"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["lifetime"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["квоты журнала"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/limits#diagnostics"
+          }
+        },
+        ". Лог допустим в restore on_load."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Журнал независим от транзакции команд: сообщение, сформированное до ошибки, может быть опубликовано вместе с диагностикой ошибки; это не подтверждение commit state или вида. Host добавляет session/generation/owner/instance/scene/script/event/line; автор не подменяет эти поля. Кольцо содержит 256 записей, старые вытесняются. Не сериализуется в слот/state/профиль. Экспортированная игра пишет ограниченный журнал в свой каталог профиля, запись/ошибка файла не должна останавливать игровой кадр. В редакторе используйте диагностику Lua и путь к внешнему исходнику."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Изоляция означает отсутствие API файлов/CLR и ограничение worker, а не полную ОС-песочницу. Ошибки/превышение квот следует диагностировать, а не ловить pcall (его нет). Система не предоставляет lua print, assert или error; для проверки условий используйте ветвления и log, для бизнес-отказа — явное состояние/результат."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "span", "children": [], "props": { "id": "ui-log" } }
+      ]
+    },
+    { "tag": "h2", "children": ["ui.log"], "props": { "id": "uilog" } },
+    {
+      "tag": "p",
+      "children": ["Добавить сообщение в диагностический журнал Lua."]
+    },
+    {
+      "tag": "pre",
+      "text": "ui.log(level, message) -> nil",
+      "language": "lua",
+      "children": [
+        "ui.",
+        {
+          "tag": "span",
+          "children": ["log"],
+          "props": { "className": "hljs-built_in" }
+        },
+        "(level, message) -> ",
+        {
+          "tag": "span",
+          "children": ["nil"],
+          "props": { "className": "hljs-literal" }
+        }
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Доступность:"] },
+        " ui при загрузке исходника, on_load/on_event, модуль, мини-игра; restore допустим."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Аргументы и ошибки:"] },
+        " Ровно две точные строки. level: info/warning/error; message: <=1024 UTF-16. nil, другой уровень, длинная строка — ошибка, не усечение."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [{ "tag": "strong", "children": ["Возврат:"] }, " nil."]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Эффект и ограничения:"] },
+        " Диагностический эффект не является игровой командой и не откатывается с игровым пакетом. До 32 записей и 8192 символов сообщений/вызов включая модули; избыточные корректные записи отбрасываются со счётчиком, не ошибкой. Доступна также при загрузке исходника и в restore. Общие ",
+        {
+          "tag": "a",
+          "children": ["квоты"],
+          "props": { "href": "/projects/novellmaker/docs/lua/limits" }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["атомарность"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#batch"
+          }
+        },
+        " и ",
+        {
+          "tag": "a",
+          "children": ["lifecycle/сохранение"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#lifetime"
+          }
+        },
+        " применяются, если здесь не указано исключение."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Пример"] },
+        " (предусловия refs/ресурсов приведены в начале страницы; это фрагмент соответствующего обработчика, если не показан полный return):"
+      ]
+    },
+    {
+      "tag": "pre",
+      "text": "ui.log(\"info\", \"Интерфейс открыт\")",
+      "language": "lua",
+      "children": [
+        "ui.",
+        {
+          "tag": "span",
+          "children": ["log"],
+          "props": { "className": "hljs-built_in" }
+        },
+        "(",
+        {
+          "tag": "span",
+          "children": ["\"info\""],
+          "props": { "className": "hljs-string" }
+        },
+        ", ",
+        {
+          "tag": "span",
+          "children": ["\"Интерфейс открыт\""],
+          "props": { "className": "hljs-string" }
+        },
+        ")"
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        { "tag": "strong", "children": ["Связи:"] },
+        " ",
+        {
+          "tag": "a",
+          "children": ["ui.get_state"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/state-and-random#ui-get-state"
+          }
+        },
+        ". ",
+        {
+          "tag": "a",
+          "children": ["Регистрация и аргументы"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Screens/Lua/ScreenLuaWorker.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["тесты"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Screens/LuaDiagnosticsTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    }
+  ]
+}
