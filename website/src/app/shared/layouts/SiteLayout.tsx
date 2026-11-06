@@ -22,6 +22,10 @@ export function SiteLayout({
   projects: readonly NavigationItem[];
   loadProjects?: () => Promise<readonly NavigationItem[]>;
 }) {
+  const [navigationReady, setNavigationReady] = useState(false);
+  useEffect(() => {
+    setNavigationReady(true);
+  }, []);
   const [open, setOpen] = useState(false);
   const [projectsOpen, setProjectsOpen] = useState(false);
   const projectsVisible = projectsOpen || open;
@@ -60,6 +64,7 @@ export function SiteLayout({
       </ContentLink>
       <div
         className={s.headerArea}
+        data-navigation-ready={navigationReady}
         data-mobile-open={open}
         onPointerLeave={(event) => {
           if (event.pointerType === "mouse") setProjectsOpen(false);

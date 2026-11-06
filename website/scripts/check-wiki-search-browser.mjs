@@ -46,6 +46,32 @@ await withBrowserCheck(
     );
     assert.equal(findWikiEntries("   ").length, 0);
     assert.equal(findWikiEntries("заведомоненайденнаястрока").length, 0);
+    for (const [query, href] of [
+      ["Разорвите контакт", `${base}/mechanics/sanity`],
+      ["здравомыслие", `${base}/mechanics/sanity`],
+      ["перевязка", `${base}/items/bandages`],
+      ["кровавые следы", `${base}/effects#open_wound`],
+      ["починка компьютера", `${base}/mechanics/hacking`],
+    ]) {
+      assert.ok(
+        findWikiEntries(query).some((entry) => entry.href === href),
+        query,
+      );
+    }
+    assert.equal(
+      findWikiEntries("здравомыслие")[0].href,
+      `${base}/mechanics/sanity`,
+    );
+    assert.ok(
+      findWikiEntries("карты")
+        .slice(0, 3)
+        .every((entry) => entry.section === "maps"),
+    );
+    assert.ok(
+      findWikiEntries("механика здравомыслие").some(
+        (entry) => entry.href === `${base}/mechanics/sanity`,
+      ),
+    );
     assert.ok(
       !searchIndex.some((e) => e.href.endsWith("#weak_instant_health")),
     );
@@ -81,7 +107,9 @@ await withBrowserCheck(
     );
     await headerInput.fill("УЧЕНЫЙ");
     const options = page.getByRole("option");
-    await expect(options).toHaveCount(1);
+    await expect(options).toHaveCount(
+      Math.min(6, findWikiEntries("УЧЕНЫЙ").length),
+    );
     await expect(options.first()).toContainText("Учёный");
     await expect(options.first()).toHaveAttribute(
       "data-category",
@@ -98,7 +126,7 @@ await withBrowserCheck(
     await expect(headerInput).toHaveValue("УЧЕНЫЙ");
     await headerInput.press("Enter");
     const input = page.getByRole("searchbox", {
-      name: "Название или ID статьи",
+      name: "Название, категория или текст статьи",
     });
     await expect(input).toHaveValue("УЧЕНЫЙ");
     assert.equal(
@@ -124,8 +152,25 @@ await withBrowserCheck(
     await page.goBack();
     await expect(headerInput).toHaveValue("УЧЕНЫЙ");
     await input.fill("РОЗОВЫЕ ОЧКИ");
-    await expect(results).toHaveCount(3);
-    await expect(results.getByRole("link")).toHaveCount(3);
+    for (const section of ["perks", "items"])
+      await expect(
+        results.locator(`a[href="${base}/${section}/rose-colored-glasses"]`),
+      ).toBeVisible();
+    await expect(
+      results.locator(`a[href="${base}/effects#rose_colored_glasses"]`),
+    ).toBeVisible();
+    await input.fill("Разорвите контакт");
+    await expect(
+      results.getByRole("link", { name: "Рассудок", exact: true }),
+    ).toBeVisible();
+    await input.fill("здравомыслие");
+    await expect(
+      results.getByRole("link", { name: "Рассудок", exact: true }),
+    ).toBeVisible();
+    await input.fill("карты");
+    await expect(
+      page.locator('section[aria-labelledby="search-maps"] a'),
+    ).toHaveCount(3);
     await input.fill("maniacrev:open_wound");
     await results.getByRole("link", { name: "Открытая рана" }).click();
     await expect(page.locator("#open_wound")).toBeInViewport();
@@ -143,7 +188,9 @@ await withBrowserCheck(
     for (const width of [320, 390, 768, 1440]) {
       await page.setViewportSize({ width, height: 900 });
       await input.fill("розовые");
-      await expect(results).toHaveCount(3);
+      await expect(results.getByRole("link")).toHaveCount(
+        findWikiEntries("розовые").length,
+      );
       await page.evaluate(() => scrollTo(0, 0));
       assert.equal(
         await page.evaluate(
@@ -195,8 +242,12 @@ await withBrowserCheck(
     await expect(page.getByRole("listbox")).toHaveCount(0);
     await page.goto(origin + base);
     await headerInput.fill("розовые очки");
-    await expect(options).toHaveCount(3);
-    await page.locator('[role="option"][data-category="items"]').click();
+    await expect(options).toHaveCount(
+      Math.min(6, findWikiEntries("розовые очки").length),
+    );
+    await page
+      .locator(`[role="option"][href="${base}/items/rose-colored-glasses"]`)
+      .click();
     await expect(page).toHaveURL(origin + base + "/items/rose-colored-glasses");
     await page.goto(origin + base);
     await headerInput.fill("шаман");
@@ -298,8 +349,10 @@ await withBrowserCheck(
     await delayed.waitForLoadState("networkidle");
     await expect(delayedInput).toHaveAttribute("aria-expanded", "false");
     await delayedInput.press("ArrowDown");
-    await expect(delayed.getByRole("option")).toHaveCount(1);
-    await expect(delayed.getByRole("option")).toContainText("Учёный");
+    await expect(delayed.getByRole("option")).toHaveCount(
+      Math.min(6, findWikiEntries("Учёный").length),
+    );
+    await expect(delayed.getByRole("option").first()).toContainText("Учёный");
     const delayedURL = delayed.url();
     await delayedInput.evaluate((input) =>
       input.dispatchEvent(
@@ -348,7 +401,7 @@ await withBrowserCheck(
       .click();
     await expect(
       failedHeader.getByRole("searchbox", {
-        name: "Название или ID статьи",
+        name: "Название, категория или текст статьи",
         exact: true,
       }),
     ).toHaveValue("Учёный");
@@ -402,7 +455,10 @@ await withBrowserCheck(
       .getByRole("button", { name: "Перезагрузить поиск", exact: true })
       .click();
     await failure
-      .getByRole("searchbox", { name: "Название или ID статьи", exact: true })
+      .getByRole("searchbox", {
+        name: "Название, категория или текст статьи",
+        exact: true,
+      })
       .fill("учёный");
     await expect(
       failure
@@ -427,6 +483,7 @@ await withBrowserCheck(
           checks: [
             "Every published entity searchable; unpublished effect excluded",
             "Russian case/е/ё, multiple words, IDs, empty and missing queries",
+            "Published article prose, effect descriptions, categories and editorial synonyms; exact titles outrank body mentions",
             "Grouping, keyboard, Escape, Back/Forward, effect anchors",
             "Touch entry and results; 320/390/768/1440; long queries",
             "SSG fallback without JavaScript; lazy index; failed index recovery",

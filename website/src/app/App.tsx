@@ -49,6 +49,7 @@ export function App() {
   }, []);
   const [ready, setReady] = useState(() => ({
     location,
+    navigationType,
     Page: pageForPath(location.pathname).read(),
   }));
   const [failed, setFailed] = useState(false);
@@ -58,7 +59,7 @@ export function App() {
     pageForPath(location.pathname)
       .preload()
       .then((Page) => {
-        if (current) setReady({ location, Page });
+        if (current) setReady({ location, navigationType, Page });
       })
       .catch(() => {
         if (current) setFailed(true);
@@ -66,12 +67,15 @@ export function App() {
     return () => {
       current = false;
     };
-  }, [location]);
+  }, [location, navigationType]);
   const { Page } = ready;
   return (
     <SiteLayout projects={projectLinks} loadProjects={loadProjectNavigation}>
       {Scroll && (
-        <Scroll location={ready.location} navigationType={navigationType} />
+        <Scroll
+          location={ready.location}
+          navigationType={ready.navigationType}
+        />
       )}
       <PageEffects pathname={ready.location.pathname} />
       {failed && (

@@ -41,9 +41,30 @@ for (const page of [
         m,
       ),
     ),
-    `${page}: search must use lightweight publication metadata only`,
+    `${page}: search may load derived text, never gameplay catalogs, renderers or assets`,
+  );
+  assert.ok(
+    !loaded.some((m) =>
+      /wiki\/pages\/(?:CharacterPage|ReferenceArticlePage|SystemsArticlePage|MapArticlePage)\.tsx|wiki\/model\/|\/assets\/wiki\//.test(
+        m,
+      ),
+    ),
+    `${page}: search must not import article pages, models or images`,
   );
 }
+const searchCorpus = chunkFor(
+  "src/app/projects/maniac/wiki/search-content.json",
+);
+assert.ok(
+  !initial.includes("src/app/projects/maniac/wiki/search-content.json"),
+  "Full-text search must remain deferred",
+);
+assert.ok(
+  staticModules(
+    chunkFor("src/app/projects/maniac/wiki/search-index.ts"),
+  ).includes("src/app/projects/maniac/wiki/search-content.json"),
+  `Search must include generated text: ${searchCorpus}`,
+);
 assert.ok(
   !staticModules(
     main,

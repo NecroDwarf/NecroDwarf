@@ -1,9 +1,11 @@
 import type { NavigationItem } from "../shared/content/navigation";
 import { projects } from "./registry";
 import { maniacNavigation } from "./maniac/navigation";
+import { novellmakerNavigation } from "./novellmaker/navigation";
 
 const sections: Readonly<Record<string, readonly NavigationItem[]>> = {
   maniac: maniacNavigation,
+  novellmaker: novellmakerNavigation,
 };
 export const projectNavigation: readonly NavigationItem[] = projects.map(
   (project) => ({

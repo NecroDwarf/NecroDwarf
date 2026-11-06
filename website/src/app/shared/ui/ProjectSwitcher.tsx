@@ -45,8 +45,7 @@ function NavigationBranch({
       onPointerEnter={(event) => {
         if (
           event.pointerType === "mouse" &&
-          window.matchMedia("(min-width: 701px) and (hover: hover)").matches &&
-          !(event.target instanceof Element && event.target.closest("button"))
+          window.matchMedia("(min-width: 701px) and (hover: hover)").matches
         )
           setOpen(true);
       }}

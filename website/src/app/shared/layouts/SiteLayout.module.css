@@ -106,17 +106,20 @@
     gap: 0;
     padding-block: 16px;
   }
-  .menuButton {
+  .headerArea[data-navigation-ready="true"] .menuButton {
     display: block;
   }
   .nav {
-    display: none;
+    display: flex;
     width: 100%;
     padding-top: 20px;
     flex-direction: column;
     gap: 0;
   }
-  .nav[data-open="true"] {
+  .headerArea[data-navigation-ready="true"] .nav {
+    display: none;
+  }
+  .headerArea[data-navigation-ready="true"] .nav[data-open="true"] {
     display: flex;
   }
   .footerTop {

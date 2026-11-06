@@ -51,7 +51,7 @@ export function WikiSearchPage() {
           onSubmit={(event) => event.preventDefault()}
         >
           <label className={search.label} htmlFor="wiki-search">
-            Название или ID статьи
+            Название, категория или текст статьи
           </label>
           <div className={search.controls}>
             <input
@@ -84,7 +84,8 @@ export function WikiSearchPage() {
             )}
           </div>
           <p id="wiki-search-help">
-            Регистр и е/ё не влияют на поиск. Escape очищает запрос.
+            Поиск по названиям, синонимам, категориям и текстам статей. Регистр
+            и е/ё не влияют на поиск. Escape очищает запрос.
           </p>
         </form>
         {!index && (
