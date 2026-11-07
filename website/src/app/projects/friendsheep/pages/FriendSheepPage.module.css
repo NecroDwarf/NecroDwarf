@@ -1,24 +1,29 @@
 .page {
   --fs-sky: #37a2e6;
-  --fs-blue: #316bc2;
-  --fs-ink: #172b43;
-  --fs-muted: #50647c;
-  --fs-line: #d9e5ef;
-  color-scheme: light;
-  background: #f8fbfe;
+  --fs-blue: #83c5ed;
+  --fs-ink: var(--bone);
+  --fs-muted: var(--ash);
+  --fs-line: var(--iron);
+  --fs-surface: #111b18;
+  --fs-raised: var(--stone);
+  --fs-blue-surface: #142725;
+  color-scheme: dark;
+  background:
+    radial-gradient(ellipse 850px 650px at 85% 0, #37a2e60a, transparent 80%),
+    var(--void);
   color: var(--fs-ink);
   padding-bottom: 80px;
   font-size: 16px;
 }
 .page a:hover {
-  color: #24549b;
+  color: #b3def7;
 }
 .page :focus-visible {
   outline: 3px solid var(--fs-blue);
   outline-offset: 5px;
 }
 .page ::selection {
-  color: white;
+  color: var(--void);
   background: var(--fs-blue);
 }
 .page h1,
@@ -90,7 +95,7 @@
   letter-spacing: 1.5px;
   font-weight: 500;
   text-transform: uppercase;
-  color: #2c609e;
+  color: var(--fs-blue);
   margin-bottom: 18px;
   display: flex;
   align-items: center;
@@ -133,21 +138,21 @@
 }
 .primary {
   background: var(--fs-blue);
-  color: white;
-  box-shadow: 0 7px 18px #316bc21a;
+  color: var(--void);
+  box-shadow: 0 7px 18px #0002;
 }
 .page .primary:hover {
-  background: #2355a0;
-  color: white;
+  background: #b3def7;
+  color: var(--void);
 }
 .secondary {
-  border-color: #cadbea;
-  background: #fff9;
+  border-color: var(--fs-line);
+  background: var(--fs-surface);
   color: var(--fs-ink);
 }
 .page .secondary:hover {
-  background: #e8f2fc;
-  border-color: #9dbfe2;
+  background: var(--fs-blue-surface);
+  border-color: #4b7167;
 }
 .primary svg,
 .secondary svg {
@@ -174,7 +179,7 @@
 }
 .sectionNav {
   border-block: 1px solid var(--fs-line);
-  background: white;
+  background: var(--fs-surface);
 }
 .sectionNav > div {
   display: flex;
@@ -220,7 +225,7 @@
   margin: 38px 0 0;
   border: 1px solid var(--fs-line);
   border-radius: 16px;
-  background: white;
+  background: var(--fs-surface);
 }
 .planStrip > div {
   padding-inline: 24px;
@@ -268,7 +273,7 @@
   margin: 0;
 }
 .steps li {
-  border-top: 1px solid #b8cfe4;
+  border-top: 1px solid var(--fs-line);
   padding-top: 25px;
 }
 .stepTop {
@@ -284,13 +289,13 @@
   width: 48px;
   height: 48px;
   border-radius: 14px;
-  color: #2659a5;
-  background: #e6f1fc;
+  color: var(--fs-blue);
+  background: var(--fs-blue-surface);
   flex-shrink: 0;
 }
 .stepNumber {
   font: 400 32px var(--font-display);
-  color: #718ba4;
+  color: var(--fs-muted);
 }
 .steps p {
   margin-bottom: 0;
@@ -299,8 +304,8 @@
 .featureSection {
   margin-top: 88px;
   padding-block: 76px;
-  background: #edf5fd;
-  border-block: 1px solid #dfebf6;
+  background: var(--fs-surface);
+  border-block: 1px solid var(--fs-line);
   scroll-margin-top: 20px;
 }
 .splitHeading {
@@ -331,9 +336,9 @@
 }
 .feature {
   padding: 28px;
-  border: 1px solid #d9e5f1;
+  border: 1px solid var(--fs-line);
   border-radius: 16px;
-  background: white;
+  background: var(--fs-raised);
   display: flex;
   align-items: flex-start;
   flex-direction: column;
@@ -342,12 +347,12 @@
   margin-bottom: 22px;
 }
 .feature[data-tone="warm"] .iconBox {
-  background: #fff0ea;
-  color: #a7462b;
+  background: #2e271f;
+  color: #e0b588;
 }
 .feature[data-tone="violet"] .iconBox {
-  background: #efedfe;
-  color: #6350ad;
+  background: #282432;
+  color: #c1b2e7;
 }
 .feature p {
   margin-bottom: 24px;
@@ -355,10 +360,10 @@
 }
 .featureDetail {
   font-size: 12px;
-  color: #50647c;
+  color: var(--fs-muted);
   margin-top: auto;
   padding-top: 18px;
-  border-top: 1px solid #e6edf4;
+  border-top: 1px solid var(--fs-line);
   width: 100%;
 }
 .textLink {
@@ -367,7 +372,7 @@
   gap: 12px;
   min-height: 44px;
   padding-block: 10px;
-  color: #24549b;
+  color: var(--fs-blue);
   font-size: 14px;
   text-decoration: underline;
   text-underline-offset: 6px;
@@ -386,11 +391,11 @@
 .roadmap {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  border: 1px solid #d4e3f1;
+  border: 1px solid var(--fs-line);
   border-radius: 18px;
   overflow: hidden;
   margin-bottom: 22px;
-  background: white;
+  background: var(--fs-surface);
 }
 .roadmapStage {
   padding: 28px;
@@ -398,13 +403,13 @@
 }
 .roadmapStage:first-child {
   border: none;
-  background: #eaf3fd;
+  background: var(--fs-blue-surface);
 }
 .page .stageStatus {
   display: flex;
   gap: 9px;
   align-items: center;
-  color: #285b9d;
+  color: var(--fs-blue);
   font-size: 12px;
   font-weight: 500;
   margin-bottom: 22px;
@@ -416,11 +421,11 @@
   flex-shrink: 0;
   width: 27px;
   height: 27px;
-  background: #eaf1f9;
+  background: var(--fs-raised);
   border-radius: 50%;
 }
 .roadmapStage:first-child .stageStatus > span {
-  color: white;
+  color: var(--void);
   background: var(--fs-blue);
 }
 .roadmapStage ul {
@@ -442,18 +447,13 @@
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #6787a9;
+  background: var(--fs-blue);
   left: 0;
   top: 0.65em;
 }
 .foundation {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
+  max-width: 780px;
   padding-top: 65px;
-}
-.technology {
-  padding-block: 14px;
 }
 .foundation h2 {
   font-size: clamp(28px, 2.7vw, 36px);
@@ -461,35 +461,18 @@
 .foundation p {
   font-size: 15px;
 }
-.stack {
-  margin: 30px 0 0;
-}
-.stack > div {
-  display: grid;
-  grid-template-columns: 110px 1fr;
-  gap: 15px;
-  padding-block: 13px;
-  border-top: 1px solid var(--fs-line);
-  font-size: 13px;
-  line-height: 1.7;
-}
-.stack dt {
-  color: var(--fs-muted);
-}
-.stack dd {
-  margin: 0;
-}
 .team {
   padding: 35px;
   border-radius: 18px;
-  background: #eef3f9;
+  background: var(--fs-raised);
+  border: 1px solid var(--fs-line);
 }
 .teamMark {
   display: block;
   font: 500 32px/1 var(--font-display);
   letter-spacing: -1.5px;
   margin-bottom: 35px;
-  color: #24466f;
+  color: var(--jade-glow);
 }
 .closingWrap {
   margin-top: 80px;
@@ -498,9 +481,10 @@
   position: relative;
   padding: 55px 36px;
   text-align: center;
-  background: #173b70;
+  background: linear-gradient(135deg, var(--fs-raised), #142725);
+  border: 1px solid var(--fs-line);
   border-radius: 24px;
-  color: white;
+  color: var(--fs-ink);
 }
 .closing > img {
   border-radius: 17px;
@@ -508,37 +492,37 @@
 }
 .page .closing .eyebrow {
   justify-content: center;
-  color: #bbd9ff;
+  color: var(--fs-blue);
 }
 .closing h2 {
   font-size: clamp(29px, 3.4vw, 46px);
 }
 .page .closing > p {
-  color: #d6e5f9;
+  color: var(--fs-muted);
 }
 .closing .actions {
   justify-content: center;
   margin-top: 28px;
 }
 .closing .primary {
-  color: #173b70;
-  background: white;
+  color: var(--void);
+  background: var(--fs-blue);
 }
 .page .closing .primary:hover {
-  background: #dcecff;
-  color: #173b70;
+  background: #b3def7;
+  color: var(--void);
 }
 .closing .secondary {
-  border-color: #6483ad;
+  border-color: #4b7167;
   background: transparent;
-  color: white;
+  color: var(--fs-ink);
 }
 .page .closing .secondary:hover {
-  background: #25518a;
-  color: white;
+  background: #1e3530;
+  color: var(--fs-ink);
 }
 .closing :focus-visible {
-  outline-color: #b8ddff;
+  outline-color: var(--fs-blue);
 }
 @media (min-width: 1700px) {
   .hero h1 {
@@ -574,9 +558,6 @@
   .feature,
   .roadmapStage {
     padding: 23px;
-  }
-  .foundation {
-    gap: 35px;
   }
 }
 @media (max-width: 800px) {
@@ -654,10 +635,6 @@
   }
   .roadmapStage h3 {
     margin-bottom: 0;
-  }
-  .foundation {
-    gap: 30px;
-    grid-template-columns: 1fr;
   }
   .team {
     padding: 30px;
@@ -794,10 +771,6 @@
   }
   .foundation {
     padding-top: 45px;
-  }
-  .stack > div {
-    grid-template-columns: 1fr;
-    gap: 2px;
   }
   .team {
     padding: 25px;

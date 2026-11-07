@@ -16,7 +16,7 @@ const sectionIds = [
   "features",
   "interface",
   "roadmap",
-  "technology",
+  "team",
 ];
 
 await withBrowserCheck(
@@ -195,13 +195,7 @@ await withBrowserCheck(
       });
       checks.push(`${width}px: нет переполнения, ссылки от 44px, скриншот`);
     }
-    for (const id of [
-      "why",
-      "features",
-      "interface",
-      "roadmap",
-      "technology",
-    ]) {
+    for (const id of ["why", "features", "interface", "roadmap"]) {
       await page
         .getByRole("navigation", { name: "Разделы FriendSheep" })
         .locator(`a[href$="#${id}"]`)
@@ -228,7 +222,7 @@ await withBrowserCheck(
       await page
         .locator(":focus")
         .evaluate((a) => getComputedStyle(a).outlineColor),
-      "rgb(49, 107, 194)",
+      "rgb(131, 197, 237)",
     );
     await page.keyboard.press("Enter");
     await expect(page.locator("#how-it-works")).toBeInViewport();

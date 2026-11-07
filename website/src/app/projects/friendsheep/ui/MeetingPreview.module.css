@@ -1,7 +1,7 @@
 .imageLink {
   display: block;
   min-width: 0;
-  background: white;
+  background: var(--fs-surface);
 }
 .imageLink img {
   display: block;
@@ -21,17 +21,17 @@
   width: 100%;
   aspect-ratio: 1;
   border-radius: 50%;
-  background: #e7f2fd;
-  border: 1px solid #d7e9f9;
+  background: radial-gradient(circle at 45% 40%, #37a2e614, #53cfa105 70%);
+  border: 1px solid var(--fs-line);
   top: 25px;
 }
 .heroScreen {
   position: relative;
   width: 100%;
-  border: 1px solid #c7ddef;
+  border: 1px solid var(--fs-line);
   border-radius: 13px;
-  background: white;
-  box-shadow: 0 25px 50px #23497714;
+  background: var(--fs-surface);
+  box-shadow: 0 25px 50px #0005;
   transform: rotate(-3deg);
 }
 .heroScreen .imageLink {
@@ -47,17 +47,17 @@
   gap: 12px;
   padding: 12px 16px;
   font-size: 11px;
-  color: #285b9d;
+  color: var(--fs-blue);
 }
 .heroCard {
   position: relative;
   width: min(72%, 330px);
   margin: -24px 10px 0 auto;
   padding: 8px;
-  border: 1px solid #d0e2f2;
+  border: 1px solid var(--fs-line);
   border-radius: 14px;
-  background: white;
-  box-shadow: 0 15px 35px #23497720;
+  background: var(--fs-raised);
+  box-shadow: 0 15px 35px #0006;
   transform: rotate(3deg);
 }
 .heroCard .imageLink,
@@ -68,7 +68,7 @@
   display: block;
   text-align: center;
   font-size: 10px;
-  color: #50647c;
+  color: var(--fs-muted);
   padding: 8px 3px 3px;
 }
 .gallery {
@@ -76,10 +76,10 @@
 }
 .gallery figure {
   margin: 0;
-  border: 1px solid #d3e2ef;
+  border: 1px solid var(--fs-line);
   border-radius: 16px;
-  background: white;
-  box-shadow: 0 15px 35px #23497708;
+  background: var(--fs-surface);
+  box-shadow: 0 15px 35px #0002;
   overflow: hidden;
 }
 .gallery .imageLink {
@@ -87,7 +87,7 @@
   border-radius: 15px 15px 0 0;
 }
 .gallery .imageLink:hover {
-  background: #eaf3fd;
+  background: var(--fs-blue-surface);
 }
 .featured .imageLink {
   padding: 0;
@@ -97,7 +97,7 @@
 }
 .gallery figcaption {
   padding: 24px 28px;
-  border-top: 1px solid #e2ebf3;
+  border-top: 1px solid var(--fs-line);
 }
 .gallery figcaption h3 {
   margin-bottom: 10px;
@@ -121,7 +121,7 @@
   position: relative;
   aspect-ratio: 16/10;
   flex: none;
-  background: #f1f6fb;
+  background: var(--fs-raised);
   padding: 0;
 }
 .detailImage img {
@@ -137,7 +137,7 @@
 .gallery .galleryHint {
   margin: 24px 0 8px;
   font-size: 13px;
-  color: #285b9d;
+  color: var(--fs-blue);
 }
 @media (max-width: 1050px) {
   .heroPreview {

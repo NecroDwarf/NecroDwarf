@@ -68,7 +68,6 @@ export function FriendSheepPage() {
           <Link to="#features">Возможности</Link>
           <Link to="#interface">Интерфейс</Link>
           <Link to="#roadmap">Развитие</Link>
-          <Link to="#technology">Технологии</Link>
         </div>
       </nav>
 
@@ -254,45 +253,15 @@ export function FriendSheepPage() {
 
       <section
         className={`${s.section} ${s.container} ${s.foundation}`}
-        id="technology"
-        aria-labelledby="technology-title"
+        id="team"
+        aria-labelledby="friendsheep-team-title"
       >
-        <div className={s.technology}>
-          <p className={s.eyebrow}>
-            <Icon name="code" />
-            Под капотом
-          </p>
-          <h2 id="technology-title">
-            Одна идея.
-            <br />
-            Несколько платформ.
-          </h2>
-          <p>Веб-клиент и мобильное приложение развиваются параллельно.</p>
-          <dl className={s.stack}>
-            <div>
-              <dt>Backend</dt>
-              <dd>Go · Gin · PostgreSQL · Redis</dd>
-            </div>
-            <div>
-              <dt>Web</dt>
-              <dd>Next.js · React · TypeScript</dd>
-            </div>
-            <div>
-              <dt>Mobile</dt>
-              <dd>React Native · Expo</dd>
-            </div>
-            <div>
-              <dt>Инфраструктура</dt>
-              <dd>Docker · отдельный Go-сервис уведомлений</dd>
-            </div>
-          </dl>
-        </div>
         <div className={s.team}>
           <span className={s.teamMark} aria-hidden="true">
             NecroDwarf
           </span>
           <p className={s.eyebrow}>Сделано в NecroDwarf</p>
-          <h2>
+          <h2 id="friendsheep-team-title">
             Из общей идеи —<br />в самостоятельный сервис.
           </h2>
           <p>
