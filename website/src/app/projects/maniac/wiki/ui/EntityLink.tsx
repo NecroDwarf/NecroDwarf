@@ -5,6 +5,7 @@ import { effectConnections, type EffectId } from "../data/effect-connections";
 import { publishedEffectMeta } from "../published-effects";
 import { publishedEntityMeta } from "../data/publication";
 import s from "./EntityLink.module.css";
+import { removedCatalogEntries } from "../mechanic-placement";
 export function EntityLink({
   id,
   children,
@@ -14,7 +15,7 @@ export function EntityLink({
 }) {
   const meta = publishedEntityMeta[id];
   const text = children ?? meta?.name ?? "Неизвестная сущность";
-  const route = meta?.href;
+  const route = removedCatalogEntries.has(id) ? undefined : meta?.href;
   return route ? (
     <Link className={s.link} to={route}>
       {text}

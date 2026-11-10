@@ -15,8 +15,8 @@ await withBrowserCheck(
     const { searchIndex, findWikiEntries } =
       await loadWikiModule("search-index.ts");
     const paths = JSON.parse(await readFile(".ssg/paths.json", "utf8"));
-    assert.equal(searchIndex.length, 204);
-    assert.equal(new Set(searchIndex.map((e) => e.href)).size, 204);
+    assert.equal(searchIndex.length, 202);
+    assert.equal(new Set(searchIndex.map((e) => e.href)).size, 202);
     for (const entry of searchIndex) {
       assert.ok(paths.includes(entry.href.split("#")[0]), entry.href);
       assert.ok(
@@ -47,8 +47,14 @@ await withBrowserCheck(
     assert.equal(findWikiEntries("   ").length, 0);
     assert.equal(findWikiEntries("заведомоненайденнаястрока").length, 0);
     for (const [query, href] of [
-      ["Разорвите контакт", `${base}/mechanics/sanity`],
-      ["здравомыслие", `${base}/mechanics/sanity`],
+      [
+        "Разорвите контакт",
+        `${base}/characters/keeper-of-nightmares#mechanic-sanity`,
+      ],
+      [
+        "здравомыслие",
+        `${base}/characters/keeper-of-nightmares#mechanic-sanity`,
+      ],
       ["перевязка", `${base}/items/bandages`],
       ["кровавые следы", `${base}/effects#open_wound`],
       ["починка компьютера", `${base}/mechanics/hacking`],
@@ -60,7 +66,7 @@ await withBrowserCheck(
     }
     assert.equal(
       findWikiEntries("здравомыслие")[0].href,
-      `${base}/mechanics/sanity`,
+      `${base}/characters/keeper-of-nightmares#mechanic-sanity`,
     );
     assert.ok(
       findWikiEntries("карты")
@@ -69,7 +75,9 @@ await withBrowserCheck(
     );
     assert.ok(
       findWikiEntries("механика здравомыслие").some(
-        (entry) => entry.href === `${base}/mechanics/sanity`,
+        (entry) =>
+          entry.href ===
+          `${base}/characters/keeper-of-nightmares#mechanic-sanity`,
       ),
     );
     assert.ok(
@@ -497,7 +505,7 @@ await withBrowserCheck(
       ) + "\n",
     );
     console.log(
-      "PASS: Wiki search: 204 entities, lazy index, SSG fallback, keyboard, touch, history, anchors and responsive layouts",
+      "PASS: Wiki search: 202 entities, lazy index, SSG fallback, keyboard, touch, history, anchors and responsive layouts",
     );
   },
 );

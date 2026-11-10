@@ -95,11 +95,17 @@ await withBrowserCheck(
           .first()
           .getAttribute("src")
           .catch(() => null);
+        const integratedImages = await p
+          .locator("[data-mechanic-id] img")
+          .evaluateAll((nodes) =>
+            nodes.map((node) => new URL(node.src).pathname),
+          );
         assert.ok(
           images.every(
             (url) =>
               new URL(url).pathname ===
-              new URL(ownImage || "/", origin).pathname,
+                new URL(ownImage || "/", origin).pathname ||
+              integratedImages.includes(new URL(url).pathname),
           ),
           target.path + " fetched another article image",
         );

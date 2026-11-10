@@ -2,6 +2,11 @@ import { WikiText } from "../ui/WikiText";
 import { formatGameText } from "../data/current-descriptions";
 import { WikiBreadcrumb } from "../ui/WikiBreadcrumb";
 import type { ReactNode } from "react";
+import {
+  IntegratedMechanics,
+  type IntegratedMechanic,
+} from "../ui/IntegratedMechanics";
+import { removedCatalogEntries } from "../mechanic-placement";
 import { Link } from "react-router";
 import { RelatedLinks } from "../ui/RelatedLinks";
 import { RelatedEffects } from "../ui/RelatedEffects";
@@ -27,18 +32,24 @@ export function CharacterPage({
   article,
   fresco,
   children,
+  systems = [],
 }: {
   id: EntityId<"character">;
   article: Article;
   fresco: { src: string; width: number; height: number };
   children?: ReactNode;
+  systems?: readonly IntegratedMechanic[];
 }) {
   const entity = getEntity(id)!;
   const revision = getRevision(id)!;
   const data = revision.data;
   const history = characterChronicles[id] ?? [];
   const hasHistory = history.length > 0;
-  const relatedExclude: EntityId[] = [...data.itemIds, ...data.abilityIds];
+  const relatedExclude: EntityId[] = [
+    ...data.itemIds,
+    ...data.abilityIds,
+    ...systems.map(({ article }) => article.id as EntityId),
+  ];
   const hasRelated =
     relatedEntityIds(id).some(
       (target) =>
@@ -97,6 +108,7 @@ export function CharacterPage({
             <p className={s.eyebrow}>В ЭТОМ ДОСЬЕ</p>
             <nav aria-label="Содержание статьи">
               <a href="#features">01 · Особенности</a>
+              {systems.length > 0 && <a href="#systems">Механики персонажа</a>}
               {data.abilityIds.length > 0 && (
                 <a href="#abilities">02 · Способности</a>
               )}
@@ -127,6 +139,12 @@ export function CharacterPage({
                 ))}
               </div>
             </section>
+            {systems.length > 0 && (
+              <section className={s.articleSection} id="systems">
+                <h2>Механики персонажа</h2>
+                <IntegratedMechanics entries={systems} />
+              </section>
+            )}
             {data.abilityIds.length > 0 && (
               <section className={s.articleSection} id="abilities">
                 <p className={s.eyebrow}>ОСОБЫЕ ДЕЙСТВИЯ</p>
@@ -151,9 +169,11 @@ export function CharacterPage({
                 участниками испытаний.
               </p>
               <div className={s.entityGrid}>
-                {data.itemIds.map((item) => (
-                  <ItemCard key={item} id={item} provenance="deferred" />
-                ))}
+                {data.itemIds
+                  .filter((item) => !removedCatalogEntries.has(item))
+                  .map((item) => (
+                    <ItemCard key={item} id={item} provenance="deferred" />
+                  ))}
               </div>
             </section>
             {children && (

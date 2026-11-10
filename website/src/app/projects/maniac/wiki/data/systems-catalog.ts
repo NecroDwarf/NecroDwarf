@@ -4,6 +4,7 @@ import itemData from "./item-catalog.json";
 import mechanicData from "./mechanic-catalog.json";
 import type { EntityId, Evidence, Stat } from "./types";
 import { withWeaponDamage } from "./weapon-damage";
+import { isStandaloneMechanic, mechanicOwners } from "../mechanic-placement";
 interface SystemMeta {
   id: EntityId<"item" | "mechanic">;
   slug: string;
@@ -38,6 +39,7 @@ const hiddenCatalogItems = new Set<EntityId<"item">>([
   "item:alchemy-kit",
   "item:dodepovich-coins",
   "item:computer",
+  "item:recipe-book",
 ]);
 export const listedItems = itemCatalog.filter(
   (entry) => entry.category !== "armor" && !hiddenCatalogItems.has(entry.id),
@@ -46,9 +48,17 @@ export const mechanicCatalog = (
   mechanicData as readonly CurrentCatalogEntry<MechanicMeta>[]
 ).map((entry) => ({
   ...entry,
+  category: mechanicOwners[entry.id]
+    ? mechanicOwners[entry.id].startsWith("character:")
+      ? "character-system"
+      : "perk-system"
+    : entry.category,
   description: currentDescription(entry.id, entry.description),
   stats: currentStats(entry.id, entry.stats),
 }));
+export const listedMechanics = mechanicCatalog.filter((entry) =>
+  isStandaloneMechanic(entry.id),
+);
 export const itemCategoryLabels: Record<string, string> = {
   weapon: "Оружие",
   armor: "Броня",

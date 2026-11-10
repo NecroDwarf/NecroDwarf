@@ -1,8 +1,12 @@
 import { execFileSync } from "node:child_process";
-import { readFile, writeFile, mkdir, readdir } from "node:fs/promises";
+import { readFile, writeFile, mkdir, readdir, unlink } from "node:fs/promises";
 import { resolve } from "node:path";
 import { createHash } from "node:crypto";
-import { commit, repository } from "./novellmaker-reference.mjs";
+import {
+  commit,
+  repository,
+  sourceLinkErrors,
+} from "./novellmaker-reference.mjs";
 const checkout = resolve(process.argv[2] || "../.audit/novellmaker-source");
 const revision = execFileSync("git", ["-C", checkout, "rev-parse", "HEAD"], {
   encoding: "utf8",
@@ -17,6 +21,15 @@ if (
 const source = "src/app/projects/novellmaker/docs/source";
 await mkdir(source, { recursive: true });
 const hashes = {};
+const sourceFiles = await readdir(`${checkout}/docs/lua-reference`);
+for (const file of await readdir(source)) {
+  if (file.endsWith(".md") && !sourceFiles.includes(file)) {
+    await unlink(`${source}/${file}`);
+    const slug = file.slice(0, -3);
+    await unlink(`src/app/projects/novellmaker/docs/data/${slug}.json`);
+    await unlink(`src/app/projects/novellmaker/docs/articles/${slug}.tsx`);
+  }
+}
 for (const file of (await readdir(`${checkout}/docs/lua-reference`))
   .filter((f) => f.endsWith(".md"))
   .sort()) {
@@ -38,12 +51,25 @@ const paths = execFileSync(
   .trim()
   .split(/\r?\n/);
 const python = process.env.PYTHON || "python";
-const verification = JSON.parse(
-  execFileSync(python, ["scripts/check-lua-reference.py"], {
-    cwd: checkout,
-    encoding: "utf8",
-  }),
-);
+let verificationOutput;
+try {
+  verificationOutput = execFileSync(
+    python,
+    ["scripts/check-lua-reference.py"],
+    {
+      cwd: checkout,
+      encoding: "utf8",
+    },
+  );
+} catch (error) {
+  if (error.status !== 1 || !error.stdout) throw error;
+  verificationOutput = error.stdout;
+}
+const verification = JSON.parse(verificationOutput);
+if (JSON.stringify(verification.errors) !== JSON.stringify(sourceLinkErrors))
+  throw new Error(
+    `Unexpected upstream errors: ${JSON.stringify(verification.errors)}`,
+  );
 const groups = JSON.parse(
   execFileSync(
     python,
@@ -82,6 +108,33 @@ for (const [file, path] of Object.entries(images)) {
 await writeFile(
   `${assetRoot}/sources.json`,
   JSON.stringify({ repository, commit, assets }, null, 2) + "\n",
+);
+console.log(
+  `Upstream verification: ${verification.errors.length} known missing example links; all API descriptions present.`,
+);
+const brandingPath = "docs/branding/novellmaker.svg";
+const branding = execFileSync("git", [
+  "-C",
+  checkout,
+  "show",
+  `${commit}:${brandingPath}`,
+]);
+await writeFile(
+  "src/app/projects/novellmaker/assets/novellmaker.svg",
+  branding,
+);
+await writeFile(
+  "src/app/projects/novellmaker/assets/branding-source.json",
+  JSON.stringify(
+    {
+      repository,
+      commit,
+      path: brandingPath,
+      sha256: createHash("sha256").update(branding).digest("hex"),
+    },
+    null,
+    2,
+  ) + "\n",
 );
 console.log(
   `Copied ${Object.keys(hashes).length} original Markdown files from ${commit}; source unchanged.`,

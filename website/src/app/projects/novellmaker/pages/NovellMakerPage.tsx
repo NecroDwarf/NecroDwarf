@@ -1,6 +1,18 @@
 import { Link } from "react-router";
 import { ContentLink } from "../../../shared/ui/ContentLink";
-import { docs, source, pinned, features, steps } from "../content";
+import {
+  docs,
+  source,
+  pinned,
+  features,
+  steps,
+  version,
+  releaseUrl,
+  downloads,
+} from "../content";
+import { releases } from "../releases";
+import { ReleaseList } from "../../../shared/ui/ReleaseList";
+import logo from "../assets/novellmaker.svg?no-inline";
 import { WorkspaceIllustration } from "../ui/WorkspaceIllustration";
 import traveller from "../assets/examples/traveller.png";
 import mechanic from "../assets/examples/mechanic.png";
@@ -16,7 +28,10 @@ export function NovellMakerPage() {
         <section className={s.hero} aria-labelledby="novellmaker-title">
           <div>
             <p className={s.wordmark}>
-              NovellMaker<span>INK & LAVENDER / CREATIVE TOOLS</span>
+              <img src={logo} width="64" height="64" alt="" />
+              <span>
+                NovellMaker<small>Открытая бета · {version}</small>
+              </span>
             </p>
             <p className={s.eyebrow}>Ваша история. Ваши правила.</p>
             <h1 id="novellmaker-title">
@@ -29,11 +44,11 @@ export function NovellMakerPage() {
               вашими сценами, персонажами и логикой.
             </p>
             <div className={s.actions}>
-              <Link className={s.primary} to={docs}>
-                Открыть документацию ↗
+              <Link className={s.primary} to="#download">
+                Скачать открытую бету ↓
               </Link>
-              <Link className={s.secondary} to="#features">
-                Изучить возможности ↓
+              <Link className={s.secondary} to={docs}>
+                Открыть документацию ↗
               </Link>
             </div>
             <ContentLink className={s.sourceLink} href={source}>
@@ -44,12 +59,51 @@ export function NovellMakerPage() {
         </section>
       </div>
       <nav className={s.sectionNav} aria-label="Разделы NovellMaker">
+        <Link to="#download">Скачать бету</Link>
         <Link to="#features">Возможности</Link>
         <Link to="#start">Как начать</Link>
         <Link to="#examples">Примеры</Link>
         <Link to="#developers">Разработчикам</Link>
         <Link to={docs}>Документация ↗</Link>
       </nav>
+      <section className={`${s.section} ${s.container}`} id="download">
+        <p className={s.eyebrow}>Открытая бета · {version}</p>
+        <h2>Начните свою новеллу.</h2>
+        <p className={s.lead}>
+          Готовый редактор для Windows x64 включает предпросмотр, шаблон игры,
+          NSIS, руководство и примеры. Устанавливать .NET и SDK отдельно не
+          нужно.
+        </p>
+        <div className={s.actions}>
+          {downloads.map(({ label, href }, i) => (
+            <ContentLink
+              key={href}
+              className={i === 0 ? s.primary : s.secondary}
+              href={href}
+            >
+              {label} ↗
+            </ContentLink>
+          ))}
+        </div>
+        <p className={s.caption}>
+          Установщик работает для текущего пользователя без прав администратора.
+          Portable: распакуйте архив и запустите NovellMaker.Editor.exe.
+        </p>
+        <p className={s.caption}>
+          Linux x64 — экспериментальная сборка редактора и предпросмотра:
+          нативная работа пока не подтверждена, нужны системные библиотеки.
+          Экспорт игр доступен только для Windows x64.
+        </p>
+        <ContentLink className={s.sourceLink} href={releaseUrl}>
+          Описание выпуска, требования и SHA256SUMS ↗
+        </ContentLink>
+        <p className={s.caption}>
+          Бета поддерживает проекты JSON v25 и сохранения v4. Аудио — PCM WAV;
+          MP3/OGG, общий таймлайн сцены, IK, импорт Spine, полный откат Lua и
+          экспорт Linux/macOS пока не поддерживаются.{" "}
+          <Link to={`${docs}/lua/compatibility`}>Все ограничения →</Link>
+        </p>
+      </section>
       <section className={`${s.section} ${s.container}`} id="features">
         <div className={s.sectionHeading}>
           <div>
@@ -229,9 +283,7 @@ export function NovellMakerPage() {
                 объясняет запуск, подготовку Windows-шаблона и сборку
                 установщика.
               </p>
-              <Link
-                to={`${docs}/engine-guide#для-сборки-редактора-из-репозитория`}
-              >
+              <Link to={`${docs}/engine-guide#сборка-редактора-из-исходников`}>
                 Руководство по запуску →
               </Link>
             </div>
@@ -245,10 +297,20 @@ export function NovellMakerPage() {
           <br />
           <em>станет историей.</em>
         </h2>
-        <Link className={s.primary} to={docs}>
-          Начать с документации ↗
+        <Link className={s.primary} to="#download">
+          Скачать открытую бету ↓
         </Link>
         <p>Руководство редактора, Lua API и готовые примеры.</p>
+      </section>
+      <section className={`${s.section} ${s.container}`} id="release">
+        <h2>Выпуски NovellMaker</h2>
+        <ReleaseList
+          releases={releases}
+          projectNames={{ novellmaker: "NovellMaker" }}
+          headingLevel={3}
+          sourceHref={releaseUrl}
+          sourceLabel="Релиз на GitHub"
+        />
       </section>
     </div>
   );

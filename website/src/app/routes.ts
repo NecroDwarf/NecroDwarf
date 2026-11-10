@@ -50,7 +50,7 @@ export const routes = [
     path: "/changelog",
     title: "Хроники — NecroDwarf",
     description:
-      "Последние опубликованные обновления проектов NecroDwarf. История Maniac: Reforge, Кошмарный додеп, Flower Cleaning.",
+      "Последние обновления проектов NecroDwarf: открытая бета NovellMaker и история выпусков Maniac.",
     page: routePage(() =>
       import("./pages/changelog/ChangelogPage").then((m) => m.ChangelogPage),
     ),

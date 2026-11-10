@@ -88,6 +88,22 @@
       ]
     },
     {
+      "tag": "p",
+      "children": [
+        "Окончание сценарного движения или клипа персонажа не создаёт UI-событие. Для последовательности сценарных блоков используйте ",
+        {
+          "tag": "a",
+          "children": ["game.wait_actions"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/scenario#game-wait-actions"
+          }
+        },
+        " либо GUI-ожидание «Завершение движений и клипов»; события ",
+        { "tag": "code", "children": ["animation_result"] },
+        " ниже относятся только к UI-анимациям."
+      ]
+    },
+    {
       "tag": "h2",
       "children": ["Общая структура и доставка"],
       "props": { "id": "общая-структура-и-доставка" }
@@ -243,7 +259,7 @@
           "tag": "a",
           "children": ["проверка и проекция"],
           "props": {
-            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Screens/Lua/ScreenLuaProtocol.cs",
+            "href": "https://github.com/doflare123/NovellMaker/blob/52b1d06149b668aa76d5ed995c0a92118eb63824/src/NovellMaker.Core/Screens/Lua/ScreenLuaProtocol.cs",
             "target": "_blank",
             "rel": "noopener noreferrer"
           }
@@ -253,7 +269,7 @@
           "tag": "a",
           "children": ["Lua-поля"],
           "props": {
-            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Screens/Lua/ScreenLuaWorker.cs",
+            "href": "https://github.com/doflare123/NovellMaker/blob/52b1d06149b668aa76d5ed995c0a92118eb63824/src/NovellMaker.Core/Screens/Lua/ScreenLuaWorker.cs",
             "target": "_blank",
             "rel": "noopener noreferrer"
           }
@@ -263,7 +279,7 @@
           "tag": "a",
           "children": ["очередь"],
           "props": {
-            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Screens/Lua/ScreenLuaSession.cs",
+            "href": "https://github.com/doflare123/NovellMaker/blob/52b1d06149b668aa76d5ed995c0a92118eb63824/src/NovellMaker.Core/Screens/Lua/ScreenLuaSession.cs",
             "target": "_blank",
             "rel": "noopener noreferrer"
           }
@@ -273,7 +289,7 @@
           "tag": "a",
           "children": ["протокол"],
           "props": {
-            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Screens/ScreenLuaProtocolTests.cs",
+            "href": "https://github.com/doflare123/NovellMaker/blob/52b1d06149b668aa76d5ed995c0a92118eb63824/tests/NovellMaker.Core.Tests/Screens/ScreenLuaProtocolTests.cs",
             "target": "_blank",
             "rel": "noopener noreferrer"
           }
@@ -283,7 +299,7 @@
           "tag": "a",
           "children": ["порядок/пауза/сроки"],
           "props": {
-            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Screens/ScreenLuaSessionTests.cs",
+            "href": "https://github.com/doflare123/NovellMaker/blob/52b1d06149b668aa76d5ed995c0a92118eb63824/tests/NovellMaker.Core.Tests/Screens/ScreenLuaSessionTests.cs",
             "target": "_blank",
             "rel": "noopener noreferrer"
           }
@@ -839,7 +855,7 @@
           "tag": "a",
           "children": ["маршрутизатор"],
           "props": {
-            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Screens/ScreenStack.Input.cs",
+            "href": "https://github.com/doflare123/NovellMaker/blob/52b1d06149b668aa76d5ed995c0a92118eb63824/src/NovellMaker.Core/Screens/ScreenStack.Input.cs",
             "target": "_blank",
             "rel": "noopener noreferrer"
           }
@@ -849,7 +865,7 @@
           "tag": "a",
           "children": ["stack"],
           "props": {
-            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Screens/ScreenStack.cs",
+            "href": "https://github.com/doflare123/NovellMaker/blob/52b1d06149b668aa76d5ed995c0a92118eb63824/src/NovellMaker.Core/Screens/ScreenStack.cs",
             "target": "_blank",
             "rel": "noopener noreferrer"
           }
@@ -859,7 +875,7 @@
           "tag": "a",
           "children": ["runtime dispatch"],
           "props": {
-            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Runtime/RuntimeScreens.cs",
+            "href": "https://github.com/doflare123/NovellMaker/blob/52b1d06149b668aa76d5ed995c0a92118eb63824/src/NovellMaker.Runtime/RuntimeScreens.cs",
             "target": "_blank",
             "rel": "noopener noreferrer"
           }
@@ -869,7 +885,7 @@
           "tag": "a",
           "children": ["keys"],
           "props": {
-            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Screens/ProjectInputBinding.cs",
+            "href": "https://github.com/doflare123/NovellMaker/blob/52b1d06149b668aa76d5ed995c0a92118eb63824/src/NovellMaker.Core/Screens/ProjectInputBinding.cs",
             "target": "_blank",
             "rel": "noopener noreferrer"
           }
@@ -879,7 +895,7 @@
           "tag": "a",
           "children": ["ввод"],
           "props": {
-            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Screens/ExtendedInputTests.cs",
+            "href": "https://github.com/doflare123/NovellMaker/blob/52b1d06149b668aa76d5ed995c0a92118eb63824/tests/NovellMaker.Core.Tests/Screens/ExtendedInputTests.cs",
             "target": "_blank",
             "rel": "noopener noreferrer"
           }
@@ -889,7 +905,7 @@
           "tag": "a",
           "children": ["runtime"],
           "props": {
-            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Runtime.Tests/ExtendedInputRuntimeTests.cs",
+            "href": "https://github.com/doflare123/NovellMaker/blob/52b1d06149b668aa76d5ed995c0a92118eb63824/tests/NovellMaker.Runtime.Tests/ExtendedInputRuntimeTests.cs",
             "target": "_blank",
             "rel": "noopener noreferrer"
           }
@@ -1585,7 +1601,7 @@
           "tag": "a",
           "children": ["TickMinigame"],
           "props": {
-            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Runtime/RuntimeScreens.Minigames.cs",
+            "href": "https://github.com/doflare123/NovellMaker/blob/52b1d06149b668aa76d5ed995c0a92118eb63824/src/NovellMaker.Runtime/RuntimeScreens.Minigames.cs",
             "target": "_blank",
             "rel": "noopener noreferrer"
           }
@@ -1595,7 +1611,7 @@
           "tag": "a",
           "children": ["runtime screens"],
           "props": {
-            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Runtime.Tests/RuntimeScreensTests.cs",
+            "href": "https://github.com/doflare123/NovellMaker/blob/52b1d06149b668aa76d5ed995c0a92118eb63824/tests/NovellMaker.Runtime.Tests/RuntimeScreensTests.cs",
             "target": "_blank",
             "rel": "noopener noreferrer"
           }
@@ -1605,7 +1621,7 @@
           "tag": "a",
           "children": ["мини-игры"],
           "props": {
-            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Screens/MinigameLuaTests.cs",
+            "href": "https://github.com/doflare123/NovellMaker/blob/52b1d06149b668aa76d5ed995c0a92118eb63824/tests/NovellMaker.Core.Tests/Screens/MinigameLuaTests.cs",
             "target": "_blank",
             "rel": "noopener noreferrer"
           }
@@ -1762,7 +1778,7 @@
           "tag": "a",
           "children": ["AuthorTrigger"],
           "props": {
-            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Triggers/AuthorTrigger.cs",
+            "href": "https://github.com/doflare123/NovellMaker/blob/52b1d06149b668aa76d5ed995c0a92118eb63824/src/NovellMaker.Core/Triggers/AuthorTrigger.cs",
             "target": "_blank",
             "rel": "noopener noreferrer"
           }
@@ -1772,7 +1788,7 @@
           "tag": "a",
           "children": ["session"],
           "props": {
-            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Screens/Lua/ScreenLuaSession.cs",
+            "href": "https://github.com/doflare123/NovellMaker/blob/52b1d06149b668aa76d5ed995c0a92118eb63824/src/NovellMaker.Core/Screens/Lua/ScreenLuaSession.cs",
             "target": "_blank",
             "rel": "noopener noreferrer"
           }
@@ -1782,7 +1798,7 @@
           "tag": "a",
           "children": ["PersistentDataLuaTests"],
           "props": {
-            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Screens/PersistentDataLuaTests.cs",
+            "href": "https://github.com/doflare123/NovellMaker/blob/52b1d06149b668aa76d5ed995c0a92118eb63824/tests/NovellMaker.Core.Tests/Screens/PersistentDataLuaTests.cs",
             "target": "_blank",
             "rel": "noopener noreferrer"
           }
@@ -2052,7 +2068,7 @@
           "tag": "a",
           "children": ["ScreenAnimator"],
           "props": {
-            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Screens/Animations/ScreenAnimation.cs",
+            "href": "https://github.com/doflare123/NovellMaker/blob/52b1d06149b668aa76d5ed995c0a92118eb63824/src/NovellMaker.Core/Screens/Animations/ScreenAnimation.cs",
             "target": "_blank",
             "rel": "noopener noreferrer"
           }
@@ -2062,7 +2078,7 @@
           "tag": "a",
           "children": ["AnimationTests"],
           "props": {
-            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Screens/AnimationTests.cs",
+            "href": "https://github.com/doflare123/NovellMaker/blob/52b1d06149b668aa76d5ed995c0a92118eb63824/tests/NovellMaker.Core.Tests/Screens/AnimationTests.cs",
             "target": "_blank",
             "rel": "noopener noreferrer"
           }
@@ -2280,7 +2296,7 @@
           "tag": "a",
           "children": ["команды/результаты"],
           "props": {
-            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Audio/ScriptAudio.cs",
+            "href": "https://github.com/doflare123/NovellMaker/blob/52b1d06149b668aa76d5ed995c0a92118eb63824/src/NovellMaker.Core/Audio/ScriptAudio.cs",
             "target": "_blank",
             "rel": "noopener noreferrer"
           }
@@ -2290,7 +2306,7 @@
           "tag": "a",
           "children": ["host tickets"],
           "props": {
-            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Screens/Lua/ScreenLuaSession.Audio.cs",
+            "href": "https://github.com/doflare123/NovellMaker/blob/52b1d06149b668aa76d5ed995c0a92118eb63824/src/NovellMaker.Core/Screens/Lua/ScreenLuaSession.Audio.cs",
             "target": "_blank",
             "rel": "noopener noreferrer"
           }
@@ -2300,7 +2316,7 @@
           "tag": "a",
           "children": ["backend admission"],
           "props": {
-            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Audio/AudioService.cs",
+            "href": "https://github.com/doflare123/NovellMaker/blob/52b1d06149b668aa76d5ed995c0a92118eb63824/src/NovellMaker.Core/Audio/AudioService.cs",
             "target": "_blank",
             "rel": "noopener noreferrer"
           }
@@ -2310,7 +2326,7 @@
           "tag": "a",
           "children": ["ScriptAudioLuaTests"],
           "props": {
-            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Screens/ScriptAudioLuaTests.cs",
+            "href": "https://github.com/doflare123/NovellMaker/blob/52b1d06149b668aa76d5ed995c0a92118eb63824/tests/NovellMaker.Core.Tests/Screens/ScriptAudioLuaTests.cs",
             "target": "_blank",
             "rel": "noopener noreferrer"
           }
@@ -2941,7 +2957,7 @@
           "tag": "a",
           "children": ["команда/схема ответа"],
           "props": {
-            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Execution/GameServiceCommand.cs",
+            "href": "https://github.com/doflare123/NovellMaker/blob/52b1d06149b668aa76d5ed995c0a92118eb63824/src/NovellMaker.Core/Execution/GameServiceCommand.cs",
             "target": "_blank",
             "rel": "noopener noreferrer"
           }
@@ -2951,7 +2967,7 @@
           "tag": "a",
           "children": ["Lua-проекция"],
           "props": {
-            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Screens/Lua/ScreenLuaWorker.cs",
+            "href": "https://github.com/doflare123/NovellMaker/blob/52b1d06149b668aa76d5ed995c0a92118eb63824/src/NovellMaker.Core/Screens/Lua/ScreenLuaWorker.cs",
             "target": "_blank",
             "rel": "noopener noreferrer"
           }
@@ -2961,7 +2977,7 @@
           "tag": "a",
           "children": ["lifetime bridge"],
           "props": {
-            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Runtime/RuntimeGameServices.cs",
+            "href": "https://github.com/doflare123/NovellMaker/blob/52b1d06149b668aa76d5ed995c0a92118eb63824/src/NovellMaker.Runtime/RuntimeGameServices.cs",
             "target": "_blank",
             "rel": "noopener noreferrer"
           }
@@ -2971,7 +2987,7 @@
           "tag": "a",
           "children": ["профиль"],
           "props": {
-            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Runtime/RuntimeSettingsServices.cs",
+            "href": "https://github.com/doflare123/NovellMaker/blob/52b1d06149b668aa76d5ed995c0a92118eb63824/src/NovellMaker.Runtime/RuntimeSettingsServices.cs",
             "target": "_blank",
             "rel": "noopener noreferrer"
           }
@@ -2981,7 +2997,7 @@
           "tag": "a",
           "children": ["список"],
           "props": {
-            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Execution/GameSlotStore.cs",
+            "href": "https://github.com/doflare123/NovellMaker/blob/52b1d06149b668aa76d5ed995c0a92118eb63824/src/NovellMaker.Core/Execution/GameSlotStore.cs",
             "target": "_blank",
             "rel": "noopener noreferrer"
           }
@@ -2991,7 +3007,7 @@
           "tag": "a",
           "children": ["сервисы"],
           "props": {
-            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Screens/GameServiceLuaTests.cs",
+            "href": "https://github.com/doflare123/NovellMaker/blob/52b1d06149b668aa76d5ed995c0a92118eb63824/tests/NovellMaker.Core.Tests/Screens/GameServiceLuaTests.cs",
             "target": "_blank",
             "rel": "noopener noreferrer"
           }
@@ -3001,7 +3017,7 @@
           "tag": "a",
           "children": ["слоты"],
           "props": {
-            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Execution/GameSlotTests.cs",
+            "href": "https://github.com/doflare123/NovellMaker/blob/52b1d06149b668aa76d5ed995c0a92118eb63824/tests/NovellMaker.Core.Tests/Execution/GameSlotTests.cs",
             "target": "_blank",
             "rel": "noopener noreferrer"
           }
@@ -3011,7 +3027,7 @@
           "tag": "a",
           "children": ["runtime"],
           "props": {
-            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Runtime.Tests/RuntimeSettingsServicesTests.cs",
+            "href": "https://github.com/doflare123/NovellMaker/blob/52b1d06149b668aa76d5ed995c0a92118eb63824/tests/NovellMaker.Runtime.Tests/RuntimeSettingsServicesTests.cs",
             "target": "_blank",
             "rel": "noopener noreferrer"
           }
@@ -3424,7 +3440,7 @@
           "tag": "a",
           "children": ["коды/результат"],
           "props": {
-            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/ExternalServices/ReleaseCheck.cs",
+            "href": "https://github.com/doflare123/NovellMaker/blob/52b1d06149b668aa76d5ed995c0a92118eb63824/src/NovellMaker.Core/ExternalServices/ReleaseCheck.cs",
             "target": "_blank",
             "rel": "noopener noreferrer"
           }
@@ -3434,7 +3450,7 @@
           "tag": "a",
           "children": ["service"],
           "props": {
-            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/ExternalServices/ReleaseCheckService.cs",
+            "href": "https://github.com/doflare123/NovellMaker/blob/52b1d06149b668aa76d5ed995c0a92118eb63824/src/NovellMaker.Core/ExternalServices/ReleaseCheckService.cs",
             "target": "_blank",
             "rel": "noopener noreferrer"
           }
@@ -3444,7 +3460,7 @@
           "tag": "a",
           "children": ["адаптер"],
           "props": {
-            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Runtime/ExternalServices/GitHubReleaseProvider.cs",
+            "href": "https://github.com/doflare123/NovellMaker/blob/52b1d06149b668aa76d5ed995c0a92118eb63824/src/NovellMaker.Runtime/ExternalServices/GitHubReleaseProvider.cs",
             "target": "_blank",
             "rel": "noopener noreferrer"
           }
@@ -3454,7 +3470,7 @@
           "tag": "a",
           "children": ["Lua"],
           "props": {
-            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Screens/ReleaseCheckLuaTests.cs",
+            "href": "https://github.com/doflare123/NovellMaker/blob/52b1d06149b668aa76d5ed995c0a92118eb63824/tests/NovellMaker.Core.Tests/Screens/ReleaseCheckLuaTests.cs",
             "target": "_blank",
             "rel": "noopener noreferrer"
           }
@@ -3464,7 +3480,7 @@
           "tag": "a",
           "children": ["HTTP"],
           "props": {
-            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Runtime.Tests/ReleaseCheckProviderTests.cs",
+            "href": "https://github.com/doflare123/NovellMaker/blob/52b1d06149b668aa76d5ed995c0a92118eb63824/tests/NovellMaker.Runtime.Tests/ReleaseCheckProviderTests.cs",
             "target": "_blank",
             "rel": "noopener noreferrer"
           }
@@ -3516,7 +3532,7 @@
           "tag": "a",
           "children": ["проекция"],
           "props": {
-            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Execution/LuaActionScript.cs",
+            "href": "https://github.com/doflare123/NovellMaker/blob/52b1d06149b668aa76d5ed995c0a92118eb63824/src/NovellMaker.Core/Execution/LuaActionScript.cs",
             "target": "_blank",
             "rel": "noopener noreferrer"
           }
@@ -3526,7 +3542,7 @@
           "tag": "a",
           "children": ["lifecycle"],
           "props": {
-            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Execution/ScenarioPlayer.Minigames.cs",
+            "href": "https://github.com/doflare123/NovellMaker/blob/52b1d06149b668aa76d5ed995c0a92118eb63824/src/NovellMaker.Core/Execution/ScenarioPlayer.Minigames.cs",
             "target": "_blank",
             "rel": "noopener noreferrer"
           }
@@ -3536,7 +3552,7 @@
           "tag": "a",
           "children": ["MinigameTests"],
           "props": {
-            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Execution/MinigameTests.cs",
+            "href": "https://github.com/doflare123/NovellMaker/blob/52b1d06149b668aa76d5ed995c0a92118eb63824/tests/NovellMaker.Core.Tests/Execution/MinigameTests.cs",
             "target": "_blank",
             "rel": "noopener noreferrer"
           }

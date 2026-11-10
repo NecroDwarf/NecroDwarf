@@ -1,0 +1,1077 @@
+{
+  "title": "Импорт персонажей и диалога",
+  "headings": [
+    {
+      "title": "Импорт персонажей и диалога",
+      "id": "импорт-персонажей-и-диалога",
+      "level": 1
+    },
+    { "title": "Мастер", "id": "мастер", "level": 2 },
+    { "title": "CSV/TSV", "id": "csvtsv", "level": 2 },
+    { "title": "JSON v1", "id": "json-v1", "level": 2 },
+    {
+      "title": "Повторный импорт и ресурсы",
+      "id": "повторный-импорт-и-ресурсы",
+      "level": 2
+    }
+  ],
+  "nodes": [
+    {
+      "tag": "h1",
+      "children": ["Импорт персонажей и диалога"],
+      "props": { "id": "импорт-персонажей-и-диалога" }
+    },
+    {
+      "tag": "p",
+      "children": [
+        {
+          "tag": "a",
+          "children": ["Руководство"],
+          "props": { "href": "/projects/novellmaker/docs/engine-guide" }
+        },
+        " · ",
+        {
+          "tag": "a",
+          "children": ["Оглавление"],
+          "props": { "href": "/projects/novellmaker/docs/lua" }
+        },
+        " · ",
+        {
+          "tag": "a",
+          "children": ["Проверка"],
+          "props": { "href": "/projects/novellmaker/docs/lua/compatibility" }
+        }
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Откройте проект и выберите ",
+        {
+          "tag": "strong",
+          "children": ["«Проект → Импорт персонажей и диалога…»"]
+        },
+        ". Во вкладке «Реплики» доступна та же команда «Импорт…». Поддерживаются JSON, CSV и TSV до 32 МиБ. Импорт доступен без правки исходников движка. Он загружает авторские данные, не исполняет Lua и не создаёт произвольные потоки сценарных команд."
+      ]
+    },
+    { "tag": "h2", "children": ["Мастер"], "props": { "id": "мастер" } },
+    {
+      "tag": "ol",
+      "children": [
+        {
+          "tag": "li",
+          "children": [
+            "Выберите файл. ",
+            { "tag": "strong", "children": ["Источник"] },
+            " — постоянное имя набора, по умолчанию имя файла без расширения. При повторном импорте сохраните это имя, даже если переименовали сам файл. Разные наборы должны иметь разные имена источника."
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            "Проверьте папку ресурсов и язык по умолчанию. Пути из файла считаются относительно этой папки, по умолчанию папки самого файла. Для реплик без ключа сцены выберите текущую или новую сцену. В существующую сцену новые реплики вставляются после выбранной; если выбранной нет, в конец."
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            "Для CSV/TSV выберите разделитель и назначьте колонки. «Не использовать» отключает поле. Для импорта только персонажей отключите колонку текста. Текст без персонажа становится рассказчиком. Можно загрузить сохранённый профиль или отметить «Сохранить профиль» и указать имя нового."
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            "Нажмите «Разобрать и сопоставить персонажей». Для каждого внешнего персонажа выберите существующего, «Создать» либо рассказчика. Выбор действует сразу на все его реплики. Совпадение имени с единственным персонажем предлагается автоматически; одинаковые имена требуют явного выбора. При повторном импорте приоритет имеют сохранённые внешние ключи."
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            "Проверьте «Предпросмотр»: новые персонажи/сцены, новые и обновляемые реплики, позы, назначения/замены WAV, ошибки ресурсов. При ошибках пакет не применяется. Можно отключить «Импортировать WAV» или «Импортировать изображения» и построить предпросмотр заново, чтобы загрузить только текст и персонажей."
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            "«Применить импорт» копирует ресурсы и меняет проект ",
+            { "tag": "strong", "children": ["одной операцией Undo/redo"] },
+            ". Отмена мастера ничего не копирует и не сохраняет профиль. При ошибке копирования или изменении проверенных байтов ресурса весь пакет отклоняется, его незавершённые копии удаляются. Успешный Undo оставляет файлы для redo, как при обычном импорте ресурсов."
+          ]
+        }
+      ],
+      "props": { "start": 1 }
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Профиль содержит разделитель, язык и соответствие имён колонок полям. Профили и соответствия внешних ключей входят в проект: сохраняются при Save As, восстановлении и undo/redo. Изменение настроек мастера отменяет прежний предпросмотр; перед применением его нужно повторить."
+      ]
+    },
+    { "tag": "h2", "children": ["CSV/TSV"], "props": { "id": "csvtsv" } },
+    {
+      "tag": "p",
+      "children": [
+        "Первая строка — непустые уникальные заголовки. Названия и порядок произвольные: сопоставьте их в мастере. Разделители — запятая, точка с запятой или табуляция. UTF-8/BOM поддерживается; запятые, разделители и переводы строк внутри поля заключаются в двойные кавычки, кавычка экранируется удвоением. Один файл — до 20000 строк данных. Повтор заголовков и разное количество полей отклоняются."
+      ]
+    },
+    {
+      "tag": "div",
+      "children": [
+        {
+          "tag": "table",
+          "children": [
+            {
+              "tag": "thead",
+              "children": [
+                {
+                  "tag": "tr",
+                  "children": [
+                    {
+                      "tag": "th",
+                      "children": ["Поле мастера"],
+                      "props": { "scope": "col" }
+                    },
+                    {
+                      "tag": "th",
+                      "children": ["Значение"],
+                      "props": { "scope": "col" }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "tbody",
+              "children": [
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["Текст"] },
+                    {
+                      "tag": "td",
+                      "children": [
+                        "Текст реплики; при отключении импортируются только персонажи"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["Персонаж"] },
+                    {
+                      "tag": "td",
+                      "children": ["Имя говорящего; пустое поле — рассказчик"]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["Ключ персонажа"] },
+                    {
+                      "tag": "td",
+                      "children": [
+                        "Стабильный внешний ключ; если отсутствует, используется имя"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["Ключ реплики"] },
+                    {
+                      "tag": "td",
+                      "children": [
+                        "Необязательный стабильный ключ для повторного импорта"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["Язык"] },
+                    {
+                      "tag": "td",
+                      "children": [
+                        "Код языка; пустое поле наследует язык мастера"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["WAV"] },
+                    {
+                      "tag": "td",
+                      "children": ["Необязательный относительный путь записи"]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["Изображение"] },
+                    {
+                      "tag": "td",
+                      "children": [
+                        "Необязательный относительный путь PNG/JPEG позы персонажа"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["Поза"] },
+                    {
+                      "tag": "td",
+                      "children": [
+                        "Ключ и имя статической позы; при изображении без позы используется ",
+                        { "tag": "code", "children": ["default"] }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["Сцена"] },
+                    {
+                      "tag": "td",
+                      "children": ["Название отдельной импортируемой сцены"]
+                    }
+                  ]
+                },
+                {
+                  "tag": "tr",
+                  "children": [
+                    { "tag": "td", "children": ["Ключ сцены"] },
+                    {
+                      "tag": "td",
+                      "children": [
+                        "Её внешний ключ; если нет, используется название сцены"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "props": {
+        "className": "nm-table",
+        "tabIndex": 0,
+        "role": "region",
+        "aria-label": "Таблица, прокрутка по горизонтали"
+      }
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Минимальный пример: ",
+        "dialogue.csv",
+        ". Он создаёт персонажей и реплики без графики и озвучки. Можно переназначить имена на персонажей текущего проекта."
+      ]
+    },
+    {
+      "tag": "pre",
+      "text": "Код;Ключ персонажа;Имя;Реплика;Язык;Запись\nline-001;lena;Лена;Ты тоже это слышал?;ru;voice/lena_001.wav\nline-002;anton;Антон;Слышал. Подожди здесь.;ru;\nline-001;lena;Лена;Did you hear that too?;en;",
+      "language": "csv",
+      "children": [
+        "Код;Ключ персонажа;Имя;Реплика;Язык;Запись\nline-001;lena;Лена;Ты тоже это слышал?;ru;voice/lena_001.wav\nline-002;anton;Антон;Слышал. Подожди здесь.;ru;\nline-001;lena;Лена;Did you hear that too?;en;"
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Несколько строк с одним ключом реплики и разными языками объединяются в одну реплику. Повтор ключа и языка либо разные говорящие/позы у одного ключа отклоняются. Повторяющиеся сведения о персонаже должны иметь одинаковое имя, а один ключ его позы — одинаковое изображение. Колонки WAV и изображения можно полностью исключить. Пустая ячейка WAV сохраняет уже назначенный голос при обновлении, а не удаляет его."
+      ]
+    },
+    { "tag": "h2", "children": ["JSON v1"], "props": { "id": "json-v1" } },
+    {
+      "tag": "p",
+      "children": [
+        "Это отдельный формат обмена с ",
+        { "tag": "code", "children": ["version: 1"] },
+        ", не JSON проекта ",
+        { "tag": "code", "children": [".novell"] },
+        ". Неизвестные и повторные поля, неподдерживаемая версия и некорректные типы отклоняются. Пример без ресурсов: ",
+        "dialogue.json",
+        "."
+      ]
+    },
+    {
+      "tag": "pre",
+      "text": "{\n  \"version\": 1,\n  \"language\": \"ru\",\n  \"characters\": [\n    {\n      \"key\": \"lena\",\n      \"name\": \"Лена\",\n      \"defaultPose\": \"idle\",\n      \"poses\": [\n        { \"key\": \"idle\", \"name\": \"Обычная\", \"image\": \"characters/lena.png\" }\n      ]\n    }\n  ],\n  \"scenes\": [\n    {\n      \"key\": \"arrival\",\n      \"name\": \"Прибытие\",\n      \"lines\": [\n        {\n          \"key\": \"arrival-001\",\n          \"speaker\": \"lena\",\n          \"pose\": \"idle\",\n          \"texts\": { \"ru\": \"Ты тоже это слышал?\", \"en\": \"Did you hear that too?\" },\n          \"voices\": { \"ru\": \"voice/lena_001.wav\" }\n        },\n        { \"key\": \"arrival-002\", \"text\": \"За дверью щёлкнул замок.\", \"unvoiced\": [\"ru\"] }\n      ]\n    }\n  ]\n}",
+      "language": "json",
+      "children": [
+        {
+          "tag": "span",
+          "children": ["{"],
+          "props": { "className": "hljs-punctuation" }
+        },
+        "\n  ",
+        {
+          "tag": "span",
+          "children": ["\"version\""],
+          "props": { "className": "hljs-attr" }
+        },
+        {
+          "tag": "span",
+          "children": [":"],
+          "props": { "className": "hljs-punctuation" }
+        },
+        " ",
+        {
+          "tag": "span",
+          "children": ["1"],
+          "props": { "className": "hljs-number" }
+        },
+        {
+          "tag": "span",
+          "children": [","],
+          "props": { "className": "hljs-punctuation" }
+        },
+        "\n  ",
+        {
+          "tag": "span",
+          "children": ["\"language\""],
+          "props": { "className": "hljs-attr" }
+        },
+        {
+          "tag": "span",
+          "children": [":"],
+          "props": { "className": "hljs-punctuation" }
+        },
+        " ",
+        {
+          "tag": "span",
+          "children": ["\"ru\""],
+          "props": { "className": "hljs-string" }
+        },
+        {
+          "tag": "span",
+          "children": [","],
+          "props": { "className": "hljs-punctuation" }
+        },
+        "\n  ",
+        {
+          "tag": "span",
+          "children": ["\"characters\""],
+          "props": { "className": "hljs-attr" }
+        },
+        {
+          "tag": "span",
+          "children": [":"],
+          "props": { "className": "hljs-punctuation" }
+        },
+        " ",
+        {
+          "tag": "span",
+          "children": ["["],
+          "props": { "className": "hljs-punctuation" }
+        },
+        "\n    ",
+        {
+          "tag": "span",
+          "children": ["{"],
+          "props": { "className": "hljs-punctuation" }
+        },
+        "\n      ",
+        {
+          "tag": "span",
+          "children": ["\"key\""],
+          "props": { "className": "hljs-attr" }
+        },
+        {
+          "tag": "span",
+          "children": [":"],
+          "props": { "className": "hljs-punctuation" }
+        },
+        " ",
+        {
+          "tag": "span",
+          "children": ["\"lena\""],
+          "props": { "className": "hljs-string" }
+        },
+        {
+          "tag": "span",
+          "children": [","],
+          "props": { "className": "hljs-punctuation" }
+        },
+        "\n      ",
+        {
+          "tag": "span",
+          "children": ["\"name\""],
+          "props": { "className": "hljs-attr" }
+        },
+        {
+          "tag": "span",
+          "children": [":"],
+          "props": { "className": "hljs-punctuation" }
+        },
+        " ",
+        {
+          "tag": "span",
+          "children": ["\"Лена\""],
+          "props": { "className": "hljs-string" }
+        },
+        {
+          "tag": "span",
+          "children": [","],
+          "props": { "className": "hljs-punctuation" }
+        },
+        "\n      ",
+        {
+          "tag": "span",
+          "children": ["\"defaultPose\""],
+          "props": { "className": "hljs-attr" }
+        },
+        {
+          "tag": "span",
+          "children": [":"],
+          "props": { "className": "hljs-punctuation" }
+        },
+        " ",
+        {
+          "tag": "span",
+          "children": ["\"idle\""],
+          "props": { "className": "hljs-string" }
+        },
+        {
+          "tag": "span",
+          "children": [","],
+          "props": { "className": "hljs-punctuation" }
+        },
+        "\n      ",
+        {
+          "tag": "span",
+          "children": ["\"poses\""],
+          "props": { "className": "hljs-attr" }
+        },
+        {
+          "tag": "span",
+          "children": [":"],
+          "props": { "className": "hljs-punctuation" }
+        },
+        " ",
+        {
+          "tag": "span",
+          "children": ["["],
+          "props": { "className": "hljs-punctuation" }
+        },
+        "\n        ",
+        {
+          "tag": "span",
+          "children": ["{"],
+          "props": { "className": "hljs-punctuation" }
+        },
+        " ",
+        {
+          "tag": "span",
+          "children": ["\"key\""],
+          "props": { "className": "hljs-attr" }
+        },
+        {
+          "tag": "span",
+          "children": [":"],
+          "props": { "className": "hljs-punctuation" }
+        },
+        " ",
+        {
+          "tag": "span",
+          "children": ["\"idle\""],
+          "props": { "className": "hljs-string" }
+        },
+        {
+          "tag": "span",
+          "children": [","],
+          "props": { "className": "hljs-punctuation" }
+        },
+        " ",
+        {
+          "tag": "span",
+          "children": ["\"name\""],
+          "props": { "className": "hljs-attr" }
+        },
+        {
+          "tag": "span",
+          "children": [":"],
+          "props": { "className": "hljs-punctuation" }
+        },
+        " ",
+        {
+          "tag": "span",
+          "children": ["\"Обычная\""],
+          "props": { "className": "hljs-string" }
+        },
+        {
+          "tag": "span",
+          "children": [","],
+          "props": { "className": "hljs-punctuation" }
+        },
+        " ",
+        {
+          "tag": "span",
+          "children": ["\"image\""],
+          "props": { "className": "hljs-attr" }
+        },
+        {
+          "tag": "span",
+          "children": [":"],
+          "props": { "className": "hljs-punctuation" }
+        },
+        " ",
+        {
+          "tag": "span",
+          "children": ["\"characters/lena.png\""],
+          "props": { "className": "hljs-string" }
+        },
+        " ",
+        {
+          "tag": "span",
+          "children": ["}"],
+          "props": { "className": "hljs-punctuation" }
+        },
+        "\n      ",
+        {
+          "tag": "span",
+          "children": ["]"],
+          "props": { "className": "hljs-punctuation" }
+        },
+        "\n    ",
+        {
+          "tag": "span",
+          "children": ["}"],
+          "props": { "className": "hljs-punctuation" }
+        },
+        "\n  ",
+        {
+          "tag": "span",
+          "children": ["]"],
+          "props": { "className": "hljs-punctuation" }
+        },
+        {
+          "tag": "span",
+          "children": [","],
+          "props": { "className": "hljs-punctuation" }
+        },
+        "\n  ",
+        {
+          "tag": "span",
+          "children": ["\"scenes\""],
+          "props": { "className": "hljs-attr" }
+        },
+        {
+          "tag": "span",
+          "children": [":"],
+          "props": { "className": "hljs-punctuation" }
+        },
+        " ",
+        {
+          "tag": "span",
+          "children": ["["],
+          "props": { "className": "hljs-punctuation" }
+        },
+        "\n    ",
+        {
+          "tag": "span",
+          "children": ["{"],
+          "props": { "className": "hljs-punctuation" }
+        },
+        "\n      ",
+        {
+          "tag": "span",
+          "children": ["\"key\""],
+          "props": { "className": "hljs-attr" }
+        },
+        {
+          "tag": "span",
+          "children": [":"],
+          "props": { "className": "hljs-punctuation" }
+        },
+        " ",
+        {
+          "tag": "span",
+          "children": ["\"arrival\""],
+          "props": { "className": "hljs-string" }
+        },
+        {
+          "tag": "span",
+          "children": [","],
+          "props": { "className": "hljs-punctuation" }
+        },
+        "\n      ",
+        {
+          "tag": "span",
+          "children": ["\"name\""],
+          "props": { "className": "hljs-attr" }
+        },
+        {
+          "tag": "span",
+          "children": [":"],
+          "props": { "className": "hljs-punctuation" }
+        },
+        " ",
+        {
+          "tag": "span",
+          "children": ["\"Прибытие\""],
+          "props": { "className": "hljs-string" }
+        },
+        {
+          "tag": "span",
+          "children": [","],
+          "props": { "className": "hljs-punctuation" }
+        },
+        "\n      ",
+        {
+          "tag": "span",
+          "children": ["\"lines\""],
+          "props": { "className": "hljs-attr" }
+        },
+        {
+          "tag": "span",
+          "children": [":"],
+          "props": { "className": "hljs-punctuation" }
+        },
+        " ",
+        {
+          "tag": "span",
+          "children": ["["],
+          "props": { "className": "hljs-punctuation" }
+        },
+        "\n        ",
+        {
+          "tag": "span",
+          "children": ["{"],
+          "props": { "className": "hljs-punctuation" }
+        },
+        "\n          ",
+        {
+          "tag": "span",
+          "children": ["\"key\""],
+          "props": { "className": "hljs-attr" }
+        },
+        {
+          "tag": "span",
+          "children": [":"],
+          "props": { "className": "hljs-punctuation" }
+        },
+        " ",
+        {
+          "tag": "span",
+          "children": ["\"arrival-001\""],
+          "props": { "className": "hljs-string" }
+        },
+        {
+          "tag": "span",
+          "children": [","],
+          "props": { "className": "hljs-punctuation" }
+        },
+        "\n          ",
+        {
+          "tag": "span",
+          "children": ["\"speaker\""],
+          "props": { "className": "hljs-attr" }
+        },
+        {
+          "tag": "span",
+          "children": [":"],
+          "props": { "className": "hljs-punctuation" }
+        },
+        " ",
+        {
+          "tag": "span",
+          "children": ["\"lena\""],
+          "props": { "className": "hljs-string" }
+        },
+        {
+          "tag": "span",
+          "children": [","],
+          "props": { "className": "hljs-punctuation" }
+        },
+        "\n          ",
+        {
+          "tag": "span",
+          "children": ["\"pose\""],
+          "props": { "className": "hljs-attr" }
+        },
+        {
+          "tag": "span",
+          "children": [":"],
+          "props": { "className": "hljs-punctuation" }
+        },
+        " ",
+        {
+          "tag": "span",
+          "children": ["\"idle\""],
+          "props": { "className": "hljs-string" }
+        },
+        {
+          "tag": "span",
+          "children": [","],
+          "props": { "className": "hljs-punctuation" }
+        },
+        "\n          ",
+        {
+          "tag": "span",
+          "children": ["\"texts\""],
+          "props": { "className": "hljs-attr" }
+        },
+        {
+          "tag": "span",
+          "children": [":"],
+          "props": { "className": "hljs-punctuation" }
+        },
+        " ",
+        {
+          "tag": "span",
+          "children": ["{"],
+          "props": { "className": "hljs-punctuation" }
+        },
+        " ",
+        {
+          "tag": "span",
+          "children": ["\"ru\""],
+          "props": { "className": "hljs-attr" }
+        },
+        {
+          "tag": "span",
+          "children": [":"],
+          "props": { "className": "hljs-punctuation" }
+        },
+        " ",
+        {
+          "tag": "span",
+          "children": ["\"Ты тоже это слышал?\""],
+          "props": { "className": "hljs-string" }
+        },
+        {
+          "tag": "span",
+          "children": [","],
+          "props": { "className": "hljs-punctuation" }
+        },
+        " ",
+        {
+          "tag": "span",
+          "children": ["\"en\""],
+          "props": { "className": "hljs-attr" }
+        },
+        {
+          "tag": "span",
+          "children": [":"],
+          "props": { "className": "hljs-punctuation" }
+        },
+        " ",
+        {
+          "tag": "span",
+          "children": ["\"Did you hear that too?\""],
+          "props": { "className": "hljs-string" }
+        },
+        " ",
+        {
+          "tag": "span",
+          "children": ["}"],
+          "props": { "className": "hljs-punctuation" }
+        },
+        {
+          "tag": "span",
+          "children": [","],
+          "props": { "className": "hljs-punctuation" }
+        },
+        "\n          ",
+        {
+          "tag": "span",
+          "children": ["\"voices\""],
+          "props": { "className": "hljs-attr" }
+        },
+        {
+          "tag": "span",
+          "children": [":"],
+          "props": { "className": "hljs-punctuation" }
+        },
+        " ",
+        {
+          "tag": "span",
+          "children": ["{"],
+          "props": { "className": "hljs-punctuation" }
+        },
+        " ",
+        {
+          "tag": "span",
+          "children": ["\"ru\""],
+          "props": { "className": "hljs-attr" }
+        },
+        {
+          "tag": "span",
+          "children": [":"],
+          "props": { "className": "hljs-punctuation" }
+        },
+        " ",
+        {
+          "tag": "span",
+          "children": ["\"voice/lena_001.wav\""],
+          "props": { "className": "hljs-string" }
+        },
+        " ",
+        {
+          "tag": "span",
+          "children": ["}"],
+          "props": { "className": "hljs-punctuation" }
+        },
+        "\n        ",
+        {
+          "tag": "span",
+          "children": ["}"],
+          "props": { "className": "hljs-punctuation" }
+        },
+        {
+          "tag": "span",
+          "children": [","],
+          "props": { "className": "hljs-punctuation" }
+        },
+        "\n        ",
+        {
+          "tag": "span",
+          "children": ["{"],
+          "props": { "className": "hljs-punctuation" }
+        },
+        " ",
+        {
+          "tag": "span",
+          "children": ["\"key\""],
+          "props": { "className": "hljs-attr" }
+        },
+        {
+          "tag": "span",
+          "children": [":"],
+          "props": { "className": "hljs-punctuation" }
+        },
+        " ",
+        {
+          "tag": "span",
+          "children": ["\"arrival-002\""],
+          "props": { "className": "hljs-string" }
+        },
+        {
+          "tag": "span",
+          "children": [","],
+          "props": { "className": "hljs-punctuation" }
+        },
+        " ",
+        {
+          "tag": "span",
+          "children": ["\"text\""],
+          "props": { "className": "hljs-attr" }
+        },
+        {
+          "tag": "span",
+          "children": [":"],
+          "props": { "className": "hljs-punctuation" }
+        },
+        " ",
+        {
+          "tag": "span",
+          "children": ["\"За дверью щёлкнул замок.\""],
+          "props": { "className": "hljs-string" }
+        },
+        {
+          "tag": "span",
+          "children": [","],
+          "props": { "className": "hljs-punctuation" }
+        },
+        " ",
+        {
+          "tag": "span",
+          "children": ["\"unvoiced\""],
+          "props": { "className": "hljs-attr" }
+        },
+        {
+          "tag": "span",
+          "children": [":"],
+          "props": { "className": "hljs-punctuation" }
+        },
+        " ",
+        {
+          "tag": "span",
+          "children": ["["],
+          "props": { "className": "hljs-punctuation" }
+        },
+        {
+          "tag": "span",
+          "children": ["\"ru\""],
+          "props": { "className": "hljs-string" }
+        },
+        {
+          "tag": "span",
+          "children": ["]"],
+          "props": { "className": "hljs-punctuation" }
+        },
+        " ",
+        {
+          "tag": "span",
+          "children": ["}"],
+          "props": { "className": "hljs-punctuation" }
+        },
+        "\n      ",
+        {
+          "tag": "span",
+          "children": ["]"],
+          "props": { "className": "hljs-punctuation" }
+        },
+        "\n    ",
+        {
+          "tag": "span",
+          "children": ["}"],
+          "props": { "className": "hljs-punctuation" }
+        },
+        "\n  ",
+        {
+          "tag": "span",
+          "children": ["]"],
+          "props": { "className": "hljs-punctuation" }
+        },
+        "\n",
+        {
+          "tag": "span",
+          "children": ["}"],
+          "props": { "className": "hljs-punctuation" }
+        }
+      ]
+    },
+    {
+      "tag": "ul",
+      "children": [
+        {
+          "tag": "li",
+          "children": [
+            { "tag": "code", "children": ["characters"] },
+            " необязателен. ",
+            { "tag": "code", "children": ["key"] },
+            " и ",
+            { "tag": "code", "children": ["name"] },
+            " обязательны у заданного персонажа; ",
+            { "tag": "code", "children": ["poses"] },
+            " содержит статические позы с обязательными ",
+            { "tag": "code", "children": ["key"] },
+            ", ",
+            { "tag": "code", "children": ["name"] },
+            ", ",
+            { "tag": "code", "children": ["image"] },
+            ". ",
+            { "tag": "code", "children": ["defaultPose"] },
+            " выбирает ключ исходной позы; иначе используется первая новая поза, если у персонажа исходной ещё нет. Персонаж без поз создаётся как заготовка без графики; для полноценного показа настройте позы в библиотеке."
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            { "tag": "code", "children": ["scenes"] },
+            " необязателен. У сцены ",
+            { "tag": "code", "children": ["key"] },
+            " задаёт постоянное соответствие, ",
+            { "tag": "code", "children": ["name"] },
+            " — название, ",
+            { "tag": "code", "children": ["lines"] },
+            " — реплики. Верхнеуровневый массив ",
+            { "tag": "code", "children": ["lines"] },
+            " направляется в выбранную в мастере сцену. Можно передать только персонажей. При наличии обоих массивов они обрабатываются последовательно."
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            "У реплики ",
+            { "tag": "code", "children": ["speaker"] },
+            " ссылается на ключ персонажа. Необъявленный ключ предлагается как новый персонаж с этим же именем. Пустой/отсутствующий ",
+            { "tag": "code", "children": ["speaker"] },
+            " — рассказчик. ",
+            { "tag": "code", "children": ["pose"] },
+            " — ключ импортируемой позы либо имя существующей позы сопоставленного персонажа."
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            { "tag": "code", "children": ["texts"] },
+            " и ",
+            { "tag": "code", "children": ["voices"] },
+            " — словари по языкам. Для одной локали можно использовать сокращённые ",
+            { "tag": "code", "children": ["text"] },
+            ", ",
+            { "tag": "code", "children": ["voice"] },
+            ", ",
+            { "tag": "code", "children": ["language"] },
+            "; язык наследуется от реплики, затем файла, затем мастера. Нельзя дважды задать один язык через сокращённую и полную форму. Для каждой реплики нужен хотя бы один текст."
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            { "tag": "code", "children": ["unvoiced"] },
+            " — языки, на которых автор намеренно оставляет реплику без голоса. При включённом импорте WAV эта отметка снимает прежнюю запись данного языка. Нужен текст этого языка в той же импортируемой реплике; одновременное задание WAV запрещено. При выключенном импорте WAV озвучка и эти отметки не меняются."
+          ]
+        }
+      ]
+    },
+    {
+      "tag": "h2",
+      "children": ["Повторный импорт и ресурсы"],
+      "props": { "id": "повторный-импорт-и-ресурсы" }
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Сопоставление идёт по ",
+        {
+          "tag": "strong",
+          "children": ["имени источника, типу объекта и внешнему ключу"]
+        },
+        ". Внутренние GUID и ключи переводов создаёт редактор. Номер строки, её текст и порядок не используются для поиска существующей фразы. Ключи реплик должны быть уникальными во всём наборе, включая разные сцены. Сохранённое сопоставление персонажа с рассказчиком тоже восстанавливается."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        "При включённом «Обновлять по внешним ключам» меняются только переданные переводы, говорящий, явно выбранная поза и переданная озвучка. Прочие языки, ID, порядок и ScriptBlocks сохраняются; отсутствующие в файле объекты не удаляются. Имя ранее связанного персонажа и название связанной сцены обновляются. Переименование существующего персонажа, выбранного впервые вручную по другому имени, не навязывается. Для поз по возможности сохраняется ID. Пакет не перемещает связанную реплику между сценами автоматически: при несовпадении сцены выдаёт ошибку."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Без ключа реплика всегда добавляется заново. Снятие «Обновлять по внешним ключам» явно добавляет новые реплики/сцены и переназначает их ключи на новые ID; последующие обновления относятся к ним. Персонажи по-прежнему определяются явным сопоставлением мастера. Отсутствие ключей персонажа/сцены в CSV заменяется именем, поэтому для безопасных переименований используйте отдельные колонки ключей."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Ресурсные пути должны быть относительными путями внутри выбранной папки. Поддерживаются вложенные папки; абсолютные пути, ",
+        { "tag": "code", "children": [".."] },
+        " и символические ссылки внутри набора отклоняются. WAV проверяются общим импортёром: PCM 16 bit, mono/stereo, 8000–48000 Гц, до 2 ГиБ. PNG/JPEG проверяются общим декодером, с его пределами 64 МиБ сжатых данных, 8192 по стороне и 32 млн пикселей. Один файл, используемый несколькими позами/фразами, копируется один раз; повторный импорт неизменившихся байтов переиспользует зарегистрированный ресурс. Изменённый ресурс добавляется отдельно, не перезаписывая прежние файлы, необходимые для Undo или других ссылок."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Импорт не переносит слоистую/покадровую анимацию, Lua, мини-игры, выборы, переходы и фоновые музыкальные настройки. Статическое изображение не заменяет существующую слоистую/покадровую позу. Произвольный импортированный сценарный поток не смешивается автоматически с привязками реплик. Эти ограничения относятся к этому формату обмена, а не к возможностям самого редактора."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Проект ",
+        { "tag": "strong", "children": ["v25"] },
+        " хранит сведения в ",
+        { "tag": "code", "children": ["imports.bindings"] },
+        " и ",
+        { "tag": "code", "children": ["imports.profiles"] },
+        "; проекты v24 и ниже получают пустые данные при миграции. Сохранения игрока и Lua API не менялись; точная ревизия содержимого проекта, как прежде, влияет на совместимость игровых слотов. Для экспорта нужен подготовленный runtime-шаблон v25."
+      ]
+    }
+  ]
+}

@@ -33,11 +33,14 @@
   padding-block: 70px 85px;
 }
 .wordmark {
+  display: flex;
+  align-items: center;
+  gap: 12px;
   font: 500 25px var(--font-display);
   letter-spacing: -0.04em;
   margin-bottom: 48px;
 }
-.wordmark span {
+.wordmark small {
   display: block;
   font: 9px var(--font-body);
   letter-spacing: 0.18em;

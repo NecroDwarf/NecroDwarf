@@ -6,7 +6,10 @@ import type { Heading } from "./DocArticle";
 import s from "./Docs.module.css";
 const base = "/projects/novellmaker/docs";
 const groups = [
-  { title: "Начало работы", slugs: ["engine-guide", "examples", "characters"] },
+  {
+    title: "Начало работы",
+    slugs: ["engine-guide", "dialogue-import", "examples", "characters"],
+  },
   {
     title: "Сценарий и интерфейс",
     slugs: [
@@ -33,7 +36,7 @@ const groups = [
   },
   {
     title: "Контракты и ограничения",
-    slugs: ["standard-library", "limits", "diagnostics", "verification"],
+    slugs: ["standard-library", "limits", "diagnostics", "compatibility"],
   },
 ];
 export function DocsLayout({
@@ -140,15 +143,14 @@ export function DocsLayout({
           <footer className={s.provenance}>
             Оригинальная документация NovellMaker · исходники{" "}
             <a
-              href="https://github.com/doflare123/NovellMaker/tree/5e885944ee36f5945a734c18c19c65c261402445"
+              href="https://github.com/doflare123/NovellMaker/tree/52b1d06149b668aa76d5ed995c0a92118eb63824"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <code>5e88594</code> ↗
+              <code>0.1.0-beta.1</code> ↗
             </a>
             <br />
-            Контракты сохранены. Исторические отчёты проверок относятся к
-            исходному движку.
+            Документация соответствует первому выпуску открытой беты.
           </footer>
         </div>
         {headings.length > 1 && <aside className={s.right}>{toc}</aside>}

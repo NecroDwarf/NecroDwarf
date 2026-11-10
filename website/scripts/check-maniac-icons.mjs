@@ -115,8 +115,8 @@ try {
     ),
   );
   for (const [page, attribute, count] of [
-    ["items", "data-system-id", 51],
-    ["mechanics", "data-system-id", 28],
+    ["items", "data-system-id", 50],
+    ["mechanics", "data-system-id", 10],
     ["perks", "data-reference-id", 44],
     ["abilities", "data-reference-id", 12],
     ["characters", "data-character", 15],

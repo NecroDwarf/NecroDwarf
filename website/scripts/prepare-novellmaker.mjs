@@ -18,8 +18,8 @@ const metadata = [],
 const files = (await readdir(`${root}/source`))
   .filter((f) => f.endsWith(".md"))
   .sort();
-if (files.length !== 21)
-  throw new Error(`Expected 21 documents, got ${files.length}`);
+if (files.length !== 22)
+  throw new Error(`Expected 22 documents, got ${files.length}`);
 for (const file of files) {
   const source = await readFile(`${root}/source/${file}`, "utf8"),
     slug = file.slice(0, -3),

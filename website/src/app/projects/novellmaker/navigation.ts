@@ -10,12 +10,15 @@ const article = (slug: string): NavigationItem => ({
 
 export const novellmakerNavigation: readonly NavigationItem[] = [
   { label: "О движке", href: base },
+  { label: "Скачать бету", href: `${base}#download` },
+  { label: "Выпуски", href: `${base}#release` },
   {
     label: "Документация",
     href: docsBase,
     children: [
       { label: "Обзор", href: docsBase },
       article("engine-guide"),
+      article("dialogue-import"),
       {
         label: "Lua API",
         href: docPath("index"),
@@ -41,7 +44,7 @@ export const novellmakerNavigation: readonly NavigationItem[] = [
       {
         label: "Ограничения и проверка",
         href: docPath("limits"),
-        children: ["limits", "diagnostics", "verification"].map(article),
+        children: ["limits", "diagnostics", "compatibility"].map(article),
       },
     ],
   },

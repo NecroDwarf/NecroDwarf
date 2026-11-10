@@ -40,13 +40,16 @@ export function FriendSheepPage() {
               место и участники — всё в одном месте.
             </p>
             <div className={s.actions}>
-              <Link className={s.primary} to="#how-it-works">
-                Как это работает <Icon name="arrow" />
-              </Link>
-              <ContentLink className={s.secondary} href={links.website}>
+              <ContentLink className={s.primary} href={links.website}>
                 Перейти на сайт <span aria-hidden="true">↗</span>
               </ContentLink>
+              <ContentLink className={s.primary} href={links.mobileApp}>
+                Приложение в RuStore <span aria-hidden="true">↗</span>
+              </ContentLink>
             </div>
+            <Link className={s.textLink} to="#how-it-works">
+              Как это работает <Icon name="arrow" />
+            </Link>
             <div className={s.heroFormats}>
               <span>
                 <Icon name="pin" />
@@ -205,8 +208,8 @@ export function FriendSheepPage() {
           <p className={s.eyebrow}>Знакомые детали. Свой характер.</p>
           <h2 id="interface-title">Как выглядит FriendSheep</h2>
           <p>
-            Лента событий, создание мероприятий и сообщества — всё для
-            организаторов и участников.
+            Веб-версия и мобильное приложение: лента событий, карточки
+            мероприятий и сообщества — на большом экране и в телефоне.
           </p>
         </div>
         <InterfacePreview />
@@ -293,6 +296,9 @@ export function FriendSheepPage() {
           <div className={s.actions}>
             <ContentLink className={s.primary} href={links.website}>
               Перейти на сайт <span aria-hidden="true">↗</span>
+            </ContentLink>
+            <ContentLink className={s.primary} href={links.mobileApp}>
+              Приложение в RuStore <span aria-hidden="true">↗</span>
             </ContentLink>
             <Link className={s.secondary} to="/projects">
               Другие проекты NecroDwarf <Icon name="arrow" />

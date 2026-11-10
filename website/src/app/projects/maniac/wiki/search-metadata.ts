@@ -5,6 +5,11 @@ import { itemRouteMeta } from "./item-route-metadata";
 import { mechanicRouteMeta } from "./mechanic-route-metadata";
 import { mapRouteMeta } from "./map-route-metadata";
 import { publishedEffectMeta } from "./published-effects";
+import {
+  integratedMechanicHref,
+  mechanicOwners,
+  removedCatalogEntries,
+} from "./mechanic-placement";
 
 const base = "/projects/maniac/wiki";
 const catalogs = [
@@ -18,12 +23,24 @@ const catalogs = [
 
 export const searchMetadata = [
   ...catalogs.flatMap(([section, label, entries]) =>
-    entries.map((entry) => ({
-      ...entry,
-      section,
-      label,
-      href: `${base}/${section}/${entry.slug}`,
-    })),
+    entries
+      .filter((entry) => !removedCatalogEntries.has(entry.id))
+      .map((entry) => ({
+        ...entry,
+        section: mechanicOwners[entry.id]?.startsWith("character:")
+          ? ("characters" as const)
+          : mechanicOwners[entry.id]?.startsWith("perk:")
+            ? ("perks" as const)
+            : section,
+        label: mechanicOwners[entry.id]?.startsWith("character:")
+          ? "Персонажи"
+          : mechanicOwners[entry.id]?.startsWith("perk:")
+            ? "Перки"
+            : label,
+        href:
+          integratedMechanicHref(entry.id) ??
+          `${base}/${section}/${entry.slug}`,
+      })),
   ),
   ...publishedEffectMeta.map((entry) => ({
     ...entry,

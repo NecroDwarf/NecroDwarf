@@ -2,8 +2,10 @@
   "animations",
   "audio",
   "characters",
+  "compatibility",
   "components",
   "diagnostics",
+  "dialogue-import",
   "engine-guide",
   "events",
   "examples",
@@ -18,6 +20,5 @@
   "scenario",
   "session-and-storage",
   "standard-library",
-  "state-and-random",
-  "verification"
+  "state-and-random"
 ]

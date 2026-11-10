@@ -13,9 +13,6 @@ const mapArticles = import.meta.glob<{ default: ComponentType }>(
 const itemArticles = import.meta.glob<{ default: ComponentType }>(
   "./pages/items/*.tsx",
 );
-const mechanicArticles = import.meta.glob<{ default: ComponentType }>(
-  "./pages/mechanics/*.tsx",
-);
 const perkArticles = import.meta.glob<{ default: ComponentType }>(
   "./pages/perks/*.tsx",
 );
@@ -86,8 +83,8 @@ export const maniacWikiRoutes = [
     title: `${m.name} — Механики Maniac Wiki · NecroDwarf`,
     description: `${m.name}: игровые правила, последовательность действий и ограничения Maniac.`,
     page: routePage(() =>
-      mechanicArticles[`./pages/mechanics/${m.slug}.tsx`]().then(
-        (m) => m.default,
+      import("./load-mechanic-article").then((module) =>
+        module.loadMechanicArticle(m.slug),
       ),
     ),
   })),

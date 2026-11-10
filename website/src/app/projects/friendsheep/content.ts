@@ -2,6 +2,7 @@ import type { IconName } from "./ui/Icon";
 
 export const links = {
   website: "https://friendsheep.ru/",
+  mobileApp: "https://www.rustore.ru/catalog/app/com.anonymous.FriendShip",
   roadmap:
     "https://github.com/doflare123/FriendSheep/blob/main-v2/backend/docs/ROUTES_EXPANSION_PLAN.ru.md#9-план-дальнейшего-развития",
 };

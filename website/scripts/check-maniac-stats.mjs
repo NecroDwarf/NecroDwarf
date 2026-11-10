@@ -136,8 +136,9 @@ try {
     "item:alchemy-kit",
     "item:dodepovich-coins",
     "item:computer",
+    "item:recipe-book",
   ]);
-  assert.equal(listedItems.length, 51);
+  assert.equal(listedItems.length, 50);
   assert.deepEqual(
     listedItems.map((e) => e.id),
     itemCatalog

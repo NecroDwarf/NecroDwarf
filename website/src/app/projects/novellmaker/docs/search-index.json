@@ -80,6 +80,31 @@
     "description": "\nДанные визуала и characterClip требуют проект v22. Старые статические состояния остаются обычными CharacterState без Visual; v1–v21 мигрируют в памяти. ImageId состояния остаётся изображением обложки"
   },
   {
+    "title": "Совместимость и ограничения",
+    "href": "/projects/novellmaker/docs/lua/compatibility",
+    "description": "Документ NovellMaker"
+  },
+  {
+    "title": "Платформы и форматы",
+    "href": "/projects/novellmaker/docs/lua/compatibility#платформы-и-форматы",
+    "description": "\nОсновная платформа 0.1 beta — Windows x64. Поставка редактора включает автономный\nпредпросмотр, Windows-шаблон игры и NSIS для сборки установщиков без SDK.\nLinux x64 собирается отдельно как экспериме"
+  },
+  {
+    "title": "Ресурсы, сцены и чтение",
+    "href": "/projects/novellmaker/docs/lua/compatibility#ресурсы-сцены-и-чтение",
+    "description": "\n- Звук: PCM WAV 16 bit, mono/stereo, 8000–48000 Гц. MP3/OGG не поддерживаются.\n- Голосовой курсор отражает потреблённые аудиобуферы с шагом около 100 мс;\n  позиция внутри записи не сохраняется в слот"
+  },
+  {
+    "title": "Lua",
+    "href": "/projects/novellmaker/docs/lua/compatibility#lua",
+    "description": "\nИспользуется ограниченный Lua 5.2 через MoonSharp 2.0.0. Доступны только\nзарегистрированные API и описанная [стандартная библиотека](standard-library.md).\nПроизвольные CLR, процессы, файловая система"
+  },
+  {
+    "title": "Проверка поставок",
+    "href": "/projects/novellmaker/docs/lua/compatibility#проверка-поставок",
+    "description": "\nСборочные команды и обязательные проверки находятся в [инструкции сборки](../BUILDING.md).\nWindows Delivery проверяет распакованный редактор, предпросмотр, автономную игру,\nсохранения, чтение, анимац"
+  },
+  {
     "title": "Компоненты, геометрия и иерархия",
     "href": "/projects/novellmaker/docs/lua/components",
     "description": "Документ NovellMaker"
@@ -150,6 +175,31 @@
     "description": "\nДобавить сообщение в диагностический журнал Lua."
   },
   {
+    "title": "Импорт персонажей и диалога",
+    "href": "/projects/novellmaker/docs/lua/dialogue-import",
+    "description": "Документ NovellMaker"
+  },
+  {
+    "title": "Мастер",
+    "href": "/projects/novellmaker/docs/lua/dialogue-import#мастер",
+    "description": "\n1. Выберите файл. Источник — постоянное имя набора, по умолчанию имя файла без расширения. При повторном импорте сохраните это имя, даже если переименовали сам файл. Разные наборы должны иметь разные"
+  },
+  {
+    "title": "CSV/TSV",
+    "href": "/projects/novellmaker/docs/lua/dialogue-import#csvtsv",
+    "description": "\nПервая строка — непустые уникальные заголовки. Названия и порядок произвольные: сопоставьте их в мастере. Разделители — запятая, точка с запятой или табуляция. UTF-8/BOM поддерживается; запятые, разд"
+  },
+  {
+    "title": "JSON v1",
+    "href": "/projects/novellmaker/docs/lua/dialogue-import#json-v1",
+    "description": "\nЭто отдельный формат обмена с version: 1, не JSON проекта .novell. Неизвестные и повторные поля, неподдерживаемая версия и некорректные типы отклоняются. Пример без ресурсов: [dialogue.json](../../ex"
+  },
+  {
+    "title": "Повторный импорт и ресурсы",
+    "href": "/projects/novellmaker/docs/lua/dialogue-import#повторный-импорт-и-ресурсы",
+    "description": "\nСопоставление идёт по имени источника, типу объекта и внешнему ключу. Внутренние GUID и ключи переводов создаёт редактор. Номер строки, её текст и порядок не используются для поиска существующей фраз"
+  },
+  {
     "title": "Руководство движка для автора",
     "href": "/projects/novellmaker/docs/engine-guide",
     "description": "Документ NovellMaker"
@@ -157,7 +207,12 @@
   {
     "title": "Проект и рабочее пространство",
     "href": "/projects/novellmaker/docs/engine-guide#проект-и-рабочее-пространство",
-    "description": "\nСоздайте проект, задайте название и основной язык, сохраните .novell в отдельную папку. ID проекта остаётся при переименовании и определяет профиль/слоты игрока. Формат — строгий JSON v23; миграции v"
+    "description": "\nСоздайте проект, задайте название и основной язык, сохраните .novell в отдельную папку. ID проекта остаётся при переименовании и определяет профиль/слоты игрока. Формат — строгий JSON v25; миграции v"
+  },
+  {
+    "title": "Реплики и лист записи",
+    "href": "/projects/novellmaker/docs/engine-guide#реплики-и-лист-записи",
+    "description": "\nДля готового сценария используйте «Проект → Импорт персонажей и диалога…» или «Импорт…» во вкладке «Реплики»: CSV/TSV с настраиваемыми колонками и JSON v1 со сценами, персонажами, позами, переводами "
   },
   {
     "title": "Персонажи и анимация",
@@ -215,14 +270,14 @@
     "description": "\n«Сборка → Экспорт игры для Windows x64…»: выберите сюжетную стартовую сцену и новую папку результата. Экспорт берёт текущий снимок с актуальными Lua-файлами, проверяет проект/ссылки/CSS/модули/зареги"
   },
   {
-    "title": "Для сборки редактора из репозитория",
-    "href": "/projects/novellmaker/docs/engine-guide#для-сборки-редактора-из-репозитория",
-    "description": "\nНужен SDK, закреплённый в [global.json](../../global.json), и доступные NuGet-пакеты; текущая база SDK 10.0.204. Core/Editor/Runtime написаны на C, UI редактора Avalonia, runtime MonoGame. Зависимост"
+    "title": "Сборка редактора из исходников",
+    "href": "/projects/novellmaker/docs/engine-guide#сборка-редактора-из-исходников",
+    "description": "\nПодготовка поставок, зависимости и проверки описаны отдельно в\n[инструкции сборки](../BUILDING.md)."
   },
   {
     "title": "Текущие границы",
     "href": "/projects/novellmaker/docs/engine-guide#текущие-границы",
-    "description": "\nНет файлового require/общего сцено-Lua с обратимым преобразованием карточек, постоянной сценарной VM/возобновления произвольного стека, произвольного rollback, автоматического сохранения редактора, п"
+    "description": "\nНет файлового require/общего сцено-Lua с обратимым преобразованием карточек, постоянной сценарной VM/возобновления произвольного стека, произвольного rollback, произвольной сети/CLR/OS API автора, об"
   },
   {
     "title": "События и структуры результатов",
@@ -652,7 +707,7 @@
   {
     "title": "game.wait_actions",
     "href": "/projects/novellmaker/docs/lua/scenario#game-wait-actions",
-    "description": "\nОжидать окончания движений сценария."
+    "description": "\nОжидать окончания движений сценария и явно запущенных конечных клипов персонажей."
   },
   {
     "title": "game.wait_click",
@@ -1018,75 +1073,5 @@
     "title": "ui.set_random_state",
     "href": "/projects/novellmaker/docs/lua/state-and-random#ui-set-random-state",
     "description": "\nВосстановить точный поток RNG из строки."
-  },
-  {
-    "title": "Проверка полноты и границы достоверности",
-    "href": "/projects/novellmaker/docs/lua/verification",
-    "description": "Документ NovellMaker"
-  },
-  {
-    "title": "Авторские окна чтения — 3 ноября 2026",
-    "href": "/projects/novellmaker/docs/lua/verification#авторские-окна-чтения--3-ноября-2026",
-    "description": "\nПроект v23 и screen wire v20 заменяют runtime-конструктор истории/параметров чтения обычными сценами и Lua-ресурсами проекта. [HistoryLuaTests](../../tests/NovellMaker.Core.Tests/Screens/HistoryLuaTe"
-  },
-  {
-    "title": "Выпускной допуск Windows x64",
-    "href": "/projects/novellmaker/docs/lua/verification#выпускной-допуск-windows-x64",
-    "description": "\n[Release delivery gate](../../.github/workflows/release.yml) отделён от обычного CI. Он требует успешной матрицы Windows/Linux/macOS и нативного Windows Delivery перед созданием черновика выпуска. [С"
-  },
-  {
-    "title": "Проверка базового чтения",
-    "href": "/projects/novellmaker/docs/lua/verification#проверка-базового-чтения",
-    "description": "\nВ рамках задачи чтения добавлены [ReadingPlayback](../../src/NovellMaker.Core/Execution/ReadingPlayback.cs), история GameSave v3, профиль v4 с отдельными отметками прочитанного, четыре действия холст"
-  },
-  {
-    "title": "Инвентаризация",
-    "href": "/projects/novellmaker/docs/lua/verification#инвентаризация",
-    "description": "\nАвтосохранение редактора дополнено отдельными восстановительными снимками и предложением восстановления при запуске. [EditorRecoveryTests](../../tests/NovellMaker.Editor.Tests/EditorRecoveryTests.cs)"
-  },
-  {
-    "title": "Воспроизводимая статическая проверка",
-    "href": "/projects/novellmaker/docs/lua/verification#воспроизводимая-статическая-проверка",
-    "description": "\npowershell\npython scripts/check-lua-reference.py\n"
-  },
-  {
-    "title": "Сверка по цепочке VM → протокол → host → тест",
-    "href": "/projects/novellmaker/docs/lua/verification#сверка-по-цепочке-vm--протокол--host--тест",
-    "description": "\n| Категория | Регистрация и аргументы | Проверка/применение | Основные тесты |\n| --- | --- | --- | --- |\n| game | [LuaActionScript](../../src/NovellMaker.Core/Execution/LuaActionScript.cs) | [каталог"
-  },
-  {
-    "title": "LuaCATS и прежняя документация: расхождения",
-    "href": "/projects/novellmaker/docs/lua/verification#luacats-и-прежняя-документация-расхождения",
-    "description": "\nВсе 111 имён есть в текущих LuaCATS, отсутствующих/устаревших имён функций не найдено. При этом полноты имён недостаточно для справочника:"
-  },
-  {
-    "title": "Особенности и неоднозначности кода, оставленные без исправления",
-    "href": "/projects/novellmaker/docs/lua/verification#особенности-и-неоднозначности-кода-оставленные-без-исправления",
-    "description": "\n- hover принимается протоколом, но текущий runtime его не генерирует. Нельзя строить логику на ожидании этого kind; используйте hover_enter/leave. [ValidateEvent](../../src/NovellMaker.Core/Screens/L"
-  },
-  {
-    "title": "Уточнение Lua-контракта — 2 ноября 2026",
-    "href": "/projects/novellmaker/docs/lua/verification#уточнение-lua-контракта--2-ноября-2026",
-    "description": "\n- game.finish(result) использует ту же запись переменных и квоты, что game.set(\"minigame.result\",result). В том же вычислении game.get сразу видит строку; host меняется только при исполнении очереди."
-  },
-  {
-    "title": "Исходный прогон справочника",
-    "href": "/projects/novellmaker/docs/lua/verification#исходный-прогон-справочника",
-    "description": "\nСреда: Windows x64, .NET SDK 10.0.204. Выполнен dotnet restore NovellMaker.slnx --locked-mode, затем Release-тесты всей solution. Первый no-restore запуск в sandbox не нашёл MoonSharp в кэше пользова"
-  },
-  {
-    "title": "Границы исходного прогона справочника",
-    "href": "/projects/novellmaker/docs/lua/verification#границы-исходного-прогона-справочника",
-    "description": "\nНативные MonoGame/UI/export/installer smoke без флагов пропускаются; live GitHub-запрос не включался. Пропуски также включают необязательные измерения, проверки ссылок без нужных прав и Unix-имя на W"
-  },
-  {
-    "title": "Озвучка и микшер: проверка 31 октября 2026",
-    "href": "/projects/novellmaker/docs/lua/verification#озвучка-и-микшер-проверка-31-октября-2026",
-    "description": "\n[AudioPlaybackTests](../../tests/NovellMaker.Core.Tests/Audio/AudioPlaybackTests.cs) проверяет реальные значения курсора от backend (ход часов сам прогресс не меняет), ручную/общую/owner-паузу, оконч"
-  },
-  {
-    "title": "Персонажи из частей и покадровые клипы — 1 ноября 2026",
-    "href": "/projects/novellmaker/docs/lua/verification#персонажи-из-частей-и-покадровые-клипы--1-ноября-2026",
-    "description": "\nПроект v22 добавляет CharacterState.Visual, стабильные ID частей/клипов, родительскую иерархию, pivot, слои, ключи преобразования/opacity/замены изображения, линейную и ступенчатую интерполяцию, пока"
   }
 ]

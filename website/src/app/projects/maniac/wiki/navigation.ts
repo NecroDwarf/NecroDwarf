@@ -6,6 +6,10 @@ import { itemRouteMeta } from "./item-route-metadata";
 import { mechanicRouteMeta } from "./mechanic-route-metadata";
 import { mapRouteMeta } from "./map-route-metadata";
 import { publishedEffectMeta } from "./published-effects";
+import {
+  isStandaloneMechanic,
+  removedCatalogEntries,
+} from "./mechanic-placement";
 
 import { wikiSections } from "./sections";
 
@@ -25,8 +29,14 @@ const articleNavigation: Readonly<Record<string, readonly NavigationItem[]>> = {
   [base + "/characters"]: articleLinks("characters", characterRouteMeta),
   [base + "/perks"]: articleLinks("perks", perkRouteMeta),
   [base + "/abilities"]: articleLinks("abilities", abilityRouteMeta),
-  [base + "/items"]: articleLinks("items", itemRouteMeta),
-  [base + "/mechanics"]: articleLinks("mechanics", mechanicRouteMeta),
+  [base + "/items"]: articleLinks(
+    "items",
+    itemRouteMeta.filter((item) => !removedCatalogEntries.has(item.id)),
+  ),
+  [base + "/mechanics"]: articleLinks(
+    "mechanics",
+    mechanicRouteMeta.filter((mechanic) => isStandaloneMechanic(mechanic.id)),
+  ),
   [base + "/maps"]: articleLinks("maps", mapRouteMeta),
   [base + "/effects"]: publishedEffectMeta
     .map((effect) => ({

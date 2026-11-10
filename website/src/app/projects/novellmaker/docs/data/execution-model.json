@@ -246,7 +246,7 @@
           "tag": "a",
           "children": ["компиляция"],
           "props": {
-            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Execution/ScenarioProgram.cs",
+            "href": "https://github.com/doflare123/NovellMaker/blob/52b1d06149b668aa76d5ed995c0a92118eb63824/src/NovellMaker.Core/Execution/ScenarioProgram.cs",
             "target": "_blank",
             "rel": "noopener noreferrer"
           }
@@ -256,7 +256,7 @@
           "tag": "a",
           "children": ["VM"],
           "props": {
-            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Execution/LuaActionScript.cs",
+            "href": "https://github.com/doflare123/NovellMaker/blob/52b1d06149b668aa76d5ed995c0a92118eb63824/src/NovellMaker.Core/Execution/LuaActionScript.cs",
             "target": "_blank",
             "rel": "noopener noreferrer"
           }
@@ -266,7 +266,7 @@
           "tag": "a",
           "children": ["pending"],
           "props": {
-            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Execution/ScenarioPlayer.Lua.cs",
+            "href": "https://github.com/doflare123/NovellMaker/blob/52b1d06149b668aa76d5ed995c0a92118eb63824/src/NovellMaker.Core/Execution/ScenarioPlayer.Lua.cs",
             "target": "_blank",
             "rel": "noopener noreferrer"
           }
@@ -276,7 +276,7 @@
           "tag": "a",
           "children": ["контракт"],
           "props": {
-            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Execution/ExecutionContractTests.cs",
+            "href": "https://github.com/doflare123/NovellMaker/blob/52b1d06149b668aa76d5ed995c0a92118eb63824/tests/NovellMaker.Core.Tests/Execution/ExecutionContractTests.cs",
             "target": "_blank",
             "rel": "noopener noreferrer"
           }
@@ -286,7 +286,7 @@
           "tag": "a",
           "children": ["pending"],
           "props": {
-            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Execution/PendingLuaTests.cs",
+            "href": "https://github.com/doflare123/NovellMaker/blob/52b1d06149b668aa76d5ed995c0a92118eb63824/tests/NovellMaker.Core.Tests/Execution/PendingLuaTests.cs",
             "target": "_blank",
             "rel": "noopener noreferrer"
           }
@@ -296,7 +296,7 @@
           "tag": "a",
           "children": ["фразы"],
           "props": {
-            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Execution/PhraseScriptTests.cs",
+            "href": "https://github.com/doflare123/NovellMaker/blob/52b1d06149b668aa76d5ed995c0a92118eb63824/tests/NovellMaker.Core.Tests/Execution/PhraseScriptTests.cs",
             "target": "_blank",
             "rel": "noopener noreferrer"
           }
@@ -583,7 +583,7 @@
           "tag": "a",
           "children": ["протокол и Prepare"],
           "props": {
-            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Screens/Lua/ScreenLuaProtocol.cs",
+            "href": "https://github.com/doflare123/NovellMaker/blob/52b1d06149b668aa76d5ed995c0a92118eb63824/src/NovellMaker.Core/Screens/Lua/ScreenLuaProtocol.cs",
             "target": "_blank",
             "rel": "noopener noreferrer"
           }
@@ -593,7 +593,7 @@
           "tag": "a",
           "children": ["host commit"],
           "props": {
-            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Screens/Lua/ScreenLuaSession.cs",
+            "href": "https://github.com/doflare123/NovellMaker/blob/52b1d06149b668aa76d5ed995c0a92118eb63824/src/NovellMaker.Core/Screens/Lua/ScreenLuaSession.cs",
             "target": "_blank",
             "rel": "noopener noreferrer"
           }
@@ -603,7 +603,7 @@
           "tag": "a",
           "children": ["профиль"],
           "props": {
-            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Runtime/RuntimeSettingsServices.cs",
+            "href": "https://github.com/doflare123/NovellMaker/blob/52b1d06149b668aa76d5ed995c0a92118eb63824/src/NovellMaker.Runtime/RuntimeSettingsServices.cs",
             "target": "_blank",
             "rel": "noopener noreferrer"
           }
@@ -613,7 +613,7 @@
           "tag": "a",
           "children": ["протокол"],
           "props": {
-            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Screens/ScreenLuaProtocolTests.cs",
+            "href": "https://github.com/doflare123/NovellMaker/blob/52b1d06149b668aa76d5ed995c0a92118eb63824/tests/NovellMaker.Core.Tests/Screens/ScreenLuaProtocolTests.cs",
             "target": "_blank",
             "rel": "noopener noreferrer"
           }
@@ -623,7 +623,7 @@
           "tag": "a",
           "children": ["сеанс"],
           "props": {
-            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Screens/ScreenLuaSessionTests.cs",
+            "href": "https://github.com/doflare123/NovellMaker/blob/52b1d06149b668aa76d5ed995c0a92118eb63824/tests/NovellMaker.Core.Tests/Screens/ScreenLuaSessionTests.cs",
             "target": "_blank",
             "rel": "noopener noreferrer"
           }
@@ -633,7 +633,7 @@
           "tag": "a",
           "children": ["мини-игры"],
           "props": {
-            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Screens/MinigameLuaTests.cs",
+            "href": "https://github.com/doflare123/NovellMaker/blob/52b1d06149b668aa76d5ed995c0a92118eb63824/tests/NovellMaker.Core.Tests/Screens/MinigameLuaTests.cs",
             "target": "_blank",
             "rel": "noopener noreferrer"
           }
@@ -990,7 +990,10 @@
                   "children": [
                     { "tag": "td", "children": ["история посещений реплик"] },
                     { "tag": "td", "children": ["последние 500"] },
-                    { "tag": "td", "children": ["да, GameSave v3"] },
+                    {
+                      "tag": "td",
+                      "children": ["да, GameSave v4 (введена в v3)"]
+                    },
                     { "tag": "td", "children": ["нет"] }
                   ]
                 },
@@ -1184,7 +1187,7 @@
           "tag": "a",
           "children": ["PrepareAsync"],
           "props": {
-            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Screens/Lua/ScreenLuaSession.cs",
+            "href": "https://github.com/doflare123/NovellMaker/blob/52b1d06149b668aa76d5ed995c0a92118eb63824/src/NovellMaker.Core/Screens/Lua/ScreenLuaSession.cs",
             "target": "_blank",
             "rel": "noopener noreferrer"
           }
@@ -1194,7 +1197,7 @@
           "tag": "a",
           "children": ["RestoreCannotChangeStateRngOrProduceEffects"],
           "props": {
-            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Screens/MinigameLuaTests.cs",
+            "href": "https://github.com/doflare123/NovellMaker/blob/52b1d06149b668aa76d5ed995c0a92118eb63824/tests/NovellMaker.Core.Tests/Screens/MinigameLuaTests.cs",
             "target": "_blank",
             "rel": "noopener noreferrer"
           }
@@ -1210,7 +1213,7 @@
     {
       "tag": "p",
       "children": [
-        "Файлы Lua отслеживаются с debounce; диагностический разбор отменяется и проверяет актуальность текста. Изменение файла не подменяет код живой ui-VM. Следующий F6/экспорт захватывает новые исходники; F6 начинает новый сеанс. Сценарий с блоками запускается с начала, статический выбор фразы не исполняет Lua. Проверка синтаксиса не запускает обработчики, не проверяет их эффекты и не доказывает корректность поведения."
+        "Файлы Lua отслеживаются с debounce; диагностический разбор отменяется и проверяет актуальность текста. Изменение файла не подменяет код живой ui-VM. Следующий F6/экспорт захватывает новые исходники; F6 начинает новый сеанс. В сцене с блоками F6 может начать с входа в выбранную позднюю фразу. Тестовая точка задаёт точку входа, начальные переменные и необязательный результат мини-игры. Статический выбор фразы не исполняет Lua. Проверка синтаксиса не запускает обработчики, не проверяет их эффекты и не доказывает корректность поведения."
       ]
     },
     {
@@ -1229,7 +1232,7 @@
           "tag": "a",
           "children": ["процесс"],
           "props": {
-            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Execution/LuaWorkerProcess.cs",
+            "href": "https://github.com/doflare123/NovellMaker/blob/52b1d06149b668aa76d5ed995c0a92118eb63824/src/NovellMaker.Core/Execution/LuaWorkerProcess.cs",
             "target": "_blank",
             "rel": "noopener noreferrer"
           }
@@ -1239,7 +1242,7 @@
           "tag": "a",
           "children": ["Job"],
           "props": {
-            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Execution/LuaWorkerJob.cs",
+            "href": "https://github.com/doflare123/NovellMaker/blob/52b1d06149b668aa76d5ed995c0a92118eb63824/src/NovellMaker.Core/Execution/LuaWorkerJob.cs",
             "target": "_blank",
             "rel": "noopener noreferrer"
           }
@@ -1249,7 +1252,7 @@
           "tag": "a",
           "children": ["транспорт"],
           "props": {
-            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Execution/LuaWorkerTransport.cs",
+            "href": "https://github.com/doflare123/NovellMaker/blob/52b1d06149b668aa76d5ed995c0a92118eb63824/src/NovellMaker.Core/Execution/LuaWorkerTransport.cs",
             "target": "_blank",
             "rel": "noopener noreferrer"
           }
@@ -1259,7 +1262,7 @@
           "tag": "a",
           "children": ["ui connection"],
           "props": {
-            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Screens/Lua/ScreenLuaConnection.cs",
+            "href": "https://github.com/doflare123/NovellMaker/blob/52b1d06149b668aa76d5ed995c0a92118eb63824/src/NovellMaker.Core/Screens/Lua/ScreenLuaConnection.cs",
             "target": "_blank",
             "rel": "noopener noreferrer"
           }
@@ -1269,7 +1272,7 @@
           "tag": "a",
           "children": ["изоляция"],
           "props": {
-            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Execution/LuaIsolationTests.cs",
+            "href": "https://github.com/doflare123/NovellMaker/blob/52b1d06149b668aa76d5ed995c0a92118eb63824/tests/NovellMaker.Core.Tests/Execution/LuaIsolationTests.cs",
             "target": "_blank",
             "rel": "noopener noreferrer"
           }
@@ -1279,7 +1282,7 @@
           "tag": "a",
           "children": ["транспорт"],
           "props": {
-            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Execution/LuaWorkerTransportTests.cs",
+            "href": "https://github.com/doflare123/NovellMaker/blob/52b1d06149b668aa76d5ed995c0a92118eb63824/tests/NovellMaker.Core.Tests/Execution/LuaWorkerTransportTests.cs",
             "target": "_blank",
             "rel": "noopener noreferrer"
           }
@@ -1335,9 +1338,40 @@
     {
       "tag": "p",
       "children": [
-        "GameSave v4 содержит обе таблицы времени/клипов; проверяются ID, принадлежность клипа позе, конечность времени и все изображения визуала. Читаются v1–v3 с пустыми таблицами; проверка точной редакции проекта остаётся обязательной. Load атомарно заменяет состояние, не исполняет команды и не запускает Lua, поэтому восстанавливается текущая фаза и будущая траектория. Пауза сценария/неактивное окно/pending Lua/загрузка нужной текстуры/мини-игра удерживают сценарные часы и эти клипы. UI-анимации остаются отдельной системой. ",
-        { "tag": "code", "children": ["wait('actions')"] },
-        " продолжает ждать сценарные движения; завершение конечного клипа не снимает это ожидание."
+        "GameSave v4 содержит обе таблицы времени/клипов и историю посещений, введённую в v3. В v4 требуются History, CharacterStartedAt и CharacterClips; проверяются ID, принадлежность клипа позе, время начала каждого явного клипа, конечность времени и все изображения визуала. Старые v1–v3 без таблиц анимации читаются с пустыми таблицами, v1/v2 без истории — с пустой историей; v3 сохраняет свою историю. Проверка точной редакции проекта остаётся обязательной. Load атомарно заменяет состояние, не исполняет команды и не запускает Lua, поэтому восстанавливается текущая фаза и будущая траектория. Пауза сценария/неактивное окно/pending Lua/загрузка нужной текстуры/мини-игра удерживают сценарные часы и эти клипы. UI-анимации остаются отдельной системой."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        {
+          "tag": "a",
+          "children": ["game.wait_actions"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/scenario#game-wait-actions"
+          }
+        },
+        " и GUI-ожидание «Завершение движений и клипов» используют один барьер: все текущие движения и явно запущенные конечные клипы, включая скрытых персонажей и все конечные повторы. Бесконечные петли и клипы позы по умолчанию исключены. Последующие команды исполняются на самой поздней границе завершения, остаток кадра идёт дальше по сценарию. Замена клипа заменяет ожидаемое действие этого персонажа, назначение позы снимает явный запуск; завершённый клип может оставаться выбранным, но больше не задерживает очередь. Оставшееся ожидание вычисляется из уже сохраняемых таблиц v4 и сценарного времени; отдельного таймера или изменения формата нет. Барьер не ждёт звук и не отправляет UI-события завершения. ",
+        {
+          "tag": "a",
+          "children": ["Исполнение и проверка сохранения"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/52b1d06149b668aa76d5ed995c0a92118eb63824/src/NovellMaker.Core/Execution/ScenarioActionTiming.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["регрессии"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/52b1d06149b668aa76d5ed995c0a92118eb63824/tests/NovellMaker.Core.Tests/Characters/CharacterClipWaitTests.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
       ]
     }
   ]

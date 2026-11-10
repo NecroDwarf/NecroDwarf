@@ -17,7 +17,7 @@
     "docs:novellmaker:sync": "node scripts/sync-novellmaker.mjs",
     "check:novellmaker": "node scripts/check-novellmaker.mjs",
     "check:novellmaker:browser": "node scripts/check-novellmaker-browser.mjs",
-    "check": "node scripts/check-build.mjs && node scripts/check-project-content.mjs && node scripts/check-maniac-wiki.mjs && node scripts/check-maniac-chronicles.mjs && node scripts/check-maniac-characters.mjs && node scripts/check-maniac-icons.mjs && node scripts/check-maniac-reference.mjs && node scripts/check-maniac-systems.mjs && node scripts/check-maniac-maps.mjs && npm run check:catalogs && npm run check:effects && npm run check:stats && npm run check:editorial && npm run check:loading && npm run check:search && npm run check:novellmaker",
+    "check": "node scripts/check-build.mjs && node scripts/check-project-content.mjs && node scripts/check-maniac-wiki.mjs && node scripts/check-maniac-chronicles.mjs && node scripts/check-maniac-characters.mjs && node scripts/check-maniac-icons.mjs && node scripts/check-maniac-reference.mjs && node scripts/check-maniac-systems.mjs && node scripts/check-maniac-maps.mjs && npm run check:catalogs && npm run check:effects && npm run check:stats && npm run check:editorial && npm run check:loading && npm run check:search && node scripts/check-wiki-placement.mjs && npm run check:novellmaker",
     "check:stats": "node scripts/check-maniac-stats.mjs",
     "check:effects": "node scripts/check-maniac-effects.mjs",
     "check:catalogs": "node scripts/check-maniac-catalog-groups.mjs",

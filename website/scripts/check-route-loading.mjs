@@ -1,5 +1,19 @@
 import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
+// The owning article may load exactly its own integrated mechanic documents.
+const placements = await readFile(
+  "src/app/projects/maniac/wiki/mechanic-placement.ts",
+  "utf8",
+);
+const ownedMechanics = new Map();
+for (const [, mechanic, owner] of placements.matchAll(
+  /"(mechanic:[\w-]+)": "((?:character|perk):[\w-]+)"/g,
+)) {
+  ownedMechanics.set(owner, [
+    ...(ownedMechanics.get(owner) ?? []),
+    mechanic.split(":")[1],
+  ]);
+}
 
 const chunks = JSON.parse(await readFile(".ssg/client-modules.json", "utf8"));
 const chunkFor = (source) => {
@@ -211,9 +225,16 @@ for (const kind of ["perk", "ability", "item", "mechanic", "map"]) {
         `src/app/projects/maniac/wiki/pages/${{ perk: "perks", ability: "abilities", item: "items", mechanic: "mechanics", map: "maps" }[kind]}/${entry.slug}.tsx`,
       ),
     );
-    assert.deepEqual(loaded.filter(referenceArticle), [
-      `src/app/projects/maniac/wiki/data/${kind}-articles/${entry.slug}.json`,
-    ]);
+    assert.deepEqual(
+      loaded.filter(referenceArticle).sort(),
+      [
+        `src/app/projects/maniac/wiki/data/${kind}-articles/${entry.slug}.json`,
+        ...(ownedMechanics.get(entry.id) ?? []).map(
+          (slug) =>
+            `src/app/projects/maniac/wiki/data/mechanic-articles/${slug}.json`,
+        ),
+      ].sort(),
+    );
     assert.ok(!loaded.some(modelRuntime));
     if (kind === "map")
       assert.ok(

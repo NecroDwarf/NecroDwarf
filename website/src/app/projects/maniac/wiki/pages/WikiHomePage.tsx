@@ -5,6 +5,10 @@ import { WikiLayout } from "./WikiLayout";
 import s from "./Wiki.module.css";
 import { itemRouteMeta } from "../item-route-metadata";
 import { mechanicRouteMeta } from "../mechanic-route-metadata";
+import {
+  isStandaloneMechanic,
+  removedCatalogEntries,
+} from "../mechanic-placement";
 import { mapRouteMeta } from "../map-route-metadata";
 import { perkRouteMeta } from "../perk-route-metadata";
 import { abilityRouteMeta } from "../ability-route-metadata";
@@ -18,12 +22,12 @@ const categories = [
   {
     slug: "items",
     name: "Предметы",
-    count: `Всего: ${itemRouteMeta.length}`,
+    count: `Всего: ${itemRouteMeta.filter((item) => !removedCatalogEntries.has(item.id)).length}`,
   },
   {
     slug: "mechanics",
     name: "Механики",
-    count: `Всего: ${mechanicRouteMeta.length}`,
+    count: `Общие: ${mechanicRouteMeta.filter((mechanic) => isStandaloneMechanic(mechanic.id)).length}`,
   },
   { slug: "maps", name: "Карты", count: `Всего: ${mapRouteMeta.length}` },
   {

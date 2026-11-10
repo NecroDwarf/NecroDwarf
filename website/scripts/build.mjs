@@ -39,6 +39,10 @@ await build({
         // Shared facts are also used by effects; keep catalogs out of that chunk.
         manualChunks(id) {
           const path = id.replaceAll("\\", "/");
+          // Link destinations are light metadata, shared with catalog data.
+          // Keep them out of the manually grouped gameplay/catalog chunk.
+          if (path.endsWith("/wiki/mechanic-placement.ts"))
+            return "maniac-mechanic-placement";
           if (
             /\/wiki\/data\/(?:gameplay-facts|current-descriptions)\.ts$/.test(
               path,

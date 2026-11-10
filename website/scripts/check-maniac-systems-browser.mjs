@@ -31,7 +31,9 @@ const report = { routes: [], responsive: [], screenshots: [], checks: [] };
 await withBrowserCheck(
   "systems",
   async ({ browser, origin, screenshots: out, reportPath, loadWikiModule }) => {
-    const { listedItems } = await loadWikiModule("data/systems-catalog.ts");
+    const { listedItems, listedMechanics } = await loadWikiModule(
+      "data/systems-catalog.ts",
+    );
     const { formatGameText } = await loadWikiModule(
       "data/current-descriptions.ts",
     );
@@ -123,7 +125,9 @@ await withBrowserCheck(
             assert.ok(paragraphs.includes(formatGameText(paragraph)));
       } else
         await expect(staticPage.locator("[data-system-id]")).toHaveCount(
-          target.path.endsWith("items") ? listedItems.length : mechanics.length,
+          target.path.endsWith("items")
+            ? listedItems.length
+            : listedMechanics.length,
         );
       assert.deepEqual(errors, [], target.path);
       report.routes.push({
@@ -191,12 +195,12 @@ await withBrowserCheck(
     await p.waitForURL("**/items/hook");
     await p.goto(origin + base + "/mechanics");
     await p.waitForLoadState("networkidle");
-    for (const c of new Set(mechanics.map((e) => e.category))) {
+    for (const c of new Set(listedMechanics.map((e) => e.category))) {
       await p
         .getByRole("combobox", { name: "Категория", exact: true })
         .selectOption(c);
       await expect(p.locator("[data-system-id]")).toHaveCount(
-        mechanics.filter((e) => e.category === c).length,
+        listedMechanics.filter((e) => e.category === c).length,
       );
     }
     const modelRequests = [];

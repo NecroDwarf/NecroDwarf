@@ -108,7 +108,9 @@ try {
         "Unresolved localization argument",
       );
     }
-    for (const id of data.abilityIds.concat(data.itemIds))
+    for (const id of data.abilityIds
+      .concat(data.itemIds)
+      .filter((id) => id !== "item:recipe-book"))
       assert.ok(html.includes(`data-entity-card="${id}"`));
     const asset = manifest.files.find((f) => f.gameId === c.gameId);
     assert.ok(asset.source.endsWith(`/frescos/${c.gameId}.png`));

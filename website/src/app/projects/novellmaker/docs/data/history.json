@@ -92,6 +92,52 @@
     {
       "tag": "p",
       "children": [
+        "История — последние 500 посещений (VisitId, SceneId, LineId, запрошенный язык), включая повторные входы. Текст, имя говорящего и доступная озвучка проецируются из текущего проекта, а не сохраняются копиями в журнале. Текущий GameSave v4 включает историю, введённую в v3, вместе с временем/клипами персонажей. Load заменяет журнал историей слота без добавления нового посещения и без повторения сценарных команд; v3 сохраняет журнал, v1/v2 без History читаются с пустым. Для v3/v4 поле History обязательно, для v4 обязательны также CharacterStartedAt/CharacterClips. Совместимость старого формата не отменяет проверки точной редакции проекта. ",
+        {
+          "tag": "a",
+          "children": ["Модель восстановления"],
+          "props": {
+            "href": "/projects/novellmaker/docs/lua/execution-model#время-клипов-персонажей"
+          }
+        },
+        ", ",
+        {
+          "tag": "a",
+          "children": ["GameSave"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/52b1d06149b668aa76d5ed995c0a92118eb63824/src/NovellMaker.Core/Execution/GameSave.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        "В новом шаблоне «Медленнее»/«Быстрее» меняют постепенный показ с шагом 10 знаков/с, в пределах 10–200. Мгновенный показ выбирается отдельно кнопкой «Мгновенно»; числовые кнопки в нём недоступны. «Постепенно» возвращает последнюю ненулевую скорость этого экземпляра окна (40, если окно открыто с мгновенным показом). Профили и API сохраняют совместимое значение ",
+        { "tag": "code", "children": ["text_speed=0"] },
+        " для мгновенного показа; заданные через API скорости меньше 10 также допустимы, но кнопка «Медленнее» для них недоступна. Существующие авторские сцены и скрипты v23 автоматически не заменяются: для исправления старого окна обновите его обработчик и добавьте refs ",
+        { "tag": "code", "children": ["gradual"] },
+        " (Button) и ",
+        { "tag": "code", "children": ["instant_speed"] },
+        " (Text с подписью мгновенного режима) по текущему ",
+        {
+          "tag": "a",
+          "children": ["шаблону"],
+          "props": {
+            "href": "https://github.com/doflare123/NovellMaker/blob/52b1d06149b668aa76d5ed995c0a92118eb63824/src/NovellMaker.Core/Screens/ReadingScreenTemplates.cs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
         "Проект v23 хранит цели этих действий. При открытии v21/v22 с прежними действиями без цели детерминированно создаются шаблоны и привязки; исходный файл меняется только при сохранении. v23 с отсутствующей или неверной целью отвергается. Проекты без этих действий не получают меню автоматически. Миграция меняет ревизию проекта; старые слоты другой точной ревизии не становятся совместимыми автоматически."
       ]
     },
@@ -349,7 +395,7 @@
           "tag": "a",
           "children": ["проекция"],
           "props": {
-            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Execution/HistoryPage.cs",
+            "href": "https://github.com/doflare123/NovellMaker/blob/52b1d06149b668aa76d5ed995c0a92118eb63824/src/NovellMaker.Core/Execution/HistoryPage.cs",
             "target": "_blank",
             "rel": "noopener noreferrer"
           }
@@ -359,7 +405,7 @@
           "tag": "a",
           "children": ["регистрация"],
           "props": {
-            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Screens/Lua/ScreenLuaWorker.cs",
+            "href": "https://github.com/doflare123/NovellMaker/blob/52b1d06149b668aa76d5ed995c0a92118eb63824/src/NovellMaker.Core/Screens/Lua/ScreenLuaWorker.cs",
             "target": "_blank",
             "rel": "noopener noreferrer"
           }
@@ -369,7 +415,7 @@
           "tag": "a",
           "children": ["тесты"],
           "props": {
-            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Screens/HistoryLuaTests.cs",
+            "href": "https://github.com/doflare123/NovellMaker/blob/52b1d06149b668aa76d5ed995c0a92118eb63824/tests/NovellMaker.Core.Tests/Screens/HistoryLuaTests.cs",
             "target": "_blank",
             "rel": "noopener noreferrer"
           }
@@ -508,7 +554,7 @@
           "tag": "a",
           "children": ["host"],
           "props": {
-            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Runtime/RuntimeHistoryServices.cs",
+            "href": "https://github.com/doflare123/NovellMaker/blob/52b1d06149b668aa76d5ed995c0a92118eb63824/src/NovellMaker.Runtime/RuntimeHistoryServices.cs",
             "target": "_blank",
             "rel": "noopener noreferrer"
           }
@@ -518,7 +564,7 @@
           "tag": "a",
           "children": ["регистрация"],
           "props": {
-            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/src/NovellMaker.Core/Screens/Lua/ScreenLuaWorker.cs",
+            "href": "https://github.com/doflare123/NovellMaker/blob/52b1d06149b668aa76d5ed995c0a92118eb63824/src/NovellMaker.Core/Screens/Lua/ScreenLuaWorker.cs",
             "target": "_blank",
             "rel": "noopener noreferrer"
           }
@@ -528,7 +574,7 @@
           "tag": "a",
           "children": ["проверки lifetime"],
           "props": {
-            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Runtime.Tests/RuntimeHistoryServicesTests.cs",
+            "href": "https://github.com/doflare123/NovellMaker/blob/52b1d06149b668aa76d5ed995c0a92118eb63824/tests/NovellMaker.Runtime.Tests/RuntimeHistoryServicesTests.cs",
             "target": "_blank",
             "rel": "noopener noreferrer"
           }

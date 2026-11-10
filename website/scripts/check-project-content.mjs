@@ -34,8 +34,12 @@ try {
     assert.match(html, /Художественная иллюстрация/);
     assert.doesNotMatch(
       html,
-      /Ключевые особенности|Галерея|Платформы:|Скачать|В разработке/,
+      /Ключевые особенности|Галерея|Платформы:|В разработке/,
     );
+    if (project.id === "novellmaker") {
+      assert.match(html, /Бета/);
+      assert.match(html, /Скачать/);
+    } else assert.doesNotMatch(html, /Скачать/);
   }
   assert.equal(render(ProjectGallery, {}), "");
   assert.equal(render(ProjectGallery, { images: [] }), "");

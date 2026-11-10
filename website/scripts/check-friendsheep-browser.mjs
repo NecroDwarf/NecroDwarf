@@ -72,8 +72,14 @@ await withBrowserCheck(
         "utf8",
       ),
     );
-    let previewBytes = 0;
+    const previewBytes = { web: 0, mobile: 0 };
+    assert.equal(imageSources.documents.length, 2);
     for (const source of imageSources.images) {
+      assert.ok(
+        imageSources.documents.some(
+          (document) => document.id === source.documentId,
+        ),
+      );
       const full = await readFile(
         `src/app/projects/friendsheep/assets/screenshots/${source.full}`,
       );
@@ -88,16 +94,29 @@ await withBrowserCheck(
         createHash("sha256").update(preview).digest("hex"),
         source.previewSha256,
       );
-      previewBytes += preview.length;
+      previewBytes[source.documentId === "mobile-thesis" ? "mobile" : "web"] +=
+        preview.length;
     }
     assert.ok(
-      previewBytes < 150000,
-      "Превью скриншотов должны оставаться лёгкими",
+      previewBytes.web < 150000,
+      "Веб-превью должны сохранять исходный бюджет",
     );
-    await expect(page.locator("[data-project-screenshot]")).toHaveCount(5);
+    assert.ok(
+      previewBytes.mobile < 125000,
+      "Три мобильных превью должны оставаться лёгкими",
+    );
+    await expect(page.locator("[data-project-screenshot]")).toHaveCount(8);
     await expect(
       page.locator("#interface [data-project-screenshot]"),
-    ).toHaveCount(3);
+    ).toHaveCount(6);
+    assert.deepEqual(
+      await page
+        .locator("#interface [data-screenshot-platform]")
+        .evaluateAll((figures) =>
+          figures.map((figure) => figure.dataset.screenshotPlatform),
+        ),
+      ["web", "mobile", "web", "mobile", "web", "mobile"],
+    );
     const imageLinks = await page
       .locator("[data-project-screenshot]")
       .evaluateAll((links) =>
@@ -116,18 +135,36 @@ await withBrowserCheck(
       assert.match(response.headers()["content-type"], /image\/png/);
     }
     checks.push(
-      "Подлинные PNG из диплома, совпадение хешей, лёгкие WebP-превью и просмотр полного размера",
+      "Подлинные PNG из двух дипломов, совпадение хешей, чередование веб- и мобильных экранов, лёгкие WebP и просмотр полного размера",
     );
     const externals = await page
       .locator("[data-friendsheep] a[href^='https:']")
       .evaluateAll((anchors) =>
-        anchors.map((a) => ({ href: a.href, target: a.target, rel: a.rel })),
+        anchors.map((a) => ({
+          href: a.href,
+          target: a.target,
+          rel: a.rel,
+          className: a.className,
+        })),
       );
-    assert.equal(externals.length, 3);
+    assert.equal(externals.length, 5);
     assert.equal(
       externals.filter((link) => link.href === "https://friendsheep.ru/")
         .length,
       2,
+    );
+    const appLinks = externals.filter(
+      (link) =>
+        link.href ===
+        "https://www.rustore.ru/catalog/app/com.anonymous.FriendShip",
+    );
+    assert.equal(appLinks.length, 2);
+    assert.deepEqual(
+      appLinks.map((link) => link.className),
+      externals
+        .filter((link) => link.href === "https://friendsheep.ru/")
+        .map((link) => link.className),
+      "Сайт и приложение должны иметь равный визуальный приоритет",
     );
     const roadmapLinks = externals.filter(
       (link) => new URL(link.href).hostname === "github.com",
@@ -139,7 +176,9 @@ await withBrowserCheck(
     );
     for (const link of externals) {
       assert.ok(
-        ["github.com", "friendsheep.ru"].includes(new URL(link.href).hostname),
+        ["github.com", "friendsheep.ru", "www.rustore.ru"].includes(
+          new URL(link.href).hostname,
+        ),
       );
       assert.equal(link.target, "_blank");
       assert.ok(
@@ -213,6 +252,16 @@ await withBrowserCheck(
     await page.keyboard.press("Tab");
     await expect(
       page.locator('[data-friendsheep] a[href="/projects"]').first(),
+    ).toBeFocused();
+    await page.keyboard.press("Tab");
+    await expect(
+      page.getByRole("link", { name: "Перейти на сайт", exact: false }).first(),
+    ).toBeFocused();
+    await page.keyboard.press("Tab");
+    await expect(
+      page
+        .getByRole("link", { name: "Приложение в RuStore", exact: false })
+        .first(),
     ).toBeFocused();
     await page.keyboard.press("Tab");
     await expect(

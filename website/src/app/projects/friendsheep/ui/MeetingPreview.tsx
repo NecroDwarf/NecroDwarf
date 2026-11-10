@@ -52,36 +52,58 @@ export function HeroPreview() {
 }
 
 export function InterfacePreview() {
+  const gallery = [
+    {
+      image: screenshots.feed,
+      platform: "web",
+      description: "Общий экран с категориями и карточками мероприятий.",
+    },
+    {
+      image: screenshots.mobileFeed,
+      platform: "mobile",
+      description:
+        "Поиск, новые события и категории — на главном экране телефона.",
+    },
+    {
+      image: screenshots.create,
+      platform: "web",
+      description:
+        "Название, описание, категория, дата, место и другие подробности события.",
+    },
+    {
+      image: screenshots.mobileEvent,
+      platform: "mobile",
+      description:
+        "Описание, время, место и участники мероприятия в одном экране.",
+    },
+    {
+      image: screenshots.group,
+      platform: "web",
+      description:
+        "Описание сообщества, участники и запланированные мероприятия.",
+    },
+    {
+      image: screenshots.mobileGroup,
+      platform: "mobile",
+      description:
+        "Информация о сообществе, его интересах и участниках в приложении.",
+    },
+  ];
   return (
     <div className={s.gallery}>
-      <figure className={s.featured}>
-        <ScreenshotLink image={screenshots.feed} />
-        <figcaption>
-          <h3>Лента событий</h3>
-          <p>Общий экран с категориями и карточками мероприятий.</p>
-        </figcaption>
-      </figure>
-      <div className={s.details}>
-        <figure>
-          <ScreenshotLink
-            image={screenshots.create}
-            className={s.detailImage}
-          />
-          <figcaption>
-            <h3>Создание мероприятия</h3>
-            <p>
-              Название, описание, категория, дата, место и другие подробности
-              события.
-            </p>
-          </figcaption>
-        </figure>
-        <figure>
-          <ScreenshotLink image={screenshots.group} className={s.detailImage} />
-          <figcaption>
-            <h3>Страница группы</h3>
-            <p>Описание сообщества, участники и запланированные мероприятия.</p>
-          </figcaption>
-        </figure>
+      <div className={s.galleryGrid}>
+        {gallery.map(({ image, platform, description }) => (
+          <figure key={image.id} data-screenshot-platform={platform}>
+            <ScreenshotLink image={image} className={s.galleryImage} />
+            <figcaption>
+              <span className={s.platform}>
+                {platform === "mobile" ? "Мобильное приложение" : "Веб-версия"}
+              </span>
+              <h3>{image.title}</h3>
+              <p>{description}</p>
+            </figcaption>
+          </figure>
+        ))}
       </div>
       <p className={s.galleryHint}>
         Нажмите на изображение, чтобы открыть его в полном размере.

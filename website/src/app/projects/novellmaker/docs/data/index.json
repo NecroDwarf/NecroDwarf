@@ -27,7 +27,25 @@
     {
       "tag": "p",
       "children": [
-        "Практический справочник текущего кода на 3 ноября 2026 года. Проект v23, Lua 5.2/MoonSharp 2.0.0, screen protocol v20. Запланированные функции не включены. Для начала прочитайте ",
+        {
+          "tag": "a",
+          "children": ["Реплики, озвучка и лист записи"],
+          "props": {
+            "href": "/projects/novellmaker/docs/engine-guide#реплики-и-лист-записи"
+          }
+        },
+        " · ",
+        {
+          "tag": "a",
+          "children": ["Импорт JSON/CSV/TSV"],
+          "props": { "href": "/projects/novellmaker/docs/lua/dialogue-import" }
+        }
+      ]
+    },
+    {
+      "tag": "p",
+      "children": [
+        "Авторский справочник NovellMaker 0.1 beta. Проект v25, GameSave v4, Lua 5.2/MoonSharp 2.0.0, screen protocol v20. Запланированные функции не включены. Для начала прочитайте ",
         {
           "tag": "a",
           "children": ["модель исполнения"],
@@ -39,13 +57,13 @@
           "children": ["законченные примеры"],
           "props": { "href": "/projects/novellmaker/docs/lua/examples" }
         },
-        ". Персонажи из частей, ключевые кадры и GIF: ",
+        ". Персонажи из частей, ключевые кадры, GIF и ожидание конечных клипов: ",
         {
           "tag": "a",
           "children": ["руководство анимации"],
           "props": { "href": "/projects/novellmaker/docs/lua/characters" }
         },
-        ". Возможности редактора, ресурсы и экспорт: ",
+        ". Возможности редактора, ресурсы, автосохранение и экспорт: ",
         {
           "tag": "a",
           "children": ["руководство движка"],
@@ -231,8 +249,10 @@
           "children": [
             {
               "tag": "a",
-              "children": ["Проверка полноты и выявленные расхождения"],
-              "props": { "href": "/projects/novellmaker/docs/lua/verification" }
+              "children": ["Совместимость и ограничения"],
+              "props": {
+                "href": "/projects/novellmaker/docs/lua/compatibility"
+              }
             }
           ]
         }

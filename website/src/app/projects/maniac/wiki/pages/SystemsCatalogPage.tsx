@@ -5,7 +5,7 @@ import { Link } from "react-router";
 import {
   type ItemMeta,
   listedItems,
-  mechanicCatalog,
+  listedMechanics,
   itemCategoryLabels,
   mechanicCategoryLabels,
 } from "../data/systems-catalog";
@@ -30,7 +30,7 @@ export function SystemsCatalogPage({ kind }: { kind: "item" | "mechanic" }) {
   const [category, setCategory] = useUrlFilter("category", ""),
     [owner, setOwner] = useUrlFilter("owner", "");
   const [team, setTeam] = useUrlFilter("team", "all");
-  const entries = kind === "item" ? listedItems : mechanicCatalog,
+  const entries = kind === "item" ? listedItems : listedMechanics,
     labels = kind === "item" ? itemCategoryLabels : mechanicCategoryLabels;
   const visible = entries.filter(
     (e) =>
@@ -111,7 +111,7 @@ export function SystemsCatalogPage({ kind }: { kind: "item" | "mechanic" }) {
         >
           {kind === "item"
             ? `${entries.length} предметов и наборов: назначение, применение и связи с персонажами.`
-            : `${entries.length} игровых систем: от начала матча и взлома до испытаний и особых ресурсов.`}
+            : `${entries.length} общих механик: правила матча, взлом, ресурсы и состояния. Особые механики описаны в статьях персонажей и перков.`}
         </CatalogHeader>
         <div className={s.filters}>
           <CatalogSearch value={query} onChange={setQuery} />

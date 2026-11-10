@@ -1,4 +1,9 @@
 import { StatText } from "../ui/StatText";
+import {
+  IntegratedMechanics,
+  type IntegratedMechanic,
+} from "../ui/IntegratedMechanics";
+import { mechanicOwners, removedCatalogEntries } from "../mechanic-placement";
 import { RelatedEffects } from "../ui/RelatedEffects";
 import { WikiText } from "../ui/WikiText";
 import {
@@ -38,9 +43,11 @@ interface Article {
 export function ReferenceArticlePage({
   id,
   article,
+  systems = [],
 }: {
   id: EntityId<"perk" | "ability">;
   article: Article;
+  systems?: readonly IntegratedMechanic[];
 }) {
   const entity = getEntity(id)!;
   const revision = getRevision(id)!;
@@ -54,6 +61,10 @@ export function ReferenceArticlePage({
       ? getRevision(id as EntityId<"ability">)!.data
       : undefined;
   const section = perk ? "perks" : "abilities";
+  const externalMechanics = data.mechanicIds.filter(
+    (mechanic) =>
+      mechanicOwners[mechanic] !== id && !removedCatalogEntries.has(mechanic),
+  );
   const label = perk ? "Перки" : "Способности";
   const asset = data.icon ? entityAssets[data.icon] : undefined;
   const releases = referenceChronicles(entity);
@@ -179,6 +190,12 @@ export function ReferenceArticlePage({
                 </ul>
               )}
             </section>
+            {systems.length > 0 && (
+              <section className={s.articleSection} id="systems">
+                <h2>Особые правила перка</h2>
+                <IntegratedMechanics entries={systems} />
+              </section>
+            )}
             <section className={s.articleSection} id="related">
               <p className={s.eyebrow}>СВЯЗИ В ЭНЦИКЛОПЕДИИ</p>
               <h2>Связанные материалы</h2>
@@ -211,11 +228,11 @@ export function ReferenceArticlePage({
                   </ul>
                 </>
               )}
-              {!!data.mechanicIds.length && (
+              {!!externalMechanics.length && (
                 <>
                   <h3>Механики</h3>
                   <ul>
-                    {data.mechanicIds.map((mechanic) => (
+                    {externalMechanics.map((mechanic) => (
                       <li key={mechanic}>
                         <EntityLink id={mechanic} />
                       </li>

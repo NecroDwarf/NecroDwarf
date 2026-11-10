@@ -6,8 +6,44 @@ import create from "./screenshots/create-event.webp";
 import createFull from "./screenshots/create-event.png";
 import group from "./screenshots/group.webp";
 import groupFull from "./screenshots/group.png";
+import mobileFeed from "./screenshots/mobile-feed.webp";
+import mobileFeedFull from "./screenshots/mobile-feed.png";
+import mobileEvent from "./screenshots/mobile-event.webp";
+import mobileEventFull from "./screenshots/mobile-event.png";
+import mobileGroup from "./screenshots/mobile-group.webp";
+import mobileGroupFull from "./screenshots/mobile-group.png";
 
 export const screenshots = {
+  mobileFeed: {
+    id: "mobile-feed",
+    src: mobileFeed,
+    full: mobileFeedFull,
+    width: 360,
+    height: 780,
+    title: "Лента в приложении",
+    figure: "17",
+    alt: "Главный экран мобильного FriendSheep: поиск, новые мероприятия и категории",
+  },
+  mobileEvent: {
+    id: "mobile-event",
+    src: mobileEvent,
+    full: mobileEventFull,
+    width: 360,
+    height: 780,
+    title: "Мероприятие в приложении",
+    figure: "23",
+    alt: "Карточка мероприятия в мобильном FriendSheep с описанием, временем, местом и участниками",
+  },
+  mobileGroup: {
+    id: "mobile-group",
+    src: mobileGroup,
+    full: mobileGroupFull,
+    width: 360,
+    height: 780,
+    title: "Группа в приложении",
+    figure: "26",
+    alt: "Экран группы в мобильном FriendSheep: описание сообщества, категории, контакты и участники",
+  },
   card: {
     id: "event-card",
     src: card,

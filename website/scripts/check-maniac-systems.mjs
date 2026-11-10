@@ -135,7 +135,8 @@ try {
       kind === "item"
         ? (await server.ssrLoadModule("/" + root + "data/systems-catalog.ts"))
             .listedItems.length
-        : rows.length,
+        : (await server.ssrLoadModule("/" + root + "data/systems-catalog.ts"))
+            .listedMechanics.length,
     );
     for (const row of rows) {
       const path = publishedEntityRoutes[row.id];
@@ -145,7 +146,12 @@ try {
       );
       assert.equal(article.id, row.id);
       assert.ok(article.sections.length >= 1);
-      const text = await readFile("build/client" + path + ".html", "utf8");
+      const text = await readFile(
+        "build/client" + path.split("#")[0] + ".html",
+        "utf8",
+      );
+      if (path.includes("#"))
+        assert.ok(text.includes(`id="${path.split("#")[1]}"`), path);
       assert.ok(text.includes(row.name.replaceAll("&", "&amp;")));
       for (const section of article.sections)
         for (const paragraph of section.paragraphs)

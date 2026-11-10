@@ -2,6 +2,7 @@ import { relatedEntityIds } from "../data/relations";
 import { publishedEntityRoutes } from "../data/publication";
 import { EntityLink } from "./EntityLink";
 import type { EntityId } from "../data/types";
+import { removedCatalogEntries } from "../mechanic-placement";
 export function RelatedLinks({
   id,
   exclude = [],
@@ -10,7 +11,10 @@ export function RelatedLinks({
   exclude?: readonly EntityId[];
 }) {
   const ids = relatedEntityIds(id).filter(
-    (target) => publishedEntityRoutes[target] && !exclude.includes(target),
+    (target) =>
+      publishedEntityRoutes[target] &&
+      !exclude.includes(target) &&
+      !removedCatalogEntries.has(target),
   );
   if (!ids.length) return null;
   return (

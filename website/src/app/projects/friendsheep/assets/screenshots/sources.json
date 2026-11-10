@@ -1,6 +1,4 @@
 {
-  "sourceDocument": "Диплом.docx",
-  "sourceSha256": "15f8406c0805a9f259b49ce5e7f6a07449045d6a40cb9c116c96aa909e295b18",
   "images": [
     {
       "media": "word/media/image19.png",
@@ -13,7 +11,8 @@
       "previewSize": [406, 264],
       "previewBytes": 16542,
       "previewSha256": "6ce44c0d02ead37cecbe6aa243af70c02b45dcf2d49c716b63404f4cd1f52c8e",
-      "transformation": "WebP quality 92; пропорции сохранены, без обрезки, перерисовки и изменения содержимого. PNG полного размера сохранён отдельно для просмотра по ссылке."
+      "transformation": "WebP quality 92; пропорции сохранены, без обрезки, перерисовки и изменения содержимого. PNG полного размера сохранён отдельно для просмотра по ссылке.",
+      "documentId": "web-thesis"
     },
     {
       "media": "word/media/image20.png",
@@ -26,7 +25,8 @@
       "previewSize": [634, 577],
       "previewBytes": 27356,
       "previewSha256": "9798b134661f3704a80027a584be38150b97d23608c8ed0502f282d1c6557b48",
-      "transformation": "WebP quality 92; пропорции сохранены, без обрезки, перерисовки и изменения содержимого. PNG полного размера сохранён отдельно для просмотра по ссылке."
+      "transformation": "WebP quality 92; пропорции сохранены, без обрезки, перерисовки и изменения содержимого. PNG полного размера сохранён отдельно для просмотра по ссылке.",
+      "documentId": "web-thesis"
     },
     {
       "media": "word/media/image28.png",
@@ -39,7 +39,8 @@
       "previewSize": [1200, 604],
       "previewBytes": 27972,
       "previewSha256": "1ab9699deb40da126b4f7258696178e8728f17b3f2c9b164f103c15e91282683",
-      "transformation": "WebP quality 92; пропорции сохранены, без обрезки, перерисовки и изменения содержимого. PNG полного размера сохранён отдельно для просмотра по ссылке."
+      "transformation": "WebP quality 92; пропорции сохранены, без обрезки, перерисовки и изменения содержимого. PNG полного размера сохранён отдельно для просмотра по ссылке.",
+      "documentId": "web-thesis"
     },
     {
       "media": "word/media/image29.png",
@@ -52,7 +53,62 @@
       "previewSize": [1037, 517],
       "previewBytes": 45350,
       "previewSha256": "1625fd58bd3fc76a8cde9975bc2e8d14340cbf94b5f7b760d2e59aca6af73d90",
-      "transformation": "WebP quality 92; пропорции сохранены, без обрезки, перерисовки и изменения содержимого. PNG полного размера сохранён отдельно для просмотра по ссылке."
+      "transformation": "WebP quality 92; пропорции сохранены, без обрезки, перерисовки и изменения содержимого. PNG полного размера сохранён отдельно для просмотра по ссылке.",
+      "documentId": "web-thesis"
+    },
+    {
+      "documentId": "mobile-thesis",
+      "media": "word/media/image20.png",
+      "figure": "17",
+      "sourceSize": [591, 1280],
+      "sourceBytes": 558929,
+      "sourceSha256": "b85568f8ed5df642686a4426c927b997f73bb97fbf751843d69fd8dcab65dbe5",
+      "full": "mobile-feed.png",
+      "preview": "mobile-feed.webp",
+      "previewSize": [360, 780],
+      "previewBytes": 40318,
+      "previewSha256": "26d8703e9bd50d4e38ba70e91c3fb2b829b1960cda59eeed4b8c95dc9670b750",
+      "transformation": "WebP quality 90; уменьшение до 360 × 780 с сохранением пропорций, без обрезки, перерисовки и изменения содержимого. Исходный PNG сохранён отдельно для просмотра полного размера."
+    },
+    {
+      "documentId": "mobile-thesis",
+      "media": "word/media/image28.png",
+      "figure": "23",
+      "sourceSize": [591, 1280],
+      "sourceBytes": 534533,
+      "sourceSha256": "a21a26bbf266e8368207f8ea091d6996bee4006afa3a928d4c5ae0b1e1448313",
+      "full": "mobile-event.png",
+      "preview": "mobile-event.webp",
+      "previewSize": [360, 780],
+      "previewBytes": 46112,
+      "previewSha256": "34f4c26c38ce72513f2193128e01d3c4fb1bdccda5d93b7b2976fa583b199054",
+      "transformation": "WebP quality 90; уменьшение до 360 × 780 с сохранением пропорций, без обрезки, перерисовки и изменения содержимого. Исходный PNG сохранён отдельно для просмотра полного размера."
+    },
+    {
+      "documentId": "mobile-thesis",
+      "media": "word/media/image32.png",
+      "figure": "26",
+      "sourceSize": [591, 1280],
+      "sourceBytes": 263940,
+      "sourceSha256": "6a7ead87f1c4d27b77bd6826c081b6221a563718a542780710443c58ab2bd940",
+      "full": "mobile-group.png",
+      "preview": "mobile-group.webp",
+      "previewSize": [360, 780],
+      "previewBytes": 24946,
+      "previewSha256": "82bb77facd2cf6294f17702485457c6132262b842b0581159a0bb6ac90124b77",
+      "transformation": "WebP quality 90; уменьшение до 360 × 780 с сохранением пропорций, без обрезки, перерисовки и изменения содержимого. Исходный PNG сохранён отдельно для просмотра полного размера."
+    }
+  ],
+  "documents": [
+    {
+      "id": "web-thesis",
+      "name": "Диплом.docx",
+      "sha256": "15f8406c0805a9f259b49ce5e7f6a07449045d6a40cb9c116c96aa909e295b18"
+    },
+    {
+      "id": "mobile-thesis",
+      "name": "Диплом Залётова Яна 22ИСПп3.docx",
+      "sha256": "d5ffdef25690da98beb6f788d02aeeb3d8b835c9ec17363a9ad086f1c6e9d98f"
     }
   ]
 }

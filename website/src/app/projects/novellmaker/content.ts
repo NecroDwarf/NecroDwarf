@@ -1,16 +1,26 @@
-export const docs = "/projects/novellmaker/docs";
-export const source = "https://github.com/doflare123/NovellMaker";
-export const pinned = `${source}/tree/5e885944ee36f5945a734c18c19c65c261402445`;
+import { source, version } from "./release-info";
+export { docs, source, version, releaseUrl, pinned } from "./release-info";
+export const downloads = [
+  ["Windows x64 — установщик", `NovellMaker-${version}-win-x64-Setup.exe`],
+  ["Windows x64 — portable ZIP", `NovellMaker-${version}-win-x64-portable.zip`],
+  [
+    "Linux x64 — экспериментальная сборка",
+    `NovellMaker-${version}-linux-x64-experimental.tar.gz`,
+  ],
+].map(([label, file]) => ({
+  label,
+  href: `${source}/releases/download/v${version}/${file}`,
+}));
 export const features = [
   [
     "Сцены и диалоги",
-    "Фразы, переходы, персонажи и сюжетные условия. Соберите основу истории в визуальном редакторе.",
+    "Фразы, выборы, условия и переходы. Импортируйте сценарий из CSV, TSV или JSON и обновляйте его с предпросмотром.",
     "СЦЕНА → ФРАЗА → ВЫБОР",
     "/engine-guide",
   ],
   [
     "Персонажи в движении",
-    "Статические позы, персонажи из частей, ключевые кадры и покадровые клипы. Управляйте временем и композицией.",
+    "Статические позы, персонажи из частей, ключевые кадры, покадровые клипы и GIF. Управляйте временем и композицией.",
     "ПОЗЫ / ЧАСТИ / КЛЮЧИ",
     "/lua/characters",
   ],
@@ -34,13 +44,13 @@ export const features = [
   ],
   [
     "Звук как часть истории",
-    "PCM WAV: фон, эффекты и озвучка. Группы громкости, плавные переходы и приглушение музыки при речи.",
+    "PCM WAV: фон, эффекты и озвучка на нескольких языках. Листы записи, пакетный приём дублей и приглушение музыки при речи.",
     "SOUND / EFFECT / VOICE",
     "/lua/audio",
   ],
   [
     "Продолжить с места",
-    "Игровые слоты сохраняют сюжетное состояние. Настройки и профиль живут отдельно; восстановление имеет явные границы.",
+    "Слоты, быстрое и автоматическое сохранение, история с повтором озвучки, автоматическое чтение и пропуск прочитанного.",
     "СЛОТЫ / ПРОФИЛЬ",
     "/lua/session-and-storage",
   ],

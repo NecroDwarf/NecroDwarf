@@ -3,10 +3,11 @@ import { meta as maniac } from "./maniac/meta";
 import { meta as friendsheep } from "./friendsheep/meta";
 import { meta as novellmaker } from "./novellmaker/meta";
 import { releases } from "./maniac/changelogs/registry";
+import { releases as novellmakerReleases } from "./novellmaker/releases";
 export const projects: readonly Project[] = [
   { ...maniac, releases },
   { ...friendsheep, releases: [] },
-  { ...novellmaker, releases: [] },
+  { ...novellmaker, releases: novellmakerReleases },
 ];
 export const projectNames = Object.fromEntries(
   projects.map((p) => [p.id, p.name]),

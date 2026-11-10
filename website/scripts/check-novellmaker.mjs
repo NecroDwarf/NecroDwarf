@@ -7,6 +7,7 @@ import {
   commit,
   repository,
   resolveLink,
+  sourceLinkErrors,
 } from "./novellmaker-reference.mjs";
 const root = "src/app/projects/novellmaker/docs";
 const readJson = async (path) => JSON.parse(await readFile(path, "utf8"));
@@ -17,9 +18,9 @@ const search = await readJson(`${root}/search-index.json`);
 assert.equal(manifest.commit, commit);
 assert.equal(provenance.commit, commit);
 assert.equal(inventory.commit, commit);
-assert.equal(manifest.documents.length, 21);
-assert.equal(Object.keys(provenance.hashes).length, 21);
-assert.deepEqual(inventory.verification.errors, []);
+assert.equal(manifest.documents.length, 22);
+assert.equal(Object.keys(provenance.hashes).length, 22);
+assert.deepEqual(inventory.verification.errors, sourceLinkErrors);
 const documents = new Map(manifest.documents.map((d) => [d.path, d]));
 const allowedTags = new Set([
   "h1",
@@ -201,6 +202,41 @@ for (const a of assets.assets)
     a.sha256,
   );
 const chunks = await readJson(".ssg/client-modules.json");
+const brand = await readJson(
+  "src/app/projects/novellmaker/assets/branding-source.json",
+);
+assert.equal(brand.commit, commit);
+assert.equal(
+  createHash("sha256")
+    .update(
+      await readFile("src/app/projects/novellmaker/assets/novellmaker.svg"),
+    )
+    .digest("hex"),
+  brand.sha256,
+);
+const showcase = await readFile(
+  "build/client/projects/novellmaker.html",
+  "utf8",
+);
+for (const suffix of [
+  "win-x64-Setup.exe",
+  "win-x64-portable.zip",
+  "linux-x64-experimental.tar.gz",
+])
+  assert.ok(
+    showcase.includes(
+      `/releases/download/v0.1.0-beta.1/NovellMaker-0.1.0-beta.1-${suffix}`,
+    ),
+  );
+assert.ok(showcase.includes('id="release"'));
+assert.ok(showcase.includes("экспериментальная сборка"));
+for (const path of ["index", "projects", "changelog"])
+  assert.ok(
+    (await readFile(`build/client/${path}.html`, "utf8")).includes(
+      "Открытая бета",
+    ),
+    `${path}: beta missing`,
+  );
 const chunkFor = (source) => {
   const c = Object.entries(chunks).find(([, c]) => c.modules.includes(source));
   assert.ok(c, source);
@@ -257,5 +293,5 @@ for (const d of manifest.documents) {
   );
 }
 console.log(
-  `NovellMaker: 21/21 originals, ${registered.length} registered APIs, ${codeCount} code blocks (${luaCount} Lua), ${linkCount} links/anchors, pinned GitHub paths, SSG and isolated route chunks OK`,
+  `NovellMaker: 22/22 originals, ${registered.length} registered APIs, ${codeCount} code blocks (${luaCount} Lua), ${linkCount} links/anchors, pinned GitHub paths, SSG and isolated route chunks OK`,
 );

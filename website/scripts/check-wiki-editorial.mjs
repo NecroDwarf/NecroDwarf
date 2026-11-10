@@ -142,7 +142,9 @@ try {
         file,
       );
       const html = await readFile(
-        "build/client" + publishedEntityRoutes[article.id] + ".html",
+        "build/client" +
+          publishedEntityRoutes[article.id].split("#")[0] +
+          ".html",
         "utf8",
       );
       assert.ok(!html.includes("{{"), file);

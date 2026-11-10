@@ -10,7 +10,7 @@ export const searchIndex = searchMetadata.map((entry) => {
   if (!text) throw new Error(`Missing generated search text: ${entry.href}`);
   const aliases = normalizeSearch(searchAliases[entry.id] ?? "");
   const category = normalizeSearch(
-    `${entry.label} ${sectionTerms[entry.section]}`,
+    `${entry.label} ${sectionTerms[entry.section]} ${entry.id.startsWith("mechanic:") ? "механика механики" : ""}`,
   );
   const identity = normalizeSearch(`${entry.name} ${entry.id} ${entry.slug}`);
   return {

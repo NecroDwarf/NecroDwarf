@@ -76,7 +76,7 @@ try {
   ]);
   for (const version of gameVersions)
     assert.ok(releases.some((r) => r.id === version.releaseId));
-  // Preserve the 191 existing routes and require all 22 NovellMaker docs routes.
+  // Preserve the 191 existing routes and require all 23 beta documentation routes.
   assert.equal(
     routes.filter((r) => !r.path.startsWith("/projects/novellmaker/docs"))
       .length,
@@ -85,7 +85,7 @@ try {
   assert.equal(
     routes.filter((r) => r.path.startsWith("/projects/novellmaker/docs"))
       .length,
-    22,
+    23,
   );
   assert.ok(
     routes.some((route) => route.path === "/projects/maniac/wiki/search"),
@@ -103,7 +103,7 @@ try {
   for (const [id, path] of Object.entries(publishedEntityRoutes)) {
     assert.ok(entities.some((entity) => entity.id === id));
     assert.ok(
-      routes.some((route) => route.path === path),
+      routes.some((route) => route.path === path.split("#")[0]),
       `Unpublished entity route: ${path}`,
     );
   }
@@ -319,12 +319,16 @@ try {
     renderToStaticMarkup(
       createElement(MemoryRouter, null, createElement(Component, props)),
     );
+  const { integratedMechanicHref } = await server.ssrLoadModule(
+    "/src/app/projects/maniac/wiki/mechanic-placement.ts",
+  );
   assert.equal(Object.keys(publishedEntityMeta).length, entities.length);
   for (const entity of entities) {
     assert.equal(publishedEntityMeta[entity.id]?.name, entity.name, entity.id);
     assert.equal(
       publishedEntityMeta[entity.id]?.href,
-      plannedEntityPath(entity.kind, entity.slug),
+      integratedMechanicHref(entity.id) ??
+        plannedEntityPath(entity.kind, entity.slug),
       entity.id,
     );
   }

@@ -71,7 +71,7 @@ try {
   );
   assert.equal(
     paths.filter((p) => p.startsWith("/projects/novellmaker/docs")).length,
-    22,
+    23,
   );
   assert.ok(paths.includes("/projects/maniac/wiki/effects"));
   for (const path of old) assert.ok(paths.includes(path), path);

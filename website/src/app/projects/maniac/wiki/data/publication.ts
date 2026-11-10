@@ -5,6 +5,7 @@ import { abilityRouteMeta } from "../ability-route-metadata";
 import { itemRouteMeta } from "../item-route-metadata";
 import { mechanicRouteMeta } from "../mechanic-route-metadata";
 import { mapRouteMeta } from "../map-route-metadata";
+import { integratedMechanicHref } from "../mechanic-placement";
 const sections: Record<EntityKind, string> = {
   character: "characters",
   ability: "abilities",
@@ -31,7 +32,12 @@ const publishedEntries = (
     (entry) =>
       [
         entry.id,
-        { name: entry.name, href: plannedEntityPath(kind, entry.slug) },
+        {
+          name: entry.name,
+          href:
+            integratedMechanicHref(entry.id) ??
+            plannedEntityPath(kind, entry.slug),
+        },
       ] as const,
   ),
 );

@@ -72,16 +72,16 @@
           "tag": "a",
           "children": ["LuaReferenceExamplesTests"],
           "props": {
-            "href": "https://github.com/doflare123/NovellMaker/blob/5e885944ee36f5945a734c18c19c65c261402445/tests/NovellMaker.Core.Tests/Screens/LuaReferenceExamplesTests.cs",
+            "href": "https://github.com/doflare123/NovellMaker/blob/52b1d06149b668aa76d5ed995c0a92118eb63824/tests/NovellMaker.Core.Tests/Screens/LuaReferenceExamplesTests.cs",
             "target": "_blank",
             "rel": "noopener noreferrer"
           }
         },
-        ". Степень проверки каждого примера указана в ",
+        ". Платформенные границы описаны в ",
         {
           "tag": "a",
-          "children": ["verification"],
-          "props": { "href": "/projects/novellmaker/docs/lua/verification" }
+          "children": ["совместимости и ограничениях"],
+          "props": { "href": "/projects/novellmaker/docs/lua/compatibility" }
         },
         "."
       ]

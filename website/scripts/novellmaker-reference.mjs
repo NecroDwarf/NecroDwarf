@@ -5,8 +5,17 @@ import json from "highlight.js/lib/languages/json";
 import powershell from "highlight.js/lib/languages/powershell";
 import csharp from "highlight.js/lib/languages/csharp";
 import { posix } from "node:path";
-export const commit = "5e885944ee36f5945a734c18c19c65c261402445";
+export const commit = "52b1d06149b668aa76d5ed995c0a92118eb63824";
 export const repository = "https://github.com/doflare123/NovellMaker";
+// These files are referenced by the beta docs but absent from its source tree.
+// Preserve original Markdown and render labels without broken links.
+export const unavailableExamples = [
+  "../../examples/dialogue-import/dialogue.csv",
+  "../../examples/dialogue-import/dialogue.json",
+];
+export const sourceLinkErrors = unavailableExamples.map(
+  (href) => `Broken link in dialogue-import.md: ${href}`,
+);
 export const base = "/projects/novellmaker/docs";
 export const docPath = (slug) =>
   slug === "engine-guide"
@@ -144,6 +153,11 @@ export function compile(markdown, file) {
             ),
           ];
         case "link": {
+          if (
+            file === "dialogue-import.md" &&
+            unavailableExamples.includes(t.href)
+          )
+            return inner();
           const href = resolveLink(t.href, file);
           links.push(href);
           return [

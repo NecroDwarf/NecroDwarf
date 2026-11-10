@@ -39,7 +39,9 @@ for (const [href, text] of Object.entries(content)) {
   assert.doesNotMatch(text, /\{\{|<!--|<svg|\.java\b|src\/main\//);
 }
 assert.ok(
-  content["/projects/maniac/wiki/mechanics/sanity"].includes("разорвите"),
+  content[
+    "/projects/maniac/wiki/characters/keeper-of-nightmares#mechanic-sanity"
+  ].includes("разорвите"),
 );
 assert.ok(
   content["/projects/maniac/wiki/effects#open_wound"].includes("кровавые"),

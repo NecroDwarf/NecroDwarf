@@ -65,7 +65,10 @@ export function articleText(html, href) {
         ]),
       );
       const root = fragment
-        ? tag === "article" && attributes["data-effect-id"] === fragment
+        ? (tag === "article" && attributes["data-effect-id"] === fragment) ||
+          (tag === "section" &&
+            attributes.id === fragment &&
+            !!attributes["data-mechanic-id"])
         : tag === "main";
       if (root) roots++;
       const parent = stack.at(-1);

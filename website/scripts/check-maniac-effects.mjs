@@ -50,7 +50,10 @@ try {
         effectCard.includes(`href="${route}"`),
         `${effectId} → ${entityId}`,
       );
-      const article = await readFile(`build/client${route}.html`, "utf8");
+      const article = await readFile(
+        `build/client${route.split("#")[0]}.html`,
+        "utf8",
+      );
       assert.ok(
         article.includes(`href="/projects/maniac/wiki/effects#${effectId}"`),
         `${entityId} → ${effectId}`,

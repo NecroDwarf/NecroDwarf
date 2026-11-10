@@ -55,17 +55,15 @@ try {
     [
       "items",
       "data-system-id",
-      { maniacs: 13, survivors: 33, "both-teams": 5 },
+      { maniacs: 13, survivors: 32, "both-teams": 5 },
     ],
     [
       "mechanics",
       "data-system-id",
       {
         match: 5,
-        core: 4,
-        resource: 3,
-        "character-system": 12,
-        "perk-system": 4,
+        core: 3,
+        resource: 2,
       },
     ],
   ]) {

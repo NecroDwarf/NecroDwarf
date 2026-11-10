@@ -1,5 +1,5 @@
 {
-  "commit": "5e885944ee36f5945a734c18c19c65c261402445",
+  "commit": "52b1d06149b668aa76d5ed995c0a92118eb63824",
   "verification": {
     "functions": {
       "game": 25,
@@ -9,10 +9,13 @@
     "total": 113,
     "descriptions": 113,
     "events": 21,
-    "links_checked": 1356,
+    "links_checked": 1278,
     "luacats_missing": [],
     "luacats_obsolete": [],
-    "errors": []
+    "errors": [
+      "Broken link in dialogue-import.md: ../../examples/dialogue-import/dialogue.csv",
+      "Broken link in dialogue-import.md: ../../examples/dialogue-import/dialogue.json"
+    ]
   },
   "groups": {
     "game": [

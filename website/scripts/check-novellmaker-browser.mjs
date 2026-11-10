@@ -67,7 +67,7 @@ await withBrowserCheck(
     }
     await nojs.close();
     checks.push(
-      "All 23 pages open directly without JS; all original code blocks preserved in HTML",
+      "All 24 pages open directly without JS; all original code blocks preserved in HTML",
     );
     for (const width of [320, 390, 768, 1440]) {
       await page.setViewportSize({ width, height: 1000 });
@@ -201,11 +201,51 @@ await withBrowserCheck(
       page.locator('details[open] nav[aria-label="На этой странице"]'),
     ).toBeVisible();
     checks.push("Mobile navigation/TOC accessible; reduced motion honored");
+    for (const width of [390, 1440]) {
+      await page.setViewportSize({ width, height: 1000 });
+      await page.goto(origin + "/projects/novellmaker", {
+        waitUntil: "networkidle",
+      });
+      await expect(
+        page.locator('#download a[href*="/releases/download/"]'),
+      ).toHaveCount(3);
+      assert.ok(
+        await page
+          .locator('[data-novellmaker] img[src*="novellmaker-"]')
+          .first()
+          .evaluate((img) => img.complete && img.naturalWidth > 0),
+      );
+      await page.screenshot({
+        path: resolve(screenshots, `beta-hero-${width}.png`),
+      });
+    }
+    for (const path of ["/", "/projects"]) {
+      await page.goto(origin + path, { waitUntil: "networkidle" });
+      const card = page.locator("article").filter({
+        has: page.getByRole("heading", { name: "NovellMaker", exact: true }),
+      });
+      await expect(card).toContainText("Открытая бета");
+      await card.scrollIntoViewIfNeeded();
+      await expect
+        .poll(() =>
+          card
+            .locator('img[alt="Логотип NovellMaker"]')
+            .evaluate((img) => img.complete && img.naturalWidth > 0),
+        )
+        .toBeTruthy();
+    }
+    await page.goto(origin + "/changelog");
+    await expect(
+      page.locator('a[href="/projects/novellmaker#release"]'),
+    ).toHaveCount(1);
+    checks.push(
+      "Beta downloads, official SVG, home/catalog status and release feed verified",
+    );
     assert.deepEqual(errors, []);
     await writeFile(
       reportPath,
       JSON.stringify(
-        { checks, pages: 23, widths: [320, 390, 768, 1440], errors },
+        { checks, pages: 24, widths: [320, 390, 768, 1440], errors },
         null,
         2,
       ) + "\n",
