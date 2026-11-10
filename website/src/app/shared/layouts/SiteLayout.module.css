@@ -39,6 +39,11 @@
   color: var(--bone);
   background: var(--stone);
   border: 1px solid var(--iron);
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
   padding: 12px;
   cursor: pointer;
   font: inherit;
@@ -107,7 +112,7 @@
     padding-block: 16px;
   }
   .headerArea[data-navigation-ready="true"] .menuButton {
-    display: block;
+    display: inline-flex;
   }
   .nav {
     display: flex;

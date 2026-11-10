@@ -97,6 +97,7 @@ export function SiteLayout({
             ref={menuButton}
             className={s.menuButton}
             type="button"
+            aria-label={open ? "Закрыть меню" : "Открыть меню"}
             aria-expanded={open}
             aria-controls="main-navigation"
             onClick={() => {
@@ -104,7 +105,20 @@ export function SiteLayout({
               setProjectsOpen(false);
             }}
           >
-            {open ? "Закрыть ×" : "Меню +"}
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              aria-hidden="true"
+            >
+              <path
+                d={open ? "M6 6l12 12M6 18L18 6" : "M3 5h18M3 12h18M3 19h18"}
+              />
+            </svg>
           </button>
           <nav
             id="main-navigation"

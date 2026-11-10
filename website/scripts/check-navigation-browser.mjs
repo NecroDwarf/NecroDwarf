@@ -31,7 +31,7 @@ await withBrowserCheck(
             nav.getByRole("link", { name, exact: true }),
           ).toBeVisible();
         await expect(
-          fallback.getByRole("button", { name: "Меню +", exact: true }),
+          fallback.getByRole("button", { name: "Открыть меню", exact: true }),
         ).toBeHidden();
         expect(
           await fallback.evaluate(
@@ -57,7 +57,9 @@ await withBrowserCheck(
     const errors = [];
     observePageErrors(page, errors);
     await page.goto(origin + "/");
-    await page.getByRole("button", { name: "Меню +", exact: true }).click();
+    await page
+      .getByRole("button", { name: "Открыть меню", exact: true })
+      .click();
     await page
       .getByRole("button", { name: "Разделы Maniac", exact: true })
       .click();
@@ -86,10 +88,12 @@ await withBrowserCheck(
     await expect(effects).toHaveCount(33);
     await page.locator('a[href="#frozen"]').click();
     await expect(page.locator("#frozen")).toBeInViewport();
-    await page.getByRole("button", { name: "Меню +", exact: true }).click();
+    await page
+      .getByRole("button", { name: "Открыть меню", exact: true })
+      .click();
     await page.keyboard.press("Escape");
     await expect(
-      page.getByRole("button", { name: "Меню +", exact: true }),
+      page.getByRole("button", { name: "Открыть меню", exact: true }),
     ).toBeFocused();
 
     await page.setViewportSize({ width: 1440, height: 900 });
@@ -211,7 +215,9 @@ await withBrowserCheck(
 
     for (const width of [320, 390]) {
       await page.setViewportSize({ width, height: 844 });
-      await page.getByRole("button", { name: "Меню +", exact: true }).click();
+      await page
+        .getByRole("button", { name: "Открыть меню", exact: true })
+        .click();
       for (const name of ["NovellMaker", "Документация", "Lua API"])
         await quick
           .getByRole("button", { name: "Разделы " + name, exact: true })
