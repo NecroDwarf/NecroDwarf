@@ -31,7 +31,12 @@ try {
   for (const project of projects) {
     const html = render(ProjectIntro, { project });
     assert.ok(html.includes(project.description));
-    assert.match(html, /Художественная иллюстрация/);
+    if (project.cover) {
+      assert.ok(html.includes(`src="${project.cover.src}"`));
+      assert.doesNotMatch(html, /Художественная иллюстрация/);
+    } else {
+      assert.match(html, /Художественная иллюстрация/);
+    }
     assert.doesNotMatch(
       html,
       /Ключевые особенности|Галерея|Платформы:|В разработке/,
@@ -90,7 +95,9 @@ try {
   assert.match(grid, /src="\/test-cover.webp"/);
   assert.doesNotMatch(grid, /<svg/);
   assert.doesNotMatch(
-    render(ProjectIntro, { project: { ...projects[0], Art: undefined } }),
+    render(ProjectIntro, {
+      project: { ...projects[0], cover: undefined, Art: undefined },
+    }),
     /Художественная иллюстрация|<img|<svg/,
   );
   const { ManiacPage } = await server.ssrLoadModule(

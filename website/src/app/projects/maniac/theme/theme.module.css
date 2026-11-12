@@ -1,6 +1,13 @@
 .project {
   --project-accent: #d5a0a0;
   --art-background: #21171b;
+  --cover-filter: saturate(0.7) brightness(0.92);
+  --intro-cover-background: transparent;
+  --intro-cover-border: transparent;
+  --intro-cover-mask:
+    linear-gradient(90deg, transparent, #000 16%, #000 88%, transparent),
+    linear-gradient(180deg, transparent, #000 13%, #000 80%, transparent);
+  --card-cover-mask: linear-gradient(180deg, #000 76%, transparent);
 }
 .page {
   --void: #0d0e13;

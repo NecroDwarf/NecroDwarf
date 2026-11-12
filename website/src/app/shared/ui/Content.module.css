@@ -409,6 +409,8 @@
   height: 100%;
   object-fit: cover;
   display: block;
+  filter: var(--cover-filter, none);
+  mask-image: var(--card-cover-mask, none);
 }
 .projectArt:has(> img) > span {
   background: #090e0ce6;
