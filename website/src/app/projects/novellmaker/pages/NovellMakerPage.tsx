@@ -13,10 +13,67 @@ import {
 import { releases } from "../releases";
 import { ReleaseList } from "../../../shared/ui/ReleaseList";
 import logo from "../assets/novellmaker.svg?no-inline";
-import { WorkspaceIllustration } from "../ui/WorkspaceIllustration";
-import traveller from "../assets/examples/traveller.png";
-import mechanic from "../assets/examples/mechanic.png";
+import scenePreview from "../assets/screenshots/scene-preview.png";
+import projectSettings from "../assets/screenshots/project-settings.png";
+import sceneCanvas from "../assets/screenshots/scene-canvas.png";
+import characterEditor from "../assets/screenshots/character-editor.png";
 import s from "./NovellMakerPage.module.css";
+
+const editorScreenshots = [
+  {
+    src: projectSettings,
+    width: 1924,
+    height: 1188,
+    title: "Параметры проекта",
+    alt: "Обозреватель проекта и настройки языка и воспроизведения звука",
+  },
+  {
+    src: sceneCanvas,
+    width: 1920,
+    height: 1194,
+    title: "Холст сцены",
+    alt: "Холст сцены с панелью компонентов и свойствами контейнера",
+  },
+  {
+    src: characterEditor,
+    width: 1232,
+    height: 1035,
+    title: "Редактор персонажей",
+    alt: "Список персонажей и настройки состояния Проводника",
+  },
+];
+
+function EditorScreenshot({
+  src,
+  width,
+  height,
+  title,
+  alt,
+  loading = "lazy",
+}: (typeof editorScreenshots)[number] & { loading?: "eager" | "lazy" }) {
+  return (
+    <a
+      className={s.screenshot}
+      href={src}
+      target="_blank"
+      rel="noopener"
+      aria-label={`${title} — открыть скриншот в полном размере в новой вкладке`}
+    >
+      <img
+        src={src}
+        width={width}
+        height={height}
+        alt={alt}
+        loading={loading}
+        decoding="async"
+      />
+      <span>
+        {title} <span aria-hidden="true">↗</span>
+      </span>
+    </a>
+  );
+}
+
 export function NovellMakerPage() {
   return (
     <div className={s.page} data-novellmaker>
@@ -55,12 +112,20 @@ export function NovellMakerPage() {
               Исходный код на GitHub ↗
             </ContentLink>
           </div>
-          <WorkspaceIllustration />
+          <EditorScreenshot
+            src={scenePreview}
+            width={1923}
+            height={1202}
+            title="Предпросмотр сцены"
+            alt="Редактор NovellMaker с предпросмотром диалога и списком действий сцены"
+            loading="eager"
+          />
         </section>
       </div>
       <nav className={s.sectionNav} aria-label="Разделы NovellMaker">
         <Link to="#download">Скачать бету</Link>
         <Link to="#features">Возможности</Link>
+        <Link to="#screenshots">Скриншоты</Link>
         <Link to="#start">Как начать</Link>
         <Link to="#examples">Примеры</Link>
         <Link to="#developers">Разработчикам</Link>
@@ -134,6 +199,18 @@ export function NovellMakerPage() {
             </Link>
           ))}
         </div>
+        <section
+          className={s.screenshots}
+          id="screenshots"
+          aria-labelledby="screenshots-title"
+        >
+          <h2 id="screenshots-title">Скриншоты редактора</h2>
+          <div className={s.screenshotGrid}>
+            {editorScreenshots.map((screenshot) => (
+              <EditorScreenshot key={screenshot.src} {...screenshot} />
+            ))}
+          </div>
+        </section>
       </section>
       <section className={s.startSection} id="start">
         <div className={s.container}>
@@ -167,21 +244,6 @@ export function NovellMakerPage() {
         </div>
         <div className={s.examples}>
           <article>
-            <div className={s.exampleArt}>
-              <img
-                src={traveller}
-                width="240"
-                height="320"
-                loading="lazy"
-                alt="Персонаж traveller из примера авторского интерфейса"
-              />
-              <div className={s.exampleMenu}>
-                <span>АВТОРСКИЙ ХОЛСТ</span>
-                <b>Меню</b>
-                <span>Звук</span>
-                <span>Сохранение</span>
-              </div>
-            </div>
             <div className={s.exampleCopy}>
               <span className={s.eyebrow}>01 / Интерфейс</span>
               <h3>Каждая кнопка — часть вашего мира.</h3>
@@ -197,23 +259,6 @@ export function NovellMakerPage() {
             </div>
           </article>
           <article>
-            <div className={`${s.exampleArt} ${s.characterArt}`}>
-              <span className={s.rigLabel}>СЛОИ / PIVOT / КЛЮЧИ</span>
-              <img
-                src={mechanic}
-                width="240"
-                height="320"
-                loading="lazy"
-                alt="Процедурный PNG персонажа Механик из примера character-animation"
-              />
-              <div className={s.timeline} aria-hidden="true">
-                <span>0.0</span>
-                <i>◆</i>
-                <i>◆</i>
-                <i>◆</i>
-                <span>1.0</span>
-              </div>
-            </div>
             <div className={s.exampleCopy}>
               <span className={s.eyebrow}>02 / Персонажи</span>
               <h3>Дайте персонажу характер. И движение.</h3>
@@ -230,10 +275,6 @@ export function NovellMakerPage() {
             </div>
           </article>
         </div>
-        <p className={s.caption}>
-          Оригинальные PNG из демонстрационных проектов. Композиции карточек —
-          иллюстрации возможностей.
-        </p>
       </section>
       <section className={s.developers} id="developers">
         <div className={s.container}>
